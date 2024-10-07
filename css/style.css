@@ -40,96 +40,6 @@
 #comments .comment-bar a .fa.fa-spinner {
   display: none;
 }
-.shang_box {
-  width: 540px;
-  height: 450px;
-  padding: 10px;
-  background-color: #3f3f3f;
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
-  position: fixed;
-  z-index: 41;
-  left: 50%;
-  top: 50%;
-  margin-left: -280px;
-  margin-top: -225px;
-  border: 1px dotted #000;
-  display: none;
-}
-.shang_box .shang_close {
-  position: absolute;
-  display: inline-block;
-  font-weight: 200;
-  font-size: 50px;
-  right: 19px;
-  outline: none;
-  text-shadow: none;
-  color: #4094c7;
-}
-.shang_box .shang_tit {
-  width: 100%;
-  font-family: Roboto, "Roboto", serif;
-  height: 75px;
-  text-align: center;
-  line-height: 66px;
-  color: #fff;
-  font-size: 30px;
-  margin-top: 7px;
-  margin-right: 2px;
-}
-.shang_box .shang_payimg {
-  width: 255px;
-  height: 255px;
-  padding: 10px;
-  border: 6px solid #4094c7;
-  margin: 0 auto;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
-  overflow: hidden;
-}
-.shang_box .shang_payimg .pay_img {
-  width: 535px;
-  vertical-align: middle;
-  transition: margin-left 0.5s;
-}
-.shang_box .shang_payimg .pay_img.weixin_img {
-  margin-left: -280px;
-}
-.shang_box .shang_payimg .pay_img img {
-  width: 255px;
-}
-.shang_box .shang_payimg .pay_img img.weixin {
-  margin: auto 0 auto 16px;
-  display: block;
-  float: right;
-}
-.shang_box .shang_payselect {
-  font-size: 20px;
-  color: #fff;
-  text-align: center;
-  margin: 0 auto;
-  margin-top: 20px;
-  height: 60px;
-  width: 320px;
-}
-.shang_box .shang_payselect input[type=radio],
-.shang_box .shang_payselect label {
-  cursor: pointer;
-}
-.hide_box {
-  z-index: 40;
-  background: #000;
-  opacity: 0.5;
-  -moz-opacity: 0.5;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  position: fixed;
-  display: none;
-}
 @-webkit-keyframes fadeIns {
   from {
     -webkit-transform: translateY(30px);
@@ -353,47 +263,14 @@
 .icon-rss:before {
   content: "\e611";
 }
-.icon-csdn:before {
-  content: "\e601";
-}
-.icon-juejin:before {
-  content: "\e605";
-}
-.icon-twitter:before {
-  content: "\e659";
-}
 .icon-github:before {
   content: "\e600";
-}
-.icon-jianshu:before {
-  content: "\e68a";
-}
-.icon-zhihu:before {
-  content: "\e6c2";
-}
-.icon-facebook:before {
-  content: "\e604";
 }
 .icon-linkedin:before {
   content: "\e64d";
 }
 .icon-instagram:before {
   content: "\e66c";
-}
-.icon-weibo:before {
-  content: "\e698";
-}
-.icon-oschina:before {
-  content: "\e606";
-}
-.icon-reddit:before {
-  content: "\e60c";
-}
-.icon-qq:before {
-  content: "\e626";
-}
-.icon-kugou:before {
-  content: "\e6ce";
 }
 .icon-file-tree:before {
   content: "\e6a6";
@@ -412,9 +289,6 @@
 }
 .icon-case-sensitive:before {
   content: "\e612";
-}
-.neteasemusic:before {
-  content: "\e607";
 }
 .iconfont-svg {
   width: 1em;
@@ -1533,39 +1407,12 @@
   background-color: #9f9f9f;
   -webkit-border-radius: 4px;
 }
-#post .dashang {
-  display: block;
-  width: 56px;
-  margin: auto;
-  height: 56px;
-  line-height: 56px;
-  font-size: 20px;
-  color: #fff;
-  border: none;
-  background: #4094c7;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
-  text-align: center;
-  -webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
-  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
-  -webkit-transition: 0.4s ease-in-out;
-  -moz-transition: 0.4s ease-in-out;
-  -ms-transition: 0.4s ease-in-out;
-  transition: 0.4s ease-in-out;
-}
 #post .copyright {
   margin-top: 50px;
   padding-bottom: 30px;
   line-height: 14px;
   text-align: center;
   color: #bcc1c4;
-}
-#post .copyright .miit {
-  display: inline-block;
-  padding-right: 10px;
-}
-#post .copyright .miit img {
-  height: 15px;
 }
 #post .copyright a {
   color: #0269c8;
@@ -1988,34 +1835,6 @@ img.pswp__img {
   .full-toc #rocket {
     right: -7px;
   }
-  .shang_box {
-    width: 100%;
-    height: 400px;
-    bottom: 0;
-    left: initial;
-    top: initial;
-    margin-left: initial;
-    padding: 0;
-  }
-  .shang_box .shang_close {
-    right: 10px;
-  }
-  .shang_box .shang_tit {
-    font-size: 23px;
-  }
-  .shang_box .shang_payimg {
-    width: 200px;
-    height: 200px;
-  }
-  .shang_box .shang_payimg .pay_img {
-    width: 427px;
-  }
-  .shang_box .shang_payimg .pay_img.weixin_img {
-    margin-left: -227px;
-  }
-  .shang_box .shang_payimg .pay_img img {
-    width: 200px;
-  }
 }
 @media screen and (max-width: 322px) {
   .nav-right form .search {
@@ -2027,36 +1846,5 @@ font-size
   }
   #post .pjax .article_copyright {
     font-size: 6px;
-  }
-  .shang_box {
-    height: 331px;
-    bottom: 0;
-    left: initial;
-    top: initial;
-    margin-left: initial;
-    padding: 0;
-  }
-  .shang_box .shang_close {
-    font-size: 39px;
-    right: 8px;
-  }
-  .shang_box .shang_tit {
-    font-size: 15px;
-  }
-  .shang_box .shang_payimg {
-    width: 150px;
-    height: 150px;
-  }
-  .shang_box .shang_payimg .pay_img {
-    width: 324px;
-  }
-  .shang_box .shang_payimg .pay_img.weixin_img {
-    margin-left: -174px;
-  }
-  .shang_box .shang_payimg .pay_img img {
-    width: 150px;
-  }
-  .shang_box .shang_payselect {
-    font-size: 16px;
   }
 }

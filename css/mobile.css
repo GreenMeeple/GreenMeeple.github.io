@@ -235,34 +235,6 @@
   .full-toc #rocket {
     right: -7px;
   }
-  .shang_box {
-    width: 100%;
-    height: 400px;
-    bottom: 0;
-    left: initial;
-    top: initial;
-    margin-left: initial;
-    padding: 0;
-  }
-  .shang_box .shang_close {
-    right: 10px;
-  }
-  .shang_box .shang_tit {
-    font-size: 23px;
-  }
-  .shang_box .shang_payimg {
-    width: 200px;
-    height: 200px;
-  }
-  .shang_box .shang_payimg .pay_img {
-    width: 427px;
-  }
-  .shang_box .shang_payimg .pay_img.weixin_img {
-    margin-left: -227px;
-  }
-  .shang_box .shang_payimg .pay_img img {
-    width: 200px;
-  }
 }
 @media screen and (max-width: 322px) {
   .nav-right form .search {
@@ -274,36 +246,5 @@ font-size
   }
   #post .pjax .article_copyright {
     font-size: 6px;
-  }
-  .shang_box {
-    height: 331px;
-    bottom: 0;
-    left: initial;
-    top: initial;
-    margin-left: initial;
-    padding: 0;
-  }
-  .shang_box .shang_close {
-    font-size: 39px;
-    right: 8px;
-  }
-  .shang_box .shang_tit {
-    font-size: 15px;
-  }
-  .shang_box .shang_payimg {
-    width: 150px;
-    height: 150px;
-  }
-  .shang_box .shang_payimg .pay_img {
-    width: 324px;
-  }
-  .shang_box .shang_payimg .pay_img.weixin_img {
-    margin-left: -174px;
-  }
-  .shang_box .shang_payimg .pay_img img {
-    width: 150px;
-  }
-  .shang_box .shang_payselect {
-    font-size: 16px;
   }
 }
