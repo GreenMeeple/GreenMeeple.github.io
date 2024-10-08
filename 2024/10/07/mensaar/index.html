@@ -202,7 +202,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="2">
-<input type="hidden" id="yelog_site_word_count" value="980">
+<input type="hidden" id="yelog_site_word_count" value="984">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -347,12 +347,12 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-10-08 02:27:25'>2024-10-07 05:03</time>
+            Created At : <time class="date" title='Updated At: 2024-10-08 02:53:12'>2024-10-07 05:03</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:884</span>
+        <span>Count:888</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -433,16 +433,62 @@
 </tbody></table>
 <p>The first part of the task is to get the daily menu. We also get the date on the website to make the following work easier.</p>
 <p>By the <code>find_element</code> and <code>find_elements</code> functions in Selenium, we can create a simple scraper like this:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.common.keys <span class="keyword">import</span> Keys</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.common.by <span class="keyword">import</span> By</span><br><span class="line"></span><br><span class="line">driver = webdriver.Firefox()</span><br><span class="line">driver.get(<span class="string">&quot;https://mensaar.de/#/menu/sb&quot;</span>)</span><br><span class="line">counters = driver.find_elements(By.CLASS_NAME, <span class="string">&quot;counter&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> counter <span class="keyword">in</span> counters:</span><br><span class="line">    meal_title = meal.find_element(By.CLASS_NAME, <span class="string">&quot;meal-title&quot;</span>).text.strip()</span><br></pre></td></tr></table></figure>
+<pre><code class="python">from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
 
+driver = webdriver.Firefox()
+driver.get(&quot;https://mensaar.de/#/menu/sb&quot;)
+counters = driver.find_elements(By.CLASS_NAME, &quot;counter&quot;)
+
+for counter in counters:
+    meal_title = meal.find_element(By.CLASS_NAME, &quot;meal-title&quot;).text.strip()
+</code></pre>
 <p>However, on the webpage there is also a counter called <code>Wahlessen.</code> Which refers to a more pricy and unpredictable menu, and we want to exclude its data:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">counter_title = counter.find_element(By.CLASS_NAME, <span class="string">&quot;counter-title&quot;</span>).text.strip()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Filter for specified counter titles</span></span><br><span class="line"><span class="keyword">if</span> counter_title <span class="keyword">in</span> [<span class="string">&quot;Menü 1&quot;</span>, <span class="string">&quot;Menü 2&quot;</span>, <span class="string">&quot;Mensacafé&quot;</span>]:</span><br><span class="line">    meal_title = meal.find_element(By.CLASS_NAME, <span class="string">&quot;meal-title&quot;</span>).text.strip()</span><br></pre></td></tr></table></figure>
+<pre><code class="python">counter_title = counter.find_element(By.CLASS_NAME, &quot;counter-title&quot;).text.strip()
 
+# Filter for specified counter titles
+if counter_title in [&quot;Menü 1&quot;, &quot;Menü 2&quot;, &quot;Mensacafé&quot;]:
+    meal_title = meal.find_element(By.CLASS_NAME, &quot;meal-title&quot;).text.strip()
+</code></pre>
 <h3 id="Storage"><a href="#Storage" class="headerlink" title="Storage"></a>Storage</h3><p>It is kinda pointless to make a full database for these small piece of data <em>(I may take my word back in the future)</em>, so we just store the collected data in Json files.<br>Therefore, everyday we will have a separate Json file. We create a separate Json file for statistics, it is calculated simply by adding current date’s data into the file, so it will accumlate each data entry.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(output_file, <span class="string">&quot;w&quot;</span>, encoding=<span class="string">&quot;utf-8&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    json.dump(result, f, ensure_ascii=<span class="literal">False</span>, indent=<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;Results saved to <span class="subst">&#123;output_file&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Save the updated occurrence counts to the JSON file</span></span><br><span class="line">count_result = &#123;</span><br><span class="line">    <span class="string">&quot;meal_counts&quot;</span>: <span class="built_in">dict</span>(meal_count),</span><br><span class="line">    <span class="string">&quot;component_counts&quot;</span>: <span class="built_in">dict</span>(component_count)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(count_file, <span class="string">&quot;w&quot;</span>, encoding=<span class="string">&quot;utf-8&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    json.dump(count_result, f, ensure_ascii=<span class="literal">False</span>, indent=<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;Counts saved to <span class="subst">&#123;count_file&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure>
+<pre><code class="python">with open(output_file, &quot;w&quot;, encoding=&quot;utf-8&quot;) as f:
+    json.dump(result, f, ensure_ascii=False, indent=2)
 
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;meal_counts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;KlimaTeller: Broccoli und Cheese Nuggets mit Chili-Kräuterdip&quot;</span><span class="punctuation">:</span> <span class="number">1</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;Hähnchenschnitzel „Wiener Art“ mit Paprikarahmsoße&quot;</span><span class="punctuation">:</span> <span class="number">1</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;Flammkuchen mit Tomaten und Rucola&quot;</span><span class="punctuation">:</span> <span class="number">1</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;Köttbullar und Rahmsoße mit Champignons&quot;</span><span class="punctuation">:</span> <span class="number">1</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;KlimaTeller: Türkische Pizza Lahmacun&quot;</span><span class="punctuation">:</span> <span class="number">1</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;KlimaTeller: Hausgemachte vegetarische Kartoffelsuppe&quot;</span><span class="punctuation">:</span> <span class="number">1</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;Pasta mit Argentinischer Hackfleischsoße&quot;</span><span class="punctuation">:</span> <span class="number">1</span><span class="punctuation">,</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;component_counts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;Pommes Frites&quot;</span><span class="punctuation">:</span> <span class="number">1</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;Karottensalat&quot;</span><span class="punctuation">:</span> <span class="number">2</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;Reis (aus biologischem Anbau)&quot;</span><span class="punctuation">:</span> <span class="number">2</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;Weiße Salatsoße Dressing&quot;</span><span class="punctuation">:</span> <span class="number">6</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;Obst (Apfel aus biologischem Anbau)&quot;</span><span class="punctuation">:</span> <span class="number">6</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;Brötchen&quot;</span><span class="punctuation">:</span> <span class="number">4</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;Wiener Würstchen&quot;</span><span class="punctuation">:</span> <span class="number">1</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+print(f&quot;Results saved to &#123;output_file&#125;&quot;)
 
+# Save the updated occurrence counts to the JSON file
+count_result = &#123;
+    &quot;meal_counts&quot;: dict(meal_count),
+    &quot;component_counts&quot;: dict(component_count)
+&#125;
+
+with open(count_file, &quot;w&quot;, encoding=&quot;utf-8&quot;) as f:
+    json.dump(count_result, f, ensure_ascii=False, indent=2)
+
+print(f&quot;Counts saved to &#123;count_file&#125;&quot;)
+</code></pre>
+<pre><code class="json">&#123;
+  &quot;meal_counts&quot;: &#123;
+    &quot;KlimaTeller: Broccoli und Cheese Nuggets mit Chili-Kräuterdip&quot;: 1,
+    &quot;Hähnchenschnitzel „Wiener Art“ mit Paprikarahmsoße&quot;: 1,
+    &quot;Flammkuchen mit Tomaten und Rucola&quot;: 1,
+    &quot;Köttbullar und Rahmsoße mit Champignons&quot;: 1,
+    &quot;KlimaTeller: Türkische Pizza Lahmacun&quot;: 1,
+    &quot;KlimaTeller: Hausgemachte vegetarische Kartoffelsuppe&quot;: 1,
+    &quot;Pasta mit Argentinischer Hackfleischsoße&quot;: 1,
+  &#125;,
+  &quot;component_counts&quot;: &#123;
+    &quot;Pommes Frites&quot;: 1,
+    &quot;Karottensalat&quot;: 2,
+    &quot;Reis (aus biologischem Anbau)&quot;: 2,
+    &quot;Weiße Salatsoße Dressing&quot;: 6,
+    &quot;Obst (Apfel aus biologischem Anbau)&quot;: 6,
+    &quot;Brötchen&quot;: 4,
+    &quot;Wiener Würstchen&quot;: 1
+  &#125;
+&#125;
+</code></pre>
 <h3 id="Automation"><a href="#Automation" class="headerlink" title="Automation"></a>Automation</h3><blockquote>
 <p>The part that gives me headache…</p>
 </blockquote>
