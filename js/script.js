@@ -90,17 +90,6 @@ function afterPjax() {
     /*新内容淡入*/
     content.css({'opacity': 1}).removeClass('fadeOuts').addClass('fadeIns');
     bind();
-    /*discus获取评论数*/
-    if ($(".theme_disqus_on").val() === "true") {
-        DISQUSWIDGETS.getCount({reset: true});
-    }
-    if ($("#comments").hasClass("disqus")) {
-        setTimeout(function () {
-            if ($(".count-comment").text().trim() === "") {
-                $(".count-comment").text(0);
-            }
-        }, 300);
-    }
 }
 
 /*切换文章分类*/
@@ -580,13 +569,6 @@ $(function () {
         container.animate({scrollTop: 0}, 500);
     });
 
-    if ($("#comments").hasClass("disqus")) {
-        setTimeout(function () {
-            if ($(".count-comment").text().trim() === "") {
-                $(".count-comment").text(0);
-            }
-        }, 1500);
-    }
     if ($(window).width() > 414) {
         /*设置文章列表title宽度*/
         $('.nav-right>nav>a>.post-title').css('width',$('.nav-right>nav>a').width() - $('.nav-right>nav>a>.post-date:first').width() - 40)
@@ -702,14 +684,6 @@ function bind() {
         });
         return false;
     });
-    if ($("#comments").hasClass("disqus")) {
-        var $disqusCount = $(".disqus-comment-count");
-        $disqusCount.bind("DOMNodeInserted", function (e) {
-            $(".count-comment").text(
-                $this.text().replace(/[^0-9]/ig, "")
-            )
-        });
-    }
     /*给文章中的站内跳转绑定pjax*/
     $(document).pjax('#post .pjax article a[target!=_blank]', '.pjax', {fragment: '.pjax', timeout: 8000});
 
