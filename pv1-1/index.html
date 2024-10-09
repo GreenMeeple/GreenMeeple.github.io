@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>GreenMeeple</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="GreenMeeple">
+  <title>Parameterized Verification 1.1 -- Labeled Transition Systems | GreenMeeple</title>
+  <meta name="keywords" content=" PV , LTS ">
+  <meta name="description" content="Parameterized Verification 1.1 -- Labeled Transition Systems | GreenMeeple">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="Personal Info.Chun Ngai Li (Alex), M.Sc. Cybersecurity in Saarland University,B.Eng Information Engineering in CUHK. Recent WorksA C&#x2F;C++ programmer. Also working on Backend &amp; Python developing.Cur">
 <meta property="og:type" content="website">
@@ -61,7 +61,7 @@
 
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/"
    class="avatar_target">
@@ -404,18 +404,70 @@
 
     </div>
     <div class="hide-list">
-        <div class="semicircle" data-title="切换全屏 快捷键 s">
+        <div class="semicircle" data-title="Toggle full screen shortcut key s">
             <div class="brackets first"><</div>
             <div class="brackets">&gt;</div>
         </div>
     </div>
 </aside>
-<div id="post" class="index">
+<div id="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-pv1-1" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Congrats-You-finally-discovered-a-Special-GreenMeeple"><span class="toc-text">Congrats! You finally discovered a Special GreenMeeple.</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#About-GreenMeeple"><span class="toc-text">About GreenMeeple</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#About-this-blog"><span class="toc-text">About this blog</span></a></li></ol></li></ol>
+        <h1 class="article-title">Parameterized Verification 1.1 -- Labeled Transition Systems</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="Notes">Notes</a> > 
+            
+            <a  data-rel="Notes&lt;---&gt;UdS">UdS</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color3">PV</a>
+            
+            <a class="color4">LTS</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            Created At : <time class="date" title='Updated At: 2024-10-09 04:10:03'>2024-10-07 04:40</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>Count:418</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            Views :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Labeled-Transition-Systems-LTS"><span class="toc-text">Labeled Transition Systems (LTS)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Labels"><span class="toc-text">Labels</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LTS-v-s-Finite-state-Automata"><span class="toc-text">LTS v.s. Finite-state Automata</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Formal-definition"><span class="toc-text">Formal definition</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Run-of-an-LTS"><span class="toc-text">Run of an LTS</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Path"><span class="toc-text">Path</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run"><span class="toc-text">Run</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#State-labeled-paths"><span class="toc-text">State-labeled paths</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Action-labeled-paths"><span class="toc-text">Action-labeled paths</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Traces"><span class="toc-text">Traces</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -428,20 +480,101 @@
     }
 </style>
 </div>
-            <h1 id="Congrats-You-finally-discovered-a-Special-GreenMeeple"><a href="#Congrats-You-finally-discovered-a-Special-GreenMeeple" class="headerlink" title="Congrats! You finally discovered a Special GreenMeeple."></a>Congrats! You finally discovered a Special GreenMeeple.</h1><p>A Cybersecurity Student with coding and boardgame.<br>This is page to leave my traces in the digital world.</p>
-<h2 id="About-GreenMeeple"><a href="#About-GreenMeeple" class="headerlink" title="About GreenMeeple"></a>About GreenMeeple</h2><p>Meeple share what it likes. Coding, Boardgames, language learing, Traveling, Movie, Cantonese, Coffee, Hong Kong…</p>
-<p>This little Meeple has written <code class="article_number"></code> blog posts, with <code class="site_word_count"></code> words.</p>
-<p><code class="site_uv"></code> beautiful souls and robots are curious of this Meeple, and they have visited <code class="site_pv"></code> times.</p>
-<h2 id="About-this-blog"><a href="#About-this-blog" class="headerlink" title="About this blog"></a>About this blog</h2><p>This blog is using <a target="_blank" rel="noopener" href="https://pages.github.com/">GitHub Pages</a> to deploy. Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> with open-source theme <a target="_blank" rel="noopener" href="https://github.com/yelog/hexo-theme-3-hexo">3-hexo</a>.</p>
-<p>Main Function</p>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>This is a learning note of a course in <a target="_blank" rel="noopener" href="https://cispa.de/de">CISPA</a>, UdS. Taught by Swen Jacobs</p>
+</blockquote>
+<h2 id="Labeled-Transition-Systems-LTS"><a href="#Labeled-Transition-Systems-LTS" class="headerlink" title="Labeled Transition Systems (LTS)"></a>Labeled Transition Systems (LTS)</h2><p>LTS is a concept in theoretical computer science used in the study of computation. It is used to describe the potential behavior of discrete systems, e.g. <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Model_checking">Model Checking</a>. </p>
+<p>It consists of states and transitions between states, which may be labeled with labels chosen from a set; the same label may appear on more than one transition. Mathematically, it can be described as <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Directed_graph">directed graph</a>. </p>
+<h3 id="Labels"><a href="#Labels" class="headerlink" title="Labels"></a>Labels</h3><p>Labels can be used to describe the behaviour or distinguish between states.<br>If the set of label is a <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Singleton_(mathematics)">singleton</a> (only contains one label), then it can be omitted in the system.</p>
+<h3 id="LTS-v-s-Finite-state-Automata"><a href="#LTS-v-s-Finite-state-Automata" class="headerlink" title="LTS v.s. Finite-state Automata"></a>LTS v.s. Finite-state Automata</h3><p>In Transition systems:</p>
 <ul>
-<li>Search support for article title, hashtag (#hashtag), author (@author)</li>
-<li>pad&#x2F;cell phone and other mobile compatitable</li>
-<li>Page global shortcuts <a target="_blank" rel="noopener" href='http://yelog.org/2017/03/24/3-hexo-shortcuts/'>3-hexo shortcut list</a></li>
+<li>The set of states is not necessarily finite, or even countable.</li>
+<li>The set of transitions is not necessarily finite, or even countable.</li>
+<li>No “start” state or “final” states are given.</li>
 </ul>
+<h2 id="Formal-definition"><a href="#Formal-definition" class="headerlink" title="Formal definition"></a>Formal definition</h2><p>Let $AP$ be a set of atomic propositions (statement or assertion that must be true or false),<br>i.e., observable properties of the system.</p>
+<p>A labeled transition system (LTS) over $AP$ is a tuple $Q, Q_0, \Sigma, \delta, \lambda$, where</p>
+<ul>
+<li>$Q$ is a set of states</li>
+<li>$Q_0 \subseteq Q$ is the set of initial states</li>
+<li>$\Sigma$ is the set of transition labels (or actions)</li>
+<li>$\delta \subseteq Q \times \Sigma \times Q$ is the transition relation (also write as $ q\buildrel a \over\rightarrow q’ \in \delta$)</li>
+<li>$\lambda : Q \rightarrow 2^{AP}$ is the state labeling.</li>
+</ul>
+<blockquote>
+<p>In this course, we assume <strong>finite LTS</strong>, which means $AP$ and $Q$ are finite, unless explicitly stated.</p>
+</blockquote>
+<p><img src="/images/pv1_1_LTS.png"></p>
+<h2 id="Run-of-an-LTS"><a href="#Run-of-an-LTS" class="headerlink" title="Run of an LTS"></a>Run of an LTS</h2><p>Consider an LTS $M &#x3D; (Q, Q_0, \Sigma, \delta, \lambda)$.</p>
+<h3 id="Path"><a href="#Path" class="headerlink" title="Path"></a>Path</h3><p>A path of $M$ an is a finite sequence $q_0a_0q_1a_1…q_n \in (Q\Sigma)\ast Q$, such that $ q_i \buildrel a_i \over\rightarrow q_{i+1}$ for all $i &lt; n$<br>or an infinite sequence $q_0a_0q_1a_1…q_n \in (Q\Sigma)^\omega$, such that $ q_i \buildrel a_i \over\rightarrow q_{i+1}$ for all $i \in \mathbb{N}$.</p>
+<h3 id="Run"><a href="#Run" class="headerlink" title="Run"></a>Run</h3><p>A run of $M$ is a <strong>path</strong> of $M$ with $q_0 \in Q_0$, and that is maximal, i.e., it cannot be extended.</p>
+<p>A run is <strong>deadlocked</strong> if it is finite.</p>
+<h3 id="State-labeled-paths"><a href="#State-labeled-paths" class="headerlink" title="State-labeled paths"></a>State-labeled paths</h3><p>$q_0q_1…$, the projection of a path onto states $Q$,</p>
+<h3 id="Action-labeled-paths"><a href="#Action-labeled-paths" class="headerlink" title="Action-labeled paths"></a>Action-labeled paths</h3><p>$a_0a_1…$, the projection of a path onto actions $\Sigma$,</p>
+<h3 id="Traces"><a href="#Traces" class="headerlink" title="Traces"></a>Traces</h3><p>$\lambda (q_0)\lambda q_1…$, the sequence of labels of a <strong>state-labeled path</strong>.</p>
+<hr>
+<p>Next post: <a href="../pv1-2/">Synchronization Primitives of Processes</a></p>
+<p>Further Reading: <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Transition_system">Transition System</a>, <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Model_checking">Model Checking</a>.</p>
 
-        </article>
-        
+      
+       <hr><span style="font-style: italic;color: gray;"> Please cite the source for reprints, feel free to verify the sources cited in the article, and point out any errors or lack of clarity of expression. You can comment in the comments section below or email to alexcnli@yahoo.com </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.jsdelivr.net/npm/mathjax@2.7.8/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.jsdelivr.net/npm/mathjax@2.7.8/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
+
+
     </div>
     <div class="copyright">
         <p class="footer-entry">©2024 Alex Li
@@ -449,11 +582,11 @@
 <p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
 
     </div>
-</div>
-<div class="full-toc">
-    <button class="full" data-title="Toggle full screen shortcut key s"><span class="min "></span></button>
+    <div class="full-toc">
+        <button class="full" data-title="Toggle full screen shortcut key s"><span class="min "></span></button>
 <a class="" id="rocket" ></a>
 
+    </div>
 </div>
 
 </body>
