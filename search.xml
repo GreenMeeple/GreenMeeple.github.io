@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>hexo-zhruby -- HTML ruby tag with auto Chinese languages pronounciation</title>
+      <link href="/hexo-zhruby/"/>
+      <url>/hexo-zhruby/</url>
+      
+        <content type="html"><![CDATA[<p>Implement the HTML tag <code>&lt;ruby&gt;</code> for Hexo using <a href="https://hexo.io/docs/tag-plugins">Tag Plugin</a> feature. Provide auto pronounciation indication for Jyutping (Cantonese), Zhuyin (Taiwanese Mandarin), and Pinyin (Chinese Mandarin), and the default setting for general usage. Support Traditonal and Simplified Chinese characters. </p><p>Inspired by the <a href="https://github.com/jamespan/hexo-ruby-character">hexo-ruby-character</a> by <a href="https://github.com/jamespan">jamespan</a>.</p><h2 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h2><pre><code>npm install hexo-zhruby --save</code></pre><h2 id="Use-cases"><a href="#Use-cases" class="headerlink" title="Use cases"></a>Use cases</h2><p>Ruby (ルビ) is also known as <a href="https://en.wikipedia.org/wiki/Furigana">Furigana</a> (振り仮名).  It contains two basic use cases:</p><ol><li>To clarify or indicate the pronunciation for readers</li><li><a href="https://en.wikipedia.org/wiki/Kanji#Special_readings">Gikun</a>, in which the characters have different pronunciations than they seem due to convention or for a specific context. For example, the pronunciation of 煙草 in Japanese is <em>tabako (tobacco)</em>.</li></ol><h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><p><strong>TLDR</strong>: Usage: <code>&#123;% tag rb|rt %&#125;</code>; Tag options: <code>ruby_def</code>, <code>ruby_jy</code>, <code>ruby_py</code>, <code>ruby_zy</code>.</p><hr><h3 id="For-the-1st-use-case-pronunciation-indication"><a href="#For-the-1st-use-case-pronunciation-indication" class="headerlink" title="For the 1st use case (pronunciation indication):"></a>For the 1st use case (pronunciation indication):</h3><p><code>ruby_def</code> allows any language, and the spacing in <code>rp</code> will expand evenly with respect to the word length in <code>rt</code>.</p><ul><li><code>&#123;% ruby_def 基本|きほん %&#125;</code> → <ruby>基本<rp> (</rp><rt>きほん</rt><rp>) </rp></ruby></li><li><code>&#123;% ruby_def 基本|기본 %&#125;</code> → <ruby>基本<rp> (</rp><rt>기본</rt><rp>) </rp></ruby></li><li><code>&#123;% ruby_def 基本|fundamental %&#125;</code> → <ruby>基本<rp> (</rp><rt>fundamental</rt><rp>) </rp></ruby></li><li><code>&#123;% ruby_def 基本|θεμελιώδες %&#125;</code> → <ruby>基本<rp> (</rp><rt>θεμελιώδες</rt><rp>) </rp></ruby></li><li><code>&#123;% ruby_def 基本|базовый %&#125;</code> → <ruby>基本<rp> (</rp><rt>базовый</rt><rp>) </rp></ruby></li><li><code>&#123;% ruby_def 基本|základní %&#125;</code> → <ruby>基本<rp> (</rp><rt>základní</rt><rp>) </rp></ruby></li><li><code>&#123;% ruby_def fundamental|基本 %&#125;</code> → <ruby>fundamental<rp> (</rp><rt>基本</rt><rp>)</li></ul><p><code>ruby_jy</code>, <code>ruby_py</code>, <code>ruby_zy</code> refers to <strong>Jyutping</strong>, <strong>Pinyin</strong>, <strong>Zhuyin</strong> respectively. </p><p>No need to enter the pronunciation manually in <code>rt</code>; the value will automatically be returned.</p><ul><li><code>&#123;% ruby_zy 基本 %&#125;</code> → <ruby>基本<rp> (</rp><rt>ㄐㄧ ㄅㄣˇ</rt><rp>) </rp></ruby></li><li><code>&#123;% ruby_py 基本 %&#125;</code> → <ruby>基本<rp> (</rp><rt>jī běn</rt><rp>) </rp></ruby></li><li><code>&#123;% ruby_jy 基本 %&#125;</code> → <ruby>基本<rp> (</rp><rt>gei1 bun2</rt><rp>) </rp></ruby></li></ul><hr><h3 id="For-the-2nd-use-case-Gikun"><a href="#For-the-2nd-use-case-Gikun" class="headerlink" title="For the 2nd use case (Gikun):"></a>For the 2nd use case (Gikun):</h3><p>Same usage for <code>ruby_def</code>.</p><ul><li><code>&#123;% ruby_def special|basic %&#125;</code> → <ruby>special<rp> (</rp><rt>basic</rt><rp>) </rp></ruby></li><li><code>&#123;% ruby_def 特別|基本 %&#125;</code> → <ruby>特別<rp> (</rp><rt>基本</rt><rp>)</li></ul><p>In <code>ruby_jy</code>, <code>ruby_py</code>, <code>ruby_zy</code>, you can also add <code>|rt</code> just like <code>ruby_def</code>.</p><ul><li><code>&#123;% ruby_zy 特別|special %&#125;</code> → <ruby>特別<rp> (</rp><rt>special</rt><rp>) </rp></ruby></li><li><code>&#123;% ruby_py 特別|special %&#125;</code> → <ruby>特別<rp> (</rp><rt>special</rt><rp>) </rp></ruby></li><li><code>&#123;% ruby_jy 特別|special %&#125;</code> → <ruby>特別<rp> (</rp><rt>special</rt><rp>) </rp></ruby></li><li><code>&#123;% ruby_zy 特別|基本 %&#125;</code> → <ruby>特別<rp> (</rp><rt>ㄐㄧ ㄅㄣˇ</rt><rp>) </rp></ruby></li><li><code>&#123;% ruby_py 特別|基本 %&#125;</code> → <ruby>特別<rp> (</rp><rt>jī běn</rt><rp>) </rp></ruby></li><li><code>&#123;% ruby_jy 特別|基本 %&#125;</code> → <ruby>特別<rp> (</rp><rt>gei1 bun2</rt><rp>) </rp></ruby></li></ul><p>Notice that the <code>rt</code> output depends on the pronunciation in <code>rt,</code> but <strong>not</strong> <code>rp.</code> This feature is only available when <code>rt</code> is a <strong>Chinese Character</strong> in <a href="https://en.wikipedia.org/wiki/CJK_Unified_Ideographs_(Unicode_block)">CJK Unified Ideographs</a> (\U4E00-\U9FFF).</p><p>If the input of <code>rt</code> is not in CJK Unified Ideographs, it is considered as <code>ruby_def</code>.</p><h2 id="Known-issues"><a href="#Known-issues" class="headerlink" title="Known issues"></a>Known issues</h2><p>The Chinese language contains a lot of <strong>Homophones</strong>, which can be resolved by context most of the time. However, for long sentences (&gt;&#x3D; 15 characters), or very specific names and terms, the auto-generation from 1st use case may not be very sensitive.</p><p>Please use <code>ruby_def</code> if it happens or contribute to this project by providing a more sensitive or advanced Chinese vocabulary library.</p><h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ul><li><a href="https://en.wikipedia.org/wiki/CJK_characters">CJK Unified Ideographs (Unicode block)</a></li><li><a href="https://en.wikipedia.org/wiki/Homophone">Homophone</a></li><li><a href="https://en.wiktionary.org/wiki/%E7%BE%A9%E8%A8%93#Japanese">Gikun (japanese only)</a></li><li><a href="https://en.wikipedia.org/wiki/Kanji#Special_readings">Gikun (English version under the article Kanji)</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ruby">&lt;ruby&gt;: The Ruby Annotation element</a></li><li><a href="https://en.wikibooks.org/wiki/Unicode/Character_reference">Unicode&#x2F;Character reference</a></li><li><a href="https://en.wikipedia.org/wiki/Universal_Character_Set_characters">Universal Character Set characters (Unicode)</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Projects </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> Node.js </tag>
+            
+            <tag> HTML </tag>
+            
+            <tag> Cantonese </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Using Hexo Plugin functions to create a custom Tag Plugin</title>
       <link href="/hexo-tagplugin-2/"/>
       <url>/hexo-tagplugin-2/</url>

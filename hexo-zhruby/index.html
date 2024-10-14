@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>MensaarLecker -- A statistics for UdS Mensa using Selenium | GreenMeeple</title>
-  <meta name="keywords" content=" Python , Scraper , Selenium ">
-  <meta name="description" content="MensaarLecker -- A statistics for UdS Mensa using Selenium | GreenMeeple">
+  <title>hexo-zhruby -- HTML ruby tag with auto Chinese languages pronounciation | GreenMeeple</title>
+  <meta name="keywords" content=" Hexo , Node.js , HTML , Cantonese ">
+  <meta name="description" content="hexo-zhruby -- HTML ruby tag with auto Chinese languages pronounciation | GreenMeeple">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="Personal Info.Chun Ngai Li (Alex), M.Sc. Cybersecurity in Saarland University,B.Eng Information Engineering in CUHK. Recent WorksA C&#x2F;C++ programmer. Also working on Backend &amp; Python developing.Cur">
 <meta property="og:type" content="website">
@@ -484,9 +484,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-mensaar" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-hexo-zhruby" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">MensaarLecker -- A statistics for UdS Mensa using Selenium</h1>
+        <h1 class="article-title">hexo-zhruby -- HTML ruby tag with auto Chinese languages pronounciation</h1>
     
     <div class="article-meta">
         
@@ -504,23 +504,25 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color2">Python</a>
+            <a class="color5">Hexo</a>
             
-            <a class="color3">Scraper</a>
+            <a class="color3">Node.js</a>
             
-            <a class="color4">Selenium</a>
+            <a class="color5">HTML</a>
+            
+            <a class="color5">Cantonese</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-10-09 16:52:23'>2024-10-06 05:03</time>
+            Created At : <time class="date" title='Updated At: 2024-10-14 04:09:10'>2024-10-14 04:04</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:888</span>
+        <span>Count:511</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -550,7 +552,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%F0%9F%8D%BD-%F0%9F%A5%A8-MensaarLecker-%E2%80%93-A-beloved-tool-to-find-out-Mensa-Ladies%E2%80%99-favourite-menu-%F0%9F%A5%A8-%F0%9F%8D%BD"><span class="toc-text">🍽 🥨 MensaarLecker – A beloved tool to find out Mensa Ladies’ favourite menu 🥨 🍽</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Motivation"><span class="toc-text">Motivation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Description"><span class="toc-text">Description</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Developing-Process"><span class="toc-text">Developing Process</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Beautiful-Soup"><span class="toc-text">Beautiful Soup</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Selenium"><span class="toc-text">Selenium</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Scraping"><span class="toc-text">Scraping</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Storage"><span class="toc-text">Storage</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Automation"><span class="toc-text">Automation</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Install"><span class="toc-text">Install</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Use-cases"><span class="toc-text">Use cases</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Usage"><span class="toc-text">Usage</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#For-the-1st-use-case-pronunciation-indication"><span class="toc-text">For the 1st use case (pronunciation indication):</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#For-the-2nd-use-case-Gikun"><span class="toc-text">For the 2nd use case (Gikun):</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Known-issues"><span class="toc-text">Known issues</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#References"><span class="toc-text">References</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -566,113 +568,62 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>I Dedicate this project to my favourite <a target="_blank" rel="noopener" href="https://www.stw-saarland.de/de/Verpflegung/Mensa-Saarbrucken/Unser-Angebot">Mensa</a> in Germany. I love you deeply with all my heart. Thank you for all the budget menu and frozen food recommendations. The food price is so low, just like my body weight.</p>
-</blockquote>
-<p>This post is to share the walkthrough of this project’s development. For project details, please visit the repository <a target="_blank" rel="noopener" href="https://github.com/greenmeeple/MensaarLecker">MensaarLecker</a></p>
-<h1 id="🍽-🥨-MensaarLecker-–-A-beloved-tool-to-find-out-Mensa-Ladies’-favourite-menu-🥨-🍽"><a href="#🍽-🥨-MensaarLecker-–-A-beloved-tool-to-find-out-Mensa-Ladies’-favourite-menu-🥨-🍽" class="headerlink" title="🍽 🥨 MensaarLecker – A beloved tool to find out Mensa Ladies’ favourite menu 🥨 🍽"></a>🍽 🥨 MensaarLecker – A beloved tool to find out Mensa Ladies’ favourite menu 🥨 🍽</h1><h2 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h2><p>Me and my friends <del>hate</del><strong>love</strong> the UdS Mensa so much! The infinite frozen food and french fries menus give us so much energy and motivation for the 5-hour afternoon coding marathon. However, no one actually knows how many potatoes they have exterminated throughout the week. We have a genius webpage created by some <a target="_blank" rel="noopener" href="https://gibtesheuteschnitzel.de/">Schnitzel lover</a>. Personally, I like its minimalistic layout and determination on Schnitzel searching. </p>
-<blockquote>
-<p>However, we want more.</p>
-</blockquote>
-<p>It’s not just Schnitzel; we want to know everything about their menu. We want to know what’s inside the mensa ladies’ brains when they design next week’s menu.</p>
-<blockquote>
-<p>The desire never ends. We need more data, more details, more, More, <strong>MORE!</strong></p>
-</blockquote>
-<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>MensaarLecker is a statistic that collects all the menus’ occurrences and provides daily menu information. It contains:</p>
+        <p>Implement the HTML tag <code>&lt;ruby&gt;</code> for Hexo using <a target="_blank" rel="noopener" href="https://hexo.io/docs/tag-plugins">Tag Plugin</a> feature. Provide auto pronounciation indication for Jyutping (Cantonese), Zhuyin (Taiwanese Mandarin), and Pinyin (Chinese Mandarin), and the default setting for general usage. Support Traditonal and Simplified Chinese characters. </p>
+<p>Inspired by the <a target="_blank" rel="noopener" href="https://github.com/jamespan/hexo-ruby-character">hexo-ruby-character</a> by <a target="_blank" rel="noopener" href="https://github.com/jamespan">jamespan</a>.</p>
+<h2 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h2><pre><code>npm install hexo-zhruby --save
+</code></pre>
+<h2 id="Use-cases"><a href="#Use-cases" class="headerlink" title="Use cases"></a>Use cases</h2><p>Ruby (ルビ) is also known as <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Furigana">Furigana</a> (振り仮名).  It contains two basic use cases:</p>
+<ol>
+<li>To clarify or indicate the pronunciation for readers</li>
+<li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Kanji#Special_readings">Gikun</a>, in which the characters have different pronunciations than they seem due to convention or for a specific context. For example, the pronunciation of 煙草 in Japanese is <em>tabako (tobacco)</em>.</li>
+</ol>
+<h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><p><strong>TLDR</strong>: Usage: <code>&#123;% tag rb|rt %&#125;</code>; Tag options: <code>ruby_def</code>, <code>ruby_jy</code>, <code>ruby_py</code>, <code>ruby_zy</code>.</p>
+<hr>
+<h3 id="For-the-1st-use-case-pronunciation-indication"><a href="#For-the-1st-use-case-pronunciation-indication" class="headerlink" title="For the 1st use case (pronunciation indication):"></a>For the 1st use case (pronunciation indication):</h3><p><code>ruby_def</code> allows any language, and the spacing in <code>rp</code> will expand evenly with respect to the word length in <code>rt</code>.</p>
 <ul>
-<li>A web scraper that collects the <a target="_blank" rel="noopener" href="https://mensaar.de/#/menu/sb">daily menu</a> of the Mensa in Saarland University. </li>
-<li>A statistic that calculates each item’s (main dish &amp; side dish) occurrence and percentage.</li>
+<li><code>&#123;% ruby_def 基本|きほん %&#125;</code> → <ruby>基本<rp> (</rp><rt>きほん</rt><rp>) </rp></ruby></li>
+<li><code>&#123;% ruby_def 基本|기본 %&#125;</code> → <ruby>基本<rp> (</rp><rt>기본</rt><rp>) </rp></ruby></li>
+<li><code>&#123;% ruby_def 基本|fundamental %&#125;</code> → <ruby>基本<rp> (</rp><rt>fundamental</rt><rp>) </rp></ruby></li>
+<li><code>&#123;% ruby_def 基本|θεμελιώδες %&#125;</code> → <ruby>基本<rp> (</rp><rt>θεμελιώδες</rt><rp>) </rp></ruby></li>
+<li><code>&#123;% ruby_def 基本|базовый %&#125;</code> → <ruby>基本<rp> (</rp><rt>базовый</rt><rp>) </rp></ruby></li>
+<li><code>&#123;% ruby_def 基本|základní %&#125;</code> → <ruby>基本<rp> (</rp><rt>základní</rt><rp>) </rp></ruby></li>
+<li><code>&#123;% ruby_def fundamental|基本 %&#125;</code> → <ruby>fundamental<rp> (</rp><rt>基本</rt><rp>)</li>
 </ul>
-<h2 id="Developing-Process"><a href="#Developing-Process" class="headerlink" title="Developing Process"></a>Developing Process</h2><h3 id="Beautiful-Soup"><a href="#Beautiful-Soup" class="headerlink" title="Beautiful Soup"></a><a target="_blank" rel="noopener" href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">Beautiful Soup</a></h3><p>I started my journey with Beautiful Soup, one of the most popular Python web scraper packages. However, as a Uni that is well-known for its computer science program, all the menus are rendered using JavaScript. And beautiful can only scrape HTML and XML tags. So the scraper can only see an empty skeleton page:</p>
-<p><img src="/images/mensaar_empty.png"></p>
-<h3 id="Selenium"><a href="#Selenium" class="headerlink" title="Selenium"></a><a target="_blank" rel="noopener" href="https://selenium-python.readthedocs.io/">Selenium</a></h3><p>Basically, Selenium is a <a target="_blank" rel="noopener" href="https://www.selenium.dev/documentation/webdriver/">Webdriver</a> that opens a browser naturally, like a human user. Then from there we can scrape the rendered information. Things get simpler once we can see the website as we see it on the browser. We just need to find the tag that contains the information we need and save it for storage.</p>
-<h3 id="Scraping"><a href="#Scraping" class="headerlink" title="Scraping"></a>Scraping</h3><table>
-<thead>
-<tr>
-<th align="left">data we need</th>
-<th align="left">tag</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">menus</td>
-<td align="left"><code>&lt;div class=&quot;counter&quot;&gt;</code></td>
-</tr>
-<tr>
-<td align="left">date</td>
-<td align="left"><code>&lt;div class=&quot;cursor-pointer active list-group-item&quot;&gt;</code></td>
-</tr>
-<tr>
-<td align="left">main dish</td>
-<td align="left"><code>&lt;span class=&quot;meal-title&quot;&gt;</code></td>
-</tr>
-<tr>
-<td align="left">side dish</td>
-<td align="left"><code>&lt;div class=&quot;component&quot;&gt;</code></td>
-</tr>
-</tbody></table>
-<p>The first part of the task is to get the daily menu. We also get the date on the website to make the following work easier.</p>
-<p>By the <code>find_element</code> and <code>find_elements</code> functions in Selenium, we can create a simple scraper like this:</p>
-<pre><code class="python">from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.by import By
-
-driver = webdriver.Firefox()
-driver.get(&quot;https://mensaar.de/#/menu/sb&quot;)
-counters = driver.find_elements(By.CLASS_NAME, &quot;counter&quot;)
-
-for counter in counters:
-    meal_title = meal.find_element(By.CLASS_NAME, &quot;meal-title&quot;).text.strip()
-</code></pre>
-<p>However, on the webpage there is also a counter called <code>Wahlessen.</code> Which refers to a more pricy and unpredictable menu, and we want to exclude its data:</p>
-<pre><code class="python">counter_title = counter.find_element(By.CLASS_NAME, &quot;counter-title&quot;).text.strip()
-
-# Filter for specified counter titles
-if counter_title in [&quot;Menü 1&quot;, &quot;Menü 2&quot;, &quot;Mensacafé&quot;]:
-    meal_title = meal.find_element(By.CLASS_NAME, &quot;meal-title&quot;).text.strip()
-</code></pre>
-<h3 id="Storage"><a href="#Storage" class="headerlink" title="Storage"></a>Storage</h3><p>It is kinda pointless to make a full database for these small piece of data <em>(I may take my word back in the future)</em>, so we just store the collected data in Json files.<br>Therefore, everyday we will have a separate Json file. We create a separate Json file for statistics, it is calculated simply by adding current date’s data into the file, so it will accumlate each data entry.</p>
-<pre><code class="python">with open(output_file, &quot;w&quot;, encoding=&quot;utf-8&quot;) as f:
-    json.dump(result, f, ensure_ascii=False, indent=2)
-
-print(f&quot;Results saved to &#123;output_file&#125;&quot;)
-
-# Save the updated occurrence counts to the JSON file
-count_result = &#123;
-    &quot;meal_counts&quot;: dict(meal_count),
-    &quot;component_counts&quot;: dict(component_count)
-&#125;
-
-with open(count_file, &quot;w&quot;, encoding=&quot;utf-8&quot;) as f:
-    json.dump(count_result, f, ensure_ascii=False, indent=2)
-
-print(f&quot;Counts saved to &#123;count_file&#125;&quot;)
-</code></pre>
-<pre><code class="json">&#123;
-  &quot;meal_counts&quot;: &#123;
-    &quot;KlimaTeller: Broccoli und Cheese Nuggets mit Chili-Kräuterdip&quot;: 1,
-    &quot;Hähnchenschnitzel „Wiener Art“ mit Paprikarahmsoße&quot;: 1,
-    &quot;Flammkuchen mit Tomaten und Rucola&quot;: 1,
-    &quot;Köttbullar und Rahmsoße mit Champignons&quot;: 1,
-    &quot;KlimaTeller: Türkische Pizza Lahmacun&quot;: 1,
-    &quot;KlimaTeller: Hausgemachte vegetarische Kartoffelsuppe&quot;: 1,
-    &quot;Pasta mit Argentinischer Hackfleischsoße&quot;: 1,
-  &#125;,
-  &quot;component_counts&quot;: &#123;
-    &quot;Pommes Frites&quot;: 1,
-    &quot;Karottensalat&quot;: 2,
-    &quot;Reis (aus biologischem Anbau)&quot;: 2,
-    &quot;Weiße Salatsoße Dressing&quot;: 6,
-    &quot;Obst (Apfel aus biologischem Anbau)&quot;: 6,
-    &quot;Brötchen&quot;: 4,
-    &quot;Wiener Würstchen&quot;: 1
-  &#125;
-&#125;
-</code></pre>
-<h3 id="Automation"><a href="#Automation" class="headerlink" title="Automation"></a>Automation</h3><blockquote>
-<p>The part that gives me headache…</p>
-</blockquote>
-<p>I tried to use <a target="_blank" rel="noopener" href="https://docs.github.com/en/actions/writing-workflows">GitHub Workflow</a> to run the Python script daily, but it didn’t work out… So for my next step, I may create automation locally and connect the folder to the repository through GitHub Desktop.</p>
-<p>Another solution maybe transfer the Json storage into standard database like <a target="_blank" rel="noopener" href="https://www.mongodb.com/">MongoDB</a>.</p>
+<p><code>ruby_jy</code>, <code>ruby_py</code>, <code>ruby_zy</code> refers to <strong>Jyutping</strong>, <strong>Pinyin</strong>, <strong>Zhuyin</strong> respectively. </p>
+<p>No need to enter the pronunciation manually in <code>rt</code>; the value will automatically be returned.</p>
+<ul>
+<li><code>&#123;% ruby_zy 基本 %&#125;</code> → <ruby>基本<rp> (</rp><rt>ㄐㄧ ㄅㄣˇ</rt><rp>) </rp></ruby></li>
+<li><code>&#123;% ruby_py 基本 %&#125;</code> → <ruby>基本<rp> (</rp><rt>jī běn</rt><rp>) </rp></ruby></li>
+<li><code>&#123;% ruby_jy 基本 %&#125;</code> → <ruby>基本<rp> (</rp><rt>gei1 bun2</rt><rp>) </rp></ruby></li>
+</ul>
+<hr>
+<h3 id="For-the-2nd-use-case-Gikun"><a href="#For-the-2nd-use-case-Gikun" class="headerlink" title="For the 2nd use case (Gikun):"></a>For the 2nd use case (Gikun):</h3><p>Same usage for <code>ruby_def</code>.</p>
+<ul>
+<li><code>&#123;% ruby_def special|basic %&#125;</code> → <ruby>special<rp> (</rp><rt>basic</rt><rp>) </rp></ruby></li>
+<li><code>&#123;% ruby_def 特別|基本 %&#125;</code> → <ruby>特別<rp> (</rp><rt>基本</rt><rp>)</li>
+</ul>
+<p>In <code>ruby_jy</code>, <code>ruby_py</code>, <code>ruby_zy</code>, you can also add <code>|rt</code> just like <code>ruby_def</code>.</p>
+<ul>
+<li><code>&#123;% ruby_zy 特別|special %&#125;</code> → <ruby>特別<rp> (</rp><rt>special</rt><rp>) </rp></ruby></li>
+<li><code>&#123;% ruby_py 特別|special %&#125;</code> → <ruby>特別<rp> (</rp><rt>special</rt><rp>) </rp></ruby></li>
+<li><code>&#123;% ruby_jy 特別|special %&#125;</code> → <ruby>特別<rp> (</rp><rt>special</rt><rp>) </rp></ruby></li>
+<li><code>&#123;% ruby_zy 特別|基本 %&#125;</code> → <ruby>特別<rp> (</rp><rt>ㄐㄧ ㄅㄣˇ</rt><rp>) </rp></ruby></li>
+<li><code>&#123;% ruby_py 特別|基本 %&#125;</code> → <ruby>特別<rp> (</rp><rt>jī běn</rt><rp>) </rp></ruby></li>
+<li><code>&#123;% ruby_jy 特別|基本 %&#125;</code> → <ruby>特別<rp> (</rp><rt>gei1 bun2</rt><rp>) </rp></ruby></li>
+</ul>
+<p>Notice that the <code>rt</code> output depends on the pronunciation in <code>rt,</code> but <strong>not</strong> <code>rp.</code> This feature is only available when <code>rt</code> is a <strong>Chinese Character</strong> in <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/CJK_Unified_Ideographs_(Unicode_block)">CJK Unified Ideographs</a> (\U4E00-\U9FFF).</p>
+<p>If the input of <code>rt</code> is not in CJK Unified Ideographs, it is considered as <code>ruby_def</code>.</p>
+<h2 id="Known-issues"><a href="#Known-issues" class="headerlink" title="Known issues"></a>Known issues</h2><p>The Chinese language contains a lot of <strong>Homophones</strong>, which can be resolved by context most of the time. However, for long sentences (&gt;&#x3D; 15 characters), or very specific names and terms, the auto-generation from 1st use case may not be very sensitive.</p>
+<p>Please use <code>ruby_def</code> if it happens or contribute to this project by providing a more sensitive or advanced Chinese vocabulary library.</p>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/CJK_characters">CJK Unified Ideographs (Unicode block)</a></li>
+<li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Homophone">Homophone</a></li>
+<li><a target="_blank" rel="noopener" href="https://en.wiktionary.org/wiki/%E7%BE%A9%E8%A8%93#Japanese">Gikun (japanese only)</a></li>
+<li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Kanji#Special_readings">Gikun (English version under the article Kanji)</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ruby">&lt;ruby&gt;: The Ruby Annotation element</a></li>
+<li><a target="_blank" rel="noopener" href="https://en.wikibooks.org/wiki/Unicode/Character_reference">Unicode&#x2F;Character reference</a></li>
+<li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Universal_Character_Set_characters">Universal Character Set characters (Unicode)</a></li>
+</ul>
 
       
        <hr><span style="font-style: italic;color: gray;"> Please cite the source for reprints, feel free to verify the sources cited in the article, and point out any errors or lack of clarity of expression. You can comment in the comments section below or email to GreenMeeple@yahoo.com </span>
