@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>GreenMeeple</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="GreenMeeple">
+  <title>Using Hexo Scripts functions to create a custom Tag Plugin | GreenMeeple</title>
+  <meta name="keywords" content=" Hexo , Node.js ">
+  <meta name="description" content="Using Hexo Scripts functions to create a custom Tag Plugin | GreenMeeple">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="Personal Info.Chun Ngai Li (Alex), M.Sc. Cybersecurity in Saarland University,B.Eng Information Engineering in CUHK. Recent WorksA C&#x2F;C++ programmer. Also working on Backend &amp; Python developing.Cur">
 <meta property="og:type" content="website">
@@ -59,7 +59,7 @@
 
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/"
    class="avatar_target">
@@ -459,18 +459,79 @@
 
     </div>
     <div class="hide-list">
-        <div class="semicircle" data-title="切换全屏 快捷键 s">
+        <div class="semicircle" data-title="Toggle full screen shortcut key s">
             <div class="brackets first"><</div>
             <div class="brackets">&gt;</div>
         </div>
     </div>
 </aside>
-<div id="post" class="index">
+<div id="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-hexo-tagplugin-1" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Congrats-You-finally-discovered-a-Special-GreenMeeple"><span class="toc-text">Congrats! You finally discovered a Special GreenMeeple.</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#About-GreenMeeple"><span class="toc-text">About GreenMeeple</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#About-this-blog"><span class="toc-text">About this blog</span></a></li></ol></li></ol>
+        <h1 class="article-title">Using Hexo Scripts functions to create a custom Tag Plugin</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="Coding">Coding</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color5">Hexo</a>
+            
+            <a class="color3">Node.js</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            Created At : <time class="date" title='Updated At: 2024-10-11 05:33:25'>2024-10-12 04:03</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>Count:392</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            Views :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="Jump to comment area">
+            <a href="#comments">
+                Comment:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Tag-Plugin"><span class="toc-text">Tag Plugin</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Usage"><span class="toc-text">Usage</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Script"><span class="toc-text">Script</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Beyond-Scripts"><span class="toc-text">Beyond Scripts</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -483,20 +544,64 @@
     }
 </style>
 </div>
-            <h1 id="Congrats-You-finally-discovered-a-Special-GreenMeeple"><a href="#Congrats-You-finally-discovered-a-Special-GreenMeeple" class="headerlink" title="Congrats! You finally discovered a Special GreenMeeple."></a>Congrats! You finally discovered a Special GreenMeeple.</h1><p>A Cybersecurity Student with coding and boardgame.<br>This is page to leave my traces in the digital world.</p>
-<h2 id="About-GreenMeeple"><a href="#About-GreenMeeple" class="headerlink" title="About GreenMeeple"></a>About GreenMeeple</h2><p>Meeple share what it likes. Coding, Boardgames, language learing, Traveling, Movie, Cantonese, Coffee, Hong Kong…</p>
-<p>This little Meeple has written <code class="article_number"></code> blog posts, with <code class="site_word_count"></code> words.</p>
-<p><code class="site_uv"></code> beautiful souls and robots are curious of this Meeple, and they have visited <code class="site_pv"></code> times.</p>
-<h2 id="About-this-blog"><a href="#About-this-blog" class="headerlink" title="About this blog"></a>About this blog</h2><p>This blog is using <a target="_blank" rel="noopener" href="https://pages.github.com/">GitHub Pages</a> to deploy. Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> with open-source theme <a target="_blank" rel="noopener" href="https://github.com/yelog/hexo-theme-3-hexo">3-hexo</a>.</p>
-<p>Main Function</p>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>To color your personal Hexo Blog with more features, scripts and plugins are your powerful tools to use. Below we are trying to create our own <code>tag plugin</code> for the Hexo blog.</p>
+<h2 id="Tag-Plugin"><a href="#Tag-Plugin" class="headerlink" title="Tag Plugin"></a>Tag Plugin</h2><blockquote>
+<p>Be careful! Tag plugins are different from <a target="_blank" rel="noopener" href="https://hexo.io/docs/front-matter">post tags</a>.</p>
+</blockquote>
+<p>Tag plugins are special type of syntax that you may use in your Markdown file. </p>
+<p>Hexo has already provided some default Tag plugins like <code>Block Quote</code> and <code>iframe</code>.</p>
+<h3 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h3><p>For example, the syntax of <code>iframe</code> tag is:</p>
+<pre><code class="Markdown">&#123;% iframe url [width] [height] %&#125;
+</code></pre>
+<p>Let say I want to embed a video from me and my friends’ YouTube video:</p>
+<pre><code class="Markdown">&#123;% iframe https://www.youtube.com/embed/XIOl6BU7s9I?si=yTYsHIXNM6o-Zl9Z 820 461%&#125;
+</code></pre>
+<p>And that’s how it looks like:</p>
+<iframe src="https://www.youtube.com/embed/XIOl6BU7s9I?si=yTYsHIXNM6o-Zl9Z" width="820" height="461" frameborder="0" loading="lazy" allowfullscreen></iframe>
+
+<h2 id="Script"><a href="#Script" class="headerlink" title="Script"></a>Script</h2><p>Let say we want to create our own tag plugin, we can use the Hexo <code>script</code> function. Here’re the steps.</p>
+<ol>
+<li><p>Create a JavaScript file with function <code>hexo.extend.tag.register(&quot;tag_name&quot;, args)</code>. You may also put your own function inside so that the second argument can also be <code>function (args)&#123;&#125;</code></p>
+<p> Here is an example of a function that create a tag named <code>youtube</code>, with embedding video function:</p>
+<pre><code class="JavaScript">hexo.extend.tag.register(&quot;youtube&quot;, function (args) &#123;
+    var id = args[0];
+    return (
+        &#39;&lt;div class=&quot;video-container&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;http://www.youtube.com/embed/&#39; +
+        id +
+        &#39;&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;&#39;
+    );
+&#125;);
+</code></pre>
+</li>
+<li><p>Put your JavaScript files in the <code>scripts</code> folder. If your project folder is new, you may not be able to find it. This is because <code>scripts</code> folder is actually under the <code>Themes</code> folder.</p>
+<p> You may check <a target="_blank" rel="noopener" href="https://hexo.io/docs/themes">here</a> to see the structure of <code>themes</code> and create your own one. Or you may be simply find a template on the <a target="_blank" rel="noopener" href="https://hexo.io/themes/">Hexo themes community</a> then put your <code>.js</code> file into the theme.</p>
+</li>
+<li><p>It is done! Hexo will load them during initialization and you may use them in your blog post designs.</p>
+</li>
+</ol>
+<h3 id="Beyond-Scripts"><a href="#Beyond-Scripts" class="headerlink" title="Beyond Scripts"></a>Beyond Scripts</h3><p>If you are not satisfied with creating a local tag plugin, but a public one that will be seen by the community, you should consider using Hexo <code>plugin</code> function instead.</p>
+<p>check <a href="../hexo-tagplugin-2">here</a> to continue the journey.</p>
+<hr>
+<p>Further Reading:</p>
 <ul>
-<li>Search support for article title, hashtag (#hashtag), author (@author)</li>
-<li>pad&#x2F;cell phone and other mobile compatitable</li>
-<li>Page global shortcuts <a target="_blank" rel="noopener" href='http://yelog.org/2017/03/24/3-hexo-shortcuts/'>3-hexo shortcut list</a></li>
+<li><a target="_blank" rel="noopener" href="https://hexo.io/docs/plugins">Hexo Plugins and Scripts</a></li>
+<li><a target="_blank" rel="noopener" href="https://hexo.io/docs/tag-plugins">Hexo Tag Plugins</a></li>
+<li><a target="_blank" rel="noopener" href="https://hexo.io/api/tag">Hexo Tag Api</a></li>
+<li><a target="_blank" rel="noopener" href="https://hexo.io/plugins/">Hexo Plugins Community</a></li>
 </ul>
 
-        </article>
-        
+      
+       <hr><span style="font-style: italic;color: gray;"> Please cite the source for reprints, feel free to verify the sources cited in the article, and point out any errors or lack of clarity of expression. You can comment in the comments section below or email to GreenMeeple@yahoo.com </span>
+    </div>
+</article>
+
+
+
+
+
     <div id="comments"></div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 
@@ -518,6 +623,13 @@
 </script>
 
 
+
+
+    
+
+
+
+
     </div>
     <div class="copyright">
         <p class="footer-entry">©2024 Alex Li
@@ -525,11 +637,11 @@
 <p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
 
     </div>
-</div>
-<div class="full-toc">
-    <button class="full" data-title="Toggle full screen shortcut key s"><span class="min "></span></button>
+    <div class="full-toc">
+        <button class="full" data-title="Toggle full screen shortcut key s"><span class="min "></span></button>
 <a class="" id="rocket" ></a>
 
+    </div>
 </div>
 
 </body>

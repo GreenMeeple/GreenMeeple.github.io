@@ -4,6 +4,60 @@
   
     
     <entry>
+      <title>Using Hexo Plugin functions to create a custom Tag Plugin</title>
+      <link href="/hexo-tagplugin-2/"/>
+      <url>/hexo-tagplugin-2/</url>
+      
+        <content type="html"><![CDATA[<p><strong>Disclaimer</strong>: For explaination on <code>Tag Plugin</code> and <code>Scripts</code> in Hexo, you may take a look of <a href="../hexo-tagplugin-1">this post</a>.</p><h2 id="Plugin"><a href="#Plugin" class="headerlink" title="Plugin"></a>Plugin</h2><blockquote><p>Be Careful! Don’t mix <code>Plugin</code>, <code>Tag</code>, and <code>Tag Plugin</code> in Hexo, even though they look extremely similar.</p></blockquote><p>Usually, <code>Plugin</code> are for complicated functions. Yet if you want to publish your custom <code>Tag Plugin</code> to the NPM registry or even shown on the Hexo Community Page, <code>Plugin</code> would be a very good choice.</p><h3 id="From-Script-to-Plugin"><a href="#From-Script-to-Plugin" class="headerlink" title="From Script to Plugin"></a>From Script to Plugin</h3><ol><li><p>Navigate <code>node_modules</code> folder in your project folder. This is the folder where Hexo stored all the packages for your blog. Create a folder inside and the name must begin with <code>hexo-</code> or Hexo will ignore it.</p></li><li><p>Your folder must contain at least two files: the actual JavaScript code and <code>package.json</code> file that describes the purpose of the plugin and sets its dependencies.</p><pre><code class="directory">.├── index.js└── package.json</code></pre></li><li><p>In <code>package.json</code>, it should at least have the <code>name</code>, <code>version</code> and <code>main</code> entries set.</p><pre><code class="json">&#123;    &quot;name&quot;: &quot;hexo-my-plugin&quot;,    &quot;version&quot;: &quot;0.0.1&quot;,    &quot;main&quot;: &quot;index&quot;&#125;</code></pre></li><li><p>In the root <code>package.json</code> of your hexo project, you also need to list your <code>plugin</code> as a <code>dependency</code>, for Hexo to detect and load it.</p><pre><code class="json">&#123;    &quot;name&quot;: &quot;hexo-site&quot;,    &quot;version&quot;: &quot;0.0.0&quot;,    &quot;private&quot;: true,    &quot;scripts&quot;: &#123;        &quot;build&quot;: &quot;hexo generate&quot;,        &quot;clean&quot;: &quot;hexo clean&quot;,        &quot;deploy&quot;: &quot;hexo deploy&quot;,        &quot;server&quot;: &quot;hexo server&quot;    &#125;,    &quot;hexo&quot;: &#123;        &quot;version&quot;: &quot;&quot;    &#125;,    &quot;dependencies&quot;: &#123;        &quot;hexo&quot;: &quot;^7.3.0&quot;,        ...        &quot;hexo-my-plugin&quot;: &quot;0.0.1&quot;     &#125;&#125;</code></pre></li></ol><h2 id="Plugin-Publishing"><a href="#Plugin-Publishing" class="headerlink" title="Plugin Publishing"></a>Plugin Publishing</h2><hr><p>Further Reading:</p><ul><li><a href="https://hexo.io/docs/plugins">Hexo Plugins and Scripts</a></li><li><a href="https://hexo.io/docs/tag-plugins">Hexo Tag Plugins</a></li><li><a href="https://hexo.io/plugins/">Hexo Plugins Community</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Coding </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> Node.js </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Using Hexo Scripts functions to create a custom Tag Plugin</title>
+      <link href="/hexo-tagplugin-1/"/>
+      <url>/hexo-tagplugin-1/</url>
+      
+        <content type="html"><![CDATA[<p>To color your personal Hexo Blog with more features, scripts and plugins are your powerful tools to use. Below we are trying to create our own <code>tag plugin</code> for the Hexo blog.</p><h2 id="Tag-Plugin"><a href="#Tag-Plugin" class="headerlink" title="Tag Plugin"></a>Tag Plugin</h2><blockquote><p>Be careful! Tag plugins are different from <a href="https://hexo.io/docs/front-matter">post tags</a>.</p></blockquote><p>Tag plugins are special type of syntax that you may use in your Markdown file. </p><p>Hexo has already provided some default Tag plugins like <code>Block Quote</code> and <code>iframe</code>.</p><h3 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h3><p>For example, the syntax of <code>iframe</code> tag is:</p><pre><code class="Markdown">&#123;% iframe url [width] [height] %&#125;</code></pre><p>Let say I want to embed a video from me and my friends’ YouTube video:</p><pre><code class="Markdown">&#123;% iframe https://www.youtube.com/embed/XIOl6BU7s9I?si=yTYsHIXNM6o-Zl9Z 820 461%&#125;</code></pre><p>And that’s how it looks like:</p><iframe src="https://www.youtube.com/embed/XIOl6BU7s9I?si=yTYsHIXNM6o-Zl9Z" width="820" height="461" frameborder="0" loading="lazy" allowfullscreen></iframe><h2 id="Script"><a href="#Script" class="headerlink" title="Script"></a>Script</h2><p>Let say we want to create our own tag plugin, we can use the Hexo <code>script</code> function. Here’re the steps.</p><ol><li><p>Create a JavaScript file with function <code>hexo.extend.tag.register(&quot;tag_name&quot;, args)</code>. You may also put your own function inside so that the second argument can also be <code>function (args)&#123;&#125;</code></p><p> Here is an example of a function that create a tag named <code>youtube</code>, with embedding video function:</p><pre><code class="JavaScript">hexo.extend.tag.register(&quot;youtube&quot;, function (args) &#123;    var id = args[0];    return (        &#39;&lt;div class=&quot;video-container&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;http://www.youtube.com/embed/&#39; +        id +        &#39;&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;&#39;    );&#125;);</code></pre></li><li><p>Put your JavaScript files in the <code>scripts</code> folder. If your project folder is new, you may not be able to find it. This is because <code>scripts</code> folder is actually under the <code>Themes</code> folder.</p><p> You may check <a href="https://hexo.io/docs/themes">here</a> to see the structure of <code>themes</code> and create your own one. Or you may be simply find a template on the <a href="https://hexo.io/themes/">Hexo themes community</a> then put your <code>.js</code> file into the theme.</p></li><li><p>It is done! Hexo will load them during initialization and you may use them in your blog post designs.</p></li></ol><h3 id="Beyond-Scripts"><a href="#Beyond-Scripts" class="headerlink" title="Beyond Scripts"></a>Beyond Scripts</h3><p>If you are not satisfied with creating a local tag plugin, but a public one that will be seen by the community, you should consider using Hexo <code>plugin</code> function instead.</p><p>check <a href="../hexo-tagplugin-2">here</a> to continue the journey.</p><hr><p>Further Reading:</p><ul><li><a href="https://hexo.io/docs/plugins">Hexo Plugins and Scripts</a></li><li><a href="https://hexo.io/docs/tag-plugins">Hexo Tag Plugins</a></li><li><a href="https://hexo.io/api/tag">Hexo Tag Api</a></li><li><a href="https://hexo.io/plugins/">Hexo Plugins Community</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Coding </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> Node.js </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Railroad Diagram of version range operators</title>
       <link href="/json-dependencies-diagram/"/>
       <url>/json-dependencies-diagram/</url>
