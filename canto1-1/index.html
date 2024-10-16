@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Explaination of version range operators in package.json for package dependencies | GreenMeeple</title>
-  <meta name="keywords" content=" Node.js , json ">
-  <meta name="description" content="Explaination of version range operators in package.json for package dependencies | GreenMeeple">
+  <title>Cantonese Ch.1-1 -- Onset (Phonology) | GreenMeeple</title>
+  <meta name="keywords" content=" Language Learning , Cantonese , Phonology ">
+  <meta name="description" content="Cantonese Ch.1-1 -- Onset (Phonology) | GreenMeeple">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="Personal Info.Chun Ngai Li (Alex), M.Sc. Cybersecurity in Saarland University,B.Eng Information Engineering in CUHK. Recent WorksA C&#x2F;C++ programmer. Also working on Backend &amp; Python developing.Cur">
 <meta property="og:type" content="website">
@@ -525,9 +525,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-json-dependencies" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-canto1-1" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Explaination of version range operators in package.json for package dependencies</h1>
+        <h1 class="article-title">Cantonese Ch.1-1 -- Onset (Phonology)</h1>
     
     <div class="article-meta">
         
@@ -537,7 +537,7 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="Coding">Coding</a>
+            <a  data-rel="Cantonese">Cantonese</a>
             
         </span>
         
@@ -545,21 +545,23 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color3">Node.js</a>
+            <a class="color3">Language Learning</a>
             
-            <a class="color5">json</a>
+            <a class="color5">Cantonese</a>
+            
+            <a class="color5">Phonology</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-10-11 05:19:17'>2024-10-10 19:04</time>
+            Created At : <time class="date" title='Updated At: 2024-10-16 03:17:32'>2024-10-15 02:06</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:677</span>
+        <span>Count:348</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -589,7 +591,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Basic-Structure"><span class="toc-text">Basic Structure</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Version-Range-operator"><span class="toc-text">Version Range operator</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Basic-Range"><span class="toc-text">Basic Range</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Advanced-Range"><span class="toc-text">Advanced Range</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Further-Explaination-on-Caret-Ranges"><span class="toc-text">Further Explaination on Caret Ranges ^</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Special-interaction-with-Wildcard-operator-x"><span class="toc-text">Special interaction with Wildcard operator x</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Usage-and-Common-Practices"><span class="toc-text">Usage and Common Practices</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Introduction-of-Onset"><span class="toc-text">Introduction of Onset</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Onset"><span class="toc-text">Onset</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -606,114 +608,111 @@
     <div class="article-entry" itemprop="articleBody">
       
         <blockquote>
-<p>To see the syntax and Railroad diagram version, goto <a href="../json-dependencies-diagram/">here</a></p>
+<p>Golden Rule of becoming a native Cantonese speaker: <strong>Tones</strong> &gt; Everything!</p>
 </blockquote>
-<h2 id="Basic-Structure"><a href="#Basic-Structure" class="headerlink" title="Basic Structure"></a>Basic Structure</h2><p>Package dependecies are a tuple of <code>[major, minor, patch]</code> with numeric values.</p>
-<pre><code class="json">&#123;
-    &quot;name&quot;: &quot;project name&quot;,
-    &quot;version&quot;: &quot;0.0.1&quot;,
-    &quot;description&quot;: &quot;description of the project&quot;,
-    &quot;keywords&quot;: [
-        &quot;keyword 1&quot;,
-        &quot;keyword 2&quot;
-    ],
-    &quot;author&quot;: &quot;John Doe&quot;,
-    &quot;dependencies&quot;: &#123;
-      &quot;package-1&quot;: &quot;~0.6.2&quot;,
-      &quot;package-2&quot;: &quot;&gt;=2.6.2&quot;
-    &#125;
-&#125;
-</code></pre>
-<h2 id="Version-Range-operator"><a href="#Version-Range-operator" class="headerlink" title="Version Range operator"></a>Version Range operator</h2><h3 id="Basic-Range"><a href="#Basic-Range" class="headerlink" title="Basic Range"></a>Basic Range</h3><p>For <code>x</code> in exmaple, see <strong>Advanced Range</strong> below.</p>
+<p>In this blog we use <a target="_blank" rel="noopener" href="https://jyutping.org/en/docs/english/">Jyutping</a> to indicate the pronounciation of Cantonese characters.</p>
+<p>Previous lesson: <a href="../canto1-0/">Introduction</a></p>
+<h2 id="Introduction-of-Onset"><a href="#Introduction-of-Onset" class="headerlink" title="Introduction of Onset"></a>Introduction of Onset</h2><p>In this lesson, We start with <code>Onset</code>. They are all <code>consonants</code> that used before vowels.</p>
+<p>For example, “good morning” in Cantonese is <ruby>早晨<rp>(</rp><rt>zou2 san4</rt><rp>)</rp></ruby>, where “z” and “s” are Onset here.</p>
+<h2 id="Onset"><a href="#Onset" class="headerlink" title="Onset"></a>Onset</h2><p>Basically, these consonant looks identical, or you may find alternative spelling in English, except<br><code>kw</code>, <code>z</code>, and <code>c</code> might be a little bit special.</p>
 <table>
 <thead>
 <tr>
-<th align="left">Operator</th>
-<th align="left">Explaination</th>
-<th align="left">Example</th>
+<th align="left">Jyutping</th>
+<th align="left">Sounds in English</th>
+<th align="left">Cantonese Example</th>
+<th align="left">Jyutping</th>
+<th align="left">Sounds in English</th>
+<th align="left">Cantonese Example</th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="left"><code>=</code></td>
-<td align="left">package version must be exactly matched</td>
-<td align="left"><code>1.0.0</code> :&#x3D; <code>=1.0.0</code><br>(They are equivalent)</td>
+<td align="left">-</td>
+<td align="left">character that have no starting consonant (Null initial)</td>
+<td align="left"><ruby>呀<rp>(</rp><rt>aa3</rt><rp>)</rp></ruby></td>
+<td align="left">k</td>
+<td align="left">k in king</td>
+<td align="left"><ruby>卡<rp>(</rp><rt>kaa1</rt><rp>)</rp></ruby></td>
 </tr>
 <tr>
-<td align="left"><code>&lt;</code></td>
-<td align="left">package version must be less than indicated</td>
-<td align="left"><code>&lt;2.0.0</code> <br>:&#x3D;version from <code>0.0.1</code> to <code>1.x.x</code></td>
+<td align="left">b</td>
+<td align="left">b in bar</td>
+<td align="left"><ruby>巴<rp>(</rp><rt>baa1</rt><rp>)</rp></ruby></td>
+<td align="left">ng</td>
+<td align="left">ng in sing</td>
+<td align="left"><ruby>牙<rp>(</rp><rt>ngaa4</rt><rp>)</rp></ruby></td>
 </tr>
 <tr>
-<td align="left"><code>&lt;=</code></td>
-<td align="left">package version must be less than or euqal to indicated</td>
-<td align="left"><code>&lt;=2.0.0</code> <br>:&#x3D;version from <code>0.0.1</code> to <code>2.0.0</code></td>
+<td align="left">p</td>
+<td align="left">p in palm</td>
+<td align="left"><ruby>怕<rp>(</rp><rt>paa3</rt><rp>)</rp></ruby></td>
+<td align="left">h</td>
+<td align="left">h in harp</td>
+<td align="left"><ruby>蝦<rp>(</rp><rt>haa1</rt><rp>)</rp></ruby></td>
 </tr>
 <tr>
-<td align="left"><code>&gt;</code></td>
-<td align="left">package version must be greater than indicated</td>
-<td align="left"><code>&gt;2.0.0</code>:&#x3D; <br>version from <code>2.0.1</code> to <code>x</code> (x &gt;&#x3D; 2)</td>
+<td align="left">m</td>
+<td align="left">m in mat</td>
+<td align="left"><ruby>媽<rp>(</rp><rt>maa1</rt><rp>)</rp></ruby></td>
+<td align="left">gw</td>
+<td align="left">gu in guava</td>
+<td align="left"><ruby>瓜<rp>(</rp><rt>gwaa1</rt><rp>)</rp></ruby></td>
 </tr>
 <tr>
-<td align="left"><code>&gt;=</code></td>
-<td align="left">package version must be greater than or euqal to indicated</td>
-<td align="left"><code>&gt;=2.0.0</code> <br>:&#x3D;version from <code>2.0.0</code> to <code>x</code> (x &gt;&#x3D; 2)</td>
+<td align="left">f</td>
+<td align="left">f in foul</td>
+<td align="left"><ruby>花<rp>(</rp><rt>faa1</rt><rp>)</rp></ruby></td>
+<td align="left">kw</td>
+<td align="left">qu in aqua</td>
+<td align="left"><ruby>誇<rp>(</rp><rt>kwaa1</rt><rp>)</rp></ruby></td>
 </tr>
 <tr>
-<td align="left"><code>||</code></td>
-<td align="left">joined one or more operator</td>
-<td align="left"><code>&gt;2.0.1 || &lt;1.7.3</code> <br>:&#x3D;version greater than <code>2.0.1</code> or less than <code>1.7.3</code></td>
+<td align="left">d</td>
+<td align="left">d in dip<sup>1</sup></td>
+<td align="left"><ruby>打<rp>(</rp><rt>daa2</rt><rp>)</rp></ruby></td>
+<td align="left">w</td>
+<td align="left">w in wow</td>
+<td align="left"><ruby>蛙<rp>(</rp><rt>waa1</rt><rp>)</rp></ruby></td>
 </tr>
 <tr>
-<td align="left"><code>space</code></td>
-<td align="left">Intersected one or more operator</td>
-<td align="left"><code>&gt;=2.0.1  &lt;=1.7.3</code> <br>:&#x3D;version from <code>2.0.1</code> to <code>1.7.3</code> (inclusive)</td>
+<td align="left">t</td>
+<td align="left">t in tip<sup>1</sup></td>
+<td align="left"><ruby>他<rp>(</rp><rt>taa1</rt><rp>)</rp></ruby></td>
+<td align="left">z</td>
+<td align="left"><strong>j</strong> in job but with a ‘t’ sound in front of it<sup>2</sup></td>
+<td align="left"><ruby>揸<rp>(</rp><rt>zaa1</rt><rp>)</rp></ruby></td>
+</tr>
+<tr>
+<td align="left">n</td>
+<td align="left">n in nap</td>
+<td align="left"><ruby>那<rp>(</rp><rt>naa5</rt><rp>)</rp></ruby></td>
+<td align="left">c</td>
+<td align="left">c in chat<sup>2</sup> without ‘h’ sound</td>
+<td align="left"><ruby>叉<rp>(</rp><rt>caa1</rt><rp>)</rp></ruby></td>
+</tr>
+<tr>
+<td align="left">l</td>
+<td align="left">l in lap</td>
+<td align="left"><ruby>啦<rp>(</rp><rt>laa1</rt><rp>)</rp></ruby></td>
+<td align="left">s</td>
+<td align="left">s in soup</td>
+<td align="left"><ruby>沙<rp>(</rp><rt>saa1</rt><rp>)</rp></ruby></td>
+</tr>
+<tr>
+<td align="left">g</td>
+<td align="left">g in gum</td>
+<td align="left"><ruby>家<rp>(</rp><rt>gaa1</rt><rp>)</rp></ruby></td>
+<td align="left">j</td>
+<td align="left"><strong>y</strong> in yes<sup>3</sup></td>
+<td align="left"><ruby>也<rp>(</rp><rt>jaa5</rt><rp>)</rp></ruby></td>
 </tr>
 </tbody></table>
-<h3 id="Advanced-Range"><a href="#Advanced-Range" class="headerlink" title="Advanced Range"></a>Advanced Range</h3><p>Advanced ranges may be combined in the same way as primitive comparators using <code>space</code> or <code>||</code>.</p>
-<table>
-<thead>
-<tr>
-<th align="left">Operator</th>
-<th align="left">Explaination</th>
-<th align="left">Example</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><code>X</code>, <code>x</code>, <code>*</code></td>
-<td align="left">A Wildcard may be used for any values in the <code>[major, minor, patch]</code> tuple (missing value are consider using Wildcard <code>x</code>)</td>
-<td align="left"><code>*</code> :&#x3D; <code> </code><em>(empty string)</em> :&#x3D; <code>&gt;=0.0.0</code><br><code>1.x.x</code> :&#x3D; <code>1.x</code> :&#x3D; <code>1</code> :&#x3D; <code>&gt;=1.0.0 &lt;2.0.0</code></td>
-</tr>
-<tr>
-<td align="left"><code>-</code></td>
-<td align="left">Specifies an inclusive set of package version</td>
-<td align="left"><code>1.2 - 2.3.4</code> :&#x3D; <code>&gt;=1.2.0 &lt;=2.3.4</code> <br>(missing pieces of first version are replaced with zeroes)<br><code>1.2.3 - 2.3</code> :&#x3D; <code>&gt;=1.2.3 &lt;2.4.x</code><br>(missing pieces of second version replace with <code>X-range</code>)</td>
-</tr>
-<tr>
-<td align="left"><code>~</code></td>
-<td align="left">Allows <code>patch</code> or <code>minor</code> level version changes, depends on specification</td>
-<td align="left"><code>~1.2.3</code> :&#x3D; any version starts with <code>1.2</code> and greater than <code>1.2.3</code><br><code>~1.2</code> :&#x3D; any version starts with <code>1.2</code> (same as <code>1.2.x</code>)</td>
-</tr>
-<tr>
-<td align="left"><code>^</code></td>
-<td align="left">Allows version changes in the <code>[major, minor, patch]</code> tuple without modify the <strong>left-most non-zero</strong> element.</td>
-<td align="left"><code>^1.2.3</code> :&#x3D; <code>&gt;=1.2.3 &lt;2.0.0</code><br>(minor update)<br><code>^0.2.3</code> :&#x3D; <code>&gt;=0.2.3 &lt;0.3.0</code> <br>(patch update)<br><code>^0.0.3</code> :&#x3D; <code>&gt;=0.0.3 &lt;0.0.4</code><br>(no updates)</td>
-</tr>
-</tbody></table>
-<h2 id="Further-Explaination-on-Caret-Ranges"><a href="#Further-Explaination-on-Caret-Ranges" class="headerlink" title="Further Explaination on Caret Ranges ^"></a>Further Explaination on Caret Ranges <code>^</code></h2><h3 id="Special-interaction-with-Wildcard-operator-x"><a href="#Special-interaction-with-Wildcard-operator-x" class="headerlink" title="Special interaction with Wildcard operator x"></a>Special interaction with Wildcard operator <code>x</code></h3><p>When parsing caret ranges, minor and patch values with wildcard <code>x</code> desugars to the number <code>0</code> (missing values are consider as <code>x</code>):</p>
-<p>Example:</p>
-<ul>
-<li><code>^1.2.x</code> :&#x3D; <code>&gt;=1.2.0 &lt;2.0.0-0</code> (equivalent to <code>^1.2.0</code>)</li>
-<li><code>^1.x</code> :&#x3D; <code>&gt;=1.0.0 &lt;2.0.0-0</code> (equivalent to <code>^1.0.0</code>)</li>
-</ul>
-<p>However, when both <code>major</code> and <code>minor</code> versions are <code>0</code>, Caret range allow flexibility within wildcard <code>x</code>:</p>
-<p>Example:</p>
-<ul>
-<li><code>^0.0.x</code> :&#x3D; <code>&gt;=0.0.0 &lt;0.1.0-0</code> (<strong>NOT</strong> equivalent to <code>^0.0.0</code>, but similar to <code>^0.1.0</code>)</li>
-</ul>
-<h3 id="Usage-and-Common-Practices"><a href="#Usage-and-Common-Practices" class="headerlink" title="Usage and Common Practices"></a>Usage and Common Practices</h3><p>Caret ranges usually ideally used when an author may make breaking changes. For example, between <code>0.2.4</code> and <code>0.3.0</code> releases, which is a common practice. </p>
-<p>However, it presumes that there will not be breaking changes between <code>0.2.4</code> and <code>0.2.5</code>. It allows for changes that are presumed to be additive (but non-breaking), according to commonly observed practices.</p>
+<p><sup>1</sup>If you are a native English speaker, you may notice that Cantonese “d” sound is softer than English but “t” sound is harder (the different is small here). But if you really have problem pronouncing this pair, try to make your tongue touching the upper front teeth when making the “d” and “t” sound.</p>
+<p><sup>2</sup>In Catonese, “c” and “z” are clear sound without aspirated. You can try to not stress your lip and open your mouth wider.</p>
+<p><sup>3</sup>In most the European language, “j” sounds like “y” in English. For example “ja” in German. Therefore Jyutping choose “j” to represent this sound.</p>
+<p>Next lesson: <a href="../canto0-2/">Rimes with a</a></p>
 <hr>
-<p>Further Reading: <a target="_blank" rel="noopener" href="https://github.com/npm/node-semver#ranges">version range</a> in npm-semver, <a target="_blank" rel="noopener" href="https://github.com/actions/setup-node#supported-version-syntax">setup-node</a> in GitHub Actions</p>
+<p>Further reading: <a target="_blank" rel="noopener" href="https://jyutping.org/en/">Jyutping</a>, <a target="_blank" rel="noopener" href="https://lshk.org/">The linguistic Society of Hong Kong</a></p>
 
       
        <hr><span style="font-style: italic;color: gray;"> Please cite the source for reprints, feel free to verify the sources cited in the article, and point out any errors or lack of clarity of expression. You can comment in the comments section below or email to GreenMeeple@yahoo.com </span>

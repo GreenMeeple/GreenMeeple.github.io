@@ -4,7 +4,65 @@
   
     
     <entry>
-      <title>hexo-zhruby -- HTML ruby tag with auto Chinese languages pronounciation</title>
+      <title>Cantonese Ch.1-2 -- Rimes with a (Phonology)</title>
+      <link href="/canto1-2/"/>
+      <url>/canto1-2/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>Golden Rule of becoming a native Cantonese speaker: <strong>Tones</strong> &gt; Everything!</p></blockquote><p>In this blog we use <a href="https://jyutping.org/en/docs/english/">Jyutping</a> to indicate the pronounciation of Cantonese characters.</p><p>Previous lesson: <a href="../canto1-1/">Introduction</a></p><h2 id="Introduction-of-Rimes-with-a"><a href="#Introduction-of-Rimes-with-a" class="headerlink" title="Introduction of Rimes with a"></a>Introduction of Rimes with a</h2><p>In this lesson, we talk about Rimes with <code>a</code>. Rimes is a syllable of vowels with consonants that you can <strong>rhyme</strong>!</p><p>For example in English, the Rime of “Cow” is “ow”; in Cantonese cow is <ruby>牛<rp>(</rp><rt>ngau4</rt><rp>)</rp></ruby>, and the Rime is “au”.</p><h2 id="Rimes-with-a"><a href="#Rimes-with-a" class="headerlink" title="Rimes with a"></a>Rimes with a</h2><p>There are two vowels in Cantonese that starts with a. <code>a</code> sounds like “uh” in English and <code>aa</code> “ahhh” in English.<br>And all their combinations as well. For example, <ruby>分<rp>(</rp><rt>fan1</rt><rp>)</rp></ruby> sounds like “fun”, and <ruby>飯<rp>(</rp><rt>faan6</rt><rp>)</rp></ruby> sounds like fan in fantastic<sup>1</sup>.</p><p>Still, it may be difficult to distinguish their difference when they form rimes with other sounds.</p><p>A trick to pronounce any combinations of <code>aa</code> sound is, try to add the “ahhh” sound before <code>a</code>.<br>For example, <code>ap</code> sounds like “up” in English, and <code>aap</code> sounds like “ahh-up”, but in one syllable.</p><p>Let see all the rimes combinations with <code>a</code> and <code>aa</code>!</p><h3 id="word-spells-with-a"><a href="#word-spells-with-a" class="headerlink" title="word spells with a"></a>word spells with <code>a</code></h3><table><thead><tr><th align="left">Jyutping</th><th align="left">Sounds in English</th><th align="left">Cantonese Example</th><th align="left">Jyutping</th><th align="left">Sounds in English</th><th align="left">Cantonese Example</th></tr></thead><tbody><tr><td align="left">a</td><td align="left">uh in bruh</td><td align="left"><ruby>嘞<rp>(</rp><rt>laa3</rt><rp>)</rp></ruby></td><td align="left">ang</td><td align="left">ung in sung</td><td align="left"><ruby>增<rp>(</rp><rt>zang1</rt><rp>)</rp></ruby></td></tr><tr><td align="left">ai</td><td align="left">i in night<sup>2</sup></td><td align="left"><ruby>擠<rp>(</rp><rt>zai1</rt><rp>)</rp></ruby></td><td align="left">ap</td><td align="left">up in cup</td><td align="left"><ruby>汁<rp>(</rp><rt>zap1</rt><rp>)</rp></ruby></td></tr><tr><td align="left">au</td><td align="left">ull in dull</td><td align="left"><ruby>周<rp>(</rp><rt>zau1</rt><rp>)</rp></ruby></td><td align="left">at</td><td align="left">utt in butt</td><td align="left"><ruby>質<rp>(</rp><rt>zat1</rt><rp>)</rp></ruby></td></tr><tr><td align="left">am</td><td align="left">um in sum</td><td align="left"><ruby>針<rp>(</rp><rt>zam1</rt><rp>)</rp></ruby></td><td align="left">ak</td><td align="left">uck in duck</td><td align="left"><ruby>則<rp>(</rp><rt>zak1</rt><rp>)</rp></ruby></td></tr><tr><td align="left">an</td><td align="left">un in fun</td><td align="left"><ruby>珍<rp>(</rp><rt>zan1</rt><rp>)</rp></ruby></td><td align="left"></td><td align="left"></td><td align="left"></td></tr></tbody></table><h3 id="word-spells-with-aa"><a href="#word-spells-with-aa" class="headerlink" title="word spells with aa:"></a>word spells with <code>aa</code>:</h3><table><thead><tr><th align="left">Jyutping</th><th align="left">Sounds in English</th><th align="left">Cantonese Example</th><th align="left">Jyutping</th><th align="left">Sounds in English</th><th align="left">Cantonese Example</th></tr></thead><tbody><tr><td align="left">aa</td><td align="left">a in far</td><td align="left"><ruby>渣<rp>(</rp><rt>zaa1</rt><rp>)</rp></ruby></td><td align="left">aang</td><td align="left">an in France but ends with ng not n</td><td align="left"><ruby>爭<rp>(</rp><rt>zang1</rt><rp>)</rp></ruby></td></tr><tr><td align="left">aai</td><td align="left">i in high</td><td align="left"><ruby>齋<rp>(</rp><rt>zaai1</rt><rp>)</rp></ruby></td><td align="left">aap</td><td align="left">alm in calm with p instead</td><td align="left"><ruby>集<rp>(</rp><rt>zaap6</rt><rp>)</rp></ruby></td></tr><tr><td align="left">aau</td><td align="left">ow in wow</td><td align="left"><ruby>嘲<rp>(</rp><rt>zaau1</rt><rp>)</rp></ruby></td><td align="left">aat</td><td align="left">alm in calm with t instead</td><td align="left"><ruby>紮<rp>(</rp><rt>zaat3</rt><rp>)</rp></ruby></td></tr><tr><td align="left">aam</td><td align="left">alm in calm</td><td align="left"><ruby>站<rp>(</rp><rt>zaam6</rt><rp>)</rp></ruby></td><td align="left">aak</td><td align="left">alm in calm with k instead</td><td align="left"><ruby>窄<rp>(</rp><rt>zaak3</rt><rp>)</rp></ruby></td></tr><tr><td align="left">aan</td><td align="left">an in France</td><td align="left"><ruby>讚<rp>(</rp><rt>zaan3</rt><rp>)</rp></ruby></td><td align="left"></td><td align="left"></td><td align="left"></td></tr></tbody></table><p>Next lesson: <a href="../canto0-3/">Rimes with e</a></p><hr><p>Further reading: <a href="https://jyutping.org/en/">Jyutping</a>, <a href="https://lshk.org/">The linguistic Society of Hong Kong</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Cantonese </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Language Learning </tag>
+            
+            <tag> Cantonese </tag>
+            
+            <tag> Phonology </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Cantonese Ch.1-1 -- Onset (Phonology)</title>
+      <link href="/canto1-1/"/>
+      <url>/canto1-1/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>Golden Rule of becoming a native Cantonese speaker: <strong>Tones</strong> &gt; Everything!</p></blockquote><p>In this blog we use <a href="https://jyutping.org/en/docs/english/">Jyutping</a> to indicate the pronounciation of Cantonese characters.</p><p>Previous lesson: <a href="../canto1-0/">Introduction</a></p><h2 id="Introduction-of-Onset"><a href="#Introduction-of-Onset" class="headerlink" title="Introduction of Onset"></a>Introduction of Onset</h2><p>In this lesson, We start with <code>Onset</code>. They are all <code>consonants</code> that used before vowels.</p><p>For example, “good morning” in Cantonese is <ruby>早晨<rp>(</rp><rt>zou2 san4</rt><rp>)</rp></ruby>, where “z” and “s” are Onset here.</p><h2 id="Onset"><a href="#Onset" class="headerlink" title="Onset"></a>Onset</h2><p>Basically, these consonant looks identical, or you may find alternative spelling in English, except<br><code>kw</code>, <code>z</code>, and <code>c</code> might be a little bit special.</p><table><thead><tr><th align="left">Jyutping</th><th align="left">Sounds in English</th><th align="left">Cantonese Example</th><th align="left">Jyutping</th><th align="left">Sounds in English</th><th align="left">Cantonese Example</th></tr></thead><tbody><tr><td align="left">-</td><td align="left">character that have no starting consonant (Null initial)</td><td align="left"><ruby>呀<rp>(</rp><rt>aa3</rt><rp>)</rp></ruby></td><td align="left">k</td><td align="left">k in king</td><td align="left"><ruby>卡<rp>(</rp><rt>kaa1</rt><rp>)</rp></ruby></td></tr><tr><td align="left">b</td><td align="left">b in bar</td><td align="left"><ruby>巴<rp>(</rp><rt>baa1</rt><rp>)</rp></ruby></td><td align="left">ng</td><td align="left">ng in sing</td><td align="left"><ruby>牙<rp>(</rp><rt>ngaa4</rt><rp>)</rp></ruby></td></tr><tr><td align="left">p</td><td align="left">p in palm</td><td align="left"><ruby>怕<rp>(</rp><rt>paa3</rt><rp>)</rp></ruby></td><td align="left">h</td><td align="left">h in harp</td><td align="left"><ruby>蝦<rp>(</rp><rt>haa1</rt><rp>)</rp></ruby></td></tr><tr><td align="left">m</td><td align="left">m in mat</td><td align="left"><ruby>媽<rp>(</rp><rt>maa1</rt><rp>)</rp></ruby></td><td align="left">gw</td><td align="left">gu in guava</td><td align="left"><ruby>瓜<rp>(</rp><rt>gwaa1</rt><rp>)</rp></ruby></td></tr><tr><td align="left">f</td><td align="left">f in foul</td><td align="left"><ruby>花<rp>(</rp><rt>faa1</rt><rp>)</rp></ruby></td><td align="left">kw</td><td align="left">qu in aqua</td><td align="left"><ruby>誇<rp>(</rp><rt>kwaa1</rt><rp>)</rp></ruby></td></tr><tr><td align="left">d</td><td align="left">d in dip<sup>1</sup></td><td align="left"><ruby>打<rp>(</rp><rt>daa2</rt><rp>)</rp></ruby></td><td align="left">w</td><td align="left">w in wow</td><td align="left"><ruby>蛙<rp>(</rp><rt>waa1</rt><rp>)</rp></ruby></td></tr><tr><td align="left">t</td><td align="left">t in tip<sup>1</sup></td><td align="left"><ruby>他<rp>(</rp><rt>taa1</rt><rp>)</rp></ruby></td><td align="left">z</td><td align="left"><strong>j</strong> in job but with a ‘t’ sound in front of it<sup>2</sup></td><td align="left"><ruby>揸<rp>(</rp><rt>zaa1</rt><rp>)</rp></ruby></td></tr><tr><td align="left">n</td><td align="left">n in nap</td><td align="left"><ruby>那<rp>(</rp><rt>naa5</rt><rp>)</rp></ruby></td><td align="left">c</td><td align="left">c in chat<sup>2</sup> without ‘h’ sound</td><td align="left"><ruby>叉<rp>(</rp><rt>caa1</rt><rp>)</rp></ruby></td></tr><tr><td align="left">l</td><td align="left">l in lap</td><td align="left"><ruby>啦<rp>(</rp><rt>laa1</rt><rp>)</rp></ruby></td><td align="left">s</td><td align="left">s in soup</td><td align="left"><ruby>沙<rp>(</rp><rt>saa1</rt><rp>)</rp></ruby></td></tr><tr><td align="left">g</td><td align="left">g in gum</td><td align="left"><ruby>家<rp>(</rp><rt>gaa1</rt><rp>)</rp></ruby></td><td align="left">j</td><td align="left"><strong>y</strong> in yes<sup>3</sup></td><td align="left"><ruby>也<rp>(</rp><rt>jaa5</rt><rp>)</rp></ruby></td></tr></tbody></table><p><sup>1</sup>If you are a native English speaker, you may notice that Cantonese “d” sound is softer than English but “t” sound is harder (the different is small here). But if you really have problem pronouncing this pair, try to make your tongue touching the upper front teeth when making the “d” and “t” sound.</p><p><sup>2</sup>In Catonese, “c” and “z” are clear sound without aspirated. You can try to not stress your lip and open your mouth wider.</p><p><sup>3</sup>In most the European language, “j” sounds like “y” in English. For example “ja” in German. Therefore Jyutping choose “j” to represent this sound.</p><p>Next lesson: <a href="../canto0-2/">Rimes with a</a></p><hr><p>Further reading: <a href="https://jyutping.org/en/">Jyutping</a>, <a href="https://lshk.org/">The linguistic Society of Hong Kong</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Cantonese </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Language Learning </tag>
+            
+            <tag> Cantonese </tag>
+            
+            <tag> Phonology </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>hexo-zhruby -- Implementing HTML Ruby tag in Hexo</title>
       <link href="/hexo-zhruby/"/>
       <url>/hexo-zhruby/</url>
       
@@ -22,11 +80,11 @@
             
             <tag> Hexo </tag>
             
+            <tag> Cantonese </tag>
+            
             <tag> Node.js </tag>
             
             <tag> HTML </tag>
-            
-            <tag> Cantonese </tag>
             
         </tags>
       
