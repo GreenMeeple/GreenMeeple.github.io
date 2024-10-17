@@ -144,7 +144,7 @@
     <li>
         <div class="all active" data-rel="All">All
             
-                <small>(13)</small>
+                <small>(14)</small>
             
         </div>
     </li>
@@ -186,7 +186,7 @@
         <div data-rel="Cantonese">
             
             Cantonese
-            <small>(2)</small>
+            <small>(3)</small>
         </div>
         
     </li>
@@ -267,8 +267,8 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="13">
-<input type="hidden" id="yelog_site_word_count" value="5.7k">
+<input type="hidden" id="yelog_site_posts_number" value="14">
+<input type="hidden" id="yelog_site_word_count" value="6.1k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -401,6 +401,15 @@
         
         
         <a  class="All Cantonese "
+           href="/canto1-2/"
+           data-tag="Language Learning,Cantonese,Phonology"
+           data-author="" >
+            <span class="post-title" title="Cantonese Ch.1-2 -- Rimes with a (Phonology)">Cantonese Ch.1-2 -- Rimes with a (Phonology)</span>
+            <span class="post-date" title="2024-10-17 02:06:12">2024/10/17</span>
+        </a>
+        
+        
+        <a  class="All Cantonese "
            href="/canto1-1/"
            data-tag="Language Learning,Cantonese,Phonology"
            data-author="" >
@@ -413,14 +422,14 @@
            href="/canto1-0/"
            data-tag="Language Learning,Cantonese,Phonology"
            data-author="" >
-            <span class="post-title" title="Cantonese Ch.1-0 -- Introduction of Phonology &amp; Tones">Cantonese Ch.1-0 -- Introduction of Phonology &amp; Tones</span>
+            <span class="post-title" title="Cantonese Ch.1-0 -- Introduction to Phonology &amp; Tones">Cantonese Ch.1-0 -- Introduction to Phonology &amp; Tones</span>
             <span class="post-date" title="2024-10-15 01:06:12">2024/10/15</span>
         </a>
         
         
         <a  class="All Projects "
            href="/hexo-zhruby/"
-           data-tag="Hexo,Cantonese,Node.js,HTML"
+           data-tag="Cantonese,Hexo,Node.js,HTML"
            data-author="" >
             <span class="post-title" title="hexo-zhruby -- Implementing HTML Ruby tag in Hexo">hexo-zhruby -- Implementing HTML Ruby tag in Hexo</span>
             <span class="post-date" title="2024-10-14 04:04:55">2024/10/14</span>
@@ -556,7 +565,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-10-11 02:21:17'>2024-10-08 04:40</time>
+            Created At : <time class="date" title='Updated At: 2024-10-17 04:21:29'>2024-10-08 04:40</time>
         
     </div>
     <div class="article-meta">
@@ -663,24 +672,24 @@
 <p>In this course, send action &#x3D; $out_a$ &#x3D; $a!!$ ; receive action &#x3D; $in_a$ &#x3D; $a??$.</p>
 </blockquote>
 <p>Example of Composition by <code>Broadcast</code> synchronization. $(card &#x3D; \lbrace 1 \rbrace)$</p>
-<p><img src="/images/pv/pv1_2_composition.png" alt="composition"></p>
+<p><img src="/images/pv/pv1_2_composition.png"></p>
 <h2 id="Synchronization-Primitives"><a href="#Synchronization-Primitives" class="headerlink" title="Synchronization Primitives"></a>Synchronization Primitives</h2><p>In this course, there are 4 types of synchronization:<br><code>Pairwise Rendezvous</code>, <code>Broadcast</code>, <code>Asynchronous Rendezvous</code>, and <code>Lossy Broadcast</code>.</p>
 <h3 id="Pairwise-Rendezvous"><a href="#Pairwise-Rendezvous" class="headerlink" title="Pairwise Rendezvous"></a>Pairwise Rendezvous</h3><blockquote>
 <p><strong>Exactly ONE</strong> process take $out_a$ action, <strong>ONE</strong> process take $in_a$ action. $(card &#x3D; \lbrace 1 \rbrace)$</p>
 </blockquote>
-<p><img src="/images/pv/pv1_2_pairwise.png" alt="Pairwise"></p>
+<p><img src="/images/pv/pv1_2_pairwise.png"></p>
 <h3 id="Broadcast"><a href="#Broadcast" class="headerlink" title="Broadcast"></a>Broadcast</h3><blockquote>
 <p><strong>ONE</strong> process take $out_a$ action, <strong>ALL</strong> process take $in_a$ action if they are able to $(card &#x3D; \mathbb{N}_0)$.</p>
 </blockquote>
-<p><img src="/images/pv/pv1_2_broadcast.png" alt="Broadcast"></p>
+<p><img src="/images/pv/pv1_2_broadcast.png"></p>
 <h3 id="Asynchronous-Rendezvous"><a href="#Asynchronous-Rendezvous" class="headerlink" title="Asynchronous Rendezvous"></a>Asynchronous Rendezvous</h3><blockquote>
 <p><strong>ONE</strong> process take $out_a$ action, <strong>ZERO &#x2F; ONE</strong> process take $in_a$ action $(card &#x3D; {0, 1})$.</p>
 </blockquote>
-<p><img src="/images/pv/pv1_2_async.png" alt="Asynchronous"></p>
+<p><img src="/images/pv/pv1_2_async.png"></p>
 <h3 id="Lossy-Broadcast"><a href="#Lossy-Broadcast" class="headerlink" title="Lossy Broadcast"></a>Lossy Broadcast</h3><blockquote>
 <p><strong>ONE</strong> process take $out_a$ action, <strong>ONE</strong> process take $in_a$ action $(card &#x3D; \mathbb{N}_0, I\text{ not necessarily maximal})$.</p>
 </blockquote>
-<p><img src="/images/pv/pv1_2_lossy.png" alt="Lossy"></p>
+<p><img src="/images/pv/pv1_2_lossy.png"></p>
 <hr>
 <p>Next post: <a href=""></a></p>
 <p>Further Reading: <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Synchronization_(computer_science)">Synchronization</a>, <a target="_blank" rel="noopener" href="https://www7.in.tum.de/~esparza/Talks/ParamVerif.PDF">Parameterized Verification</a> by Javier Esparza.</p>
