@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Using Hexo Plugin functions to create a custom Tag Plugin | GreenMeeple</title>
-  <meta name="keywords" content=" Hexo , Node.js ">
-  <meta name="description" content="Using Hexo Plugin functions to create a custom Tag Plugin | GreenMeeple">
+  <title>Cantonese Ch.1-3 -- Rimes with e (Phonology) | GreenMeeple</title>
+  <meta name="keywords" content=" Language Learning , Cantonese , Phonology ">
+  <meta name="description" content="Cantonese Ch.1-3 -- Rimes with e (Phonology) | GreenMeeple">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="Personal Info.Chun Ngai Li (Alex), M.Sc. Cybersecurity in Saarland University,B.Eng Information Engineering in CUHK. Recent WorksA C&#x2F;C++ programmer. Also working on Backend &amp; Python developing.Cur">
 <meta property="og:type" content="website">
@@ -543,9 +543,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-hexo-tagplugin-2" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-canto1-3" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Using Hexo Plugin functions to create a custom Tag Plugin</h1>
+        <h1 class="article-title">Cantonese Ch.1-3 -- Rimes with e (Phonology)</h1>
     
     <div class="article-meta">
         
@@ -555,7 +555,7 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="Coding">Coding</a>
+            <a  data-rel="Cantonese">Cantonese</a>
             
         </span>
         
@@ -563,21 +563,23 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color5">Hexo</a>
+            <a class="color3">Language Learning</a>
             
-            <a class="color3">Node.js</a>
+            <a class="color5">Cantonese</a>
+            
+            <a class="color5">Phonology</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-10-11 05:49:23'>2024-10-13 04:03</time>
+            Created At : <time class="date" title='Updated At: 2024-10-17 18:55:46'>2024-10-18 02:06</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:309</span>
+        <span>Count:307</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -607,7 +609,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Plugin"><span class="toc-text">Plugin</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#From-Script-to-Plugin"><span class="toc-text">From Script to Plugin</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Plugin-Publishing"><span class="toc-text">Plugin Publishing</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Rimes-with-e"><span class="toc-text">Rimes with e</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#word-spells-with-e"><span class="toc-text">word spells with e</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#word-spells-with-oe-and-eo"><span class="toc-text">word spells with oe and eo</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -623,58 +625,100 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>Disclaimer</strong>: For explaination on <code>Tag Plugin</code> and <code>Scripts</code> in Hexo, you may take a look of <a href="../hexo-tagplugin-1">this post</a>.</p>
-<h2 id="Plugin"><a href="#Plugin" class="headerlink" title="Plugin"></a>Plugin</h2><blockquote>
-<p>Be Careful! Don’t mix <code>Plugin</code>, <code>Tag</code>, and <code>Tag Plugin</code> in Hexo, even though they look extremely similar.</p>
+        <blockquote>
+<p>Golden Rule of becoming a native Cantonese speaker: <strong>Tones</strong> &gt; Everything!</p>
 </blockquote>
-<p>Usually, <code>Plugin</code> are for complicated functions. Yet if you want to publish your custom <code>Tag Plugin</code> to the NPM registry or even shown on the Hexo Community Page, <code>Plugin</code> would be a very good choice.</p>
-<h3 id="From-Script-to-Plugin"><a href="#From-Script-to-Plugin" class="headerlink" title="From Script to Plugin"></a>From Script to Plugin</h3><ol>
-<li><p>Navigate <code>node_modules</code> folder in your project folder. This is the folder where Hexo stored all the packages for your blog. Create a folder inside and the name must begin with <code>hexo-</code> or Hexo will ignore it.</p>
-</li>
-<li><p>Your folder must contain at least two files: the actual JavaScript code and <code>package.json</code> file that describes the purpose of the plugin and sets its dependencies.</p>
-<pre><code class="directory">.
-├── index.js
-└── package.json
-</code></pre>
-</li>
-<li><p>In <code>package.json</code>, it should at least have the <code>name</code>, <code>version</code> and <code>main</code> entries set.</p>
-<pre><code class="json">&#123;
-    &quot;name&quot;: &quot;hexo-my-plugin&quot;,
-    &quot;version&quot;: &quot;0.0.1&quot;,
-    &quot;main&quot;: &quot;index&quot;
-&#125;
-</code></pre>
-</li>
-<li><p>In the root <code>package.json</code> of your hexo project, you also need to list your <code>plugin</code> as a <code>dependency</code>, for Hexo to detect and load it.</p>
-<pre><code class="json">&#123;
-    &quot;name&quot;: &quot;hexo-site&quot;,
-    &quot;version&quot;: &quot;0.0.0&quot;,
-    &quot;private&quot;: true,
-    &quot;scripts&quot;: &#123;
-        &quot;build&quot;: &quot;hexo generate&quot;,
-        &quot;clean&quot;: &quot;hexo clean&quot;,
-        &quot;deploy&quot;: &quot;hexo deploy&quot;,
-        &quot;server&quot;: &quot;hexo server&quot;
-    &#125;,
-    &quot;hexo&quot;: &#123;
-        &quot;version&quot;: &quot;&quot;
-    &#125;,
-    &quot;dependencies&quot;: &#123;
-        &quot;hexo&quot;: &quot;^7.3.0&quot;,
-        ...
-        &quot;hexo-my-plugin&quot;: &quot;0.0.1&quot; 
-    &#125;
-&#125;
-</code></pre>
-</li>
-</ol>
-<h2 id="Plugin-Publishing"><a href="#Plugin-Publishing" class="headerlink" title="Plugin Publishing"></a>Plugin Publishing</h2><hr>
-<p>Further Reading:</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://hexo.io/docs/plugins">Hexo Plugins and Scripts</a></li>
-<li><a target="_blank" rel="noopener" href="https://hexo.io/docs/tag-plugins">Hexo Tag Plugins</a></li>
-<li><a target="_blank" rel="noopener" href="https://hexo.io/plugins/">Hexo Plugins Community</a></li>
-</ul>
+<p>In this blog, we use <a target="_blank" rel="noopener" href="https://jyutping.org/en/docs/english/">Jyutping</a> to indicate the pronunciation of Cantonese characters.</p>
+<p>Previous lesson: <a href="../canto1-2/">Rimes with a</a></p>
+<h2 id="Rimes-with-e"><a href="#Rimes-with-e" class="headerlink" title="Rimes with e"></a>Rimes with <code>e</code></h2><p>In this lesson, we talk about Rimes with <code>e</code>. e is a very naughty sound because it has multiple sounds based on how you spell it.</p>
+<p>Also, e can combine with o to create <code>oe</code> and <code>eo</code> sounds.</p>
+<h3 id="word-spells-with-e"><a href="#word-spells-with-e" class="headerlink" title="word spells with e"></a>word spells with <code>e</code></h3><table>
+<thead>
+<tr>
+<th align="left">Jyutping</th>
+<th align="left">Sounds in English</th>
+<th align="left">Cantonese Example</th>
+<th align="left">Jyutping</th>
+<th align="left">Sounds in English</th>
+<th align="left">Cantonese Example</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">e</td>
+<td align="left">ai in pair</td>
+<td align="left"><ruby>些<rp>(</rp><rt>se1</rt><rp>)</rp></ruby></td>
+<td align="left">eng</td>
+<td align="left">eng in leng<sup>2</sup></td>
+<td align="left"><ruby>鄭<rp>(</rp><rt>zeng6</rt><rp>)</rp></ruby></td>
+</tr>
+<tr>
+<td align="left">ei</td>
+<td align="left">ey in prey</td>
+<td align="left"><ruby>四<rp>(</rp><rt>sei3</rt><rp>)</rp></ruby></td>
+<td align="left">ep</td>
+<td align="left">ep in bicep</td>
+<td align="left"><ruby>夾<rp>(</rp><rt>gaap3</rt><rp>)</rp></ruby></td>
+</tr>
+<tr>
+<td align="left">eu</td>
+<td align="left">eil in veil</td>
+<td align="left"><ruby>掉<rp>(</rp><rt>diu6</rt><rp>)</rp></ruby></td>
+<td align="left">et</td>
+<td align="left">et in pet</td>
+<td align="left"><ruby>坺<rp>(</rp><rt>paat6</rt><rp>)</rp></ruby></td>
+</tr>
+<tr>
+<td align="left">em</td>
+<td align="left">em in gem</td>
+<td align="left"><ruby>舔<rp>(</rp><rt>tim2</rt><rp>)</rp></ruby></td>
+<td align="left">ek</td>
+<td align="left">ek in trek</td>
+<td align="left"><ruby>石<rp>(</rp><rt>sek6</rt><rp>)</rp></ruby></td>
+</tr>
+</tbody></table>
+<p>We can see most of them are the same as e pronounced in English.</p>
+<h3 id="word-spells-with-oe-and-eo"><a href="#word-spells-with-oe-and-eo" class="headerlink" title="word spells with oe and eo"></a>word spells with <code>oe</code> and <code>eo</code></h3><p><code>oe</code> and <code>eo</code> sound very similar. They were considered the same sound before, but soon linguists found that this sound behaved differently and had different consonances.<br>Therefore, they are split for specific use cases. For example, if there’s an <code>eoi</code> sound, there won’t be a <code>oei</code> sound.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Jyutping</th>
+<th align="left">Sounds in English</th>
+<th align="left">Cantonese Example</th>
+<th align="left">Jyutping</th>
+<th align="left">Sounds in English</th>
+<th align="left">Cantonese Example</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">oe</td>
+<td align="left">ur in fur</td>
+<td align="left"><ruby>鋸<rp>(</rp><rt>goe3</rt><rp>)</rp></ruby></td>
+<td align="left">eoi</td>
+<td align="left">an in France but ends with ng not n</td>
+<td align="left"><ruby>衰<rp>(</rp><rt>seoi1</rt><rp>)</rp></ruby></td>
+</tr>
+<tr>
+<td align="left">oeng</td>
+<td align="left">ern in cern<sup>2</sup></td>
+<td align="left"><ruby>薑<rp>(</rp><rt>goeng1</rt><rp>)</rp></ruby></td>
+<td align="left">eon</td>
+<td align="left">alm in calm with p instead</td>
+<td align="left"><ruby>詢<rp>(</rp><rt>seon1</rt><rp>)</rp></ruby></td>
+</tr>
+<tr>
+<td align="left">oek</td>
+<td align="left">erk in berserk</td>
+<td align="left"><ruby>腳<rp>(</rp><rt>goek3</rt><rp>)</rp></ruby></td>
+<td align="left">eot</td>
+<td align="left">alm in calm with t instead</td>
+<td align="left"><ruby>摔<rp>(</rp><rt>seot1</rt><rp>)</rp></ruby></td>
+</tr>
+</tbody></table>
+<p><sup>1</sup><a target="_blank" rel="noopener" href="https://www.google.com/search?q=leng+meaning">meaning of “leng”</a></p>
+<p><sup>2</sup> Obviously, the <code>oeng</code> sound should have a “g” sound, so precisely, it should sound like “caring.” Here, the “ng” is similar to the “ng” in “sing.”</p>
+<p>Next lesson: <a href="../canto1-4/">Rimes with i &amp; o</a></p>
+<hr>
+<p>Further reading: <a target="_blank" rel="noopener" href="https://jyutping.org/en/">Jyutping</a>, <a target="_blank" rel="noopener" href="https://lshk.org/">The linguistic Society of Hong Kong</a></p>
 
       
        <hr><span style="font-style: italic;color: gray;"> Please cite the source for reprints, feel free to verify the sources cited in the article, and point out any errors or lack of clarity of expression. You can comment in the comments section below or email to GreenMeeple@yahoo.com </span>
