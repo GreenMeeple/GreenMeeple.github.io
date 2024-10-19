@@ -7,15 +7,17 @@
   <meta name="description" content="Parameterized Verification 1.1 -- Labeled Transition Systems | GreenMeeple">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
-<meta property="og:title" content="404 Not Found">
+<meta property="og:title" content="GreenMeeple cannot find what you are looking for...">
 <meta property="og:url" content="https://greenmeeple.github.io/404.html">
 <meta property="og:site_name" content="GreenMeeple">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-10-19T01:55:04.005Z">
-<meta property="article:modified_time" content="2024-10-19T01:55:04.005Z">
+<meta property="og:image" content="https://greenmeeple.github.io/images/404.png">
+<meta property="article:published_time" content="2024-10-19T02:25:07.060Z">
+<meta property="article:modified_time" content="2024-10-19T02:25:07.060Z">
 <meta property="article:author" content="Alex Li">
 <meta property="article:tag" content="Coding, Boardgames, Language learning.">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://greenmeeple.github.io/images/404.png">
 
 
 <link rel="icon" href="/img/favicon.png">
@@ -142,7 +144,7 @@
     <li>
         <div class="all active" data-rel="All">All
             
-                <small>(16)</small>
+                <small>(17)</small>
             
         </div>
     </li>
@@ -184,7 +186,7 @@
         <div data-rel="Cantonese">
             
             Cantonese
-            <small>(5)</small>
+            <small>(6)</small>
         </div>
         
     </li>
@@ -265,8 +267,8 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="16">
-<input type="hidden" id="yelog_site_word_count" value="6.6k">
+<input type="hidden" id="yelog_site_posts_number" value="17">
+<input type="hidden" id="yelog_site_word_count" value="6.9k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -408,6 +410,15 @@
         
         
         <a  class="All Cantonese "
+           href="/canto1-5/"
+           data-tag="Language Learning,Cantonese,Phonology"
+           data-author="" >
+            <span class="post-title" title="Cantonese Ch.1-5 -- Rimes with u &amp; yu (Phonology)">Cantonese Ch.1-5 -- Rimes with u &amp; yu (Phonology)</span>
+            <span class="post-date" title="2024-10-19 03:06:12">2024/10/19</span>
+        </a>
+        
+        
+        <a  class="All Cantonese "
            href="/canto1-3/"
            data-tag="Language Learning,Cantonese,Phonology"
            data-author="" >
@@ -420,7 +431,7 @@
            href="/canto1-2/"
            data-tag="Language Learning,Cantonese,Phonology"
            data-author="" >
-            <span class="post-title" title="Cantonese Ch.1-2 -- Rimes with a (Phonology)">Cantonese Ch.1-2 -- Rimes with a (Phonology)</span>
+            <span class="post-title" title="Cantonese Ch.1-2 -- Rimes with a &amp; aa (Phonology)">Cantonese Ch.1-2 -- Rimes with a &amp; aa (Phonology)</span>
             <span class="post-date" title="2024-10-17 02:06:12">2024/10/17</span>
         </a>
         
@@ -581,7 +592,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-10-17 04:21:28'>2024-10-07 04:40</time>
+            Created At : <time class="date" title='Updated At: 2024-10-19 04:08:07'>2024-10-07 04:40</time>
         
     </div>
     <div class="article-meta">
@@ -656,7 +667,7 @@
 <blockquote>
 <p>In this course, we assume <strong>finite LTS</strong>, which means $AP$ and $Q$ are finite, unless explicitly stated.</p>
 </blockquote>
-<p><img src="/images/pv/pv1_1_LTS.png"></p>
+<p><img src="/images/notes/uds/pv/1_1_LTS.png"></p>
 <h2 id="Run-of-an-LTS"><a href="#Run-of-an-LTS" class="headerlink" title="Run of an LTS"></a>Run of an LTS</h2><p>Consider an LTS $M &#x3D; (Q, Q_0, \Sigma, \delta, \lambda)$.</p>
 <h3 id="Path"><a href="#Path" class="headerlink" title="Path"></a>Path</h3><p>A path of $M$ an is a finite sequence $q_0a_0q_1a_1…q_n \in (Q\Sigma)\ast Q$, such that $ q_i \buildrel a_i \over\rightarrow q_{i+1}$ for all $i &lt; n$<br>or an infinite sequence $q_0a_0q_1a_1…q_n \in (Q\Sigma)^\omega$, such that $ q_i \buildrel a_i \over\rightarrow q_{i+1}$ for all $i \in \mathbb{N}$.</p>
 <h3 id="Run"><a href="#Run" class="headerlink" title="Run"></a>Run</h3><p>A run of $M$ is a <strong>path</strong> of $M$ with $q_0 \in Q_0$, and that is maximal, i.e., it cannot be extended.</p>

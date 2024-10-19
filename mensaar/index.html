@@ -7,15 +7,17 @@
   <meta name="description" content="MensaarLecker -- A statistics for UdS Mensa using Selenium | GreenMeeple">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
-<meta property="og:title" content="404 Not Found">
+<meta property="og:title" content="GreenMeeple cannot find what you are looking for...">
 <meta property="og:url" content="https://greenmeeple.github.io/404.html">
 <meta property="og:site_name" content="GreenMeeple">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-10-19T01:55:04.005Z">
-<meta property="article:modified_time" content="2024-10-19T01:55:04.005Z">
+<meta property="og:image" content="https://greenmeeple.github.io/images/404.png">
+<meta property="article:published_time" content="2024-10-19T02:25:07.060Z">
+<meta property="article:modified_time" content="2024-10-19T02:25:07.060Z">
 <meta property="article:author" content="Alex Li">
 <meta property="article:tag" content="Coding, Boardgames, Language learning.">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://greenmeeple.github.io/images/404.png">
 
 
 <link rel="icon" href="/img/favicon.png">
@@ -142,7 +144,7 @@
     <li>
         <div class="all active" data-rel="All">All
             
-                <small>(16)</small>
+                <small>(17)</small>
             
         </div>
     </li>
@@ -184,7 +186,7 @@
         <div data-rel="Cantonese">
             
             Cantonese
-            <small>(5)</small>
+            <small>(6)</small>
         </div>
         
     </li>
@@ -265,8 +267,8 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="16">
-<input type="hidden" id="yelog_site_word_count" value="6.6k">
+<input type="hidden" id="yelog_site_posts_number" value="17">
+<input type="hidden" id="yelog_site_word_count" value="6.9k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -408,6 +410,15 @@
         
         
         <a  class="All Cantonese "
+           href="/canto1-5/"
+           data-tag="Language Learning,Cantonese,Phonology"
+           data-author="" >
+            <span class="post-title" title="Cantonese Ch.1-5 -- Rimes with u &amp; yu (Phonology)">Cantonese Ch.1-5 -- Rimes with u &amp; yu (Phonology)</span>
+            <span class="post-date" title="2024-10-19 03:06:12">2024/10/19</span>
+        </a>
+        
+        
+        <a  class="All Cantonese "
            href="/canto1-3/"
            data-tag="Language Learning,Cantonese,Phonology"
            data-author="" >
@@ -420,7 +431,7 @@
            href="/canto1-2/"
            data-tag="Language Learning,Cantonese,Phonology"
            data-author="" >
-            <span class="post-title" title="Cantonese Ch.1-2 -- Rimes with a (Phonology)">Cantonese Ch.1-2 -- Rimes with a (Phonology)</span>
+            <span class="post-title" title="Cantonese Ch.1-2 -- Rimes with a &amp; aa (Phonology)">Cantonese Ch.1-2 -- Rimes with a &amp; aa (Phonology)</span>
             <span class="post-date" title="2024-10-17 02:06:12">2024/10/17</span>
         </a>
         
@@ -581,7 +592,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-10-09 16:52:23'>2024-10-06 05:03</time>
+            Created At : <time class="date" title='Updated At: 2024-10-19 04:05:07'>2024-10-06 05:03</time>
         
     </div>
     <div class="article-meta">
@@ -650,7 +661,7 @@
 <li>A statistic that calculates each item’s (main dish &amp; side dish) occurrence and percentage.</li>
 </ul>
 <h2 id="Developing-Process"><a href="#Developing-Process" class="headerlink" title="Developing Process"></a>Developing Process</h2><h3 id="Beautiful-Soup"><a href="#Beautiful-Soup" class="headerlink" title="Beautiful Soup"></a><a target="_blank" rel="noopener" href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">Beautiful Soup</a></h3><p>I started my journey with Beautiful Soup, one of the most popular Python web scraper packages. However, as a Uni that is well-known for its computer science program, all the menus are rendered using JavaScript. And beautiful can only scrape HTML and XML tags. So the scraper can only see an empty skeleton page:</p>
-<p><img src="/images/mensaar_empty.png"></p>
+<p><img src="/images/projects/mensaar_empty.png"></p>
 <h3 id="Selenium"><a href="#Selenium" class="headerlink" title="Selenium"></a><a target="_blank" rel="noopener" href="https://selenium-python.readthedocs.io/">Selenium</a></h3><p>Basically, Selenium is a <a target="_blank" rel="noopener" href="https://www.selenium.dev/documentation/webdriver/">Webdriver</a> that opens a browser naturally, like a human user. Then from there we can scrape the rendered information. Things get simpler once we can see the website as we see it on the browser. We just need to find the tag that contains the information we need and save it for storage.</p>
 <h3 id="Scraping"><a href="#Scraping" class="headerlink" title="Scraping"></a>Scraping</h3><table>
 <thead>
