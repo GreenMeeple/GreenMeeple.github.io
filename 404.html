@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Mathjax prime superscript problem in Hexo theme | GreenMeeple</title>
-  <meta name="keywords" content=" Hexo , Latex , Mathjax ">
-  <meta name="description" content="Mathjax prime superscript problem in Hexo theme | GreenMeeple">
+  <title>404 Not Found | GreenMeeple</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="404 Not Found | GreenMeeple">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="404 Not Found">
@@ -550,43 +550,24 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-hexo-mathjax" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="404-" class="article article-type-404" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Mathjax prime superscript problem in Hexo theme</h1>
+        <h1 class="article-title">404 Not Found</h1>
     
     <div class="article-meta">
         
         
         
-        <span class="book">
-            <i class="iconfont icon-category"></i>
-            
-            
-            <a  data-rel="Site_Note">Site_Note</a>
-            
-        </span>
-        
-        
-        <span class="tag">
-            <i class="iconfont icon-tag"></i>
-            
-            <a class="color5">Hexo</a>
-            
-            <a class="color1">Latex</a>
-            
-            <a class="color3">Mathjax</a>
-            
-        </span>
         
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-10-11 04:13:24'>2024-10-09 04:09</time>
+            Created At : <time class="date" title='Updated At: 2024-10-19 03:55:04'>2024-10-19 03:55</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:288</span>
+        <span>Count:0</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -616,7 +597,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Prime-superscript-problem-e-g-x%E2%80%99-i-in-Mathjax"><span class="toc-text">Prime superscript problem (e.g. x’_i) in Mathjax</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Source-of-error"><span class="toc-text">Source of error</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solutions"><span class="toc-text">Solutions</span></a></li></ol>
+        
     
 <style>
     .left-col .switch-btn,
@@ -632,31 +613,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Prime-superscript-problem-e-g-x’-i-in-Mathjax"><a href="#Prime-superscript-problem-e-g-x’-i-in-Mathjax" class="headerlink" title="Prime superscript problem (e.g. x’_i) in Mathjax"></a>Prime superscript problem (e.g. x’_i) in Mathjax</h2><p>When I was using <a target="_blank" rel="noopener" href="https://www.mathjax.org/">Mathjax</a> to create math formula in my blog post, I typed<br><code>((q_1, q_2), a, (q&#39;_1, q&#39;_2)) \in S \times \Sigma_&#123;int&#125; \times S</code> and it rendered as</p>
-<p><em><strong>$((q_1, q_2), a, (q’_1, q’<em>2)) \in S \times \Sigma</em>{int} \times S$</strong></em></p>
-<p>However, when <code>((q_1, q_2), a, (q&#39;_1, q&#39;_2))</code> &amp; <code>\in S \times \Sigma_&#123;int&#125; \times S</code> are seperated, they rendered properly.</p>
-<p>$$((q_1, q_2), a, (q’_1, q’_2))$$</p>
-<p>$$\in S \times \Sigma_{int} \times S$$</p>
-<blockquote>
-<p>Maybe I should use <code>\left</code> and <code>\right</code> for (), just like <code>\lbrace</code> and <code>\rbrace</code> for {}?</p>
-</blockquote>
-<p>So I typed <code>\left( \left( q_1, q_2 \right), a, \left( q&#39;_1, q&#39;_2 \right) \right) \in S \times \Sigma_&#123;int&#125; \times S</code>, didn’t work out:</p>
-<p><em><strong>$\left( \left( q_1, q_2 \right), a, \left( q’_1, q’<em>2 \right) \right) \in S \times \Sigma</em>{int} \times S$</strong></em></p>
-<h2 id="Source-of-error"><a href="#Source-of-error" class="headerlink" title="Source of error"></a>Source of error</h2><blockquote>
-<p>Problem definitely comes from the first half of the formula, since second half are all variables.</p>
-</blockquote>
-<p>Turns out there may be an issue with how the <strong>prime symbol</strong> are being handled.</p>
-<p>For simple formula, <code>q&#39;_1</code> and <code>q_1&#39;</code> are considered the identical.<br>However, for more complicated formula, the only <code>q_1&#39;</code> can be rendered correctly:</p>
-<p>$$((q_1, q_2), a, (q_1’, q_2’)) \in S \times \Sigma_{int} \times S$$</p>
-<h2 id="Solutions"><a href="#Solutions" class="headerlink" title="Solutions"></a>Solutions</h2><p>Afterwards, I found people reported <a target="_blank" rel="noopener" href="https://physics.meta.stackexchange.com/questions/2614/a-prime-superscript-in-latex-mathjax-not-displayed-correctly">similar issue</a> before.</p>
-<p>Two basic solutions:</p>
-<ol>
-<li><p>Stick to the format <code>x_&#123;Subscript&#125;^&#123;Superscript&#125;</code>, but for prime symbol <code>&#39;</code>, use it as <code>x_&#123;Subscript&#125;&#39;</code></p>
-</li>
-<li><p>Simply use <code>&#123;\prime&#125;</code> for every situation, e.g. <code>x_&#123;i&#125;^&#123;\prime&#125;</code>.</p>
-</li>
-</ol>
-
+        
       
        <hr><span style="font-style: italic;color: gray;"> Please cite the source for reprints, feel free to verify the sources cited in the article, and point out any errors or lack of clarity of expression. You can comment in the comments section below or email to GreenMeeple@yahoo.com </span>
     </div>
@@ -666,69 +623,8 @@
 
 
 
-    <div id="comments"></div>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-
-<script type="text/javascript">
-    $.getScript('/js/gitalk.js', function () {
-        var gitalk = new Gitalk({
-            clientID: 'Ov23ctDlN8NQWlBnA3I9',
-            clientSecret: '3fd5f43f975857c90bf68212b56bd6a2aaeff520',
-            repo: 'GreenMeeple.github.io',
-            owner: 'GreenMeeple',
-            admin: ['GreenMeeple'],
-            id: decodeURI(location.pathname),
-            distractionFreeMode: 'true',
-            language: 'en',
-            perPage: parseInt('10',10)
-        })
-        gitalk.render('comments')
-    })
-</script>
 
 
-
-
-    
-        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-    "HTML-CSS": {
-        preferredFont: "TeX",
-        availableFonts: ["STIX","TeX"],
-        linebreaks: { automatic:true },
-        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
-    },
-    tex2jax: {
-        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
-        processEscapes: true,
-        ignoreClass: "tex2jax_ignore|dno",
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    },
-    TeX: {
-        equationNumbers: { autoNumber: "AMS" },
-        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
-        Macros: { href: "{}" }
-    },
-    messageStyle: "none"
-    });
-</script>
-<!-- 给MathJax元素添加has-jax class -->
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for(i=0; i < all.length; i += 1) {
-            all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-    });
-</script>
-<!-- 通过连接CDN加载MathJax的js代码 -->
-<script type="text/javascript" async
-        src="//cdn.jsdelivr.net/npm/mathjax@2.7.8/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
-<input type="hidden" id="MathJax-js"
-        value="//cdn.jsdelivr.net/npm/mathjax@2.7.8/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
-</input>
     
 
 
