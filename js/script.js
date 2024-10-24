@@ -343,22 +343,22 @@ function inputChange() {
         $(".nav-right nav a").css("display", "none");
         $(".nav-right nav a." + activeTitle).css("display", "block");
     } else if (val.substr(0, 1) === "#") {
-        searchType = '标签'
-        containType = '为'
+        searchType = ' Tag'
+        containType = ' is'
         if (val.substr(1).length !== 0) {
             $(".nav-right nav a").css("display", "none");
             $(".nav-right nav").find("a." + activeTitle + ":contains_tag('" + val.substr(1) + "')").css("display", "block");
         }
     } else if (val.substr(0, 1) === "@") {
-        searchType = '作者'
-        containType= '为'
+        searchType = ' Author'
+        containType= ' called'
         if (val.substr(1).length !== 0) {
             $(".nav-right nav a").css("display", "none");
             $(".nav-right nav").find("a." + activeTitle + ":contains_author('" + val.substr(1) + "')").css("display", "block");
         }
     } else {
-        searchType = '标题'
-        containType = '包含'
+        searchType = ' Title'
+        containType = ' include'
         // $(".nav-right nav a").css("display", "none");
         $(".nav-right nav").find("a." + activeTitle + ":"+ ($('#search-panel > .icon-case-sensitive').hasClass('active') ? 'containsSensitive' : 'contains') + "('" + val + "')").css("display", "block");
         $(".nav-right nav a").each(function () {
@@ -391,9 +391,9 @@ function inputChange() {
     if (val !== '') {
         $('#default-panel .icon-search').addClass('active')
         if (val === 'in:') {
-            $('#no-item-tips').show().html('正在进行全局关键字搜索，请输入关键字');
+            $('#no-item-tips').show().html('You are using in-text search, please enter keywords');
         } else if (!val.startsWith('in:') && $(".nav-right nav a:visible").length === 0) {
-            $('#no-item-tips').show().html('未在 <span>' + activeTitle + '</span> 分类中找到'+ searchType + containType + ' <span>' + val.replace(/^[@|#]/g,'') + '</span> 的文章');
+            $('#no-item-tips').show().html('There is no'+ searchType + containType + ' <span> ' + val.replace(/^[@|#]/g,'') + '</span> in <span>'+ activeTitle + '</span> category <br><br> For advanced searching, add: <br> <span>\"#\"</span> to search for tags, <br> <span>\"@\"</span> to search for authors, <br> <span>\"in:\"</span> to search for text in posts.');
         }
     } else {
         $('#default-panel .icon-search').removeClass('active')
@@ -448,7 +448,7 @@ function syncOutline(_this) {
             }
         }
     } catch (e) {
-        console.error('同步toc位置失败！', e)
+        console.error('Fail to synchronize table of content!', e)
     }
 }
 
@@ -594,7 +594,7 @@ function bind() {
             var codeClass = $(this).attr('class') || ''
             var hasCopy = $('#theme_code_copy').val() !== 'false'
             // 添加复制功能
-            $(this).after('<div class="code-embed"><span class="code-embed-type">'+ (codeClass.indexOf('hljs') === -1 ? codeClass : codeClass.indexOf('hljs') === 0 ? '' : codeClass.replace(/[\s]?hljs/g, ''))+'</span>'+(hasCopy ? '<span class="code-embed-copy" onclick="copyCode(this)">复制代码</span>' : '')+'</div>')
+            $(this).after('<div class="code-embed"><span class="code-embed-type">'+ (codeClass.indexOf('hljs') === -1 ? codeClass : codeClass.indexOf('hljs') === 0 ? '' : codeClass.replace(/[\s]?hljs/g, ''))+'</span>'+(hasCopy ? '<span class="code-embed-copy" onclick="copyCode(this)">copy code</span>' : '')+'</div>')
             // 渲染样式
             if (codeClass.indexOf('hljs') === -1) {
                 hljs.highlightBlock(block);
@@ -760,9 +760,9 @@ function bind() {
 function copyCode(e) {
     $(e).parent().prev().text()
     if (copy($(e).parent().prev().text())) {
-        $(e).html('复制成功')
+        $(e).html('copied successfully')
         setTimeout(function () {
-            $(e).html('复制代码')
+            $(e).html('copying code')
         }, 1000)
     }
 }

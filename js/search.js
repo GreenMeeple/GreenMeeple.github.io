@@ -125,7 +125,7 @@ var searchFunc = function (path, search_id, content_id) {
         });
         str += "</ul>";
         if (str.indexOf('<li>') === -1) {
-          return $resultContent.innerHTML = "<ul><span class='local-search-empty'>没有找到内容，更换下搜索词试试吧~<span></ul>";
+          return $resultContent.innerHTML = "<ul><span class='local-search-empty'>Result not found, try other keywords...<span></ul>";
         }
         $resultContent.innerHTML = str;
 
@@ -141,7 +141,7 @@ var searchFunc = function (path, search_id, content_id) {
       }
     },
       error: function (XMLHttpRequest, textStatus, errorThrown) {
-          console.log('文章中出现特殊字符，导致解析xml出现问题，系统自动采用第二方案：进行主动解析！！！ 请检查全文搜索是否有问题，如出现问题，请及时在 https://github.com/yelog/hexo-theme-3-hexo/issues 中提出来，作者会尽快处理！')
+          console.log('Special characters in the article, resulting in problems parsing xml, the system automatically adopts the second option: to perform active parsing!!! Please check the full-text search for problems, if there is a problem, please promptly raise it in https://github.com/yelog/hexo-theme-3-hexo/issues, the author will deal with it as soon as possible!')
       }
   });
 }

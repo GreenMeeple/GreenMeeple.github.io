@@ -455,11 +455,12 @@
 }
 .nav-left ul li {
   line-height: 40px;
-  text-align: center;
+  text-align: right;
   border-bottom: 1px solid #fff;
   cursor: pointer;
 }
 .nav-left ul li>div {
+  padding-right: 5px;
   height: 40px;
   color: rgba(255,255,255,0.7);
   position: relative;
