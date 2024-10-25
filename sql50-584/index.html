@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Cantonese Ch.1-2 -- Rimes with a &amp; aa (Phonology) | GreenMeeple</title>
-  <meta name="keywords" content=" Language Learning , Cantonese , Phonology ">
-  <meta name="description" content="Cantonese Ch.1-2 -- Rimes with a &amp; aa (Phonology) | GreenMeeple">
+  <title>Leetcode SQL 50 -- 584. Find Customer Referee | GreenMeeple</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="Leetcode SQL 50 -- 584. Find Customer Referee | GreenMeeple">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="GreenMeeple cannot find what you are looking for...">
@@ -645,45 +645,24 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-canto1-2" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-sql50-584" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Cantonese Ch.1-2 -- Rimes with a &amp; aa (Phonology)</h1>
+        <h1 class="article-title">Leetcode SQL 50 -- 584. Find Customer Referee</h1>
     
     <div class="article-meta">
         
         
         
-        <span class="book">
-            <i class="iconfont icon-category"></i>
-            
-            
-            <a  data-rel="Cantonese">Cantonese</a> > 
-            
-            <a  data-rel="Cantonese&lt;---&gt;Full_Course">Full_Course</a>
-            
-        </span>
-        
-        
-        <span class="tag">
-            <i class="iconfont icon-tag"></i>
-            
-            <a class="color3">Language Learning</a>
-            
-            <a class="color5">Cantonese</a>
-            
-            <a class="color5">Phonology</a>
-            
-        </span>
         
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-10-24 19:11:19'>2024-10-17 02:06</time>
+            Created At : <time class="date" title='Updated At: 2024-10-25 02:22:26'>2024-10-23 17:11</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:391</span>
+        <span>Count:188</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -713,7 +692,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Recap-of-Rimes"><span class="toc-text">Recap of Rimes</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Difference-of-a-and-aa"><span class="toc-text">Difference of a and aa</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Rimes-with-a"><span class="toc-text">Rimes with a</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Rimes-with-aa"><span class="toc-text">Rimes with aa</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Learn-a-new-word-before-you-move-on"><span class="toc-text">Learn a new word before you move on</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Question"><span class="toc-text">Question</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Table-name-Customer"><span class="toc-text">Table name: Customer</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Explaination"><span class="toc-text">Explaination</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#NULL-handling"><span class="toc-text">NULL handling</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-text">Solution</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -729,128 +708,40 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>Golden Rule of becoming a native Cantonese speaker: <strong>Tones</strong> &gt; Everything!</p>
+        <h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><h3 id="Table-name-Customer"><a href="#Table-name-Customer" class="headerlink" title="Table name: Customer"></a>Table name: <code>Customer</code></h3><table>
+<thead>
+<tr>
+<th align="left">Column Name</th>
+<th align="left">Type</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">id</td>
+<td align="left">int</td>
+</tr>
+<tr>
+<td align="left">name</td>
+<td align="left">varchar</td>
+</tr>
+<tr>
+<td align="left">referee_id</td>
+<td align="left">int</td>
+</tr>
+</tbody></table>
+<p><code>id</code> is the <code>primary key column</code> for this table.<br>Each row of this table indicates the <code>id</code> of a customer, their <code>name</code>, and the <code>id of the customer who referred them</code>.</p>
+<blockquote>
+<p>Find the <strong>names</strong> of the customer that are <strong>not referred by the customer with id &#x3D; 2</strong>.<br>Return the result table in any order.</p>
 </blockquote>
-<p>In this blog, we use <a target="_blank" rel="noopener" href="https://jyutping.org/en/docs/english/">Jyutping</a> to indicate the pronunciation of Cantonese characters.</p>
-<p>Previous lesson: <a href="../canto1-1/">Introduction</a></p>
-<h2 id="Recap-of-Rimes"><a href="#Recap-of-Rimes" class="headerlink" title="Recap of Rimes"></a>Recap of Rimes</h2><p>Rimes is a syllable of vowels with consonants that you can <strong>rhyme</strong>!</p>
-<p>For example, in English, the Rime of “Cow” is “ow”; in Cantonese, cow is <ruby>牛<rp>(</rp><rt>ngau4</rt><rp>)</rp></ruby>, and the Rime is “au”.</p>
-<h2 id="Difference-of-a-and-aa"><a href="#Difference-of-a-and-aa" class="headerlink" title="Difference of a and aa"></a>Difference of <code>a</code> and <code>aa</code></h2><p>Two vowels in Cantonese start with a. <code>a</code> sounds like “uh” in English, and <code>aa</code> “ahhh” in English.</p>
-<p>And all their combinations as well. For example, <ruby>分<rp>(</rp><rt>fan1</rt><rp>)</rp></ruby> sounds like “fun”, and <ruby>飯<rp>(</rp><rt>faan6</rt><rp>)</rp></ruby> sounds like “fran” in France without “r” sound.</p>
-<p>Still, it may be difficult to distinguish their difference when they form rimes with other sounds.</p>
-<p>A trick to pronounce any combinations of the <code>aa</code> sound is to try to add the “ahhh” sound before <code>a</code>.<br>For example, <code>ap</code> sounds like “up” in English, and <code>aap</code> sounds like “ahh-up” in one syllable.</p>
-<p>Let’s see all the rimes combinations with <code>a</code> and <code>aa</code>!</p>
-<h3 id="Rimes-with-a"><a href="#Rimes-with-a" class="headerlink" title="Rimes with a"></a>Rimes with <code>a</code></h3><table>
-<thead>
-<tr>
-<th align="left">Jyutping</th>
-<th align="left">Sounds in English</th>
-<th align="left">Cantonese Example</th>
-<th align="left">Jyutping</th>
-<th align="left">Sounds in English</th>
-<th align="left">Cantonese Example</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">a</td>
-<td align="left">uh in bruh</td>
-<td align="left"><ruby>嘞<rp>(</rp><rt>laa3</rt><rp>)</rp></ruby></td>
-<td align="left">ang</td>
-<td align="left">ung in sung</td>
-<td align="left"><ruby>增<rp>(</rp><rt>zang1</rt><rp>)</rp></ruby></td>
-</tr>
-<tr>
-<td align="left">ai</td>
-<td align="left">i in night</td>
-<td align="left"><ruby>擠<rp>(</rp><rt>zai1</rt><rp>)</rp></ruby></td>
-<td align="left">ap</td>
-<td align="left">up in cup</td>
-<td align="left"><ruby>汁<rp>(</rp><rt>zap1</rt><rp>)</rp></ruby></td>
-</tr>
-<tr>
-<td align="left">au</td>
-<td align="left">ull in dull</td>
-<td align="left"><ruby>周<rp>(</rp><rt>zau1</rt><rp>)</rp></ruby></td>
-<td align="left">at</td>
-<td align="left">utt in butt</td>
-<td align="left"><ruby>質<rp>(</rp><rt>zat1</rt><rp>)</rp></ruby></td>
-</tr>
-<tr>
-<td align="left">am</td>
-<td align="left">um in sum</td>
-<td align="left"><ruby>針<rp>(</rp><rt>zam1</rt><rp>)</rp></ruby></td>
-<td align="left">ak</td>
-<td align="left">uck in duck</td>
-<td align="left"><ruby>則<rp>(</rp><rt>zak1</rt><rp>)</rp></ruby></td>
-</tr>
-<tr>
-<td align="left">an</td>
-<td align="left">un in fun</td>
-<td align="left"><ruby>珍<rp>(</rp><rt>zan1</rt><rp>)</rp></ruby></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-</tbody></table>
-<h3 id="Rimes-with-aa"><a href="#Rimes-with-aa" class="headerlink" title="Rimes with aa"></a>Rimes with <code>aa</code></h3><table>
-<thead>
-<tr>
-<th align="left">Jyutping</th>
-<th align="left">Sounds in English</th>
-<th align="left">Cantonese Example</th>
-<th align="left">Jyutping</th>
-<th align="left">Sounds in English</th>
-<th align="left">Cantonese Example</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">aa</td>
-<td align="left">a in far</td>
-<td align="left"><ruby>渣<rp>(</rp><rt>zaa1</rt><rp>)</rp></ruby></td>
-<td align="left">aang</td>
-<td align="left">an in France but ends with ng not n</td>
-<td align="left"><ruby>爭<rp>(</rp><rt>zang1</rt><rp>)</rp></ruby></td>
-</tr>
-<tr>
-<td align="left">aai</td>
-<td align="left">i in high</td>
-<td align="left"><ruby>齋<rp>(</rp><rt>zaai1</rt><rp>)</rp></ruby></td>
-<td align="left">aap</td>
-<td align="left">alm in calm with p instead</td>
-<td align="left"><ruby>集<rp>(</rp><rt>zaap6</rt><rp>)</rp></ruby></td>
-</tr>
-<tr>
-<td align="left">aau</td>
-<td align="left">ow in wow</td>
-<td align="left"><ruby>嘲<rp>(</rp><rt>zaau1</rt><rp>)</rp></ruby></td>
-<td align="left">aat</td>
-<td align="left">alm in calm with t instead</td>
-<td align="left"><ruby>紮<rp>(</rp><rt>zaat3</rt><rp>)</rp></ruby></td>
-</tr>
-<tr>
-<td align="left">aam</td>
-<td align="left">alm in calm</td>
-<td align="left"><ruby>站<rp>(</rp><rt>zaam6</rt><rp>)</rp></ruby></td>
-<td align="left">aak</td>
-<td align="left">alm in calm with k instead</td>
-<td align="left"><ruby>窄<rp>(</rp><rt>zaak3</rt><rp>)</rp></ruby></td>
-</tr>
-<tr>
-<td align="left">aan</td>
-<td align="left">an in France</td>
-<td align="left"><ruby>讚<rp>(</rp><rt>zaan3</rt><rp>)</rp></ruby></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-</tbody></table>
-<h2 id="Learn-a-new-word-before-you-move-on"><a href="#Learn-a-new-word-before-you-move-on" class="headerlink" title="Learn a new word before you move on"></a>Learn a new word before you move on</h2><p>In Cantonese, <ruby>早抖<rp>(</rp><rt>zou2 tau2</rt><rp>)</rp></ruby> will be another most common thrase you may hear, which means <strong>good night</strong>.</p>
-<p>Its literally meaning is sleep early, it is a good wish because nowadays people sleep quite late right?</p>
-<p>So again… <ruby>下次見<rp>(</rp><rt>haa6 ci3 gin3</rt><rp>)</rp></ruby>!</p>
-<p>Next lesson: <a href="../canto1-3/">Rimes with e</a></p>
+<h2 id="Explaination"><a href="#Explaination" class="headerlink" title="Explaination"></a>Explaination</h2><p>Again we use <code>SELECT &lt;column_name&gt; FROM &lt;table_name&gt; WHERE &lt;conditions&gt;</code> to get the solution.</p>
+<p>The tricky part is some of the <code>referee_id</code> may contain <code>NULL</code> value.</p>
+<h3 id="NULL-handling"><a href="#NULL-handling" class="headerlink" title="NULL handling"></a>NULL handling</h3><p>We may simply think that the solution is <code>WHERE referee_id !=2</code>, but <code>NULL</code> <strong>always</strong> return <code>false</code> in any comparison.</p>
+<p>So the SELECT query will never return rows with <code>NULL</code> for either <code>=2</code> or <code>!=2</code>, because it is <code>false</code> in both cases.</p>
+<p>In order to retrieve rows that contain <code>NULL</code>, we have to use the keyword <code>IS NULL</code>.</p>
+<p>For further explaination of NULL Handling in SQL, you may check the <a target="_blank" rel="noopener" href="https://www.sqlite.org/nulls.html">sqlite documentation</a></p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><pre><code class="SQL">SELECT &quot;name&quot; FROM Customer WHERE referee_id != 2 OR referee_id IS NULL;
+</code></pre>
 <hr>
-<p>Further reading: <a target="_blank" rel="noopener" href="https://jyutping.org/en/">Jyutping</a>, <a target="_blank" rel="noopener" href="https://lshk.org/">The linguistic Society of Hong Kong</a></p>
+<p>More SQL 50 questions: <a href="../sql50/">here</a></p>
 
       
        <hr><span style="font-style: italic;color: gray;"> Please cite the source for reprints, feel free to verify the sources cited in the article, and point out any errors or lack of clarity of expression. You can comment in the comments section below or email to GreenMeeple@yahoo.com </span>

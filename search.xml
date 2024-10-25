@@ -4,11 +4,24 @@
   
     
     <entry>
-      <title>Leetcode-sql50</title>
-      <link href="/Leetcode-sql50-1/"/>
-      <url>/Leetcode-sql50-1/</url>
+      <title>Leetcode SQL 50 -- 584. Find Customer Referee</title>
+      <link href="/sql50-584/"/>
+      <url>/sql50-584/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><h3 id="Table-name-Customer"><a href="#Table-name-Customer" class="headerlink" title="Table name: Customer"></a>Table name: <code>Customer</code></h3><table><thead><tr><th align="left">Column Name</th><th align="left">Type</th></tr></thead><tbody><tr><td align="left">id</td><td align="left">int</td></tr><tr><td align="left">name</td><td align="left">varchar</td></tr><tr><td align="left">referee_id</td><td align="left">int</td></tr></tbody></table><p><code>id</code> is the <code>primary key column</code> for this table.<br>Each row of this table indicates the <code>id</code> of a customer, their <code>name</code>, and the <code>id of the customer who referred them</code>.</p><blockquote><p>Find the <strong>names</strong> of the customer that are <strong>not referred by the customer with id &#x3D; 2</strong>.<br>Return the result table in any order.</p></blockquote><h2 id="Explaination"><a href="#Explaination" class="headerlink" title="Explaination"></a>Explaination</h2><p>Again we use <code>SELECT &lt;column_name&gt; FROM &lt;table_name&gt; WHERE &lt;conditions&gt;</code> to get the solution.</p><p>The tricky part is some of the <code>referee_id</code> may contain <code>NULL</code> value.</p><h3 id="NULL-handling"><a href="#NULL-handling" class="headerlink" title="NULL handling"></a>NULL handling</h3><p>We may simply think that the solution is <code>WHERE referee_id !=2</code>, but <code>NULL</code> <strong>always</strong> return <code>false</code> in any comparison.</p><p>So the SELECT query will never return rows with <code>NULL</code> for either <code>=2</code> or <code>!=2</code>, because it is <code>false</code> in both cases.</p><p>In order to retrieve rows that contain <code>NULL</code>, we have to use the keyword <code>IS NULL</code>.</p><p>For further explaination of NULL Handling in SQL, you may check the <a href="https://www.sqlite.org/nulls.html">sqlite documentation</a></p><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><pre><code class="SQL">SELECT &quot;name&quot; FROM Customer WHERE referee_id != 2 OR referee_id IS NULL;</code></pre><hr><p>More SQL 50 questions: <a href="../sql50/">here</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Leetcode SQL 50 -- 1757. Recyclable and Low Fat Products</title>
+      <link href="/sql50-1757/"/>
+      <url>/sql50-1757/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><h3 id="Table-name-Products"><a href="#Table-name-Products" class="headerlink" title="Table name: Products"></a>Table name: <code>Products</code></h3><table><thead><tr><th align="left">Column Name</th><th align="left">Type</th></tr></thead><tbody><tr><td align="left">product_id</td><td align="left">int</td></tr><tr><td align="left">low_fats</td><td align="left">enum</td></tr><tr><td align="left">recyclable</td><td align="left">enum</td></tr></tbody></table><p><code>product_id</code> is the primary key (column with unique values) for this table.</p><p><code>low_fats</code> is an <code>ENUM</code> of type (<code>Y</code>, <code>N</code>) where <code>Y</code> means this product is low fat and <code>N</code> means it is not.</p><p><code>recyclable</code> is an <code>ENUM</code> of types (<code>Y</code>, <code>N</code>) where <code>Y</code> means this product is recyclable and <code>N</code> means it is not.</p><blockquote><p>Write a solution to <strong>find the ids</strong> of products that are <strong>both low fat and recyclable</strong>.<br>Return the result table in any order.</p></blockquote><h2 id="Explaination"><a href="#Explaination" class="headerlink" title="Explaination"></a>Explaination</h2><p>This is one the most basic SQL <code>SELECT</code> query scenario,<br>by using <code>SELECT &lt;column_name&gt; FROM &lt;table_name&gt; WHERE &lt;conditions&gt;</code> you may get the solution easily.</p><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><pre><code class="SQL">SELECT product_id FROM Products WHERE low_fats = &quot;Y&quot; AND recyclable = &quot;Y&quot;;</code></pre><hr><p>More SQL 50 questions: <a href="../sql50/">here</a></p>]]></content>
       
       
       <categories>
@@ -31,13 +44,27 @@
     
     
     <entry>
-      <title>Leetcode-sql50</title>
-      <link href="/Leetcode-sql50/"/>
-      <url>/Leetcode-sql50/</url>
+      <title>Leetcode SQL 50 (ToC)</title>
+      <link href="/sql50/"/>
+      <url>/sql50/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<blockquote><p>This is a portal for all solutions of SQL 50 on Leetcode</p></blockquote><p><a href="https://leetcode.com/studyplan/top-sql-50/">Link of Leetcode SQL 50</a></p><h2 id="Select"><a href="#Select" class="headerlink" title="Select"></a>Select</h2><p><a href="../sql50-1757/">1757. Recyclable and Low Fat Products</a><br><a href="../sql50-584/">584. Find Customer Referee</a></p><h2 id="Basic-Joins"><a href="#Basic-Joins" class="headerlink" title="Basic Joins"></a>Basic Joins</h2><h2 id="Basic-Aggregate-Functions"><a href="#Basic-Aggregate-Functions" class="headerlink" title="Basic Aggregate Functions"></a>Basic Aggregate Functions</h2><h2 id="Sorting-and-Grouping"><a href="#Sorting-and-Grouping" class="headerlink" title="Sorting and Grouping"></a>Sorting and Grouping</h2><h2 id="Advanced-Select-and-Joins"><a href="#Advanced-Select-and-Joins" class="headerlink" title="Advanced Select and Joins"></a>Advanced Select and Joins</h2><h2 id="Subqueries"><a href="#Subqueries" class="headerlink" title="Subqueries"></a>Subqueries</h2><h2 id="Advanced-String-Functions-Regex-Clause"><a href="#Advanced-String-Functions-Regex-Clause" class="headerlink" title="Advanced String Functions &#x2F; Regex &#x2F; Clause"></a>Advanced String Functions &#x2F; Regex &#x2F; Clause</h2>]]></content>
       
       
+      <categories>
+          
+          <category> LeetCode </category>
+          
+          <category> SQL 50 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SQL </tag>
+            
+        </tags>
       
     </entry>
     

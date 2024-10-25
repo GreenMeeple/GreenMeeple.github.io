@@ -762,7 +762,7 @@ function copyCode(e) {
     if (copy($(e).parent().prev().text())) {
         $(e).html('copied successfully')
         setTimeout(function () {
-            $(e).html('copying code')
+            $(e).html('copy code')
         }, 1000)
     }
 }
