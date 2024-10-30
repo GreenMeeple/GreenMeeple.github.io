@@ -4,31 +4,18 @@
   
     
     <entry>
-      <title>Leetcode SQL 50 -- 584. Find Customer Referee</title>
-      <link href="/sql50-584/"/>
-      <url>/sql50-584/</url>
+      <title>Leetcode SQL 50 -- 176. Second Highest Salary</title>
+      <link href="/sql50-176/"/>
+      <url>/sql50-176/</url>
       
-        <content type="html"><![CDATA[<h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><h3 id="Table-name-Customer"><a href="#Table-name-Customer" class="headerlink" title="Table name: Customer"></a>Table name: <code>Customer</code></h3><table><thead><tr><th align="left">Column Name</th><th align="left">Type</th></tr></thead><tbody><tr><td align="left">id</td><td align="left">int</td></tr><tr><td align="left">name</td><td align="left">varchar</td></tr><tr><td align="left">referee_id</td><td align="left">int</td></tr></tbody></table><p><code>id</code> is the <code>primary key column</code> for this table.<br>Each row of this table indicates the <code>id</code> of a customer, their <code>name</code>, and the <code>id of the customer who referred them</code>.</p><blockquote><p>Find the <strong>names</strong> of the customer that are <strong>not referred by the customer with id &#x3D; 2</strong>.<br>Return the result table in any order.</p></blockquote><h2 id="Explaination"><a href="#Explaination" class="headerlink" title="Explaination"></a>Explaination</h2><p>Again we use <code>SELECT &lt;column_name&gt; FROM &lt;table_name&gt; WHERE &lt;conditions&gt;</code> to get the solution.</p><p>The tricky part is some of the <code>referee_id</code> may contain <code>NULL</code> value.</p><h3 id="NULL-handling"><a href="#NULL-handling" class="headerlink" title="NULL handling"></a>NULL handling</h3><p>We may simply think that the solution is <code>WHERE referee_id !=2</code>, but <code>NULL</code> <strong>always</strong> return <code>false</code> in any comparison.</p><p>So the SELECT query will never return rows with <code>NULL</code> for either <code>=2</code> or <code>!=2</code>, because it is <code>false</code> in both cases.</p><p>In order to retrieve rows that contain <code>NULL</code>, we have to use the keyword <code>IS NULL</code>.</p><p>For further explaination of NULL Handling in SQL, you may check the <a href="https://www.sqlite.org/nulls.html">sqlite documentation</a></p><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><pre><code class="SQL">SELECT &quot;name&quot; FROM Customer WHERE referee_id != 2 OR referee_id IS NULL;</code></pre><hr><p>More SQL 50 questions: <a href="../sql50/">here</a></p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Leetcode SQL 50 -- 1757. Recyclable and Low Fat Products</title>
-      <link href="/sql50-1757/"/>
-      <url>/sql50-1757/</url>
-      
-        <content type="html"><![CDATA[<h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><h3 id="Table-name-Products"><a href="#Table-name-Products" class="headerlink" title="Table name: Products"></a>Table name: <code>Products</code></h3><table><thead><tr><th align="left">Column Name</th><th align="left">Type</th></tr></thead><tbody><tr><td align="left">product_id</td><td align="left">int</td></tr><tr><td align="left">low_fats</td><td align="left">enum</td></tr><tr><td align="left">recyclable</td><td align="left">enum</td></tr></tbody></table><p><code>product_id</code> is the primary key (column with unique values) for this table.</p><p><code>low_fats</code> is an <code>ENUM</code> of type (<code>Y</code>, <code>N</code>) where <code>Y</code> means this product is low fat and <code>N</code> means it is not.</p><p><code>recyclable</code> is an <code>ENUM</code> of types (<code>Y</code>, <code>N</code>) where <code>Y</code> means this product is recyclable and <code>N</code> means it is not.</p><blockquote><p>Write a solution to <strong>find the ids</strong> of products that are <strong>both low fat and recyclable</strong>.<br>Return the result table in any order.</p></blockquote><h2 id="Explaination"><a href="#Explaination" class="headerlink" title="Explaination"></a>Explaination</h2><p>This is one the most basic SQL <code>SELECT</code> query scenario,<br>by using <code>SELECT &lt;column_name&gt; FROM &lt;table_name&gt; WHERE &lt;conditions&gt;</code> you may get the solution easily.</p><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><pre><code class="SQL">SELECT product_id FROM Products WHERE low_fats = &quot;Y&quot; AND recyclable = &quot;Y&quot;;</code></pre><hr><p>More SQL 50 questions: <a href="../sql50/">here</a></p>]]></content>
+        <content type="html"><![CDATA[<h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><h3 id="Table-name"><a href="#Table-name" class="headerlink" title="Table name: &#96;&#96;"></a>Table name: &#96;&#96;</h3><table><thead><tr><th align="left">Column Name</th><th align="left">Type</th></tr></thead><tbody><tr><td align="left">id</td><td align="left">int</td></tr><tr><td align="left">salary</td><td align="left">int</td></tr></tbody></table><p>Each row of this table contains information about the <code>salary</code> of an <code>employee</code>.</p><blockquote><p>Write a solution to find the <strong>second highest distinct</strong> <code>salary</code> from the Employee table.<br>If there is no second highest salary, return <code>null</code>.</p></blockquote><h2 id="Explaination"><a href="#Explaination" class="headerlink" title="Explaination"></a>Explaination</h2><p>The key idea of this question is to get the <strong>second</strong> value. Here I have two ideas that come to my mind immediately</p><ol><li>First, order the list according to salary, then fetch the second row.</li><li>First, find the highest salary, then do another <code>SELECT</code> query based on the highest salary.</li></ol><h3 id="1-Using-LIMIT-and-OFFSET"><a href="#1-Using-LIMIT-and-OFFSET" class="headerlink" title="1. Using LIMIT and OFFSET"></a>1. Using LIMIT and OFFSET</h3><p>Using <code>LIMIT</code> and <code>OFFSET</code>, we can simply retrieve the second row of a database:</p><pre><code class="sql">SELECT DISTINCT Salary     FROM Employee     ORDER BY salary DESC     LIMIT 1 OFFSET 1</code></pre><p>Here, we used <code>ORDER BY salary DESC</code> and <code>DISTINCT</code> to make sure the second row contains the second highest salary.<br>Then <code>LIMIT 1</code> constraints there will be only one row returned, <code>OFFSET 1</code> means to skip 1 row before fetching.</p><p>However, this query won’t return <code>null</code> if there isn’t a second row.</p><p>To solve the problem, we can wrap this query by another <code>SELECT</code> query.</p><h3 id="2-Recursive-SELECT"><a href="#2-Recursive-SELECT" class="headerlink" title="2. Recursive SELECT"></a>2. Recursive SELECT</h3><p>There will be two <code>SELECT</code> function, the <code>SELECT</code> in <code>WHERE</code> clause returns the highest salary:</p><pre><code class="sql">WHERE salary &lt; (SELECT MAX(salary) FROM Employee)</code></pre><p>So that the <code>SELECT</code> query outside can directly compare with this and thus it returns the second highest salary.</p><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><h3 id="Using-LIMIT-and-OFFSET"><a href="#Using-LIMIT-and-OFFSET" class="headerlink" title="Using LIMIT and OFFSET"></a>Using LIMIT and OFFSET</h3><pre><code class="sql">SELECT(    SELECT DISTINCT Salary     FROM Employee     ORDER BY salary DESC     LIMIT 1 OFFSET 1 )AS SecondHighestSalary;</code></pre><h3 id="Recursive-SELECT"><a href="#Recursive-SELECT" class="headerlink" title="Recursive SELECT"></a>Recursive SELECT</h3><pre><code class="sql">SELECT MAX(salary) AS SecondHighestSalary FROM EmployeeWHERE salary &lt; (SELECT MAX(salary) FROM Employee);</code></pre><hr><p>More SQL 50 questions: <a href="../sql50/">here</a></p>]]></content>
       
       
       <categories>
           
           <category> LeetCode </category>
           
-          <category> SQL 50 </category>
+          <category> SQL_50 </category>
           
       </categories>
       
@@ -44,18 +31,261 @@
     
     
     <entry>
-      <title>Leetcode SQL 50 (ToC)</title>
-      <link href="/sql50/"/>
-      <url>/sql50/</url>
+      <title>Leetcode SQL 50 -- 196. Delete Duplicate Emails</title>
+      <link href="/sql50-196/"/>
+      <url>/sql50-196/</url>
       
-        <content type="html"><![CDATA[<blockquote><p>This is a portal for all solutions of SQL 50 on Leetcode</p></blockquote><p><a href="https://leetcode.com/studyplan/top-sql-50/">Link of Leetcode SQL 50</a></p><h2 id="Select"><a href="#Select" class="headerlink" title="Select"></a>Select</h2><p><a href="../sql50-1757/">1757. Recyclable and Low Fat Products</a><br><a href="../sql50-584/">584. Find Customer Referee</a></p><h2 id="Basic-Joins"><a href="#Basic-Joins" class="headerlink" title="Basic Joins"></a>Basic Joins</h2><h2 id="Basic-Aggregate-Functions"><a href="#Basic-Aggregate-Functions" class="headerlink" title="Basic Aggregate Functions"></a>Basic Aggregate Functions</h2><h2 id="Sorting-and-Grouping"><a href="#Sorting-and-Grouping" class="headerlink" title="Sorting and Grouping"></a>Sorting and Grouping</h2><h2 id="Advanced-Select-and-Joins"><a href="#Advanced-Select-and-Joins" class="headerlink" title="Advanced Select and Joins"></a>Advanced Select and Joins</h2><h2 id="Subqueries"><a href="#Subqueries" class="headerlink" title="Subqueries"></a>Subqueries</h2><h2 id="Advanced-String-Functions-Regex-Clause"><a href="#Advanced-String-Functions-Regex-Clause" class="headerlink" title="Advanced String Functions &#x2F; Regex &#x2F; Clause"></a>Advanced String Functions &#x2F; Regex &#x2F; Clause</h2>]]></content>
+        <content type="html"><![CDATA[<h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><h3 id="Table-name-Person"><a href="#Table-name-Person" class="headerlink" title="Table name: Person"></a>Table name: <code>Person</code></h3><table><thead><tr><th align="left">Column Name</th><th align="left">Type</th></tr></thead><tbody><tr><td align="left">id</td><td align="left">int</td></tr><tr><td align="left">email</td><td align="left">varchar</td></tr></tbody></table><p>Each row of this table contains an <code>email</code>. The emails will <strong>not contain uppercase letters</strong>.</p><blockquote><p>Write a solution to <strong>delete all duplicate emails</strong>, keeping only one unique email with the <strong>smallest id</strong>.<br>For SQL users, please note that you are supposed to write a <code>DELETE</code> statement and not a <code>SELECT</code> one.<br>The final order of the table does not matter.</p></blockquote><h2 id="Explaination"><a href="#Explaination" class="headerlink" title="Explaination"></a>Explaination</h2><p>Usually, people will simply replace the old table with the new table using <code>SELECT</code> to remove the duplicates.<br>The tricky part of this question is that you cannot create a new table, as the system only checks the original table <code>Person</code>.</p><p>Since we cannot use <code>SELECT</code>, the only way to filter out unwanted rows is to use <code>WHERE</code> or <code>HAVING</code>.</p><p>First of all, we can call the same table twice by giving them different name temporarily, so that we can compare between rows,</p><p>We need to keep the same email which has smaller id, so <code>p.Id &gt; q_Id</code>, then we also need to nake sure that there are acutally duplicate email, so <code>p.Email=q.Email</code></p><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><pre><code class="sql">DELETE p from Person p, Person q where p.Id&gt;q.Id AND q.Email=p.Email</code></pre><hr><p>More SQL 50 questions: <a href="../sql50/">here</a></p>]]></content>
       
       
       <categories>
           
           <category> LeetCode </category>
           
-          <category> SQL 50 </category>
+          <category> SQL_50 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SQL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Leetcode SQL 50 -- 1527. Patients With a Condition</title>
+      <link href="/sql50-1527/"/>
+      <url>/sql50-1527/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><h3 id="Table-name-Patients"><a href="#Table-name-Patients" class="headerlink" title="Table name: Patients"></a>Table name: <code>Patients</code></h3><table><thead><tr><th align="left">Column Name</th><th align="left">Type</th></tr></thead><tbody><tr><td align="left">patient_id</td><td align="left">int</td></tr><tr><td align="left">patient_name</td><td align="left">varchar</td></tr><tr><td align="left">conditions</td><td align="left">varchar</td></tr></tbody></table><p><code>conditions</code> contains <strong>zero or more</strong> code separated by spaces.<br>This table contains information of the <code>patients</code> in the hospital.</p><blockquote><p>Write a solution to find the <code>patient_id</code>, <code>patient_name</code>, and <code>conditions</code> of the patients who have <strong>Type I Diabetes</strong>.<br>Type I Diabetes always starts with <code>DIAB1</code> prefix. Return the result table in any order.</p></blockquote><h2 id="Explaination"><a href="#Explaination" class="headerlink" title="Explaination"></a>Explaination</h2><h3 id="SQL-LIKE-Operator"><a href="#SQL-LIKE-Operator" class="headerlink" title="SQL LIKE Operator"></a>SQL LIKE Operator</h3><p>In SQL, to extract data that contain certain specified pattern, we can use <code>LIKE</code> in the <code>WHERE</code> clause.<br>For example, we can use </p><pre><code class="sql">SELECT * FROM Patients WHERE conditions LIKE &#39;DIAB1%&#39;</code></pre><p>In here, <code>%</code> is a wildcard, refers to any number of characters can exist after the string <code>DIAB1</code>.<br><code>DIAB1</code>, <code>DIAB1234</code>, <code>DIAB1eg</code> are valid outputs.</p><p>There is another wildcard <code>_</code>, refers to exactly one single character.<br><code>aDIAB12</code>, <code>2DIAB1</code> are valid outputs of <code>_DIAB1</code></p><h3 id="Valid-outputs"><a href="#Valid-outputs" class="headerlink" title="Valid outputs"></a>Valid outputs</h3><p>In this question, <code>conditions</code> which contain valid <code>DIAB1</code> are either:</p><ul><li><code>DIAB1</code> is after some conditions, for exmaple <code>ACNE DIAB100</code>, or</li><li>the list of conditions begins with <code>DIAB1</code>, for example <code>DIAB100 MYOP</code>.</li></ul><p>Therefore, we have to include both cases with two separate <code>LIKE</code> operator.</p><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><pre><code class="sql">SELECT * FROM PatientsWHERE conditions LIKE &#39;% DIAB1%&#39; OR conditions LIKE &#39;DIAB1%&#39;</code></pre><hr><p>More SQL 50 questions: <a href="../sql50/">here</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+          <category> SQL_50 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SQL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Leetcode SQL 50 -- 1667. Fix Names in a Table</title>
+      <link href="/sql50-1667/"/>
+      <url>/sql50-1667/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><h3 id="Table-name-Users"><a href="#Table-name-Users" class="headerlink" title="Table name: Users"></a>Table name: <code>Users</code></h3><table><thead><tr><th align="left">Column Name</th><th align="left">Type</th></tr></thead><tbody><tr><td align="left">user_id</td><td align="left">int</td></tr><tr><td align="left">name</td><td align="left">varchar</td></tr></tbody></table><p>This table contains the <code>user_id</code> and the <code>name</code> of the user. The <code>name</code> consists of <strong>only lowercase and uppercase</strong> characters.</p><blockquote><p>Write a solution to fix the names so that <strong>only the first character is uppercase</strong> and the <strong>rest are lowercase</strong>.<br>Return the result table <strong>ordered</strong> by <code>user_id</code>.<br>The result format is in the following example.</p></blockquote><h2 id="Explaination"><a href="#Explaination" class="headerlink" title="Explaination"></a>Explaination</h2><p>We can split the tasks into three part.</p><ol><li>Split the name into <strong>first character</strong> and the <strong>remaining characters</strong> → <code>SUBSTRING()</code></li><li>Modify them into <strong>upper case</strong> and <strong>lower case</strong> respectively → <code>UPPER()</code> and <code>LOWER()</code></li><li>Order the result by <code>user_id</code> → <code>ORDER BY</code></li></ol><h3 id="SQL-SUBSTRING-Function"><a href="#SQL-SUBSTRING-Function" class="headerlink" title="SQL SUBSTRING() Function"></a>SQL SUBSTRING() Function</h3><p>For extracting characters from a string, we can use the function <code>SUBSTRING(&lt;string&gt;, start, end)</code>.<br>For example,</p><pre><code class="sql">SUBSTRING(name, 1, 1)</code></pre><p>returns the first character from string <code>name</code>,<br>and <code>name</code> without the first letter.</p><pre><code class="sql">SUBSTRING(name, 2, LENGTH(name))</code></pre><h3 id="SQL-UPPER-LOWER-and-CONCAT"><a href="#SQL-UPPER-LOWER-and-CONCAT" class="headerlink" title="SQL UPPER(), LOWER(), and CONCAT()"></a>SQL UPPER(), LOWER(), and CONCAT()</h3><p>For text converting, we can simply use <code>UPPER(&lt;text&gt;)</code> and <code>LOWER(&lt;text&gt;)</code>.<br>Then we can combine two substring together by using</p><pre><code class="sql">CONCAT(&lt;string1&gt;, &lt;string2&gt;, ... , &lt;string_n&gt;)</code></pre><p>and finally, use <code>ORDER BY user_id</code>.</p><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><pre><code class="sql">SELECT user_id,   CONCAT(    UPPER(SUBSTRING(name, 1, 1)),     LOWER(SUBSTRING(name, 2, LENGTH(name)))  ) AS nameFROM UsersORDER BY user_id</code></pre><hr><p>More SQL 50 questions: <a href="../sql50/">here</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+          <category> SQL_50 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SQL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Leetcode SQL 50 -- 1378. Replace Employee ID With The Unique Identifier</title>
+      <link href="/sql50-1378/"/>
+      <url>/sql50-1378/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><h3 id="Table-name-Employees"><a href="#Table-name-Employees" class="headerlink" title="Table name: Employees"></a>Table name: <code>Employees</code></h3><table><thead><tr><th align="left">Column Name</th><th align="left">Type</th></tr></thead><tbody><tr><td align="left">id</td><td align="left">int</td></tr><tr><td align="left">name</td><td align="left">varchar</td></tr></tbody></table><p>id is the primary key (column with unique values) for this table.<br>Each row of this table contains the id and the name of an employee in a company.</p><h3 id="Table-name-EmployeeUNI"><a href="#Table-name-EmployeeUNI" class="headerlink" title="Table name: EmployeeUNI"></a>Table name: <code>EmployeeUNI</code></h3><table><thead><tr><th align="left">Column Name</th><th align="left">Type</th></tr></thead><tbody><tr><td align="left">id</td><td align="left">int</td></tr><tr><td align="left">unique_id</td><td align="left">int</td></tr></tbody></table><p>(<code>id</code>, <code>unique_id</code>) is the primary key (combination of columns with unique values) for this table.<br>Each row of this table contains the id and the corresponding unique id of an employee in the company.</p><blockquote><p>Write a solution to show the <code>unique ID</code> of each user,<br>If a user does not have a unique ID replace just show <strong>null</strong>.<br>Return the result table in any order.</p></blockquote><h2 id="Explaination"><a href="#Explaination" class="headerlink" title="Explaination"></a>Explaination</h2><p>In this question, we need to use <code>JOIN</code>:</p><pre><code class="sql">FROM &lt;table1&gt;JOIN &lt;table2&gt; ON &lt;table1.column_n&gt; = &lt;table2.column_m&gt;</code></pre><p><code>JOIN</code> always comes with <code>ON</code>, which indicates the column used as a reference for joining.<br>Also, there are different types referring to different usage.</p><p><img src="/images/leetcode/sql50/sql_join.png"></p><p>We are trying to include <code>unique_id</code> to the table <code>Employees</code><br>Since we need to include every users even if they don’t have a unique ID, we need to use <code>LEFT JOIN</code>.</p><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><pre><code class="sql">SELECT EmployeeUNI.unique_id, Employees.name FROM Employees LEFT JOIN EmployeeUNI ON EmployeeUNI.id = Employees.id;</code></pre><hr><p>More SQL 50 questions: <a href="../sql50/">here</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+          <category> SQL_50 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SQL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Leetcode SQL 50 -- 1683. Invalid Tweets</title>
+      <link href="/sql50-1683/"/>
+      <url>/sql50-1683/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><h3 id="Table-name-Tweets"><a href="#Table-name-Tweets" class="headerlink" title="Table name: Tweets"></a>Table name: <code>Tweets</code></h3><table><thead><tr><th align="left">Column Name</th><th align="left">Type</th></tr></thead><tbody><tr><td align="left">tweet_id</td><td align="left">int</td></tr><tr><td align="left">content</td><td align="left">varchar</td></tr></tbody></table><p><code>tweet_id</code> is the primary key (column with unique values) for this table.<br>This table contains all the tweets in a social media app.</p><blockquote><p>Write a solution to find the <code>IDs</code> of the <strong>invalid tweets</strong>.<br>The tweet is invalid if the <strong>number of characters</strong> used in the <code>content</code> of the tweet is <strong>strictly greater than 15</strong>.<br>Return the result table in any order.</p></blockquote><h2 id="Explaination"><a href="#Explaination" class="headerlink" title="Explaination"></a>Explaination</h2><p>To check the number of character, we can use the <code>LENGTH(&lt;string&gt;)</code> function.</p><p>If you use this function on numbers (e.g. int), it will turn it into string and return <strong>number of digits</strong>.</p><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><pre><code class="sql">SELECT tweet_id FROM Tweets WHERE LENGTH(content)&gt;15;</code></pre><hr><p>More SQL 50 questions: <a href="../sql50/">here</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+          <category> SQL_50 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SQL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Leetcode SQL 50 -- 1148. Article Views I</title>
+      <link href="/sql50-1148/"/>
+      <url>/sql50-1148/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><h3 id="Table-name-Views"><a href="#Table-name-Views" class="headerlink" title="Table name: Views"></a>Table name: <code>Views</code></h3><table><thead><tr><th align="left">Column Name</th><th align="left">Type</th></tr></thead><tbody><tr><td align="left">article_id</td><td align="left">int</td></tr><tr><td align="left">author_id</td><td align="left">int</td></tr><tr><td align="left">viewer_id</td><td align="left">int</td></tr><tr><td align="left">view_date</td><td align="left">date</td></tr></tbody></table><p>There is <strong>no primary key</strong> (column with unique values) for this table, the table may have duplicate rows.</p><p>Each row of this table indicates that some <code>viewer</code> viewed an article (written by some <code>author</code>) on some <code>date</code>.</p><p>Note that equal <code>author_id</code> and <code>viewer_id</code> indicate the same person.</p><blockquote><p>Write a solution to find all the <strong>authors</strong> that viewed <strong>at least one of their own articles</strong>.<br>Return the result table sorted by id in <strong>ascending order</strong>.</p></blockquote><h2 id="Explaination"><a href="#Explaination" class="headerlink" title="Explaination"></a>Explaination</h2><p>We have two tasks:</p><ol><li>Authors viewed their own articles → <code>WHERE author_id = viewer_id</code></li><li>Sort table by id in ascending order → <code>ORDER BY author_id ASC</code></li></ol><h3 id="SQL-ORDER-BY"><a href="#SQL-ORDER-BY" class="headerlink" title="SQL ORDER BY"></a>SQL ORDER BY</h3><pre><code class="sql">ORDER BY &lt;column1&gt;, &lt;column2&gt;, ... ASC|DESC;</code></pre><p>By default, <code>ORDER BY</code> sort rows in <strong>ascending order</strong>.</p><p>And if there are multiple columns, sort the rows according to the first column, and then the second column when the rows contain same values in the first column and so on.</p><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><pre><code class="sql">SELECT distinct author_id AS id FROM Views WHERE author_id = viewer_id ORDER BY author_id ASC</code></pre><hr><p>More SQL 50 questions: <a href="../sql50/">here</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+          <category> SQL_50 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SQL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Leetcode SQL 50 -- 595. Big Countries</title>
+      <link href="/sql50-595/"/>
+      <url>/sql50-595/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><h3 id="Table-name-World"><a href="#Table-name-World" class="headerlink" title="Table name: World"></a>Table name: <code>World</code></h3><table><thead><tr><th align="left">Column Name</th><th align="left">Type</th></tr></thead><tbody><tr><td align="left">name</td><td align="left">varchar</td></tr><tr><td align="left">continent</td><td align="left">varchar</td></tr><tr><td align="left">area</td><td align="left">int</td></tr><tr><td align="left">population</td><td align="left">int</td></tr><tr><td align="left">gdp</td><td align="left">bigint</td></tr></tbody></table><p><code>name</code> is the primary key (column with unique values) for this table.</p><p>Each row of this table gives information about the name of a country,<br>the <code>continent</code> to which it belongs, its <code>area</code>, the <code>population</code>, and its <code>GDP value</code>.</p><h3 id="Big-Country"><a href="#Big-Country" class="headerlink" title="Big Country"></a>Big Country</h3><p>A country is <strong>big</strong> if:</p><ul><li>it has an <code>area</code> of <strong>at least three million</strong> (i.e., 3000000 km2), <strong>or</strong></li><li>it has a <code>population</code> of <strong>at least twenty-five million</strong> (i.e., 25000000).</li></ul><blockquote><p>Write a solution to find the <code>name</code>, <code>population</code>, and <code>area</code> of the <strong>big countries</strong>.<br>Return the result table in any order.</p></blockquote><h2 id="Explaination"><a href="#Explaination" class="headerlink" title="Explaination"></a>Explaination</h2><p>Again we use <code>SELECT &lt;column_name&gt; FROM &lt;table_name&gt; WHERE &lt;conditions&gt;</code> to get the solution.</p><p>As question mention we should use <code>OR</code> and <strong>at least</strong> refers to <code>&gt;=</code>.</p><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><pre><code class="sql">SELECT name, population, area FROM World WHERE area &gt;= 3000000 OR population &gt;= 25000000;</code></pre><hr><p>More SQL 50 questions: <a href="../sql50/">here</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+          <category> SQL_50 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SQL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Leetcode SQL 50 -- 584. Find Customer Referee</title>
+      <link href="/sql50-584/"/>
+      <url>/sql50-584/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><h3 id="Table-name-Customer"><a href="#Table-name-Customer" class="headerlink" title="Table name: Customer"></a>Table name: <code>Customer</code></h3><table><thead><tr><th align="left">Column Name</th><th align="left">Type</th></tr></thead><tbody><tr><td align="left">id</td><td align="left">int</td></tr><tr><td align="left">name</td><td align="left">varchar</td></tr><tr><td align="left">referee_id</td><td align="left">int</td></tr></tbody></table><p><code>id</code> is the <code>primary key column</code> for this table.<br>Each row of this table indicates the <code>id</code> of a customer, their <code>name</code>, and the <code>id of the customer who referred them</code>.</p><blockquote><p>Find the <strong>names</strong> of the customer that are <strong>not referred by the customer with id &#x3D; 2</strong>.<br>Return the result table in any order.</p></blockquote><h2 id="Explaination"><a href="#Explaination" class="headerlink" title="Explaination"></a>Explaination</h2><p>Again we use <code>SELECT &lt;column_name&gt; FROM &lt;table_name&gt; WHERE &lt;conditions&gt;</code> to get the solution.</p><p>The tricky part is some of the <code>referee_id</code> may contain <code>NULL</code> value.</p><h3 id="NULL-handling"><a href="#NULL-handling" class="headerlink" title="NULL handling"></a>NULL handling</h3><p>We may simply think that the solution is</p><pre><code class="sql">WHERE referee_id !=2</code></pre><p>However, <code>NULL</code> <strong>always</strong> return <code>false</code> in any comparison. For example:</p><pre><code class="sql">SELECT *FROM CustomerWHERE referee_id != 2 OR referee_id = 2</code></pre><p>This query will return all rows that their <code>referee_id</code> is not <code>NULL</code>. Because <code>NULL</code> returns <code>false</code> in both cases.</p><p>In order to retrieve rows that contain <code>NULL</code>, we have to use the keyword <code>IS NULL</code>.</p><p>For further explaination of NULL Handling in SQL, you may check the <a href="https://www.sqlite.org/nulls.html">sqlite documentation</a></p><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><pre><code class="sql">SELECT &quot;name&quot; FROM Customer WHERE referee_id != 2 OR referee_id IS NULL;</code></pre><hr><p>More SQL 50 questions: <a href="../sql50/">here</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+          <category> SQL_50 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SQL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Leetcode SQL 50 -- 1757. Recyclable and Low Fat Products</title>
+      <link href="/sql50-1757/"/>
+      <url>/sql50-1757/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><h3 id="Table-name-Products"><a href="#Table-name-Products" class="headerlink" title="Table name: Products"></a>Table name: <code>Products</code></h3><table><thead><tr><th align="left">Column Name</th><th align="left">Type</th></tr></thead><tbody><tr><td align="left">product_id</td><td align="left">int</td></tr><tr><td align="left">low_fats</td><td align="left">enum</td></tr><tr><td align="left">recyclable</td><td align="left">enum</td></tr></tbody></table><p><code>product_id</code> is the primary key (column with unique values) for this table.</p><p><code>low_fats</code> is an <code>ENUM</code> of type (<code>Y</code>, <code>N</code>) where <code>Y</code> means this product is low fat and <code>N</code> means it is not.</p><p><code>recyclable</code> is an <code>ENUM</code> of types (<code>Y</code>, <code>N</code>) where <code>Y</code> means this product is recyclable and <code>N</code> means it is not.</p><blockquote><p>Write a solution to <strong>find the ids</strong> of products that are <strong>both low fat and recyclable</strong>.<br>Return the result table in any order.</p></blockquote><h2 id="Explaination"><a href="#Explaination" class="headerlink" title="Explaination"></a>Explaination</h2><p>This is one the most basic SQL <code>SELECT</code> query scenario,<br>by using <code>SELECT &lt;column_name&gt; FROM &lt;table_name&gt; WHERE &lt;conditions&gt;</code> you may get the solution easily.</p><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><pre><code class="sql">SELECT product_id FROM Products WHERE low_fats = &quot;Y&quot; AND recyclable = &quot;Y&quot;;</code></pre><hr><p>More SQL 50 questions: <a href="../sql50/">here</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+          <category> SQL_50 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SQL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Leetcode SQL 50 (Portal 🚪)</title>
+      <link href="/sql50/"/>
+      <url>/sql50/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>This is a portal for my walkthroughs of SQL 50 on Leetcode</p></blockquote><p><a href="https://leetcode.com/studyplan/top-sql-50/">Link of Leetcode SQL 50</a></p><h2 id="Select"><a href="#Select" class="headerlink" title="Select"></a>Select</h2><ul><li><a href="../sql50-1757/">1757. Recyclable and Low Fat Products</a></li><li><a href="../sql50-584/">584. Find Customer Referee</a></li><li><a href="../sql50-595/">595. Big Countries</a></li><li><a href="../sql50-1148/">1148. Article Views I</a></li><li><a href="../sql50-1683/">1683. Invalid Tweets</a></li></ul><h2 id="Basic-Joins"><a href="#Basic-Joins" class="headerlink" title="Basic Joins"></a>Basic Joins</h2><p><a href="../sql50-1378/">1378. Replace Employee ID With The Unique Identifier</a></p><h2 id="Basic-Aggregate-Functions"><a href="#Basic-Aggregate-Functions" class="headerlink" title="Basic Aggregate Functions"></a>Basic Aggregate Functions</h2><h2 id="Sorting-and-Grouping"><a href="#Sorting-and-Grouping" class="headerlink" title="Sorting and Grouping"></a>Sorting and Grouping</h2><h2 id="Advanced-Select-and-Joins"><a href="#Advanced-Select-and-Joins" class="headerlink" title="Advanced Select and Joins"></a>Advanced Select and Joins</h2><h2 id="Subqueries"><a href="#Subqueries" class="headerlink" title="Subqueries"></a>Subqueries</h2><h2 id="Advanced-String-Functions-Regex-Clause"><a href="#Advanced-String-Functions-Regex-Clause" class="headerlink" title="Advanced String Functions &#x2F; Regex &#x2F; Clause"></a>Advanced String Functions &#x2F; Regex &#x2F; Clause</h2><p><a href="../sql50-1667/">1667. Fix Names in a Table</a><br><a href="../sql50-1683/">1527. Patients With a Condition</a><br><a href="../sql50-196/">196. Delete Duplicate Emails</a><br><a href="../sql50-176/">176. Second Highest Salary</a><br><a href="../sql50-1484/">1484. Group Sold Products By The Date</a><br><a href="../sql50-1327/">1327. List the Products Ordered in a Period</a><br><a href="../sql50-1517/">1517. Find Users With Valid E-Mails</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+          <category> SQL_50 </category>
           
       </categories>
       
@@ -273,9 +503,9 @@
       
         <tags>
             
-            <tag> Cantonese </tag>
-            
             <tag> Hexo </tag>
+            
+            <tag> Cantonese </tag>
             
             <tag> Node.js </tag>
             
@@ -412,9 +642,9 @@
       
         <tags>
             
-            <tag> GitHub </tag>
-            
             <tag> Hexo </tag>
+            
+            <tag> GitHub </tag>
             
         </tags>
       
