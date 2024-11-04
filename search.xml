@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>Leetcode SQL 50 -- 1068. Product Sales Analysis I</title>
+      <link href="/sql50-1068/"/>
+      <url>/sql50-1068/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><h3 id="Table-name-Sales"><a href="#Table-name-Sales" class="headerlink" title="Table name: Sales"></a>Table name: <code>Sales</code></h3><table><thead><tr><th align="left">Column Name</th><th align="left">Type</th></tr></thead><tbody><tr><td align="left">sale_id</td><td align="left">int</td></tr><tr><td align="left">product_id</td><td align="left">int</td></tr><tr><td align="left">year</td><td align="left">int</td></tr><tr><td align="left">quantity</td><td align="left">int</td></tr><tr><td align="left">price</td><td align="left">int</td></tr></tbody></table><p>Each row of this table shows a sale on the product <code>product_id</code> in a certain year.<br>Note that the <code>price</code> is per unit.</p><h3 id="Table-name-Product"><a href="#Table-name-Product" class="headerlink" title="Table name: Product"></a>Table name: <code>Product</code></h3><table><thead><tr><th align="left">Column Name</th><th align="left">Type</th></tr></thead><tbody><tr><td align="left">product_id</td><td align="left">int</td></tr><tr><td align="left">product_name</td><td align="left">varchar</td></tr></tbody></table><p>Each row of this table indicates the <code>product name</code> of each product.</p><blockquote><p>Write a solution to report the <code>product_name</code>, <code>year</code>, and <code>price</code> for each <code>sale_id</code> in the <code>Sales</code> table.</p></blockquote><h2 id="Explaination"><a href="#Explaination" class="headerlink" title="Explaination"></a>Explaination</h2><p>This question is a basic usage of <code>JOIN</code> query.</p><p>Just be careful on which table you are referring when you select the columns.</p><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><pre><code class="sql">SELECT Product.product_name, Sales.year, Sales.price FROM Sales INNER JOIN Product ON Sales.product_id = Product.product_id;</code></pre><hr><p>More SQL 50 questions: <a href="../sql50/">here</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+          <category> SQL_50 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SQL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Leetcode SQL 50 -- 1517. Find Users With Valid E-Mails</title>
       <link href="/sql50-1517/"/>
       <url>/sql50-1517/</url>

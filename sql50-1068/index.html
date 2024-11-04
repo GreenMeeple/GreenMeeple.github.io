@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Using Hexo Scripts functions to create a custom Tag Plugin | GreenMeeple</title>
-  <meta name="keywords" content=" Hexo , Node.js ">
-  <meta name="description" content="Using Hexo Scripts functions to create a custom Tag Plugin | GreenMeeple">
+  <title>Leetcode SQL 50 -- 1068. Product Sales Analysis I | GreenMeeple</title>
+  <meta name="keywords" content=" SQL ">
+  <meta name="description" content="Leetcode SQL 50 -- 1068. Product Sales Analysis I | GreenMeeple">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="Personal Info.Chun Ngai Li (Alex), M.Sc. Cybersecurity in Saarland University,B.Eng Information Engineering in CUHK. Recent WorksA C&#x2F;C++ programmer. Also working on Backend &amp; Python developing.Cur">
 <meta property="og:type" content="website">
@@ -753,9 +753,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-hexo-tagplugin-1" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-sql50-1068" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Using Hexo Scripts functions to create a custom Tag Plugin</h1>
+        <h1 class="article-title">Leetcode SQL 50 -- 1068. Product Sales Analysis I</h1>
     
     <div class="article-meta">
         
@@ -765,7 +765,9 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="Coding">Coding</a>
+            <a  data-rel="LeetCode">LeetCode</a> > 
+            
+            <a  data-rel="LeetCode&lt;---&gt;SQL_50">SQL_50</a>
             
         </span>
         
@@ -773,21 +775,19 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color5">Hexo</a>
-            
-            <a class="color3">Node.js</a>
+            <a class="color4">SQL</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-10-25 13:46:16'>2024-10-12 04:03</time>
+            Created At : <time class="date" title='Updated At: 2024-10-30 11:16:33'>2024-11-03 11:07</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:392</span>
+        <span>Count:123</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -817,7 +817,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Tag-Plugin"><span class="toc-text">Tag Plugin</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Usage"><span class="toc-text">Usage</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Script"><span class="toc-text">Script</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Beyond-Scripts"><span class="toc-text">Beyond Scripts</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Question"><span class="toc-text">Question</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Table-name-Sales"><span class="toc-text">Table name: Sales</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Table-name-Product"><span class="toc-text">Table name: Product</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Explaination"><span class="toc-text">Explaination</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-text">Solution</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -833,51 +833,63 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>To color your personal Hexo Blog with more features, scripts and plugins are your powerful tools to use. Below we are trying to create our own <code>tag plugin</code> for the Hexo blog.</p>
-<h2 id="Tag-Plugin"><a href="#Tag-Plugin" class="headerlink" title="Tag Plugin"></a>Tag Plugin</h2><blockquote>
-<p>Be careful! Tag plugins are different from <a target="_blank" rel="noopener" href="https://hexo.io/docs/front-matter">post tags</a>.</p>
+        <h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><h3 id="Table-name-Sales"><a href="#Table-name-Sales" class="headerlink" title="Table name: Sales"></a>Table name: <code>Sales</code></h3><table>
+<thead>
+<tr>
+<th align="left">Column Name</th>
+<th align="left">Type</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">sale_id</td>
+<td align="left">int</td>
+</tr>
+<tr>
+<td align="left">product_id</td>
+<td align="left">int</td>
+</tr>
+<tr>
+<td align="left">year</td>
+<td align="left">int</td>
+</tr>
+<tr>
+<td align="left">quantity</td>
+<td align="left">int</td>
+</tr>
+<tr>
+<td align="left">price</td>
+<td align="left">int</td>
+</tr>
+</tbody></table>
+<p>Each row of this table shows a sale on the product <code>product_id</code> in a certain year.<br>Note that the <code>price</code> is per unit.</p>
+<h3 id="Table-name-Product"><a href="#Table-name-Product" class="headerlink" title="Table name: Product"></a>Table name: <code>Product</code></h3><table>
+<thead>
+<tr>
+<th align="left">Column Name</th>
+<th align="left">Type</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">product_id</td>
+<td align="left">int</td>
+</tr>
+<tr>
+<td align="left">product_name</td>
+<td align="left">varchar</td>
+</tr>
+</tbody></table>
+<p>Each row of this table indicates the <code>product name</code> of each product.</p>
+<blockquote>
+<p>Write a solution to report the <code>product_name</code>, <code>year</code>, and <code>price</code> for each <code>sale_id</code> in the <code>Sales</code> table.</p>
 </blockquote>
-<p>Tag plugins are special type of syntax that you may use in your Markdown file. </p>
-<p>Hexo has already provided some default Tag plugins like <code>Block Quote</code> and <code>iframe</code>.</p>
-<h3 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h3><p>For example, the syntax of <code>iframe</code> tag is:</p>
-<pre><code class="Markdown">&#123;% iframe url [width] [height] %&#125;
+<h2 id="Explaination"><a href="#Explaination" class="headerlink" title="Explaination"></a>Explaination</h2><p>This question is a basic usage of <code>JOIN</code> query.</p>
+<p>Just be careful on which table you are referring when you select the columns.</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><pre><code class="sql">SELECT Product.product_name, Sales.year, Sales.price 
+FROM Sales 
+INNER JOIN Product ON Sales.product_id = Product.product_id;
 </code></pre>
-<p>Let say I want to embed a video from me and my friends’ YouTube video:</p>
-<pre><code class="Markdown">&#123;% iframe https://www.youtube.com/embed/XIOl6BU7s9I?si=yTYsHIXNM6o-Zl9Z 820 461%&#125;
-</code></pre>
-<p>And that’s how it looks like:</p>
-<iframe src="https://www.youtube.com/embed/XIOl6BU7s9I?si=yTYsHIXNM6o-Zl9Z" width="820" height="461" frameborder="0" loading="lazy" allowfullscreen></iframe>
-
-<h2 id="Script"><a href="#Script" class="headerlink" title="Script"></a>Script</h2><p>Let say we want to create our own tag plugin, we can use the Hexo <code>script</code> function. Here’re the steps.</p>
-<ol>
-<li><p>Create a JavaScript file with function <code>hexo.extend.tag.register(&quot;tag_name&quot;, args)</code>. You may also put your own function inside so that the second argument can also be <code>function (args)&#123;&#125;</code></p>
-<p> Here is an example of a function that create a tag named <code>youtube</code>, with embedding video function:</p>
-<pre><code class="JavaScript">hexo.extend.tag.register(&quot;youtube&quot;, function (args) &#123;
-    var id = args[0];
-    return (
-        &#39;&lt;div class=&quot;video-container&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;http://www.youtube.com/embed/&#39; +
-        id +
-        &#39;&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;&#39;
-    );
-&#125;);
-</code></pre>
-</li>
-<li><p>Put your JavaScript files in the <code>scripts</code> folder. If your project folder is new, you may not be able to find it. This is because <code>scripts</code> folder is actually under the <code>Themes</code> folder.</p>
-<p> You may check <a target="_blank" rel="noopener" href="https://hexo.io/docs/themes">here</a> to see the structure of <code>themes</code> and create your own one. Or you may be simply find a template on the <a target="_blank" rel="noopener" href="https://hexo.io/themes/">Hexo themes community</a> then put your <code>.js</code> file into the theme.</p>
-</li>
-<li><p>It is done! Hexo will load them during initialization and you may use them in your blog post designs.</p>
-</li>
-</ol>
-<h3 id="Beyond-Scripts"><a href="#Beyond-Scripts" class="headerlink" title="Beyond Scripts"></a>Beyond Scripts</h3><p>If you are not satisfied with creating a local tag plugin, but a public one that will be seen by the community, you should consider using Hexo <code>plugin</code> function instead.</p>
-<p>check <a href="../hexo-tagplugin-2">here</a> to continue the journey.</p>
 <hr>
-<p>Further Reading:</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://hexo.io/docs/plugins">Hexo Plugins and Scripts</a></li>
-<li><a target="_blank" rel="noopener" href="https://hexo.io/docs/tag-plugins">Hexo Tag Plugins</a></li>
-<li><a target="_blank" rel="noopener" href="https://hexo.io/api/tag">Hexo Tag Api</a></li>
-<li><a target="_blank" rel="noopener" href="https://hexo.io/plugins/">Hexo Plugins Community</a></li>
-</ul>
+<p>More SQL 50 questions: <a href="../sql50/">here</a></p>
 
       
        <hr><span style="font-style: italic;color: gray;"> Please cite the source for reprints, feel free to verify the sources cited in the article, and point out any errors or lack of clarity of expression. You can comment in the comments section below or email to GreenMeeple@yahoo.com </span>
