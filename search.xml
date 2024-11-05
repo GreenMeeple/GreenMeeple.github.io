@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>Leetcode SQL 50 -- 1581. Customer Who Visited but Did Not Make Any Transactions</title>
+      <link href="/sql50-1581/"/>
+      <url>/sql50-1581/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><h3 id="Table-name-Visits"><a href="#Table-name-Visits" class="headerlink" title="Table name: Visits"></a>Table name: <code>Visits</code></h3><table><thead><tr><th align="left">Column Name</th><th align="left">Type</th></tr></thead><tbody><tr><td align="left">visit_id</td><td align="left">int</td></tr><tr><td align="left">customer_id</td><td align="left">int</td></tr></tbody></table><p>This table contains information about the <code>customers</code> who visited the mall.</p><h3 id="Table-name-Transactions"><a href="#Table-name-Transactions" class="headerlink" title="Table name: Transactions"></a>Table name: <code>Transactions</code></h3><table><thead><tr><th align="left">Column Name</th><th align="left">Type</th></tr></thead><tbody><tr><td align="left">transaction_id</td><td align="left">int</td></tr><tr><td align="left">visit_id</td><td align="left">int</td></tr><tr><td align="left">amount</td><td align="left">int</td></tr></tbody></table><p>This table contains information about the <code>transactions</code> made during the visit_id.</p><blockquote><p>Write a solution to find the <code>IDs of the users</code> who visited <strong>without making any transactions</strong>, and<br>the <strong>number of times</strong> they made these types of visits.<br>Return the result table sorted in any order.</p></blockquote><h2 id="Explaination"><a href="#Explaination" class="headerlink" title="Explaination"></a>Explaination</h2><p>This is another typical <code>JOIN</code> query question.<br>The tricky part is the column we join on doesn’t necessarily be selected.</p><p>Moreover, we can control which rows to be joined using <code>WHERE</code>, as simple <code>SELECT</code>.</p><p>Lasting to remember is to use <code>GROUP BY</code> for your <code>COUNT()</code> function,<br>to make sure they counted separately based on <code>customer_id</code>.</p><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><pre><code class="sql">SELECT customer_id, count(*) AS count_no_transFROM VisitsLEFT JOIN Transactions ON Visits.visit_id=Transactions.visit_idWHERE transaction_id IS NULLGROUP BY customer_id</code></pre><hr><p>More SQL 50 questions: <a href="../sql50/">here</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+          <category> SQL_50 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SQL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Leetcode SQL 50 -- 1068. Product Sales Analysis I</title>
       <link href="/sql50-1068/"/>
       <url>/sql50-1068/</url>
