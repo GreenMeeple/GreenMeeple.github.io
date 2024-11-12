@@ -144,7 +144,7 @@
     <li>
         <div class="all active" data-rel="All">All
             
-                <small>(41)</small>
+                <small>(40)</small>
             
         </div>
     </li>
@@ -246,7 +246,7 @@
         <div data-rel="Notes">
             <i class="fold iconfont icon-right"></i>
             Notes
-            <small>(9) </small>
+            <small>(8) </small>
         </div>
         
             <ul class="sub hide">
@@ -256,7 +256,7 @@
         <div data-rel="Notes&lt;---&gt;UdS">
             
             UdS
-            <small>(9) </small>
+            <small>(8) </small>
         </div>
         
     </li>
@@ -320,8 +320,8 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="41">
-<input type="hidden" id="yelog_site_word_count" value="14.6k">
+<input type="hidden" id="yelog_site_posts_number" value="40">
+<input type="hidden" id="yelog_site_word_count" value="14.1k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -521,15 +521,6 @@
            data-author="" >
             <span class="post-title" title="Leetcode SQL 50 -- 197. Rising Temperature">Leetcode SQL 50 -- 197. Rising Temperature</span>
             <span class="post-date" title="2024-11-05 18:42:26">2024/11/05</span>
-        </a>
-        
-        
-        <a  class="All Notes UdS "
-           href="/agv3-1/"
-           data-tag="AGV"
-           data-author="" >
-            <span class="post-title" title="Automata, Games, and Verification 3.1 -- Kleene’s Theorem">Automata, Games, and Verification 3.1 -- Kleene’s Theorem</span>
-            <span class="post-date" title="2024-11-05 03:36:30">2024/11/05</span>
         </a>
         
         
@@ -733,7 +724,7 @@
         
         <a  class="All Projects "
            href="/hexo-zhruby/"
-           data-tag="Hexo,Cantonese,HTML,Node.js"
+           data-tag="Hexo,Cantonese,Node.js,HTML"
            data-author="" >
             <span class="post-title" title="hexo-zhruby -- Implementing HTML Ruby tag in Hexo">hexo-zhruby -- Implementing HTML Ruby tag in Hexo</span>
             <span class="post-date" title="2024-10-14 04:04:55">2024/10/14</span>
@@ -867,12 +858,12 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-11-05 03:46:21'>2024-11-12 05:56</time>
+            Created At : <time class="date" title='Updated At: 2024-11-12 21:56:48'>2024-11-12 05:56</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:675</span>
+        <span>Count:693</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -948,12 +939,15 @@
 <p>A <em>complete Büchi Automaton</em> requires every states must have transitions for every letters in the alphabet.<br>So for each states orginally in $Q$, we construct new transitions that the letters are not yet used by the state.<br>(which is $\nexists q’ . (q,\sigma,q’)\in T$)</p>
 <p>Finally, for all transitions from the fresh state are self transitioning, and they include all letters.<br>(which is $(q_f,\sigma,q_f)\mid\sigma\in\Sigma$)</p>
 <h3 id="Proof"><a href="#Proof" class="headerlink" title="Proof"></a>Proof</h3><ul>
-<li>The runs of $\mathcal{A’}$ are a <strong>superset</strong> of those of $\mathcal{A}$,<ul>
-<li>because we have not removed any transitions during the construction of $\mathcal{A’}$.</li>
+<li><p>The runs of $\mathcal{A’}$ are a <strong>superset</strong> of those of $\mathcal{A}$.</p>
+<ul>
+<li>During the construction of $\mathcal{A’}$, we have not removed any original transitions, but adding new fresh states.</li>
 </ul>
 </li>
-<li>Furthermore, on <strong>any infinite input word</strong> the accepting runs of $\mathcal{A}$ and $\mathcal{A’}$ are the same,<ul>
-<li>because any run that reaches the new state $q_f$ stays in $q_f$ forever, and</li>
+<li><p>Furthermore, on <strong>any infinite input word</strong>, the accepting runs of $\mathcal{A}$ and $\mathcal{A’}$ are the same.</p>
+<ul>
+<li>If $\mathcal{A}$ accepts, $\mathcal{A’}$ also accepts because $\mathcal{A’}$ is a superset.</li>
+<li>If a run reaches new fresh states $q_f$ stays in $q_f$ forever, and</li>
 <li>since $q_f\notin F’$, such a run is not accepting.</li>
 </ul>
 </li>
