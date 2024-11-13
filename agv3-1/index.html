@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Leetcode SQL 50 -- 176. Second Highest Salary | GreenMeeple</title>
-  <meta name="keywords" content=" SQL ">
-  <meta name="description" content="Leetcode SQL 50 -- 176. Second Highest Salary | GreenMeeple">
+  <title>AGV 3.1 -- Kleene&#39;s Theorem | GreenMeeple</title>
+  <meta name="keywords" content=" AGV ">
+  <meta name="description" content="AGV 3.1 -- Kleene&#39;s Theorem | GreenMeeple">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="GreenMeeple cannot find what you are looking for...">
@@ -838,9 +838,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-sql50-176" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-agv3-1" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Leetcode SQL 50 -- 176. Second Highest Salary</h1>
+        <h1 class="article-title">AGV 3.1 -- Kleene&#39;s Theorem</h1>
     
     <div class="article-meta">
         
@@ -850,9 +850,9 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="LeetCode">LeetCode</a> > 
+            <a  data-rel="Notes">Notes</a> > 
             
-            <a  data-rel="LeetCode&lt;---&gt;SQL_50">SQL_50</a>
+            <a  data-rel="Notes&lt;---&gt;UdS">UdS</a>
             
         </span>
         
@@ -860,19 +860,19 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color4">SQL</a>
+            <a class="color4">AGV</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-10-30 11:04:52'>2024-10-30 06:49</time>
+            Created At : <time class="date" title='Updated At: 2024-11-13 20:28:44'>2024-11-13 13:36</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:279</span>
+        <span>Count:703</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -902,7 +902,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Question"><span class="toc-text">Question</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Table-name"><span class="toc-text">Table name: &#96;&#96;</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Explaination"><span class="toc-text">Explaination</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Using-LIMIT-and-OFFSET"><span class="toc-text">1. Using LIMIT and OFFSET</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Recursive-SELECT"><span class="toc-text">2. Recursive SELECT</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-text">Solution</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Using-LIMIT-and-OFFSET"><span class="toc-text">Using LIMIT and OFFSET</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Recursive-SELECT"><span class="toc-text">Recursive SELECT</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Introduction"><span class="toc-text">Introduction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Regular-Expression"><span class="toc-text">Regular Expression</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Kleene%E2%80%99s-Theorem"><span class="toc-text">Kleene’s Theorem</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Mathematical-Definition"><span class="toc-text">Mathematical Definition</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Explained-in-Human-language"><span class="toc-text">Explained in Human language</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#From-accepted-word-to-accepted-language"><span class="toc-text">From accepted word to accepted language</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -918,57 +918,45 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><h3 id="Table-name"><a href="#Table-name" class="headerlink" title="Table name: &#96;&#96;"></a>Table name: &#96;&#96;</h3><table>
-<thead>
-<tr>
-<th align="left">Column Name</th>
-<th align="left">Type</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">id</td>
-<td align="left">int</td>
-</tr>
-<tr>
-<td align="left">salary</td>
-<td align="left">int</td>
-</tr>
-</tbody></table>
-<p>Each row of this table contains information about the <code>salary</code> of an <code>employee</code>.</p>
+        <p>Previous chapter: <a href="../agv2-3/">The Büchi Acceptance Condition</a></p>
 <blockquote>
-<p>Write a solution to find the <strong>second highest distinct</strong> <code>salary</code> from the Employee table.<br>If there is no second highest salary, return <code>null</code>.</p>
+<p>This is a learning note of a course in <a target="_blank" rel="noopener" href="https://cispa.de/de">CISPA</a>, UdS. Taught by Bernd Finkbeiner</p>
 </blockquote>
-<h2 id="Explaination"><a href="#Explaination" class="headerlink" title="Explaination"></a>Explaination</h2><p>The key idea of this question is to get the <strong>second</strong> value. Here I have two ideas that come to my mind immediately</p>
-<ol>
-<li>First, order the list according to salary, then fetch the second row.</li>
-<li>First, find the highest salary, then do another <code>SELECT</code> query based on the highest salary.</li>
-</ol>
-<h3 id="1-Using-LIMIT-and-OFFSET"><a href="#1-Using-LIMIT-and-OFFSET" class="headerlink" title="1. Using LIMIT and OFFSET"></a>1. Using LIMIT and OFFSET</h3><p>Using <code>LIMIT</code> and <code>OFFSET</code>, we can simply retrieve the second row of a database:</p>
-<pre><code class="sql">SELECT DISTINCT Salary 
-    FROM Employee 
-    ORDER BY salary DESC 
-    LIMIT 1 OFFSET 1
-</code></pre>
-<p>Here, we used <code>ORDER BY salary DESC</code> and <code>DISTINCT</code> to make sure the second row contains the second highest salary.<br>Then <code>LIMIT 1</code> constraints there will be only one row returned, <code>OFFSET 1</code> means to skip 1 row before fetching.</p>
-<p>However, this query won’t return <code>null</code> if there isn’t a second row.</p>
-<p>To solve the problem, we can wrap this query by another <code>SELECT</code> query.</p>
-<h3 id="2-Recursive-SELECT"><a href="#2-Recursive-SELECT" class="headerlink" title="2. Recursive SELECT"></a>2. Recursive SELECT</h3><p>There will be two <code>SELECT</code> function, the <code>SELECT</code> in <code>WHERE</code> clause returns the highest salary:</p>
-<pre><code class="sql">WHERE salary &lt; (SELECT MAX(salary) FROM Employee)
-</code></pre>
-<p>So that the <code>SELECT</code> query outside can directly compare with this and thus it returns the second highest salary.</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><h3 id="Using-LIMIT-and-OFFSET"><a href="#Using-LIMIT-and-OFFSET" class="headerlink" title="Using LIMIT and OFFSET"></a>Using LIMIT and OFFSET</h3><pre><code class="sql">SELECT(
-    SELECT DISTINCT Salary 
-    FROM Employee 
-    ORDER BY salary DESC 
-    LIMIT 1 OFFSET 1 )
-AS SecondHighestSalary;
-</code></pre>
-<h3 id="Recursive-SELECT"><a href="#Recursive-SELECT" class="headerlink" title="Recursive SELECT"></a>Recursive SELECT</h3><pre><code class="sql">SELECT MAX(salary) AS SecondHighestSalary 
-FROM Employee
-WHERE salary &lt; (SELECT MAX(salary) FROM Employee);
-</code></pre>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p><em>Kleene’s theorem</em> states that the <em>set of languages over finite words</em> that can be defined by <strong>regular expressions</strong> is exactly the set of languages that can be recognized by <strong>automata over finite words</strong>.</p>
+<p>Based on this, we define $\omega$-regular expressions, and finally prove the corresponding theorem for $\omega$-regular languages: <strong>Büchi’s characterization theorem</strong>.</p>
+<h2 id="Regular-Expression"><a href="#Regular-Expression" class="headerlink" title="Regular Expression"></a>Regular Expression</h2><p>Regular expression consist of <strong>constants</strong> that denote languages of <em>finite words</em>, and<br>consist of <strong>operator symbols</strong> that denote <em>operations over these languages</em>.</p>
+<p>The collection of regular languages over an alphabet $\Sigma$ is $\mathcal{L}(E)$, where $E$ is a regular expression.<br>Regular expression can be defined as $E :&#x3D; \varepsilon\mid\emptyset\mid a\in\Sigma\mid E+F\mid E\cdot F\mid E^* $, where:</p>
+<ul>
+<li><strong>empty language</strong>: $\varepsilon$,</li>
+<li><strong>empty string language</strong>: $\emptyset$,</li>
+<li><strong>singleton language</strong>: (single letter from alphabet) $a\in\Sigma$,</li>
+<li><strong>union</strong> of regular languages: $E+F$,</li>
+<li><strong>concatenation</strong> of regular languages: $E\cdot F$, and</li>
+<li>language with <strong>kleene star</strong>: $E^*$.</li>
+</ul>
+<blockquote>
+<p>$\textbf{Definition 3.1. } \textit{Regular expressions } \text{are defined as follows:}$<br>$<br>\begin{array}{l}<br>\hspace{1cm} \cdot \ \text{The constants $\varepsilon$ and $\emptyset$ are regular expressions.}\newline<br>\hspace{1cm} \ \ \mathcal{L}(\varepsilon) &#x3D; \lbrace\varepsilon\rbrace ,\mathcal{L}(\emptyset)&#x3D;\emptyset .\newline<br>\hspace{1cm} \cdot \ \text{If $a\in\Sigma$ is a symbol, then $a$ is a regular expressions.}\newline<br>\hspace{1cm} \ \ \mathcal{L}(a) &#x3D; \lbrace a\rbrace .\newline<br>\hspace{1cm} \cdot \ \text{If $E$ and $F$ are regular expressions, then $E+F$ is a regular expression:}\newline<br>\hspace{1cm} \ \ \mathcal{L}(E+F) &#x3D; \mathcal{L}(E)\cup\mathcal{L}(F) .\newline<br>\hspace{1cm} \cdot \ \text{If $E$ and $F$ are regular expressions, then $E\cdot F$ is a regular expression:}\newline<br>\hspace{1cm} \ \ \mathcal{L}(E\cdot F) &#x3D; \lbrace uv\mid u\in\mathcal{L}(E),v\in\mathcal{L}(F)\rbrace .\newline<br>\hspace{1cm} \cdot \ \text{If $E$ is a regular expression, then $E^*$ is a regular expression.}\newline<br>\hspace{1cm} \ \ \mathcal{L}(E^*) &#x3D; \lbrace u_1 u_2 \dots u_n \mid n\in\mathbb{N},u_i \in\mathcal{L}(E)\text{ for all }0\leq i\leq n\rbrace.\newline<br>\end{array}<br>$</p>
+</blockquote>
+<h2 id="Kleene’s-Theorem"><a href="#Kleene’s-Theorem" class="headerlink" title="Kleene’s Theorem"></a>Kleene’s Theorem</h2><p><em>A language over finite words</em> is <strong>regular</strong> if it is definable by a <em>regular expression</em>, or<br>if it is recognized by <em>automata over finite words</em>.</p>
+<blockquote>
+<p>$\textbf{Definition 3.2. } \text{An }\textit{automaton on finite words } \mathcal{A}\text{ is a tuple } (\Sigma,Q,I,T,F), \text{ where $\Sigma$ is an input} \newline \text{alphabet, $Q$ is a nonempty finite set of states, $I\in Q$ is a set of initial states, $\Delta\subseteq Q\times\Sigma\times Q$ is}\newline\text{a set of transitions, and $F\subseteq Q$ are a set of finite states.}$</p>
+</blockquote>
+<h3 id="Mathematical-Definition"><a href="#Mathematical-Definition" class="headerlink" title="Mathematical Definition"></a>Mathematical Definition</h3><p>An automaton $\mathcal{A}$ accepts a finite word $w \in\Sigma^*$ if there is a finite sequence of states $q(0)q(1) . . . q(|w|)$ such that $q(0)\in I$ and $(q(i),w(i), q(i + 1))\in\Delta$ for all $i &lt; |w|$ and with $q(|w|)\in F$</p>
+<h3 id="Explained-in-Human-language"><a href="#Explained-in-Human-language" class="headerlink" title="Explained in Human language"></a>Explained in Human language</h3><p>In a nutshell, a finite word $w$ is <strong>accepted</strong> by an automaton $\mathcal{A} &#x3D; (\Sigma,Q,I,T,F)$ if:</p>
+<ul>
+<li>$\Sigma:$ w is a finite word in $\Sigma$</li>
+<li>$Q:$ There exists a finite sequence of states $q(0)q(1) . . . q(|w|)$</li>
+<li>$I:$ In such sequence, $q(0)$ is one of the initial state $I$</li>
+<li>$T:$ In such sequence, there is transition from $q(i)$ to $q(i+1)$ for each letter $w(i)$, where $i&lt;|w|$.</li>
+<li>$F:$ In such sequence, $q(|w|)$ is one of the final state $F$,<br>and it will be the last state of the run since there is no more letters.</li>
+</ul>
+<h3 id="From-accepted-word-to-accepted-language"><a href="#From-accepted-word-to-accepted-language" class="headerlink" title="From accepted word to accepted language"></a>From accepted word to accepted language</h3><p>The set of all words accepted by $\mathcal{A}$ is called the <strong>language</strong> of $\mathcal{A}$, denoted by $\mathcal{L}(\mathcal{A})$.</p>
+<blockquote>
+<p>$\textbf{Theorem 3.1. } \text{(Kleene’s Theorem)}\newline\textit{A language is regular iff it is recognized by some finite word automaton.}$</p>
+</blockquote>
 <hr>
-<p>More SQL 50 questions: <a href="../sql50/">here</a></p>
+<p>Next post: <a href="../agv3-2/">$\omega$-regular language</a></p>
+<p>Further Reading: <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Regular_expression">Regular expression</a>,<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Regular_language">Regular language</a> <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Kleene_star#:~:text=The%20Kleene%20star%20is%20defined,x%E2%8B%85y%20%E2%88%88%20S*.">Kleene star</a></p>
 
       
        <hr><span style="font-style: italic;color: gray;"> Please cite the source for reprints, feel free to verify the sources cited in the article, and point out any errors or lack of clarity of expression. You can comment in the comments section below or email to GreenMeeple@yahoo.com </span>
@@ -1002,6 +990,46 @@ WHERE salary &lt; (SELECT MAX(salary) FROM Employee);
 
 
 
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.jsdelivr.net/npm/mathjax@2.7.8/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.jsdelivr.net/npm/mathjax@2.7.8/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
     
 
 

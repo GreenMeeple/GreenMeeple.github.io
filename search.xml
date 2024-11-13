@@ -4,7 +4,34 @@
   
     
     <entry>
-      <title>Automata, Games, and Verification 2.3 -- The Büchi Acceptance Condition</title>
+      <title>AGV 3.1 -- Kleene&#39;s Theorem</title>
+      <link href="/agv3-1/"/>
+      <url>/agv3-1/</url>
+      
+        <content type="html"><![CDATA[<p>Previous chapter: <a href="../agv2-3/">The Büchi Acceptance Condition</a></p><blockquote><p>This is a learning note of a course in <a href="https://cispa.de/de">CISPA</a>, UdS. Taught by Bernd Finkbeiner</p></blockquote><h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p><em>Kleene’s theorem</em> states that the <em>set of languages over finite words</em> that can be defined by <strong>regular expressions</strong> is exactly the set of languages that can be recognized by <strong>automata over finite words</strong>.</p><p>Based on this, we define $\omega$-regular expressions, and finally prove the corresponding theorem for $\omega$-regular languages: <strong>Büchi’s characterization theorem</strong>.</p><h2 id="Regular-Expression"><a href="#Regular-Expression" class="headerlink" title="Regular Expression"></a>Regular Expression</h2><p>Regular expression consist of <strong>constants</strong> that denote languages of <em>finite words</em>, and<br>consist of <strong>operator symbols</strong> that denote <em>operations over these languages</em>.</p><p>The collection of regular languages over an alphabet $\Sigma$ is $\mathcal{L}(E)$, where $E$ is a regular expression.<br>Regular expression can be defined as $E :&#x3D; \varepsilon\mid\emptyset\mid a\in\Sigma\mid E+F\mid E\cdot F\mid E^* $, where:</p><ul><li><strong>empty language</strong>: $\varepsilon$,</li><li><strong>empty string language</strong>: $\emptyset$,</li><li><strong>singleton language</strong>: (single letter from alphabet) $a\in\Sigma$,</li><li><strong>union</strong> of regular languages: $E+F$,</li><li><strong>concatenation</strong> of regular languages: $E\cdot F$, and</li><li>language with <strong>kleene star</strong>: $E^*$.</li></ul><blockquote><p>$\textbf{Definition 3.1. } \textit{Regular expressions } \text{are defined as follows:}$<br>$<br>\begin{array}{l}<br>\hspace{1cm} \cdot \ \text{The constants $\varepsilon$ and $\emptyset$ are regular expressions.}\newline<br>\hspace{1cm} \ \ \mathcal{L}(\varepsilon) &#x3D; \lbrace\varepsilon\rbrace ,\mathcal{L}(\emptyset)&#x3D;\emptyset .\newline<br>\hspace{1cm} \cdot \ \text{If $a\in\Sigma$ is a symbol, then $a$ is a regular expressions.}\newline<br>\hspace{1cm} \ \ \mathcal{L}(a) &#x3D; \lbrace a\rbrace .\newline<br>\hspace{1cm} \cdot \ \text{If $E$ and $F$ are regular expressions, then $E+F$ is a regular expression:}\newline<br>\hspace{1cm} \ \ \mathcal{L}(E+F) &#x3D; \mathcal{L}(E)\cup\mathcal{L}(F) .\newline<br>\hspace{1cm} \cdot \ \text{If $E$ and $F$ are regular expressions, then $E\cdot F$ is a regular expression:}\newline<br>\hspace{1cm} \ \ \mathcal{L}(E\cdot F) &#x3D; \lbrace uv\mid u\in\mathcal{L}(E),v\in\mathcal{L}(F)\rbrace .\newline<br>\hspace{1cm} \cdot \ \text{If $E$ is a regular expression, then $E^*$ is a regular expression.}\newline<br>\hspace{1cm} \ \ \mathcal{L}(E^*) &#x3D; \lbrace u_1 u_2 \dots u_n \mid n\in\mathbb{N},u_i \in\mathcal{L}(E)\text{ for all }0\leq i\leq n\rbrace.\newline<br>\end{array}<br>$</p></blockquote><h2 id="Kleene’s-Theorem"><a href="#Kleene’s-Theorem" class="headerlink" title="Kleene’s Theorem"></a>Kleene’s Theorem</h2><p><em>A language over finite words</em> is <strong>regular</strong> if it is definable by a <em>regular expression</em>, or<br>if it is recognized by <em>automata over finite words</em>.</p><blockquote><p>$\textbf{Definition 3.2. } \text{An }\textit{automaton on finite words } \mathcal{A}\text{ is a tuple } (\Sigma,Q,I,T,F), \text{ where $\Sigma$ is an input} \newline \text{alphabet, $Q$ is a nonempty finite set of states, $I\in Q$ is a set of initial states, $\Delta\subseteq Q\times\Sigma\times Q$ is}\newline\text{a set of transitions, and $F\subseteq Q$ are a set of finite states.}$</p></blockquote><h3 id="Mathematical-Definition"><a href="#Mathematical-Definition" class="headerlink" title="Mathematical Definition"></a>Mathematical Definition</h3><p>An automaton $\mathcal{A}$ accepts a finite word $w \in\Sigma^*$ if there is a finite sequence of states $q(0)q(1) . . . q(|w|)$ such that $q(0)\in I$ and $(q(i),w(i), q(i + 1))\in\Delta$ for all $i &lt; |w|$ and with $q(|w|)\in F$</p><h3 id="Explained-in-Human-language"><a href="#Explained-in-Human-language" class="headerlink" title="Explained in Human language"></a>Explained in Human language</h3><p>In a nutshell, a finite word $w$ is <strong>accepted</strong> by an automaton $\mathcal{A} &#x3D; (\Sigma,Q,I,T,F)$ if:</p><ul><li>$\Sigma:$ w is a finite word in $\Sigma$</li><li>$Q:$ There exists a finite sequence of states $q(0)q(1) . . . q(|w|)$</li><li>$I:$ In such sequence, $q(0)$ is one of the initial state $I$</li><li>$T:$ In such sequence, there is transition from $q(i)$ to $q(i+1)$ for each letter $w(i)$, where $i&lt;|w|$.</li><li>$F:$ In such sequence, $q(|w|)$ is one of the final state $F$,<br>and it will be the last state of the run since there is no more letters.</li></ul><h3 id="From-accepted-word-to-accepted-language"><a href="#From-accepted-word-to-accepted-language" class="headerlink" title="From accepted word to accepted language"></a>From accepted word to accepted language</h3><p>The set of all words accepted by $\mathcal{A}$ is called the <strong>language</strong> of $\mathcal{A}$, denoted by $\mathcal{L}(\mathcal{A})$.</p><blockquote><p>$\textbf{Theorem 3.1. } \text{(Kleene’s Theorem)}\newline\textit{A language is regular iff it is recognized by some finite word automaton.}$</p></blockquote><hr><p>Next post: <a href="../agv3-2/">$\omega$-regular language</a></p><p>Further Reading: <a href="https://en.wikipedia.org/wiki/Regular_expression">Regular expression</a>,<a href="https://en.wikipedia.org/wiki/Regular_language">Regular language</a> <a href="https://en.wikipedia.org/wiki/Kleene_star#:~:text=The%20Kleene%20star%20is%20defined,x%E2%8B%85y%20%E2%88%88%20S*.">Kleene star</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Notes </category>
+          
+          <category> UdS </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> AGV </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>AGV 2.3 -- The Büchi Acceptance Condition</title>
       <link href="/agv2-3/"/>
       <url>/agv2-3/</url>
       
@@ -31,7 +58,7 @@
     
     
     <entry>
-      <title>Automata, Games, and Verification 2.2 -- Automata over Infinite Words</title>
+      <title>AGV 2.2 -- Automata over Infinite Words</title>
       <link href="/agv2-2/"/>
       <url>/agv2-2/</url>
       
@@ -58,7 +85,7 @@
     
     
     <entry>
-      <title>Automata, Games, and Verification 2.1 -- Büchi automata (Preliminaries)</title>
+      <title>AGV 2.1 -- Büchi automata (Preliminaries)</title>
       <link href="/agv2-1/"/>
       <url>/agv2-1/</url>
       
@@ -85,7 +112,7 @@
     
     
     <entry>
-      <title>Automata, Games, and Verification 1.3 -- The Logic-Automata Connection</title>
+      <title>AGV 1.3 -- The Logic-Automata Connection</title>
       <link href="/agv1-3/"/>
       <url>/agv1-3/</url>
       
@@ -112,7 +139,7 @@
     
     
     <entry>
-      <title>Automata, Games, and Verification 1.2 -- Synthesis</title>
+      <title>AGV 1.2 -- Synthesis</title>
       <link href="/agv1-2/"/>
       <url>/agv1-2/</url>
       
@@ -139,7 +166,7 @@
     
     
     <entry>
-      <title>Automata, Games, and Verification 1.1 -- Model Checking</title>
+      <title>AGV 1.1 -- Model Checking</title>
       <link href="/agv1-1/"/>
       <url>/agv1-1/</url>
       
