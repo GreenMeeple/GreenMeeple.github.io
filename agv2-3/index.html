@@ -321,7 +321,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="43">
-<input type="hidden" id="yelog_site_word_count" value="16.1k">
+<input type="hidden" id="yelog_site_word_count" value="15.3k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -462,20 +462,20 @@
         
         
         <a  class="All Notes UdS "
+           href="/agv4-1/"
+           data-tag="AGV"
+           data-author="" >
+            <span class="post-title" title="AGV 4.1 -- Deterministic Büchi Automata">AGV 4.1 -- Deterministic Büchi Automata</span>
+            <span class="post-date" title="2024-11-15 00:11:57">2024/11/15</span>
+        </a>
+        
+        
+        <a  class="All Notes UdS "
            href="/agv3-2/"
            data-tag="AGV"
            data-author="" >
             <span class="post-title" title="AGV 3.2 -- $\omega$-regular language">AGV 3.2 -- $\omega$-regular language</span>
             <span class="post-date" title="2024-11-14 12:40:04">2024/11/14</span>
-        </a>
-        
-        
-        <a  class="All Notes UdS "
-           href="/agv3-4/"
-           data-tag="AGV"
-           data-author="" >
-            <span class="post-title" title="AGV 3.4 --">AGV 3.4 --</span>
-            <span class="post-date" title="2024-11-13 20:36:21">2024/11/13</span>
         </a>
         
         
@@ -885,12 +885,12 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-11-13 20:28:01'>2024-11-12 05:56</time>
+            Created At : <time class="date" title='Updated At: 2024-11-14 23:27:02'>2024-11-12 05:56</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:693</span>
+        <span>Count:694</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -920,7 +920,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-The-Buchi-Acceptance-Condition"><span class="toc-text">2.3 The Büchi Acceptance Condition</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Infinite-word"><span class="toc-text">Infinite word</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Buchi-Condition"><span class="toc-text">Büchi Condition</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Constrcution-of-Complete-Buchi-Automaton"><span class="toc-text">Constrcution of Complete Büchi Automaton</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Explaination"><span class="toc-text">Explaination</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Proof"><span class="toc-text">Proof</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Summary"><span class="toc-text">Summary</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-The-Buchi-Acceptance-Condition"><span class="toc-text">2.3 The Büchi Acceptance Condition</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Infinite-word"><span class="toc-text">Infinite word</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Buchi-Condition"><span class="toc-text">Büchi Condition</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Constrcution-of-Complete-Buchi-Automaton"><span class="toc-text">Constrcution of Complete Büchi Automaton</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Explaination"><span class="toc-text">Explaination</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Formal-Proof"><span class="toc-text">Formal Proof</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Summary"><span class="toc-text">Summary</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -965,7 +965,7 @@
 <h3 id="Explaination"><a href="#Explaination" class="headerlink" title="Explaination"></a>Explaination</h3><p>First, we add a <strong>fresh state</strong> $q_f$ the <em>set of state</em> $Q$ without changing the <em>initial</em> and <em>accepting</em> states.</p>
 <p>A <em>complete Büchi Automaton</em> requires every states must have transitions for every letters in the alphabet.<br>So for each states orginally in $Q$, we construct new transitions that the letters are not yet used by the state.<br>(which is $\nexists q’ . (q,\sigma,q’)\in T$)</p>
 <p>Finally, for all transitions from the fresh state are self transitioning, and they include all letters.<br>(which is $(q_f,\sigma,q_f)\mid\sigma\in\Sigma$)</p>
-<h3 id="Proof"><a href="#Proof" class="headerlink" title="Proof"></a>Proof</h3><ul>
+<h3 id="Formal-Proof"><a href="#Formal-Proof" class="headerlink" title="Formal Proof"></a>Formal Proof</h3><ul>
 <li><p>The runs of $\mathcal{A’}$ are a <strong>superset</strong> of those of $\mathcal{A}$.</p>
 <ul>
 <li>During the construction of $\mathcal{A’}$, we have not removed any original transitions, but adding new fresh states.</li>

@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>AGV 3.4 -- | GreenMeeple</title>
+  <title>AGV 4.1 -- Deterministic Büchi Automata | GreenMeeple</title>
   <meta name="keywords" content=" AGV ">
-  <meta name="description" content="AGV 3.4 -- | GreenMeeple">
+  <meta name="description" content="AGV 4.1 -- Deterministic Büchi Automata | GreenMeeple">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="GreenMeeple cannot find what you are looking for...">
@@ -321,7 +321,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="43">
-<input type="hidden" id="yelog_site_word_count" value="16.1k">
+<input type="hidden" id="yelog_site_word_count" value="15.3k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -462,20 +462,20 @@
         
         
         <a  class="All Notes UdS "
+           href="/agv4-1/"
+           data-tag="AGV"
+           data-author="" >
+            <span class="post-title" title="AGV 4.1 -- Deterministic Büchi Automata">AGV 4.1 -- Deterministic Büchi Automata</span>
+            <span class="post-date" title="2024-11-15 00:11:57">2024/11/15</span>
+        </a>
+        
+        
+        <a  class="All Notes UdS "
            href="/agv3-2/"
            data-tag="AGV"
            data-author="" >
             <span class="post-title" title="AGV 3.2 -- $\omega$-regular language">AGV 3.2 -- $\omega$-regular language</span>
             <span class="post-date" title="2024-11-14 12:40:04">2024/11/14</span>
-        </a>
-        
-        
-        <a  class="All Notes UdS "
-           href="/agv3-4/"
-           data-tag="AGV"
-           data-author="" >
-            <span class="post-title" title="AGV 3.4 --">AGV 3.4 --</span>
-            <span class="post-date" title="2024-11-13 20:36:21">2024/11/13</span>
         </a>
         
         
@@ -856,9 +856,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-agv3-4" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-agv4-1" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">AGV 3.4 --</h1>
+        <h1 class="article-title">AGV 4.1 -- Deterministic Büchi Automata</h1>
     
     <div class="article-meta">
         
@@ -885,12 +885,12 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-11-14 03:05:52'>2024-11-13 20:36</time>
+            Created At : <time class="date" title='Updated At: 2024-11-15 00:21:25'>2024-11-15 00:11</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:927</span>
+        <span>Count:167</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -920,7 +920,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Concatenation-of-regular-Langauge-and-Buchi-recognizable-Language"><span class="toc-text">Concatenation of regular Langauge and Büchi-recognizable Language</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Proof"><span class="toc-text">Proof</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Explained-in-Human-language"><span class="toc-text">Explained in Human language</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Infinite-concatenation-of-Regular-language"><span class="toc-text">Infinite concatenation of Regular language</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#From-automaton-over-finite-words-to-a-single-initial-state"><span class="toc-text">From automaton over finite words to a single initial state</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Introduction"><span class="toc-text">Introduction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Buchi-recognizable-language-that-is-non-deterministic"><span class="toc-text">Büchi-recognizable language that is non-deterministic</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Proof"><span class="toc-text">Proof</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -936,37 +936,19 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Previous chapter: <a href="../agv3-3/">Intersection and Union of Closure Properties</a></p>
+        <p>Previous chapter: <a href="../agv3-5/">Büchi’s Characterization Theorem</a></p>
 <blockquote>
 <p>This is a learning note of a course in <a target="_blank" rel="noopener" href="https://cispa.de/de">CISPA</a>, UdS. Taught by Bernd Finkbeiner</p>
 </blockquote>
-<p>In this section, we continue the proof of the <strong>closure properties</strong> of the Büchi-recognizable languages.</p>
-<h2 id="Concatenation-of-regular-Langauge-and-Buchi-recognizable-Language"><a href="#Concatenation-of-regular-Langauge-and-Buchi-recognizable-Language" class="headerlink" title="Concatenation of regular Langauge and Büchi-recognizable Language"></a>Concatenation of regular Langauge and Büchi-recognizable Language</h2><blockquote>
-<p>$\textbf{Construction 3.3. } \text{Let }\mathcal{A}_1&#x3D;(\Sigma,Q_1,I_1,T_1,F_1)\text{ be an automaton over finite words that}\newline\text{recognizes the languge }L_1\text{, and let }\mathcal{A}_2 &#x3D; (\Sigma,Q_2,I_2,T_2,\small\text{BÜCHI}\normalsize (F_2))\text{ be a Büchi automaton}\newline\text{over the same alphabet that recognizes }L_2.\text{ We construct a Büchi autotmaton }\newline\mathcal{A’}&#x3D;(\Sigma,Q’,I’,T’,\small\text{BÜCHI}\normalsize (F_2))\text{ with }\mathcal{L}(\mathcal{A’})&#x3D;L_1\cdot L_2\text{ as follows:}$<br>$\begin{array}{l}<br>\hspace{1cm} \cdot \ Q’&#x3D;Q_1\cup Q_2 \hspace{1cm}(\text{w.l.o.g we assume }Q_1\cap Q_2&#x3D;\emptyset)\newline<br>\hspace{1cm} \cdot \ I’&#x3D;\biggl\lbrace \begin{array}{l}I_1 \hspace{2cm}\text{if }I_1\cap F_1&#x3D;\emptyset\newline<br>I_1\cup I_2 \hspace{1cm}\text{otherwise}\end{array} \newline<br>\hspace{1cm} \cdot \ T’&#x3D;T_1\cup T_2\cup\lbrace (q,\sigma,q’)\mid(q,\sigma,f)\in T_1,f\in F_1,q’\in I_2\rbrace \newline<br>\end{array}$</p>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>In the theory of automata over finite words, we have <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Powerset_construction">Rabin-Scott powerset construction</a>, which converts a <em>nondeterministic automaton</em> over finite words into a <em>deterministic automaton</em> that <strong>recognizes the same language</strong>. This shows that nondeterminism does not make automata over finite words more expressive (but makes it more concise as the construction produces an exponential number of states).</p>
+<p>The situation is different for Büchi automata: even though the language $L &#x3D; (a+b)^*b^\omega$ is clearly <em>Büchi-recognizable</em>, there is, as the following theorem shows, <strong>no deterministic Büchi automaton that recognizes L</strong>.</p>
+<h2 id="Buchi-recognizable-language-that-is-non-deterministic"><a href="#Buchi-recognizable-language-that-is-non-deterministic" class="headerlink" title="Büchi-recognizable language that is non-deterministic"></a>Büchi-recognizable language that is non-deterministic</h2><blockquote>
+<p>$\textbf{Theorem 4.1. }\textit{Language $L&#x3D;(a+b)^*b^\omega$ is not recognizable by deterministic Büchi Automata}$</p>
 </blockquote>
-<p>$Q’:$ Same as Union, we include both automata for concatenation</p>
-<p>$I’:$ We normaly start the the automaton from $I_1$ If $I_1$ is non-empty, otherwise we start at $I_2$</p>
-<p>$T’:$ For any states that can reach the accepting states of $T_1$ with one transition, we create a new transitions that reach the initial states of $T_2$ $(I_2)$.</p>
-<p>The correctness of this construction is proven by the following theorem.</p>
-<blockquote>
-<p>$\textbf{Theorem 3.4. }\newline\textit{If $L_1$ is a regular language and $L_2$ is Büchi-recognizable, then $L_1\cdot L_2$ is Büchi-recognizable.}$</p>
-</blockquote>
-<h3 id="Proof"><a href="#Proof" class="headerlink" title="Proof"></a>Proof</h3><p>We prove that the Büchi automaton $\mathcal{A’}$ built from the automaton on finite words $\mathcal{A}_1$ and the Büchi automaton $\mathcal{A}_2$ indeed recognizes the concatenation of the languages of the two automata.</p>
-<p>$\mathcal{L}(\mathcal{A’})\subseteq\mathcal{L}(\mathcal{A}_1)\cdot\mathcal{L}(\mathcal{A}_2):$</p>
-<p>For $\alpha\in\mathcal{L}(\mathcal{A’})$, we have an accepting run $r&#x3D;r(0)r(1)r(2)\dots$ of $\mathcal{A’}$ on $\alpha$.<br>If $r(0)\in I_1$, then there is an $n\in\mathbb{N}$ such that $(r(n),\alpha(n),r(n+1))\in Q_1\times\Sigma\times I_2$ and therefore, there is a final state $f\in F_1$ such that $r(0)r(1)r(2)\dots r(n)f$ is an accepting run of $\mathcal{A_1}$ on $\alpha(0)\alpha(1)\alpha(2)\dots \alpha(n)$ and $r(n+1)r(n+2)\dots$ is an accepting run of $\mathcal{A_2}$ on $\alpha(n+1)\alpha(n+2)\dots$<br>If $r(0)\in I_2$ then $I_1\cup F_1 \neq\emptyset$ and therefore, $\varepsilon\in\mathcal{L}(\mathcal{A_1}),\alpha\in\mathcal{L}(\mathcal{A_2})$</p>
-<p>$\mathcal{L}(\mathcal{A’})\supseteq\mathcal{L}(\mathcal{A}_1)\cdot\mathcal{L}(\mathcal{A}_2):$</p>
-<p>For $w\in\mathcal{A_1}$, let $r&#x3D;r(0)r(1)\dots r(n)$ be an accepting run $\mathcal{A_1}$ on $w$.<br>For $\alpha\in\mathcal{A_2}$, let $s&#x3D;s(0)s(1)\dots$ be an accepting run of $\mathcal{A_2}$ on $\alpha$.<br>Then, $r(n)\in F_1$ and, by construction, $r(0)r(1)\dots r(n-1)s(0)s(1)\dots$ is an accepting run of $\mathcal{A’}$ on $w\alpha$.</p>
-<h3 id="Explained-in-Human-language"><a href="#Explained-in-Human-language" class="headerlink" title="Explained in Human language"></a>Explained in Human language</h3><p>If $I_1$ is non-empty, then we can have a run that starts from $I_1$ to $r(n)$, that is one transition before $\mathcal{A_1}$’s accepting states of $f$. Then for next transition we either move to $f$, or we move on to $\mathcal{A_2}$ starting from $r(n+1)$.</p>
-<p>If $I_1$ is empty, then any word accepted by $\mathcal{A‘}$ is accepted by $\mathcal{A_2}$</p>
-<p>On the other way, we can always construct a word $w\alpha$. If $w$ is accepted by $\mathcal{A_1}$ and $\alpha$ is accepted by $\mathcal{A_2}$, then $w\alpha$ is always accepted by $\mathcal{A’}$</p>
-<h2 id="Infinite-concatenation-of-Regular-language"><a href="#Infinite-concatenation-of-Regular-language" class="headerlink" title="Infinite concatenation of Regular language"></a>Infinite concatenation of Regular language</h2><p>Finally, we show that the infinite concatenation of words of a regular language forms a Büchi-recognizable language. We construct a Büchi automaton for this language from an automaton over finite words in two steps.</p>
-<h3 id="From-automaton-over-finite-words-to-a-single-initial-state"><a href="#From-automaton-over-finite-words-to-a-single-initial-state" class="headerlink" title="From automaton over finite words to a single initial state"></a>From automaton over finite words to a single initial state</h3><p>Firstly, we modify a given automaton over finite words into an equivalent automaton with a <strong>single initial state</strong> that has <strong>no incoming transitions</strong>.</p>
-<blockquote>
-<p>$\textbf{Construction 3.4. } \text{Let }\mathcal{A}_1&#x3D;(\Sigma,Q_1,I_1,T_1,F_1)\text{ be an automaton over finite words. We assume}\newline\text{that }\varepsilon\notin\mathcal{L}(\mathcal{A})\text{. We construct an automaton }\mathcal{A’} &#x3D; (\Sigma,Q’,I’,T’,F)\text{ over finite words such that }\newline\mathcal{L}(\mathcal{A})&#x3D;\mathcal{L}(\mathcal{A’})\text{ and }\mathcal{A’}\text{ has a single initial state that has no incoming transitions.}$<br>$\begin{array}{l}<br>\hspace{1cm} \cdot \ Q’&#x3D;Q_1\cup\lbrace q_f\rbrace \text{where }q_f\text{ is a fresh state}\newline<br>\hspace{1cm} \cdot \ I’&#x3D;\lbrace q_f\rbrace\newline<br>\hspace{1cm} \cdot \ T’&#x3D;T\cup\lbrace (q_f,\sigma,q’)\mid(q,\sigma,q’)\in T \text{ for some }q\in I\rbrace\newline<br>\end{array}$</p>
-</blockquote>
+<h3 id="Proof"><a href="#Proof" class="headerlink" title="Proof"></a>Proof</h3><p>Assume, by way of contradiction, that $L$ is recognizable by the deterministic B¨uchi automaton</p>
 <hr>
 <p>Next chapter: <a href="../agv/"></a></p>
-<p>Further Reading: <a href=""></a></p>
+<p>Further Reading: <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Powerset_construction">powerset construction</a></p>
 
       
        <hr><span style="font-style: italic;color: gray;"> Please cite the source for reprints, feel free to verify the sources cited in the article, and point out any errors or lack of clarity of expression. You can comment in the comments section below or email to GreenMeeple@yahoo.com </span>
