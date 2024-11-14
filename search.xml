@@ -4,6 +4,60 @@
   
     
     <entry>
+      <title>AGV 3.2 -- $&#92;omega$-regular language</title>
+      <link href="/agv3-2/"/>
+      <url>/agv3-2/</url>
+      
+        <content type="html"><![CDATA[<p>Previous chapter: <a href="../agv/">Kleene’s Theorem</a></p><blockquote><p>This is a learning note of a course in <a href="https://cispa.de/de">CISPA</a>, UdS. Taught by Bernd Finkbeiner</p></blockquote><h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p><em>$\omega$-regular expression</em> denotes languages over <strong>infinite</strong> words.<br>In addition to language union on languages over infinite words, we have 2 operations that convert languages over finite words into languages over infinite words.</p><h2 id="omega-regular-expression"><a href="#omega-regular-expression" class="headerlink" title="$\omega$-regular expression"></a>$\omega$-regular expression</h2><p>The collection of $\omega$-regular languages over an alphabet $\Sigma^\omega$ is $\mathcal{L}(W)$, where $W$ is a $\omega$-regular expression.<br>$\omega$-regular expression can be defined as $W :&#x3D; E^\omega \mid E\cdot W\mid W_1+W_2 $, where:</p><ul><li><strong>infinite concatenation</strong> of a <strong>non-empty</strong> regular language $E^\omega$,</li><li><strong>union</strong> of $\omega$-regular languages, $W_1+W_2$, and</li><li><strong>concatenation</strong> of regular languages and $\omega$-regular language $E\cdot W$</li></ul><blockquote><p>$\textbf{Definition 3.3. } \textit{$\omega$-Regular expressions } \text{are defined as follows:}$<br>$\begin{array}{l}<br>\hspace{1cm} \cdot \ \text{If $E$ is a regular expression where $\varepsilon\notin\mathcal{L}(E)$, then $E^\omega$ is an $\omega$-regular expression.}\newline<br>\hspace{1cm} \ \ \mathcal{L}(E^\omega) &#x3D; \mathcal{L}(E)^\omega\newline<br>\hspace{1cm} \ \ \text{where } L^\omega &#x3D;\lbrace \omega_0\omega_1\dots\mid\omega_i\in L,|\omega_i|&gt;0\rbrace \text{ for } L\subseteq\Sigma^* \newline<br>\hspace{1cm} \cdot \ \text{If $E$ is a regular expression and $W$ is an $\omega$-regular expression,}\newline<br>\hspace{1cm} \ \ \text{then $E\cdot W$ is an $\omega$-regular expression:}\newline<br>\hspace{1cm} \ \ \mathcal{L}(E\cdot W) &#x3D; \mathcal{L}(E)\cdot\mathcal{L}(W)\newline<br>\hspace{1cm} \ \ \text{where } L_1 \cdot L_2&#x3D;\lbrace \omega\alpha\mid\omega\in L_1,\alpha\in L_2\rbrace \text{ for } L_1 \subseteq\Sigma^*, L_2 \subseteq\Sigma^\omega\newline<br>\hspace{1cm} \cdot \ \text{If $W_1$ and $W_2$ are $\omega$-regular expressions, then $W_1+W_2$ is an $\omega$-regular expression:}\newline<br>\hspace{1cm} \ \ \mathcal{L}(W_1+W_2) &#x3D; \mathcal{L}(W_1)\cup\mathcal{L}(W_2) .\newline<br>\end{array}$</p></blockquote><p>A language over infinite words is $\omega$-regular if it is definable by a $\omega$-regular expression.</p><hr><p>Next chapter: <a href="../agv3-3/">Intersection and Union of Closure Properties</a></p><p>Further Reading: <a href="https://en.wikipedia.org/wiki/Omega_language">Omega language</a>, <a href="https://en.wikipedia.org/wiki/Omega-regular_language">Omega Regular language</a>, <a href="https://en.wikipedia.org/wiki/B%C3%BCchi_automaton">Büchi automaton</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Notes </category>
+          
+          <category> UdS </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> AGV </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>AGV 3.4 --</title>
+      <link href="/agv3-4/"/>
+      <url>/agv3-4/</url>
+      
+        <content type="html"><![CDATA[<p>Previous chapter: <a href="../agv3-3/">Intersection and Union of Closure Properties</a></p><blockquote><p>This is a learning note of a course in <a href="https://cispa.de/de">CISPA</a>, UdS. Taught by Bernd Finkbeiner</p></blockquote><p>In this section, we continue the proof of the <strong>closure properties</strong> of the Büchi-recognizable languages.</p><h2 id="Concatenation-of-regular-Langauge-and-Buchi-recognizable-Language"><a href="#Concatenation-of-regular-Langauge-and-Buchi-recognizable-Language" class="headerlink" title="Concatenation of regular Langauge and Büchi-recognizable Language"></a>Concatenation of regular Langauge and Büchi-recognizable Language</h2><blockquote><p>$\textbf{Construction 3.3. } \text{Let }\mathcal{A}_1&#x3D;(\Sigma,Q_1,I_1,T_1,F_1)\text{ be an automaton over finite words that}\newline\text{recognizes the languge }L_1\text{, and let }\mathcal{A}_2 &#x3D; (\Sigma,Q_2,I_2,T_2,\small\text{BÜCHI}\normalsize (F_2))\text{ be a Büchi automaton}\newline\text{over the same alphabet that recognizes }L_2.\text{ We construct a Büchi autotmaton }\newline\mathcal{A’}&#x3D;(\Sigma,Q’,I’,T’,\small\text{BÜCHI}\normalsize (F_2))\text{ with }\mathcal{L}(\mathcal{A’})&#x3D;L_1\cdot L_2\text{ as follows:}$<br>$\begin{array}{l}<br>\hspace{1cm} \cdot \ Q’&#x3D;Q_1\cup Q_2 \hspace{1cm}(\text{w.l.o.g we assume }Q_1\cap Q_2&#x3D;\emptyset)\newline<br>\hspace{1cm} \cdot \ I’&#x3D;\biggl\lbrace \begin{array}{l}I_1 \hspace{2cm}\text{if }I_1\cap F_1&#x3D;\emptyset\newline<br>I_1\cup I_2 \hspace{1cm}\text{otherwise}\end{array} \newline<br>\hspace{1cm} \cdot \ T’&#x3D;T_1\cup T_2\cup\lbrace (q,\sigma,q’)\mid(q,\sigma,f)\in T_1,f\in F_1,q’\in I_2\rbrace \newline<br>\end{array}$</p></blockquote><p>$Q’:$ Same as Union, we include both automata for concatenation</p><p>$I’:$ We normaly start the the automaton from $I_1$ If $I_1$ is non-empty, otherwise we start at $I_2$</p><p>$T’:$ For any states that can reach the accepting states of $T_1$ with one transition, we create a new transitions that reach the initial states of $T_2$ $(I_2)$.</p><p>The correctness of this construction is proven by the following theorem.</p><blockquote><p>$\textbf{Theorem 3.4. }\newline\textit{If $L_1$ is a regular language and $L_2$ is Büchi-recognizable, then $L_1\cdot L_2$ is Büchi-recognizable.}$</p></blockquote><h3 id="Proof"><a href="#Proof" class="headerlink" title="Proof"></a>Proof</h3><p>We prove that the Büchi automaton $\mathcal{A’}$ built from the automaton on finite words $\mathcal{A}_1$ and the Büchi automaton $\mathcal{A}_2$ indeed recognizes the concatenation of the languages of the two automata.</p><p>$\mathcal{L}(\mathcal{A’})\subseteq\mathcal{L}(\mathcal{A}_1)\cdot\mathcal{L}(\mathcal{A}_2):$</p><p>For $\alpha\in\mathcal{L}(\mathcal{A’})$, we have an accepting run $r&#x3D;r(0)r(1)r(2)\dots$ of $\mathcal{A’}$ on $\alpha$.<br>If $r(0)\in I_1$, then there is an $n\in\mathbb{N}$ such that $(r(n),\alpha(n),r(n+1))\in Q_1\times\Sigma\times I_2$ and therefore, there is a final state $f\in F_1$ such that $r(0)r(1)r(2)\dots r(n)f$ is an accepting run of $\mathcal{A_1}$ on $\alpha(0)\alpha(1)\alpha(2)\dots \alpha(n)$ and $r(n+1)r(n+2)\dots$ is an accepting run of $\mathcal{A_2}$ on $\alpha(n+1)\alpha(n+2)\dots$<br>If $r(0)\in I_2$ then $I_1\cup F_1 \neq\emptyset$ and therefore, $\varepsilon\in\mathcal{L}(\mathcal{A_1}),\alpha\in\mathcal{L}(\mathcal{A_2})$</p><p>$\mathcal{L}(\mathcal{A’})\supseteq\mathcal{L}(\mathcal{A}_1)\cdot\mathcal{L}(\mathcal{A}_2):$</p><p>For $w\in\mathcal{A_1}$, let $r&#x3D;r(0)r(1)\dots r(n)$ be an accepting run $\mathcal{A_1}$ on $w$.<br>For $\alpha\in\mathcal{A_2}$, let $s&#x3D;s(0)s(1)\dots$ be an accepting run of $\mathcal{A_2}$ on $\alpha$.<br>Then, $r(n)\in F_1$ and, by construction, $r(0)r(1)\dots r(n-1)s(0)s(1)\dots$ is an accepting run of $\mathcal{A’}$ on $w\alpha$.</p><h3 id="Explained-in-Human-language"><a href="#Explained-in-Human-language" class="headerlink" title="Explained in Human language"></a>Explained in Human language</h3><p>If $I_1$ is non-empty, then we can have a run that starts from $I_1$ to $r(n)$, that is one transition before $\mathcal{A_1}$’s accepting states of $f$. Then for next transition we either move to $f$, or we move on to $\mathcal{A_2}$ starting from $r(n+1)$.</p><p>If $I_1$ is empty, then any word accepted by $\mathcal{A‘}$ is accepted by $\mathcal{A_2}$</p><p>On the other way, we can always construct a word $w\alpha$. If $w$ is accepted by $\mathcal{A_1}$ and $\alpha$ is accepted by $\mathcal{A_2}$, then $w\alpha$ is always accepted by $\mathcal{A’}$</p><h2 id="Infinite-concatenation-of-Regular-language"><a href="#Infinite-concatenation-of-Regular-language" class="headerlink" title="Infinite concatenation of Regular language"></a>Infinite concatenation of Regular language</h2><p>Finally, we show that the infinite concatenation of words of a regular language forms a Büchi-recognizable language. We construct a Büchi automaton for this language from an automaton over finite words in two steps.</p><h3 id="From-automaton-over-finite-words-to-a-single-initial-state"><a href="#From-automaton-over-finite-words-to-a-single-initial-state" class="headerlink" title="From automaton over finite words to a single initial state"></a>From automaton over finite words to a single initial state</h3><p>Firstly, we modify a given automaton over finite words into an equivalent automaton with a <strong>single initial state</strong> that has <strong>no incoming transitions</strong>.</p><blockquote><p>$\textbf{Construction 3.4. } \text{Let }\mathcal{A}_1&#x3D;(\Sigma,Q_1,I_1,T_1,F_1)\text{ be an automaton over finite words. We assume}\newline\text{that }\varepsilon\notin\mathcal{L}(\mathcal{A})\text{. We construct an automaton }\mathcal{A’} &#x3D; (\Sigma,Q’,I’,T’,F)\text{ over finite words such that }\newline\mathcal{L}(\mathcal{A})&#x3D;\mathcal{L}(\mathcal{A’})\text{ and }\mathcal{A’}\text{ has a single initial state that has no incoming transitions.}$<br>$\begin{array}{l}<br>\hspace{1cm} \cdot \ Q’&#x3D;Q_1\cup\lbrace q_f\rbrace \text{where }q_f\text{ is a fresh state}\newline<br>\hspace{1cm} \cdot \ I’&#x3D;\lbrace q_f\rbrace\newline<br>\hspace{1cm} \cdot \ T’&#x3D;T\cup\lbrace (q_f,\sigma,q’)\mid(q,\sigma,q’)\in T \text{ for some }q\in I\rbrace\newline<br>\end{array}$</p></blockquote><hr><p>Next chapter: <a href="../agv/"></a></p><p>Further Reading: <a href=""></a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Notes </category>
+          
+          <category> UdS </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> AGV </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>AGV 3.1 -- Kleene&#39;s Theorem</title>
       <link href="/agv3-1/"/>
       <url>/agv3-1/</url>

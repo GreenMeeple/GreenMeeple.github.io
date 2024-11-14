@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>AGV 2.1 -- Büchi automata (Preliminaries) | GreenMeeple</title>
+  <title>AGV 3.4 -- | GreenMeeple</title>
   <meta name="keywords" content=" AGV ">
-  <meta name="description" content="AGV 2.1 -- Büchi automata (Preliminaries) | GreenMeeple">
+  <meta name="description" content="AGV 3.4 -- | GreenMeeple">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="GreenMeeple cannot find what you are looking for...">
@@ -856,9 +856,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-agv2-1" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-agv3-4" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">AGV 2.1 -- Büchi automata (Preliminaries)</h1>
+        <h1 class="article-title">AGV 3.4 --</h1>
     
     <div class="article-meta">
         
@@ -885,12 +885,12 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-11-13 20:28:01'>2024-11-10 04:24</time>
+            Created At : <time class="date" title='Updated At: 2024-11-14 03:05:52'>2024-11-13 20:36</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:844</span>
+        <span>Count:927</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -920,7 +920,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-Preliminaries"><span class="toc-text">2.1 Preliminaries</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Basic-math-notations"><span class="toc-text">Basic math notations</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Alphabet-and-Letter"><span class="toc-text">Alphabet and Letter</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Finite-and-Infinite-Word"><span class="toc-text">Finite and Infinite Word</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Language"><span class="toc-text">Language</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-Automata-over-Infinite-Words"><span class="toc-text">2.2 Automata over Infinite Words</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Runs-of-Buchi-automata"><span class="toc-text">Runs of Büchi automata</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Deterministic-and-Complete-Automaton"><span class="toc-text">Deterministic and Complete Automaton</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Accepted-Run"><span class="toc-text">Accepted Run</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Concatenation-of-regular-Langauge-and-Buchi-recognizable-Language"><span class="toc-text">Concatenation of regular Langauge and Büchi-recognizable Language</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Proof"><span class="toc-text">Proof</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Explained-in-Human-language"><span class="toc-text">Explained in Human language</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Infinite-concatenation-of-Regular-language"><span class="toc-text">Infinite concatenation of Regular language</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#From-automaton-over-finite-words-to-a-single-initial-state"><span class="toc-text">From automaton over finite words to a single initial state</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -936,67 +936,37 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Previous chapter: <a href="../agv1-3/">The Logic-Automata Connection</a></p>
+        <p>Previous chapter: <a href="../agv3-3/">Intersection and Union of Closure Properties</a></p>
 <blockquote>
 <p>This is a learning note of a course in <a target="_blank" rel="noopener" href="https://cispa.de/de">CISPA</a>, UdS. Taught by Bernd Finkbeiner</p>
 </blockquote>
-<h2 id="2-1-Preliminaries"><a href="#2-1-Preliminaries" class="headerlink" title="2.1 Preliminaries"></a>2.1 Preliminaries</h2><h3 id="Basic-math-notations"><a href="#Basic-math-notations" class="headerlink" title="Basic math notations"></a>Basic math notations</h3><ul>
-<li>Natural numbers: $\mathbb{N} &#x3D; \lbrace 0,1,2,3\dots\rbrace$</li>
-<li>Positive Natural numbers: $\mathbb{N}^+ &#x3D; \lbrace 1,2,3\dots\rbrace$</li>
-<li>Numbers from $n$ to $m$: $[n,m] &#x3D; \lbrace n,n+1,\dots,m\rbrace$ For $n,m\in \mathbb{N}$ with $n\leq m$</li>
-<li>Numbers from $0$ to $m$: $[m] &#x3D; \lbrace 0,1,\dots,m\rbrace$</li>
-</ul>
-<h3 id="Alphabet-and-Letter"><a href="#Alphabet-and-Letter" class="headerlink" title="Alphabet and Letter"></a>Alphabet and Letter</h3><ul>
-<li><strong>Alphabet</strong> a nonempty, finite set of symbols, usually denoted by $\Sigma$</li>
-<li><strong>Letter</strong>: elements of an <em>alphabets</em>, denoted by $\sigma$</li>
-</ul>
-<h3 id="Finite-and-Infinite-Word"><a href="#Finite-and-Infinite-Word" class="headerlink" title="Finite and Infinite Word"></a>Finite and Infinite Word</h3><ul>
-<li><strong>Finite Words</strong>: concatenation $w&#x3D;w(0)w(1)\dots w(n-1)$ of <em>finitely many letters</em> of $\Sigma$</li>
-<li><strong>Infinite Words</strong>: $\alpha$ (will be explained in <a href="../agv2-3/#inf">chapter 2.3</a></li>
-<li><strong>$n$-th letter</strong> of word $w$ : $ w(n)$ for each $n \in [|w| - 1]$</li>
-<li><strong>Length</strong> of words $w$ : $ |w|$</li>
-<li>set of all <strong>finite words</strong>: $ \Sigma^*$</li>
-<li>set of all <strong>non-empty finite words</strong> : $ \Sigma^+ &#x3D; \Sigma^* \backslash \lbrace \epsilon \rbrace$</li>
-<li>set of all <strong>infinite words</strong> : $ \Sigma^\omega$</li>
-</ul>
-<h3 id="Language"><a href="#Language" class="headerlink" title="Language"></a>Language</h3><ul>
-<li>language over <strong>finite words</strong> ($\omega$<strong>-language</strong>) : each subset of $\Sigma^*$</li>
-<li>language over <strong>infinite words</strong> ($\omega$<strong>-language</strong>) : each subset of $\Sigma^\omega$</li>
-</ul>
-<h2 id="2-2-Automata-over-Infinite-Words"><a href="#2-2-Automata-over-Infinite-Words" class="headerlink" title="2.2 Automata over Infinite Words"></a>2.2 Automata over Infinite Words</h2><p>The operational behavior of an automaton over infinite words is very similar to automaton over finite words:</p>
-<ol>
-<li>Start with an <em>initial state</em></li>
-<li>Automaton constructs a <strong>run</strong> by reading one letter of the input alphabet at a time, and<br>transitioning to a successor <em>state</em> permitted by its <em>transitions</em>.</li>
-</ol>
-<p>The major difference between automata over finite and infinite words is the <strong>acceptance condition</strong>.</p>
+<p>In this section, we continue the proof of the <strong>closure properties</strong> of the Büchi-recognizable languages.</p>
+<h2 id="Concatenation-of-regular-Langauge-and-Buchi-recognizable-Language"><a href="#Concatenation-of-regular-Langauge-and-Buchi-recognizable-Language" class="headerlink" title="Concatenation of regular Langauge and Büchi-recognizable Language"></a>Concatenation of regular Langauge and Büchi-recognizable Language</h2><blockquote>
+<p>$\textbf{Construction 3.3. } \text{Let }\mathcal{A}_1&#x3D;(\Sigma,Q_1,I_1,T_1,F_1)\text{ be an automaton over finite words that}\newline\text{recognizes the languge }L_1\text{, and let }\mathcal{A}_2 &#x3D; (\Sigma,Q_2,I_2,T_2,\small\text{BÜCHI}\normalsize (F_2))\text{ be a Büchi automaton}\newline\text{over the same alphabet that recognizes }L_2.\text{ We construct a Büchi autotmaton }\newline\mathcal{A’}&#x3D;(\Sigma,Q’,I’,T’,\small\text{BÜCHI}\normalsize (F_2))\text{ with }\mathcal{L}(\mathcal{A’})&#x3D;L_1\cdot L_2\text{ as follows:}$<br>$\begin{array}{l}<br>\hspace{1cm} \cdot \ Q’&#x3D;Q_1\cup Q_2 \hspace{1cm}(\text{w.l.o.g we assume }Q_1\cap Q_2&#x3D;\emptyset)\newline<br>\hspace{1cm} \cdot \ I’&#x3D;\biggl\lbrace \begin{array}{l}I_1 \hspace{2cm}\text{if }I_1\cap F_1&#x3D;\emptyset\newline<br>I_1\cup I_2 \hspace{1cm}\text{otherwise}\end{array} \newline<br>\hspace{1cm} \cdot \ T’&#x3D;T_1\cup T_2\cup\lbrace (q,\sigma,q’)\mid(q,\sigma,f)\in T_1,f\in F_1,q’\in I_2\rbrace \newline<br>\end{array}$</p>
+</blockquote>
+<p>$Q’:$ Same as Union, we include both automata for concatenation</p>
+<p>$I’:$ We normaly start the the automaton from $I_1$ If $I_1$ is non-empty, otherwise we start at $I_2$</p>
+<p>$T’:$ For any states that can reach the accepting states of $T_1$ with one transition, we create a new transitions that reach the initial states of $T_2$ $(I_2)$.</p>
+<p>The correctness of this construction is proven by the following theorem.</p>
 <blockquote>
-<p>$\textbf{Definition 2.1. } \text{ An } \textit{automaton over infinite words } \text{is a tuple } \mathcal{A} &#x3D; (\Sigma,Q,I,T,Acc), \text{where} \newline<br>\begin{array}{l}<br>\hspace{1cm} \cdot \ \Sigma \text{ is a finite } \textit{alphabet} \newline<br>\hspace{1cm} \cdot \ Q \text{ is a finite set of } \textit{states} \newline<br>\hspace{1cm} \cdot \ I \subseteq Q \text{ is a subset of } \textit{initial states} \newline<br>\hspace{1cm} \cdot \ T \subseteq Q \times \Sigma \times Q \text{ is a set of } \textit{transitions} \text{, and} \newline<br>\hspace{1cm} \cdot \ Acc \subseteq Q^\omega \text{ is the } \textit{accepting condition}<br>\end{array}$</p>
+<p>$\textbf{Theorem 3.4. }\newline\textit{If $L_1$ is a regular language and $L_2$ is Büchi-recognizable, then $L_1\cdot L_2$ is Büchi-recognizable.}$</p>
 </blockquote>
-<p>In the following, we refer an automaton over infinite words simply as an automaton.</p>
-<h3 id="Runs-of-Buchi-automata"><a href="#Runs-of-Buchi-automata" class="headerlink" title="Runs of Büchi automata"></a>Runs of Büchi automata</h3><p>A run in a Büchi automaton has to transition infinitely many times, and starts with the initial state.</p>
+<h3 id="Proof"><a href="#Proof" class="headerlink" title="Proof"></a>Proof</h3><p>We prove that the Büchi automaton $\mathcal{A’}$ built from the automaton on finite words $\mathcal{A}_1$ and the Büchi automaton $\mathcal{A}_2$ indeed recognizes the concatenation of the languages of the two automata.</p>
+<p>$\mathcal{L}(\mathcal{A’})\subseteq\mathcal{L}(\mathcal{A}_1)\cdot\mathcal{L}(\mathcal{A}_2):$</p>
+<p>For $\alpha\in\mathcal{L}(\mathcal{A’})$, we have an accepting run $r&#x3D;r(0)r(1)r(2)\dots$ of $\mathcal{A’}$ on $\alpha$.<br>If $r(0)\in I_1$, then there is an $n\in\mathbb{N}$ such that $(r(n),\alpha(n),r(n+1))\in Q_1\times\Sigma\times I_2$ and therefore, there is a final state $f\in F_1$ such that $r(0)r(1)r(2)\dots r(n)f$ is an accepting run of $\mathcal{A_1}$ on $\alpha(0)\alpha(1)\alpha(2)\dots \alpha(n)$ and $r(n+1)r(n+2)\dots$ is an accepting run of $\mathcal{A_2}$ on $\alpha(n+1)\alpha(n+2)\dots$<br>If $r(0)\in I_2$ then $I_1\cup F_1 \neq\emptyset$ and therefore, $\varepsilon\in\mathcal{L}(\mathcal{A_1}),\alpha\in\mathcal{L}(\mathcal{A_2})$</p>
+<p>$\mathcal{L}(\mathcal{A’})\supseteq\mathcal{L}(\mathcal{A}_1)\cdot\mathcal{L}(\mathcal{A}_2):$</p>
+<p>For $w\in\mathcal{A_1}$, let $r&#x3D;r(0)r(1)\dots r(n)$ be an accepting run $\mathcal{A_1}$ on $w$.<br>For $\alpha\in\mathcal{A_2}$, let $s&#x3D;s(0)s(1)\dots$ be an accepting run of $\mathcal{A_2}$ on $\alpha$.<br>Then, $r(n)\in F_1$ and, by construction, $r(0)r(1)\dots r(n-1)s(0)s(1)\dots$ is an accepting run of $\mathcal{A’}$ on $w\alpha$.</p>
+<h3 id="Explained-in-Human-language"><a href="#Explained-in-Human-language" class="headerlink" title="Explained in Human language"></a>Explained in Human language</h3><p>If $I_1$ is non-empty, then we can have a run that starts from $I_1$ to $r(n)$, that is one transition before $\mathcal{A_1}$’s accepting states of $f$. Then for next transition we either move to $f$, or we move on to $\mathcal{A_2}$ starting from $r(n+1)$.</p>
+<p>If $I_1$ is empty, then any word accepted by $\mathcal{A‘}$ is accepted by $\mathcal{A_2}$</p>
+<p>On the other way, we can always construct a word $w\alpha$. If $w$ is accepted by $\mathcal{A_1}$ and $\alpha$ is accepted by $\mathcal{A_2}$, then $w\alpha$ is always accepted by $\mathcal{A’}$</p>
+<h2 id="Infinite-concatenation-of-Regular-language"><a href="#Infinite-concatenation-of-Regular-language" class="headerlink" title="Infinite concatenation of Regular language"></a>Infinite concatenation of Regular language</h2><p>Finally, we show that the infinite concatenation of words of a regular language forms a Büchi-recognizable language. We construct a Büchi automaton for this language from an automaton over finite words in two steps.</p>
+<h3 id="From-automaton-over-finite-words-to-a-single-initial-state"><a href="#From-automaton-over-finite-words-to-a-single-initial-state" class="headerlink" title="From automaton over finite words to a single initial state"></a>From automaton over finite words to a single initial state</h3><p>Firstly, we modify a given automaton over finite words into an equivalent automaton with a <strong>single initial state</strong> that has <strong>no incoming transitions</strong>.</p>
 <blockquote>
-<p>$\textbf{Definition 2.2. } \text{ An } \textit{run } \text{of an automaton } \mathcal{A} \text{ on an infinite input word } \alpha \text{ is an } \newline<br>\text{infinite sequence of states } r&#x3D;r(0)r(1)r(2)\dots \text{ such that the following hold:}\newline<br>\begin{array}{l}<br>\hspace{1cm} \cdot \ r(0) \in I \newline<br>\hspace{1cm} \cdot \ \text{for all } i \in \mathbb{N}, (r(i),\alpha(i),r(i+1))\in T<br>\end{array}$</p>
+<p>$\textbf{Construction 3.4. } \text{Let }\mathcal{A}_1&#x3D;(\Sigma,Q_1,I_1,T_1,F_1)\text{ be an automaton over finite words. We assume}\newline\text{that }\varepsilon\notin\mathcal{L}(\mathcal{A})\text{. We construct an automaton }\mathcal{A’} &#x3D; (\Sigma,Q’,I’,T’,F)\text{ over finite words such that }\newline\mathcal{L}(\mathcal{A})&#x3D;\mathcal{L}(\mathcal{A’})\text{ and }\mathcal{A’}\text{ has a single initial state that has no incoming transitions.}$<br>$\begin{array}{l}<br>\hspace{1cm} \cdot \ Q’&#x3D;Q_1\cup\lbrace q_f\rbrace \text{where }q_f\text{ is a fresh state}\newline<br>\hspace{1cm} \cdot \ I’&#x3D;\lbrace q_f\rbrace\newline<br>\hspace{1cm} \cdot \ T’&#x3D;T\cup\lbrace (q_f,\sigma,q’)\mid(q,\sigma,q’)\in T \text{ for some }q\in I\rbrace\newline<br>\end{array}$</p>
 </blockquote>
-<p>Below is a graphical representation of an automation over:</p>
-<ul>
-<li>alphabet $\Sigma &#x3D; \lbrace a,b\rbrace$, and with</li>
-<li>set of states $Q &#x3D;\lbrace A,B,C,D\rbrace$,</li>
-<li>initial set of states $I &#x3D;\lbrace A\rbrace$, and</li>
-<li>set of transitions $T &#x3D;\lbrace (A,a,B),(B,a,C),(C,b,D),(D,b,A)\rbrace$</li>
-</ul>
-<p><img src="/images/notes/uds/agv/2_1_eg.png"></p>
-<p>On the infinite input word $aabbaabb\dots$, the (only) run of the automaton is $ABCDABCDABCD\dots$</p>
-<h2 id="Deterministic-and-Complete-Automaton"><a href="#Deterministic-and-Complete-Automaton" class="headerlink" title="Deterministic and Complete Automaton"></a>Deterministic and Complete Automaton</h2><p>An automaton is <strong>deterministic</strong> if $|I|\leq 1$ and $\mid\lbrace (q,\sigma,q’)\in T \mid q’\in Q\rbrace|\leq 1$ for every $q\in Q$ and $\sigma\in\Sigma$.<br>Meaning that the automaton has <strong>exactly 1</strong> <em>initial state</em>, and <strong>exactly 1</strong> <em>transition</em> from $q$ to $q’$</p>
-<p>An automaton is <strong>complete</strong> if $\mid\lbrace (q,\sigma,q’)\in T \mid q’\in Q\rbrace|\geq 1$ for every $q\in Q$.<br>Meaning that any two states $(q,q’)$ in the automaton should have <strong>at least 1</strong> transitions from $q$ to $q’$.</p>
-<p>Therefore, the automaton in the example above is deterministic but not complete.</p>
-<p>The transitions of an <em>deterministic and complete automata</em> are usually given as a function $\delta:Q \times\Sigma\rightarrow Q$.<br>Meaning that the set of all transitions $\delta$ contains <strong>any states</strong> with <strong>any letter</strong>.</p>
-<h2 id="Accepted-Run"><a href="#Accepted-Run" class="headerlink" title="Accepted Run"></a>Accepted Run</h2><blockquote>
-<p>$\textbf{Definition 2.3. } \text{ An automaton } \mathcal{A} \textit{ accepts } \text{ an infinite word } \alpha \text{ if: } \newline<br>\text{infinite sequence of states } r&#x3D;r(0)r(1)r(2)\dots \text{ such that the following hold:}\newline<br>\begin{array}{l}<br>\hspace{1cm} \cdot \ \text{there is a run } r \text{ of } \mathcal{A} \text{ on } \alpha \text{, and}\newline<br>\hspace{1cm} \cdot \ r \text{ is } \textit{accepting}:r\in Acc<br>\end{array}<br>\newline<br>\text{The } \textit{language recognized }\text{by }\mathcal{A}\text{ is defined as follows: }<br>\mathcal{L}(\mathcal{A}) &#x3D; \lbrace \alpha\in\Sigma^\omega\mid\mathcal{A}\text{ accepts }\alpha\rbrace$</p>
-</blockquote>
-<p>We say two automata are <strong>equivalent</strong> if they have the same language.</p>
 <hr>
-<p>Next chapter: <a href="../agv2-2/">Automata over Infinite Words</a></p>
-<p>Further Reading: <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/B%C3%BCchi_automaton">Büchi automaton</a>, <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Omega_language">Omega language</a></p>
+<p>Next chapter: <a href="../agv/"></a></p>
+<p>Further Reading: <a href=""></a></p>
 
       
        <hr><span style="font-style: italic;color: gray;"> Please cite the source for reprints, feel free to verify the sources cited in the article, and point out any errors or lack of clarity of expression. You can comment in the comments section below or email to GreenMeeple@yahoo.com </span>
