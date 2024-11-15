@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>AGV 4.1 -- Deterministic Büchi Automata | GreenMeeple</title>
+  <title>AGV 3.3 -- Closure Properties of Intersection and Union of the Büchi-recognizable languages | GreenMeeple</title>
   <meta name="keywords" content=" AGV ">
-  <meta name="description" content="AGV 4.1 -- Deterministic Büchi Automata | GreenMeeple">
+  <meta name="description" content="AGV 3.3 -- Closure Properties of Intersection and Union of the Büchi-recognizable languages | GreenMeeple">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="GreenMeeple cannot find what you are looking for...">
@@ -321,7 +321,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="43">
-<input type="hidden" id="yelog_site_word_count" value="15.3k">
+<input type="hidden" id="yelog_site_word_count" value="16.2k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -462,11 +462,11 @@
         
         
         <a  class="All Notes UdS "
-           href="/agv4-1/"
+           href="/agv3-3/"
            data-tag="AGV"
            data-author="" >
-            <span class="post-title" title="AGV 4.1 -- Deterministic Büchi Automata">AGV 4.1 -- Deterministic Büchi Automata</span>
-            <span class="post-date" title="2024-11-15 00:11:57">2024/11/15</span>
+            <span class="post-title" title="AGV 3.3 -- Closure Properties of Intersection and Union of the Büchi-recognizable languages">AGV 3.3 -- Closure Properties of Intersection and Union of the Büchi-recognizable languages</span>
+            <span class="post-date" title="2024-11-15 01:31:57">2024/11/15</span>
         </a>
         
         
@@ -856,9 +856,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-agv4-1" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-agv3-3" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">AGV 4.1 -- Deterministic Büchi Automata</h1>
+        <h1 class="article-title">AGV 3.3 -- Closure Properties of Intersection and Union of the Büchi-recognizable languages</h1>
     
     <div class="article-meta">
         
@@ -885,12 +885,12 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-11-15 00:21:25'>2024-11-15 00:11</time>
+            Created At : <time class="date" title='Updated At: 2024-11-14 23:27:02'>2024-11-15 01:31</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:167</span>
+        <span>Count:996</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -920,7 +920,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Introduction"><span class="toc-text">Introduction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Buchi-recognizable-language-that-is-non-deterministic"><span class="toc-text">Büchi-recognizable language that is non-deterministic</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Proof"><span class="toc-text">Proof</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Closure-Properties-of-Language-Union"><span class="toc-text">Closure Properties of Language Union</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Formal-Proof"><span class="toc-text">Formal Proof</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Closure-Properties-of-Language-Intersection"><span class="toc-text">Closure Properties of Language Intersection</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Formal-Proof-1"><span class="toc-text">Formal Proof</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -936,19 +936,43 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Previous chapter: <a href="../agv3-5/">Büchi’s Characterization Theorem</a></p>
+        <p>Previous chapter: <a href="../agv3-2/">$\omega$-regular language</a></p>
 <blockquote>
 <p>This is a learning note of a course in <a target="_blank" rel="noopener" href="https://cispa.de/de">CISPA</a>, UdS. Taught by Bernd Finkbeiner</p>
 </blockquote>
-<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>In the theory of automata over finite words, we have <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Powerset_construction">Rabin-Scott powerset construction</a>, which converts a <em>nondeterministic automaton</em> over finite words into a <em>deterministic automaton</em> that <strong>recognizes the same language</strong>. This shows that nondeterminism does not make automata over finite words more expressive (but makes it more concise as the construction produces an exponential number of states).</p>
-<p>The situation is different for Büchi automata: even though the language $L &#x3D; (a+b)^*b^\omega$ is clearly <em>Büchi-recognizable</em>, there is, as the following theorem shows, <strong>no deterministic Büchi automaton that recognizes L</strong>.</p>
-<h2 id="Buchi-recognizable-language-that-is-non-deterministic"><a href="#Buchi-recognizable-language-that-is-non-deterministic" class="headerlink" title="Büchi-recognizable language that is non-deterministic"></a>Büchi-recognizable language that is non-deterministic</h2><blockquote>
-<p>$\textbf{Theorem 4.1. }\textit{Language $L&#x3D;(a+b)^*b^\omega$ is not recognizable by deterministic Büchi Automata}$</p>
+<p>In the following we will refer to the languages recognized by Büchi automata simply as <strong>Büchi-recognizable languages</strong>.</p>
+<p><strong>Büchi’s characterization theorem</strong> states that the $\omega$-regular languages are exactly <strong>Büchi-recognizable languages</strong>.</p>
+<p>To prepare for the proof of Büchi’s theorem, we establish several <strong>closure properties</strong> of the Büchi-recognizable languages.</p>
+<h2 id="Closure-Properties-of-Language-Union"><a href="#Closure-Properties-of-Language-Union" class="headerlink" title="Closure Properties of Language Union"></a>Closure Properties of Language Union</h2><blockquote>
+<p>$\textbf{Construction 3.1. } \text{Let $L_1$ and $L_2$ be $\omega$-languages recognized by the Büchi automata}\newline<br>\mathcal{A}_1&#x3D;(\Sigma,Q_1,I_1,T_1,\small\text{BÜCHI}\normalsize (F_1))\text{ and }\mathcal{A}_2 &#x3D; (\Sigma,Q_2,I_2,T_2,\small\text{BÜCHI}\normalsize (F_2))\text{, respectively.}\newline<br>\text{We construct}\mathcal{A}_\cup&#x3D;(\Sigma,Q_\cup,I_\cup,T_\cup,\small\text{BÜCHI}\normalsize (F_\cup))\text{ with }\mathcal{L}(\mathcal{A}_\cup)&#x3D;L_1\cup L_2\text{ as follows:}$<br>$\begin{array}{l}<br>\hspace{1cm} \cdot \ Q_\cup&#x3D;Q_1\cup Q_2 \hspace{1cm} (\text{w.l.o.g we assume }Q_1\cap Q_2&#x3D;\emptyset)\newline<br>\hspace{1cm} \cdot \ I_\cup&#x3D;I_1\cup I_2 \hspace{1cm} \cdot \ T_\cup&#x3D;T_1\cup T_2 \hspace{1cm} \cdot \ F_\cup&#x3D;F_1\cup F_2 \newline<br>\end{array}$</p>
 </blockquote>
-<h3 id="Proof"><a href="#Proof" class="headerlink" title="Proof"></a>Proof</h3><p>Assume, by way of contradiction, that $L$ is recognizable by the deterministic B¨uchi automaton</p>
+<p>The correctness of this construction is proven by the following theorem.</p>
+<blockquote>
+<p>$\textbf{Theorem 3.2. } \textit{If $L_1$ and $L_2$ are Büchi-recognizable, then so is $L_1\cup L_2$.}$</p>
+</blockquote>
+<h3 id="Formal-Proof"><a href="#Formal-Proof" class="headerlink" title="Formal Proof"></a>Formal Proof</h3><p>We prove that the Büchi automaton $\mathcal{A}_\cup$ built by $\mathcal{A}_1$ and $\mathcal{A}_2$ indeed recognizes the union of the languages of the two automata.</p>
+<p>$\mathcal{L}(\mathcal{A}_\cup)\subseteq\mathcal{L}(\mathcal{A}_1)\cup\mathcal{L}(\mathcal{A}_2):$</p>
+<p>For $\alpha\in\mathcal{L}(\mathcal{A}_\cup)$, we have an accepting run $r&#x3D;r(0)r(1)r(2)\dots$ of $\mathcal{A}_\cup$ on $\alpha$.<br>If $r(0)\in I_1$, then $r$ is an accepting run of $\mathcal{A}_1$, otherwise $r(0)\in I_2$ and $r$ is an accepting run of $\mathcal{A}_2$.</p>
+<p>$\mathcal{L}(\mathcal{A}_\cup)\supseteq\mathcal{L}(\mathcal{A}_1)\cup\mathcal{L}(\mathcal{A}_2):$</p>
+<p>For $i\in\lbrace 1,2\rbrace$ and $\alpha\in\mathcal{L}(\mathcal{A}_i)$, there is an accepting run $r$ of $\mathcal{A}_i$. The run $r$ is also an accepting run of $\mathcal{A}_\cup$.</p>
+<h2 id="Closure-Properties-of-Language-Intersection"><a href="#Closure-Properties-of-Language-Intersection" class="headerlink" title="Closure Properties of Language Intersection"></a>Closure Properties of Language Intersection</h2><p>As we will see later, the Büchi-recognizable languages are closed under <code>complement</code>.<br>The closure under <code>complement</code> and <code>union</code> implies the closure under <code>intersection</code> $(\mathcal{A}_\cap &#x3D; (\mathcal{A’_1}\cup \mathcal{A’_2})’)$</p>
+<p>Below, the automaton for the intersection is essentially the product of the two automata.</p>
+<blockquote>
+<p>$\textbf{Construction 3.2. } \text{Let $L_1$ and $L_2$ be $\omega$-languages recognized by the Büchi automata}\newline<br>\mathcal{A}_1&#x3D;(\Sigma,Q_1,I_1,T_1,\small\text{BÜCHI}\normalsize (F_1))\text{ and }\mathcal{A}_2 &#x3D; (\Sigma,Q_2,I_2,T_2,\small\text{BÜCHI}\normalsize (F_2))\text{, respectively.}\newline<br>\text{We construct}\mathcal{A}_\cap&#x3D;(\Sigma,Q_\cap,I_\cap,T_\cap,\small\text{BÜCHI}\normalsize (F_\cap))\text{ with }\mathcal{L}(\mathcal{A}_\cap)&#x3D;L_1\cap L_2\text{ as follows:}$<br>$\begin{array}{l}<br>\hspace{1cm} \cdot \ Q_\cap&#x3D;Q_1\times Q_2\times\lbrace 1,2\rbrace\newline<br>\hspace{1cm} \cdot \ I_\cap&#x3D;I_1\times I_2\times\lbrace 1\rbrace\newline<br>\hspace{1cm} \cdot \ T_\cap&#x3D;\lbrace (q_1,q_2,i),\sigma ,(q’_1,q’_2,j)\mid (q_1,\sigma,q’_1)\in T_1,(q_2,\sigma,q’_2)\in T_2,i,j\in\lbrace 1,2\rbrace,\newline<br>\hspace{7.7cm} \ q_i \notin F_i\rightarrow i&#x3D;j \wedge q_i\in F_i\wedge i\neq j\rbrace\newline<br>\hspace{1cm} \cdot \ F_\cap&#x3D;\lbrace (q_1,q_2,2)\mid q_1\in F_1, q_2\in F_2\rbrace\newline<br>\end{array}$</p>
+</blockquote>
+<p>$Q_\cap:$ States in the new automaton is <strong>tuples</strong> that contain the states of two automata plus the third component that used to <strong>combine acceptance conditions</strong>, e.g. $(q_1,q_2,1)$ is a state.</p>
+<p>$I_\cap:$ New automaton is constructed with only <strong>one initial state</strong>, so we assign the value to the acceptance condition <code>&#123;1&#125;</code> for simplicity</p>
+<p>$T_\cap:$ For each transition, it has to be possible by both automata and if such transition reach the one of the automata’s accepting state, the acceptance condition changed. This creates an alternation between the accepting state of the 1st and 2nd automaton.</p>
+<p>$F_\cap:$ Since we start our acceptance condition as <code>&#123;1&#125;</code>, our accepting states of the new automaton will be the <strong>accepting states of the 2nd automaton when acceptance condition becomes <code>&#123;2&#125;</code></strong>. i.e. Whenever the run reach to the accepting states of the 2nd automaton, it always has to first reach the accepting states of the 1st automaton.</p>
+<blockquote>
+<p>$\textbf{Theorem 3.3. } \textit{If $L_1$ and $L_2$ are Büchi-recognizable, then so is $L_1\cap L_2$.}$</p>
+</blockquote>
+<h3 id="Formal-Proof-1"><a href="#Formal-Proof-1" class="headerlink" title="Formal Proof"></a>Formal Proof</h3><p>The run $r’$ is accepting iff $r_1$ is accepting and $r_2$ is accepting.</p>
+<p>i.e. $r’&#x3D;(q_1^0,q_2^0,t^0)(q_1^1,q_2^1,t^1)\dots$ is a run of $\mathcal{A}_\cap$ on an input word $\alpha$,<br>iff $r_1 &#x3D; q^0_1 q^1_1\dots$ is a run of $\mathcal{A}_1$ on $\alpha$ and $r_1 &#x3D; q^0_2 q^1_2\dots$ is a run of $\mathcal{A}_2$ on $\alpha$</p>
+<p>Therefore, an accepting run will be: <strong>(1)</strong> go to states with <code>&#123;1&#125;</code> → <strong>(2)</strong> reach accepting state of 1st automaton → <strong>(3)</strong> go to states with <code>&#123;2&#125;</code> → <strong>(4)</strong> reach accepting state of 2nd automaton → goes back to <strong>(1)</strong>…</p>
 <hr>
-<p>Next chapter: <a href="../agv/"></a></p>
-<p>Further Reading: <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Powerset_construction">powerset construction</a></p>
+<p>Next chapter: <a href="../agv3-4/">Infinite concatenation and…</a></p>
+<p>Further Reading: <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Closure_(mathematics)">Closure (mathematics)</a>, <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Intersection_(set_theory)">Intersection (set theory)</a>, <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Union_(set_theory)">Union (set theory)</a></p>
 
       
        <hr><span style="font-style: italic;color: gray;"> Please cite the source for reprints, feel free to verify the sources cited in the article, and point out any errors or lack of clarity of expression. You can comment in the comments section below or email to GreenMeeple@yahoo.com </span>
