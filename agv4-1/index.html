@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Leetcode SQL 50 -- 1667. Fix Names in a Table | GreenMeeple</title>
-  <meta name="keywords" content=" SQL ">
-  <meta name="description" content="Leetcode SQL 50 -- 1667. Fix Names in a Table | GreenMeeple">
+  <title>AGV 4.1 -- Deterministic Büchi Automata | GreenMeeple</title>
+  <meta name="keywords" content=" AGV ">
+  <meta name="description" content="AGV 4.1 -- Deterministic Büchi Automata | GreenMeeple">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="GreenMeeple cannot find what you are looking for...">
@@ -865,9 +865,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-sql50-1667" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-agv4-1" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Leetcode SQL 50 -- 1667. Fix Names in a Table</h1>
+        <h1 class="article-title">AGV 4.1 -- Deterministic Büchi Automata</h1>
     
     <div class="article-meta">
         
@@ -877,9 +877,9 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="LeetCode">LeetCode</a> > 
+            <a  data-rel="Notes">Notes</a> > 
             
-            <a  data-rel="LeetCode&lt;---&gt;SQL_50">SQL_50</a>
+            <a  data-rel="Notes&lt;---&gt;UdS">UdS</a>
             
         </span>
         
@@ -887,19 +887,19 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color4">SQL</a>
+            <a class="color4">AGV</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-10-29 06:42:54'>2024-10-27 05:30</time>
+            Created At : <time class="date" title='Updated At: 2024-11-15 17:32:48'>2024-11-15 00:11</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:218</span>
+        <span>Count:625</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -929,7 +929,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Question"><span class="toc-text">Question</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Table-name-Users"><span class="toc-text">Table name: Users</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Explaination"><span class="toc-text">Explaination</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#SQL-SUBSTRING-Function"><span class="toc-text">SQL SUBSTRING() Function</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SQL-UPPER-LOWER-and-CONCAT"><span class="toc-text">SQL UPPER(), LOWER(), and CONCAT()</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-text">Solution</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Introduction"><span class="toc-text">Introduction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Deterministic-vs-nondeterministic-Buchi-automata"><span class="toc-text">Deterministic vs. nondeterministic Büchi automata</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Proof"><span class="toc-text">Proof</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Limit-Operator"><span class="toc-text">Limit Operator</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Proof-1"><span class="toc-text">Proof</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -945,52 +945,35 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><h3 id="Table-name-Users"><a href="#Table-name-Users" class="headerlink" title="Table name: Users"></a>Table name: <code>Users</code></h3><table>
-<thead>
-<tr>
-<th align="left">Column Name</th>
-<th align="left">Type</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">user_id</td>
-<td align="left">int</td>
-</tr>
-<tr>
-<td align="left">name</td>
-<td align="left">varchar</td>
-</tr>
-</tbody></table>
-<p>This table contains the <code>user_id</code> and the <code>name</code> of the user. The <code>name</code> consists of <strong>only lowercase and uppercase</strong> characters.</p>
+        <p>Previous chapter: <a href="../agv3-5/">Büchi’s Characterization Theorem</a></p>
 <blockquote>
-<p>Write a solution to fix the names so that <strong>only the first character is uppercase</strong> and the <strong>rest are lowercase</strong>.<br>Return the result table <strong>ordered</strong> by <code>user_id</code>.<br>The result format is in the following example.</p>
+<p>This is a learning note of a course in <a target="_blank" rel="noopener" href="https://cispa.de/de">CISPA</a>, UdS. Taught by Bernd Finkbeiner</p>
 </blockquote>
-<h2 id="Explaination"><a href="#Explaination" class="headerlink" title="Explaination"></a>Explaination</h2><p>We can split the tasks into three part.</p>
-<ol>
-<li>Split the name into <strong>first character</strong> and the <strong>remaining characters</strong> → <code>SUBSTRING()</code></li>
-<li>Modify them into <strong>upper case</strong> and <strong>lower case</strong> respectively → <code>UPPER()</code> and <code>LOWER()</code></li>
-<li>Order the result by <code>user_id</code> → <code>ORDER BY</code></li>
-</ol>
-<h3 id="SQL-SUBSTRING-Function"><a href="#SQL-SUBSTRING-Function" class="headerlink" title="SQL SUBSTRING() Function"></a>SQL SUBSTRING() Function</h3><p>For extracting characters from a string, we can use the function <code>SUBSTRING(&lt;string&gt;, start, end)</code>.<br>For example,</p>
-<pre><code class="sql">SUBSTRING(name, 1, 1)
-</code></pre>
-<p>returns the first character from string <code>name</code>,<br>and <code>name</code> without the first letter.</p>
-<pre><code class="sql">SUBSTRING(name, 2, LENGTH(name))
-</code></pre>
-<h3 id="SQL-UPPER-LOWER-and-CONCAT"><a href="#SQL-UPPER-LOWER-and-CONCAT" class="headerlink" title="SQL UPPER(), LOWER(), and CONCAT()"></a>SQL UPPER(), LOWER(), and CONCAT()</h3><p>For text converting, we can simply use <code>UPPER(&lt;text&gt;)</code> and <code>LOWER(&lt;text&gt;)</code>.<br>Then we can combine two substring together by using</p>
-<pre><code class="sql">CONCAT(&lt;string1&gt;, &lt;string2&gt;, ... , &lt;string_n&gt;)
-</code></pre>
-<p>and finally, use <code>ORDER BY user_id</code>.</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><pre><code class="sql">SELECT user_id, 
-  CONCAT(
-    UPPER(SUBSTRING(name, 1, 1)), 
-    LOWER(SUBSTRING(name, 2, LENGTH(name)))
-  ) AS name
-FROM Users
-ORDER BY user_id
-</code></pre>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>In the theory of automata over finite words, we have <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Powerset_construction">Rabin-Scott powerset construction</a>, which converts a <em>nondeterministic automaton</em> over finite words into a <em>deterministic automaton</em> that <strong>recognizes the same language</strong>. This shows that nondeterminism does not make automata over finite words more expressive (but makes it more concise as the construction produces an exponential number of states).</p>
+<p>The situation is different for Büchi automata: even though the language $L &#x3D; (a+b)^*b^\omega$ is clearly <em>Büchi-recognizable</em>, there is, as the following theorem shows, <strong>no deterministic Büchi automaton that recognizes L</strong>.</p>
+<h2 id="Deterministic-vs-nondeterministic-Buchi-automata"><a href="#Deterministic-vs-nondeterministic-Buchi-automata" class="headerlink" title="Deterministic vs. nondeterministic Büchi automata"></a>Deterministic vs. nondeterministic Büchi automata</h2><blockquote>
+<p>$\textbf{Theorem 4.1. }\textit{Language $L&#x3D;(a+b)^*b^\omega$ is not recognizable by deterministic Büchi Automata}$</p>
+</blockquote>
+<p>Starting a base case $b^\omega$, we add $(a+b)$ as the prefix one by one. Can we express the  <strong>kleene star</strong>?<br>That is, is the automaton only accept <strong>finitely many</strong> $(a+b)$?</p>
+<h3 id="Proof"><a href="#Proof" class="headerlink" title="Proof"></a>Proof</h3><p>Assume, by way of contradiction, that $L$ is recognizable by the deterministic Büchi automaton $\mathcal{A}&#x3D;(\Sigma,Q,I,T,\small\text{BÜCHI}\normalsize(F))$. Since $\alpha_0&#x3D;b^\omega$ is in $L$, there is an unique run</p>
+<p>$$r_0&#x3D;r_0(0)r_0(1)r_0(2)\dots$$</p>
+<p>of $\mathcal{A}$ on $\alpha_0$ with $r_0(n_0)\in F$ for some $n_0\in\mathbb{N}$. Similarly, $\alpha_1&#x3D;b^{n_0}ab^\omega$ in $L$ and there is a unique run</p>
+<p>$$r_1&#x3D;r_0(0)r_0(1)r_0(2)\dots r_0(n_0)r_1(n_0+1)r_1(n_0+2)\dots$$</p>
+<p>of $\mathcal{A}$ on $\alpha_1$ with $r_1(n_1)\in F$ for some $n_1&gt;n_0$. Because $\mathcal{A}$ is deterministic, $r_0$ and $r_1$ are identical up to position $n_0$.</p>
+<p>By repeating this argument infinitely often, we obtain a word $\alpha&#x3D;b^{n_0}ab^{n_1}ab^{n_2}a\dots$ and a run $r$ with infinitely many visits to $F$. Hence, $\alpha$ is accepted by $\mathcal{A}$. However, $\alpha$ is not an element of $L$. This contradicts $L &#x3D; \mathcal{L}(\mathcal{A})$.</p>
+<h2 id="Limit-Operator"><a href="#Limit-Operator" class="headerlink" title="Limit Operator"></a>Limit Operator</h2><blockquote>
+<p>$\textbf{Definition 4.1. }\text{(Limit). The}\textit{ limit }\overrightarrow{W}\text{ of a language }W\subseteq\Sigma^* \text{ over finite words}\newline\text{is the following language over infinite words:}$ $$\overrightarrow{W}&#x3D;\lbrace\alpha\in\Sigma^\omega\mid\text{there exist infinitely many }n\in\mathbb{N}\text{ s.t. }\alpha[0,n]\in W\rbrace.$$</p>
+</blockquote>
+<blockquote>
+<p>$\textbf{Theorem 4.2. }\textit{An $\omega$-language $L\subseteq\Sigma^\omega$ is recognizable by a deterministic Büchi Automata}\newline\textit{iff there is a regular langauge $W\subseteq\Sigma^*$ s.t. $L&#x3D;\overrightarrow{W}$}.$</p>
+</blockquote>
+<h3 id="Proof-1"><a href="#Proof-1" class="headerlink" title="Proof"></a>Proof</h3><p>We claim that the languages of a deterministic Büchi automaton $\mathcal{A}_B$ and of a deterministic<br>automaton over finite words $\mathcal{A}_F$, where the automata $\mathcal{A}_B&#x3D;(\Sigma,Q,I,T,\small\text{BÜCHI}\normalsize(F))$ and $\mathcal{A}_F&#x3D;(\Sigma,Q,I,T,F)$, constructed from the same components, are related as follows:</p>
+<p>$$\mathcal{L}(\mathcal{A_B})&#x3D;\overrightarrow{\mathcal{L}(\mathcal{A_F})}.$$</p>
+<p>Since every regular language is recognized by a deterministic automaton over finite words,<br>the theorem follows. To prove the claim, we consider an infinite word $\alpha\in\Sigma^\omega$.</p>
+<p>$\hspace{1cm}\alpha\in\mathcal{L}(\mathcal{A_B})\newline<br>\text{iff} \hspace{0.5cm}\text{for the unique run $r$ of $\mathcal{A_B}$ on $\alpha$, Inf($r$) $\cap$ $F\neq\emptyset$}\newline \text{iff} \hspace{0.5cm} \alpha[0,n]\in\mathcal{L}(\mathcal{A_F})\text{ for infinitely many }n\in\mathbb{N}\newline<br>\text{iff} \hspace{0.5cm} \alpha\in\mathcal{L}(\mathcal{A_F})$</p>
 <hr>
-<p>More SQL 50 questions: <a href="../sql50/">here</a></p>
+<p>Next chapter: <a href="../agv/"></a></p>
+<p>Further Reading: <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Powerset_construction">powerset construction</a></p>
 
       
        <hr><span style="font-style: italic;color: gray;"> Please cite the source for reprints, feel free to verify the sources cited in the article, and point out any errors or lack of clarity of expression. You can comment in the comments section below or email to GreenMeeple@yahoo.com </span>
@@ -1024,6 +1007,46 @@ ORDER BY user_id
 
 
 
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.jsdelivr.net/npm/mathjax@2.7.8/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.jsdelivr.net/npm/mathjax@2.7.8/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
     
 
 

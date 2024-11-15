@@ -144,7 +144,7 @@
     <li>
         <div class="all active" data-rel="All">All
             
-                <small>(43)</small>
+                <small>(44)</small>
             
         </div>
     </li>
@@ -246,7 +246,7 @@
         <div data-rel="Notes">
             <i class="fold iconfont icon-right"></i>
             Notes
-            <small>(11) </small>
+            <small>(12) </small>
         </div>
         
             <ul class="sub hide">
@@ -256,7 +256,7 @@
         <div data-rel="Notes&lt;---&gt;UdS">
             
             UdS
-            <small>(11) </small>
+            <small>(12) </small>
         </div>
         
     </li>
@@ -320,7 +320,7 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="43">
+<input type="hidden" id="yelog_site_posts_number" value="44">
 <input type="hidden" id="yelog_site_word_count" value="16.2k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
@@ -467,6 +467,15 @@
            data-author="" >
             <span class="post-title" title="AGV 3.3 -- Closure Properties of Intersection and Union of the Büchi-recognizable languages">AGV 3.3 -- Closure Properties of Intersection and Union of the Büchi-recognizable languages</span>
             <span class="post-date" title="2024-11-15 01:31:57">2024/11/15</span>
+        </a>
+        
+        
+        <a  class="All Notes UdS "
+           href="/agv4-1/"
+           data-tag="AGV"
+           data-author="" >
+            <span class="post-title" title="AGV 4.1 -- Deterministic Büchi Automata">AGV 4.1 -- Deterministic Büchi Automata</span>
+            <span class="post-date" title="2024-11-15 00:11:57">2024/11/15</span>
         </a>
         
         
@@ -885,12 +894,12 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-11-13 20:28:01'>2024-11-10 04:24</time>
+            Created At : <time class="date" title='Updated At: 2024-11-15 17:36:58'>2024-11-10 04:24</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:844</span>
+        <span>Count:224</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -920,7 +929,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-Preliminaries"><span class="toc-text">2.1 Preliminaries</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Basic-math-notations"><span class="toc-text">Basic math notations</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Alphabet-and-Letter"><span class="toc-text">Alphabet and Letter</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Finite-and-Infinite-Word"><span class="toc-text">Finite and Infinite Word</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Language"><span class="toc-text">Language</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-Automata-over-Infinite-Words"><span class="toc-text">2.2 Automata over Infinite Words</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Runs-of-Buchi-automata"><span class="toc-text">Runs of Büchi automata</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Deterministic-and-Complete-Automaton"><span class="toc-text">Deterministic and Complete Automaton</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Accepted-Run"><span class="toc-text">Accepted Run</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-Preliminaries"><span class="toc-text">2.1 Preliminaries</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Basic-math-notations"><span class="toc-text">Basic math notations</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Alphabet-and-Letter"><span class="toc-text">Alphabet and Letter</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Finite-and-Infinite-Word"><span class="toc-text">Finite and Infinite Word</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Language"><span class="toc-text">Language</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -963,37 +972,6 @@
 <li>language over <strong>finite words</strong> ($\omega$<strong>-language</strong>) : each subset of $\Sigma^*$</li>
 <li>language over <strong>infinite words</strong> ($\omega$<strong>-language</strong>) : each subset of $\Sigma^\omega$</li>
 </ul>
-<h2 id="2-2-Automata-over-Infinite-Words"><a href="#2-2-Automata-over-Infinite-Words" class="headerlink" title="2.2 Automata over Infinite Words"></a>2.2 Automata over Infinite Words</h2><p>The operational behavior of an automaton over infinite words is very similar to automaton over finite words:</p>
-<ol>
-<li>Start with an <em>initial state</em></li>
-<li>Automaton constructs a <strong>run</strong> by reading one letter of the input alphabet at a time, and<br>transitioning to a successor <em>state</em> permitted by its <em>transitions</em>.</li>
-</ol>
-<p>The major difference between automata over finite and infinite words is the <strong>acceptance condition</strong>.</p>
-<blockquote>
-<p>$\textbf{Definition 2.1. } \text{ An } \textit{automaton over infinite words } \text{is a tuple } \mathcal{A} &#x3D; (\Sigma,Q,I,T,Acc), \text{where} \newline<br>\begin{array}{l}<br>\hspace{1cm} \cdot \ \Sigma \text{ is a finite } \textit{alphabet} \newline<br>\hspace{1cm} \cdot \ Q \text{ is a finite set of } \textit{states} \newline<br>\hspace{1cm} \cdot \ I \subseteq Q \text{ is a subset of } \textit{initial states} \newline<br>\hspace{1cm} \cdot \ T \subseteq Q \times \Sigma \times Q \text{ is a set of } \textit{transitions} \text{, and} \newline<br>\hspace{1cm} \cdot \ Acc \subseteq Q^\omega \text{ is the } \textit{accepting condition}<br>\end{array}$</p>
-</blockquote>
-<p>In the following, we refer an automaton over infinite words simply as an automaton.</p>
-<h3 id="Runs-of-Buchi-automata"><a href="#Runs-of-Buchi-automata" class="headerlink" title="Runs of Büchi automata"></a>Runs of Büchi automata</h3><p>A run in a Büchi automaton has to transition infinitely many times, and starts with the initial state.</p>
-<blockquote>
-<p>$\textbf{Definition 2.2. } \text{ An } \textit{run } \text{of an automaton } \mathcal{A} \text{ on an infinite input word } \alpha \text{ is an } \newline<br>\text{infinite sequence of states } r&#x3D;r(0)r(1)r(2)\dots \text{ such that the following hold:}\newline<br>\begin{array}{l}<br>\hspace{1cm} \cdot \ r(0) \in I \newline<br>\hspace{1cm} \cdot \ \text{for all } i \in \mathbb{N}, (r(i),\alpha(i),r(i+1))\in T<br>\end{array}$</p>
-</blockquote>
-<p>Below is a graphical representation of an automation over:</p>
-<ul>
-<li>alphabet $\Sigma &#x3D; \lbrace a,b\rbrace$, and with</li>
-<li>set of states $Q &#x3D;\lbrace A,B,C,D\rbrace$,</li>
-<li>initial set of states $I &#x3D;\lbrace A\rbrace$, and</li>
-<li>set of transitions $T &#x3D;\lbrace (A,a,B),(B,a,C),(C,b,D),(D,b,A)\rbrace$</li>
-</ul>
-<p><img src="/images/notes/uds/agv/2_1_eg.png"></p>
-<p>On the infinite input word $aabbaabb\dots$, the (only) run of the automaton is $ABCDABCDABCD\dots$</p>
-<h2 id="Deterministic-and-Complete-Automaton"><a href="#Deterministic-and-Complete-Automaton" class="headerlink" title="Deterministic and Complete Automaton"></a>Deterministic and Complete Automaton</h2><p>An automaton is <strong>deterministic</strong> if $|I|\leq 1$ and $\mid\lbrace (q,\sigma,q’)\in T \mid q’\in Q\rbrace|\leq 1$ for every $q\in Q$ and $\sigma\in\Sigma$.<br>Meaning that the automaton has <strong>exactly 1</strong> <em>initial state</em>, and <strong>exactly 1</strong> <em>transition</em> from $q$ to $q’$</p>
-<p>An automaton is <strong>complete</strong> if $\mid\lbrace (q,\sigma,q’)\in T \mid q’\in Q\rbrace|\geq 1$ for every $q\in Q$.<br>Meaning that any two states $(q,q’)$ in the automaton should have <strong>at least 1</strong> transitions from $q$ to $q’$.</p>
-<p>Therefore, the automaton in the example above is deterministic but not complete.</p>
-<p>The transitions of an <em>deterministic and complete automata</em> are usually given as a function $\delta:Q \times\Sigma\rightarrow Q$.<br>Meaning that the set of all transitions $\delta$ contains <strong>any states</strong> with <strong>any letter</strong>.</p>
-<h2 id="Accepted-Run"><a href="#Accepted-Run" class="headerlink" title="Accepted Run"></a>Accepted Run</h2><blockquote>
-<p>$\textbf{Definition 2.3. } \text{ An automaton } \mathcal{A} \textit{ accepts } \text{ an infinite word } \alpha \text{ if: } \newline<br>\text{infinite sequence of states } r&#x3D;r(0)r(1)r(2)\dots \text{ such that the following hold:}\newline<br>\begin{array}{l}<br>\hspace{1cm} \cdot \ \text{there is a run } r \text{ of } \mathcal{A} \text{ on } \alpha \text{, and}\newline<br>\hspace{1cm} \cdot \ r \text{ is } \textit{accepting}:r\in Acc<br>\end{array}<br>\newline<br>\text{The } \textit{language recognized }\text{by }\mathcal{A}\text{ is defined as follows: }<br>\mathcal{L}(\mathcal{A}) &#x3D; \lbrace \alpha\in\Sigma^\omega\mid\mathcal{A}\text{ accepts }\alpha\rbrace$</p>
-</blockquote>
-<p>We say two automata are <strong>equivalent</strong> if they have the same language.</p>
 <hr>
 <p>Next chapter: <a href="../agv2-2/">Automata over Infinite Words</a></p>
 <p>Further Reading: <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/B%C3%BCchi_automaton">Büchi automaton</a>, <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Omega_language">Omega language</a></p>
