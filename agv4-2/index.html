@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Leetcode SQL 50 -- 1683. Invalid Tweets | GreenMeeple</title>
-  <meta name="keywords" content=" SQL ">
-  <meta name="description" content="Leetcode SQL 50 -- 1683. Invalid Tweets | GreenMeeple">
+  <title>AGV 4.2 -- Complementation of deterministic Büchi Automata | GreenMeeple</title>
+  <meta name="keywords" content=" AGV ">
+  <meta name="description" content="AGV 4.2 -- Complementation of deterministic Büchi Automata | GreenMeeple">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="GreenMeeple cannot find what you are looking for...">
@@ -883,9 +883,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-sql50-1683" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-agv4-2" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Leetcode SQL 50 -- 1683. Invalid Tweets</h1>
+        <h1 class="article-title">AGV 4.2 -- Complementation of deterministic Büchi Automata</h1>
     
     <div class="article-meta">
         
@@ -895,9 +895,9 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="LeetCode">LeetCode</a> > 
+            <a  data-rel="Notes">Notes</a> > 
             
-            <a  data-rel="LeetCode&lt;---&gt;SQL_50">SQL_50</a>
+            <a  data-rel="Notes&lt;---&gt;UdS">UdS</a>
             
         </span>
         
@@ -905,19 +905,19 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color4">SQL</a>
+            <a class="color4">AGV</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-10-29 06:26:23'>2024-10-25 13:39</time>
+            Created At : <time class="date" title='Updated At: 2024-11-15 23:12:31'>2024-11-15 23:12</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:122</span>
+        <span>Count:25</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -947,7 +947,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Question"><span class="toc-text">Question</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Table-name-Tweets"><span class="toc-text">Table name: Tweets</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Explaination"><span class="toc-text">Explaination</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-text">Solution</span></a></li></ol>
+        
     
 <style>
     .left-col .switch-btn,
@@ -963,32 +963,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><h3 id="Table-name-Tweets"><a href="#Table-name-Tweets" class="headerlink" title="Table name: Tweets"></a>Table name: <code>Tweets</code></h3><table>
-<thead>
-<tr>
-<th align="left">Column Name</th>
-<th align="left">Type</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">tweet_id</td>
-<td align="left">int</td>
-</tr>
-<tr>
-<td align="left">content</td>
-<td align="left">varchar</td>
-</tr>
-</tbody></table>
-<p><code>tweet_id</code> is the primary key (column with unique values) for this table.<br>This table contains all the tweets in a social media app.</p>
+        <p>Previous chapter: <a href="../agv4-1/">Deterministic Büchi Automata</a></p>
 <blockquote>
-<p>Write a solution to find the <code>IDs</code> of the <strong>invalid tweets</strong>.<br>The tweet is invalid if the <strong>number of characters</strong> used in the <code>content</code> of the tweet is <strong>strictly greater than 15</strong>.<br>Return the result table in any order.</p>
+<p>This is a learning note of a course in <a target="_blank" rel="noopener" href="https://cispa.de/de">CISPA</a>, UdS. Taught by Bernd Finkbeiner</p>
 </blockquote>
-<h2 id="Explaination"><a href="#Explaination" class="headerlink" title="Explaination"></a>Explaination</h2><p>To check the number of character, we can use the <code>LENGTH(&lt;string&gt;)</code> function.</p>
-<p>If you use this function on numbers (e.g. int), it will turn it into string and return <strong>number of digits</strong>.</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><pre><code class="sql">SELECT tweet_id FROM Tweets WHERE LENGTH(content)&gt;15;
-</code></pre>
 <hr>
-<p>More SQL 50 questions: <a href="../sql50/">here</a></p>
+<p>Next chapter: <a href="../agv/"></a></p>
+<p>Further Reading: <a href=""></a></p>
 
       
        <hr><span style="font-style: italic;color: gray;"> Please cite the source for reprints, feel free to verify the sources cited in the article, and point out any errors or lack of clarity of expression. You can comment in the comments section below or email to GreenMeeple@yahoo.com </span>
@@ -1022,6 +1003,46 @@
 
 
 
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.jsdelivr.net/npm/mathjax@2.7.8/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.jsdelivr.net/npm/mathjax@2.7.8/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
     
 
 

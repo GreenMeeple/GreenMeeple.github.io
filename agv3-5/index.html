@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Leetcode SQL 50 -- 1683. Invalid Tweets | GreenMeeple</title>
-  <meta name="keywords" content=" SQL ">
-  <meta name="description" content="Leetcode SQL 50 -- 1683. Invalid Tweets | GreenMeeple">
+  <title>AGV 3.5 -- Büchi&#39;s Characterization Theorem | GreenMeeple</title>
+  <meta name="keywords" content=" AGV ">
+  <meta name="description" content="AGV 3.5 -- Büchi&#39;s Characterization Theorem | GreenMeeple">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="GreenMeeple cannot find what you are looking for...">
@@ -883,9 +883,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-sql50-1683" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-agv3-5" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Leetcode SQL 50 -- 1683. Invalid Tweets</h1>
+        <h1 class="article-title">AGV 3.5 -- Büchi&#39;s Characterization Theorem</h1>
     
     <div class="article-meta">
         
@@ -895,9 +895,9 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="LeetCode">LeetCode</a> > 
+            <a  data-rel="Notes">Notes</a> > 
             
-            <a  data-rel="LeetCode&lt;---&gt;SQL_50">SQL_50</a>
+            <a  data-rel="Notes&lt;---&gt;UdS">UdS</a>
             
         </span>
         
@@ -905,19 +905,19 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color4">SQL</a>
+            <a class="color4">AGV</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-10-29 06:26:23'>2024-10-25 13:39</time>
+            Created At : <time class="date" title='Updated At: 2024-11-15 00:11:46'>2024-11-17 17:33</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:122</span>
+        <span>Count:853</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -947,7 +947,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Question"><span class="toc-text">Question</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Table-name-Tweets"><span class="toc-text">Table name: Tweets</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Explaination"><span class="toc-text">Explaination</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-text">Solution</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Explained-in-Human-language"><span class="toc-text">Explained in Human language</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Formal-Proof"><span class="toc-text">Formal Proof</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -963,32 +963,43 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><h3 id="Table-name-Tweets"><a href="#Table-name-Tweets" class="headerlink" title="Table name: Tweets"></a>Table name: <code>Tweets</code></h3><table>
-<thead>
-<tr>
-<th align="left">Column Name</th>
-<th align="left">Type</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">tweet_id</td>
-<td align="left">int</td>
-</tr>
-<tr>
-<td align="left">content</td>
-<td align="left">varchar</td>
-</tr>
-</tbody></table>
-<p><code>tweet_id</code> is the primary key (column with unique values) for this table.<br>This table contains all the tweets in a social media app.</p>
+        <p>Previous chapter: <a href="../agv3-4/">Infinite concatenation and…</a></p>
 <blockquote>
-<p>Write a solution to find the <code>IDs</code> of the <strong>invalid tweets</strong>.<br>The tweet is invalid if the <strong>number of characters</strong> used in the <code>content</code> of the tweet is <strong>strictly greater than 15</strong>.<br>Return the result table in any order.</p>
+<p>This is a learning note of a course in <a target="_blank" rel="noopener" href="https://cispa.de/de">CISPA</a>, UdS. Taught by Bernd Finkbeiner</p>
 </blockquote>
-<h2 id="Explaination"><a href="#Explaination" class="headerlink" title="Explaination"></a>Explaination</h2><p>To check the number of character, we can use the <code>LENGTH(&lt;string&gt;)</code> function.</p>
-<p>If you use this function on numbers (e.g. int), it will turn it into string and return <strong>number of digits</strong>.</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><pre><code class="sql">SELECT tweet_id FROM Tweets WHERE LENGTH(content)&gt;15;
-</code></pre>
+<p>We are now ready to prove Büchi’s Characterization Theorem, a result from 1962.</p>
+<blockquote>
+<p>$\textbf{Theorem 3.6. }\text{(Büchi’s Characterization Theorem) }\newline\textit{An $\omega$-language is Büchi-recognizable iff it is $\omega$-regular.}$</p>
+</blockquote>
+<h3 id="Explained-in-Human-language"><a href="#Explained-in-Human-language" class="headerlink" title="Explained in Human language"></a>Explained in Human language</h3><blockquote>
+<p>p.s. Büchi-recognizable means the language can be described by a Büchi automata.</p>
+</blockquote>
+<p>$”\Leftarrow”$<br>We have to prove if the language is <strong>$\omega$-regular</strong>, then it is <strong>Büchi-recognizable</strong>.<br>In <a href="../agv3-2/">section 3.2</a>, we learn that an $\omega$-regular language contains 3 operators:</p>
+<ul>
+<li><strong>union</strong> of $\omega$-regular languages, $W_1+W_2$ (proved by Theorem <a href="../agv3-3/">3.2</a>),</li>
+<li><strong>infinite concatenation</strong> of a <strong>non-empty</strong> regular language $E^\omega$ (proved by Theorem <a href="../agv3-4/">3.4</a>), and</li>
+<li><strong>concatenation</strong> of regular languages and $\omega$-regular language $E\cdot W$ (proved by Theorem <a href="../agv3-4/">3.5</a>)</li>
+</ul>
+<p>$”\Rightarrow”$<br>We have to prove if the language is <strong>Büchi-recognizable</strong>, then it is <strong>$\omega$-regular</strong>.<br>Here, we try to construct a Büchi-recognizable using all <strong>$\omega$-regular</strong> operators.</p>
+<p>We begin by constructing a <strong>regular language</strong> $W_{q,q’}$. <strong>Words</strong> of the language $w$ is accepted by some finite-word automata, with a pair of state $q,q’\in Q$ being the <strong>initial and accepting states</strong> respectively.</p>
+<p>Then we try to prove that a <strong>Büchi-recognizable language</strong> $\mathcal{L}(\mathcal{A})$ equals to the regular language <strong>concatenates</strong> (<a href="../agv3-4/">3.5</a>) with the <strong>infinite concatenated</strong>, <strong>non-empty</strong> (<a href="../agv3-4/">3.4</a>) starting from the previous accepting state. That is $W_{q,q’}\cdot(W_{q’,q’}\setminus\lbrace\varepsilon\rbrace)^\omega$.</p>
+<p>On top of that, we do a set union (<a href="../agv3-3/">3.2</a>) for each pair of <strong>initial and accepting states</strong> $q,q’\in Q$, that is $\bigcup_{q\in I,q’\in F}$</p>
+<blockquote>
+<p>Therefore, now we only need to prove that $\mathcal{L}(\mathcal{A})&#x3D;\bigcup_{q\in I,q’\in F}W_{q,q’}\cdot(W_{q,q’}\setminus\lbrace\varepsilon\rbrace)^\omega$.</p>
+</blockquote>
+<p>For the word $\alpha$ from L.H.S, it reaches $q’\in F$ infinitely often. We can thus seperate into $r:q\xrightarrow{w_0}q’\xrightarrow{w_1}q’\xrightarrow{w_2}\dots$<br>The $w$ here refers the word to reach $q’$. We know that Büchi automata is non-empty so $|w_i|&gt;0$ when $i&gt;0$.<br>Therefore, $w_0$ will be a word from $W_{q,q’}$ and the rest will be words for $(W_{q’,q’}\setminus\lbrace\varepsilon\rbrace)^\omega$ because they reach the accepting state $q’\in F$.</p>
+<p>For the word $w_0w_1w_2\dots$ from R.H.S, where $w_0$ refers to $W_{q,q’}$ and the rest refers to $(W_{q’,q’}\setminus\lbrace\varepsilon\rbrace)^\omega$.<br>This is accepted by $\mathcal{L}(\mathcal{A})$ because it reaches the accepting state $q’\in F$ infinitely often.</p>
+<h3 id="Formal-Proof"><a href="#Formal-Proof" class="headerlink" title="Formal Proof"></a>Formal Proof</h3><p>$”\Leftarrow”$<br>Follows from the closure properties of the Büchi-recognizable languages established by Theorems <a href="../agv3-3/">3.2</a>, <a href="../agv3-4/">3.4</a>, <a href="../agv3-4/">3.5</a>.</p>
+<p>$”\Rightarrow”$<br>Given a Büchi automaton $\mathcal{A}$, we consider for each pair $q,q’\in Q$ the regular language<br>$$<br>W_{q,q’} &#x3D; \lbrace w\in\Sigma^*\mid \text{finite-word automaton } (\Sigma,Q,\lbrace q\rbrace,T,{q’}) \text{ accepts }w\rbrace.<br>$$<br>We claim that $\mathcal{L}(\mathcal{A})&#x3D;\bigcup_{q\in I,q’\in F}W_{q,q’}\cdot(W_{q,q’}\setminus\lbrace\varepsilon\rbrace)^\omega$. The claim is proven as follows.</p>
+<p>$\mathcal{L}(\mathcal{A})\subseteq\bigcup_{q\in I,q’\in F}W_{q,q’}\cdot(W_{q,q’}\setminus\lbrace\varepsilon\rbrace)^\omega$: Let $\alpha\in\mathcal{L}(\mathcal{A})$. Then there is an accpeting run $r$ of $\mathcal{A}$ on $\alpha$, which begins at some $q&#x3D;r(0)\in I$ and visits some $q’\in F$ infinitely often:</p>
+<p>$$<br>r:q\xrightarrow{w_0}q’\xrightarrow{w_1}q’\xrightarrow{w_2}\dots<br>$$</p>
+<p>where $w_i\in\Sigma^*$ for all $i\ge 0$, $|w_i|&gt;0$ for all $i&gt;0$ and $\alpha&#x3D;w_0w_1w_2\dots$ The notation $q_0\xrightarrow{w}q_{k+1}$ for some finite word $w&#x3D;w(0)w(1)\dots w(k)$ means that there exist states $q_1,\dots,q_k\in Q$ s.t. $(q_i,w(i),q_{i+1})\in T$ for all $0\leq i \leq k$. Since $w_0\in W_{q,q’}$ and $w_k\in W_{q’,q’}$ for $k&gt;0$, we have that $\alpha \in W_{q,q’}\cdot W_{q’,q’}^\omega$ for some $q\in I,q’\in F$.</p>
+<p>$\mathcal{L}(\mathcal{A})\supseteq\bigcup_{q\in I,q’\in F}W_{q,q’}\cdot(W_{q,q’}\setminus\lbrace\varepsilon\rbrace)^\omega$: Let $\alpha&#x3D;w_0w_1w_2\dots$ with $w_0\in W_{q,q’}$ and $w_k\in W_{q’,q’}$ for some $q\in I,q’\in F$ and for all $k&gt;0$. Then the run:</p>
+<p>$$<br>r:q\xrightarrow{w_0}q’\xrightarrow{w_1}q’\xrightarrow{w_2}\dots<br>$$</p>
+<p>exists and is aceepting because $q’\in F$. It follows that $\alpha\in\mathcal{L}(\mathcal{A})$.</p>
 <hr>
-<p>More SQL 50 questions: <a href="../sql50/">here</a></p>
+<p>Next chapter: <a href="../agv4-1/">Deterministic Büchi Automata</a></p>
+<p>Further Reading: <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/B%C3%BCchi_automaton">Büchi automaton</a></p>
 
       
        <hr><span style="font-style: italic;color: gray;"> Please cite the source for reprints, feel free to verify the sources cited in the article, and point out any errors or lack of clarity of expression. You can comment in the comments section below or email to GreenMeeple@yahoo.com </span>
@@ -1022,6 +1033,46 @@
 
 
 
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.jsdelivr.net/npm/mathjax@2.7.8/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.jsdelivr.net/npm/mathjax@2.7.8/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
     
 
 

@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Leetcode SQL 50 -- 1683. Invalid Tweets | GreenMeeple</title>
-  <meta name="keywords" content=" SQL ">
-  <meta name="description" content="Leetcode SQL 50 -- 1683. Invalid Tweets | GreenMeeple">
+  <title>AGV 3.4 -- Infinite concatenation and Concatenation of regular Langauge and Büchi-recognizable Language | GreenMeeple</title>
+  <meta name="keywords" content=" AGV ">
+  <meta name="description" content="AGV 3.4 -- Infinite concatenation and Concatenation of regular Langauge and Büchi-recognizable Language | GreenMeeple">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="GreenMeeple cannot find what you are looking for...">
@@ -883,9 +883,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-sql50-1683" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-agv3-4" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Leetcode SQL 50 -- 1683. Invalid Tweets</h1>
+        <h1 class="article-title">AGV 3.4 -- Infinite concatenation and Concatenation of regular Langauge and Büchi-recognizable Language</h1>
     
     <div class="article-meta">
         
@@ -895,9 +895,9 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="LeetCode">LeetCode</a> > 
+            <a  data-rel="Notes">Notes</a> > 
             
-            <a  data-rel="LeetCode&lt;---&gt;SQL_50">SQL_50</a>
+            <a  data-rel="Notes&lt;---&gt;UdS">UdS</a>
             
         </span>
         
@@ -905,19 +905,19 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color4">SQL</a>
+            <a class="color4">AGV</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-10-29 06:26:23'>2024-10-25 13:39</time>
+            Created At : <time class="date" title='Updated At: 2024-11-14 23:28:11'>2024-11-16 20:36</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:122</span>
+        <span>Count:1.6k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -947,7 +947,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Question"><span class="toc-text">Question</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Table-name-Tweets"><span class="toc-text">Table name: Tweets</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Explaination"><span class="toc-text">Explaination</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-text">Solution</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Concatenation-of-regular-Langauge-and-Buchi-recognizable-Language"><span class="toc-text">Concatenation of regular Langauge and Büchi-recognizable Language</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Explained-in-Human-language"><span class="toc-text">Explained in Human language</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Formal-Proof"><span class="toc-text">Formal Proof</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Infinite-concatenation-of-Regular-language"><span class="toc-text">Infinite concatenation of Regular language</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#From-automaton-over-finite-words-to-a-single-initial-state"><span class="toc-text">From automaton over finite words to a single initial state</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Explained-in-Human-language-1"><span class="toc-text">Explained in Human language</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Formal-Proof-1"><span class="toc-text">Formal Proof</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Summary"><span class="toc-text">Summary</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -963,32 +963,64 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><h3 id="Table-name-Tweets"><a href="#Table-name-Tweets" class="headerlink" title="Table name: Tweets"></a>Table name: <code>Tweets</code></h3><table>
-<thead>
-<tr>
-<th align="left">Column Name</th>
-<th align="left">Type</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">tweet_id</td>
-<td align="left">int</td>
-</tr>
-<tr>
-<td align="left">content</td>
-<td align="left">varchar</td>
-</tr>
-</tbody></table>
-<p><code>tweet_id</code> is the primary key (column with unique values) for this table.<br>This table contains all the tweets in a social media app.</p>
+        <p>Previous chapter: <a href="../agv3-3/">Intersection and Union of Closure Properties</a></p>
 <blockquote>
-<p>Write a solution to find the <code>IDs</code> of the <strong>invalid tweets</strong>.<br>The tweet is invalid if the <strong>number of characters</strong> used in the <code>content</code> of the tweet is <strong>strictly greater than 15</strong>.<br>Return the result table in any order.</p>
+<p>This is a learning note of a course in <a target="_blank" rel="noopener" href="https://cispa.de/de">CISPA</a>, UdS. Taught by Bernd Finkbeiner</p>
 </blockquote>
-<h2 id="Explaination"><a href="#Explaination" class="headerlink" title="Explaination"></a>Explaination</h2><p>To check the number of character, we can use the <code>LENGTH(&lt;string&gt;)</code> function.</p>
-<p>If you use this function on numbers (e.g. int), it will turn it into string and return <strong>number of digits</strong>.</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><pre><code class="sql">SELECT tweet_id FROM Tweets WHERE LENGTH(content)&gt;15;
-</code></pre>
+<p>In this section, we continue the proof of the <strong>closure properties</strong> of the Büchi-recognizable languages.</p>
+<h2 id="Concatenation-of-regular-Langauge-and-Buchi-recognizable-Language"><a href="#Concatenation-of-regular-Langauge-and-Buchi-recognizable-Language" class="headerlink" title="Concatenation of regular Langauge and Büchi-recognizable Language"></a>Concatenation of regular Langauge and Büchi-recognizable Language</h2><blockquote>
+<p>$\textbf{Construction 3.3. } \text{Let }\mathcal{A}_1&#x3D;(\Sigma,Q_1,I_1,T_1,F_1)\text{ be an automaton over finite words that}\newline\text{recognizes the languge }L_1\text{, and let }\mathcal{A}_2 &#x3D; (\Sigma,Q_2,I_2,T_2,\small\text{BÜCHI}\normalsize (F_2))\text{ be a Büchi automaton}\newline\text{over the same alphabet that recognizes }L_2.\text{ We construct a Büchi autotmaton }\newline\mathcal{A’}&#x3D;(\Sigma,Q’,I’,T’,\small\text{BÜCHI}\normalsize (F_2))\text{ with }\mathcal{L}(\mathcal{A’})&#x3D;L_1\cdot L_2\text{ as follows:}$<br>$\begin{array}{l}<br>\hspace{1cm} \cdot \ Q’&#x3D;Q_1\cup Q_2 \hspace{1cm}(\text{w.l.o.g we assume }Q_1\cap Q_2&#x3D;\emptyset)\newline<br>\hspace{1cm} \cdot \ I’&#x3D;\biggl\lbrace \begin{array}{l}I_1 \hspace{2cm}\text{if }I_1\cap F_1&#x3D;\emptyset\newline<br>I_1\cup I_2 \hspace{1cm}\text{otherwise}\end{array} \newline<br>\hspace{1cm} \cdot \ T’&#x3D;T_1\cup T_2\cup\lbrace (q,\sigma,q’)\mid(q,\sigma,f)\in T_1,f\in F_1,q’\in I_2\rbrace \newline<br>\end{array}$</p>
+</blockquote>
+<p>$Q’:$ Same as Union, we include both automata for concatenation</p>
+<p>$I’:$ We normaly start the the automaton from $I_1$ If $I_1$ is non-empty, otherwise we start at $I_2$</p>
+<p>$T’:$ For any states that can reach the accepting states of $T_1$ with one transition, we create a new transitions that reach the initial states of $T_2$ $(I_2)$.</p>
+<p>The correctness of this construction is proven by the following theorem.</p>
+<blockquote>
+<p>$\textbf{Theorem 3.4. }\newline\textit{If $L_1$ is a regular language and $L_2$ is Büchi-recognizable, then $L_1\cdot L_2$ is Büchi-recognizable.}$</p>
+</blockquote>
+<h3 id="Explained-in-Human-language"><a href="#Explained-in-Human-language" class="headerlink" title="Explained in Human language"></a>Explained in Human language</h3><p>If $I_1$ is non-empty, then we can have a run that starts from $I_1$ to $r(n)$, that is one transition before $\mathcal{A_1}$’s accepting states of $f$. Then for next transition we either move to $f$, or we move on to $\mathcal{A_2}$ starting from $r(n+1)$.</p>
+<p>If $I_1$ is empty, then any word accepted by $\mathcal{A‘}$ is accepted by $\mathcal{A_2}$</p>
+<p>On the other way, we can always construct a word $w\alpha$. If $w$ is accepted by $\mathcal{A_1}$ and $\alpha$ is accepted by $\mathcal{A_2}$, then $w\alpha$ is always accepted by $\mathcal{A’}$</p>
+<h3 id="Formal-Proof"><a href="#Formal-Proof" class="headerlink" title="Formal Proof"></a>Formal Proof</h3><p>We prove that the Büchi automaton $\mathcal{A’}$ built from the automaton on finite words $\mathcal{A}_1$ and the Büchi automaton $\mathcal{A}_2$ indeed recognizes the concatenation of the languages of the two automata.</p>
+<p>$\mathcal{L}(\mathcal{A’})\subseteq\mathcal{L}(\mathcal{A}_1)\cdot\mathcal{L}(\mathcal{A}_2):$</p>
+<p>For $\alpha\in\mathcal{L}(\mathcal{A’})$, we have an accepting run $r&#x3D;r(0)r(1)r(2)\dots$ of $\mathcal{A’}$ on $\alpha$.<br>If $r(0)\in I_1$, then there is an $n\in\mathbb{N}$ such that $(r(n),\alpha(n),r(n+1))\in Q_1\times\Sigma\times I_2$ and therefore, there is a final state $f\in F_1$ such that $r(0)r(1)r(2)\dots r(n)f$ is an accepting run of $\mathcal{A_1}$ on $\alpha(0)\alpha(1)\alpha(2)\dots \alpha(n)$ and $r(n+1)r(n+2)\dots$ is an accepting run of $\mathcal{A_2}$ on $\alpha(n+1)\alpha(n+2)\dots$<br>If $r(0)\in I_2$ then $I_1\cup F_1 \neq\emptyset$ and therefore, $\varepsilon\in\mathcal{L}(\mathcal{A_1}),\alpha\in\mathcal{L}(\mathcal{A_2})$</p>
+<p>$\mathcal{L}(\mathcal{A’})\supseteq\mathcal{L}(\mathcal{A}_1)\cdot\mathcal{L}(\mathcal{A}_2):$</p>
+<p>For $w\in\mathcal{A_1}$, let $r&#x3D;r(0)r(1)\dots r(n)$ be an accepting run $\mathcal{A_1}$ on $w$.<br>For $\alpha\in\mathcal{A_2}$, let $s&#x3D;s(0)s(1)\dots$ be an accepting run of $\mathcal{A_2}$ on $\alpha$.<br>Then, $r(n)\in F_1$ and, by construction, $r(0)r(1)\dots r(n-1)s(0)s(1)\dots$ is an accepting run of $\mathcal{A’}$ on $w\alpha$.</p>
+<h2 id="Infinite-concatenation-of-Regular-language"><a href="#Infinite-concatenation-of-Regular-language" class="headerlink" title="Infinite concatenation of Regular language"></a>Infinite concatenation of Regular language</h2><p>Finally, we show that the infinite concatenation of words of a regular language forms a Büchi-recognizable language. We construct a Büchi automaton for this language from an automaton over finite words in two steps.</p>
+<h3 id="From-automaton-over-finite-words-to-a-single-initial-state"><a href="#From-automaton-over-finite-words-to-a-single-initial-state" class="headerlink" title="From automaton over finite words to a single initial state"></a>From automaton over finite words to a single initial state</h3><p>Firstly, we modify a given automaton over finite words into an equivalent automaton with one <strong>single initial state</strong> that has <strong>no incoming transitions</strong>.</p>
+<p>We do this by create a new fresh state as the new initial state, with all transitions identical as the original. And the original initial state now has no incoming transitions.</p>
+<blockquote>
+<p>$\textbf{Construction 3.4. } \text{Let }\mathcal{A}_1&#x3D;(\Sigma,Q_1,I_1,T_1,F_1)\text{ be an automaton over finite words. We assume}\newline\text{that }\varepsilon\notin\mathcal{L}(\mathcal{A})\text{. We construct an automaton }\mathcal{A’} &#x3D; (\Sigma,Q’,I’,T’,F)\text{ over finite words such that }\newline\mathcal{L}(\mathcal{A})&#x3D;\mathcal{L}(\mathcal{A’})\text{ and }\mathcal{A’}\text{ has a single initial state that has no incoming transitions.}$<br>$\begin{array}{l}<br>\hspace{1cm} \cdot \ Q’&#x3D;Q_1\cup\lbrace q_f\rbrace \text{where }q_f\text{ is a fresh state}\newline<br>\hspace{1cm} \cdot \ I’&#x3D;\lbrace q_f\rbrace\newline<br>\hspace{1cm} \cdot \ T’&#x3D;T\cup\lbrace (q_f,\sigma,q’)\mid(q,\sigma,q’)\in T \text{ for some }q\in I\rbrace\newline<br>\end{array}$</p>
+</blockquote>
+<p>The second construction builds the Büchi automaton that recognizes the infinite concatenations of words from the regular language by <strong>adding a loop</strong> to the modified automaton.</p>
+<blockquote>
+<p>$\textbf{Construction 3.5. } \text{Let }\mathcal{A}\text{ be an automaton over finite words. We assume that }\varepsilon\notin\mathcal{L}(\mathcal{A}).\newline\text{We construct a Büchi automaton }\mathcal{A’’}&#x3D;(\Sigma,Q’’,I’’,T’’,\small\text{BÜCHI}\normalsize (F’’))\text{ such that }\mathcal{L}(\mathcal{A’’})&#x3D;\mathcal{L}(\mathcal{A})^\omega.\newline\text{Let }\mathcal{A’}&#x3D;(\Sigma,Q’,I’,T’,F’)\text{ be the automaton of Construction 3.4. Then }A’’\text{ is defined as follows:}$<br>$\begin{array}{l}<br>\hspace{1cm} \cdot \ Q’’&#x3D;Q’ \hspace{1cm} \cdot \ I’’&#x3D;I’ \hspace{1cm} \cdot \ F’’&#x3D;I’\newline<br>\hspace{1cm} \cdot \ T’’&#x3D;T’\cup\lbrace (q,\sigma,q_f)\mid(q,\sigma,q’)\in T’ \text{ and }q’\in F’\rbrace\newline<br>\end{array}$</p>
+</blockquote>
+<p>This construction change the final state into the initial state, with adding new transition from final state to initial state. Therefore the automaton becomes a loop.</p>
+<p>The correctness of this construction is proven by the following theorem.</p>
+<blockquote>
+<p>$\textbf{Theorem 3.5. }\textit{If $L$ is a regular language such that $\varepsilon\notin L$, then $L^\omega$ is Büchi-recognizable}$</p>
+</blockquote>
+<h3 id="Explained-in-Human-language-1"><a href="#Explained-in-Human-language-1" class="headerlink" title="Explained in Human language"></a>Explained in Human language</h3><p>If there is accepting run for $\mathcal{L}(\mathcal{A’’})$, it reaches the accepting state infinitely often.<br>We can split the word in every accepting states and it will be an accepting run for $\mathcal{L}(\mathcal{A’})$, since the transition to accepting state $F’’$ and $F’$ are identical.</p>
+<p>If there is accepting run(s) for $\mathcal{L}(\mathcal{A’})$, we can infinitely repeat them so that is also accepted for $\mathcal{L}(\mathcal{A’’})$.</p>
+<h3 id="Formal-Proof-1"><a href="#Formal-Proof-1" class="headerlink" title="Formal Proof"></a>Formal Proof</h3><p>Construction 3.4 does not affect the language of $\mathcal{A}$. We show that the Büchi automaton $\mathcal{A’’}$ built in Construction 3.5 from the resulting automaton $\mathcal{A’}$ on finite words indeed recognizes $\mathcal{L}(\mathcal{A’})^\omega$.</p>
+<p>$\mathcal{L}(\mathcal{A’’})\subseteq\mathcal{L}(\mathcal{A’})^\omega:$</p>
+<p>Assume that $\alpha\in\mathcal{L}(\mathcal{A’’})$ and that $r(0)r(1)r(2)\dots$ is an accpeting run of $\mathcal{A’’}$ on $\alpha$. Hence, we have that $r(i)&#x3D;q_f\in F’’&#x3D;I’$ for inifinitely many indices $i:i_0,i_1,i_2,\dots$. This provides a sequence of runs of $\mathcal{A’}$:</p>
+<ul>
+<li>run $r(0)r(1)\dots r(i_0-1)q$ on $w_0&#x3D; \alpha(0)\alpha(1)\dots\alpha(i_0-1)$ for some $q\in F’$</li>
+<li>run $r(i_0)r(i_0+1)\dots r(i_i-1)q$ on $w_1&#x3D; \alpha(i_0)\alpha(i_1)\dots\alpha(i_1-1)$ for some $q\in F’$</li>
+<li>and so forth.</li>
+</ul>
+<p>We thus have that $w_k\in\mathcal{L}(\mathcal{A’})$ for every $k\geq 0$. Hence, $\alpha\in\mathcal{L}(\mathcal{A’})^\omega$.</p>
+<p>$\mathcal{L}(\mathcal{A’’})\supseteq\mathcal{L}(\mathcal{A’})^\omega:$</p>
+<p>Assume that $\alpha &#x3D;w_0w_1w_2\dots\in\Sigma^\omega$ such that $w_k\in\mathcal{L}(\mathcal{A’})$ for all $k\geq 0$. For each $k$, we choose an accepting run $r_k(0)r_k(1)r_k(2)\dots r_k(n_k)$ of $\mathcal{A’}$ on $w_k$. Hence, $r_k(0)\in I’$ and $r_k(n_k)\in F’$ for all $k&gt;1$. Thus,</p>
+<p>$$r_0(0)\dots r_0(n_0-1)r_1(0)\dots r_1(n_1-1)r_2(0)\dots r_2(n_2-1)\dots$$</p>
+<p>is an accepting run of $\mathcal{A’’}$ on $\alpha$. Hence, $\alpha\in\mathcal{L}(\mathcal{A’’})$.</p>
+<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>Now we proved the closure property holds for <strong>Union</strong> $(W_1\cup W_2)$, <strong>Intersection</strong> $(W_1\cap W_2)$, <strong>Concatenation of regular Langauge and Büchi-recognizable Language</strong> $(E+W)$, and <strong>Infinite concatenation of Regular language</strong> $(E^\omega)$.</p>
+<p>In the next section we can start to prove <strong>Büchi’s Characterization Theorem</strong>.</p>
 <hr>
-<p>More SQL 50 questions: <a href="../sql50/">here</a></p>
+<p>Next chapter: <a href="../agv3-5/">Büchi’s Characterization Theorem</a></p>
+<p>Further Reading: <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Closure_(mathematics)">Closure (mathematics)</a>, <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Concatenation">Concatenation</a>, <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Absolute_infinite">Absolute infinite</a></p>
 
       
        <hr><span style="font-style: italic;color: gray;"> Please cite the source for reprints, feel free to verify the sources cited in the article, and point out any errors or lack of clarity of expression. You can comment in the comments section below or email to GreenMeeple@yahoo.com </span>
@@ -1022,6 +1054,46 @@
 
 
 
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.jsdelivr.net/npm/mathjax@2.7.8/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.jsdelivr.net/npm/mathjax@2.7.8/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
     
 
 
