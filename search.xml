@@ -58,33 +58,6 @@
     
     
     <entry>
-      <title>AGV 4.2 -- Complementation of deterministic Büchi Automata</title>
-      <link href="/agv4-2/"/>
-      <url>/agv4-2/</url>
-      
-        <content type="html"><![CDATA[<p>Previous chapter: <a href="../agv4-1/">Deterministic Büchi Automata</a></p><blockquote><p>This is a learning note of a course in <a href="https://cispa.de/de">CISPA</a>, UdS. Taught by Bernd Finkbeiner</p></blockquote><hr><p>Next chapter: <a href="../agv/"></a></p><p>Further Reading: <a href=""></a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> Notes </category>
-          
-          <category> UdS </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> AGV </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>AGV 3.3 -- Closure Properties of Intersection and Union of the Büchi-recognizable languages</title>
       <link href="/agv3-3/"/>
       <url>/agv3-3/</url>
