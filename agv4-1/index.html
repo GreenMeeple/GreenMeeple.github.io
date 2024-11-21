@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>AGV 2.3 -- The Büchi Acceptance Condition | GreenMeeple</title>
+  <title>AGV 4.1 -- Deterministic Büchi Automata | GreenMeeple</title>
   <meta name="keywords" content=" AGV ">
-  <meta name="description" content="AGV 2.3 -- The Büchi Acceptance Condition | GreenMeeple">
+  <meta name="description" content="AGV 4.1 -- Deterministic Büchi Automata | GreenMeeple">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="GreenMeeple cannot find what you are looking for...">
@@ -883,9 +883,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-agv2-3" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-agv4-1" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">AGV 2.3 -- The Büchi Acceptance Condition</h1>
+        <h1 class="article-title">AGV 4.1 -- Deterministic Büchi Automata</h1>
     
     <div class="article-meta">
         
@@ -912,12 +912,12 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-11-15 03:36:55'>2024-11-12 05:56</time>
+            Created At : <time class="date" title='Updated At: 2024-11-15 23:11:43'>2024-11-18 00:11</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:694</span>
+        <span>Count:803</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -947,7 +947,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-The-Buchi-Acceptance-Condition"><span class="toc-text">2.3 The Büchi Acceptance Condition</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Infinite-word"><span class="toc-text">Infinite word</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Buchi-Condition"><span class="toc-text">Büchi Condition</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Constrcution-of-Complete-Buchi-Automaton"><span class="toc-text">Constrcution of Complete Büchi Automaton</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Explaination"><span class="toc-text">Explaination</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Formal-Proof"><span class="toc-text">Formal Proof</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Summary"><span class="toc-text">Summary</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Introduction"><span class="toc-text">Introduction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Deterministic-vs-nondeterministic-Buchi-automata"><span class="toc-text">Deterministic vs. nondeterministic Büchi automata</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Proof"><span class="toc-text">Proof</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Limit-Operator"><span class="toc-text">Limit Operator</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Explained-in-Human-language"><span class="toc-text">Explained in Human language</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Formal-Proof"><span class="toc-text">Formal Proof</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -963,53 +963,40 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Previous chapter: <a href="../agv2-2/">Automata over Infinite Words</a></p>
+        <p>Previous chapter: <a href="../agv3-5/">Büchi’s Characterization Theorem</a></p>
 <blockquote>
 <p>This is a learning note of a course in <a target="_blank" rel="noopener" href="https://cispa.de/de">CISPA</a>, UdS. Taught by Bernd Finkbeiner</p>
 </blockquote>
-<h2 id="2-3-The-Buchi-Acceptance-Condition"><a href="#2-3-The-Buchi-Acceptance-Condition" class="headerlink" title="2.3 The Büchi Acceptance Condition"></a>2.3 The Büchi Acceptance Condition</h2><p>The Büchi Acceptance Condition is given as a set of <strong>accepting states</strong> $F$.<br>A run of a Büchi automaton is accepting if <strong>some state from this set occurs infinitely often</strong>.</p>
-<p><a name="inf"></a></p>
-<h3 id="Infinite-word"><a href="#Infinite-word" class="headerlink" title="Infinite word"></a>Infinite word</h3><p>For an infinite word $\alpha$ over $\Sigma$, an <strong>Infinity Set</strong> of $\alpha$ is denoted as:<br>$$\text{Inf}(\alpha) &#x3D; \lbrace\sigma\in\Sigma\mid\forall m\in\mathbb{N}.\exists n\in\mathbb{N}.n\geq m \text{ and } \alpha(n)&#x3D;\sigma\rbrace$$</p>
-<p>Meaning that $\text{Inf}(\alpha)$ is a set of all letters $\sigma$ from the alphabet $\Sigma$, so that<br>for all $m$, you can always find $\sigma$ as the n-th letter of $\alpha$ when there exists an $n$ where $n\geq m$.</p>
-<p>This denotes the set of all letters of $\Sigma$ that occur <strong>infinitely often</strong> in $\alpha$.</p>
-<h3 id="Buchi-Condition"><a href="#Buchi-Condition" class="headerlink" title="Büchi Condition"></a>Büchi Condition</h3><p>To express the meaning of “some state from the set of <em>accepting states</em> is reached <strong>infinitely often</strong>“, we can rewrite our accpeing condition $Acc$ into Büchi Condition $\small\text{BÜCHI} \normalsize (F)$</p>
-<p>Here, $\small\text{BÜCHI} \normalsize (F)$ is a set of <em>infinite word</em> that</p>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>In the theory of automata over finite words, we have <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Powerset_construction">Rabin-Scott powerset construction</a>, which converts a <em>nondeterministic automaton</em> over finite words into a <em>deterministic automaton</em> that <strong>recognizes the same language</strong>. This shows that nondeterminism does not make automata over finite words more expressive (but makes it more concise as the construction produces an exponential number of states).</p>
+<p>The situation is different for Büchi automata: even though the language $L &#x3D; (a+b)^*b^\omega$ is clearly <em>Büchi-recognizable</em>, there is, as the following theorem shows, <strong>no deterministic Büchi automaton that recognizes L</strong>.</p>
+<h2 id="Deterministic-vs-nondeterministic-Buchi-automata"><a href="#Deterministic-vs-nondeterministic-Buchi-automata" class="headerlink" title="Deterministic vs. nondeterministic Büchi automata"></a>Deterministic vs. nondeterministic Büchi automata</h2><blockquote>
+<p>$\textbf{Theorem 4.1. }\textit{Language $L&#x3D;(a+b)^*b^\omega$ is not recognizable by deterministic Büchi Automata}$</p>
+</blockquote>
+<p>Starting a base case $b^\omega$, we add $(a+b)$ as the prefix one by one. Can we express the  <strong>kleene star</strong>?<br>That is, is the automaton only accept <strong>finitely many</strong> $(a+b)$?</p>
+<h3 id="Proof"><a href="#Proof" class="headerlink" title="Proof"></a>Proof</h3><p>Assume, by way of contradiction, that $L$ is recognizable by the deterministic Büchi automaton $\mathcal{A}&#x3D;(\Sigma,Q,I,T,\small\text{BÜCHI}\normalsize(F))$. Since $\alpha_0&#x3D;b^\omega$ is in $L$, there is an unique run</p>
+<p>$$r_0&#x3D;r_0(0)r_0(1)r_0(2)\dots$$</p>
+<p>of $\mathcal{A}$ on $\alpha_0$ with $r_0(n_0)\in F$ for some $n_0\in\mathbb{N}$. Similarly, $\alpha_1&#x3D;b^{n_0}ab^\omega$ in $L$ and there is a unique run</p>
+<p>$$r_1&#x3D;r_0(0)r_0(1)r_0(2)\dots r_0(n_0)r_1(n_0+1)r_1(n_0+2)\dots$$</p>
+<p>of $\mathcal{A}$ on $\alpha_1$ with $r_1(n_1)\in F$ for some $n_1&gt;n_0$. Because $\mathcal{A}$ is deterministic, $r_0$ and $r_1$ are identical up to position $n_0$.</p>
+<p>By repeating this argument infinitely often, we obtain a word $\alpha&#x3D;b^{n_0}ab^{n_1}ab^{n_2}a\dots$ and a run $r$ with infinitely many visits to $F$. Hence, $\alpha$ is accepted by $\mathcal{A}$. However, $\alpha$ is not an element of $L$. This contradicts $L &#x3D; \mathcal{L}(\mathcal{A})$.</p>
+<h2 id="Limit-Operator"><a href="#Limit-Operator" class="headerlink" title="Limit Operator"></a>Limit Operator</h2><p>We start by defining a <em>Limit Operator</em> to generate $\omega$-language using regular language. For the regular language $W$, $\overrightarrow{W}$ contains all the words that they all contain words in $W$ as substrings.</p>
 <blockquote>
-<p>$\textbf{Definition 2.4. } \text{ The } \textit{Büchi Condition } \small\text{BÜCHI} \normalsize (F)\text{ on a set of states $F\subseteq Q$ is the set}$<br>$$\small\text{BÜCHI} \normalsize (F) &#x3D; \lbrace\alpha\in Q^\omega \mid \text{Inf}(\alpha) \cap F \neq \emptyset\rbrace$$ $\text{An automaton }\mathcal{A}&#x3D;(\Sigma,Q,I,T,Acc)\text{ with }Acc&#x3D;\small\text{BÜCHI} \normalsize (F)\text{ is called a }\textit{Büchi automaton.}\newline \text{The set $F$ is called the }\textit{set of accepting states.}$</p>
+<p>$\textbf{Definition 4.1. }\text{(Limit). The}\textit{ limit }\overrightarrow{W}\text{ of a language }W\subseteq\Sigma^* \text{ over finite words}\newline\text{is the following language over infinite words:}$ $$\overrightarrow{W}&#x3D;\lbrace\alpha\in\Sigma^\omega\mid\text{there exist infinitely many }n\in\mathbb{N}\text{ s.t. }\alpha[0,n]\in W\rbrace.$$</p>
 </blockquote>
-<h2 id="Constrcution-of-Complete-Buchi-Automaton"><a href="#Constrcution-of-Complete-Buchi-Automaton" class="headerlink" title="Constrcution of Complete Büchi Automaton"></a>Constrcution of Complete Büchi Automaton</h2><blockquote>
-<p>$\textbf{Theorem 2.1. } \textit{For every Büchi Automaton $\mathcal{A}$, there is a complete Büchi Automaton $\mathcal{A}’$} \newline \textit{such that $\mathcal{L}(\mathcal{A}) &#x3D; \mathcal{L}(\mathcal{A}’)$}$</p>
+<p>And From regular language, now we can define an $\omega$-regular language that is recognizable by deterministic Büchi Automata:</p>
+<blockquote>
+<p>$\textbf{Theorem 4.2. }\textit{An $\omega$-language $L\subseteq\Sigma^\omega$ is recognizable by a deterministic Büchi Automata}\newline\textit{iff there is a regular langauge $W\subseteq\Sigma^*$ s.t. $L&#x3D;\overrightarrow{W}$}.$</p>
 </blockquote>
-<p>$\textbf{Example 2.2.}$<br>Let $\mathcal{A}$ be the automaton from Example <a href="../agv2-2/#eg1">2.1</a> with Büchi acceptance condition $\small\text{BÜCHI}\normalsize (\lbrace D\rbrace)$. The language of the automaton consists of a single word:<br>$$\mathcal{L}(\mathcal{A})&#x3D;\lbrace aabbaabbaabb\dots\rbrace$$</p>
-<p>For a Büchi Automaton $\mathcal{A} &#x3D; (\Sigma,Q,I,T,\small\text{BÜCHI} \normalsize (F))$,<br>we define the <strong>complete</strong> Büchi Automaton $\mathcal{A’} &#x3D; (\Sigma,Q’,I’,T’,\small\text{BÜCHI} \normalsize (F’))$ using:</p>
-<ul>
-<li>$Q’$ &#x3D; $Q \cup \lbrace q_f\rbrace$ where $q_f$ is a fresh state</li>
-<li>$I’$ &#x3D; $I$</li>
-<li>$T’$ &#x3D; $T \cup \lbrace (q,\sigma,q_f) \mid \nexists q’ . (q,\sigma,q’)\in T\rbrace\cup\lbrace (q_f,\sigma,q_f)\mid\sigma\in\Sigma\rbrace$</li>
-<li>$F’$ &#x3D; $F$</li>
-</ul>
-<p><img src="/images/notes/uds/agv/2_3_eg.png"></p>
-<h3 id="Explaination"><a href="#Explaination" class="headerlink" title="Explaination"></a>Explaination</h3><p>First, we add a <strong>fresh state</strong> $q_f$ the <em>set of state</em> $Q$ without changing the <em>initial</em> and <em>accepting</em> states.</p>
-<p>A <em>complete Büchi Automaton</em> requires every states must have transitions for every letters in the alphabet.<br>So for each states orginally in $Q$, we construct new transitions that the letters are not yet used by the state.<br>(which is $\nexists q’ . (q,\sigma,q’)\in T$)</p>
-<p>Finally, for all transitions from the fresh state are self transitioning, and they include all letters.<br>(which is $(q_f,\sigma,q_f)\mid\sigma\in\Sigma$)</p>
-<h3 id="Formal-Proof"><a href="#Formal-Proof" class="headerlink" title="Formal Proof"></a>Formal Proof</h3><ul>
-<li><p>The runs of $\mathcal{A’}$ are a <strong>superset</strong> of those of $\mathcal{A}$.</p>
-<ul>
-<li>During the construction of $\mathcal{A’}$, we have not removed any original transitions, but adding new fresh states.</li>
-</ul>
-</li>
-<li><p>Furthermore, on <strong>any infinite input word</strong>, the accepting runs of $\mathcal{A}$ and $\mathcal{A’}$ are the same.</p>
-<ul>
-<li>If $\mathcal{A}$ accepts, $\mathcal{A’}$ also accepts because $\mathcal{A’}$ is a superset.</li>
-<li>If a run reaches new fresh states $q_f$ stays in $q_f$ forever, and</li>
-<li>since $q_f\notin F’$, such a run is not accepting.</li>
-</ul>
-</li>
-</ul>
-<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>A <em>complete deterministic automaton</em> may be viewed as a <strong>total function</strong> from $\Sigma^\omega$ to $Q^\omega$.<br>A <em>complete (possibly nondeterministic) automaton</em> produces <strong>at least one run for every input word</strong>.</p>
+<h3 id="Explained-in-Human-language"><a href="#Explained-in-Human-language" class="headerlink" title="Explained in Human language"></a>Explained in Human language</h3><p>Basically, we are trying to prove $\mathcal{L}(\mathcal{A_B})&#x3D;\overrightarrow{\mathcal{L}(\mathcal{A_F})}$, where $\mathcal{L}(\mathcal{A_B})$ is a deterministic Büchi Automata and $\mathcal{L}(\mathcal{A_F})$ is a a deterministic automaton over finite words.</p>
+<p>As we can see, an accepted word $\alpha\in\mathcal{L}(\mathcal{A_B})$ with have substring $\alpha[0,n]$ that is accepted by $\mathcal{L}(\mathcal{A_F})$ with infinitely many $n\in\mathbb{N}$, by the definition of the <em>limit operator</em>.</p>
+<p>We can prove regular language $W$ exists if $\alpha$ exists using $\overrightarrow{W}$. Automata that accepts $W$ and $\overrightarrow{W}$ should exist, namely $\mathcal{L}(\mathcal{A_F})$ and $\overrightarrow{\mathcal{L}(\mathcal{A_F})}$ respectively.</p>
+<h3 id="Formal-Proof"><a href="#Formal-Proof" class="headerlink" title="Formal Proof"></a>Formal Proof</h3><p>We claim that the languages of a deterministic Büchi automaton $\mathcal{A}_B$ and of a deterministic<br>automaton over finite words $\mathcal{A}_F$, where the automata $\mathcal{A}_B&#x3D;(\Sigma,Q,I,T,\small\text{BÜCHI}\normalsize(F))$ and $\mathcal{A}_F&#x3D;(\Sigma,Q,I,T,F)$, constructed from the same components, are related as follows:</p>
+<p>$$\mathcal{L}(\mathcal{A_B})&#x3D;\overrightarrow{\mathcal{L}(\mathcal{A_F})}.$$</p>
+<p>Since every regular language is recognized by a deterministic automaton over finite words,<br>the theorem follows. To prove the claim, we consider an infinite word $\alpha\in\Sigma^\omega$.</p>
+<p>$\hspace{1cm}\alpha\in\mathcal{L}(\mathcal{A_B})\newline<br>\text{iff} \hspace{0.5cm}\text{for the unique run $r$ of $\mathcal{A_B}$ on $\alpha$, Inf($r$) $\cap$ $F\neq\emptyset$}\newline \text{iff} \hspace{0.5cm} \alpha[0,n]\in\mathcal{L}(\mathcal{A_F})\text{ for infinitely many }n\in\mathbb{N}\newline<br>\text{iff} \hspace{0.5cm} \alpha\in\mathcal{L}(\mathcal{A_F})$</p>
 <hr>
-<p>Next chapter: <a href="../agv3-1/">Kleene’s Theorem</a></p>
-<p>Further Reading: <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/B%C3%BCchi_automaton">Büchi automaton</a>, <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Omega_language">Omega language</a></p>
+<p>Next chapter: <a href="../agv4-2/">Complementation of deterministic Büchi Automata</a></p>
+<p>Further Reading: <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Powerset_construction">powerset construction</a></p>
 
       
        <hr><span style="font-style: italic;color: gray;"> Please cite the source for reprints, feel free to verify the sources cited in the article, and point out any errors or lack of clarity of expression. You can comment in the comments section below or email to GreenMeeple@yahoo.com </span>

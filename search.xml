@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>AGV 4.1 -- Deterministic Büchi Automata</title>
+      <link href="/agv4-1/"/>
+      <url>/agv4-1/</url>
+      
+        <content type="html"><![CDATA[<p>Previous chapter: <a href="../agv3-5/">Büchi’s Characterization Theorem</a></p><blockquote><p>This is a learning note of a course in <a href="https://cispa.de/de">CISPA</a>, UdS. Taught by Bernd Finkbeiner</p></blockquote><h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>In the theory of automata over finite words, we have <a href="https://en.wikipedia.org/wiki/Powerset_construction">Rabin-Scott powerset construction</a>, which converts a <em>nondeterministic automaton</em> over finite words into a <em>deterministic automaton</em> that <strong>recognizes the same language</strong>. This shows that nondeterminism does not make automata over finite words more expressive (but makes it more concise as the construction produces an exponential number of states).</p><p>The situation is different for Büchi automata: even though the language $L &#x3D; (a+b)^*b^\omega$ is clearly <em>Büchi-recognizable</em>, there is, as the following theorem shows, <strong>no deterministic Büchi automaton that recognizes L</strong>.</p><h2 id="Deterministic-vs-nondeterministic-Buchi-automata"><a href="#Deterministic-vs-nondeterministic-Buchi-automata" class="headerlink" title="Deterministic vs. nondeterministic Büchi automata"></a>Deterministic vs. nondeterministic Büchi automata</h2><blockquote><p>$\textbf{Theorem 4.1. }\textit{Language $L&#x3D;(a+b)^*b^\omega$ is not recognizable by deterministic Büchi Automata}$</p></blockquote><p>Starting a base case $b^\omega$, we add $(a+b)$ as the prefix one by one. Can we express the  <strong>kleene star</strong>?<br>That is, is the automaton only accept <strong>finitely many</strong> $(a+b)$?</p><h3 id="Proof"><a href="#Proof" class="headerlink" title="Proof"></a>Proof</h3><p>Assume, by way of contradiction, that $L$ is recognizable by the deterministic Büchi automaton $\mathcal{A}&#x3D;(\Sigma,Q,I,T,\small\text{BÜCHI}\normalsize(F))$. Since $\alpha_0&#x3D;b^\omega$ is in $L$, there is an unique run</p><p>$$r_0&#x3D;r_0(0)r_0(1)r_0(2)\dots$$</p><p>of $\mathcal{A}$ on $\alpha_0$ with $r_0(n_0)\in F$ for some $n_0\in\mathbb{N}$. Similarly, $\alpha_1&#x3D;b^{n_0}ab^\omega$ in $L$ and there is a unique run</p><p>$$r_1&#x3D;r_0(0)r_0(1)r_0(2)\dots r_0(n_0)r_1(n_0+1)r_1(n_0+2)\dots$$</p><p>of $\mathcal{A}$ on $\alpha_1$ with $r_1(n_1)\in F$ for some $n_1&gt;n_0$. Because $\mathcal{A}$ is deterministic, $r_0$ and $r_1$ are identical up to position $n_0$.</p><p>By repeating this argument infinitely often, we obtain a word $\alpha&#x3D;b^{n_0}ab^{n_1}ab^{n_2}a\dots$ and a run $r$ with infinitely many visits to $F$. Hence, $\alpha$ is accepted by $\mathcal{A}$. However, $\alpha$ is not an element of $L$. This contradicts $L &#x3D; \mathcal{L}(\mathcal{A})$.</p><h2 id="Limit-Operator"><a href="#Limit-Operator" class="headerlink" title="Limit Operator"></a>Limit Operator</h2><p>We start by defining a <em>Limit Operator</em> to generate $\omega$-language using regular language. For the regular language $W$, $\overrightarrow{W}$ contains all the words that they all contain words in $W$ as substrings.</p><blockquote><p>$\textbf{Definition 4.1. }\text{(Limit). The}\textit{ limit }\overrightarrow{W}\text{ of a language }W\subseteq\Sigma^* \text{ over finite words}\newline\text{is the following language over infinite words:}$ $$\overrightarrow{W}&#x3D;\lbrace\alpha\in\Sigma^\omega\mid\text{there exist infinitely many }n\in\mathbb{N}\text{ s.t. }\alpha[0,n]\in W\rbrace.$$</p></blockquote><p>And From regular language, now we can define an $\omega$-regular language that is recognizable by deterministic Büchi Automata:</p><blockquote><p>$\textbf{Theorem 4.2. }\textit{An $\omega$-language $L\subseteq\Sigma^\omega$ is recognizable by a deterministic Büchi Automata}\newline\textit{iff there is a regular langauge $W\subseteq\Sigma^*$ s.t. $L&#x3D;\overrightarrow{W}$}.$</p></blockquote><h3 id="Explained-in-Human-language"><a href="#Explained-in-Human-language" class="headerlink" title="Explained in Human language"></a>Explained in Human language</h3><p>Basically, we are trying to prove $\mathcal{L}(\mathcal{A_B})&#x3D;\overrightarrow{\mathcal{L}(\mathcal{A_F})}$, where $\mathcal{L}(\mathcal{A_B})$ is a deterministic Büchi Automata and $\mathcal{L}(\mathcal{A_F})$ is a a deterministic automaton over finite words.</p><p>As we can see, an accepted word $\alpha\in\mathcal{L}(\mathcal{A_B})$ with have substring $\alpha[0,n]$ that is accepted by $\mathcal{L}(\mathcal{A_F})$ with infinitely many $n\in\mathbb{N}$, by the definition of the <em>limit operator</em>.</p><p>We can prove regular language $W$ exists if $\alpha$ exists using $\overrightarrow{W}$. Automata that accepts $W$ and $\overrightarrow{W}$ should exist, namely $\mathcal{L}(\mathcal{A_F})$ and $\overrightarrow{\mathcal{L}(\mathcal{A_F})}$ respectively.</p><h3 id="Formal-Proof"><a href="#Formal-Proof" class="headerlink" title="Formal Proof"></a>Formal Proof</h3><p>We claim that the languages of a deterministic Büchi automaton $\mathcal{A}_B$ and of a deterministic<br>automaton over finite words $\mathcal{A}_F$, where the automata $\mathcal{A}_B&#x3D;(\Sigma,Q,I,T,\small\text{BÜCHI}\normalsize(F))$ and $\mathcal{A}_F&#x3D;(\Sigma,Q,I,T,F)$, constructed from the same components, are related as follows:</p><p>$$\mathcal{L}(\mathcal{A_B})&#x3D;\overrightarrow{\mathcal{L}(\mathcal{A_F})}.$$</p><p>Since every regular language is recognized by a deterministic automaton over finite words,<br>the theorem follows. To prove the claim, we consider an infinite word $\alpha\in\Sigma^\omega$.</p><p>$\hspace{1cm}\alpha\in\mathcal{L}(\mathcal{A_B})\newline<br>\text{iff} \hspace{0.5cm}\text{for the unique run $r$ of $\mathcal{A_B}$ on $\alpha$, Inf($r$) $\cap$ $F\neq\emptyset$}\newline \text{iff} \hspace{0.5cm} \alpha[0,n]\in\mathcal{L}(\mathcal{A_F})\text{ for infinitely many }n\in\mathbb{N}\newline<br>\text{iff} \hspace{0.5cm} \alpha\in\mathcal{L}(\mathcal{A_F})$</p><hr><p>Next chapter: <a href="../agv4-2/">Complementation of deterministic Büchi Automata</a></p><p>Further Reading: <a href="https://en.wikipedia.org/wiki/Powerset_construction">powerset construction</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Notes </category>
+          
+          <category> UdS </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> AGV </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>AGV 3.5 -- Büchi&#39;s Characterization Theorem</title>
       <link href="/agv3-5/"/>
       <url>/agv3-5/</url>
@@ -966,9 +993,9 @@
             
             <tag> Cantonese </tag>
             
-            <tag> Node.js </tag>
-            
             <tag> HTML </tag>
+            
+            <tag> Node.js </tag>
             
         </tags>
       
