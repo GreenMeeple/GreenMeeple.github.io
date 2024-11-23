@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>AGV 4.2 -- Complementation of deterministic Büchi Automata</title>
+      <link href="/agv4-2/"/>
+      <url>/agv4-2/</url>
+      
+        <content type="html"><![CDATA[<p>Previous chapter: <a href="../agv4-1/">Deterministic Büchi Automata</a></p><blockquote><p>This is a learning note of a course in <a href="https://cispa.de/de">CISPA</a>, UdS. Taught by Bernd Finkbeiner</p></blockquote><h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>For regular languages, Complementation is very simple: one translates a given complete deterministic automaton $\mathcal{A}$ that recognizes some language $L\subseteq\Sigma^*$ into an automaton $\mathcal{A’}$ that recognizes the complement $\Sigma^*\setminus L$ by complementing the set of final states, i.e., $F’&#x3D;Q\setminus F$.</p><p>For deterministic Büchi automata, the construction is tricky, because it introduces <strong>nondeterminism</strong></p><blockquote><p>$\textbf{Construction 4.1. }\text{Let }\mathcal{A}&#x3D;(\Sigma,Q,I,T,\small\text{BÜCHI} \normalsize (F))\text{ be a complete deterministic Büchi}\newline\text{automaton, where we assume w.l.o.g. that } Q\neq\emptyset. \text{ We construct a Büchi automaton}\newline\mathcal{A’}&#x3D;(\Sigma,Q’,I’,T’,\small\text{BÜCHI} \normalsize (F’))\text{ with }\mathcal{L}(\mathcal{A’})&#x3D;\Sigma^\omega\setminus\mathcal{L}(\mathcal{A})\text{ as follows:}$<br>$\begin{array}{l}<br>\hspace{1cm} \cdot \ Q’&#x3D;(Q\times\lbrace 0\rbrace)\cup((Q\setminus F)\times\lbrace 1\rbrace)\newline<br>\hspace{1cm} \cdot \ I’&#x3D;I\times\lbrace 0\rbrace\newline<br>\hspace{1cm} \cdot \ T’&#x3D;\lbrace ((q,0),\sigma,(q’,i))\mid(q,\sigma,q’)\in T,i\in\lbrace 0,1\rbrace,(q’,i)\in Q’\rbrace \cup \newline<br>\hspace{2.4cm} \ \lbrace ((q,1),\sigma,(q’,1))\mid(q,\sigma,q’)\in T,q’,q’\in Q\setminus F\rbrace\newline<br>\hspace{1cm} \cdot \ F’&#x3D;(Q\setminus F)\times\lbrace 1\rbrace\newline<br>\end{array}$</p></blockquote><p>The construction uses two copies of the given automaton $\mathcal{A}$, where all accepting states are eliminated from the second copy. The switch from the first copy (identified by the flag 0) to the second copy (identified by the flag 1) happens nondeterministically. The automaton accepts if the run ends up in the second copy, which means that, on the unique run of $\mathcal{A}$ on the input word, the accepting states of $\mathcal{A}$ are only visited finitely often. Note that the resulting automaton is nondeterministic. This is, in general, unavoidable, because there are languages, such as $L&#x3D;(b^*a)^\omega$ where the language itself is recognizable by a deterministic Buchi automaton, while its complement $\Sigma^\omega\setminus L$ can only be recognized by a nondeterministic Büchi automaton.</p><blockquote><p>$\textbf{Theorem 4.3. }\textit{For every deterministic Büchi automaton }\mathcal{A}\textit{, there exists a Büchi automaton }\mathcal{A’}\newline\textit{ such that }\mathcal{L}(\mathcal{A’})&#x3D;\Sigma^\omega \setminus\mathcal{L}(\mathcal{A}).$</p></blockquote><h3 id="Formal-Proof"><a href="#Formal-Proof" class="headerlink" title="Formal Proof"></a>Formal Proof</h3><hr><p>Next chapter: <a href="../agv/"></a></p><p>Further Reading: <a href=""></a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Notes </category>
+          
+          <category> UdS </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> AGV </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>AGV 4.1 -- Deterministic Büchi Automata</title>
       <link href="/agv4-1/"/>
       <url>/agv4-1/</url>
