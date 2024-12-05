@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>3-hexo Shortcut | GreenMeeple</title>
-  <meta name="keywords" content=" Hexo , 3-hexo ">
-  <meta name="description" content="3-hexo Shortcut | GreenMeeple">
+  <title>AGV 5.1 -- Infinite Directed Acyclic Graph (DAG) | GreenMeeple</title>
+  <meta name="keywords" content=" AGV ">
+  <meta name="description" content="AGV 5.1 -- Infinite Directed Acyclic Graph (DAG) | GreenMeeple">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="GreenMeeple cannot find what you are looking for...">
@@ -901,13 +901,11 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-3_hexo_Shortcut" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-agv5-1" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">3-hexo Shortcut</h1>
+        <h1 class="article-title">AGV 5.1 -- Infinite Directed Acyclic Graph (DAG)</h1>
     
     <div class="article-meta">
-        
-        <span class="top"><a>pin to top</a></span>
         
         
         
@@ -915,7 +913,9 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="Site_Note">Site_Note</a>
+            <a  data-rel="Notes">Notes</a> > 
+            
+            <a  data-rel="Notes&lt;---&gt;UdS">UdS</a>
             
         </span>
         
@@ -923,21 +923,19 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color5">Hexo</a>
-            
-            <a class="color2">3-hexo</a>
+            <a class="color4">AGV</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-10-11 04:13:12'>2024-10-01 11:11</time>
+            Created At : <time class="date" title='Updated At: 2024-12-05 12:34:43'>2024-11-20 16:44</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:96</span>
+        <span>Count:868</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -967,7 +965,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Details"><span class="toc-text">Details</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Global-Shortcut"><span class="toc-text">Global Shortcut</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Search-Box"><span class="toc-text">Search Box</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Reasoning-about-all-runs-of-an-automaton"><span class="toc-text">Reasoning about all runs of an automaton</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Example"><span class="toc-text">Example</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Graph-Pruning"><span class="toc-text">Graph Pruning</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Step-0-Remove-endangered-vertices"><span class="toc-text">Step 0: Remove endangered vertices</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Step-1-Remove-safe-vertices-marked-as-blue"><span class="toc-text">Step 1: Remove safe vertices (marked as blue)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Step-2-Remove-endangered-vertices-marked-as-red"><span class="toc-text">Step 2: Remove endangered vertices (marked as red)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Step-3-Remove-safe-vertices-marked-as-blue"><span class="toc-text">Step 3: Remove safe vertices (marked as blue)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Step-4-Remove-endangered-vertices-marked-as-red"><span class="toc-text">Step 4: Remove endangered vertices (marked as red)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Explaination"><span class="toc-text">Explaination</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -983,68 +981,62 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Below is the list of shortcuts by for readers from the 3-hexo theme.</p>
-<h2 id="Details"><a href="#Details" class="headerlink" title="Details"></a>Details</h2><h3 id="Global-Shortcut"><a href="#Global-Shortcut" class="headerlink" title="Global Shortcut"></a>Global Shortcut</h3><table>
-<thead>
-<tr>
-<th align="left">Key</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">s</td>
-<td align="left">show &#x2F; hide sidebar</td>
-</tr>
-<tr>
-<td align="left">w</td>
-<td align="left">show &#x2F; hide post’s table of content</td>
-</tr>
-<tr>
-<td align="left">i</td>
-<td align="left">focus on search boxes</td>
-</tr>
-<tr>
-<td align="left">j</td>
-<td align="left">scroll down</td>
-</tr>
-<tr>
-<td align="left">k</td>
-<td align="left">scroll up</td>
-</tr>
-<tr>
-<td align="left">g</td>
-<td align="left">page up</td>
-</tr>
-<tr>
-<td align="left">shift+g</td>
-<td align="left">page down</td>
-</tr>
-</tbody></table>
-<h3 id="Search-Box"><a href="#Search-Box" class="headerlink" title="Search Box"></a>Search Box</h3><table>
-<thead>
-<tr>
-<th align="left">Key</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">esc</td>
-<td align="left">1. If there is input in the search box, it will be cleared </br> 2. if not, remove its focus</td>
-</tr>
-<tr>
-<td align="left">down</td>
-<td align="left">scroll downward</td>
-</tr>
-<tr>
-<td align="left">up</td>
-<td align="left">scroll upward</td>
-</tr>
-<tr>
-<td align="left">enter</td>
-<td align="left">redirect to selected post (default: first search result)</td>
-</tr>
-</tbody></table>
-<p>More info: <a target="_blank" rel="noopener" href="https://yelog.org/2017/03/24/3-hexo-shortcuts/">3-hexo shortcut by yelog</a></p>
+        <p>Previous chapter: <a href="../agv4-2/">Complementation of deterministic Büchi Automata</a></p>
+<blockquote>
+<p>This is a learning note of a course in <a target="_blank" rel="noopener" href="https://cispa.de/de">CISPA</a>, UdS. Taught by Bernd Finkbeiner</p>
+</blockquote>
+<h2 id="Reasoning-about-all-runs-of-an-automaton"><a href="#Reasoning-about-all-runs-of-an-automaton" class="headerlink" title="Reasoning about all runs of an automaton"></a>Reasoning about all runs of an automaton</h2><p>Since complementation inevitably introduce <strong>nondeterminism</strong>, we need to check whether <strong>all</strong> runs of the automaton on the word are <strong>rejecting</strong> to determine whether a word is in the complement of the language recognized by this Büchi automaton.</p>
+<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><p>Consider the following nondeterministic Büchi automaton $\mathcal{A}$. Its language consists of all infinite words over $\lbrace a,b\rbrace$ with infinitely many <em>b</em>s, i.e., $(a^*b)^\omega$:</p>
+<p><img src="/../images/notes/uds/agv/5_1_eg.png"></p>
+<blockquote>
+<p>$\textbf{Definition 5.1. }\text{Let }\mathcal{A}&#x3D;(\Sigma,Q,I,T,\small\text{BÜCHI} \normalsize (F))\text{ be a Büchi automaton. The run DAG of }\mathcal{A}\newline\text{on a word }\alpha\in\Sigma^\omega\text{ is the directed acylic graph }G&#x3D;(V,E)\text{, where}$<br>$\begin{array}{l}\hspace{1cm} \cdot \ V &#x3D; \cup_{i\geq0}(Q_i\times\lbrace i\rbrace)\text{ with }Q_0&#x3D;I\text{ and}\newline\hspace{1.1cm} \ Q_{i+1}&#x3D;\lbrace q’\mid(q,\alpha(i),q’)\in T\text{ for some }q\in Q\rbrace\newline\hspace{1cm} \cdot \ E&#x3D;\lbrace((q,i),(q’,i+1))\mid i\geq 0,(q,\alpha(i),q’)\in T\rbrace.\end{array}$<br>$\text{For a natural number }i\text{, we refer to the set }Q_i\text{ as the }\textit{level }i\text{ of the DAG.}$</p>
+</blockquote>
+<p>Using <strong>infinite directed acyclic graph (DAG)</strong> to represent the set of all runs on a particular word, e.g., $ababa^\omega$.</p>
+<p><img src="/../images/notes/uds/agv/5_1_dag.png"></p>
+<p>In the above example: the word $\alpha&#x3D;ababa^\omega$ has only two <em>b</em>‘s and hence must be rejected by $\mathcal{A}$.</p>
+<p>Since the automaton is nondeterministic, a single word of $\mathcal{A}$ will have multiple runs on $\alpha$, represented by each <em>path in DAG</em>. The path is called accepting <strong>if and only if</strong> its corresponding run is accepting, i.e., the path visits $F\times\mathcal{A}$ infinitely often.</p>
+<h2 id="Graph-Pruning"><a href="#Graph-Pruning" class="headerlink" title="Graph Pruning"></a>Graph Pruning</h2><p>To show the <strong>non-acceptance</strong> of $\alpha$ by $\mathcal{A}$, we can systematically identifying and pruning away vertices of the run DAG that only lead to rejecting paths until the graph is empty using the following definitions:</p>
+<p><code>Endangered</code>: a vertex in a DAG is endangered if it has only <strong>finitely many descendants</strong>;</p>
+<p><code>Safe</code>: a vertex in a DAG is safe if it is <strong>not in</strong> $F\times\mathcal{A}$ and <strong>none of its descendants</strong> are in $F\times\mathcal{A}$ either.</p>
+<p>We start with a graph $G_0&#x3D;G$. Each iteration $j\geq 0$ of our pruning will consist of two steps:</p>
+<ol>
+<li>in step $2j$, the graph &#x3D; $G_{2j}$, remove all <code>endangered</code> vertices, graph after removal &#x3D; $G_{2j+1}$</li>
+<li>in step $2j+1$, the graph &#x3D; $G_{2j+1}$, remove all <code>safe</code> vertices, graph after removal &#x3D; $G_{2j+2}$</li>
+</ol>
+<h3 id="Step-0-Remove-endangered-vertices"><a href="#Step-0-Remove-endangered-vertices" class="headerlink" title="Step 0: Remove endangered vertices"></a>Step 0: Remove <code>endangered</code> vertices</h3><ul>
+<li>Input: $G_0$ ↑ (using example above), Output: $G_1$ ↓</li>
+</ul>
+<p>Since there’s no <code>endangered</code> verticies, $G_0$ &#x3D; $G_1$</p>
+<p><img src="/../images/notes/uds/agv/5_1_g1.png"></p>
+<h3 id="Step-1-Remove-safe-vertices-marked-as-blue"><a href="#Step-1-Remove-safe-vertices-marked-as-blue" class="headerlink" title="Step 1: Remove safe vertices (marked as blue)"></a>Step 1: Remove <code>safe</code> vertices (marked as blue)</h3><ul>
+<li>Input: $G_1$ ↑, Output: $G_2$ ↓</li>
+</ul>
+<p>As we can see all vertices that in state r stay in r forever (accepting state is q). Therefore those path can never be accepted and they are safe.</p>
+<p><img src="/../images/notes/uds/agv/5_1_g2.png"></p>
+<h3 id="Step-2-Remove-endangered-vertices-marked-as-red"><a href="#Step-2-Remove-endangered-vertices-marked-as-red" class="headerlink" title="Step 2: Remove endangered vertices (marked as red)"></a>Step 2: Remove <code>endangered</code> vertices (marked as red)</h3><ul>
+<li>Input: $G_2$ ↑, Output: $G_3$ ↓</li>
+</ul>
+<p>After <code>safe</code> verticies in r are removed, paths towards r from q become dead end. Therefore they are now <code>endangered</code>.</p>
+<p><img src="/../images/notes/uds/agv/5_1_g3.png"></p>
+<h3 id="Step-3-Remove-safe-vertices-marked-as-blue"><a href="#Step-3-Remove-safe-vertices-marked-as-blue" class="headerlink" title="Step 3: Remove safe vertices (marked as blue)"></a>Step 3: Remove <code>safe</code> vertices (marked as blue)</h3><ul>
+<li>Input: $G_3$ ↑, Output: $G_4$ ↓</li>
+</ul>
+<p>Now all the vertices starting from (p,3) stay in p forever. Therefore they are <code>safe</code> as well.</p>
+<p><img src="/../images/notes/uds/agv/5_1_g4.png"></p>
+<h3 id="Step-4-Remove-endangered-vertices-marked-as-red"><a href="#Step-4-Remove-endangered-vertices-marked-as-red" class="headerlink" title="Step 4: Remove endangered vertices (marked as red)"></a>Step 4: Remove <code>endangered</code> vertices (marked as red)</h3><ul>
+<li>Input: $G_4$ ↑, Output: $G_5$ ↓</li>
+</ul>
+<p>Now the graph is finite, meaning all the vertices in the graph are <code>endangered</code>.</p>
+<p><img src="/../images/notes/uds/agv/5_1_g5.png"></p>
+<p>Therefore, graph $G_5$ will be an empty graph, which means there’s no accepting path and thus the word $ababa^\omega$ is rejected.</p>
+<h3 id="Explaination"><a href="#Explaination" class="headerlink" title="Explaination"></a>Explaination</h3><p>We start from removing <code>endangered</code> verticies in <strong>step 0</strong> because they can never infinitely reach the accepting states. Then we can remove all <code>Safe</code> verticies in <strong>step 1</strong> because they never visit accepting states anymore.</p>
+<p>For the subsequent pruning, if a vertex v of the original run DAG is pruned away in step $2j$ because it is <code>endangered</code> in $G_{2j}$, it means that all paths from v in the original run DAG can reach were pruned away in the earlier steps.</p>
+<p>Similarly, if a vertex v of the original run DAG is pruned away in step $2j+1$ because it is <code>safe</code> in $G_{2j+1}$, it means that v corresponds to a <strong>non-accepting state</strong>. And furthermore, all paths from v in the original run DAG either avoid accepting vertices, or eventually reach a vertex that was pruned away in the earlier steps.</p>
+<p>So we can see that if a vertex is pruned away, all paths from that vertex are rejecting. Hence, if our scheme eventually obtains the empty graph, the pruning is a proof of the non-acceptance of the word by the automaton.</p>
+<p>We formalize this type of reasoning as a <code>ranking</code>, which labels the vertices with numbers. We will define <code>ranking</code> in the next chapter. </p>
+<hr>
+<p>Next chapter: <a href="../agv5-2/">Ranking (DAG)</a></p>
+<p>Further Reading: <a href=""></a></p>
 
       
        <hr><span style="font-style: italic;color: gray;"> Please cite the source for reprints, feel free to verify the sources cited in the article, and point out any errors or lack of clarity of expression. You can comment in the comments section below or email to GreenMeeple@yahoo.com </span>
@@ -1078,6 +1070,46 @@
 
 
 
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.jsdelivr.net/npm/mathjax@2.7.8/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.jsdelivr.net/npm/mathjax@2.7.8/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
     
 
 
