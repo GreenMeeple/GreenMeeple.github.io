@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Leetcode SQL 50 -- 1068. Product Sales Analysis I | GreenMeeple</title>
-  <meta name="keywords" content=" SQL ">
-  <meta name="description" content="Leetcode SQL 50 -- 1068. Product Sales Analysis I | GreenMeeple">
+  <title>AGV 5.2 -- Ranking (DAG) | GreenMeeple</title>
+  <meta name="keywords" content=" AGV ">
+  <meta name="description" content="AGV 5.2 -- Ranking (DAG) | GreenMeeple">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="GreenMeeple cannot find what you are looking for...">
@@ -910,9 +910,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-sql50-1068" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-agv5-2" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Leetcode SQL 50 -- 1068. Product Sales Analysis I</h1>
+        <h1 class="article-title">AGV 5.2 -- Ranking (DAG)</h1>
     
     <div class="article-meta">
         
@@ -922,9 +922,9 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="LeetCode">LeetCode</a> > 
+            <a  data-rel="Notes">Notes</a> > 
             
-            <a  data-rel="LeetCode&lt;---&gt;SQL_50">SQL_50</a>
+            <a  data-rel="Notes&lt;---&gt;UdS">UdS</a>
             
         </span>
         
@@ -932,19 +932,19 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color4">SQL</a>
+            <a class="color4">AGV</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-10-30 11:16:33'>2024-11-03 11:07</time>
+            Created At : <time class="date" title='Updated At: 2024-12-06 03:13:48'>2024-11-21 01:19</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:123</span>
+        <span>Count:1.2k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -974,7 +974,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Question"><span class="toc-text">Question</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Table-name-Sales"><span class="toc-text">Table name: Sales</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Table-name-Product"><span class="toc-text">Table name: Product</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Explaination"><span class="toc-text">Explaination</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-text">Solution</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Ranking"><span class="toc-text">Ranking</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Odd-Ranking"><span class="toc-text">Odd Ranking</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Proof"><span class="toc-text">Proof</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Requirement-1-All-vertices-are-indeed-pruned-away-latest-by-step-2-Q"><span class="toc-text">Requirement 1: All vertices are indeed pruned away, latest by step $2|Q|$</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Requirement-2-Accepting-vertices-must-have-an-even-rank"><span class="toc-text">Requirement 2: Accepting vertices must have an even rank</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Requirement-3-The-rank-cannot-increase-upon-traversing-an-edge"><span class="toc-text">Requirement 3: The rank cannot increase upon traversing an edge</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Requirement-4-There-is-no-infinite-path-of-only-even-ranked-vertices"><span class="toc-text">Requirement 4: There is no infinite path of only even-ranked vertices</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Conclusion"><span class="toc-text">Conclusion</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -990,63 +990,80 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><h3 id="Table-name-Sales"><a href="#Table-name-Sales" class="headerlink" title="Table name: Sales"></a>Table name: <code>Sales</code></h3><table>
-<thead>
-<tr>
-<th align="left">Column Name</th>
-<th align="left">Type</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">sale_id</td>
-<td align="left">int</td>
-</tr>
-<tr>
-<td align="left">product_id</td>
-<td align="left">int</td>
-</tr>
-<tr>
-<td align="left">year</td>
-<td align="left">int</td>
-</tr>
-<tr>
-<td align="left">quantity</td>
-<td align="left">int</td>
-</tr>
-<tr>
-<td align="left">price</td>
-<td align="left">int</td>
-</tr>
-</tbody></table>
-<p>Each row of this table shows a sale on the product <code>product_id</code> in a certain year.<br>Note that the <code>price</code> is per unit.</p>
-<h3 id="Table-name-Product"><a href="#Table-name-Product" class="headerlink" title="Table name: Product"></a>Table name: <code>Product</code></h3><table>
-<thead>
-<tr>
-<th align="left">Column Name</th>
-<th align="left">Type</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">product_id</td>
-<td align="left">int</td>
-</tr>
-<tr>
-<td align="left">product_name</td>
-<td align="left">varchar</td>
-</tr>
-</tbody></table>
-<p>Each row of this table indicates the <code>product name</code> of each product.</p>
+        <p>Previous chapter: <a href="../agv5-1/">Infinite Directed Acyclic Graph (DAG)</a></p>
 <blockquote>
-<p>Write a solution to report the <code>product_name</code>, <code>year</code>, and <code>price</code> for each <code>sale_id</code> in the <code>Sales</code> table.</p>
+<p>This is a learning note of a course in <a target="_blank" rel="noopener" href="https://cispa.de/de">CISPA</a>, UdS. Taught by Bernd Finkbeiner</p>
 </blockquote>
-<h2 id="Explaination"><a href="#Explaination" class="headerlink" title="Explaination"></a>Explaination</h2><p>This question is a basic usage of <code>JOIN</code> query.</p>
-<p>Just be careful on which table you are referring when you select the columns.</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><pre><code class="sql">SELECT Product.product_name, Sales.year, Sales.price 
-FROM Sales 
-INNER JOIN Product ON Sales.product_id = Product.product_id;
-</code></pre>
+<h2 id="Ranking"><a href="#Ranking" class="headerlink" title="Ranking"></a>Ranking</h2><p>last section, we have introduced the <strong>DAG</strong> and the <strong>pruning method</strong> to reason about the run of the word on a non-deterministic Büchi automaton. We know that pruning can be use to prove the <strong>non-acceptance</strong> of the word by automaton is we obtains an empty graph eventually.</p>
+<p><img src="/../images/notes/uds/agv/5_1_g1.png"></p>
+<p>In this section, we will introduce <strong>ranking</strong>, which can formalize our pruning construction.</p>
+<blockquote>
+<p>$\textbf{Definition 5.2. }\text{(Ranking). A }\textit{ranking}\text{ on a run DAG } G&#x3D;(V,E)\text{ is a function }f:V\rightarrow\newline\lbrace 0,\dots,2|Q|\rbrace\text{ such that:}$<br>$\begin{array}{l}\hspace{1cm} 1. \ \text{ If }q\in F\text{, then }f((q,i))\text{ is even for all }i.\newline\hspace{1cm} 2. \ \text{ If }(v,v’)\in E\text{, we have that }f(v’)\leq f(v).\end{array}\newline$<br>$\text{A ranking } f\text{ is }\textit{odd}\text{ if, for each even }j\text{, there is no infinite path in }G\text{ that consists only }\newline\text{of verticies }v\text{ such that }f(v)&#x3D;j.$</p>
+</blockquote>
+<p>By the above definition, we can see:</p>
+<ol>
+<li>All verticies that contains state q (the accepting state) are marked as even rank.</li>
+<li>Verticies will never have lower rank than their successors.</li>
+</ol>
+<p>Most importantly, it introduced a new concept: <strong>Odd Ranking</strong>. Meaning that the run of the DAG is rejected.</p>
+<p>Now, let’s consider the function $rank:V\rightarrow\lbrace 0,\dots,2|Q|\rbrace$, where</p>
+<ul>
+<li>$rank(q,i)&#x3D;2j$ iff $(q,i)$ is <strong>endangered</strong> in $G_{2j}$, and</li>
+<li>$rank(q,i)&#x3D;2j+1$ iff $(q,i)$ is <strong>safe</strong> in $G_{2j+1}$.</li>
+</ul>
+<p><img src="/../images/notes/uds/agv/5_2_dag.png"></p>
+<p>By tracking our pruning procedure, we can easily identify their rank now.<br>Blue verticies that remove in $G_1$ are <strong>safe</strong>, thus their rank are 1, and so as orange (2), green (3) and red (4).</p>
+<h2 id="Odd-Ranking"><a href="#Odd-Ranking" class="headerlink" title="Odd Ranking"></a>Odd Ranking</h2><p>Now back to odd ranking, by our new function $rank$, we can prove the following lemma.</p>
+<blockquote>
+<p>$\textbf{Lemma 5.1. }\newline\text{A Büchi automaton }\mathcal{A}\text{ reject the word }\alpha\text{ iff the run DAG of }\mathcal{A}\text{ on }\alpha\text{ has an odd ranking}$</p>
+</blockquote>
+<h2 id="Proof"><a href="#Proof" class="headerlink" title="Proof"></a>Proof</h2><blockquote>
+<p><strong>If the run DAG of $\mathcal{A}$ on $\alpha$ has an odd ranking, then $\alpha$ is rejected</strong></p>
+</blockquote>
+<p>By the definition above, we know that graph with odd ranking has <strong>no infinite path that settles on only even rank $f(v)&#x3D;j$</strong>. Which means:</p>
+<ul>
+<li>every run of $\mathcal{A}$ on $\alpha$ <strong>gets stuck</strong>, or,</li>
+<li>eventually <strong>settles on vertices with a constant odd rank</strong>, since ranks are not increasing.</li>
+</ul>
+<p>In which case the run eventually only visits states that are not accepting.</p>
+<blockquote>
+<p><strong>If $\alpha$ is rejected, then the run DAG of $\mathcal{A}$ on $\alpha$ has an odd ranking</strong></p>
+</blockquote>
+<p>Since we know pruning leads to rejecting with function $rank$. Therefore, instead of using odd ranking directly, we try to show the function $rank$ is the odd ranking. To prove this, we need to show that:</p>
+<ol>
+<li>All vertices are indeed pruned away, latest by step $2|Q|$.</li>
+<li>Accepting vertices must have an even rank</li>
+<li>The rank cannot increase upon traversing an edge.</li>
+<li>There is no infinite path that consists only of vertices of even rank.</li>
+</ol>
+<h3 id="Requirement-1-All-vertices-are-indeed-pruned-away-latest-by-step-2-Q"><a href="#Requirement-1-All-vertices-are-indeed-pruned-away-latest-by-step-2-Q" class="headerlink" title="Requirement 1: All vertices are indeed pruned away, latest by step $2|Q|$"></a>Requirement 1: All vertices are indeed pruned away, latest by step $2|Q|$</h3><p>Here, we define the <strong>width</strong> of a level $j$ in a graph $G_i$ as the number of vertices of the form $(q,j)$ in $G_i$.<br>(For the above example, $G_0$ has width &#x3D; 3 in level 3, 4, 5, …, while in $G_1$ it becomes 2)</p>
+<p>We will now analyze the $j$-th iteration of the pruning, which begins with the graph $G_{2j}$.<br>Step $2j$ removes all <code>endangered</code> vertices from $G_{2j}$ to obtain $G_{2j+1}$. $G_{2j+1}$ either become empty, or still has infinitely many vertices (become vertices that not <code>endangered</code> have some infinite path)</p>
+<p>If $G_{2j+1}$ has infinitely many vertices, then there must exist a <code>safe</code> vertex in $G_{2j+1}$. Otherwise each vertex is either accepting, or has a path to an accepting vertex. Since our run is not accepted, this is contradicting.</p>
+<p>Consider a <code>safe</code> vertex $(q,m)$ in $G_{2j+1}$ which has the smallest $m$ (closest to the beginning). All descendants of this vertex in $G_{2j+1}$ are also safe. (see the blue verticies in the above example) These <code>safe</code> vertices will be pruned away in step $2j+1$.</p>
+<p>Observe the affect towards the width after these deletions:</p>
+<ul>
+<li>At the beginning of iteration $0$, each level has width at most $|Q|$ (max. no. of states).</li>
+<li>In every iteration $j$, the widths of all levels $i\geq m$ decrease by at least 1.<br>(because we at least removed one vertex in m, then all its descendants in $i\geq m$)</li>
+</ul>
+<p>This implies for some $m$ after $|Q|$ iterations, the width of all levels $i\geq m$ will decrease by $|Q|$, which becomes $0$.<br>Therefore, we know $G_{2|Q|}$ must be a finite graph, which means all vertices in $G_{2|Q|}$ are <code>endangered</code><br>($2|Q|$ because <code>safe</code> and <code>endangered</code> removal is alternating). Then in step $2|Q|$ will prune all vertices away.</p>
+<h3 id="Requirement-2-Accepting-vertices-must-have-an-even-rank"><a href="#Requirement-2-Accepting-vertices-must-have-an-even-rank" class="headerlink" title="Requirement 2: Accepting vertices must have an even rank"></a>Requirement 2: Accepting vertices must have an even rank</h3><p>Accepting vertices cannot be pruned away as <code>safe</code>. Since all vertices of the run DAG are pruned away, they<br>must have been pruned away as <code>endangered</code>, and therefore get an even rank.</p>
+<h3 id="Requirement-3-The-rank-cannot-increase-upon-traversing-an-edge"><a href="#Requirement-3-The-rank-cannot-increase-upon-traversing-an-edge" class="headerlink" title="Requirement 3: The rank cannot increase upon traversing an edge"></a>Requirement 3: The rank cannot increase upon traversing an edge</h3><p>Suppose there is a $(q’,i+1)$ that is pruned later than $(q,i)$. Consider the step $j$ at which $(q,i)$ is pruned. The graph $G_j$ would have contained both vertices, along with their edge.</p>
+<p>If $j$ is even, it means that $(q,i)$ has even rank, and <code>endangered</code> in $G_j$ , and hence so must be its successor $(q’,i+1)$, meaning that it is pruned at step $j$.</p>
+<p>If $j$ is odd, then $(q,i)$ was established to be <code>safe</code> in Gj , implying the safety of its successor too. In both cases, the pruning of $(q’,i+1)$ in the same step is inevitable.</p>
+<h3 id="Requirement-4-There-is-no-infinite-path-of-only-even-ranked-vertices"><a href="#Requirement-4-There-is-no-infinite-path-of-only-even-ranked-vertices" class="headerlink" title="Requirement 4: There is no infinite path of only even-ranked vertices"></a>Requirement 4: There is no infinite path of only even-ranked vertices</h3><p>If such a path exists, since ranks do not increase along a path, and there are only finitely many ranks, this path will eventually consist only of vertices of rank $2j$.</p>
+<p>However, only <code>endangered</code> verticies will have even rank in $G_{2j}$, and endangered vertices only have finite paths.</p>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>With the above properties and proofs, we know that:</p>
+<ul>
+<li>the run DAG of $\mathcal{A}$ on $\alpha$ has an odd ranking &#x3D; $\alpha$ is rejected</li>
+<li>Pruning method with $rank$ function &#x3D; odd ranking</li>
+</ul>
+<blockquote>
+<p>So if a word is rejected, its run DAG always becomes an empty graph after pruning, and if a run DAG eventually becomes an empty graph after pruning, it must be rejected by $\mathcal{A}$.</p>
+</blockquote>
+<p>With these definition, we can now construct complementation of Büchi automaton $\mathcal{A}$ using the run DAG of $\mathcal{A}$ and the odd ranking. Let see how is it done in the next section.</p>
 <hr>
-<p>More SQL 50 questions: <a href="../sql50/">here</a></p>
+<p>Next chapter: <a href="../agv5-3/">Complement Büchi Automaton with Odd Ranking</a></p>
+<p>Further Reading: <a href=""></a></p>
 
       
        <hr><span style="font-style: italic;color: gray;"> Please cite the source for reprints, feel free to verify the sources cited in the article, and point out any errors or lack of clarity of expression. You can comment in the comments section below or email to GreenMeeple@yahoo.com </span>
@@ -1080,6 +1097,46 @@ INNER JOIN Product ON Sales.product_id = Product.product_id;
 
 
 
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.jsdelivr.net/npm/mathjax@2.7.8/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.jsdelivr.net/npm/mathjax@2.7.8/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
     
 
 

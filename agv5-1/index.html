@@ -144,7 +144,7 @@
     <li>
         <div class="all active" data-rel="All">All
             
-                <small>(48)</small>
+                <small>(49)</small>
             
         </div>
     </li>
@@ -246,7 +246,7 @@
         <div data-rel="Notes">
             <i class="fold iconfont icon-right"></i>
             Notes
-            <small>(16) </small>
+            <small>(17) </small>
         </div>
         
             <ul class="sub hide">
@@ -256,7 +256,7 @@
         <div data-rel="Notes&lt;---&gt;UdS">
             
             UdS
-            <small>(16) </small>
+            <small>(17) </small>
         </div>
         
     </li>
@@ -320,8 +320,8 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="48">
-<input type="hidden" id="yelog_site_word_count" value="20.7k">
+<input type="hidden" id="yelog_site_posts_number" value="49">
+<input type="hidden" id="yelog_site_word_count" value="21.9k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -458,6 +458,15 @@
            data-author="" >
             <span class="post-title" title="3-hexo Shortcut">3-hexo Shortcut</span>
             <span class="post-date" title="2024-10-01 11:11:11">2024/10/01</span>
+        </a>
+        
+        
+        <a  class="All Notes UdS "
+           href="/agv5-2/"
+           data-tag="AGV"
+           data-author="" >
+            <span class="post-title" title="AGV 5.2 -- Ranking (DAG)">AGV 5.2 -- Ranking (DAG)</span>
+            <span class="post-date" title="2024-11-21 01:19:18">2024/11/21</span>
         </a>
         
         
@@ -930,7 +939,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-12-05 13:29:11'>2024-11-20 16:44</time>
+            Created At : <time class="date" title='Updated At: 2024-12-05 13:40:06'>2024-11-20 16:44</time>
         
     </div>
     <div class="article-meta">
@@ -992,7 +1001,7 @@
 <p>$\textbf{Definition 5.1. }\text{Let }\mathcal{A}&#x3D;(\Sigma,Q,I,T,\small\text{BÜCHI} \normalsize (F))\text{ be a Büchi automaton. The run DAG of }\mathcal{A}\newline\text{on a word }\alpha\in\Sigma^\omega\text{ is the directed acylic graph }G&#x3D;(V,E)\text{, where}$<br>$\begin{array}{l}\hspace{1cm} \cdot \ V &#x3D; \cup_{i\geq0}(Q_i\times\lbrace i\rbrace)\text{ with }Q_0&#x3D;I\text{ and}\newline\hspace{1.1cm} \ Q_{i+1}&#x3D;\lbrace q’\mid(q,\alpha(i),q’)\in T\text{ for some }q\in Q\rbrace\newline\hspace{1cm} \cdot \ E&#x3D;\lbrace((q,i),(q’,i+1))\mid i\geq 0,(q,\alpha(i),q’)\in T\rbrace.\end{array}$<br>$\text{For a natural number }i\text{, we refer to the set }Q_i\text{ as the }\textit{level }i\text{ of the DAG.}$</p>
 </blockquote>
 <p>Using <strong>infinite directed acyclic graph (DAG)</strong> to represent the set of all runs on a particular word, e.g., $ababa^\omega$.</p>
-<p><img src="/../images/notes/uds/agv/5_1_g0.png"></p>
+<p><img src="/../images/notes/uds/agv/5_1_g1.png"></p>
 <p>In the above example: the word $\alpha&#x3D;ababa^\omega$ has only two <em>b</em>‘s and hence must be rejected by $\mathcal{A}$.</p>
 <p>Since the automaton is nondeterministic, a single word of $\mathcal{A}$ will have multiple runs on $\alpha$, represented by each <em>path in DAG</em>. The path is called accepting <strong>if and only if</strong> its corresponding run is accepting, i.e., the path visits $F\times\mathcal{A}$ infinitely often.</p>
 <h2 id="Graph-Pruning"><a href="#Graph-Pruning" class="headerlink" title="Graph Pruning"></a>Graph Pruning</h2><p>To show the <strong>non-acceptance</strong> of $\alpha$ by $\mathcal{A}$, we can systematically identifying and pruning away vertices of the run DAG that only lead to rejecting paths until the graph is empty using the following definitions:</p>
