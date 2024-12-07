@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Parameterized Verification 1.2 -- Synchronization Primitives of Processes | GreenMeeple</title>
-  <meta name="keywords" content=" PV , LTS ">
-  <meta name="description" content="Parameterized Verification 1.2 -- Synchronization Primitives of Processes | GreenMeeple">
+  <title>AGV 5.3 -- Complement Büchi Automaton with Odd Ranking | GreenMeeple</title>
+  <meta name="keywords" content=" AGV ">
+  <meta name="description" content="AGV 5.3 -- Complement Büchi Automaton with Odd Ranking | GreenMeeple">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="GreenMeeple cannot find what you are looking for...">
@@ -919,9 +919,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-pv1-2" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-agv5-3" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Parameterized Verification 1.2 -- Synchronization Primitives of Processes</h1>
+        <h1 class="article-title">AGV 5.3 -- Complement Büchi Automaton with Odd Ranking</h1>
     
     <div class="article-meta">
         
@@ -941,21 +941,19 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color3">PV</a>
-            
-            <a class="color4">LTS</a>
+            <a class="color4">AGV</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-10-19 04:08:07'>2024-10-08 04:40</time>
+            Created At : <time class="date" title='Updated At: 2024-12-07 01:37:17'>2024-11-22 16:36</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:524</span>
+        <span>Count:1.4k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -985,7 +983,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Processes"><span class="toc-text">Processes</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Composition-by-Synchronization"><span class="toc-text">Composition by Synchronization</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Synchronization-Primitives"><span class="toc-text">Synchronization Primitives</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Pairwise-Rendezvous"><span class="toc-text">Pairwise Rendezvous</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Broadcast"><span class="toc-text">Broadcast</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Asynchronous-Rendezvous"><span class="toc-text">Asynchronous Rendezvous</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Lossy-Broadcast"><span class="toc-text">Lossy Broadcast</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Introduction"><span class="toc-text">Introduction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Level-Ranking"><span class="toc-text">Level Ranking</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ell%E2%80%99-covers-ell"><span class="toc-text">$\ell’$ covers $\ell$ ?</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Complement-Automaton-Construction"><span class="toc-text">Complement Automaton Construction</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Explanation"><span class="toc-text">Explanation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Proof"><span class="toc-text">Proof</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#If-the-run-is-accepting-then-eventually-every-batch-are-emptied"><span class="toc-text">If the run is accepting, then eventually every batch are emptied</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#If-eventually-every-batch-are-emptied-then-the-run-is-accepting"><span class="toc-text">If eventually every batch are emptied, then the run is accepting</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -1001,83 +999,59 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>This is a learning note of a course in <a target="_blank" rel="noopener" href="https://cispa.de/de">CISPA</a>, UdS. Taught by Swen Jacobs</p>
-</blockquote>
-<p>Last post: <a href="../pv1-1/">Labeled Transition Systems</a></p>
-<h2 id="Processes"><a href="#Processes" class="headerlink" title="Processes"></a>Processes</h2><p>A Process is an LTS $P &#x3D; (Q, Q_0, \Sigma, \delta, \lambda)$ with $\Sigma &#x3D; \Sigma_{int} \cup \lbrace out_a , in_a \mid a \in \Sigma_{sync} \rbrace $, where </p>
-<ul>
-<li>$\Sigma_{int}$ is a set of <code>internal</code> actions,</li>
-<li>$\Sigma_{sync}$ a set of <code>synchronizing</code> actions,</li>
-<li>$out_a$ is an <code>send</code> action (or <code>initiate</code> action),</li>
-<li>$in_a$ is an <code>receive</code> action.</li>
-</ul>
-<h3 id="Composition-by-Synchronization"><a href="#Composition-by-Synchronization" class="headerlink" title="Composition by Synchronization"></a>Composition by Synchronization</h3><p>The composition $P^n$ of $n$ (uniform) processes wrt. $card$ is the LTS $(S, S_0, \Sigma_{int} \cup \Sigma_{sync}, \Delta, \Lambda)$ with:</p>
-<ul>
-<li><p>$S &#x3D; Q \times Q$</p>
-</li>
-<li><p>$S_0 &#x3D; Q_0 \times Q_0$</p>
-</li>
-<li><p>$\Delta \subseteq S \times (\Delta_{int} \cup \Delta_{sync} \times S)$ is the set of all transitions that satisfy one of the following:</p>
-<p><strong>Internal Transition</strong>:</p>
-<ul>
-<li>For some $i \in\lbrace 1, … , n \rbrace$ , $(s, a, s’) \in S \times\Sigma_{int}\times S$ is an element such that:<br> $(s(i), a, s’(i)) \in\delta$ , and $s(j) &#x3D; s’(j)$ for $i \ne j \in\lbrace 1, …, n \rbrace$</li>
-</ul>
+        <p>Previous chapter: <a href="../agv5-2/">Ranking (DAG)</a></p>
 <blockquote>
-<p>Process $s(i)$ take the action, other processes $s(j)$ remain their current states.</p>
+<p>This is a learning note of a course in <a target="_blank" rel="noopener" href="https://cispa.de/de">CISPA</a>, UdS. Taught by Bernd Finkbeiner</p>
 </blockquote>
-<p><strong>Synchronous Transition</strong></p>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>In <a href="../agv4-2/">section 4.2</a>, we have shown the complementation construction for <strong>deterministic Büchi Automata</strong>.</p>
+<p>Now, by using DAG we can construct complement automaton of any Büchi Automata, with the help of the definition of <code>odd ranking</code> and the new function <strong>Level Ranking</strong>.</p>
+<h2 id="Level-Ranking"><a href="#Level-Ranking" class="headerlink" title="Level Ranking"></a>Level Ranking</h2><blockquote>
+<p>$\textbf{Definition 5.3. }\text{(Level Ranking). Consider a Büchi Automaton }\mathcal{A}&#x3D;(\Sigma,Q,I,T,\small\text{BÜCHI}\normalsize(F)).\newline\text{A level ranking }\ell\text{ is a pair }(S,g)\text{ such that:}$<br>$\begin{array}{l}\hspace{1cm} \cdot \ S\subseteq Q,\newline\hspace{1cm} \cdot \ g:S\rightarrow\lbrace 0,\dots,2|Q|\rbrace\text{ with }g(q)\text{ necessarily even if }q\in F.\end{array}\newline \ \newline\text{We also denote: }$<br>$\begin{array}{l}\hspace{1cm} \cdot \ \textsf{Lvlrks}&#x3D;\text{the (finite) set of level ranks, and }\newline\hspace{1cm} \cdot \ \textsf{Initrks}&#x3D;\text{the set of level ranks s.t. }S&#x3D;I\end{array}\newline \ \newline\hspace{1cm}\text{We say that a level ranking }\ell’\text{, given by }(S’,g’)\text{ cover }\ell\text{, given by }(S,g)\text{ for }\sigma\in\Sigma,\newline\text{if }S’&#x3D;\lbrace q’\mid(q,\sigma,q’)\in T\rbrace\text{ and for all }q\in S,q’\in S’\text{ with }(q,\sigma,q’)\in T\text{, it holds that } g’(q’)\leq g(q).$</p>
+</blockquote>
+<p>Here, the <code>level ranking</code> refers to a pair that contains set of states that share the same ranking.</p>
+<h3 id="ell’-covers-ell"><a href="#ell’-covers-ell" class="headerlink" title="$\ell’$ covers $\ell$ ?"></a>$\ell’$ covers $\ell$ ?</h3><p>The last part of the definition states that one level ranking is <strong>covering</strong> the other if the following satisfied:</p>
 <ul>
-<li><p>For some $i \in \lbrace 1, … , n \rbrace$ and some $I \subseteq \lbrace 1, …, n \rbrace \setminus \lbrace i \rbrace$ with $|I| \in card$ ,<br>$(s, a, s’) \in S \times \Sigma_{int} \times S$ is an element such that:</p>
-<ul>
-<li>$s(i) \buildrel out_a \over\longrightarrow s’(i)$ is (a local transition) in $P$<blockquote>
-<p>One process $s(i)$ take the <code>send</code> action.</p>
-</blockquote>
-</li>
-<li>for every $j \in I, s(j) \buildrel in_a \over\longrightarrow s’(j)$ is (a local transition) in $P$<blockquote>
-<p>$I$ is the set of processes that can take the <code>receive</code> action. (size of $I$ must not be larger then $card$)</p>
-</blockquote>
-</li>
-<li>for every $j \in\lbrace 1, …, n \rbrace \setminus (I \cup\lbrace i \rbrace), s’(j) &#x3D; s(j)$<blockquote>
-<p>Other processes $s(j)$ that cannot take <code>receive</code> actions remain their current states.</p>
-</blockquote>
-</li>
-<li>$I$ is <strong>maximal</strong>.<blockquote>
-<p>There does not exist a larger set $I’ \supset I$ with $|I’| \in card$ that for all $j \in I’$ ,<br>there is a local transition from $s(j)$ that can take the <code>receive</code> action.</p>
-</blockquote>
-</li>
+<li>Let $\ell’&#x3D;(S’,g’)$ and $\ell&#x3D;(S,g)$ for $\sigma\in\Sigma$</li>
+<li>$q$ are the states that in the set $S$, so as $q’$ are in $S’$</li>
+<li><strong>All states $q’$ are some successors of some states</strong> $q, \ (S’&#x3D;\lbrace q’\mid(q,\sigma,q’)\in T\rbrace)$</li>
+<li>for all $q\in S,q’\in S’, (q,\sigma,q’)\in T$, <strong>the rank of $q’$ is lower than $q, \ (g’(q’)\leq g(q))$</strong></li>
 </ul>
-</li>
-</ul>
-</li>
-<li><p>$\Lambda(s) &#x3D; \lbrace p_{i} \mid p \in \text{AP and p} \in\lambda(s(i)), i \in \lbrace 1, …, n\rbrace \rbrace$</p>
-</li>
-</ul>
+<p>That means the whole level’s successors will never have higher rank than itself.</p>
+<h2 id="Complement-Automaton-Construction"><a href="#Complement-Automaton-Construction" class="headerlink" title="Complement Automaton Construction"></a>Complement Automaton Construction</h2><p>By <a href="../agv5-2/">lemma 5.1</a>, we know that a word $\alpha$ that is rejected by $\mathcal{A}$ has an <code>odd ranking</code> on the run DAG of $\mathcal{A}$ on $\alpha$.<br>Now our complement will do the opposite: it only accepts the word that has <code>odd ranking</code>.</p>
+<p>To achieve this, we construct the <code>odd ranking</code>, level by level, by assigning ranks to vertices.<br>The definition of <code>level ranks</code> and <code>covering</code> for a letter ensure that the requirements of a ranking are satisfied.</p>
+<p>Through the acceptance condition, we ensure that the ranking is <code>odd</code>, i.e., there is no infinite path that consists only of even-ranked vertices.</p>
 <blockquote>
-<p>In this course, send action &#x3D; $out_a$ &#x3D; $a!!$ ; receive action &#x3D; $in_a$ &#x3D; $a??$.</p>
+<p>$\textbf{Construction 5.1. }\text{Given a Büchi Automaton }\mathcal{A}&#x3D;(\Sigma,Q,I,T,\small\text{BÜCHI} \normalsize(F))\text{ that recognizes}\newline\text{the language }L\text{, we construct a Büchi Automaton}$ $$\newline \mathcal{A’}&#x3D;(\Sigma,\textsf{Lvlrks}\times\textsf{OnEvenPath},I’,T’,\small\text{BÜCHI}\normalsize(F))$$ $\text{that recognizes the language }\Sigma^\omega\setminus L\text{ as follows.}$<br>$\begin{array}{l}<br>\newline<br>\hspace{1cm} \cdot \ \textsf{OnEvenPath}&#x3D;2^Q,\text{tracking states in the current level,}\newline<br>\hspace{1cm} \cdot \ I’&#x3D;\lbrace (\ell,R)\mid\ell\in\textsf{InitRks, }\ell\text{ is given by }(S,g)\text{, and }R&#x3D;\lbrace q\mid g(q)\text{ is even}\rbrace\rbrace\newline<br>\hspace{1cm} \cdot \ T’&#x3D;\textsf{NewEvenPaths }\cup\textsf{ ContinueEvenPaths}\text{, where}\newline<br>\hspace{2.4cm} \ \textsf{NewEvenPaths}&#x3D;\lbrace ((\ell,\emptyset),\sigma,(\ell’,R’))\mid\ell’\text{ covers }\ell\text{ for }\sigma,\ell’\text{ is given by }(S’,g’),\newline\hspace{6.4cm} \ \text{and }R’&#x3D;\lbrace q’\mid g’(q’)\text{ is even.}\rbrace\newline<br>\hspace{1.4cm} \ \textsf{ContinueEvenPaths}&#x3D;\lbrace ((\ell,R),\sigma,(\ell’,R’))\mid R\neq\emptyset,\ell’\text{ covers }\ell\text{ for }\sigma,\ell’\text{ is given by }(S’,g’),\newline\hspace{6.4cm} \ \text{and }R’&#x3D;\lbrace q’\mid(q,\sigma,q’)\in T,q\in R,\text{ and } g’(q’)\text{ is even.}\rbrace\newline<br>\hspace{1cm} \cdot \ F’&#x3D;\textsf{Lvlrks}\times\lbrace \emptyset\rbrace.\end{array}$</p>
 </blockquote>
-<p>Example of Composition by <code>Broadcast</code> synchronization. $(card &#x3D; \lbrace 1 \rbrace)$</p>
-<p><img src="/images/notes/uds/pv/1_2_composition.png"></p>
-<h2 id="Synchronization-Primitives"><a href="#Synchronization-Primitives" class="headerlink" title="Synchronization Primitives"></a>Synchronization Primitives</h2><p>In this course, there are 4 types of synchronization:<br><code>Pairwise Rendezvous</code>, <code>Broadcast</code>, <code>Asynchronous Rendezvous</code>, and <code>Lossy Broadcast</code>.</p>
-<h3 id="Pairwise-Rendezvous"><a href="#Pairwise-Rendezvous" class="headerlink" title="Pairwise Rendezvous"></a>Pairwise Rendezvous</h3><blockquote>
-<p><strong>Exactly ONE</strong> process take $out_a$ action, <strong>ONE</strong> process take $in_a$ action. $(card &#x3D; \lbrace 1 \rbrace)$</p>
+<h3 id="Explanation"><a href="#Explanation" class="headerlink" title="Explanation"></a>Explanation</h3><p>$Q’ &#x3D; \textsf{Lvlrks}\times\textsf{OnEvenPath}:$ all states contain their <code>level ranking</code> and set of all states that is tracked currently (states would be dropped if it leads to odd-ranked vertex).</p>
+<p>$I’:$ The initial state contains the initial <code>level ranking</code> ($\textsf{Lvlrks}$), and the set of all <code>even ranking</code> states ($R$).</p>
+<p>$T’:$ We have transitions $\textsf{NewEvenPaths}$ and $\textsf{ContinueEvenPaths}$. Both share some properties in common.</p>
+<ul>
+<li>all the states are <code>covered</code> by their successors,</li>
+<li>their successors only keep track on <strong>even ranking</strong> states,</li>
+<li>$\textsf{ContinueEvenPaths}$ requires that the current states must keep track on <strong>even ranking</strong> states already</li>
+</ul>
+<p>$F’:$ Accepting states are those has no infinite path that consists only of <code>even-ranked</code> vertices.(<code>odd ranking</code>).</p>
+<h3 id="Proof"><a href="#Proof" class="headerlink" title="Proof"></a>Proof</h3><p>Now we can try to verify the Lemma with our construction:</p>
+<blockquote>
+<p>$\textbf{Lemma 5.2. }\textit{The automaton of Construction 5.1 has an accepting run on input }\alpha\newline\textit{if and only if the run DAG of }\mathcal{A}\textit{ on }\alpha\textit{ has an odd ranking.}$</p>
 </blockquote>
-<p><img src="/images/notes/uds/pv/1_2_pairwise.png"></p>
-<h3 id="Broadcast"><a href="#Broadcast" class="headerlink" title="Broadcast"></a>Broadcast</h3><blockquote>
-<p><strong>ONE</strong> process take $out_a$ action, <strong>ALL</strong> process take $in_a$ action if they are able to $(card &#x3D; \mathbb{N}_0)$.</p>
+<p>The run of the automaton on the input word builds a potential ranking, level by level. Note that the level-by-level guessing of the ranking is the only source of non-determinism. But if the guess is indeed an <code>odd ranking</code>, then the automaton has a unique run.</p>
+<p>In the construction, we used <code>level rankings</code> to ensure the definition of <code>ranking</code> is satisified, so instead of verify whether it is <code>odd ranking</code>, we only need to verify that in the guessed ranking, there is no infinite path of even-ranked vertices.</p>
+<p>At any given point, the second component ($\textsf{OnEvenPath}&#x2F;R$) in the state of the constructed automaton tracks a “batch” of paths that traverse <strong>solely through even-ranked vertices</strong>. Paths that hit an <strong>odd-ranked vertex</strong> are dropped from the batch. The <strong>acceptance condition</strong> enforces that every batch that is followed must be eventually be <strong>emptied</strong>.</p>
+<blockquote>
+<p><em><strong>Odd ranking &#x3D; no infinite path of even-ranked vertices &#x3D; eventually every batch are emptied</strong></em></p>
 </blockquote>
-<p><img src="/images/notes/uds/pv/1_2_broadcast.png"></p>
-<h3 id="Asynchronous-Rendezvous"><a href="#Asynchronous-Rendezvous" class="headerlink" title="Asynchronous Rendezvous"></a>Asynchronous Rendezvous</h3><blockquote>
-<p><strong>ONE</strong> process take $out_a$ action, <strong>ZERO &#x2F; ONE</strong> process take $in_a$ action $(card &#x3D; {0, 1})$.</p>
-</blockquote>
-<p><img src="/images/notes/uds/pv/1_2_async.png"></p>
-<h3 id="Lossy-Broadcast"><a href="#Lossy-Broadcast" class="headerlink" title="Lossy Broadcast"></a>Lossy Broadcast</h3><blockquote>
-<p><strong>ONE</strong> process take $out_a$ action, <strong>ONE</strong> process take $in_a$ action $(card &#x3D; \mathbb{N}_0, I\text{ not necessarily maximal})$.</p>
-</blockquote>
-<p><img src="/images/notes/uds/pv/1_2_lossy.png"></p>
+<p>So we can rephrase the lemma as “The run is accepting if and only if <strong>eventually every batch are emptied</strong>“.</p>
+<h3 id="If-the-run-is-accepting-then-eventually-every-batch-are-emptied"><a href="#If-the-run-is-accepting-then-eventually-every-batch-are-emptied" class="headerlink" title="If the run is accepting, then eventually every batch are emptied"></a>If the run is accepting, then eventually every batch are emptied</h3><p>This condition is clearly necessary for the guessed ranking to be odd: if there is eventually a batch that is never emptied, this corresponds to an infinite path of <code>even-ranked</code> vertices in the run DAG, violating <strong>requirement 3 (The rank cannot increase upon traversing an edge)</strong>.</p>
+<p>Why? Because as long as we have one empty batch, the ranking of that batch will definitely be hihger than the those which are not empty (consider the definition of <code>rank</code> function and pruning), and any states will never have high rank than their successors.</p>
+<h3 id="If-eventually-every-batch-are-emptied-then-the-run-is-accepting"><a href="#If-eventually-every-batch-are-emptied-then-the-run-is-accepting" class="headerlink" title="If eventually every batch are emptied, then the run is accepting"></a>If eventually every batch are emptied, then the run is accepting</h3><p>Assume we have non accepting run that have emptied batch, which means there is an infinite path of <code>even-ranked</code> vertices in the run DAG.</p>
+<p>Now suppose this run has the batch-tracking set $\textsf{OnEvenPath}$ is emptied infinitely often. That means in the infinite path of <code>even-ranked</code> vertices there is an level $n$ so that $\textsf{OnEvenPath}$ is emptied at step $n$.</p>
+<p>Because this is an infinite path of even-ranked vertices, once $\textsf{OnEvenPath}$ is emptied at step $n$, the next transition will be $\textsf{NewEvenPath}$. Which means there is a successor in level $n+1$ that has an <code>even rank</code>.</p>
+<p>Since the path is infinite, subsequent transitions will be $\textsf{ContinueEvenPaths}$, and the even-rank vertices will be remained in the set of $\textsf{OnEvenPath}$. Which contradicts that the run have emptied batch. Therefore this non accepting run that have emptied batch do not exist.</p>
 <hr>
-<p>Next post: <a href=""></a></p>
-<p>Further Reading: <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Synchronization_(computer_science)">Synchronization</a>, <a target="_blank" rel="noopener" href="https://www7.in.tum.de/~esparza/Talks/ParamVerif.PDF">Parameterized Verification</a> by Javier Esparza.</p>
+<p>Next chapter: <a href="../agv6-1/">Linear-Time Temporal Logic (LTL)</a></p>
+<p>Further Reading: <a href=""></a></p>
 
       
        <hr><span style="font-style: italic;color: gray;"> Please cite the source for reprints, feel free to verify the sources cited in the article, and point out any errors or lack of clarity of expression. You can comment in the comments section below or email to GreenMeeple@yahoo.com </span>

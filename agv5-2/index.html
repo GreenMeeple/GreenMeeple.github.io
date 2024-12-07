@@ -144,7 +144,7 @@
     <li>
         <div class="all active" data-rel="All">All
             
-                <small>(49)</small>
+                <small>(50)</small>
             
         </div>
     </li>
@@ -246,7 +246,7 @@
         <div data-rel="Notes">
             <i class="fold iconfont icon-right"></i>
             Notes
-            <small>(17) </small>
+            <small>(18) </small>
         </div>
         
             <ul class="sub hide">
@@ -256,7 +256,7 @@
         <div data-rel="Notes&lt;---&gt;UdS">
             
             UdS
-            <small>(17) </small>
+            <small>(18) </small>
         </div>
         
     </li>
@@ -320,8 +320,8 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="49">
-<input type="hidden" id="yelog_site_word_count" value="21.9k">
+<input type="hidden" id="yelog_site_posts_number" value="50">
+<input type="hidden" id="yelog_site_word_count" value="23.3k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -458,6 +458,15 @@
            data-author="" >
             <span class="post-title" title="3-hexo Shortcut">3-hexo Shortcut</span>
             <span class="post-date" title="2024-10-01 11:11:11">2024/10/01</span>
+        </a>
+        
+        
+        <a  class="All Notes UdS "
+           href="/agv5-3/"
+           data-tag="AGV"
+           data-author="" >
+            <span class="post-title" title="AGV 5.3 -- Complement Büchi Automaton with Odd Ranking">AGV 5.3 -- Complement Büchi Automaton with Odd Ranking</span>
+            <span class="post-date" title="2024-11-22 16:36:01">2024/11/22</span>
         </a>
         
         
@@ -939,7 +948,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-12-06 03:13:48'>2024-11-21 01:19</time>
+            Created At : <time class="date" title='Updated At: 2024-12-07 00:19:19'>2024-11-21 01:19</time>
         
     </div>
     <div class="article-meta">
@@ -974,7 +983,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Ranking"><span class="toc-text">Ranking</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Odd-Ranking"><span class="toc-text">Odd Ranking</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Proof"><span class="toc-text">Proof</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Requirement-1-All-vertices-are-indeed-pruned-away-latest-by-step-2-Q"><span class="toc-text">Requirement 1: All vertices are indeed pruned away, latest by step $2|Q|$</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Requirement-2-Accepting-vertices-must-have-an-even-rank"><span class="toc-text">Requirement 2: Accepting vertices must have an even rank</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Requirement-3-The-rank-cannot-increase-upon-traversing-an-edge"><span class="toc-text">Requirement 3: The rank cannot increase upon traversing an edge</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Requirement-4-There-is-no-infinite-path-of-only-even-ranked-vertices"><span class="toc-text">Requirement 4: There is no infinite path of only even-ranked vertices</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Conclusion"><span class="toc-text">Conclusion</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Ranking"><span class="toc-text">Ranking</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#From-Ranking-to-Rank"><span class="toc-text">From Ranking to Rank</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#From-Rank-to-Odd-Ranking"><span class="toc-text">From Rank to Odd Ranking</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Proof"><span class="toc-text">Proof</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Requirement-1-All-vertices-are-indeed-pruned-away-latest-by-step-2-Q"><span class="toc-text">Requirement 1: All vertices are indeed pruned away, latest by step $2|Q|$</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Requirement-2-Accepting-vertices-must-have-an-even-rank"><span class="toc-text">Requirement 2: Accepting vertices must have an even rank</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Requirement-3-The-rank-cannot-increase-upon-traversing-an-edge"><span class="toc-text">Requirement 3: The rank cannot increase upon traversing an edge</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Requirement-4-There-is-no-infinite-path-of-only-even-ranked-vertices"><span class="toc-text">Requirement 4: There is no infinite path of only even-ranked vertices</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Conclusion"><span class="toc-text">Conclusion</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -1006,18 +1015,18 @@
 <li>Verticies will never have lower rank than their successors.</li>
 </ol>
 <p>Most importantly, it introduced a new concept: <strong>Odd Ranking</strong>. Meaning that the run of the DAG is rejected.</p>
-<p>Now, let’s consider the function $rank:V\rightarrow\lbrace 0,\dots,2|Q|\rbrace$, where</p>
+<h2 id="From-Ranking-to-Rank"><a href="#From-Ranking-to-Rank" class="headerlink" title="From Ranking to Rank"></a>From Ranking to Rank</h2><p>Now, let’s consider the function $rank:V\rightarrow\lbrace 0,\dots,2|Q|\rbrace$, where</p>
 <ul>
 <li>$rank(q,i)&#x3D;2j$ iff $(q,i)$ is <strong>endangered</strong> in $G_{2j}$, and</li>
 <li>$rank(q,i)&#x3D;2j+1$ iff $(q,i)$ is <strong>safe</strong> in $G_{2j+1}$.</li>
 </ul>
 <p><img src="/../images/notes/uds/agv/5_2_dag.png"></p>
 <p>By tracking our pruning procedure, we can easily identify their rank now.<br>Blue verticies that remove in $G_1$ are <strong>safe</strong>, thus their rank are 1, and so as orange (2), green (3) and red (4).</p>
-<h2 id="Odd-Ranking"><a href="#Odd-Ranking" class="headerlink" title="Odd Ranking"></a>Odd Ranking</h2><p>Now back to odd ranking, by our new function $rank$, we can prove the following lemma.</p>
+<h2 id="From-Rank-to-Odd-Ranking"><a href="#From-Rank-to-Odd-Ranking" class="headerlink" title="From Rank to Odd Ranking"></a>From Rank to Odd Ranking</h2><p>Now back to odd ranking, by our new function $rank$, we can prove the following lemma.</p>
 <blockquote>
-<p>$\textbf{Lemma 5.1. }\newline\text{A Büchi automaton }\mathcal{A}\text{ reject the word }\alpha\text{ iff the run DAG of }\mathcal{A}\text{ on }\alpha\text{ has an odd ranking}$</p>
+<p>$\textbf{Lemma 5.1. }\newline\textit{A Büchi automaton }\mathcal{A}\textit{ reject the word }\alpha\textit{ iff the run DAG of }\mathcal{A}\textit{ on }\alpha\textit{ has an odd ranking}$</p>
 </blockquote>
-<h2 id="Proof"><a href="#Proof" class="headerlink" title="Proof"></a>Proof</h2><blockquote>
+<h3 id="Proof"><a href="#Proof" class="headerlink" title="Proof"></a>Proof</h3><blockquote>
 <p><strong>If the run DAG of $\mathcal{A}$ on $\alpha$ has an odd ranking, then $\alpha$ is rejected</strong></p>
 </blockquote>
 <p>By the definition above, we know that graph with odd ranking has <strong>no infinite path that settles on only even rank $f(v)&#x3D;j$</strong>. Which means:</p>
