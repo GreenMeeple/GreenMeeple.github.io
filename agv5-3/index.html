@@ -6,18 +6,18 @@
   <meta name="keywords" content=" AGV ">
   <meta name="description" content="AGV 5.3 -- Complement Büchi Automaton with Odd Ranking | GreenMeeple">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="Personal Info.Chun Ngai Li (Alex), M.Sc. Cybersecurity in Saarland University,B.Eng Information Engineering in CUHK. Recent WorksA C&#x2F;C++ programmer. Also working on Backend &amp; Python developing.Cur">
 <meta property="og:type" content="website">
-<meta property="og:title" content="GreenMeeple cannot find what you are looking for...">
-<meta property="og:url" content="https://greenmeeple.github.io/404.html">
+<meta property="og:title" content="About Me">
+<meta property="og:url" content="https://greenmeeple.github.io/about/index.html">
 <meta property="og:site_name" content="GreenMeeple">
+<meta property="og:description" content="Personal Info.Chun Ngai Li (Alex), M.Sc. Cybersecurity in Saarland University,B.Eng Information Engineering in CUHK. Recent WorksA C&#x2F;C++ programmer. Also working on Backend &amp; Python developing.Cur">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://greenmeeple.github.io/images/404.png">
-<meta property="article:published_time" content="2024-10-19T02:25:07.060Z">
-<meta property="article:modified_time" content="2024-10-19T02:25:07.060Z">
+<meta property="article:published_time" content="2024-10-07T02:34:03.000Z">
+<meta property="article:modified_time" content="2024-10-07T15:15:21.412Z">
 <meta property="article:author" content="Alex Li">
 <meta property="article:tag" content="Coding, Boardgames, Language learning.">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://greenmeeple.github.io/images/404.png">
 
 
 <link rel="icon" href="/img/favicon.png">
@@ -144,7 +144,7 @@
     <li>
         <div class="all active" data-rel="All">All
             
-                <small>(50)</small>
+                <small>(51)</small>
             
         </div>
     </li>
@@ -246,7 +246,7 @@
         <div data-rel="Notes">
             <i class="fold iconfont icon-right"></i>
             Notes
-            <small>(18) </small>
+            <small>(19) </small>
         </div>
         
             <ul class="sub hide">
@@ -256,7 +256,7 @@
         <div data-rel="Notes&lt;---&gt;UdS">
             
             UdS
-            <small>(18) </small>
+            <small>(19) </small>
         </div>
         
     </li>
@@ -320,8 +320,8 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="50">
-<input type="hidden" id="yelog_site_word_count" value="23.3k">
+<input type="hidden" id="yelog_site_posts_number" value="51">
+<input type="hidden" id="yelog_site_word_count" value="24.6k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -458,6 +458,15 @@
            data-author="" >
             <span class="post-title" title="3-hexo Shortcut">3-hexo Shortcut</span>
             <span class="post-date" title="2024-10-01 11:11:11">2024/10/01</span>
+        </a>
+        
+        
+        <a  class="All Notes UdS "
+           href="/agv6-1/"
+           data-tag="AGV"
+           data-author="" >
+            <span class="post-title" title="AGV 6.1 -- Linear-Time Temporal Logic (LTL)">AGV 6.1 -- Linear-Time Temporal Logic (LTL)</span>
+            <span class="post-date" title="2024-11-23 13:40:02">2024/11/23</span>
         </a>
         
         
@@ -948,7 +957,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-12-07 01:37:17'>2024-11-22 16:36</time>
+            Created At : <time class="date" title='Updated At: 2024-12-07 20:26:09'>2024-11-22 16:36</time>
         
     </div>
     <div class="article-meta">
@@ -1006,7 +1015,7 @@
 <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>In <a href="../agv4-2/">section 4.2</a>, we have shown the complementation construction for <strong>deterministic Büchi Automata</strong>.</p>
 <p>Now, by using DAG we can construct complement automaton of any Büchi Automata, with the help of the definition of <code>odd ranking</code> and the new function <strong>Level Ranking</strong>.</p>
 <h2 id="Level-Ranking"><a href="#Level-Ranking" class="headerlink" title="Level Ranking"></a>Level Ranking</h2><blockquote>
-<p>$\textbf{Definition 5.3. }\text{(Level Ranking). Consider a Büchi Automaton }\mathcal{A}&#x3D;(\Sigma,Q,I,T,\small\text{BÜCHI}\normalsize(F)).\newline\text{A level ranking }\ell\text{ is a pair }(S,g)\text{ such that:}$<br>$\begin{array}{l}\hspace{1cm} \cdot \ S\subseteq Q,\newline\hspace{1cm} \cdot \ g:S\rightarrow\lbrace 0,\dots,2|Q|\rbrace\text{ with }g(q)\text{ necessarily even if }q\in F.\end{array}\newline \ \newline\text{We also denote: }$<br>$\begin{array}{l}\hspace{1cm} \cdot \ \textsf{Lvlrks}&#x3D;\text{the (finite) set of level ranks, and }\newline\hspace{1cm} \cdot \ \textsf{Initrks}&#x3D;\text{the set of level ranks s.t. }S&#x3D;I\end{array}\newline \ \newline\hspace{1cm}\text{We say that a level ranking }\ell’\text{, given by }(S’,g’)\text{ cover }\ell\text{, given by }(S,g)\text{ for }\sigma\in\Sigma,\newline\text{if }S’&#x3D;\lbrace q’\mid(q,\sigma,q’)\in T\rbrace\text{ and for all }q\in S,q’\in S’\text{ with }(q,\sigma,q’)\in T\text{, it holds that } g’(q’)\leq g(q).$</p>
+<p>$\textbf{Definition 5.3. }\text{(Level Ranking). Consider a Büchi Automaton }\mathcal{A}&#x3D;(\Sigma,Q,I,T,\small\text{BÜCHI}\normalsize(F)).\newline\text{A level ranking }\ell\text{ is a pair }(S,g)\text{ such that:}$<br>$\begin{array}{l}<br>\hspace{1cm} \cdot \ S\subseteq Q,\newline<br>\hspace{1cm} \cdot \ g:S\rightarrow\lbrace 0,\dots,2|Q|\rbrace\text{ with }g(q)\text{ necessarily even if }q\in F.\end{array}\newline \ \newline\text{We also denote: }$<br>$\begin{array}{lll}<br>\hspace{1cm} \cdot \ \textsf{Lvlrks}&amp;&#x3D;&amp;\text{the (finite) set of level ranks, and }\newline<br>\hspace{1cm} \cdot \ \textsf{Initrks}&amp;&#x3D;&amp;\text{the set of level ranks s.t. }S&#x3D;I\end{array}\newline \ \newline<br>\hspace{1cm}\text{We say that a level ranking }\ell’\text{, given by }(S’,g’)\text{ cover }\ell\text{, given by }(S,g)\text{ for }\sigma\in\Sigma,\newline\text{if }S’&#x3D;\lbrace q’\mid(q,\sigma,q’)\in T\rbrace\text{ and for all }q\in S,q’\in S’\text{ with }(q,\sigma,q’)\in T\text{, it holds that } g’(q’)\leq g(q).$</p>
 </blockquote>
 <p>Here, the <code>level ranking</code> refers to a pair that contains set of states that share the same ranking.</p>
 <h3 id="ell’-covers-ell"><a href="#ell’-covers-ell" class="headerlink" title="$\ell’$ covers $\ell$ ?"></a>$\ell’$ covers $\ell$ ?</h3><p>The last part of the definition states that one level ranking is <strong>covering</strong> the other if the following satisfied:</p>
@@ -1021,7 +1030,7 @@
 <p>To achieve this, we construct the <code>odd ranking</code>, level by level, by assigning ranks to vertices.<br>The definition of <code>level ranks</code> and <code>covering</code> for a letter ensure that the requirements of a ranking are satisfied.</p>
 <p>Through the acceptance condition, we ensure that the ranking is <code>odd</code>, i.e., there is no infinite path that consists only of even-ranked vertices.</p>
 <blockquote>
-<p>$\textbf{Construction 5.1. }\text{Given a Büchi Automaton }\mathcal{A}&#x3D;(\Sigma,Q,I,T,\small\text{BÜCHI} \normalsize(F))\text{ that recognizes}\newline\text{the language }L\text{, we construct a Büchi Automaton}$ $$\newline \mathcal{A’}&#x3D;(\Sigma,\textsf{Lvlrks}\times\textsf{OnEvenPath},I’,T’,\small\text{BÜCHI}\normalsize(F))$$ $\text{that recognizes the language }\Sigma^\omega\setminus L\text{ as follows.}$<br>$\begin{array}{l}<br>\newline<br>\hspace{1cm} \cdot \ \textsf{OnEvenPath}&#x3D;2^Q,\text{tracking states in the current level,}\newline<br>\hspace{1cm} \cdot \ I’&#x3D;\lbrace (\ell,R)\mid\ell\in\textsf{InitRks, }\ell\text{ is given by }(S,g)\text{, and }R&#x3D;\lbrace q\mid g(q)\text{ is even}\rbrace\rbrace\newline<br>\hspace{1cm} \cdot \ T’&#x3D;\textsf{NewEvenPaths }\cup\textsf{ ContinueEvenPaths}\text{, where}\newline<br>\hspace{2.4cm} \ \textsf{NewEvenPaths}&#x3D;\lbrace ((\ell,\emptyset),\sigma,(\ell’,R’))\mid\ell’\text{ covers }\ell\text{ for }\sigma,\ell’\text{ is given by }(S’,g’),\newline\hspace{6.4cm} \ \text{and }R’&#x3D;\lbrace q’\mid g’(q’)\text{ is even.}\rbrace\newline<br>\hspace{1.4cm} \ \textsf{ContinueEvenPaths}&#x3D;\lbrace ((\ell,R),\sigma,(\ell’,R’))\mid R\neq\emptyset,\ell’\text{ covers }\ell\text{ for }\sigma,\ell’\text{ is given by }(S’,g’),\newline\hspace{6.4cm} \ \text{and }R’&#x3D;\lbrace q’\mid(q,\sigma,q’)\in T,q\in R,\text{ and } g’(q’)\text{ is even.}\rbrace\newline<br>\hspace{1cm} \cdot \ F’&#x3D;\textsf{Lvlrks}\times\lbrace \emptyset\rbrace.\end{array}$</p>
+<p>$\textbf{Construction 5.1. }\text{Given a Büchi Automaton }\mathcal{A}&#x3D;(\Sigma,Q,I,T,\small\text{BÜCHI} \normalsize(F))\text{ that recognizes}\newline\text{the language }L\text{, we construct a Büchi Automaton}$ $$\newline \mathcal{A’}&#x3D;(\Sigma,\textsf{Lvlrks}\times\textsf{OnEvenPath},I’,T’,\small\text{BÜCHI}\normalsize(F))$$ $\text{that recognizes the language }\Sigma^\omega\setminus L\text{ as follows.}$<br>$\begin{array}{lrl}<br>\hspace{0.5cm} \cdot &amp;\textsf{OnEvenPath} &#x3D; &amp; 2^Q, \text{tracking states in the current level,} \newline<br>\hspace{0.5cm} \cdot &amp;I’&#x3D; &amp; \lbrace (\ell,R) \mid \ell \in \textsf{InitRks, } \ell \text{ is given by } (S,g) \text{, and } R &#x3D; \lbrace q \mid g(q) \text{ is even} \rbrace \rbrace \newline<br>\hspace{0.5cm} \cdot &amp;T’&#x3D; &amp; \textsf{NewEvenPaths} \cup \textsf{ContinueEvenPaths}, \text{ where} \newline<br>\hspace{0.5cm} &amp;&amp; \hspace{0.9cm}\textsf{NewEvenPaths}&#x3D;\lbrace ((\ell,\emptyset),\sigma,(\ell’,R’)) \mid \ell’ \text{ covers } \ell \text{ for } \sigma, \newline<br>\hspace{0.5cm} &amp;&amp; \hspace{4.8cm} \ell’ \text{ is given by } (S’,g’), \newline<br>\hspace{0.5cm} &amp;&amp; \hspace{4.8cm} \text{and } R’ &#x3D; \lbrace q’ \mid g’(q’) \text{ is even} \rbrace \rbrace \newline<br>\hspace{0.5cm} &amp;&amp; \textsf{ContinueEvenPaths} &#x3D; \lbrace ((\ell,R),\sigma,(\ell’,R’)) \mid R \neq \emptyset, \ell’ \text{ covers } \ell \text{ for } \sigma,\newline<br>\hspace{0.5cm} &amp;&amp; \hspace{4.8cm} \ell’ \text{ is given by } (S’,g’)\text{, and}\newline<br>\hspace{0.5cm} &amp;&amp; \hspace{4.8cm} R’ &#x3D; \lbrace q’ \mid (q,\sigma,q’) \in T, q \in R, \text{ and } g’(q’) \text{ is even} \rbrace \rbrace \newline<br>\hspace{0.5cm} \cdot &amp;F’ &#x3D; &amp; \textsf{Lvlrks} \times \lbrace \emptyset \rbrace.<br>\end{array}$</p>
 </blockquote>
 <h3 id="Explanation"><a href="#Explanation" class="headerlink" title="Explanation"></a>Explanation</h3><p>$Q’ &#x3D; \textsf{Lvlrks}\times\textsf{OnEvenPath}:$ all states contain their <code>level ranking</code> and set of all states that is tracked currently (states would be dropped if it leads to odd-ranked vertex).</p>
 <p>$I’:$ The initial state contains the initial <code>level ranking</code> ($\textsf{Lvlrks}$), and the set of all <code>even ranking</code> states ($R$).</p>

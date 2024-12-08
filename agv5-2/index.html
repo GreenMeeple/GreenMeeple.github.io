@@ -6,18 +6,18 @@
   <meta name="keywords" content=" AGV ">
   <meta name="description" content="AGV 5.2 -- Ranking (DAG) | GreenMeeple">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="Personal Info.Chun Ngai Li (Alex), M.Sc. Cybersecurity in Saarland University,B.Eng Information Engineering in CUHK. Recent WorksA C&#x2F;C++ programmer. Also working on Backend &amp; Python developing.Cur">
 <meta property="og:type" content="website">
-<meta property="og:title" content="GreenMeeple cannot find what you are looking for...">
-<meta property="og:url" content="https://greenmeeple.github.io/404.html">
+<meta property="og:title" content="About Me">
+<meta property="og:url" content="https://greenmeeple.github.io/about/index.html">
 <meta property="og:site_name" content="GreenMeeple">
+<meta property="og:description" content="Personal Info.Chun Ngai Li (Alex), M.Sc. Cybersecurity in Saarland University,B.Eng Information Engineering in CUHK. Recent WorksA C&#x2F;C++ programmer. Also working on Backend &amp; Python developing.Cur">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://greenmeeple.github.io/images/404.png">
-<meta property="article:published_time" content="2024-10-19T02:25:07.060Z">
-<meta property="article:modified_time" content="2024-10-19T02:25:07.060Z">
+<meta property="article:published_time" content="2024-10-07T02:34:03.000Z">
+<meta property="article:modified_time" content="2024-10-07T15:15:21.412Z">
 <meta property="article:author" content="Alex Li">
 <meta property="article:tag" content="Coding, Boardgames, Language learning.">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://greenmeeple.github.io/images/404.png">
 
 
 <link rel="icon" href="/img/favicon.png">
@@ -144,7 +144,7 @@
     <li>
         <div class="all active" data-rel="All">All
             
-                <small>(50)</small>
+                <small>(51)</small>
             
         </div>
     </li>
@@ -246,7 +246,7 @@
         <div data-rel="Notes">
             <i class="fold iconfont icon-right"></i>
             Notes
-            <small>(18) </small>
+            <small>(19) </small>
         </div>
         
             <ul class="sub hide">
@@ -256,7 +256,7 @@
         <div data-rel="Notes&lt;---&gt;UdS">
             
             UdS
-            <small>(18) </small>
+            <small>(19) </small>
         </div>
         
     </li>
@@ -320,8 +320,8 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="50">
-<input type="hidden" id="yelog_site_word_count" value="23.3k">
+<input type="hidden" id="yelog_site_posts_number" value="51">
+<input type="hidden" id="yelog_site_word_count" value="24.6k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -458,6 +458,15 @@
            data-author="" >
             <span class="post-title" title="3-hexo Shortcut">3-hexo Shortcut</span>
             <span class="post-date" title="2024-10-01 11:11:11">2024/10/01</span>
+        </a>
+        
+        
+        <a  class="All Notes UdS "
+           href="/agv6-1/"
+           data-tag="AGV"
+           data-author="" >
+            <span class="post-title" title="AGV 6.1 -- Linear-Time Temporal Logic (LTL)">AGV 6.1 -- Linear-Time Temporal Logic (LTL)</span>
+            <span class="post-date" title="2024-11-23 13:40:02">2024/11/23</span>
         </a>
         
         
@@ -948,12 +957,12 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-12-07 00:19:19'>2024-11-21 01:19</time>
+            Created At : <time class="date" title='Updated At: 2024-12-07 13:37:57'>2024-11-21 01:19</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:1.2k</span>
+        <span>Count:1.3k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1045,17 +1054,29 @@
 <li>The rank cannot increase upon traversing an edge.</li>
 <li>There is no infinite path that consists only of vertices of even rank.</li>
 </ol>
-<h3 id="Requirement-1-All-vertices-are-indeed-pruned-away-latest-by-step-2-Q"><a href="#Requirement-1-All-vertices-are-indeed-pruned-away-latest-by-step-2-Q" class="headerlink" title="Requirement 1: All vertices are indeed pruned away, latest by step $2|Q|$"></a>Requirement 1: All vertices are indeed pruned away, latest by step $2|Q|$</h3><p>Here, we define the <strong>width</strong> of a level $j$ in a graph $G_i$ as the number of vertices of the form $(q,j)$ in $G_i$.<br>(For the above example, $G_0$ has width &#x3D; 3 in level 3, 4, 5, …, while in $G_1$ it becomes 2)</p>
-<p>We will now analyze the $j$-th iteration of the pruning, which begins with the graph $G_{2j}$.<br>Step $2j$ removes all <code>endangered</code> vertices from $G_{2j}$ to obtain $G_{2j+1}$. $G_{2j+1}$ either become empty, or still has infinitely many vertices (become vertices that not <code>endangered</code> have some infinite path)</p>
-<p>If $G_{2j+1}$ has infinitely many vertices, then there must exist a <code>safe</code> vertex in $G_{2j+1}$. Otherwise each vertex is either accepting, or has a path to an accepting vertex. Since our run is not accepted, this is contradicting.</p>
-<p>Consider a <code>safe</code> vertex $(q,m)$ in $G_{2j+1}$ which has the smallest $m$ (closest to the beginning). All descendants of this vertex in $G_{2j+1}$ are also safe. (see the blue verticies in the above example) These <code>safe</code> vertices will be pruned away in step $2j+1$.</p>
-<p>Observe the affect towards the width after these deletions:</p>
+<h3 id="Requirement-1-All-vertices-are-indeed-pruned-away-latest-by-step-2-Q"><a href="#Requirement-1-All-vertices-are-indeed-pruned-away-latest-by-step-2-Q" class="headerlink" title="Requirement 1: All vertices are indeed pruned away, latest by step $2|Q|$"></a>Requirement 1: All vertices are indeed pruned away, latest by step $2|Q|$</h3><p>Here, we define the <strong>width</strong> of a level $j$ in a graph $G_i$ as the number of vertices of the form $(q,j)$ in $G_i$.<br><img src="/../images/notes/uds/agv/5_2_width.png"></p>
+<p>Assume we are in step $2j$, it removes all <code>endangered</code> vertices from $G_{2j}$. Then how would $G_{2j+1}$ become?</p>
+<ol>
+<li>become empty (all vertices in $G_{2j}$ are <code>endangered</code>)</li>
+<li>still has infinitely many vertices<br>(by definition, vertices that not <code>endangered</code> always have some infinite path, also because $\infty-n&#x3D;\infty$)</li>
+</ol>
+<p>In scenario <strong>2</strong>, since our <code>premise</code> is that the word is <strong>rejected</strong>, there must exist a <code>safe</code> vertex in $G_{2j+1}$. If there’s no <code>safe</code> vertex, then those vertices are either accepting, or has a path to accepting vertex, which contradicts to our premise.</p>
+<blockquote>
+<p><em><strong>a) Each iteration there must be at least one <code>safe</code> vertex being removed</strong></em></p>
+</blockquote>
+<p>Among all the <code>safe</code> vertices in $G_{2j+1}$, consider the vertex $(q,m)$ which has the smallest $m$ (closest to the beginning). All descendants of this vertex in $G_{2j+1}$ are also <code>safe</code> (because <code>safe</code> refers to the whole path).</p>
+<p>Therefore, these <code>safe</code> vertices will be pruned away in step $2j+1$. Observe the affect towards the width after these deletions:</p>
 <ul>
 <li>At the beginning of iteration $0$, each level has width at most $|Q|$ (max. no. of states).</li>
-<li>In every iteration $j$, the widths of all levels $i\geq m$ decrease by at least 1.<br>(because we at least removed one vertex in m, then all its descendants in $i\geq m$)</li>
+<li>In every iteration $j$, the widths of all levels $i\geq m$ decrease by at least 1.<br>(because vertex $(q,m)$ and all its descendants in $i\geq m$ are removed)</li>
 </ul>
-<p>This implies for some $m$ after $|Q|$ iterations, the width of all levels $i\geq m$ will decrease by $|Q|$, which becomes $0$.<br>Therefore, we know $G_{2|Q|}$ must be a finite graph, which means all vertices in $G_{2|Q|}$ are <code>endangered</code><br>($2|Q|$ because <code>safe</code> and <code>endangered</code> removal is alternating). Then in step $2|Q|$ will prune all vertices away.</p>
-<h3 id="Requirement-2-Accepting-vertices-must-have-an-even-rank"><a href="#Requirement-2-Accepting-vertices-must-have-an-even-rank" class="headerlink" title="Requirement 2: Accepting vertices must have an even rank"></a>Requirement 2: Accepting vertices must have an even rank</h3><p>Accepting vertices cannot be pruned away as <code>safe</code>. Since all vertices of the run DAG are pruned away, they<br>must have been pruned away as <code>endangered</code>, and therefore get an even rank.</p>
+<blockquote>
+<p><em><strong>b) If one <code>safe</code> vertex is removed, all its descendants will also be removed</strong></em></p>
+</blockquote>
+<p>By <em><strong>a)</strong></em> and <em><strong>b)</strong></em>, we can ensure that after $|Q|$ iterations of <code>safe</code> vertices removal there must be some level $m$ contains no more vertices, which means now the graph terminate in $m$ and it is a <strong>finite graph</strong>.</p>
+<p>By including the iteration of <code>endangered</code> vertices, we can conclude that in step $2|Q|$, $G_{2|Q|}$ must be a finite graph, all vertices are <code>endangered</code>, thus it will prune all vertices away.</p>
+<h3 id="Requirement-2-Accepting-vertices-must-have-an-even-rank"><a href="#Requirement-2-Accepting-vertices-must-have-an-even-rank" class="headerlink" title="Requirement 2: Accepting vertices must have an even rank"></a>Requirement 2: Accepting vertices must have an even rank</h3><p>Since accepting vertices are not <code>safe</code>, and our premise it that the word is rejected. That means the path contains accepting verticeis can only be <strong>finite</strong>, which means they are always <code>endangered</code>.</p>
+<p>In our rank function, <code>endangered</code> vertices have even rank and thus accepting vertices always have even rank.</p>
 <h3 id="Requirement-3-The-rank-cannot-increase-upon-traversing-an-edge"><a href="#Requirement-3-The-rank-cannot-increase-upon-traversing-an-edge" class="headerlink" title="Requirement 3: The rank cannot increase upon traversing an edge"></a>Requirement 3: The rank cannot increase upon traversing an edge</h3><p>Suppose there is a $(q’,i+1)$ that is pruned later than $(q,i)$. Consider the step $j$ at which $(q,i)$ is pruned. The graph $G_j$ would have contained both vertices, along with their edge.</p>
 <p>If $j$ is even, it means that $(q,i)$ has even rank, and <code>endangered</code> in $G_j$ , and hence so must be its successor $(q’,i+1)$, meaning that it is pruned at step $j$.</p>
 <p>If $j$ is odd, then $(q,i)$ was established to be <code>safe</code> in Gj , implying the safety of its successor too. In both cases, the pruning of $(q’,i+1)$ in the same step is inevitable.</p>

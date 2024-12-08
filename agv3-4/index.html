@@ -6,18 +6,18 @@
   <meta name="keywords" content=" AGV ">
   <meta name="description" content="AGV 3.4 -- Infinite concatenation and Concatenation of regular Langauge and Büchi-recognizable Language | GreenMeeple">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="Personal Info.Chun Ngai Li (Alex), M.Sc. Cybersecurity in Saarland University,B.Eng Information Engineering in CUHK. Recent WorksA C&#x2F;C++ programmer. Also working on Backend &amp; Python developing.Cur">
 <meta property="og:type" content="website">
-<meta property="og:title" content="GreenMeeple cannot find what you are looking for...">
-<meta property="og:url" content="https://greenmeeple.github.io/404.html">
+<meta property="og:title" content="About Me">
+<meta property="og:url" content="https://greenmeeple.github.io/about/index.html">
 <meta property="og:site_name" content="GreenMeeple">
+<meta property="og:description" content="Personal Info.Chun Ngai Li (Alex), M.Sc. Cybersecurity in Saarland University,B.Eng Information Engineering in CUHK. Recent WorksA C&#x2F;C++ programmer. Also working on Backend &amp; Python developing.Cur">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://greenmeeple.github.io/images/404.png">
-<meta property="article:published_time" content="2024-10-19T02:25:07.060Z">
-<meta property="article:modified_time" content="2024-10-19T02:25:07.060Z">
+<meta property="article:published_time" content="2024-10-07T02:34:03.000Z">
+<meta property="article:modified_time" content="2024-10-07T15:15:21.412Z">
 <meta property="article:author" content="Alex Li">
 <meta property="article:tag" content="Coding, Boardgames, Language learning.">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://greenmeeple.github.io/images/404.png">
 
 
 <link rel="icon" href="/img/favicon.png">
@@ -144,7 +144,7 @@
     <li>
         <div class="all active" data-rel="All">All
             
-                <small>(50)</small>
+                <small>(51)</small>
             
         </div>
     </li>
@@ -246,7 +246,7 @@
         <div data-rel="Notes">
             <i class="fold iconfont icon-right"></i>
             Notes
-            <small>(18) </small>
+            <small>(19) </small>
         </div>
         
             <ul class="sub hide">
@@ -256,7 +256,7 @@
         <div data-rel="Notes&lt;---&gt;UdS">
             
             UdS
-            <small>(18) </small>
+            <small>(19) </small>
         </div>
         
     </li>
@@ -320,8 +320,8 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="50">
-<input type="hidden" id="yelog_site_word_count" value="23.3k">
+<input type="hidden" id="yelog_site_posts_number" value="51">
+<input type="hidden" id="yelog_site_word_count" value="24.6k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -458,6 +458,15 @@
            data-author="" >
             <span class="post-title" title="3-hexo Shortcut">3-hexo Shortcut</span>
             <span class="post-date" title="2024-10-01 11:11:11">2024/10/01</span>
+        </a>
+        
+        
+        <a  class="All Notes UdS "
+           href="/agv6-1/"
+           data-tag="AGV"
+           data-author="" >
+            <span class="post-title" title="AGV 6.1 -- Linear-Time Temporal Logic (LTL)">AGV 6.1 -- Linear-Time Temporal Logic (LTL)</span>
+            <span class="post-date" title="2024-11-23 13:40:02">2024/11/23</span>
         </a>
         
         
@@ -948,7 +957,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-11-14 23:28:11'>2024-11-16 20:36</time>
+            Created At : <time class="date" title='Updated At: 2024-12-07 19:54:18'>2024-11-16 20:36</time>
         
     </div>
     <div class="article-meta">
@@ -1005,7 +1014,7 @@
 </blockquote>
 <p>In this section, we continue the proof of the <strong>closure properties</strong> of the Büchi-recognizable languages.</p>
 <h2 id="Concatenation-of-regular-Langauge-and-Buchi-recognizable-Language"><a href="#Concatenation-of-regular-Langauge-and-Buchi-recognizable-Language" class="headerlink" title="Concatenation of regular Langauge and Büchi-recognizable Language"></a>Concatenation of regular Langauge and Büchi-recognizable Language</h2><blockquote>
-<p>$\textbf{Construction 3.3. } \text{Let }\mathcal{A}_1&#x3D;(\Sigma,Q_1,I_1,T_1,F_1)\text{ be an automaton over finite words that}\newline\text{recognizes the languge }L_1\text{, and let }\mathcal{A}_2 &#x3D; (\Sigma,Q_2,I_2,T_2,\small\text{BÜCHI}\normalsize (F_2))\text{ be a Büchi automaton}\newline\text{over the same alphabet that recognizes }L_2.\text{ We construct a Büchi autotmaton }\newline\mathcal{A’}&#x3D;(\Sigma,Q’,I’,T’,\small\text{BÜCHI}\normalsize (F_2))\text{ with }\mathcal{L}(\mathcal{A’})&#x3D;L_1\cdot L_2\text{ as follows:}$<br>$\begin{array}{l}<br>\hspace{1cm} \cdot \ Q’&#x3D;Q_1\cup Q_2 \hspace{1cm}(\text{w.l.o.g we assume }Q_1\cap Q_2&#x3D;\emptyset)\newline<br>\hspace{1cm} \cdot \ I’&#x3D;\biggl\lbrace \begin{array}{l}I_1 \hspace{2cm}\text{if }I_1\cap F_1&#x3D;\emptyset\newline<br>I_1\cup I_2 \hspace{1cm}\text{otherwise}\end{array} \newline<br>\hspace{1cm} \cdot \ T’&#x3D;T_1\cup T_2\cup\lbrace (q,\sigma,q’)\mid(q,\sigma,f)\in T_1,f\in F_1,q’\in I_2\rbrace \newline<br>\end{array}$</p>
+<p>$\textbf{Construction 3.3. } \text{Let }\mathcal{A}_1&#x3D;(\Sigma,Q_1,I_1,T_1,F_1)\text{ be an automaton over finite words that}\newline\text{recognizes the languge }L_1\text{, and let }\mathcal{A}_2 &#x3D; (\Sigma,Q_2,I_2,T_2,\small\text{BÜCHI}\normalsize (F_2))\text{ be a Büchi automaton}\newline\text{over the same alphabet that recognizes }L_2.\text{ We construct a Büchi autotmaton }\newline\mathcal{A’}&#x3D;(\Sigma,Q’,I’,T’,\small\text{BÜCHI}\normalsize (F_2))\text{ with }\mathcal{L}(\mathcal{A’})&#x3D;L_1\cdot L_2\text{ as follows:}$<br>$\begin{array}{lrll}<br>\hspace{1cm} \cdot &amp;Q’&amp;&#x3D;&amp;Q_1\cup Q_2 \hspace{0.7cm}(\text{w.l.o.g we assume }Q_1\cap Q_2&#x3D;\emptyset)\newline<br>\hspace{1cm} \cdot &amp;I’&amp;&#x3D;&amp;\biggl\lbrace \begin{array}{ll}I_1 &amp; \ \text{if }I_1\cap F_1&#x3D;\emptyset\newline<br>I_1\cup I_2 &amp; \ \text{otherwise}\end{array} \newline<br>\hspace{1cm} \cdot &amp;T’&amp;&#x3D;&amp;T_1\cup T_2\cup\lbrace (q,\sigma,q’)\mid(q,\sigma,f)\in T_1,f\in F_1,q’\in I_2\rbrace \newline<br>\end{array}$</p>
 </blockquote>
 <p>$Q’:$ Same as Union, we include both automata for concatenation</p>
 <p>$I’:$ We normaly start the the automaton from $I_1$ If $I_1$ is non-empty, otherwise we start at $I_2$</p>
@@ -1026,7 +1035,7 @@
 <h3 id="From-automaton-over-finite-words-to-a-single-initial-state"><a href="#From-automaton-over-finite-words-to-a-single-initial-state" class="headerlink" title="From automaton over finite words to a single initial state"></a>From automaton over finite words to a single initial state</h3><p>Firstly, we modify a given automaton over finite words into an equivalent automaton with one <strong>single initial state</strong> that has <strong>no incoming transitions</strong>.</p>
 <p>We do this by create a new fresh state as the new initial state, with all transitions identical as the original. And the original initial state now has no incoming transitions.</p>
 <blockquote>
-<p>$\textbf{Construction 3.4. } \text{Let }\mathcal{A}_1&#x3D;(\Sigma,Q_1,I_1,T_1,F_1)\text{ be an automaton over finite words. We assume}\newline\text{that }\varepsilon\notin\mathcal{L}(\mathcal{A})\text{. We construct an automaton }\mathcal{A’} &#x3D; (\Sigma,Q’,I’,T’,F)\text{ over finite words such that }\newline\mathcal{L}(\mathcal{A})&#x3D;\mathcal{L}(\mathcal{A’})\text{ and }\mathcal{A’}\text{ has a single initial state that has no incoming transitions.}$<br>$\begin{array}{l}<br>\hspace{1cm} \cdot \ Q’&#x3D;Q_1\cup\lbrace q_f\rbrace \text{where }q_f\text{ is a fresh state}\newline<br>\hspace{1cm} \cdot \ I’&#x3D;\lbrace q_f\rbrace\newline<br>\hspace{1cm} \cdot \ T’&#x3D;T\cup\lbrace (q_f,\sigma,q’)\mid(q,\sigma,q’)\in T \text{ for some }q\in I\rbrace\newline<br>\end{array}$</p>
+<p>$\textbf{Construction 3.4. } \text{Let }\mathcal{A}_1&#x3D;(\Sigma,Q_1,I_1,T_1,F_1)\text{ be an automaton over finite words. We assume}\newline\text{that }\varepsilon\notin\mathcal{L}(\mathcal{A})\text{. We construct an automaton }\mathcal{A’} &#x3D; (\Sigma,Q’,I’,T’,F)\text{ over finite words such that }\newline\mathcal{L}(\mathcal{A})&#x3D;\mathcal{L}(\mathcal{A’})\text{ and }\mathcal{A’}\text{ has a single initial state that has no incoming transitions.}$<br>$\begin{array}{lrll}<br>\hspace{1cm} \cdot &amp;Q’&amp;&#x3D;&amp;Q_1\cup\lbrace q_f\rbrace \text{where }q_f\text{ is a fresh state}\newline<br>\hspace{1cm} \cdot &amp;I’&amp;&#x3D;&amp;\lbrace q_f\rbrace\newline<br>\hspace{1cm} \cdot &amp;T’&amp;&#x3D;&amp;T\cup\lbrace (q_f,\sigma,q’)\mid(q,\sigma,q’)\in T \text{ for some }q\in I\rbrace\newline<br>\end{array}$</p>
 </blockquote>
 <p>The second construction builds the Büchi automaton that recognizes the infinite concatenations of words from the regular language by <strong>adding a loop</strong> to the modified automaton.</p>
 <blockquote>
