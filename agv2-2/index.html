@@ -144,7 +144,7 @@
     <li>
         <div class="all active" data-rel="All">All
             
-                <small>(51)</small>
+                <small>(53)</small>
             
         </div>
     </li>
@@ -246,7 +246,7 @@
         <div data-rel="Notes">
             <i class="fold iconfont icon-right"></i>
             Notes
-            <small>(19) </small>
+            <small>(21) </small>
         </div>
         
             <ul class="sub hide">
@@ -256,7 +256,7 @@
         <div data-rel="Notes&lt;---&gt;UdS">
             
             UdS
-            <small>(19) </small>
+            <small>(21) </small>
         </div>
         
     </li>
@@ -320,8 +320,8 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="51">
-<input type="hidden" id="yelog_site_word_count" value="24.6k">
+<input type="hidden" id="yelog_site_posts_number" value="53">
+<input type="hidden" id="yelog_site_word_count" value="26.9k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -458,6 +458,24 @@
            data-author="" >
             <span class="post-title" title="3-hexo Shortcut">3-hexo Shortcut</span>
             <span class="post-date" title="2024-10-01 11:11:11">2024/10/01</span>
+        </a>
+        
+        
+        <a  class="All Notes UdS "
+           href="/agv6-3/"
+           data-tag="AGV"
+           data-author="" >
+            <span class="post-title" title="AGV 6.3 -- LTL and Counting Languages">AGV 6.3 -- LTL and Counting Languages</span>
+            <span class="post-date" title="2024-11-25 00:44:03">2024/11/25</span>
+        </a>
+        
+        
+        <a  class="All Notes UdS "
+           href="/agv6-2/"
+           data-tag="AGV"
+           data-author="" >
+            <span class="post-title" title="AGV 6.2 -- Expressing Program Properties using LTL">AGV 6.2 -- Expressing Program Properties using LTL</span>
+            <span class="post-date" title="2024-11-24 05:56:28">2024/11/24</span>
         </a>
         
         
@@ -957,12 +975,12 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-11-13 20:28:01'>2024-11-11 04:24</time>
+            Created At : <time class="date" title='Updated At: 2024-12-08 15:23:43'>2024-11-11 04:24</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:644</span>
+        <span>Count:631</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1019,12 +1037,12 @@
 </ol>
 <p>The major difference between automata over finite and infinite words is the <strong>acceptance condition</strong>.</p>
 <blockquote>
-<p>$\textbf{Definition 2.1. } \text{ An } \textit{automaton over infinite words } \text{is a tuple $\mathcal{A} &#x3D; (\Sigma,Q,I,T,Acc)$, where} \newline<br>\begin{array}{l}<br>\hspace{1cm} \cdot \ \Sigma \text{ is a finite } \textit{alphabet} \newline<br>\hspace{1cm} \cdot \ Q \text{ is a finite set of } \textit{states} \newline<br>\hspace{1cm} \cdot \ I \subseteq Q \text{ is a subset of } \textit{initial states} \newline<br>\hspace{1cm} \cdot \ T \subseteq Q \times \Sigma \times Q \text{ is a set of } \textit{transitions} \text{, and} \newline<br>\hspace{1cm} \cdot \ Acc \subseteq Q^\omega \text{ is the } \textit{accepting condition}<br>\end{array}$</p>
+<p>$\textbf{Definition 2.1. } \text{ An } \textit{automaton over infinite words } \text{is a tuple }\mathcal{A} &#x3D; (\Sigma,Q,I,T,Acc)\text{, where}$<br>$\begin{array}{l}<br>\hspace{1cm} \cdot \ \Sigma \text{ is a finite } \textit{alphabet} \newline<br>\hspace{1cm} \cdot \ Q \text{ is a finite set of } \textit{states} \newline<br>\hspace{1cm} \cdot \ I \subseteq Q \text{ is a subset of } \textit{initial states} \newline<br>\hspace{1cm} \cdot \ T \subseteq Q \times \Sigma \times Q \text{ is a set of } \textit{transitions} \text{, and} \newline<br>\hspace{1cm} \cdot \ Acc \subseteq Q^\omega \text{ is the } \textit{accepting condition}<br>\end{array}$</p>
 </blockquote>
 <p>In the following, we refer an automaton over infinite words simply as an automaton.</p>
 <h3 id="Runs-of-Buchi-automata"><a href="#Runs-of-Buchi-automata" class="headerlink" title="Runs of Büchi automata"></a>Runs of Büchi automata</h3><p>A run in a Büchi automaton has to transition infinitely many times, and starts with the initial state.</p>
 <blockquote>
-<p>$\textbf{Definition 2.2. } \text{ An } \textit{run } \text{of an automaton $\mathcal{A}$ on an infinite input word $\alpha$ is an } \newline<br>\text{infinite sequence of states $r&#x3D;r(0)r(1)r(2)\dots$ such that the following hold:}\newline<br>\begin{array}{l}<br>\hspace{1cm} \cdot \ r(0) \in I \newline<br>\hspace{1cm} \cdot \ \text{for all } i \in \mathbb{N}, (r(i),\alpha(i),r(i+1))\in T<br>\end{array}$</p>
+<p>$\textbf{Definition 2.2. }\text{ An }\textit{run }\text{of an automaton }\mathcal{A}\text{ on an infinite input word }\alpha\text{ is an }\newline\text{infinite sequence of states }r&#x3D;r(0)r(1)r(2)\dots\text{ such that the following hold:}\newline\begin{array}{l}\hspace{1cm} \cdot \ r(0)\in I\newline\hspace{1cm} \cdot \ \text{for all }i\in\mathbb{N},(r(i),\alpha(i),r(i+1))\in T\end{array}$</p>
 </blockquote>
 <p><a name="eg1"></a></p>
 <p>$\textbf{Example 2.2.}$ Below is a graphical representation of an automation over:</p>
@@ -1041,7 +1059,7 @@
 <p>Therefore, the automaton in the example above is deterministic but not complete.</p>
 <p>The transitions of an <em>deterministic and complete automata</em> are usually given as a function $\delta:Q \times\Sigma\rightarrow Q$.<br>Meaning that the set of all transitions $\delta$ contains <strong>any states</strong> with <strong>any letter</strong>.</p>
 <h2 id="Accepted-Run"><a href="#Accepted-Run" class="headerlink" title="Accepted Run"></a>Accepted Run</h2><blockquote>
-<p>$\textbf{Definition 2.3. } \text{ An automaton } \mathcal{A} \textit{ accepts } \text{ an infinite word $\alpha$ if: } \newline<br>\text{infinite sequence of states $r&#x3D;r(0)r(1)r(2)\dots$ such that the following hold:}\newline<br>\begin{array}{l}<br>\hspace{1cm} \cdot \ \text{there is a run $r$ of $\mathcal{A}$ on $\alpha$, and}\newline<br>\hspace{1cm} \cdot \ r \text{ is } \textit{accepting}:r\in Acc<br>\end{array}<br>\newline<br>\text{The } \textit{language recognized }\text{by $\mathcal{A}$ is defined as follows: }<br>\mathcal{L}(\mathcal{A}) &#x3D; \lbrace \alpha\in\Sigma^\omega\mid\mathcal{A}\text{ accepts }\alpha\rbrace$</p>
+<p>$\textbf{Definition 2.3. } \text{ An automaton } \mathcal{A} \textit{ accepts}\text{ an infinite word }\alpha\text{ if: }$<br>$\begin{array}{l}<br>\hspace{1cm} \cdot \ \text{there is a run }r\text{ of }\mathcal{A}\text{ on }\alpha\text{, and}\newline<br>\hspace{1cm} \cdot \ r \text{ is } \textit{accepting}:r\in Acc\end{array}\newline<br>\text{The } \textit{language recognized }\text{by }\mathcal{A}\text{ is defined as follows: }<br>\mathcal{L}(\mathcal{A}) &#x3D; \lbrace \alpha\in\Sigma^\omega\mid\mathcal{A}\text{ accepts }\alpha\rbrace$</p>
 </blockquote>
 <p>We say two automata are <strong>equivalent</strong> if they have the same language.</p>
 <hr>

@@ -144,7 +144,7 @@
     <li>
         <div class="all active" data-rel="All">All
             
-                <small>(51)</small>
+                <small>(53)</small>
             
         </div>
     </li>
@@ -246,7 +246,7 @@
         <div data-rel="Notes">
             <i class="fold iconfont icon-right"></i>
             Notes
-            <small>(19) </small>
+            <small>(21) </small>
         </div>
         
             <ul class="sub hide">
@@ -256,7 +256,7 @@
         <div data-rel="Notes&lt;---&gt;UdS">
             
             UdS
-            <small>(19) </small>
+            <small>(21) </small>
         </div>
         
     </li>
@@ -320,8 +320,8 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="51">
-<input type="hidden" id="yelog_site_word_count" value="24.6k">
+<input type="hidden" id="yelog_site_posts_number" value="53">
+<input type="hidden" id="yelog_site_word_count" value="26.9k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -458,6 +458,24 @@
            data-author="" >
             <span class="post-title" title="3-hexo Shortcut">3-hexo Shortcut</span>
             <span class="post-date" title="2024-10-01 11:11:11">2024/10/01</span>
+        </a>
+        
+        
+        <a  class="All Notes UdS "
+           href="/agv6-3/"
+           data-tag="AGV"
+           data-author="" >
+            <span class="post-title" title="AGV 6.3 -- LTL and Counting Languages">AGV 6.3 -- LTL and Counting Languages</span>
+            <span class="post-date" title="2024-11-25 00:44:03">2024/11/25</span>
+        </a>
+        
+        
+        <a  class="All Notes UdS "
+           href="/agv6-2/"
+           data-tag="AGV"
+           data-author="" >
+            <span class="post-title" title="AGV 6.2 -- Expressing Program Properties using LTL">AGV 6.2 -- Expressing Program Properties using LTL</span>
+            <span class="post-date" title="2024-11-24 05:56:28">2024/11/24</span>
         </a>
         
         
@@ -957,7 +975,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-12-07 19:55:23'>2024-11-19 23:12</time>
+            Created At : <time class="date" title='Updated At: 2024-12-09 01:15:36'>2024-11-19 23:12</time>
         
     </div>
     <div class="article-meta">
@@ -1015,7 +1033,7 @@
 <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>For regular languages, Complementation is very simple: one translates a given complete deterministic automaton $\mathcal{A}$ that recognizes some language $L\subseteq\Sigma^*$ into an automaton $\mathcal{A’}$ that recognizes the complement $\Sigma^*\setminus L$ by complementing the set of final states, i.e., $F’&#x3D;Q\setminus F$.</p>
 <p>For deterministic Büchi automata, the construction is tricky, because it introduces <strong>nondeterminism</strong></p>
 <blockquote>
-<p>$\textbf{Construction 4.1. }\text{Let }\mathcal{A}&#x3D;(\Sigma,Q,I,T,\small\text{BÜCHI} \normalsize (F))\text{ be a complete deterministic Büchi}\newline\text{automaton, where we assume w.l.o.g. that } Q\neq\emptyset. \text{ We construct a Büchi automaton}\newline\mathcal{A’}&#x3D;(\Sigma,Q’,I’,T’,\small\text{BÜCHI} \normalsize (F’))\text{ with }\mathcal{L}(\mathcal{A’})&#x3D;\Sigma^\omega\setminus\mathcal{L}(\mathcal{A})\text{ as follows:}$<br>$\begin{array}{lrll}<br>\hspace{1cm} \cdot &amp;Q’&amp;&#x3D;&amp;(Q\times\lbrace 0\rbrace)\cup((Q\setminus F)\times\lbrace 1\rbrace)\newline<br>\hspace{1cm} \cdot &amp;I’&amp;&#x3D;&amp;I\times\lbrace 0\rbrace\newline<br>\hspace{1cm} \cdot &amp;T’&amp;&#x3D;&amp;\lbrace ((q,0),\sigma,(q’,i))\mid(q,\sigma,q’)\in T,i\in\lbrace 0,1\rbrace,(q’,i)\in Q’\rbrace \cup \newline<br>\hspace{1cm} \ &amp;&amp;&amp;\lbrace ((q,1),\sigma,(q’,1))\mid(q,\sigma,q’)\in T,q’,q’\in Q\setminus F\rbrace\newline<br>\hspace{1cm} \cdot &amp;F’&amp;&#x3D;&amp;(Q\setminus F)\times\lbrace 1\rbrace\newline<br>\end{array}$</p>
+<p>$\textbf{Construction 4.1. }\text{Let }\mathcal{A}&#x3D;(\Sigma,Q,I,T,\small\text{BÜCHI} \normalsize (F))\text{ be a complete deterministic Büchi}\newline\text{automaton, where we assume w.l.o.g. that } Q\neq\varnothing. \text{ We construct a Büchi automaton}\newline\mathcal{A’}&#x3D;(\Sigma,Q’,I’,T’,\small\text{BÜCHI} \normalsize (F’))\text{ with }\mathcal{L}(\mathcal{A’})&#x3D;\Sigma^\omega\setminus\mathcal{L}(\mathcal{A})\text{ as follows:}$<br>$\begin{array}{lrll}<br>\hspace{1cm} \cdot &amp;Q’&amp;&#x3D;&amp;(Q\times\lbrace 0\rbrace)\cup((Q\setminus F)\times\lbrace 1\rbrace)\newline<br>\hspace{1cm} \cdot &amp;I’&amp;&#x3D;&amp;I\times\lbrace 0\rbrace\newline<br>\hspace{1cm} \cdot &amp;T’&amp;&#x3D;&amp;\lbrace ((q,0),\sigma,(q’,i))\mid(q,\sigma,q’)\in T,i\in\lbrace 0,1\rbrace,(q’,i)\in Q’\rbrace \cup \newline<br>\hspace{1cm} \ &amp;&amp;&amp;\lbrace ((q,1),\sigma,(q’,1))\mid(q,\sigma,q’)\in T,q’,q’\in Q\setminus F\rbrace\newline<br>\hspace{1cm} \cdot &amp;F’&amp;&#x3D;&amp;(Q\setminus F)\times\lbrace 1\rbrace\newline<br>\end{array}$</p>
 </blockquote>
 <h3 id="Explaination"><a href="#Explaination" class="headerlink" title="Explaination"></a>Explaination</h3><p>$Q’:$ Uses two copies of the given automaton $\mathcal{A}$, mark them seperately using $\lbrace 0\rbrace$ and $\lbrace 1\rbrace$, notice that all <strong>accpeting states</strong> from $\lbrace 1\rbrace$ are eliminated.</p>
 <p>$I’:$ The complemented automaton starts from initial states from $\lbrace 0\rbrace$.</p>
@@ -1037,7 +1055,7 @@
 <p>$\mathcal{L}(\mathcal{A’})\subseteq\Sigma^\omega \setminus\mathcal{L}(\mathcal{A}):$</p>
 <p>For every word $\alpha\in\mathcal{L}(\mathcal{A’})$ we have an accepting run: $r’:(q_0,0)(q_1,0)\dots(q_j,0)(q’_0,1)(q_1,1)\dots$ on $\mathcal{A}$. Hence, $r:q_0q_1\dots q_jq_0’q_1’\dots$ is the unique run of $\mathcal{A}$ on $\alpha$. Since $q_0’,q_1’,\dots\in Q\setminus F$, we have that $\text{Inf}(r)\subseteq Q\setminus F$. Hence, $r$ is not accepting and $\alpha\in\Sigma^\omega\setminus\mathcal{L}(\mathcal{A})$.</p>
 <p>$\mathcal{L}(\mathcal{A’})\supseteq\Sigma^\omega \setminus\mathcal{L}(\mathcal{A}):$</p>
-<p>Let $\alpha\notin\mathcal{L}(\mathcal{A’})$ be some word that is not in the language of $\mathcal{A}$. Since $\mathcal{A}$ is complete and deterministic, there exists a unique run $r:q_0q_1q_2\dots$ of $\mathcal{A}$ on $\alpha$ and  $\text{Inf}(r)\cap F&#x3D;\emptyset$. Thus, there exists a $k\in\mathbb{N}$ such that $q_j\notin F$ for all $j &gt; k$.</p>
+<p>Let $\alpha\notin\mathcal{L}(\mathcal{A’})$ be some word that is not in the language of $\mathcal{A}$. Since $\mathcal{A}$ is complete and deterministic, there exists a unique run $r:q_0q_1q_2\dots$ of $\mathcal{A}$ on $\alpha$ and  $\text{Inf}(r)\cap F&#x3D;\varnothing$. Thus, there exists a $k\in\mathbb{N}$ such that $q_j\notin F$ for all $j &gt; k$.</p>
 <p>This gives us the run: $r’:(q_0,0)(q_1,0)\dots(q_j,0)(q’_0,1)(q_1,1)\dots$ of $\mathcal{A’}$ on $\alpha$ with $\text{Inf}(r)\subseteq ((Q\setminus F)\times\lbrace 1\rbrace)&#x3D;F’$. Hence, $r’$ is accepting and therefore $\alpha\in\mathcal{L}(\mathcal{A’})$.</p>
 <h3 id="Example-mathcal-L-mathcal-A-b-ast-a-omega-and-mathcal-L-mathcal-A’-a-b-ast-b-omega"><a href="#Example-mathcal-L-mathcal-A-b-ast-a-omega-and-mathcal-L-mathcal-A’-a-b-ast-b-omega" class="headerlink" title="Example: $\mathcal{L}(\mathcal{A})&#x3D;(b^\ast a)^\omega$ and $\mathcal{L}(\mathcal{A’})&#x3D;(a+b)^\ast b^\omega$"></a>Example: $\mathcal{L}(\mathcal{A})&#x3D;(b^\ast a)^\omega$ and $\mathcal{L}(\mathcal{A’})&#x3D;(a+b)^\ast b^\omega$</h3><p><img src="/../images/notes/uds/agv/4_2_eg.png"></p>
 <p>Note that, since not all $\omega$-regular languages can be recognized by deterministic Büchi automata, Construction 4.1 does not provide us with a complementation construction for all $\omega$-regular languages. Such a general construction is the subject of the following section.</p>

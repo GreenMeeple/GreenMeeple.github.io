@@ -144,7 +144,7 @@
     <li>
         <div class="all active" data-rel="All">All
             
-                <small>(51)</small>
+                <small>(53)</small>
             
         </div>
     </li>
@@ -246,7 +246,7 @@
         <div data-rel="Notes">
             <i class="fold iconfont icon-right"></i>
             Notes
-            <small>(19) </small>
+            <small>(21) </small>
         </div>
         
             <ul class="sub hide">
@@ -256,7 +256,7 @@
         <div data-rel="Notes&lt;---&gt;UdS">
             
             UdS
-            <small>(19) </small>
+            <small>(21) </small>
         </div>
         
     </li>
@@ -320,8 +320,8 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="51">
-<input type="hidden" id="yelog_site_word_count" value="24.6k">
+<input type="hidden" id="yelog_site_posts_number" value="53">
+<input type="hidden" id="yelog_site_word_count" value="26.9k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -458,6 +458,24 @@
            data-author="" >
             <span class="post-title" title="3-hexo Shortcut">3-hexo Shortcut</span>
             <span class="post-date" title="2024-10-01 11:11:11">2024/10/01</span>
+        </a>
+        
+        
+        <a  class="All Notes UdS "
+           href="/agv6-3/"
+           data-tag="AGV"
+           data-author="" >
+            <span class="post-title" title="AGV 6.3 -- LTL and Counting Languages">AGV 6.3 -- LTL and Counting Languages</span>
+            <span class="post-date" title="2024-11-25 00:44:03">2024/11/25</span>
+        </a>
+        
+        
+        <a  class="All Notes UdS "
+           href="/agv6-2/"
+           data-tag="AGV"
+           data-author="" >
+            <span class="post-title" title="AGV 6.2 -- Expressing Program Properties using LTL">AGV 6.2 -- Expressing Program Properties using LTL</span>
+            <span class="post-date" title="2024-11-24 05:56:28">2024/11/24</span>
         </a>
         
         
@@ -957,7 +975,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-12-07 20:26:09'>2024-11-22 16:36</time>
+            Created At : <time class="date" title='Updated At: 2024-12-09 01:15:36'>2024-11-22 16:36</time>
         
     </div>
     <div class="article-meta">
@@ -1030,7 +1048,7 @@
 <p>To achieve this, we construct the <code>odd ranking</code>, level by level, by assigning ranks to vertices.<br>The definition of <code>level ranks</code> and <code>covering</code> for a letter ensure that the requirements of a ranking are satisfied.</p>
 <p>Through the acceptance condition, we ensure that the ranking is <code>odd</code>, i.e., there is no infinite path that consists only of even-ranked vertices.</p>
 <blockquote>
-<p>$\textbf{Construction 5.1. }\text{Given a Büchi Automaton }\mathcal{A}&#x3D;(\Sigma,Q,I,T,\small\text{BÜCHI} \normalsize(F))\text{ that recognizes}\newline\text{the language }L\text{, we construct a Büchi Automaton}$ $$\newline \mathcal{A’}&#x3D;(\Sigma,\textsf{Lvlrks}\times\textsf{OnEvenPath},I’,T’,\small\text{BÜCHI}\normalsize(F))$$ $\text{that recognizes the language }\Sigma^\omega\setminus L\text{ as follows.}$<br>$\begin{array}{lrl}<br>\hspace{0.5cm} \cdot &amp;\textsf{OnEvenPath} &#x3D; &amp; 2^Q, \text{tracking states in the current level,} \newline<br>\hspace{0.5cm} \cdot &amp;I’&#x3D; &amp; \lbrace (\ell,R) \mid \ell \in \textsf{InitRks, } \ell \text{ is given by } (S,g) \text{, and } R &#x3D; \lbrace q \mid g(q) \text{ is even} \rbrace \rbrace \newline<br>\hspace{0.5cm} \cdot &amp;T’&#x3D; &amp; \textsf{NewEvenPaths} \cup \textsf{ContinueEvenPaths}, \text{ where} \newline<br>\hspace{0.5cm} &amp;&amp; \hspace{0.9cm}\textsf{NewEvenPaths}&#x3D;\lbrace ((\ell,\emptyset),\sigma,(\ell’,R’)) \mid \ell’ \text{ covers } \ell \text{ for } \sigma, \newline<br>\hspace{0.5cm} &amp;&amp; \hspace{4.8cm} \ell’ \text{ is given by } (S’,g’), \newline<br>\hspace{0.5cm} &amp;&amp; \hspace{4.8cm} \text{and } R’ &#x3D; \lbrace q’ \mid g’(q’) \text{ is even} \rbrace \rbrace \newline<br>\hspace{0.5cm} &amp;&amp; \textsf{ContinueEvenPaths} &#x3D; \lbrace ((\ell,R),\sigma,(\ell’,R’)) \mid R \neq \emptyset, \ell’ \text{ covers } \ell \text{ for } \sigma,\newline<br>\hspace{0.5cm} &amp;&amp; \hspace{4.8cm} \ell’ \text{ is given by } (S’,g’)\text{, and}\newline<br>\hspace{0.5cm} &amp;&amp; \hspace{4.8cm} R’ &#x3D; \lbrace q’ \mid (q,\sigma,q’) \in T, q \in R, \text{ and } g’(q’) \text{ is even} \rbrace \rbrace \newline<br>\hspace{0.5cm} \cdot &amp;F’ &#x3D; &amp; \textsf{Lvlrks} \times \lbrace \emptyset \rbrace.<br>\end{array}$</p>
+<p>$\textbf{Construction 5.1. }\text{Given a Büchi Automaton }\mathcal{A}&#x3D;(\Sigma,Q,I,T,\small\text{BÜCHI} \normalsize(F))\text{ that recognizes}\newline\text{the language }L\text{, we construct a Büchi Automaton}$ $$\newline \mathcal{A’}&#x3D;(\Sigma,\textsf{Lvlrks}\times\textsf{OnEvenPath},I’,T’,\small\text{BÜCHI}\normalsize(F))$$ $\text{that recognizes the language }\Sigma^\omega\setminus L\text{ as follows.}$<br>$\begin{array}{lrl}<br>\hspace{0.5cm} \cdot &amp;\textsf{OnEvenPath} &#x3D; &amp; 2^Q, \text{tracking states in the current level,} \newline<br>\hspace{0.5cm} \cdot &amp;I’&#x3D; &amp; \lbrace (\ell,R) \mid \ell \in \textsf{InitRks, } \ell \text{ is given by } (S,g) \text{, and } R &#x3D; \lbrace q \mid g(q) \text{ is even} \rbrace \rbrace \newline<br>\hspace{0.5cm} \cdot &amp;T’&#x3D; &amp; \textsf{NewEvenPaths} \cup \textsf{ContinueEvenPaths}, \text{ where} \newline<br>\hspace{0.5cm} &amp;&amp; \hspace{0.9cm}\textsf{NewEvenPaths}&#x3D;\lbrace ((\ell,\varnothing),\sigma,(\ell’,R’)) \mid \ell’ \text{ covers } \ell \text{ for } \sigma, \newline<br>\hspace{0.5cm} &amp;&amp; \hspace{4.8cm} \ell’ \text{ is given by } (S’,g’), \newline<br>\hspace{0.5cm} &amp;&amp; \hspace{4.8cm} \text{and } R’ &#x3D; \lbrace q’ \mid g’(q’) \text{ is even} \rbrace \rbrace \newline<br>\hspace{0.5cm} &amp;&amp; \textsf{ContinueEvenPaths} &#x3D; \lbrace ((\ell,R),\sigma,(\ell’,R’)) \mid R \neq \varnothing, \ell’ \text{ covers } \ell \text{ for } \sigma,\newline<br>\hspace{0.5cm} &amp;&amp; \hspace{4.8cm} \ell’ \text{ is given by } (S’,g’)\text{, and}\newline<br>\hspace{0.5cm} &amp;&amp; \hspace{4.8cm} R’ &#x3D; \lbrace q’ \mid (q,\sigma,q’) \in T, q \in R, \text{ and } g’(q’) \text{ is even} \rbrace \rbrace \newline<br>\hspace{0.5cm} \cdot &amp;F’ &#x3D; &amp; \textsf{Lvlrks} \times \lbrace \varnothing \rbrace.<br>\end{array}$</p>
 </blockquote>
 <h3 id="Explanation"><a href="#Explanation" class="headerlink" title="Explanation"></a>Explanation</h3><p>$Q’ &#x3D; \textsf{Lvlrks}\times\textsf{OnEvenPath}:$ all states contain their <code>level ranking</code> and set of all states that is tracked currently (states would be dropped if it leads to odd-ranked vertex).</p>
 <p>$I’:$ The initial state contains the initial <code>level ranking</code> ($\textsf{Lvlrks}$), and the set of all <code>even ranking</code> states ($R$).</p>

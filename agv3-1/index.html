@@ -144,7 +144,7 @@
     <li>
         <div class="all active" data-rel="All">All
             
-                <small>(51)</small>
+                <small>(53)</small>
             
         </div>
     </li>
@@ -246,7 +246,7 @@
         <div data-rel="Notes">
             <i class="fold iconfont icon-right"></i>
             Notes
-            <small>(19) </small>
+            <small>(21) </small>
         </div>
         
             <ul class="sub hide">
@@ -256,7 +256,7 @@
         <div data-rel="Notes&lt;---&gt;UdS">
             
             UdS
-            <small>(19) </small>
+            <small>(21) </small>
         </div>
         
     </li>
@@ -320,8 +320,8 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="51">
-<input type="hidden" id="yelog_site_word_count" value="24.6k">
+<input type="hidden" id="yelog_site_posts_number" value="53">
+<input type="hidden" id="yelog_site_word_count" value="26.9k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -458,6 +458,24 @@
            data-author="" >
             <span class="post-title" title="3-hexo Shortcut">3-hexo Shortcut</span>
             <span class="post-date" title="2024-10-01 11:11:11">2024/10/01</span>
+        </a>
+        
+        
+        <a  class="All Notes UdS "
+           href="/agv6-3/"
+           data-tag="AGV"
+           data-author="" >
+            <span class="post-title" title="AGV 6.3 -- LTL and Counting Languages">AGV 6.3 -- LTL and Counting Languages</span>
+            <span class="post-date" title="2024-11-25 00:44:03">2024/11/25</span>
+        </a>
+        
+        
+        <a  class="All Notes UdS "
+           href="/agv6-2/"
+           data-tag="AGV"
+           data-author="" >
+            <span class="post-title" title="AGV 6.2 -- Expressing Program Properties using LTL">AGV 6.2 -- Expressing Program Properties using LTL</span>
+            <span class="post-date" title="2024-11-24 05:56:28">2024/11/24</span>
         </a>
         
         
@@ -957,7 +975,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-12-07 19:21:03'>2024-11-13 13:36</time>
+            Created At : <time class="date" title='Updated At: 2024-12-09 01:15:36'>2024-11-13 13:36</time>
         
     </div>
     <div class="article-meta">
@@ -1015,17 +1033,17 @@
 <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p><em>Kleene’s theorem</em> states that the <em>set of languages over finite words</em> that can be defined by <strong>regular expressions</strong> is exactly the set of languages that can be recognized by <strong>automata over finite words</strong>.</p>
 <p>Based on this, we define $\omega$-regular expressions, and finally prove the corresponding theorem for $\omega$-regular languages: <strong>Büchi’s characterization theorem</strong>.</p>
 <h2 id="Regular-Expression"><a href="#Regular-Expression" class="headerlink" title="Regular Expression"></a>Regular Expression</h2><p>Regular expression consist of <strong>constants</strong> that denote languages of <em>finite words</em>, and<br>consist of <strong>operator symbols</strong> that denote <em>operations over these languages</em>.</p>
-<p>The collection of regular languages over an alphabet $\Sigma$ is $\mathcal{L}(E)$, where $E$ is a regular expression.<br>Regular expression can be defined as $E :&#x3D; \varepsilon\mid\emptyset\mid a\in\Sigma\mid E+F\mid E\cdot F\mid E^* $, where:</p>
+<p>The collection of regular languages over an alphabet $\Sigma$ is $\mathcal{L}(E)$, where $E$ is a regular expression.<br>Regular expression can be defined as $E :&#x3D; \varepsilon\mid\varnothing\mid a\in\Sigma\mid E+F\mid E\cdot F\mid E^* $, where:</p>
 <ul>
 <li><strong>empty language</strong>: $\varepsilon$,</li>
-<li><strong>empty string language</strong>: $\emptyset$,</li>
+<li><strong>empty string language</strong>: $\varnothing$,</li>
 <li><strong>singleton language</strong>: (single letter from alphabet) $a\in\Sigma$,</li>
 <li><strong>union</strong> of regular languages: $E+F$,</li>
 <li><strong>concatenation</strong> of regular languages: $E\cdot F$, and</li>
 <li>language with <strong>kleene star</strong>: $E^*$.</li>
 </ul>
 <blockquote>
-<p>$\textbf{Definition 3.1. } \textit{Regular expressions } \text{are defined as follows:}$<br>$\begin{array}{l}\hspace{1cm} \cdot \ \text{The constants }\varepsilon\text{ and }\emptyset\text{ are regular expressions.}\newline<br>\hspace{1cm} \ \ \mathcal{L}(\varepsilon) &#x3D; \lbrace\varepsilon\rbrace ,\mathcal{L}(\emptyset)&#x3D;\emptyset.\newline<br>\hspace{1cm} \cdot \ \text{If }a\in\Sigma\text{ is a symbol, then }a\text{ is a regular expressions.}\newline<br>\hspace{1cm} \ \ \mathcal{L}(a) &#x3D; \lbrace a\rbrace .\newline<br>\hspace{1cm} \cdot \ \text{If }E\text{ and }F\text{ are regular expressions, then }E+F\text{ is a regular expression:}\newline<br>\hspace{1cm} \ \ \mathcal{L}(E+F) &#x3D; \mathcal{L}(E)\cup\mathcal{L}(F) .\newline<br>\hspace{1cm} \cdot \ \text{If }E\text{ and }F\text{ are regular expressions, then }E\cdot F\text{ is a regular expression:}\newline<br>\hspace{1cm} \ \ \mathcal{L}(E\cdot F) &#x3D; \lbrace uv\mid u\in\mathcal{L}(E),v\in\mathcal{L}(F)\rbrace.\newline<br>\hspace{1cm} \cdot \ \text{If }E\text{ is a regular expression, then }E^*\text{ is a regular expression.}\newline<br>\hspace{1cm} \ \ \mathcal{L}(E^{\ast}) &#x3D; \lbrace u_1u_2\dots u_n\mid n\in\mathbb{N},u_i\in\mathcal{L}(E)\text{ for all }0\leq i\leq n\rbrace.\end{array}$</p>
+<p>$\textbf{Definition 3.1. } \textit{Regular expressions } \text{are defined as follows:}$<br>$\begin{array}{l}\hspace{1cm} \cdot \ \text{The constants }\varepsilon\text{ and }\varnothing\text{ are regular expressions.}\newline<br>\hspace{1cm} \ \ \mathcal{L}(\varepsilon) &#x3D; \lbrace\varepsilon\rbrace ,\mathcal{L}(\varnothing)&#x3D;\varnothing.\newline<br>\hspace{1cm} \cdot \ \text{If }a\in\Sigma\text{ is a symbol, then }a\text{ is a regular expressions.}\newline<br>\hspace{1cm} \ \ \mathcal{L}(a) &#x3D; \lbrace a\rbrace .\newline<br>\hspace{1cm} \cdot \ \text{If }E\text{ and }F\text{ are regular expressions, then }E+F\text{ is a regular expression:}\newline<br>\hspace{1cm} \ \ \mathcal{L}(E+F) &#x3D; \mathcal{L}(E)\cup\mathcal{L}(F) .\newline<br>\hspace{1cm} \cdot \ \text{If }E\text{ and }F\text{ are regular expressions, then }E\cdot F\text{ is a regular expression:}\newline<br>\hspace{1cm} \ \ \mathcal{L}(E\cdot F) &#x3D; \lbrace uv\mid u\in\mathcal{L}(E),v\in\mathcal{L}(F)\rbrace.\newline<br>\hspace{1cm} \cdot \ \text{If }E\text{ is a regular expression, then }E^*\text{ is a regular expression.}\newline<br>\hspace{1cm} \ \ \mathcal{L}(E^{\ast}) &#x3D; \lbrace u_1u_2\dots u_n\mid n\in\mathbb{N},u_i\in\mathcal{L}(E)\text{ for all }0\leq i\leq n\rbrace.\end{array}$</p>
 </blockquote>
 <h2 id="Kleene’s-Theorem"><a href="#Kleene’s-Theorem" class="headerlink" title="Kleene’s Theorem"></a>Kleene’s Theorem</h2><p><em>A language over finite words</em> is <strong>regular</strong> if it is definable by a <em>regular expression</em>, or<br>if it is recognized by <em>automata over finite words</em>.</p>
 <blockquote>

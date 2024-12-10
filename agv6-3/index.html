@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>AGV 1.3 -- The Logic-Automata Connection | GreenMeeple</title>
+  <title>AGV 6.3 -- LTL and Counting Languages | GreenMeeple</title>
   <meta name="keywords" content=" AGV ">
-  <meta name="description" content="AGV 1.3 -- The Logic-Automata Connection | GreenMeeple">
+  <meta name="description" content="AGV 6.3 -- LTL and Counting Languages | GreenMeeple">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="Personal Info.Chun Ngai Li (Alex), M.Sc. Cybersecurity in Saarland University,B.Eng Information Engineering in CUHK. Recent WorksA C&#x2F;C++ programmer. Also working on Backend &amp; Python developing.Cur">
 <meta property="og:type" content="website">
@@ -946,9 +946,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-agv1-3" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-agv6-3" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">AGV 1.3 -- The Logic-Automata Connection</h1>
+        <h1 class="article-title">AGV 6.3 -- LTL and Counting Languages</h1>
     
     <div class="article-meta">
         
@@ -975,12 +975,12 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-11-13 20:28:01'>2024-11-08 07:04</time>
+            Created At : <time class="date" title='Updated At: 2024-12-10 02:33:14'>2024-11-25 00:44</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:374</span>
+        <span>Count:1.7k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1010,7 +1010,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Verification-or-Synthesis"><span class="toc-text">Verification or Synthesis</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Logics-with-corresponding-Automata"><span class="toc-text">Logics with corresponding Automata</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Explaination"><span class="toc-text">Explaination</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Satisfiability-problem"><span class="toc-text">Satisfiability problem</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Example"><span class="toc-text">Example</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Semantics"><span class="toc-text">Semantics</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#From-LTL-to-omega-regular-languages"><span class="toc-text">From LTL to $\omega$-regular languages</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Counting-and-Non-counting-Languages"><span class="toc-text">Counting and Non-counting Languages</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Proof"><span class="toc-text">Proof</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Conclusion"><span class="toc-text">Conclusion</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -1026,58 +1026,60 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Previous chapter: <a href="../agv1-2/">Synthesis</a></p>
+        <p>Previous chapter: <a href="../agv6-2/">Expressing Program Properties using LTL</a></p>
 <blockquote>
 <p>This is a learning note of a course in <a target="_blank" rel="noopener" href="https://cispa.de/de">CISPA</a>, UdS. Taught by Bernd Finkbeiner</p>
 </blockquote>
-<h2 id="Verification-or-Synthesis"><a href="#Verification-or-Synthesis" class="headerlink" title="Verification or Synthesis"></a>Verification or Synthesis</h2><p>In applications like <a href="../agv1-1/">verification</a> and <a href="../agv1-2/">synthesis</a>, the automata- and game-theoretic machinery is usually “hidden” behind a logical formulation of the problem.</p>
-<p><img src="/images/notes/uds/agv/1_3_logic.png"></p>
-<h3 id="Logics-with-corresponding-Automata"><a href="#Logics-with-corresponding-Automata" class="headerlink" title="Logics with corresponding Automata"></a>Logics with corresponding Automata</h3><blockquote>
-<p><strong>S1S</strong>‘s expressiveness exceeds that of <strong>LTL</strong>, and<br><strong>S2S</strong>‘s expressiveness exceeds that of <strong>CTL*</strong> (on binary trees)</p>
+<h2 id="Semantics"><a href="#Semantics" class="headerlink" title="Semantics"></a>Semantics</h2><p>An LTL formula $\varphi$ over $AP$ defines the following language over the alphabet $2^{AP}$:</p>
+<p>$\hspace{1cm} \mathcal{L}(\varphi)&#x3D;\lbrace\alpha\in(2^{AP})^\omega\mid\alpha\models\varphi\rbrace$</p>
+<p>where $\models$ is the smallest relation satisfying:</p>
+<p>$\begin{array}{lllll}<br>\hspace{1cm} \alpha &amp; \models &amp; p &amp; \text{iff} &amp; p\in\alpha(0) \ \ \ \ (\text{i.e., }\alpha(0)\models p)\newline<br>\hspace{1cm} \alpha &amp; \models &amp; \varphi_1\wedge\varphi_2 &amp; \text{iff} &amp; \alpha\models\varphi_1\ \text{ and }\ \alpha\models\varphi_1\newline<br>\hspace{1cm} \alpha &amp; \models &amp; \neg\varphi &amp; \text{iff} &amp; \alpha\not\models\varphi\newline<br>\hspace{1cm} \alpha &amp; \models &amp; \bigcirc\varphi &amp; \text{iff} &amp; \alpha[1,\infty]&#x3D;\alpha(1)\alpha(2)\alpha(3)\dots\models\varphi\newline<br>\hspace{1cm} \alpha &amp; \models &amp; \varphi_1\ \mathcal{U}\ \varphi_2 &amp; \text{iff} &amp; \exists j\geq0.\ \alpha[j,\infty]\models\varphi_2\ \text{ and }\ \alpha[i,\infty]\models\varphi_1\text{ for all }0\leq i\leq j\newline<br>\end{array}$</p>
+<p>For the temporal operators, the semantics can be visualized as below:</p>
+<p><img src="/../images/notes/uds/agv/6_3_ltl.png"></p>
+<h2 id="From-LTL-to-omega-regular-languages"><a href="#From-LTL-to-omega-regular-languages" class="headerlink" title="From LTL to $\omega$-regular languages"></a>From LTL to $\omega$-regular languages</h2><blockquote>
+<p>All LTL-definable properties are $\omega$-regular, but <strong>NOT ALL</strong> $\omega$-regular languages can be defined in LTL.</p>
 </blockquote>
-<table>
-<thead>
-<tr>
-<th align="left">Logic</th>
-<th align="left">Usage</th>
-<th align="left">Example</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><strong>Linear-time temporal logic (LTL)</strong></td>
-<td align="left">sets of infinite <strong>words</strong></td>
-<td align="left">$\square \Diamond \ell_1$</td>
-</tr>
-<tr>
-<td align="left"><strong>Computation-tree logic (CTL &#x2F; CTL*)</strong></td>
-<td align="left">sets of infinite <strong>trees</strong></td>
-<td align="left">$\textsf{EF}\ell_1 \wedge \textsf{EF}m_1$</td>
-</tr>
-<tr>
-<td align="left"><strong>Monadic second-order logic with one successor (S1S)</strong></td>
-<td align="left">logic over infinite <strong>words</strong></td>
-<td align="left">$\forall x . x \in P \rightarrow S(x) \in P$</td>
-</tr>
-<tr>
-<td align="left"><strong>Monadic second-order logic with two successors (S2S)</strong></td>
-<td align="left">logic over infinite <strong>binary trees</strong></td>
-<td align="left">$\forall x . x \in P \rightarrow S_1(x) \in P \vee S_2(x) \in P$</td>
-</tr>
-</tbody></table>
-<h3 id="Explaination"><a href="#Explaination" class="headerlink" title="Explaination"></a>Explaination</h3><ul>
-<li>$\square \Diamond \ell_1$<br>$P_0$ is infinitely often at location $\ell_1$.</li>
-<li>$\textsf{EF}\ell_1 \wedge \textsf{EF}m_1$<br>There exists a computation path in which $P_0$ reaches location $\ell_1$, and<br>there is a (possibly different) computation path in which $P_1$ reaches location $m_1$.</li>
-<li>$\forall x . x \in P \rightarrow S(x) \in P$<br>A (given) set of natural numbers $P$ is either empty, or<br>consists of all positions starting from some position of the word.</li>
-<li>$\forall x . x \in P \rightarrow S_1(x) \in P \vee S_2(x) \in P$<br>A (given) set of nodes $P$ contains from each node $n \in P$ an entire path starting in $n$.</li>
-</ul>
-<p>For example, <strong>mutual exclusion</strong> property can be expressed using <strong>linear-time temporal logic (LTL)</strong>:<br>$$\square \neg (\ell_1 \wedge m_1)$$</p>
-<h2 id="Satisfiability-problem"><a href="#Satisfiability-problem" class="headerlink" title="Satisfiability problem"></a>Satisfiability problem</h2><p>Other than verification and synthesis, another important application of the connection between logic and automata is to decide the <em>satisfiability</em> problem of the various logics.</p>
-<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><p>We want to know if there exist two natural numbers $x$ and $y$ such that $x&#x3D;y+1$ and $y&#x3D;x+1$.<br>This can be expressed as the <strong>S1S</strong> formula $x&#x3D;S(y) \wedge y&#x3D;S(x)$, translate each conjunct into an automaton:</p>
-<p><img src="/images/notes/uds/agv/1_3_automaton.png"></p>
-<p><strong>Alphabet</strong>: subsets of $\lbrace x,y\rbrace$.</p>
-<p>There does not exist a word that is accepted by both automaton. Hence, the formula is unsatisfiable.</p>
+<p>Why can’t we? What is the limitation of LTL formula?</p>
+<h3 id="Counting-and-Non-counting-Languages"><a href="#Counting-and-Non-counting-Languages" class="headerlink" title="Counting and Non-counting Languages"></a>Counting and Non-counting Languages</h3><p>Let say we want to express:</p>
+<blockquote>
+<p>An arbitrary <strong>even</strong> sequence of $\varnothing$ symbols, followed by an infinite sequence of $p$ symbols</p>
+</blockquote>
+<p>In $\omega$-language it is $(\varnothing\varnothing)^\ast\lbrace p\rbrace^\omega$. However, this cannot be defined in LTL, because it is a <code>counting language</code>.</p>
+<blockquote>
+<p>$\textbf{Definition 6.1. }\text{A Language }L\subseteq\Sigma^\omega\text{ is }\textit{non-counting}\text{ iff}$<br>$$\exists n_0\in\mathbb{N}.\ \forall n\geq n_0.\ \forall v,w\in\Sigma^\ast, \alpha\in\Sigma^\omega.\ vw^n\alpha\in L\Leftrightarrow vw^{n+1}\alpha\in L$$</p>
+</blockquote>
+<p>For some threshold $n_0$, and a word with prefix $w$ which repeated $n$ times and $n\geq n_0$. For every $n$ we picked, if we can always find a pair of words $vw^{n}\alpha,vw^{n+1}$ that are both accepted by language $L$, then $L$ is <code>non-counting</code>.</p>
+<p>For example, in $L_1&#x3D;(\varnothing\varnothing)^\ast\lbrace p\rbrace^\omega$, if $(\varnothing)^n\lbrace p\rbrace^\omega\in L_1$, then $(\varnothing)^{n+1}\lbrace p\rbrace^\omega\not\in L_1$, so $L_1$ is <code>counting</code> with $n_0&#x3D;1$.</p>
+<blockquote>
+<p>$\textbf{Theorem 6.1. }\textit{ For every LTL-formula }\varphi,\mathcal{L}(\varphi)\textit{ is non-counting.}$</p>
+</blockquote>
+<h3 id="Proof"><a href="#Proof" class="headerlink" title="Proof"></a>Proof</h3><p>We prove the theorem by structural induction on $\varphi$, going through its sematics:</p>
+<p>$\textbf{Case }\varphi&#x3D;p:$<br>$\hspace{1cm}$  Simply choose the length $n_0&#x3D;1$, (because $\alpha\models p\text{ iff }p\in\alpha(0)$)</p>
+<p>$\textbf{Case }\varphi&#x3D;\varphi_1\wedge\varphi_2:$<br>$\hspace{1cm}$ By induction hypothesis, If $\varphi_1$ and $\varphi_2$ are <code>non-counting</code>, then $\mathcal{L}(\varphi_1)$ and $\mathcal{L}(\varphi_2)$ have threshold $n_0’$ and<br>$\hspace{1cm}$ $n’’_0\in\mathbb{N}$ respectively. We can choose $n_0&#x3D;\text{max}\lbrace n’_0,n’’_0\rbrace$ to ensure $\varphi$ is also <code>non-counting</code>. (max. because<br>$\hspace{1cm}$ the larger the $n_0$, less $n$ is required to be <code>non-counting</code>)</p>
+<p>$\textbf{Case }\varphi&#x3D;\neg\varphi_1:$<br>$\hspace{1cm}$ If $\varphi_1$ is <code>non-counting</code>, then $\mathcal{L}(\varphi_1)$ has threshold $n_0’\in\mathbb{N}$. We choose $n_0&#x3D;n’_0$</p>
+<p>$\textbf{Case }\varphi&#x3D;\bigcirc\varphi_1:$<br>$\hspace{1cm}$ If $\varphi_1$ is <code>non-counting</code>, then $\mathcal{L}(\varphi_1)$ has threshold $n_0’\in\mathbb{N}$. We choose $n_0&#x3D;n’_0+1$ and try to show<br>$$\text{“For }n\geq n_0,\ vw^n\alpha\models\bigcirc\varphi\ \text{ if and only if }\ n\geq n_0,\ vw^{n+1}\alpha\models\bigcirc\varphi”$$</p>
+<p>$\hspace{1cm}$ We try to perform operations on the fix length prefix $v$ as it doesn’t affect the finite loop prefix $w$. So we<br>$\hspace{1cm}$ need to consider whether the fix length prefix $v$ is an <em>empty string</em> $(\varepsilon)$, if not, we try to “peel” one cycle of<br>$\hspace{1cm}$ $w$ and make it so-called “fix-length” prefix.</p>
+<p>$\hspace{1cm}$ A simple example for the operation: if there’s logic requires $b$ to be reached in the next step, then the same<br>$\hspace{1cm}$ logic without <strong>neXt</strong> operator $\bigcirc$ can be satisfied by removing the first letter. (if $ab\models\bigcirc\varphi$, then $b\models\varphi$)</p>
+<p>$\hspace{1cm}\textbf{Case }\ v\neq\varepsilon:$ Thus $v&#x3D;av’$ for some $a\in\Sigma,v’\in\Sigma^\ast$. We have that</p>
+<p>$\begin{array}{lrl}<br>\hspace{2cm}&amp;av’w^n\alpha&amp;\models\bigcirc\varphi\newline<br>\hspace{2cm}\text{iff}&amp;v’w^n\alpha&amp;\models\varphi\newline<br>\hspace{2cm}\text{iff}&amp;v’w^{n+1}\alpha&amp;\models\varphi&amp;\text{(induction hypothesis)}\newline<br>\hspace{2cm}\text{iff}&amp;av’w^{n+1}\alpha&amp;\models\bigcirc\varphi\newline<br>\end{array}$</p>
+<p>$\hspace{1cm}\textbf{Case }\ v&#x3D;\varepsilon:$ Thus either $w&#x3D;\varepsilon$ (proved trivially), or $w&#x3D;aw’$ for some $a\in\Sigma,w’\in\Sigma^\ast$. It follows that</p>
+<p>$\begin{array}{lrl}<br>\hspace{2cm}&amp;(aw’)^n\alpha&amp;\models\bigcirc\varphi\newline<br>\hspace{2cm}\text{iff}&amp;(aw’)(aw’)^{n-1}\alpha&amp;\models\bigcirc\varphi\newline<br>\hspace{2cm}\text{iff}&amp;w’(aw’)^{n-1}\alpha&amp;\models\varphi\newline<br>\hspace{2cm}\text{iff}&amp;w’(aw’)^{n}\alpha&amp;\models\varphi&amp;\text{(induction hypothesis)}\newline<br>\hspace{2cm}\text{iff}&amp;(aw’)^{n+1}\alpha&amp;\models\bigcirc\varphi\newline<br>\end{array}$</p>
+<p>$\textbf{Case }\varphi&#x3D;\varphi_1\ \mathcal{U}\ \varphi_2:$<br>$\hspace{1cm}$ If $\varphi_1$ and $\varphi_2$ are <code>non-counting</code>, then $\mathcal{L}(\varphi_1)$ and $\mathcal{L}(\varphi_2)$ have threshold $n_0’$ and $n’’_0\in\mathbb{N}$ respectively. We<br>$\hspace{1cm}$ choose $n_0&#x3D;\text{max}\lbrace n’_0,n’’_0\rbrace+1$ and try to show<br>$$”\text{For }n\geq n_0,\ vw^n\alpha\models\varphi_1\ \mathcal{U}\ \varphi_2\ \text{ if and only if }\ vw^{n+1}\alpha\models\varphi_1\ \mathcal{U}\ \varphi_2”$$</p>
+<p>$\hspace{1cm}$ By the semantics of $\mathcal{U}$, $\varphi_1$ keeps holding until $\varphi_2$ is satisfied. Let $j$ be the least index when $\varphi_2$ is satisfied,<br>$\hspace{1cm}$ then we have $vw^n\alpha[j,\infty]\models\varphi_2$ and for all $i&lt;j,\ vw^n\alpha[i,\infty]\models\varphi_1$, respectively applies on $vw^{n+1}\alpha$.</p>
+<p>$\hspace{1cm}$ $\textbf{1. }\textit{If }\ vw^n\alpha\models\varphi_1\ \mathcal{U}\ \varphi_2\textit{, then }\ vw^{n+1}\alpha\models\varphi_1\ \mathcal{U}\ \varphi_2:$<br>$\hspace{2cm}$ Similar to $\bigcirc\varphi$, we try to do the operation with respect to $j$’s position. So we need to consider whether<br>$\hspace{2cm}$ index $j$ lies within the first cycle of the prefix $|v|+|w|$, or lies in the finite loop of the prefix $|w|$.</p>
+<p>$\hspace{2cm}\textbf{Case }j\leq|v|+|w|:$<br>$\hspace{3cm}$ By induction hypothesis, we assumed $\varphi_1$ and $\varphi_2$ are <code>non-counting</code>. So<br>$\hspace{3cm}$ if $vww^{n−1}\alpha[j,\infty]\models\varphi_2$, then $vww^{n}\alpha[j,\infty]\models\varphi_2$ and analogously,<br>$\hspace{3cm}$ if $vww^{n−1}\alpha[i,\infty]\models\varphi_1$, then $vww^{n}\alpha[i,\infty]\models\varphi_1$ for $i &lt; j$.<br>$\hspace{3cm}$ Hence, $vw^{n+1}\alpha\models\varphi_1\ \mathcal{U}\ \varphi_2$.</p>
+<p>$\hspace{2cm}\textbf{Case }j&gt;|v|+|w|:$<br>$\hspace{3cm}$ By adding one more cycle, we can essentially get the same suffix if $j$ is somewhere in the cycle:<br>$\hspace{3cm}$ if $vw^{n}\alpha[j,\infty]\models\varphi_2$, then $vw^{n+1}\alpha[j+|w|,\infty]\models\varphi_2$, and<br>$\hspace{3cm}$ if $vw^{n}\alpha[i,\infty]\models\varphi_1$, then $vw^{n+1}\alpha[i,\infty]\models\varphi_1$, for each position $|v|+|w|\leq i&lt;j+|w|$.<br>$\hspace{3cm}$ Additionally, by induction hypothesis from the above case, we have that</p>
+<p>$\begin{array}{lrcccll}<br>\hspace{4cm}&amp;|v|+|w|&amp;\leq&amp;i&amp;&lt;&amp;j+|w|\newline<br>\hspace{4cm}\text{iff}&amp;|v|&amp;\leq&amp;i&amp;&lt;&amp;j\newline<br>\hspace{4cm}\text{iff}&amp;&amp;&amp;i&amp;&lt;&amp;j&amp;&amp;(\text{induction hypothesis: }i&lt;|v|+|w|)\newline<br>\end{array}$</p>
+<p>$\hspace{3cm}$ Hence, $vw^{n}\alpha\models\varphi_1\ \mathcal{U}\ \varphi_2$.</p>
+<p>$\hspace{1cm}$ $\textbf{2. }\textit{If }\ vw^{n+1}\alpha\models\varphi_1\ \mathcal{U}\ \varphi_2\textit{, then }\ vw^{n}\alpha\models\varphi_1\ \mathcal{U}\ \varphi_2:$<br>$\hspace{2cm}$ Again, we need consider both cases seperately:</p>
+<p>$\hspace{2cm}\textbf{Case }j\leq|v|+|w|:$<br>$\hspace{3cm}$ By induction hypothesis, we assumed $\varphi_1$ and $\varphi_2$ are <code>non-counting</code>. So<br>$\hspace{3cm}$ if $vww^{n}\alpha[j,\infty]\models\varphi_2$, then $vww^{n-1}\alpha[j,\infty]\models\varphi_2$ and analogously,<br>$\hspace{3cm}$ if $vww^{n}\alpha[i,\infty]\models\varphi_1$, then $vww^{n-1}\alpha[i,\infty]\models\varphi_1$ for $i &lt; j$.<br>$\hspace{3cm}$ Hence, $vw^{n}\alpha\models\varphi_1\ \mathcal{U}\ \varphi_2$.</p>
+<p>$\hspace{2cm}\textbf{Case }j&gt;|v|+|w|:$<br>$\hspace{3cm}$ Simliar to above, by subtracting one more cycle, we can essentially get the same suffix:<br>$\hspace{3cm}$ if $vw^{n+1}\alpha[j,\infty]\models\varphi_2$, then $vw^{n}\alpha[j-|w|,\infty]\models\varphi_2$, and<br>$\hspace{3cm}$ if $vw^{n+1}\alpha[i,\infty]\models\varphi_1$, then $vw^{n}\alpha[i,\infty]\models\varphi_1$, for each position $|v|+|w|\leq i&lt;j-|w|$.<br>$\hspace{3cm}$ Again, by induction hypothesis from the above case, we have that</p>
+<p>$\begin{array}{lrcccll}<br>\hspace{4cm}&amp;|v|+|w|&amp;\leq&amp;i&amp;&lt;&amp;j-|w|\newline<br>\hspace{4cm}\text{iff}&amp;|v|+2|w|&amp;\leq&amp;i&amp;&lt;&amp;j\newline<br>\hspace{4cm}\text{iff}&amp;&amp;&amp;i&amp;&lt;&amp;j&amp;&amp;(\text{induction hypothesis: }i&lt;|v|+|w|)\newline<br>\end{array}$</p>
+<p>$\hspace{3cm}$ Hence, $vw^{n}\alpha\models\varphi_1\ \mathcal{U}\ \varphi_2$.</p>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>Unfortunately, LTL is not expressive enough to include all $\omega$-regular languages. However, by extending the syntax of LTL, we can also extend the languages it covers.<br>In the next section, we will Quantified Propositional Temporal Logic (QPTL), and see whether it suffices to solve our problem.</p>
 <hr>
-<p>Next chapter: <a href="../agv2-1/">Büchi automata (Preliminaries)</a></p>
+<p>Next chapter: <a href="../agv6-4/">Quantified Propositional Temporal Logic (QPTL)</a></p>
+<p>Further Reading: <a href=""></a></p>
 
       
        <hr><span style="font-style: italic;color: gray;"> Please cite the source for reprints, feel free to verify the sources cited in the article, and point out any errors or lack of clarity of expression. You can comment in the comments section below or email to GreenMeeple@yahoo.com </span>

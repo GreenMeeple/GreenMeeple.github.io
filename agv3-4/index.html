@@ -144,7 +144,7 @@
     <li>
         <div class="all active" data-rel="All">All
             
-                <small>(51)</small>
+                <small>(53)</small>
             
         </div>
     </li>
@@ -246,7 +246,7 @@
         <div data-rel="Notes">
             <i class="fold iconfont icon-right"></i>
             Notes
-            <small>(19) </small>
+            <small>(21) </small>
         </div>
         
             <ul class="sub hide">
@@ -256,7 +256,7 @@
         <div data-rel="Notes&lt;---&gt;UdS">
             
             UdS
-            <small>(19) </small>
+            <small>(21) </small>
         </div>
         
     </li>
@@ -320,8 +320,8 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="51">
-<input type="hidden" id="yelog_site_word_count" value="24.6k">
+<input type="hidden" id="yelog_site_posts_number" value="53">
+<input type="hidden" id="yelog_site_word_count" value="26.9k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -458,6 +458,24 @@
            data-author="" >
             <span class="post-title" title="3-hexo Shortcut">3-hexo Shortcut</span>
             <span class="post-date" title="2024-10-01 11:11:11">2024/10/01</span>
+        </a>
+        
+        
+        <a  class="All Notes UdS "
+           href="/agv6-3/"
+           data-tag="AGV"
+           data-author="" >
+            <span class="post-title" title="AGV 6.3 -- LTL and Counting Languages">AGV 6.3 -- LTL and Counting Languages</span>
+            <span class="post-date" title="2024-11-25 00:44:03">2024/11/25</span>
+        </a>
+        
+        
+        <a  class="All Notes UdS "
+           href="/agv6-2/"
+           data-tag="AGV"
+           data-author="" >
+            <span class="post-title" title="AGV 6.2 -- Expressing Program Properties using LTL">AGV 6.2 -- Expressing Program Properties using LTL</span>
+            <span class="post-date" title="2024-11-24 05:56:28">2024/11/24</span>
         </a>
         
         
@@ -957,7 +975,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-12-07 19:54:18'>2024-11-16 20:36</time>
+            Created At : <time class="date" title='Updated At: 2024-12-09 01:15:36'>2024-11-16 20:36</time>
         
     </div>
     <div class="article-meta">
@@ -1014,7 +1032,7 @@
 </blockquote>
 <p>In this section, we continue the proof of the <strong>closure properties</strong> of the Büchi-recognizable languages.</p>
 <h2 id="Concatenation-of-regular-Langauge-and-Buchi-recognizable-Language"><a href="#Concatenation-of-regular-Langauge-and-Buchi-recognizable-Language" class="headerlink" title="Concatenation of regular Langauge and Büchi-recognizable Language"></a>Concatenation of regular Langauge and Büchi-recognizable Language</h2><blockquote>
-<p>$\textbf{Construction 3.3. } \text{Let }\mathcal{A}_1&#x3D;(\Sigma,Q_1,I_1,T_1,F_1)\text{ be an automaton over finite words that}\newline\text{recognizes the languge }L_1\text{, and let }\mathcal{A}_2 &#x3D; (\Sigma,Q_2,I_2,T_2,\small\text{BÜCHI}\normalsize (F_2))\text{ be a Büchi automaton}\newline\text{over the same alphabet that recognizes }L_2.\text{ We construct a Büchi autotmaton }\newline\mathcal{A’}&#x3D;(\Sigma,Q’,I’,T’,\small\text{BÜCHI}\normalsize (F_2))\text{ with }\mathcal{L}(\mathcal{A’})&#x3D;L_1\cdot L_2\text{ as follows:}$<br>$\begin{array}{lrll}<br>\hspace{1cm} \cdot &amp;Q’&amp;&#x3D;&amp;Q_1\cup Q_2 \hspace{0.7cm}(\text{w.l.o.g we assume }Q_1\cap Q_2&#x3D;\emptyset)\newline<br>\hspace{1cm} \cdot &amp;I’&amp;&#x3D;&amp;\biggl\lbrace \begin{array}{ll}I_1 &amp; \ \text{if }I_1\cap F_1&#x3D;\emptyset\newline<br>I_1\cup I_2 &amp; \ \text{otherwise}\end{array} \newline<br>\hspace{1cm} \cdot &amp;T’&amp;&#x3D;&amp;T_1\cup T_2\cup\lbrace (q,\sigma,q’)\mid(q,\sigma,f)\in T_1,f\in F_1,q’\in I_2\rbrace \newline<br>\end{array}$</p>
+<p>$\textbf{Construction 3.3. } \text{Let }\mathcal{A}_1&#x3D;(\Sigma,Q_1,I_1,T_1,F_1)\text{ be an automaton over finite words that}\newline\text{recognizes the languge }L_1\text{, and let }\mathcal{A}_2 &#x3D; (\Sigma,Q_2,I_2,T_2,\small\text{BÜCHI}\normalsize (F_2))\text{ be a Büchi automaton}\newline\text{over the same alphabet that recognizes }L_2.\text{ We construct a Büchi autotmaton }\newline\mathcal{A’}&#x3D;(\Sigma,Q’,I’,T’,\small\text{BÜCHI}\normalsize (F_2))\text{ with }\mathcal{L}(\mathcal{A’})&#x3D;L_1\cdot L_2\text{ as follows:}$<br>$\begin{array}{lrll}<br>\hspace{1cm} \cdot &amp;Q’&amp;&#x3D;&amp;Q_1\cup Q_2 \hspace{0.7cm}(\text{w.l.o.g we assume }Q_1\cap Q_2&#x3D;\varnothing)\newline<br>\hspace{1cm} \cdot &amp;I’&amp;&#x3D;&amp;\biggl\lbrace \begin{array}{ll}I_1 &amp; \ \text{if }I_1\cap F_1&#x3D;\varnothing\newline<br>I_1\cup I_2 &amp; \ \text{otherwise}\end{array} \newline<br>\hspace{1cm} \cdot &amp;T’&amp;&#x3D;&amp;T_1\cup T_2\cup\lbrace (q,\sigma,q’)\mid(q,\sigma,f)\in T_1,f\in F_1,q’\in I_2\rbrace \newline<br>\end{array}$</p>
 </blockquote>
 <p>$Q’:$ Same as Union, we include both automata for concatenation</p>
 <p>$I’:$ We normaly start the the automaton from $I_1$ If $I_1$ is non-empty, otherwise we start at $I_2$</p>
@@ -1028,7 +1046,7 @@
 <p>On the other way, we can always construct a word $w\alpha$. If $w$ is accepted by $\mathcal{A_1}$ and $\alpha$ is accepted by $\mathcal{A_2}$, then $w\alpha$ is always accepted by $\mathcal{A’}$</p>
 <h3 id="Formal-Proof"><a href="#Formal-Proof" class="headerlink" title="Formal Proof"></a>Formal Proof</h3><p>We prove that the Büchi automaton $\mathcal{A’}$ built from the automaton on finite words $\mathcal{A}_1$ and the Büchi automaton $\mathcal{A}_2$ indeed recognizes the concatenation of the languages of the two automata.</p>
 <p>$\mathcal{L}(\mathcal{A’})\subseteq\mathcal{L}(\mathcal{A}_1)\cdot\mathcal{L}(\mathcal{A}_2):$</p>
-<p>For $\alpha\in\mathcal{L}(\mathcal{A’})$, we have an accepting run $r&#x3D;r(0)r(1)r(2)\dots$ of $\mathcal{A’}$ on $\alpha$.<br>If $r(0)\in I_1$, then there is an $n\in\mathbb{N}$ such that $(r(n),\alpha(n),r(n+1))\in Q_1\times\Sigma\times I_2$ and therefore, there is a final state $f\in F_1$ such that $r(0)r(1)r(2)\dots r(n)f$ is an accepting run of $\mathcal{A_1}$ on $\alpha(0)\alpha(1)\alpha(2)\dots \alpha(n)$ and $r(n+1)r(n+2)\dots$ is an accepting run of $\mathcal{A_2}$ on $\alpha(n+1)\alpha(n+2)\dots$<br>If $r(0)\in I_2$ then $I_1\cup F_1 \neq\emptyset$ and therefore, $\varepsilon\in\mathcal{L}(\mathcal{A_1}),\alpha\in\mathcal{L}(\mathcal{A_2})$</p>
+<p>For $\alpha\in\mathcal{L}(\mathcal{A’})$, we have an accepting run $r&#x3D;r(0)r(1)r(2)\dots$ of $\mathcal{A’}$ on $\alpha$.<br>If $r(0)\in I_1$, then there is an $n\in\mathbb{N}$ such that $(r(n),\alpha(n),r(n+1))\in Q_1\times\Sigma\times I_2$ and therefore, there is a final state $f\in F_1$ such that $r(0)r(1)r(2)\dots r(n)f$ is an accepting run of $\mathcal{A_1}$ on $\alpha(0)\alpha(1)\alpha(2)\dots \alpha(n)$ and $r(n+1)r(n+2)\dots$ is an accepting run of $\mathcal{A_2}$ on $\alpha(n+1)\alpha(n+2)\dots$<br>If $r(0)\in I_2$ then $I_1\cup F_1 \neq\varnothing$ and therefore, $\varepsilon\in\mathcal{L}(\mathcal{A_1}),\alpha\in\mathcal{L}(\mathcal{A_2})$</p>
 <p>$\mathcal{L}(\mathcal{A’})\supseteq\mathcal{L}(\mathcal{A}_1)\cdot\mathcal{L}(\mathcal{A}_2):$</p>
 <p>For $w\in\mathcal{A_1}$, let $r&#x3D;r(0)r(1)\dots r(n)$ be an accepting run $\mathcal{A_1}$ on $w$.<br>For $\alpha\in\mathcal{A_2}$, let $s&#x3D;s(0)s(1)\dots$ be an accepting run of $\mathcal{A_2}$ on $\alpha$.<br>Then, $r(n)\in F_1$ and, by construction, $r(0)r(1)\dots r(n-1)s(0)s(1)\dots$ is an accepting run of $\mathcal{A’}$ on $w\alpha$.</p>
 <h2 id="Infinite-concatenation-of-Regular-language"><a href="#Infinite-concatenation-of-Regular-language" class="headerlink" title="Infinite concatenation of Regular language"></a>Infinite concatenation of Regular language</h2><p>Finally, we show that the infinite concatenation of words of a regular language forms a Büchi-recognizable language. We construct a Büchi automaton for this language from an automaton over finite words in two steps.</p>

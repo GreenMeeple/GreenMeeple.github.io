@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>AGV 1.3 -- The Logic-Automata Connection | GreenMeeple</title>
+  <title>AGV 6.2 -- Expressing Program Properties using LTL | GreenMeeple</title>
   <meta name="keywords" content=" AGV ">
-  <meta name="description" content="AGV 1.3 -- The Logic-Automata Connection | GreenMeeple">
+  <meta name="description" content="AGV 6.2 -- Expressing Program Properties using LTL | GreenMeeple">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="Personal Info.Chun Ngai Li (Alex), M.Sc. Cybersecurity in Saarland University,B.Eng Information Engineering in CUHK. Recent WorksA C&#x2F;C++ programmer. Also working on Backend &amp; Python developing.Cur">
 <meta property="og:type" content="website">
@@ -946,9 +946,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-agv1-3" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-agv6-2" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">AGV 1.3 -- The Logic-Automata Connection</h1>
+        <h1 class="article-title">AGV 6.2 -- Expressing Program Properties using LTL</h1>
     
     <div class="article-meta">
         
@@ -975,12 +975,12 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-11-13 20:28:01'>2024-11-08 07:04</time>
+            Created At : <time class="date" title='Updated At: 2024-12-10 02:33:19'>2024-11-24 05:56</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:374</span>
+        <span>Count:627</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1010,7 +1010,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Verification-or-Synthesis"><span class="toc-text">Verification or Synthesis</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Logics-with-corresponding-Automata"><span class="toc-text">Logics with corresponding Automata</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Explaination"><span class="toc-text">Explaination</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Satisfiability-problem"><span class="toc-text">Satisfiability problem</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Example"><span class="toc-text">Example</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Introduction"><span class="toc-text">Introduction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Properties-of-the-Concurrent-Program-small-text-TURN"><span class="toc-text">Properties of the Concurrent Program $\small{\text{TURN}}$</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Mutual-exclusion-square-neg-ell-1-wedge-m-1"><span class="toc-text">Mutual exclusion : $\square\neg(\ell_1\wedge m_1)$</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Finite-waiting-square-ell-0-rightarrow-Diamond-ell-1-wedge-m-0-rightarrow-Diamond-m-1"><span class="toc-text">Finite waiting : $\square((\ell_0\rightarrow\Diamond\ell_1)\wedge(m_0\rightarrow\Diamond m_1))$</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Finite-waiting-under-Fairness-square-Diamond-P-0-wedge-square-Diamond-P-1-rightarrow-square-ell-0-rightarrow-Diamond-ell-1-wedge-m-0-rightarrow-Diamond-m-1"><span class="toc-text">Finite waiting under Fairness : $(\square\Diamond P_0\wedge\square\Diamond P_1)\rightarrow\square((\ell_0\rightarrow\Diamond\ell_1)\wedge(m_0\rightarrow\Diamond m_1))$</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Bounded-overtaking-square-ell-0-rightarrow-neg-m-1-mathcal-U-m-1-mathcal-U-neg-m-1-mathcal-U-ell-1"><span class="toc-text">Bounded overtaking : $\square(\ell_0\rightarrow(\neg m_1\ \mathcal{U}\ (m_1\ \mathcal{U}\ (\neg m_1\ \mathcal{U}\ \ell_1))))$</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Conclusion"><span class="toc-text">Conclusion</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -1026,58 +1026,34 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Previous chapter: <a href="../agv1-2/">Synthesis</a></p>
+        <p>Previous chapter: <a href="../agv6-1/">Linear-Time Temporal Logic (LTL)</a></p>
 <blockquote>
 <p>This is a learning note of a course in <a target="_blank" rel="noopener" href="https://cispa.de/de">CISPA</a>, UdS. Taught by Bernd Finkbeiner</p>
 </blockquote>
-<h2 id="Verification-or-Synthesis"><a href="#Verification-or-Synthesis" class="headerlink" title="Verification or Synthesis"></a>Verification or Synthesis</h2><p>In applications like <a href="../agv1-1/">verification</a> and <a href="../agv1-2/">synthesis</a>, the automata- and game-theoretic machinery is usually “hidden” behind a logical formulation of the problem.</p>
-<p><img src="/images/notes/uds/agv/1_3_logic.png"></p>
-<h3 id="Logics-with-corresponding-Automata"><a href="#Logics-with-corresponding-Automata" class="headerlink" title="Logics with corresponding Automata"></a>Logics with corresponding Automata</h3><blockquote>
-<p><strong>S1S</strong>‘s expressiveness exceeds that of <strong>LTL</strong>, and<br><strong>S2S</strong>‘s expressiveness exceeds that of <strong>CTL*</strong> (on binary trees)</p>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>In this section, we consider again our concurrent program $\small{\text{TURN}}$ introduced in <a href="../agv1-1/">section 1.1</a>. As discussed before, a major property of interest is <code>mutual exclusion</code>,i.e., at any given point of time, at most one process is in the $\text{critical}$ region. We can express <code>mutual exclusion</code>, as well as other properties of turn, in <code>LTL</code>.</p>
+<p>$\textbf{Example 1.1. }\small{\text{TURN}}:$<br>$$\text{local $t$: boolean where initially $t$ &#x3D; $false$}\newline<br>P_0::\left[ \begin{array}{l}\text{loop forever do}\newline<br>\hspace{1cm}\left[ \begin{array}{l}<br>\ell_0: \text{await }\neg t; \newline<br>\ell_1: \text{critical;} \newline<br>\ell_2: t :&#x3D; true; \newline<br>\end{array} \right]\end{array} \right]<br>\mid\mid P_1::\left[ \begin{array}{l}<br>\text{loop forever do}\newline<br>\hspace{1cm}\left[ \begin{array}{l}<br>m_0: \text{await } t; \newline<br>m_1: \text{critical;} \newline<br>m_2: t :&#x3D; false; \newline<br>\end{array} \right]\end{array} \right]$$</p>
+<h2 id="Properties-of-the-Concurrent-Program-small-text-TURN"><a href="#Properties-of-the-Concurrent-Program-small-text-TURN" class="headerlink" title="Properties of the Concurrent Program $\small{\text{TURN}}$"></a>Properties of the Concurrent Program $\small{\text{TURN}}$</h2><h3 id="Mutual-exclusion-square-neg-ell-1-wedge-m-1"><a href="#Mutual-exclusion-square-neg-ell-1-wedge-m-1" class="headerlink" title="Mutual exclusion : $\square\neg(\ell_1\wedge m_1)$"></a><em>Mutual exclusion</em> : $\square\neg(\ell_1\wedge m_1)$</h3><blockquote>
+<p>$\ell_{1}$ and $m_1$ cannot ($\neg$) be true at the same time ($\wedge$) at every point in time ($\square$)</p>
 </blockquote>
-<table>
-<thead>
-<tr>
-<th align="left">Logic</th>
-<th align="left">Usage</th>
-<th align="left">Example</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><strong>Linear-time temporal logic (LTL)</strong></td>
-<td align="left">sets of infinite <strong>words</strong></td>
-<td align="left">$\square \Diamond \ell_1$</td>
-</tr>
-<tr>
-<td align="left"><strong>Computation-tree logic (CTL &#x2F; CTL*)</strong></td>
-<td align="left">sets of infinite <strong>trees</strong></td>
-<td align="left">$\textsf{EF}\ell_1 \wedge \textsf{EF}m_1$</td>
-</tr>
-<tr>
-<td align="left"><strong>Monadic second-order logic with one successor (S1S)</strong></td>
-<td align="left">logic over infinite <strong>words</strong></td>
-<td align="left">$\forall x . x \in P \rightarrow S(x) \in P$</td>
-</tr>
-<tr>
-<td align="left"><strong>Monadic second-order logic with two successors (S2S)</strong></td>
-<td align="left">logic over infinite <strong>binary trees</strong></td>
-<td align="left">$\forall x . x \in P \rightarrow S_1(x) \in P \vee S_2(x) \in P$</td>
-</tr>
-</tbody></table>
-<h3 id="Explaination"><a href="#Explaination" class="headerlink" title="Explaination"></a>Explaination</h3><ul>
-<li>$\square \Diamond \ell_1$<br>$P_0$ is infinitely often at location $\ell_1$.</li>
-<li>$\textsf{EF}\ell_1 \wedge \textsf{EF}m_1$<br>There exists a computation path in which $P_0$ reaches location $\ell_1$, and<br>there is a (possibly different) computation path in which $P_1$ reaches location $m_1$.</li>
-<li>$\forall x . x \in P \rightarrow S(x) \in P$<br>A (given) set of natural numbers $P$ is either empty, or<br>consists of all positions starting from some position of the word.</li>
-<li>$\forall x . x \in P \rightarrow S_1(x) \in P \vee S_2(x) \in P$<br>A (given) set of nodes $P$ contains from each node $n \in P$ an entire path starting in $n$.</li>
-</ul>
-<p>For example, <strong>mutual exclusion</strong> property can be expressed using <strong>linear-time temporal logic (LTL)</strong>:<br>$$\square \neg (\ell_1 \wedge m_1)$$</p>
-<h2 id="Satisfiability-problem"><a href="#Satisfiability-problem" class="headerlink" title="Satisfiability problem"></a>Satisfiability problem</h2><p>Other than verification and synthesis, another important application of the connection between logic and automata is to decide the <em>satisfiability</em> problem of the various logics.</p>
-<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><p>We want to know if there exist two natural numbers $x$ and $y$ such that $x&#x3D;y+1$ and $y&#x3D;x+1$.<br>This can be expressed as the <strong>S1S</strong> formula $x&#x3D;S(y) \wedge y&#x3D;S(x)$, translate each conjunct into an automaton:</p>
-<p><img src="/images/notes/uds/agv/1_3_automaton.png"></p>
-<p><strong>Alphabet</strong>: subsets of $\lbrace x,y\rbrace$.</p>
-<p>There does not exist a word that is accepted by both automaton. Hence, the formula is unsatisfiable.</p>
+<p>The property can equivalently be formulated as $\neg(\textbf{true}\ \mathcal{U}\ (\ell_1\wedge m_1))$, which means that the system remains true, until the a violation of mutual exclusion, i.e., $\ell_1\wedge m_1$, occurs</p>
+<h3 id="Finite-waiting-square-ell-0-rightarrow-Diamond-ell-1-wedge-m-0-rightarrow-Diamond-m-1"><a href="#Finite-waiting-square-ell-0-rightarrow-Diamond-ell-1-wedge-m-0-rightarrow-Diamond-m-1" class="headerlink" title="Finite waiting : $\square((\ell_0\rightarrow\Diamond\ell_1)\wedge(m_0\rightarrow\Diamond m_1))$"></a><em>Finite waiting</em> : $\square((\ell_0\rightarrow\Diamond\ell_1)\wedge(m_0\rightarrow\Diamond m_1))$</h3><blockquote>
+<p>If ($\rightarrow$) $\ell_0$ is reached, eventually ($\Diamond$) it moves to $\ell_1$ and so as $m_0$ and $m_1$, this happens forever ($\square$)</p>
+</blockquote>
+<p>In other words, each process only waits a finite amount of time (in locations $\ell_0$ and $m_0$, respectively) until it enters the $\text{critical}$ region (in locations $\ell_1$ and $m_1$, respectively):</p>
+<p>This property is a <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Safety_and_liveness_properties#Liveness">Liveness</a> conditions, usually involve infinite number of steps. Usually it is only meaningful when it is held under additional assumptions on the <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Linear_time_property#Fairness_properties">fairness</a> of the <strong>scheduler</strong>.</p>
+<h3 id="Finite-waiting-under-Fairness-square-Diamond-P-0-wedge-square-Diamond-P-1-rightarrow-square-ell-0-rightarrow-Diamond-ell-1-wedge-m-0-rightarrow-Diamond-m-1"><a href="#Finite-waiting-under-Fairness-square-Diamond-P-0-wedge-square-Diamond-P-1-rightarrow-square-ell-0-rightarrow-Diamond-ell-1-wedge-m-0-rightarrow-Diamond-m-1" class="headerlink" title="Finite waiting under Fairness : $(\square\Diamond P_0\wedge\square\Diamond P_1)\rightarrow\square((\ell_0\rightarrow\Diamond\ell_1)\wedge(m_0\rightarrow\Diamond m_1))$"></a><em>Finite waiting under Fairness</em> : $(\square\Diamond P_0\wedge\square\Diamond P_1)\rightarrow\square((\ell_0\rightarrow\Diamond\ell_1)\wedge(m_0\rightarrow\Diamond m_1))$</h3><blockquote>
+<p><code>Finite waiting</code> is required if both $P_0$ and $P_1$ will always happens (taking turns)</p>
+</blockquote>
+<p>Let the atomic propositions $P_0$ and $P_1$ denote that the <strong>scheduler</strong> allows the respective process to advance in the current step. The subformula $\square\Diamond P_0$ states that process $P_0$ is scheduled infinitely often (always eventually). The <em>finite waiting property</em> is thus only required to hold if both processes are scheduled infinitely often.</p>
+<h3 id="Bounded-overtaking-square-ell-0-rightarrow-neg-m-1-mathcal-U-m-1-mathcal-U-neg-m-1-mathcal-U-ell-1"><a href="#Bounded-overtaking-square-ell-0-rightarrow-neg-m-1-mathcal-U-m-1-mathcal-U-neg-m-1-mathcal-U-ell-1" class="headerlink" title="Bounded overtaking : $\square(\ell_0\rightarrow(\neg m_1\ \mathcal{U}\ (m_1\ \mathcal{U}\ (\neg m_1\ \mathcal{U}\ \ell_1))))$"></a><em>Bounded overtaking</em> : $\square(\ell_0\rightarrow(\neg m_1\ \mathcal{U}\ (m_1\ \mathcal{U}\ (\neg m_1\ \mathcal{U}\ \ell_1))))$</h3><blockquote>
+<p>If $\ell_0$ is reached, it must leave the location $m_1$, and wait until $\ell_1$ is reached; when it leaves $\ell_1$, then it is allowed to move back to location $m_1$ again. This repeats infinitely.</p>
+</blockquote>
+<p>In program $\small{\text{TURN}}$, the shared variable $t$ ensures that the processes <em>take turns</em> in entering their respective $\text{critical}$ regions. <em>Bounded Overtaking</em> refers to once process $P_0$ reaches location $\ell_0$, process $P_1$ can enter location $m_1$ at most once before Process $P_0$ enters location $\ell_1$.</p>
+<p>This formulization of <em>bounded overtaking</em> requires that Process $P_1$ will eventually reach $\ell_1$. Sometimes we may also prefer a weaker requirement, where <strong>waiting forever</strong> is fine, as long as Process $P_1$ does not get to enter $m_1$ more than once in the meantime. We can simply change the operator into <code>weak until</code>$(\mathcal{W})$ to allow the processes to wait forever: $\square(\ell_0\rightarrow(\neg m_1\ \mathcal{W}\ (m_1\ \mathcal{W}\ (\neg m_1\ \mathcal{W}\ \ell_1))))$</p>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>In the next section, we will define the semantics of the logic for our automaton.</p>
 <hr>
-<p>Next chapter: <a href="../agv2-1/">Büchi automata (Preliminaries)</a></p>
+<p>Next chapter: <a href="../agv6-3/">LTL and Counting Languages</a></p>
+<p>Further Reading: <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Safety_and_liveness_properties">Safety and liveness properties</a>. <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Linear_time_property">Linear time property</a></p>
 
       
        <hr><span style="font-style: italic;color: gray;"> Please cite the source for reprints, feel free to verify the sources cited in the article, and point out any errors or lack of clarity of expression. You can comment in the comments section below or email to GreenMeeple@yahoo.com </span>

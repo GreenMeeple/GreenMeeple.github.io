@@ -144,7 +144,7 @@
     <li>
         <div class="all active" data-rel="All">All
             
-                <small>(51)</small>
+                <small>(53)</small>
             
         </div>
     </li>
@@ -246,7 +246,7 @@
         <div data-rel="Notes">
             <i class="fold iconfont icon-right"></i>
             Notes
-            <small>(19) </small>
+            <small>(21) </small>
         </div>
         
             <ul class="sub hide">
@@ -256,7 +256,7 @@
         <div data-rel="Notes&lt;---&gt;UdS">
             
             UdS
-            <small>(19) </small>
+            <small>(21) </small>
         </div>
         
     </li>
@@ -320,8 +320,8 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="51">
-<input type="hidden" id="yelog_site_word_count" value="24.6k">
+<input type="hidden" id="yelog_site_posts_number" value="53">
+<input type="hidden" id="yelog_site_word_count" value="26.9k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -458,6 +458,24 @@
            data-author="" >
             <span class="post-title" title="3-hexo Shortcut">3-hexo Shortcut</span>
             <span class="post-date" title="2024-10-01 11:11:11">2024/10/01</span>
+        </a>
+        
+        
+        <a  class="All Notes UdS "
+           href="/agv6-3/"
+           data-tag="AGV"
+           data-author="" >
+            <span class="post-title" title="AGV 6.3 -- LTL and Counting Languages">AGV 6.3 -- LTL and Counting Languages</span>
+            <span class="post-date" title="2024-11-25 00:44:03">2024/11/25</span>
+        </a>
+        
+        
+        <a  class="All Notes UdS "
+           href="/agv6-2/"
+           data-tag="AGV"
+           data-author="" >
+            <span class="post-title" title="AGV 6.2 -- Expressing Program Properties using LTL">AGV 6.2 -- Expressing Program Properties using LTL</span>
+            <span class="post-date" title="2024-11-24 05:56:28">2024/11/24</span>
         </a>
         
         
@@ -957,12 +975,12 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-11-13 20:28:01'>2024-11-06 19:00</time>
+            Created At : <time class="date" title='Updated At: 2024-12-08 15:24:31'>2024-11-06 19:00</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:457</span>
+        <span>Count:455</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1016,7 +1034,7 @@
 <blockquote>
 <p>Constructing the <strong>intersection</strong> of system, with an automaton for the <strong>negation of the specification</strong>,<br>then checking whether the language of the resulting automaton is <strong>empty</strong>.</p>
 </blockquote>
-<p>$\textbf{Example 1.1. } \text{Consider the concurrent program }\small{\text{TURN}}:$<br>$$<br>\text{local $t$: boolean where initially $t$ &#x3D; $false$}<br>\newline<br>P_0::<br>\left[ \begin{array}{l}<br>  \text{loop forever do}<br>  \newline<br>  \hspace{1cm}<br>  \left[ \begin{array}{l}<br>    \ell_0: \text{await }\neg t; \newline<br>    \ell_1: \text{critical;} \newline<br>    \ell_2: t :&#x3D; true; \newline<br>  \end{array} \right]<br>\end{array} \right]<br>\mid\mid P_1::<br>\left[ \begin{array}{l}<br>  \text{loop forever do}<br>  \newline<br>  \hspace{1cm}<br>  \left[ \begin{array}{l}<br>    m_0: \text{await } t; \newline<br>    m_1: \text{critical;} \newline<br>    m_2: t :&#x3D; false; \newline<br>  \end{array} \right]<br>\end{array} \right]<br>$$</p>
+<p>$\textbf{Example 1.1. } \text{Consider the concurrent program }\small{\text{TURN}}:$<br>$$\text{local $t$: boolean where initially $t$ &#x3D; $false$}\newline<br>P_0::\left[ \begin{array}{l}\text{loop forever do}\newline<br>\hspace{1cm}\left[ \begin{array}{l}<br>\ell_0: \text{await }\neg t; \newline<br>\ell_1: \text{critical;} \newline<br>\ell_2: t :&#x3D; true; \newline<br>\end{array} \right]\end{array} \right]<br>\mid\mid P_1::\left[ \begin{array}{l}<br>\text{loop forever do}\newline<br>\hspace{1cm}\left[ \begin{array}{l}<br>m_0: \text{await } t; \newline<br>m_1: \text{critical;} \newline<br>m_2: t :&#x3D; false; \newline<br>\end{array} \right]\end{array} \right]$$</p>
 <p>The example above is a simple solution to the <strong>mutual exclusion problem</strong>:<br>it ensures that at any given point of time, <strong>at most one</strong> process is in the critical region.</p>
 <h3 id="From-Program-to-automaton"><a href="#From-Program-to-automaton" class="headerlink" title="From Program to automaton"></a>From Program to automaton</h3><p>To represent the above program using automaton, we need to define an <strong>alphabet $\Sigma$</strong>.</p>
 <p>Firstly, we fix a set of <strong>atomic propositions (AP)</strong>, that is (potentially) relevant to the program states.<br>For the program in $\small{\text{Example 1.1}}$, $AP &#x3D; \lbrace\ell_0,\ell_1,\ell_2,m_0,m_1,m_2,t\rbrace$.<br>i.e. The present program location and the current value of $t$.</p>
