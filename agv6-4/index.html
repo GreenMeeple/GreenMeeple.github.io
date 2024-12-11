@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>AGV 4.1 -- Deterministic Büchi Automata | GreenMeeple</title>
+  <title>AGV 6.4 -- Quantified Propositional Temporal Logic (QPTL) | GreenMeeple</title>
   <meta name="keywords" content=" AGV ">
-  <meta name="description" content="AGV 4.1 -- Deterministic Büchi Automata | GreenMeeple">
+  <meta name="description" content="AGV 6.4 -- Quantified Propositional Temporal Logic (QPTL) | GreenMeeple">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="Personal Info.Chun Ngai Li (Alex), M.Sc. Cybersecurity in Saarland University,B.Eng Information Engineering in CUHK. Recent WorksA C&#x2F;C++ programmer. Also working on Backend &amp; Python developing.Cur">
 <meta property="og:type" content="website">
@@ -955,9 +955,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-agv4-1" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-agv6-4" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">AGV 4.1 -- Deterministic Büchi Automata</h1>
+        <h1 class="article-title">AGV 6.4 -- Quantified Propositional Temporal Logic (QPTL)</h1>
     
     <div class="article-meta">
         
@@ -984,12 +984,12 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-12-09 01:15:36'>2024-11-18 00:11</time>
+            Created At : <time class="date" title='Updated At: 2024-12-11 03:21:06'>2024-11-26 02:33</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:803</span>
+        <span>Count:1.1k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1019,7 +1019,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Introduction"><span class="toc-text">Introduction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Deterministic-vs-nondeterministic-Buchi-automata"><span class="toc-text">Deterministic vs. nondeterministic Büchi automata</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Proof"><span class="toc-text">Proof</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Limit-Operator"><span class="toc-text">Limit Operator</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Explained-in-Human-language"><span class="toc-text">Explained in Human language</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Formal-Proof"><span class="toc-text">Formal Proof</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Introduction"><span class="toc-text">Introduction</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Example"><span class="toc-text">Example</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Syntax"><span class="toc-text">Syntax</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Until-operator-mathcal-U-in-QPTL"><span class="toc-text">Until operator $\mathcal{U}$ in QPTL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Free-and-Bound-Atomic-Propositions"><span class="toc-text">Free and Bound Atomic Propositions</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#From-QPTL-formula-to-omega-regular-language"><span class="toc-text">From QPTL formula to $\omega$-regular language</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Proof"><span class="toc-text">Proof</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Explaination"><span class="toc-text">Explaination</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Summary"><span class="toc-text">Summary</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -1035,40 +1035,74 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Previous chapter: <a href="../agv3-5/">Büchi’s Characterization Theorem</a></p>
+        <p>Previous chapter: <a href="../agv6-3/">LTL and Counting Languages</a></p>
 <blockquote>
 <p>This is a learning note of a course in <a target="_blank" rel="noopener" href="https://cispa.de/de">CISPA</a>, UdS. Taught by Bernd Finkbeiner</p>
 </blockquote>
-<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>In the theory of automata over finite words, we have <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Powerset_construction">Rabin-Scott powerset construction</a>, which converts a <em>nondeterministic automaton</em> over finite words into a <em>deterministic automaton</em> that <strong>recognizes the same language</strong>. This shows that nondeterminism does not make automata over finite words more expressive (but makes it more concise as the construction produces an exponential number of states).</p>
-<p>The situation is different for Büchi automata: even though the language $L &#x3D; (a+b)^*b^\omega$ is clearly <em>Büchi-recognizable</em>, there is, as the following theorem shows, <strong>no deterministic Büchi automaton that recognizes L</strong>.</p>
-<h2 id="Deterministic-vs-nondeterministic-Buchi-automata"><a href="#Deterministic-vs-nondeterministic-Buchi-automata" class="headerlink" title="Deterministic vs. nondeterministic Büchi automata"></a>Deterministic vs. nondeterministic Büchi automata</h2><blockquote>
-<p>$\textbf{Theorem 4.1. }\textit{Language $L&#x3D;(a+b)^*b^\omega$ is not recognizable by deterministic Büchi Automata}$</p>
-</blockquote>
-<p>Starting a base case $b^\omega$, we add $(a+b)$ as the prefix one by one. Can we express the  <strong>kleene star</strong>?<br>That is, is the automaton only accept <strong>finitely many</strong> $(a+b)$?</p>
-<h3 id="Proof"><a href="#Proof" class="headerlink" title="Proof"></a>Proof</h3><p>Assume, by way of contradiction, that $L$ is recognizable by the deterministic Büchi automaton $\mathcal{A}&#x3D;(\Sigma,Q,I,T,\small\text{BÜCHI}\normalsize(F))$. Since $\alpha_0&#x3D;b^\omega$ is in $L$, there is an unique run</p>
-<p>$$r_0&#x3D;r_0(0)r_0(1)r_0(2)\dots$$</p>
-<p>of $\mathcal{A}$ on $\alpha_0$ with $r_0(n_0)\in F$ for some $n_0\in\mathbb{N}$. Similarly, $\alpha_1&#x3D;b^{n_0}ab^\omega$ in $L$ and there is a unique run</p>
-<p>$$r_1&#x3D;r_0(0)r_0(1)r_0(2)\dots r_0(n_0)r_1(n_0+1)r_1(n_0+2)\dots$$</p>
-<p>of $\mathcal{A}$ on $\alpha_1$ with $r_1(n_1)\in F$ for some $n_1&gt;n_0$. Because $\mathcal{A}$ is deterministic, $r_0$ and $r_1$ are identical up to position $n_0$.</p>
-<p>By repeating this argument infinitely often, we obtain a word $\alpha&#x3D;b^{n_0}ab^{n_1}ab^{n_2}a\dots$ and a run $r$ with infinitely many visits to $F$. Hence, $\alpha$ is accepted by $\mathcal{A}$. However, $\alpha$ is not an element of $L$. This contradicts $L &#x3D; \mathcal{L}(\mathcal{A})$.</p>
-<h2 id="Limit-Operator"><a href="#Limit-Operator" class="headerlink" title="Limit Operator"></a>Limit Operator</h2><p>We start by defining a <em>Limit Operator</em> to generate $\omega$-language using regular language. For the regular language $W$, $\overrightarrow{W}$ contains all the words that they all contain words in $W$ as substrings.</p>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>In the last section, we knew that LTL cannot express <code>counting-languages</code>. QPTL, which extends<br>LTL with <strong>quantification over propositions</strong>, repairs this deficiency.</p>
+<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><p>We knew $L&#x3D;(\varnothing\varnothing)^\ast\lbrace p\rbrace^\omega$ is not LTL-definable. However, similar language $L’&#x3D;(\varnothing\lbrace q\rbrace)^\ast\lbrace p\rbrace^\omega$ is LTL-definable:</p>
+<p>$$\varphi&#x3D;\neg q\wedge(\neg p\wedge(\neg q\leftrightarrow\bigcirc q))\ \mathcal{U}\ (\square(p\wedge\neg q))$$</p>
+<p>Intuitively, $L’$ is the same language as $L$, except that there is an additional proposition $q$ that keeps track of odd and even positions. LTL has no means of introducing such “helpful” propositions that are not already present in the language we wish to define. In QPTL, we can introduce the proposition $q$ using a quantifier. The existential quantification $\exists q$. $\varphi$ expresses that there is a way to evaluate the new proposition $q$ such that, in the such extended word, $\varphi$ is true. In the example, the language of $\exists q.\ \varphi$ is thus precisely $L$.</p>
+<h2 id="Syntax"><a href="#Syntax" class="headerlink" title="Syntax"></a>Syntax</h2><p>QPTL formulas over a set $AP$ of atomic propositions are generated by the following grammar, where $p\in AP$:</p>
+<p>$$\psi ::&#x3D; p\ \mid\ \neg\psi\ \mid\ \psi\wedge\varphi\ \mid\ \bigcirc\psi\ \mid\ \Diamond\psi\ \mid\ \exists p.\ \psi$$</p>
+<p>The QPTL connectives have the same semantics and precedence as in LTL, except for propositional quantification, which has lowest precedence and the following semantics:</p>
+<p>$$\begin{array}{lcr}\alpha\models\exists p.\ \psi&amp;\text{ iff }&amp;\text{ there exists }\alpha’\in(2^{AP})^\omega\text{ such that }\alpha&#x3D;_{AP\setminus\lbrace p\rbrace}\alpha’\text{ and }\alpha’\models\psi\end{array}$$</p>
+<p>where $\alpha&#x3D;_P\alpha’$ for some $P\subseteq AP$ iff, for all $i\in\mathbb{N},\alpha(i)\cap P&#x3D;\alpha’(i)\cap P$.</p>
+<h3 id="Until-operator-mathcal-U-in-QPTL"><a href="#Until-operator-mathcal-U-in-QPTL" class="headerlink" title="Until operator $\mathcal{U}$ in QPTL"></a>Until operator $\mathcal{U}$ in QPTL</h3><p>We can express the Until operator $\mathcal{U}$ in the syntax of QPTL with quantifier and the meaning is equivalent:</p>
 <blockquote>
-<p>$\textbf{Definition 4.1. }\text{(Limit). The}\textit{ limit }\overrightarrow{W}\text{ of a language }W\subseteq\Sigma^* \text{ over finite words}\newline\text{is the following language over infinite words:}$ $$\overrightarrow{W}&#x3D;\lbrace\alpha\in\Sigma^\omega\mid\text{there exist infinitely many }n\in\mathbb{N}\text{ s.t. }\alpha[0,n]\in W\rbrace.$$</p>
+<p>$\varphi\ \mathcal{U}\ \psi:$ $\varphi$ must hold $\textbf{true}$ until $\psi$ becomes $\textbf{true}$.</p>
 </blockquote>
-<p>And From regular language, now we can define an $\omega$-regular language that is recognizable by deterministic Büchi Automata:</p>
+<p>$$\exists t.\ t\wedge\square(t\rightarrow(\psi\vee(\varphi\wedge\bigcirc t)))\wedge\Diamond\neg t:$$</p>
 <blockquote>
-<p>$\textbf{Theorem 4.2. }\textit{An $\omega$-language $L\subseteq\Sigma^\omega$ is recognizable by a deterministic Büchi Automata}\newline\textit{iff there is a regular langauge $W\subseteq\Sigma^*$ s.t. $L&#x3D;\overrightarrow{W}$}.$</p>
+<ul>
+<li><p>$\exists t.\ t$: For some proposition $t$, $t$ holds at the beginning;</p>
+</li>
+<li><p>$\square(t\rightarrow(\psi\vee(\varphi\wedge\bigcirc t)))$: if $t$ holds, we repeatly check the following</p>
+<ul>
+<li>either $\psi$ becomes $\textbf{true}$, or</li>
+<li>$\varphi$ must remain $\textbf{true}$ and so as $t$ in the next step<br>(so that this if-clause check again in the next step);\</li>
+</ul>
+</li>
+<li><p>$\Diamond\neg t$ : Eventually, $t$ will no longer hold.</p>
+<ul>
+<li>It enforces $\psi$ must become $\textbf{true}$ at some point and then $t$ doesn’t need to hold anymore</li>
+<li>If it is weak until $\mathcal{W}$ then this part is not necessarily because we don’t enforce $\psi$ to be $\textbf{true}$</li>
+</ul>
+</li>
+</ul>
 </blockquote>
-<h3 id="Explained-in-Human-language"><a href="#Explained-in-Human-language" class="headerlink" title="Explained in Human language"></a>Explained in Human language</h3><p>Basically, we are trying to prove $\mathcal{L}(\mathcal{A_B})&#x3D;\overrightarrow{\mathcal{L}(\mathcal{A_F})}$, where $\mathcal{L}(\mathcal{A_B})$ is a deterministic Büchi Automata and $\mathcal{L}(\mathcal{A_F})$ is a a deterministic automaton over finite words.</p>
-<p>As we can see, an accepted word $\alpha\in\mathcal{L}(\mathcal{A_B})$ with have substring $\alpha[0,n]$ that is accepted by $\mathcal{L}(\mathcal{A_F})$ with infinitely many $n\in\mathbb{N}$, by the definition of the <em>limit operator</em>.</p>
-<p>We can prove regular language $W$ exists if $\alpha$ exists using $\overrightarrow{W}$. Automata that accepts $W$ and $\overrightarrow{W}$ should exist, namely $\mathcal{L}(\mathcal{A_F})$ and $\overrightarrow{\mathcal{L}(\mathcal{A_F})}$ respectively.</p>
-<h3 id="Formal-Proof"><a href="#Formal-Proof" class="headerlink" title="Formal Proof"></a>Formal Proof</h3><p>We claim that the languages of a deterministic Büchi automaton $\mathcal{A}_B$ and of a deterministic<br>automaton over finite words $\mathcal{A}_F$, where the automata $\mathcal{A}_B&#x3D;(\Sigma,Q,I,T,\small\text{BÜCHI}\normalsize(F))$ and $\mathcal{A}_F&#x3D;(\Sigma,Q,I,T,F)$, constructed from the same components, are related as follows:</p>
-<p>$$\mathcal{L}(\mathcal{A_B})&#x3D;\overrightarrow{\mathcal{L}(\mathcal{A_F})}.$$</p>
-<p>Since every regular language is recognized by a deterministic automaton over finite words,<br>the theorem follows. To prove the claim, we consider an infinite word $\alpha\in\Sigma^\omega$.</p>
-<p>$\hspace{1cm}\alpha\in\mathcal{L}(\mathcal{A_B})\newline<br>\text{iff} \hspace{0.5cm}\text{for the unique run $r$ of $\mathcal{A_B}$ on $\alpha$, Inf($r$) $\cap$ $F\neq\varnothing$}\newline \text{iff} \hspace{0.5cm} \alpha[0,n]\in\mathcal{L}(\mathcal{A_F})\text{ for infinitely many }n\in\mathbb{N}\newline<br>\text{iff} \hspace{0.5cm} \alpha\in\mathcal{L}(\mathcal{A_F})$</p>
+<h3 id="Free-and-Bound-Atomic-Propositions"><a href="#Free-and-Bound-Atomic-Propositions" class="headerlink" title="Free and Bound Atomic Propositions"></a><code>Free</code> and <code>Bound</code> Atomic Propositions</h3><ul>
+<li><code>Free</code>:  Atomic Proposition that <strong>IS NOT in</strong> the <em>scope of a quantifier</em> over the proposition,</li>
+<li><code>Bound</code>: Atomic Proposition that <strong>IS in</strong> the <em>scope of a quantifier</em> over the proposition.</li>
+</ul>
+<p>Here, <code>Bounded</code> propositions are internal helpers to help us construct some logical conditions of the formula that do not directly appear in the language. (e.g. we need a counter for <code>counting</code>-language, but it doesn’t belongs to any proposition that refers to the alphabet or language.)</p>
+<h2 id="From-QPTL-formula-to-omega-regular-language"><a href="#From-QPTL-formula-to-omega-regular-language" class="headerlink" title="From QPTL formula to $\omega$-regular language"></a>From QPTL formula to $\omega$-regular language</h2><p>Let’s defined the set of set of <strong>free</strong> atomic propositions as $AP’\subseteq AP$. For every letter in the alphabet, we can describe them in $AP’$.</p>
+<p>For exmaple, if $\lbrace a,b,c\rbrace&#x3D;\Sigma$, the word $\lbrace ab\rbrace\in\Sigma$ will be $\lbrace a,b,\neg c\rbrace\in AP’$</p>
+<p>Now, the language of QPTL is essentially the language over the alphabet $2^{AP’}:\mathcal{L}(\varphi)&#x3D;\lbrace\alpha\in{(2^{AP’})}^{\omega}\mid\alpha\models\varphi\rbrace$</p>
+<p>In fact, it is exactly the $\omega$-regular languages that can be expressed in QPTL. And therefore, we can translate a given Büchi automaton with alphabet $2^{AP}$ into a QPTL formula:</p>
+<blockquote>
+<p>$\textbf{Theorem 6.2. } \textit{For every Büchi automaton }\mathcal{A}\textit{ over }\Sigma&#x3D;2^{AP}\textit{ there exists a QPTL formula }\varphi_{\mathcal{A}}\newline\textit{such that }\mathcal{L}(\varphi)&#x3D;\mathcal{L}(\mathcal{A}).$</p>
+</blockquote>
+<h3 id="Proof"><a href="#Proof" class="headerlink" title="Proof"></a>Proof</h3><p>Reminder: here the automaton using atomic propositions $2^{AP}$, not the alphabet $\Sigma$. To translate states in automata into atomic proposition in QPTL formula, we introduce <em>auxiliary proposition</em> $at_q$ for each <em>state</em> $q\in Q$, where $Q&#x3D;\lbrace q_1, q_2,\dots,q_n\rbrace$</p>
+<p>Then QPTL formula $\varphi_\mathcal{A}$ for the Büchi automaton $\mathcal{A}$ so that $\mathcal{L}(\varphi)&#x3D;\mathcal{L}(\mathcal{A})$ is defined as follows:</p>
+<p>$$<br>\begin{array}{rll}<br>\varphi_\mathcal{A}:&#x3D;\exists at_q,\dots,at_{q_n}.&amp;&amp;\underset{q\in I}{\bigvee}at_q\newline<br>&amp;\wedge&amp;\square\left(\underset{(q,A,q’)\in T}{\bigvee}at_q\wedge\bigcirc at_{q’}\wedge\left(\underset{p\in A}{\bigwedge}p\right)\wedge\left(\underset{p\in AP\setminus A}{\bigwedge}\neg p\right)\right)\newline<br>&amp;\wedge&amp;\square\left(\overset{n}{\underset{i&#x3D;1}{\bigwedge}}\underset{j\neq i}{\bigwedge}\neg(at_{q_i}\wedge at_{q_j})\right)\newline<br>&amp;\wedge&amp;\square\Diamond\underset{q\in F}{\bigvee}at_q<br>\end{array}<br>$$</p>
+<h3 id="Explaination"><a href="#Explaination" class="headerlink" title="Explaination"></a>Explaination</h3><p>To express a Büchi automaton in QPTL, we first need to know what features&#x2F;characteristics we need express.</p>
+<ul>
+<li>Begins with Initial states and reaches the Accepting states infinitely often:</li>
+</ul>
+<p>$$\textsf{Initial states: }\underset{q\in I}{\bigvee}at_q \hspace{3cm} \textsf{Accepting states: }\square\Diamond\underset{q\in F}{\bigvee}at_q$$</p>
+<ul>
+<li>There’s always transitions for any states, defined by set $A$, the letters available in the current state:</li>
+</ul>
+<p>$$\square\left(\underset{(q,A,q’)\in T}{\bigvee}at_q\wedge\bigcirc at_{q’}\wedge\left(\underset{p\in A}{\bigwedge}p\right)\wedge\left(\underset{p\in AP\setminus A}{\bigwedge}\neg p\right)\right)$$</p>
+<ul>
+<li>Additionally, we also need to ensure that there’s exactly one current state $q_i$, which is $at_{q_i}$ in propositions:</li>
+</ul>
+<p>$$\square\left(\overset{n}{\underset{i&#x3D;1}{\bigwedge}}\underset{j\neq i}{\bigwedge}\neg(at_{q_i}\wedge at_{q_j})\right)$$</p>
+<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>As above, we can see that every feature of a Büchi automaton can be expressed in QPTL. What’s next? Can we use simpler syntax to express same formula?</p>
 <hr>
-<p>Next chapter: <a href="../agv4-2/">Complementation of deterministic Büchi Automata</a></p>
-<p>Further Reading: <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Powerset_construction">powerset construction</a></p>
+<p>Next chapter: <a href="../agv6-5/">Monadic Second-Order Logic of One Successor (S1S)</a></p>
+<p>Further Reading: <a href=""></a></p>
 
       
        <hr><span style="font-style: italic;color: gray;"> Please cite the source for reprints, feel free to verify the sources cited in the article, and point out any errors or lack of clarity of expression. You can comment in the comments section below or email to GreenMeeple@yahoo.com </span>
