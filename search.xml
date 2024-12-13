@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>AGV 6.6 -- Express QPTL using S1S</title>
+      <link href="/agv6-6/"/>
+      <url>/agv6-6/</url>
+      
+        <content type="html"><![CDATA[<p>Previous chapter: <a href="../agv6-5/">Monadic Second-Order Logic of One Successor (S1S)</a></p><blockquote><p>This is a learning note of a course in <a href="https://cispa.de/de">CISPA</a>, UdS. Taught by Bernd Finkbeiner</p></blockquote><h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>We already showed, in <a href="../agv6-4/">Theorem 6.2</a>, that every Büchi-recognizable language is QPTL-definable. We now complete a full circle by showing that every QPTL-definable language is S1S-definable, and that every S1S-definable language is Büchi-recognizable. <strong>Hence, QPTL, S1S, and Büchi automata are equally expressive.</strong></p><blockquote><p>$\textbf{Theorem 6.3. } \textit{Every QPTL-definable language is S1S-definable.}$</p></blockquote><h2 id="Proof"><a href="#Proof" class="headerlink" title="Proof"></a>Proof</h2><p>In <a href="../agv6-4/">section 6.4</a>, we defined the language of QPTL as: $\mathcal{L}(\varphi)&#x3D;\lbrace\alpha\in{(2^{AP’})}^{\omega}\mid\alpha\models\varphi\rbrace$, and</p><p>In <a href="../agv6-5/">section 6.5</a>, we defined the language of S1S as: $\mathcal{L}(\varphi)&#x3D;\lbrace \alpha_{\sigma_1,\sigma_2}\in(2^{V’_1\cup V’_2})^\omega\mid\sigma_1,\sigma_2\models\varphi\rbrace$</p><p>Notice main difference comes from $\alpha\models\varphi$ and $\sigma_1,\sigma_2\models\varphi$. Also, QPTL uses <em>propositions</em> but S1S uses <em>term</em>. We thus define S1S formula as $T(\varphi,t)$, where $\varphi$ is a QPTL-formula over $AP$ and $t$ is a S1S-term. Lastly, with $V_2&#x3D;AP$, we can now define a S1S formula for all $\alpha\in(2^{AP})^\omega$,</p><blockquote><p>$$\alpha\lbrack\lbrack t\rbrack_{\sigma_1},\infty\rbrack\models_{QPTL}\varphi\hspace{0.5cm}\text{iff}\hspace{0.5cm}\sigma_1,\sigma_2\models_{S1S}T(\varphi,t)\varphi,\hspace{1cm}\text{where }\ \sigma_2:P\mapsto\lbrace i\in\mathbb{N}\mid P\in\alpha(i)\rbrace$$</p></blockquote><p>$\begin{array}{llll}<br>\hspace{1cm}\cdot&amp;T(P,t)&amp;&#x3D;&amp;t\in P\text{, for }P\in AP\newline<br>\hspace{1cm}\cdot&amp;T(\neg\varphi,t)&amp;&#x3D;&amp;\neg T(\varphi,t)\newline<br>\hspace{1cm}\cdot&amp;T(\varphi\wedge\psi,t)&amp;&#x3D;&amp;T(\varphi,t)\wedge T(\psi,t)\newline<br>\hspace{1cm}\cdot&amp;T(\bigcirc\varphi,t)&amp;&#x3D;&amp;T(\varphi,S(t))\newline<br>\hspace{1cm}\cdot&amp;T(\Diamond\varphi,t)&amp;&#x3D;&amp;\exists x.(x\geq t\wedge T(\varphi, x))\newline<br>\hspace{1cm}\cdot&amp;T(\exists P.\varphi,t)&amp;&#x3D;&amp;\exists P. T(\varphi,t)\newline<br>\end{array}$</p><p>Therefore, the language of $\varphi$ is then defined by the S1S formula $T(\varphi, 0)$.</p><h3 id="Explanation"><a href="#Explanation" class="headerlink" title="Explanation"></a>Explanation</h3><p>We apply every basic QPTL operators into $\varphi$, and transform them using S1S operators.</p><p>For proposition $P$, we can assign its value based on the temporal state when it holds. For example, for $\alpha&#x3D;{PPQPQQQ\dots}$, $P$ is in position $\alpha[0], \alpha[1], \alpha[3]$. So $\sigma_2:P\mapsto\lbrace0,1,3\rbrace$<br>And $T(P,t)$ is true when $t$ have value equals to {1,2,3}.</p><p>For the Finally operator $\Diamond$, it is expressed as true when the value is greater than or equals to t.</p><hr><p>Next chapter: <a href="../agv6-7/">S1S$_0$ and Büchi-recognizable</a></p><p>Further Reading: <a href=""></a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Notes </category>
+          
+          <category> UdS </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> AGV </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>AGV 6.5 -- Monadic Second-Order Logic of One Successor (S1S)</title>
       <link href="/agv6-5/"/>
       <url>/agv6-5/</url>

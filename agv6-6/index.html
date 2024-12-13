@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>AGV 6.1 -- Linear-Time Temporal Logic (LTL) | GreenMeeple</title>
+  <title>AGV 6.6 -- Express QPTL using S1S | GreenMeeple</title>
   <meta name="keywords" content=" AGV ">
-  <meta name="description" content="AGV 6.1 -- Linear-Time Temporal Logic (LTL) | GreenMeeple">
+  <meta name="description" content="AGV 6.6 -- Express QPTL using S1S | GreenMeeple">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="GreenMeeple cannot find what you are looking for...">
@@ -973,9 +973,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-agv6-1" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-agv6-6" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">AGV 6.1 -- Linear-Time Temporal Logic (LTL)</h1>
+        <h1 class="article-title">AGV 6.6 -- Express QPTL using S1S</h1>
     
     <div class="article-meta">
         
@@ -1002,12 +1002,12 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-12-13 00:35:15'>2024-11-23 13:40</time>
+            Created At : <time class="date" title='Updated At: 2024-12-13 01:48:51'>2024-11-28 23:45</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:1.2k</span>
+        <span>Count:487</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1037,7 +1037,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Introduction"><span class="toc-text">Introduction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linear-Time-Temporal-Logic-LTL"><span class="toc-text">Linear-Time Temporal Logic (LTL)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Syntax-of-LTL"><span class="toc-text">Syntax of LTL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Remarks"><span class="toc-text">Remarks</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sematics-of-LTL"><span class="toc-text">Sematics of LTL</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Additional-operators"><span class="toc-text">Additional operators</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Weak-until-mathcal-W-and-Mighty-release-mathcal-M"><span class="toc-text">Weak until $\mathcal{W}$ and Mighty release $\mathcal{M}$</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Distributivity"><span class="toc-text">Distributivity</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Negation-Dual"><span class="toc-text">Negation Dual</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Special-temporal-properties"><span class="toc-text">Special temporal properties</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Summary"><span class="toc-text">Summary</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Introduction"><span class="toc-text">Introduction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Proof"><span class="toc-text">Proof</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Explanation"><span class="toc-text">Explanation</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -1053,69 +1053,27 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Previous chapter: <a href="../agv5-3/">Complement Büchi Automaton with Odd Ranking</a></p>
+        <p>Previous chapter: <a href="../agv6-5/">Monadic Second-Order Logic of One Successor (S1S)</a></p>
 <blockquote>
 <p>This is a learning note of a course in <a target="_blank" rel="noopener" href="https://cispa.de/de">CISPA</a>, UdS. Taught by Bernd Finkbeiner</p>
 </blockquote>
-<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>In the following sections, we introduce several logics for the specification of sets of infinite sequences: <strong>LTL</strong>, <strong>QPTL</strong>, and <strong>S1S</strong>, which can be used to describe $\omega$-regular languages: we can translate a given formula into an automaton that recongnizes the models of the formula.</p>
-<p>As a result, we can use the automata-theoretic machinery to answer logical questions like <code>satisfiability</code> or <code>validity</code>. We can also use the logics as a much more convenient starting point, compared to a direct specification using automata, for <code>verification</code> and <code>synthesis</code>.</p>
-<h2 id="Linear-Time-Temporal-Logic-LTL"><a href="#Linear-Time-Temporal-Logic-LTL" class="headerlink" title="Linear-Time Temporal Logic (LTL)"></a>Linear-Time Temporal Logic (LTL)</h2><p>Linear-time temporal logic (LTL) is a popular logic for the specification of reactive systems. For a given set of <code>atomic propositions</code>$(AP)$, the formulas of <code>LTL</code> define sets of infinite words over the alphabet $2^{AP}$.</p>
-<ul>
-<li><strong>Atomic Propositions:</strong><br>the interface of a system or a component, such as (a boolean representation of) input and output variables</li>
-<li><strong>Words defined by the Formula:</strong><br>the executions of the system that are considered correct (see example in <a href="../agv1-1/">section 1.1</a>).</li>
-</ul>
-<h3 id="Syntax-of-LTL"><a href="#Syntax-of-LTL" class="headerlink" title="Syntax of LTL"></a>Syntax of LTL</h3><p>φ has to be true until and including the point where ψ first becomes true; if ψ never becomes true, φ must remain true forever.</p>
-<p>LTL formulars are constructed from <code>proposition logic</code> with extra <code>temporal operators</code>.</p>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>We already showed, in <a href="../agv6-4/">Theorem 6.2</a>, that every Büchi-recognizable language is QPTL-definable. We now complete a full circle by showing that every QPTL-definable language is S1S-definable, and that every S1S-definable language is Büchi-recognizable. <strong>Hence, QPTL, S1S, and Büchi automata are equally expressive.</strong></p>
 <blockquote>
-<p>$\begin{array}{lrl} \ \textit{Propositional logic}\newline\hspace{1cm} \cdot \ p,\varphi,\dots\in AP&amp;&amp; \ \text{(Atomic Propositions)}\newline\hspace{1cm} \cdot \ \neg\varphi,\varphi\wedge\psi,\dots&amp;&amp; \ \text{(Logical Operators)}\newline \ \textit{Temporal Operator}\newline\hspace{1cm} \cdot \bigcirc\varphi \ &#x2F;\  \mathcal{X}\ \varphi&amp; \ \text{Ne}\textbf{X}\text{t: }&amp;\varphi\text{ has to be }\textbf{true}\text{ in next state}\newline\hspace{1cm} \cdot \ \Diamond \ \varphi \ &#x2F;\  \mathcal{F}\ \varphi&amp; \ \textbf{F}\text{inally: }&amp;\varphi\text{ has to be }\textbf{true}\text{ eventually}\newline\hspace{1cm} \cdot \ \square \ \varphi \ &#x2F;\  \mathcal{G}\ \varphi&amp; \ \textbf{G}\text{lobally: }&amp;\varphi\text{ has to be }\textbf{true}\text{ for now and so on}\newline\hspace{1cm} \cdot \ \varphi \ \mathcal{U} \ \psi&amp; \ \textbf{U}\text{ntil: }&amp;\varphi\text{ has to be }\textbf{true}\textit{ at least }\text{until }\psi\text{ becomes }\textbf{true}\newline\hspace{1cm} \cdot \ \varphi \ \mathcal{R} \ \psi&amp; \ \textbf{R}\text{elease: }&amp;\psi\text{ has to be }\textbf{true}\text{ until }\varphi\text{ becomes true (inclusive)}\newline&amp;&amp;\psi\text{ remains }\textbf{true}\textit{ forever}\text{ if } \varphi\text{ never becomes }\textbf{true}\newline\hspace{1cm} \cdot \ \varphi \ \mathcal{W} \ \psi&amp; \ \textbf{W}\text{eak until: }&amp;\varphi\text{ has to be }\textbf{true}\textit{ at least }\text{until }\psi\text{ becomes }\textbf{true}\text{, or}\newline&amp;&amp;\varphi\text{ remains }\textbf{true}\textit{ forever}\text{ if }\psi\text{ never becomes }\textbf{true}\newline\hspace{1cm} \cdot \ \varphi \ \mathcal{M} \ \psi&amp; \ \textbf{M}\text{ighty Release: }&amp;\psi\text{ has to be }\textbf{true}\text{ until }\varphi\text{ becomes true (inclusive)}\end{array}$</p>
+<p>$\textbf{Theorem 6.3. } \textit{Every QPTL-definable language is S1S-definable.}$</p>
 </blockquote>
-<h3 id="Remarks"><a href="#Remarks" class="headerlink" title="Remarks"></a>Remarks</h3><p>When we determine whether a LTL formula is $\textbf{true}$ or $\textbf{false}$, it only depends on <strong>current and future</strong> states.</p>
-<p>For example, the formula $\varphi\ \mathcal{U}\ \psi$ states that $\varphi$ must remain $\textbf{true}$ <strong>UNTIL</strong> $\psi$ become $\textbf{true}$. If the current state we have only $\psi&#x3D;\textbf{true}$, this formula is still evaluated as $\textbf{true}$, even if $\varphi$ never become $\textbf{true}$.</p>
-<p>We can conclude that, $\varphi\ \mathcal{U}\ \psi &#x3D; \textbf{true}$ if:</p>
-<ol>
-<li>In current state $\psi$ becomes $\textbf{true}$ (regardless of $\varphi$’s condition)</li>
-<li>Eventually $\psi$ becomes $\textbf{true}$ in certain state (not now), and from now <strong>Until</strong> that state, $\varphi$ must remain $\textbf{true}$</li>
-</ol>
-<h2 id="Sematics-of-LTL"><a href="#Sematics-of-LTL" class="headerlink" title="Sematics of LTL"></a>Sematics of LTL</h2><h3 id="Additional-operators"><a href="#Additional-operators" class="headerlink" title="Additional operators"></a>Additional operators</h3><p>$\mathcal{R}$, $\Diamond\ (\mathcal{F})$, $\square\ (\mathcal{G})$ are considered as <em>additional operators</em>, which can be defined by other LTL operators:</p>
-<ul>
-<li>$\varphi\ \mathcal{R}\ \psi\equiv\neg(\neg\varphi\ \mathcal{U}\ \neg\psi)$</li>
-<li>$\square\ \varphi \equiv\neg\ \Diamond\ \neg\ \varphi\equiv\ \textbf{false}\ \mathcal{R}\ \varphi$</li>
-<li>$\Diamond\ \varphi\equiv\textbf{true} \ \mathcal{U}\ \varphi$</li>
-</ul>
-<h3 id="Weak-until-mathcal-W-and-Mighty-release-mathcal-M"><a href="#Weak-until-mathcal-W-and-Mighty-release-mathcal-M" class="headerlink" title="Weak until $\mathcal{W}$ and Mighty release $\mathcal{M}$"></a>Weak until $\mathcal{W}$ and Mighty release $\mathcal{M}$</h3><p><strong>W</strong>eak Until is <strong>U</strong>ntil that accepts no stop conditions <strong>F</strong>orever, or <strong>R</strong>elease that include itself as the stop conditions:</p>
-<ul>
-<li>$\varphi\ \mathcal{W}\ \psi\equiv(\varphi\ \mathcal{U}\ \psi) \vee \square\ \psi\equiv\psi\ \mathcal{R}\ (\psi\vee\varphi)$</li>
-</ul>
-<p><strong>M</strong>ighty release is forced to <strong>R</strong>elease <strong>F</strong>inally, or simply <strong>U</strong>ntil both propositions becomes $\textbf{true}$:</p>
-<ul>
-<li>$\varphi\ \mathcal{W}\ \psi\equiv(\varphi\ \mathcal{R}\ \psi) \wedge \Diamond\ \varphi\equiv\psi\ \mathcal{U}\ (\psi\wedge\varphi)$</li>
-</ul>
-<h3 id="Distributivity"><a href="#Distributivity" class="headerlink" title="Distributivity"></a>Distributivity</h3><p>$\bigcirc\ (\mathcal{X})$, $\Diamond\ (\mathcal{F})$, $\square\ (\mathcal{G})$, $\mathcal{U}$ satisfied distributivity:</p>
-<ul>
-<li>$\bigcirc(\varphi\vee\psi)\equiv(\bigcirc\varphi)\vee(\bigcirc\psi)$</li>
-<li>$\bigcirc(\varphi\wedge\psi)\equiv(\bigcirc\varphi)\wedge(\bigcirc\psi)$</li>
-<li>$\Diamond(\varphi\vee\psi)\equiv(\Diamond\varphi)\vee(\Diamond\psi)$</li>
-<li>$\square(\varphi\wedge\psi)\equiv(\square\varphi)\wedge(\square\psi)$</li>
-<li>$\rho\ \mathcal{U}\ (\varphi\vee\psi)\equiv(\rho\ \mathcal{U}\ \varphi)\vee(\rho\ \mathcal{U}\ \psi)$</li>
-<li>$(\varphi\wedge\psi)\ \mathcal{U}\ \rho\equiv(\varphi\ \mathcal{U}\ \rho)\wedge(\psi\ \mathcal{U}\ \rho)$</li>
-<li>$\bigcirc(\varphi\ \mathcal{U}\ \psi)\equiv(\bigcirc\varphi)\ \mathcal{U}\ (\bigcirc\psi)$</li>
-</ul>
-<h3 id="Negation-Dual"><a href="#Negation-Dual" class="headerlink" title="Negation Dual"></a>Negation Dual</h3><ul>
-<li>First of all, Ne<strong>X</strong>t is a self dual:<br>$\neg\bigcirc\varphi\equiv\bigcirc\neg\varphi$ (Not in next step &#x3D; Next step won’t happened)</li>
-<li><strong>F</strong>inally and <strong>G</strong>lobally are dual:<br>$\neg\Diamond\varphi\equiv\square\neg\varphi$ (Never happened eventually &#x3D; Forever never happened)<br>$\neg\square\varphi\equiv\Diamond\neg\varphi$ (Won’t happen forever &#x3D; eventually won’t happen anymore)</li>
-<li><strong>U</strong>ntil and <strong>R</strong>elease are dual:<br>$\neg(\varphi\ \mathcal{U}\ \psi)\equiv\neg\varphi\ \mathcal{R}\ \neg\psi$ ($\psi$ won’t happen until $\varphi$ stops &#x3D; $\psi$ can’t happen unless $\varphi$ stops)<br>$\neg(\varphi\ \mathcal{R}\ \psi)\equiv\neg\varphi\ \mathcal{U}\ \neg\psi$ (Never stop $\psi$ with $\varphi$ &#x3D; $\varphi$ never happens, if it does, that means $\psi$ has been stopped)</li>
-<li>Similarly, <strong>W</strong>eak Until and <strong>M</strong>ighty Release are also dual:<br>$\neg(\varphi\ \mathcal{W}\ \psi)\equiv\neg\varphi\ \mathcal{M}\ \neg\psi$<br>$\neg(\varphi\ \mathcal{M}\ \psi)\equiv\neg\varphi\ \mathcal{W}\ \neg\psi$</li>
-</ul>
-<h3 id="Special-temporal-properties"><a href="#Special-temporal-properties" class="headerlink" title="Special temporal properties"></a>Special temporal properties</h3><ul>
-<li>$\Diamond\varphi\equiv\Diamond\Diamond\varphi$<br>(<strong>F</strong>inally <strong>F</strong>inally $\varphi$ is $\textbf{true}$)</li>
-<li>$\square\varphi\equiv\square\square\varphi$<br>($\varphi$ is always always $\textbf{true}$)</li>
-<li>$\varphi\ \mathcal{U}\ \psi\equiv\varphi\ \mathcal{U}\ (\varphi\ \mathcal{U}\ \psi)$<br>($\varphi$ is $\textbf{true}$ <strong>U</strong>ntil $\psi$ become $\textbf{true}$ &#x3D; $\varphi$ is $\textbf{true}$ <strong>U</strong>ntil, if “$\varphi$ is $\textbf{true}$ <strong>U</strong>ntil $\psi$ become $\textbf{true}$” is $\textbf{true}$)</li>
-<li>$\Diamond\varphi\equiv\varphi\vee \bigcirc(\Diamond\varphi)$<br>( $\varphi$ <strong>F</strong>inally becomes $\textbf{true}$ &#x3D; either now $\varphi$ is $\textbf{true}$ or in ne<strong>X</strong>t step $\varphi$ <strong>F</strong>inally becomes $\textbf{true}$)</li>
-<li>$\square\varphi\equiv\varphi\wedge \bigcirc(\square\varphi)$<br>( $\varphi$ is always $\textbf{true}$ &#x3D; now $\varphi$ is $\textbf{true}$ and in ne<strong>X</strong>t step $\varphi$ is also always $\textbf{true}$)</li>
-</ul>
-<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>In this section, we have go through basic sytanx and properties of LTL. In next section we will try to apply the formula to some systems and $\omega$-languages.</p>
+<h2 id="Proof"><a href="#Proof" class="headerlink" title="Proof"></a>Proof</h2><p>In <a href="../agv6-4/">section 6.4</a>, we defined the language of QPTL as: $\mathcal{L}(\varphi)&#x3D;\lbrace\alpha\in{(2^{AP’})}^{\omega}\mid\alpha\models\varphi\rbrace$, and</p>
+<p>In <a href="../agv6-5/">section 6.5</a>, we defined the language of S1S as: $\mathcal{L}(\varphi)&#x3D;\lbrace \alpha_{\sigma_1,\sigma_2}\in(2^{V’_1\cup V’_2})^\omega\mid\sigma_1,\sigma_2\models\varphi\rbrace$</p>
+<p>Notice main difference comes from $\alpha\models\varphi$ and $\sigma_1,\sigma_2\models\varphi$. Also, QPTL uses <em>propositions</em> but S1S uses <em>term</em>. We thus define S1S formula as $T(\varphi,t)$, where $\varphi$ is a QPTL-formula over $AP$ and $t$ is a S1S-term. Lastly, with $V_2&#x3D;AP$, we can now define a S1S formula for all $\alpha\in(2^{AP})^\omega$,</p>
+<blockquote>
+<p>$$\alpha\lbrack\lbrack t\rbrack_{\sigma_1},\infty\rbrack\models_{QPTL}\varphi\hspace{0.5cm}\text{iff}\hspace{0.5cm}\sigma_1,\sigma_2\models_{S1S}T(\varphi,t)\varphi,\hspace{1cm}\text{where }\ \sigma_2:P\mapsto\lbrace i\in\mathbb{N}\mid P\in\alpha(i)\rbrace$$</p>
+</blockquote>
+<p>$\begin{array}{llll}<br>\hspace{1cm}\cdot&amp;T(P,t)&amp;&#x3D;&amp;t\in P\text{, for }P\in AP\newline<br>\hspace{1cm}\cdot&amp;T(\neg\varphi,t)&amp;&#x3D;&amp;\neg T(\varphi,t)\newline<br>\hspace{1cm}\cdot&amp;T(\varphi\wedge\psi,t)&amp;&#x3D;&amp;T(\varphi,t)\wedge T(\psi,t)\newline<br>\hspace{1cm}\cdot&amp;T(\bigcirc\varphi,t)&amp;&#x3D;&amp;T(\varphi,S(t))\newline<br>\hspace{1cm}\cdot&amp;T(\Diamond\varphi,t)&amp;&#x3D;&amp;\exists x.(x\geq t\wedge T(\varphi, x))\newline<br>\hspace{1cm}\cdot&amp;T(\exists P.\varphi,t)&amp;&#x3D;&amp;\exists P. T(\varphi,t)\newline<br>\end{array}$</p>
+<p>Therefore, the language of $\varphi$ is then defined by the S1S formula $T(\varphi, 0)$.</p>
+<h3 id="Explanation"><a href="#Explanation" class="headerlink" title="Explanation"></a>Explanation</h3><p>We apply every basic QPTL operators into $\varphi$, and transform them using S1S operators.</p>
+<p>For proposition $P$, we can assign its value based on the temporal state when it holds. For example, for $\alpha&#x3D;{PPQPQQQ\dots}$, $P$ is in position $\alpha[0], \alpha[1], \alpha[3]$. So $\sigma_2:P\mapsto\lbrace0,1,3\rbrace$<br>And $T(P,t)$ is true when $t$ have value equals to {1,2,3}.</p>
+<p>For the Finally operator $\Diamond$, it is expressed as true when the value is greater than or equals to t.</p>
 <hr>
-<p>Next chapter: <a href="../agv6-2/">Expressing Program Properties using LTL</a></p>
+<p>Next chapter: <a href="../agv6-7/">S1S$_0$ and Büchi-recognizable</a></p>
 <p>Further Reading: <a href=""></a></p>
 
       
