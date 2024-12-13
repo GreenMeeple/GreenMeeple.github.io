@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>AGV 6.3 -- LTL and Counting Languages | GreenMeeple</title>
+  <title>AGV 6.7 -- S1S$_0$ and Büchi-recognizable LanguageBüchi-recognizable | GreenMeeple</title>
   <meta name="keywords" content=" AGV ">
-  <meta name="description" content="AGV 6.3 -- LTL and Counting Languages | GreenMeeple">
+  <meta name="description" content="AGV 6.7 -- S1S$_0$ and Büchi-recognizable LanguageBüchi-recognizable | GreenMeeple">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="GreenMeeple cannot find what you are looking for...">
@@ -991,9 +991,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-agv6-3" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-agv6-7" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">AGV 6.3 -- LTL and Counting Languages</h1>
+        <h1 class="article-title">AGV 6.7 -- S1S$_0$ and Büchi-recognizable LanguageBüchi-recognizable</h1>
     
     <div class="article-meta">
         
@@ -1020,12 +1020,12 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-12-13 00:35:15'>2024-11-25 00:44</time>
+            Created At : <time class="date" title='Updated At: 2024-12-13 16:53:36'>2024-11-29 00:36</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:1.7k</span>
+        <span>Count:522</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1055,7 +1055,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Semantics"><span class="toc-text">Semantics</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#From-LTL-to-omega-regular-languages"><span class="toc-text">From LTL to $\omega$-regular languages</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Counting-and-Non-counting-Languages"><span class="toc-text">Counting and Non-counting Languages</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Proof"><span class="toc-text">Proof</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Summary"><span class="toc-text">Summary</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Introduction"><span class="toc-text">Introduction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#From-S1S-to-S1S-0"><span class="toc-text">From S1S to S1S$_0$</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Proof"><span class="toc-text">Proof</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Explanation"><span class="toc-text">Explanation</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#From-S1S-definable-to-Buchi-recognizable"><span class="toc-text">From S1S-definable to Büchi-recognizable</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Proof-1"><span class="toc-text">Proof</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -1071,59 +1071,37 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Previous chapter: <a href="../agv6-2/">Expressing Program Properties using LTL</a></p>
+        <p>Previous chapter: <a href="../agv6-6/">Express QPTL using S1S</a></p>
 <blockquote>
 <p>This is a learning note of a course in <a target="_blank" rel="noopener" href="https://cispa.de/de">CISPA</a>, UdS. Taught by Bernd Finkbeiner</p>
 </blockquote>
-<h2 id="Semantics"><a href="#Semantics" class="headerlink" title="Semantics"></a>Semantics</h2><p>An LTL formula $\varphi$ over $AP$ defines the following language over the alphabet $2^{AP}$:</p>
-<p>$\hspace{1cm} \mathcal{L}(\varphi)&#x3D;\lbrace\alpha\in(2^{AP})^\omega\mid\alpha\models\varphi\rbrace$</p>
-<p>where $\models$ is the smallest relation satisfying:</p>
-<p>$\begin{array}{lllll}<br>\hspace{1cm} \alpha &amp; \models &amp; p &amp; \text{iff} &amp; p\in\alpha(0) \ \ \ \ (\text{i.e., }\alpha(0)\models p)\newline<br>\hspace{1cm} \alpha &amp; \models &amp; \varphi_1\wedge\varphi_2 &amp; \text{iff} &amp; \alpha\models\varphi_1\ \text{ and }\ \alpha\models\varphi_1\newline<br>\hspace{1cm} \alpha &amp; \models &amp; \neg\varphi &amp; \text{iff} &amp; \alpha\not\models\varphi\newline<br>\hspace{1cm} \alpha &amp; \models &amp; \bigcirc\varphi &amp; \text{iff} &amp; \alpha[1,\infty]&#x3D;\alpha(1)\alpha(2)\alpha(3)\dots\models\varphi\newline<br>\hspace{1cm} \alpha &amp; \models &amp; \varphi_1\ \mathcal{U}\ \varphi_2 &amp; \text{iff} &amp; \exists j\geq0.\ \alpha[j,\infty]\models\varphi_2\ \text{ and }\ \alpha[i,\infty]\models\varphi_1\text{ for all }0\leq i\leq j\newline<br>\end{array}$</p>
-<p>For the temporal operators, the semantics can be visualized as below:</p>
-<p><img src="/../images/notes/uds/agv/6_3_ltl.png"></p>
-<h2 id="From-LTL-to-omega-regular-languages"><a href="#From-LTL-to-omega-regular-languages" class="headerlink" title="From LTL to $\omega$-regular languages"></a>From LTL to $\omega$-regular languages</h2><blockquote>
-<p>All LTL-definable properties are $\omega$-regular, but <strong>NOT ALL</strong> $\omega$-regular languages can be defined in LTL.</p>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>To prepare for the proof that every S1S-definable language is Büchi-recognizable, we show in the following lemma that we can focus on a restricted sublogic, called S1S$_0$, which is defined by the following grammar:</p>
+<p>$$\varphi::&#x3D;0\in X\mid x\in Y\mid x&#x3D;0\mid x&#x3D;y\mid x&#x3D;S(y)\mid \neg\varphi\mid\varphi\wedge\varphi\mid\exists x.\varphi\mid\exists X.\varphi$$</p>
+<ul>
+<li><strong>Membership tests</strong> $(\in)$: variables $(x,y,\dots)$ and $0$ only</li>
+<li><strong>Equalities</strong> $(&#x3D;)$: variables $(x,y,\dots)$, $0$ and a <strong>single</strong> successor operation $(S(t))$ only<ul>
+<li>i.e. $S(S(t))$ is not allowed.</li>
+</ul>
+</li>
+</ul>
+<p>Complex formula in S1S can then be simplified by introducing additional variables.</p>
+<h2 id="From-S1S-to-S1S-0"><a href="#From-S1S-to-S1S-0" class="headerlink" title="From S1S to S1S$_0$"></a>From S1S to S1S$_0$</h2><blockquote>
+<p>$\textbf{Lemma 6.1. } \textit{For every S1S formula }\varphi\textit{ there is an S1S}_0\text{ formula }\varphi’\textit{ such that }\mathcal{L}(\varphi)&#x3D;\mathcal{L}(\varphi’).$</p>
 </blockquote>
-<p>Why can’t we? What is the limitation of LTL formula?</p>
-<h3 id="Counting-and-Non-counting-Languages"><a href="#Counting-and-Non-counting-Languages" class="headerlink" title="Counting and Non-counting Languages"></a>Counting and Non-counting Languages</h3><p>Let say we want to express:</p>
-<blockquote>
-<p>An arbitrary <strong>even</strong> sequence of $\varnothing$ symbols, followed by an infinite sequence of $p$ symbols</p>
+<h3 id="Proof"><a href="#Proof" class="headerlink" title="Proof"></a>Proof</h3><p>We rewrite a given S1S formula $\varphi$ into the S1S$_0$ formula $\varphi$’ using the following rewrite rules:</p>
+<p>$$<br>S(t)\in X\mapsto\exists y. y&#x3D;S(t)\wedge y\in X\newline<br>\begin{array}{rclcrcl}<br>0&#x3D;x&amp;\mapsto&amp;x&#x3D;0&amp;\hspace{1cm}&amp;0&#x3D;0&amp;\mapsto&amp;\exists Y.0\in Y\vee0\notin Y\newline<br>S(t)&#x3D;0&amp;\mapsto&amp;0&#x3D;S(t)&amp;\hspace{1cm}&amp;0&#x3D;S(t)&amp;\mapsto&amp;\exists y.y&#x3D;S(t)\wedge y&#x3D;0\newline<br>S(t)&#x3D;0&amp;\mapsto&amp;x&#x3D;S(t)&amp;\hspace{1cm}&amp;t&#x3D;S(0)&amp;\mapsto&amp;\exists x.x&#x3D;0\wedge t&#x3D;S(x)\newline<br>S(t)&#x3D;S(t’)&amp;\mapsto&amp;t&#x3D;t’&amp;\hspace{1cm}&amp;t&#x3D;S(S(t’)&amp;\mapsto&amp;\exists y.y&#x3D;S(t’)\wedge t&#x3D;S(y)\newline<br>\end{array}<br>$$</p>
+<h3 id="Explanation"><a href="#Explanation" class="headerlink" title="Explanation"></a>Explanation</h3><p>There are some rules to follow in order to create a stricter S1S formula:</p>
+<ol>
+<li>L.H.S of <strong>Equalities</strong> $(&#x3D;)$ always put variable if possible, if not then $0$. e.g. we only allow $x&#x3D;0$ but not $0&#x3D;x$;</li>
+<li>If L.H.S contains 0 or successor operation $(S(t))$, we can use existential operator $(\exists)$ to split it into two formula, connected with $\wedge$, $\vee$. e.g. $S(t)\in X$ first becomes $y&#x3D;S(t)$, then $y\in X$</li>
+<li>$0&#x3D;0$ equals to $\textbf{true}$, which can be assigned&#x2F; not assigned to any <code>Second-order variable</code> sets.</li>
+</ol>
+<h2 id="From-S1S-definable-to-Buchi-recognizable"><a href="#From-S1S-definable-to-Buchi-recognizable" class="headerlink" title="From S1S-definable to Büchi-recognizable"></a>From S1S-definable to Büchi-recognizable</h2><blockquote>
+<p>$\textbf{Theorem 6.4. } \textit{Every S1S-definable language is Büchi-recognizable.}$</p>
 </blockquote>
-<p>In $\omega$-language it is $(\varnothing\varnothing)^\ast\lbrace p\rbrace^\omega$. However, this cannot be defined in LTL, because it is a <code>counting language</code>.</p>
-<blockquote>
-<p>$\textbf{Definition 6.1. }\text{A Language }L\subseteq\Sigma^\omega\text{ is }\textit{non-counting}\text{ iff}$<br>$$\exists n_0\in\mathbb{N}.\ \forall n\geq n_0.\ \forall v,w\in\Sigma^\ast, \alpha\in\Sigma^\omega.\ vw^n\alpha\in L\Leftrightarrow vw^{n+1}\alpha\in L$$</p>
-</blockquote>
-<p>For some threshold $n_0$, and a word with prefix $w$ which repeated $n$ times and $n\geq n_0$. For every $n$ we picked, if we can always find a pair of words $vw^{n}\alpha,vw^{n+1}$ that are both accepted by language $L$, then $L$ is <code>non-counting</code>.</p>
-<p>For example, in $L_1&#x3D;(\varnothing\varnothing)^\ast\lbrace p\rbrace^\omega$, if $(\varnothing)^n\lbrace p\rbrace^\omega\in L_1$, then $(\varnothing)^{n+1}\lbrace p\rbrace^\omega\not\in L_1$, so $L_1$ is <code>counting</code> with $n_0&#x3D;1$.</p>
-<blockquote>
-<p>$\textbf{Theorem 6.1. }\textit{ For every LTL-formula }\varphi,\mathcal{L}(\varphi)\textit{ is non-counting.}$</p>
-</blockquote>
-<h3 id="Proof"><a href="#Proof" class="headerlink" title="Proof"></a>Proof</h3><p>We prove the theorem by structural induction on $\varphi$, going through its sematics:</p>
-<p>$\textbf{Case }\varphi&#x3D;p:$<br>$\hspace{1cm}$  Simply choose the length $n_0&#x3D;1$, (because $\alpha\models p\text{ iff }p\in\alpha(0)$)</p>
-<p>$\textbf{Case }\varphi&#x3D;\varphi_1\wedge\varphi_2:$<br>$\hspace{1cm}$ By induction hypothesis, If $\varphi_1$ and $\varphi_2$ are <code>non-counting</code>, then $\mathcal{L}(\varphi_1)$ and $\mathcal{L}(\varphi_2)$ have threshold $n_0’$ and<br>$\hspace{1cm}$ $n’’_0\in\mathbb{N}$ respectively. We can choose $n_0&#x3D;\text{max}\lbrace n’_0,n’’_0\rbrace$ to ensure $\varphi$ is also <code>non-counting</code>. (max. because<br>$\hspace{1cm}$ the larger the $n_0$, less $n$ is required to be <code>non-counting</code>)</p>
-<p>$\textbf{Case }\varphi&#x3D;\neg\varphi_1:$<br>$\hspace{1cm}$ If $\varphi_1$ is <code>non-counting</code>, then $\mathcal{L}(\varphi_1)$ has threshold $n_0’\in\mathbb{N}$. We choose $n_0&#x3D;n’_0$</p>
-<p>$\textbf{Case }\varphi&#x3D;\bigcirc\varphi_1:$<br>$\hspace{1cm}$ If $\varphi_1$ is <code>non-counting</code>, then $\mathcal{L}(\varphi_1)$ has threshold $n_0’\in\mathbb{N}$. We choose $n_0&#x3D;n’_0+1$ and try to show<br>$$\text{“For }n\geq n_0,\ vw^n\alpha\models\bigcirc\varphi\ \text{ if and only if }\ n\geq n_0,\ vw^{n+1}\alpha\models\bigcirc\varphi”$$</p>
-<p>$\hspace{1cm}$ We try to perform operations on the fix length prefix $v$ as it doesn’t affect the finite loop prefix $w$. So we<br>$\hspace{1cm}$ need to consider whether the fix length prefix $v$ is an <em>empty string</em> $(\varepsilon)$, if not, we try to “peel” one cycle of<br>$\hspace{1cm}$ $w$ and make it so-called “fix-length” prefix.</p>
-<p>$\hspace{1cm}$ A simple example for the operation: if there’s logic requires $b$ to be reached in the next step, then the same<br>$\hspace{1cm}$ logic without <strong>neXt</strong> operator $\bigcirc$ can be satisfied by removing the first letter. (if $ab\models\bigcirc\varphi$, then $b\models\varphi$)</p>
-<p>$\hspace{1cm}\textbf{Case }\ v\neq\varepsilon:$ Thus $v&#x3D;av’$ for some $a\in\Sigma,v’\in\Sigma^\ast$. We have that</p>
-<p>$\begin{array}{lrl}<br>\hspace{2cm}&amp;av’w^n\alpha&amp;\models\bigcirc\varphi\newline<br>\hspace{2cm}\text{iff}&amp;v’w^n\alpha&amp;\models\varphi\newline<br>\hspace{2cm}\text{iff}&amp;v’w^{n+1}\alpha&amp;\models\varphi&amp;\text{(induction hypothesis)}\newline<br>\hspace{2cm}\text{iff}&amp;av’w^{n+1}\alpha&amp;\models\bigcirc\varphi\newline<br>\end{array}$</p>
-<p>$\hspace{1cm}\textbf{Case }\ v&#x3D;\varepsilon:$ Thus either $w&#x3D;\varepsilon$ (proved trivially), or $w&#x3D;aw’$ for some $a\in\Sigma,w’\in\Sigma^\ast$. It follows that</p>
-<p>$\begin{array}{lrl}<br>\hspace{2cm}&amp;(aw’)^n\alpha&amp;\models\bigcirc\varphi\newline<br>\hspace{2cm}\text{iff}&amp;(aw’)(aw’)^{n-1}\alpha&amp;\models\bigcirc\varphi\newline<br>\hspace{2cm}\text{iff}&amp;w’(aw’)^{n-1}\alpha&amp;\models\varphi\newline<br>\hspace{2cm}\text{iff}&amp;w’(aw’)^{n}\alpha&amp;\models\varphi&amp;\text{(induction hypothesis)}\newline<br>\hspace{2cm}\text{iff}&amp;(aw’)^{n+1}\alpha&amp;\models\bigcirc\varphi\newline<br>\end{array}$</p>
-<p>$\textbf{Case }\varphi&#x3D;\varphi_1\ \mathcal{U}\ \varphi_2:$<br>$\hspace{1cm}$ If $\varphi_1$ and $\varphi_2$ are <code>non-counting</code>, then $\mathcal{L}(\varphi_1)$ and $\mathcal{L}(\varphi_2)$ have threshold $n_0’$ and $n’’_0\in\mathbb{N}$ respectively. We<br>$\hspace{1cm}$ choose $n_0&#x3D;\text{max}\lbrace n’_0,n’’_0\rbrace+1$ and try to show<br>$$”\text{For }n\geq n_0,\ vw^n\alpha\models\varphi_1\ \mathcal{U}\ \varphi_2\ \text{ if and only if }\ vw^{n+1}\alpha\models\varphi_1\ \mathcal{U}\ \varphi_2”$$</p>
-<p>$\hspace{1cm}$ By the semantics of $\mathcal{U}$, $\varphi_1$ keeps holding until $\varphi_2$ is satisfied. Let $j$ be the least index when $\varphi_2$ is satisfied,<br>$\hspace{1cm}$ then we have $vw^n\alpha[j,\infty]\models\varphi_2$ and for all $i&lt;j,\ vw^n\alpha[i,\infty]\models\varphi_1$, respectively applies on $vw^{n+1}\alpha$.</p>
-<p>$\hspace{1cm}$ $\textbf{1. }\textit{If }\ vw^n\alpha\models\varphi_1\ \mathcal{U}\ \varphi_2\textit{, then }\ vw^{n+1}\alpha\models\varphi_1\ \mathcal{U}\ \varphi_2:$<br>$\hspace{2cm}$ Similar to $\bigcirc\varphi$, we try to do the operation with respect to $j$’s position. So we need to consider whether<br>$\hspace{2cm}$ index $j$ lies within the first cycle of the prefix $|v|+|w|$, or lies in the finite loop of the prefix $|w|$.</p>
-<p>$\hspace{2cm}\textbf{Case }j\leq|v|+|w|:$<br>$\hspace{3cm}$ By induction hypothesis, we assumed $\varphi_1$ and $\varphi_2$ are <code>non-counting</code>. So<br>$\hspace{3cm}$ if $vww^{n−1}\alpha[j,\infty]\models\varphi_2$, then $vww^{n}\alpha[j,\infty]\models\varphi_2$ and analogously,<br>$\hspace{3cm}$ if $vww^{n−1}\alpha[i,\infty]\models\varphi_1$, then $vww^{n}\alpha[i,\infty]\models\varphi_1$ for $i &lt; j$.<br>$\hspace{3cm}$ Hence, $vw^{n+1}\alpha\models\varphi_1\ \mathcal{U}\ \varphi_2$.</p>
-<p>$\hspace{2cm}\textbf{Case }j&gt;|v|+|w|:$<br>$\hspace{3cm}$ By adding one more cycle, we can essentially get the same suffix if $j$ is somewhere in the cycle:<br>$\hspace{3cm}$ if $vw^{n}\alpha[j,\infty]\models\varphi_2$, then $vw^{n+1}\alpha[j+|w|,\infty]\models\varphi_2$, and<br>$\hspace{3cm}$ if $vw^{n}\alpha[i,\infty]\models\varphi_1$, then $vw^{n+1}\alpha[i,\infty]\models\varphi_1$, for each position $|v|+|w|\leq i&lt;j+|w|$.<br>$\hspace{3cm}$ Additionally, by induction hypothesis from the above case, we have that</p>
-<p>$\begin{array}{lrcccll}<br>\hspace{4cm}&amp;|v|+|w|&amp;\leq&amp;i&amp;&lt;&amp;j+|w|\newline<br>\hspace{4cm}\text{iff}&amp;|v|&amp;\leq&amp;i&amp;&lt;&amp;j\newline<br>\hspace{4cm}\text{iff}&amp;&amp;&amp;i&amp;&lt;&amp;j&amp;&amp;(\text{induction hypothesis: }i&lt;|v|+|w|)\newline<br>\end{array}$</p>
-<p>$\hspace{3cm}$ Hence, $vw^{n}\alpha\models\varphi_1\ \mathcal{U}\ \varphi_2$.</p>
-<p>$\hspace{1cm}$ $\textbf{2. }\textit{If }\ vw^{n+1}\alpha\models\varphi_1\ \mathcal{U}\ \varphi_2\textit{, then }\ vw^{n}\alpha\models\varphi_1\ \mathcal{U}\ \varphi_2:$<br>$\hspace{2cm}$ Again, we need consider both cases seperately:</p>
-<p>$\hspace{2cm}\textbf{Case }j\leq|v|+|w|:$<br>$\hspace{3cm}$ By induction hypothesis, we assumed $\varphi_1$ and $\varphi_2$ are <code>non-counting</code>. So<br>$\hspace{3cm}$ if $vww^{n}\alpha[j,\infty]\models\varphi_2$, then $vww^{n-1}\alpha[j,\infty]\models\varphi_2$ and analogously,<br>$\hspace{3cm}$ if $vww^{n}\alpha[i,\infty]\models\varphi_1$, then $vww^{n-1}\alpha[i,\infty]\models\varphi_1$ for $i &lt; j$.<br>$\hspace{3cm}$ Hence, $vw^{n}\alpha\models\varphi_1\ \mathcal{U}\ \varphi_2$.</p>
-<p>$\hspace{2cm}\textbf{Case }j&gt;|v|+|w|:$<br>$\hspace{3cm}$ Simliar to above, by subtracting one more cycle, we can essentially get the same suffix:<br>$\hspace{3cm}$ if $vw^{n+1}\alpha[j,\infty]\models\varphi_2$, then $vw^{n}\alpha[j-|w|,\infty]\models\varphi_2$, and<br>$\hspace{3cm}$ if $vw^{n+1}\alpha[i,\infty]\models\varphi_1$, then $vw^{n}\alpha[i,\infty]\models\varphi_1$, for each position $|v|+|w|\leq i&lt;j-|w|$.<br>$\hspace{3cm}$ Again, by induction hypothesis from the above case, we have that</p>
-<p>$\begin{array}{lrcccll}<br>\hspace{4cm}&amp;|v|+|w|&amp;\leq&amp;i&amp;&lt;&amp;j-|w|\newline<br>\hspace{4cm}\text{iff}&amp;|v|+2|w|&amp;\leq&amp;i&amp;&lt;&amp;j\newline<br>\hspace{4cm}\text{iff}&amp;&amp;&amp;i&amp;&lt;&amp;j&amp;&amp;(\text{induction hypothesis: }i&lt;|v|+|w|)\newline<br>\end{array}$</p>
-<p>$\hspace{3cm}$ Hence, $vw^{n}\alpha\models\varphi_1\ \mathcal{U}\ \varphi_2$.</p>
-<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>Unfortunately, LTL is not expressive enough to include all $\omega$-regular languages. However, by extending the syntax of LTL, we can also extend the languages it covers.<br>In the next section, we will Quantified Propositional Temporal Logic (QPTL), and see whether it suffices to solve our problem.</p>
+<h3 id="Proof-1"><a href="#Proof-1" class="headerlink" title="Proof"></a>Proof</h3><p>Let $\varphi$ be an S1S-formula. We construct a Büchi automaton A with $\mathcal{L}(\varphi)&#x3D;\mathcal{L}(\mathcal{A})$. We begin by translating $\varphi$ into an equivalent S1S$_0$ according to the above Lemma 6.1. The Büchi automaton is then constructed inductively as follows.</p>
 <hr>
-<p>Next chapter: <a href="../agv6-4/">Quantified Propositional Temporal Logic (QPTL)</a></p>
+<p>Next chapter: <a href="../agv7-1/">Alternating Büchi Automata</a></p>
 <p>Further Reading: <a href=""></a></p>
 
       
