@@ -1020,7 +1020,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-12-14 07:02:19'>2024-11-29 00:36</time>
+            Created At : <time class="date" title='Updated At: 2024-12-14 07:03:26'>2024-11-29 00:36</time>
         
     </div>
     <div class="article-meta">
@@ -1111,15 +1111,24 @@
 <p>We can also use the S1S way to interpret, that proposition $X$ holds $\textbf{true}$ in position x and y, i.e. $X&#x3D;\lbrace x,y\rbrace$.</p>
 <p>Therefore, when we see transitions like $\lbrace A\mid X\in A\rbrace$, it means if $X$ is part of the avaliable propositions for the current state and holds in certain letter(position), then the automata can take this transition as a path. (Here the position is not specified, will see more examples below)</p>
 <ol>
-<li>$0\in X$: This statement holds $\textbf{true}$ iff. theres a word that contains $X$ in zero position.<br><img src="/images/notes/uds/agv/6_7_0inX.png"></li>
-<li>$x\in Y$: This statement holds $\textbf{true}$ iff. theres a word that contains $Y$ in $x$ position.<br><img src="/images/notes/uds/agv/6_7_xinY.png"></li>
-<li>$x&#x3D;0$: This statement holds $\textbf{true}$ iff. the word exist some propositions that only holds $\textbf{true}$ in $x$-th position, assign $x$ as $0$.<br><img src="/images/notes/uds/agv/6_7_x=0.png"></li>
-<li>$x&#x3D;y$: This statement holds $\textbf{true}$ iff. the word exist some propositions that only holds $\textbf{true}$ in $x$-th and $y$-th position, which are indeed the same.<br><img src="/images/notes/uds/agv/6_7_x=y.png"></li>
-<li>$x&#x3D;S(y)$: This statement holds $\textbf{true}$ iff. the word exist some propositions that only holds $\textbf{true}$ in $x$-th and $y$-th position, where $x$ and $y$ are different and $x$ is the next position after $y$.<br><img src="/images/notes/uds/agv/6_7_x=S(y).png"></li>
-<li>$\varphi\wedge\psi$: Let $\mathcal{A_\varphi}$ and $\mathcal{A_\psi}$ be the automata constructed for $\varphi$ and $\psi$, respectively. We obtain the automaton $\mathcal{A}_{\varphi\wedge\psi}$ by constructing the automaton that recognizes the <a href="../agv3-3/">Intersection (chapter 3.3)</a> of $\mathcal{L(A_\varphi)}$ and $\mathcal{L(A_\psi)}$.</li>
-<li>$\neg\varphi$: let $\mathcal{A_{\varphi}}$ be the automaton constructed for $\varphi$. We obtain the automaton $\mathcal{A_{\neg\varphi}}$ by first constructing the automaton that recognizes the complement of $\mathcal{L(A_{\varphi})}$ and then intersecting it with $A_x$ for each <strong>free</strong> <code>first-order variable</code> $x$, which ensures that $x$ appears exactly once:<br><img src="/images/notes/uds/agv/6_7_notphi.png"></li>
-<li>$\exists X.\varphi$: Let $\mathcal{A_{\varphi}}$ be the automaton constructed for $\varphi$. We obtain the automaton $\mathcal{A}_{\exists X. \varphi}$ for by eliminating $X$ from the input alphabet, i.e., we replace each transition $(q,A,q’)$ by $(q,A\setminus\lbrace X\rbrace,q’)$.<br>(Because the Büchi-recognizable Language only contains the set of <strong>free</strong> atomic propositions)</li>
-<li>$\exists x. \varphi$: Similarly, we replace each transition $(q,A,q’)$ by $(q,A\setminus\lbrace x\rbrace,q’)$.</li>
+<li><p>$0\in X$: This statement holds $\textbf{true}$ iff. theres a word that contains $X$ in zero position.<br><img src="/images/notes/uds/agv/6_7_0inX.png"></p>
+</li>
+<li><p>$x\in Y$: This statement holds $\textbf{true}$ iff. theres a word that contains $Y$ in $x$ position.<br><img src="/images/notes/uds/agv/6_7_xinY.png"></p>
+</li>
+<li><p>$x&#x3D;0$: This statement holds $\textbf{true}$ iff. the word exist some propositions that only holds $\textbf{true}$ in $x$-th position, assign $x$ as $0$.<br><img src="/images/notes/uds/agv/6_7_x=0.png"></p>
+</li>
+<li><p>$x&#x3D;y$: This statement holds $\textbf{true}$ iff. the word exist some propositions that only holds $\textbf{true}$ in $x$-th and $y$-th position, which are indeed the same.<br><img src="/images/notes/uds/agv/6_7_x=y.png"></p>
+</li>
+<li><p>$x&#x3D;S(y)$: This statement holds $\textbf{true}$ iff. the word exist some propositions that only holds $\textbf{true}$ in $x$-th and $y$-th position, where $x$ and $y$ are different and $x$ is the next position after $y$.<br><img src="/images/notes/uds/agv/6_7_x=S(y).png"></p>
+</li>
+<li><p>$\varphi\wedge\psi$: Let $\mathcal{A_\varphi}$ and $\mathcal{A_\psi}$ be the automata constructed for $\varphi$ and $\psi$, respectively. We obtain the automaton $\mathcal{A}_{\varphi\wedge\psi}$ by constructing the automaton that recognizes the <a href="../agv3-3/">Intersection (chapter 3.3)</a> of $\mathcal{L(A_\varphi)}$ and $\mathcal{L(A_\psi)}$.</p>
+</li>
+<li><p>$\neg\varphi$: let $\mathcal{A_{\varphi}}$ be the automaton constructed for $\varphi$. We obtain the automaton $\mathcal{A_{\neg\varphi}}$ by first constructing the automaton that recognizes the complement of $\mathcal{L(A_{\varphi})}$ and then intersecting it with $A_x$ for each <strong>free</strong> <code>first-order variable</code> $x$, which ensures that $x$ appears exactly once:<br><img src="/images/notes/uds/agv/6_7_notphi.png"></p>
+</li>
+<li><p>$\exists X.\varphi$: Let $\mathcal{A_{\varphi}}$ be the automaton constructed for $\varphi$. We obtain the automaton $\mathcal{A}_{\exists X. \varphi}$ for by eliminating $X$ from the input alphabet, i.e., we replace each transition $(q,A,q’)$ by $(q,A\setminus\lbrace X\rbrace,q’)$.<br>(Because the Büchi-recognizable Language only contains the set of <strong>free</strong> atomic propositions)</p>
+</li>
+<li><p>$\exists x. \varphi$: Similarly, we replace each transition $(q,A,q’)$ by $(q,A\setminus\lbrace x\rbrace,q’)$.</p>
+</li>
 </ol>
 <hr>
 <p>Next chapter: <a href="../agv7-1/">Alternating Büchi Automata</a></p>
