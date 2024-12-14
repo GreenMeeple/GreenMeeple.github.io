@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>AGV 6.7 -- S1S$_0$ and Büchi-recognizable LanguageBüchi-recognizable | GreenMeeple</title>
+  <title>AGV 6.7 -- S1S$_0$ and Büchi-recognizable Language | GreenMeeple</title>
   <meta name="keywords" content=" AGV ">
-  <meta name="description" content="AGV 6.7 -- S1S$_0$ and Büchi-recognizable LanguageBüchi-recognizable | GreenMeeple">
+  <meta name="description" content="AGV 6.7 -- S1S$_0$ and Büchi-recognizable Language | GreenMeeple">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="GreenMeeple cannot find what you are looking for...">
@@ -321,7 +321,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="58">
-<input type="hidden" id="yelog_site_word_count" value="30.4k">
+<input type="hidden" id="yelog_site_word_count" value="30.9k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -474,7 +474,7 @@
            href="/agv6-7/"
            data-tag="AGV"
            data-author="" >
-            <span class="post-title" title="AGV 6.7 -- S1S$_0$ and Büchi-recognizable LanguageBüchi-recognizable">AGV 6.7 -- S1S$_0$ and Büchi-recognizable LanguageBüchi-recognizable</span>
+            <span class="post-title" title="AGV 6.7 -- S1S$_0$ and Büchi-recognizable Language">AGV 6.7 -- S1S$_0$ and Büchi-recognizable Language</span>
             <span class="post-date" title="2024-11-29 00:36:06">2024/11/29</span>
         </a>
         
@@ -993,7 +993,7 @@
     <div class="pjax">
         <article id="post-agv6-7" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">AGV 6.7 -- S1S$_0$ and Büchi-recognizable LanguageBüchi-recognizable</h1>
+        <h1 class="article-title">AGV 6.7 -- S1S$_0$ and Büchi-recognizable Language</h1>
     
     <div class="article-meta">
         
@@ -1020,12 +1020,12 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-12-13 16:53:36'>2024-11-29 00:36</time>
+            Created At : <time class="date" title='Updated At: 2024-12-14 07:02:19'>2024-11-29 00:36</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:522</span>
+        <span>Count:1.1k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1099,7 +1099,28 @@
 <h2 id="From-S1S-definable-to-Buchi-recognizable"><a href="#From-S1S-definable-to-Buchi-recognizable" class="headerlink" title="From S1S-definable to Büchi-recognizable"></a>From S1S-definable to Büchi-recognizable</h2><blockquote>
 <p>$\textbf{Theorem 6.4. } \textit{Every S1S-definable language is Büchi-recognizable.}$</p>
 </blockquote>
-<h3 id="Proof-1"><a href="#Proof-1" class="headerlink" title="Proof"></a>Proof</h3><p>Let $\varphi$ be an S1S-formula. We construct a Büchi automaton A with $\mathcal{L}(\varphi)&#x3D;\mathcal{L}(\mathcal{A})$. We begin by translating $\varphi$ into an equivalent S1S$_0$ according to the above Lemma 6.1. The Büchi automaton is then constructed inductively as follows.</p>
+<h3 id="Proof-1"><a href="#Proof-1" class="headerlink" title="Proof"></a>Proof</h3><p>Let $\varphi$ be an S1S-formula. We construct a Büchi automaton $\mathcal{A}$ with $\mathcal{L}(\varphi)&#x3D;\mathcal{L}(\mathcal{A})$.</p>
+<ul>
+<li>Step 1: We begin by translating $\varphi$ into an equivalent S1S$_0$ according to the above Lemma 6.1.</li>
+<li>Step 2: Express every basic S1S$_0$ formula from the grammar above using Büchi automaton.</li>
+</ul>
+<p>Remember in <a href="../agv6-6/">last section</a>, when we translate QPTL to S1S, we defined <code>Second-order variable</code> $X$ as atomic proposition of QPTL. Here same definitions continue:</p>
+<p>First of all, <strong>$A$ is the set of atomic propositions $(A\subseteq AP)$ which is avaliable in the current state</strong>. For example, in state $q_2$, $A &#x3D; \lbrace X,Y\rbrace$, where $AP &#x3D; \lbrace X,Y,Z\rbrace$. Which means in $q_2$ there exists transitions only when proposition $X$ or $Y$ is $\textbf{true}$.</p>
+<p>Then, words are defined as a sequence containing atomic propositions. For example, a possible structure for word $\alpha$ may look like this: $$\alpha&#x3D;\lbrace XYYXXYY\dots\rbrace$$</p>
+<p>Finally, our <a href="../agv6-5/">definition</a> of <code>Second-order variable</code> is <strong>set of positions</strong>, and <code>First-order variable</code> are the <strong>positions</strong>. The relationship between proposition and variables in S1S is essentially $\alpha[x] &#x3D; X$, where $x$ is some <code>First-order variable</code> and $X$ is some <code>Second-order variable</code>.</p>
+<p>We can also use the S1S way to interpret, that proposition $X$ holds $\textbf{true}$ in position x and y, i.e. $X&#x3D;\lbrace x,y\rbrace$.</p>
+<p>Therefore, when we see transitions like $\lbrace A\mid X\in A\rbrace$, it means if $X$ is part of the avaliable propositions for the current state and holds in certain letter(position), then the automata can take this transition as a path. (Here the position is not specified, will see more examples below)</p>
+<ol>
+<li>$0\in X$: This statement holds $\textbf{true}$ iff. theres a word that contains $X$ in zero position.<br><img src="/images/notes/uds/agv/6_7_0inX.png"></li>
+<li>$x\in Y$: This statement holds $\textbf{true}$ iff. theres a word that contains $Y$ in $x$ position.<br><img src="/images/notes/uds/agv/6_7_xinY.png"></li>
+<li>$x&#x3D;0$: This statement holds $\textbf{true}$ iff. the word exist some propositions that only holds $\textbf{true}$ in $x$-th position, assign $x$ as $0$.<br><img src="/images/notes/uds/agv/6_7_x=0.png"></li>
+<li>$x&#x3D;y$: This statement holds $\textbf{true}$ iff. the word exist some propositions that only holds $\textbf{true}$ in $x$-th and $y$-th position, which are indeed the same.<br><img src="/images/notes/uds/agv/6_7_x=y.png"></li>
+<li>$x&#x3D;S(y)$: This statement holds $\textbf{true}$ iff. the word exist some propositions that only holds $\textbf{true}$ in $x$-th and $y$-th position, where $x$ and $y$ are different and $x$ is the next position after $y$.<br><img src="/images/notes/uds/agv/6_7_x=S(y).png"></li>
+<li>$\varphi\wedge\psi$: Let $\mathcal{A_\varphi}$ and $\mathcal{A_\psi}$ be the automata constructed for $\varphi$ and $\psi$, respectively. We obtain the automaton $\mathcal{A}_{\varphi\wedge\psi}$ by constructing the automaton that recognizes the <a href="../agv3-3/">Intersection (chapter 3.3)</a> of $\mathcal{L(A_\varphi)}$ and $\mathcal{L(A_\psi)}$.</li>
+<li>$\neg\varphi$: let $\mathcal{A_{\varphi}}$ be the automaton constructed for $\varphi$. We obtain the automaton $\mathcal{A_{\neg\varphi}}$ by first constructing the automaton that recognizes the complement of $\mathcal{L(A_{\varphi})}$ and then intersecting it with $A_x$ for each <strong>free</strong> <code>first-order variable</code> $x$, which ensures that $x$ appears exactly once:<br><img src="/images/notes/uds/agv/6_7_notphi.png"></li>
+<li>$\exists X.\varphi$: Let $\mathcal{A_{\varphi}}$ be the automaton constructed for $\varphi$. We obtain the automaton $\mathcal{A}_{\exists X. \varphi}$ for by eliminating $X$ from the input alphabet, i.e., we replace each transition $(q,A,q’)$ by $(q,A\setminus\lbrace X\rbrace,q’)$.<br>(Because the Büchi-recognizable Language only contains the set of <strong>free</strong> atomic propositions)</li>
+<li>$\exists x. \varphi$: Similarly, we replace each transition $(q,A,q’)$ by $(q,A\setminus\lbrace x\rbrace,q’)$.</li>
+</ol>
 <hr>
 <p>Next chapter: <a href="../agv7-1/">Alternating Büchi Automata</a></p>
 <p>Further Reading: <a href=""></a></p>
