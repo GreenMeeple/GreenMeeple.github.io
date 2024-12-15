@@ -321,7 +321,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="58">
-<input type="hidden" id="yelog_site_word_count" value="30.9k">
+<input type="hidden" id="yelog_site_word_count" value="31k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1020,7 +1020,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-12-13 16:46:19'>2024-11-15 01:31</time>
+            Created At : <time class="date" title='Updated At: 2024-12-15 02:47:44'>2024-11-15 01:31</time>
         
     </div>
     <div class="article-meta">
@@ -1095,10 +1095,31 @@
 <blockquote>
 <p>$\textbf{Construction 3.2. } \text{Let }L_1\text{ and }L_2\text{ be }\omega\text{-languages recognized by the Büchi automata}\newline\mathcal{A}_1&#x3D;(\Sigma,Q_1,I_1,T_1,\small\text{BÜCHI}\normalsize(F_1))\text{ and }\mathcal{A}_2 &#x3D; (\Sigma,Q_2,I_2,T_2,\small\text{BÜCHI}\normalsize (F_2))\text{, respectively.}\newline\text{We construct}\mathcal{A}_\cap&#x3D;(\Sigma,Q_\cap,I_\cap,T_\cap,\small\text{BÜCHI}\normalsize (F_\cap))\text{ with }\mathcal{L}(\mathcal{A}_\cap)&#x3D;L_1\cap L_2\text{ as follows:}$<br>$\begin{array}{rll}<br>\hspace{1cm} \cdot \ Q_\cap&amp;&#x3D;&amp;Q_1\times Q_2\times\lbrace 1,2\rbrace\newline<br>\hspace{1cm} \cdot \ I_\cap&amp;&#x3D;&amp;I_1\times I_2\times\lbrace 1\rbrace\newline<br>\hspace{1cm} \cdot \ T_\cap&amp;&#x3D;&amp;\lbrace (q_1,q_2,i),\sigma ,(q’_1,q’_2,j)\mid (q_1,\sigma,q’_1)\in T_1,(q_2,\sigma,q’_2)\in T_2,i,j\in\lbrace 1,2\rbrace,\newline<br>\hspace{1cm} \ &amp;&amp;\hspace{5.3cm}q_i \notin F_i\rightarrow i&#x3D;j \wedge q_i\in F_i\wedge i\neq j\rbrace\newline<br>\hspace{1cm} \cdot \ F_\cap&amp;&#x3D;&amp;\lbrace (q_1,q_2,2)\mid q_1\in F_1, q_2\in F_2\rbrace\newline<br>\end{array}$</p>
 </blockquote>
-<p>$Q_\cap:$ States in the new automaton is <strong>tuples</strong> that contain the states of two automata plus the third component that used to <strong>combine acceptance conditions</strong>, e.g. $(q_1,q_2,1)$ is a state.</p>
-<p>$I_\cap:$ New automaton is constructed with only <strong>one initial state</strong>, so we assign the value to the acceptance condition <code>&#123;1&#125;</code> for simplicity</p>
-<p>$T_\cap:$ For each transition, it has to be possible by both automata and if such transition reach the one of the automata’s accepting state, the acceptance condition changed. This creates an alternation between the accepting state of the 1st and 2nd automaton.</p>
-<p>$F_\cap:$ Since we start our acceptance condition as <code>&#123;1&#125;</code>, our accepting states of the new automaton will be the <strong>accepting states of the 2nd automaton when acceptance condition becomes <code>&#123;2&#125;</code></strong>. i.e. Whenever the run reach to the accepting states of the 2nd automaton, it always has to first reach the accepting states of the 1st automaton.</p>
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="left">Explaination</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">$Q_\cap$</td>
+<td align="left">States in the new automaton is <strong>tuples</strong> that contain the states of two automata plus the third component that used to <strong>combine acceptance conditions</strong>, e.g. $(q_1,q_2,1)$ is a state.</td>
+</tr>
+<tr>
+<td align="left">$I_\cap$</td>
+<td align="left">New automaton is constructed with only <strong>one initial state</strong>, so we assign the value to the acceptance condition <code>&#123;1&#125;</code> for simplicity</td>
+</tr>
+<tr>
+<td align="left">$T_\cap$</td>
+<td align="left">The switch from $\lbrace 0\rbrace$ and $\lbrace 1\rbrace$ happens nondeterministically. And once you enter the second copy $\lbrace 1\rbrace$, it stays forever.</td>
+</tr>
+<tr>
+<td align="left">$F_\cap$</td>
+<td align="left">For each transition, it has to be possible by both automata and if such transition reach the one of the automata’s accepting state, the acceptance condition changed. This creates an alternation between the accepting state of the 1st and 2nd automaton.</td>
+</tr>
+</tbody></table>
+<p>Since we start our acceptance condition as <code>&#123;1&#125;</code>, our accepting states of the new automaton will be the <strong>accepting states of the 2nd automaton when acceptance condition becomes <code>&#123;2&#125;</code></strong>. i.e. Whenever the run reach to the accepting states of the 2nd automaton, it always has to first reach the accepting states of the 1st automaton.</p>
 <blockquote>
 <p>$\textbf{Theorem 3.3. } \textit{If $L_1$ and $L_2$ are Büchi-recognizable, then so is $L_1\cap L_2$.}$</p>
 </blockquote>

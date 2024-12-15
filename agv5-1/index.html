@@ -321,7 +321,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="58">
-<input type="hidden" id="yelog_site_word_count" value="30.9k">
+<input type="hidden" id="yelog_site_word_count" value="31k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1020,12 +1020,12 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-12-13 16:50:01'>2024-11-20 16:44</time>
+            Created At : <time class="date" title='Updated At: 2024-12-15 03:11:28'>2024-11-20 16:44</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:875</span>
+        <span>Count:865</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1086,8 +1086,22 @@
 <p>In the above example: the word $\alpha&#x3D;ababa^\omega$ has only two <em>b</em>‘s and hence must be rejected by $\mathcal{A}$.</p>
 <p>Since the automaton is nondeterministic, a single word of $\mathcal{A}$ will have multiple runs on $\alpha$, represented by each <em>path in DAG</em>. The path is called accepting <strong>if and only if</strong> its corresponding run is accepting, i.e., the path visits $F\times\mathcal{A}$ infinitely often.</p>
 <h2 id="Graph-Pruning"><a href="#Graph-Pruning" class="headerlink" title="Graph Pruning"></a>Graph Pruning</h2><p>To show the <strong>non-acceptance</strong> of $\alpha$ by $\mathcal{A}$, we can systematically identifying and pruning away vertices of the run DAG that only lead to rejecting paths until the graph is empty using the following definitions:</p>
-<p><code>Endangered</code>: a vertex in a DAG is endangered if it has only <strong>finitely many descendants</strong>;</p>
-<p><code>Safe</code>: a vertex in a DAG is safe if it is <strong>not in</strong> $F\times\mathcal{A}$ and <strong>none of its descendants</strong> are in $F\times\mathcal{A}$ either.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Vertices in DAG</th>
+<th align="left">Defintiion</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>Endangered</code></td>
+<td align="left">when they only have <strong>finitely many descendants</strong></td>
+</tr>
+<tr>
+<td align="left"><code>Safe</code></td>
+<td align="left">when they are <strong>not in</strong> $F\times\mathcal{A}$, and <strong>none of its descendants</strong> are in $F\times\mathcal{A}$ either</td>
+</tr>
+</tbody></table>
 <p>We start with a graph $G_0&#x3D;G$. Each iteration $j\geq 0$ of our pruning will consist of two steps:</p>
 <ol>
 <li>in step $2j$, the graph &#x3D; $G_{2j}$, remove all <code>endangered</code> vertices, graph after removal &#x3D; $G_{2j+1}$</li>

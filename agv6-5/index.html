@@ -321,7 +321,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="58">
-<input type="hidden" id="yelog_site_word_count" value="30.9k">
+<input type="hidden" id="yelog_site_word_count" value="31k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1020,7 +1020,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-12-13 00:35:15'>2024-11-27 03:21</time>
+            Created At : <time class="date" title='Updated At: 2024-12-15 03:19:09'>2024-11-27 03:21</time>
         
     </div>
     <div class="article-meta">
@@ -1083,11 +1083,30 @@
 </ul>
 <p>Later in the course, we will study monadic second-order logics of two or more successors (S2S, WS1S, etc.), which allow us to describe <em>trees</em> rather than <em>words</em>.</p>
 <h2 id="S1S-syntax"><a href="#S1S-syntax" class="headerlink" title="S1S syntax"></a>S1S syntax</h2><p>In automaton, we use <em>states</em>; in LTL and QPTL, we use <em>propositions</em>, in S1S, we use <strong>positions</strong>.<br>Propositions in QPTL can be interpreted as <strong>set of positions</strong> that holds $\textbf{true}$.</p>
-<ul>
-<li><code>first-order variables</code>: variables that store <strong>positions</strong>;</li>
-<li><code>second-order variables</code>: variables that store <strong>sets of positions</strong> (similar to $\exists p.\varphi$ in QPTL);</li>
-<li><code>successor operation</code>: $S$, allows us to navigate to the next position (similar to $\bigcirc$ in LTL)</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th align="left">basic variables</th>
+<th align="left">Defintiion</th>
+<th align="left">Example</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>first-order variables</code></td>
+<td align="left">store <strong>positions</strong></td>
+<td align="left">$0,1,x,y,\dots$</td>
+</tr>
+<tr>
+<td align="left"><code>second-order variables</code></td>
+<td align="left">store <strong>sets of positions</strong> (refer to $p$ as $\exists p.\varphi$ in QPTL)</td>
+<td align="left">$X,Y,\dots$</td>
+</tr>
+<tr>
+<td align="left"><code>successor operation</code></td>
+<td align="left">$S$, allows us to navigate to the next position (same as $\bigcirc$ in LTL)</td>
+<td align="left">$S(t), S(2),\dots$</td>
+</tr>
+</tbody></table>
 <h3 id="Terms-and-Formulas"><a href="#Terms-and-Formulas" class="headerlink" title="Terms and Formulas"></a>Terms and Formulas</h3><p>Let $V_1&#x3D;\lbrace x, y,\dots\rbrace$ be a set of <code>first-order variables</code> and $V_2&#x3D;\lbrace X, Y,\dots\rbrace$ a set of <code>second-order variables</code>. Then the <strong>terms</strong> of S1S are defined by the following grammar:</p>
 <p>$$t::&#x3D;0\mid x\mid S(t)$$</p>
 <p>The <strong>formulas</strong>&#96;of S1S are defined by the following grammar:</p>

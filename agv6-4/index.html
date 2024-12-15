@@ -321,7 +321,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="58">
-<input type="hidden" id="yelog_site_word_count" value="30.9k">
+<input type="hidden" id="yelog_site_word_count" value="31k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1020,7 +1020,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-12-14 06:52:35'>2024-11-26 02:33</time>
+            Created At : <time class="date" title='Updated At: 2024-12-15 03:12:39'>2024-11-26 02:33</time>
         
     </div>
     <div class="article-meta">
@@ -1110,10 +1110,22 @@
 </li>
 </ul>
 </blockquote>
-<h3 id="Free-and-Bound-Atomic-Propositions"><a href="#Free-and-Bound-Atomic-Propositions" class="headerlink" title="Free and Bound Atomic Propositions"></a><code>Free</code> and <code>Bound</code> Atomic Propositions</h3><ul>
-<li><code>Free</code>:  Atomic Proposition that <strong>IS NOT in</strong> the <em>scope of a quantifier</em> over the proposition,</li>
-<li><code>Bound</code>: Atomic Proposition that <strong>IS in</strong> the <em>scope of a quantifier</em> over the proposition.</li>
-</ul>
+<h3 id="Free-and-Bound-Atomic-Propositions"><a href="#Free-and-Bound-Atomic-Propositions" class="headerlink" title="Free and Bound Atomic Propositions"></a><code>Free</code> and <code>Bound</code> Atomic Propositions</h3><table>
+<thead>
+<tr>
+<th align="left">Atomic Propositions</th>
+<th align="left">Defintiion</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>Free</code></td>
+<td align="left"><strong>NOT in</strong> the <em>scope of a quantifier</em> over the proposition</td>
+</tr>
+<tr>
+<td align="left"><code>Bound</code></td>
+<td align="left"><strong>In</strong> the <em>scope of a quantifier</em> over the proposition</td>
+</tr>
+</tbody></table>
 <p>Here, <code>Bounded</code> propositions are internal helpers to help us construct some logical conditions of the formula that do not directly appear in the language. (e.g. we need a counter for <code>counting</code>-language, but it doesn’t belongs to any proposition that refers to the alphabet or language.)</p>
 <h2 id="From-QPTL-formula-to-omega-regular-language"><a href="#From-QPTL-formula-to-omega-regular-language" class="headerlink" title="From QPTL formula to $\omega$-regular language"></a>From QPTL formula to $\omega$-regular language</h2><p>Let’s defined the set of <strong>free</strong> atomic propositions as $AP’\subseteq AP$. For every letter in the alphabet, we can describe them in $AP’$.</p>
 <p>For exmaple, if $\lbrace a,b,c\rbrace&#x3D;\Sigma$, the word $\lbrace ab\rbrace\in\Sigma$ will be $\lbrace a,b,\neg c\rbrace\in AP’$</p>

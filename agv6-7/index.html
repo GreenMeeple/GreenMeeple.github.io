@@ -321,7 +321,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="58">
-<input type="hidden" id="yelog_site_word_count" value="30.9k">
+<input type="hidden" id="yelog_site_word_count" value="31k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1020,7 +1020,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-12-14 07:03:26'>2024-11-29 00:36</time>
+            Created At : <time class="date" title='Updated At: 2024-12-15 03:32:42'>2024-11-29 00:36</time>
         
     </div>
     <div class="article-meta">
@@ -1055,7 +1055,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Introduction"><span class="toc-text">Introduction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#From-S1S-to-S1S-0"><span class="toc-text">From S1S to S1S$_0$</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Proof"><span class="toc-text">Proof</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Explanation"><span class="toc-text">Explanation</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#From-S1S-definable-to-Buchi-recognizable"><span class="toc-text">From S1S-definable to Büchi-recognizable</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Proof-1"><span class="toc-text">Proof</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Introduction"><span class="toc-text">Introduction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#From-S1S-to-S1S-0"><span class="toc-text">From S1S to S1S$_0$</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Proof"><span class="toc-text">Proof</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#From-S1S-definable-to-Buchi-recognizable"><span class="toc-text">From S1S-definable to Büchi-recognizable</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Proof-1"><span class="toc-text">Proof</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -1089,13 +1089,60 @@
 <p>$\textbf{Lemma 6.1. } \textit{For every S1S formula }\varphi\textit{ there is an S1S}_0\text{ formula }\varphi’\textit{ such that }\mathcal{L}(\varphi)&#x3D;\mathcal{L}(\varphi’).$</p>
 </blockquote>
 <h3 id="Proof"><a href="#Proof" class="headerlink" title="Proof"></a>Proof</h3><p>We rewrite a given S1S formula $\varphi$ into the S1S$_0$ formula $\varphi$’ using the following rewrite rules:</p>
-<p>$$<br>S(t)\in X\mapsto\exists y. y&#x3D;S(t)\wedge y\in X\newline<br>\begin{array}{rclcrcl}<br>0&#x3D;x&amp;\mapsto&amp;x&#x3D;0&amp;\hspace{1cm}&amp;0&#x3D;0&amp;\mapsto&amp;\exists Y.0\in Y\vee0\notin Y\newline<br>S(t)&#x3D;0&amp;\mapsto&amp;0&#x3D;S(t)&amp;\hspace{1cm}&amp;0&#x3D;S(t)&amp;\mapsto&amp;\exists y.y&#x3D;S(t)\wedge y&#x3D;0\newline<br>S(t)&#x3D;0&amp;\mapsto&amp;x&#x3D;S(t)&amp;\hspace{1cm}&amp;t&#x3D;S(0)&amp;\mapsto&amp;\exists x.x&#x3D;0\wedge t&#x3D;S(x)\newline<br>S(t)&#x3D;S(t’)&amp;\mapsto&amp;t&#x3D;t’&amp;\hspace{1cm}&amp;t&#x3D;S(S(t’)&amp;\mapsto&amp;\exists y.y&#x3D;S(t’)\wedge t&#x3D;S(y)\newline<br>\end{array}<br>$$</p>
-<h3 id="Explanation"><a href="#Explanation" class="headerlink" title="Explanation"></a>Explanation</h3><p>There are some rules to follow in order to create a stricter S1S formula:</p>
-<ol>
-<li>L.H.S of <strong>Equalities</strong> $(&#x3D;)$ always put variable if possible, if not then $0$. e.g. we only allow $x&#x3D;0$ but not $0&#x3D;x$;</li>
-<li>If L.H.S contains 0 or successor operation $(S(t))$, we can use existential operator $(\exists)$ to split it into two formula, connected with $\wedge$, $\vee$. e.g. $S(t)\in X$ first becomes $y&#x3D;S(t)$, then $y\in X$</li>
-<li>$0&#x3D;0$ equals to $\textbf{true}$, which can be assigned&#x2F; not assigned to any <code>Second-order variable</code> sets.</li>
-</ol>
+<table>
+<thead>
+<tr>
+<th align="left">S1S</th>
+<th align="left">S1S_0</th>
+<th align="left">Explanation</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">$S(t)\in X$</td>
+<td align="left">$\exists y. y&#x3D;S(t)\wedge y\in X$</td>
+<td align="left">only $0$ and <code>First-order variable</code> $(x,y,\dots)$ is allowed on the L.H.S of $\in$</td>
+</tr>
+<tr>
+<td align="left">$0&#x3D;x$</td>
+<td align="left">$x&#x3D;0$</td>
+<td align="left"><code>First-order variable</code> has higher priority than $0$</td>
+</tr>
+<tr>
+<td align="left">$S(t)&#x3D;0$</td>
+<td align="left">$0&#x3D;S(t)$</td>
+<td align="left">successor operation not allowed on L.H.S</td>
+</tr>
+<tr>
+<td align="left">$S(t)&#x3D;x$</td>
+<td align="left">$x&#x3D;S(t)$</td>
+<td align="left">successor operation not allowed on L.H.S</td>
+</tr>
+<tr>
+<td align="left">$S(t)&#x3D;S(t’)$</td>
+<td align="left">$t&#x3D;t’$</td>
+<td align="left">successor operation not allowed on L.H.S</td>
+</tr>
+<tr>
+<td align="left">$0&#x3D;0$</td>
+<td align="left">$\exists Y.0\in Y\vee0\notin Y$</td>
+<td align="left">only accept the form $x&#x3D;0$</td>
+</tr>
+<tr>
+<td align="left">$0&#x3D;S(t)$</td>
+<td align="left">$\exists y.y&#x3D;S(t)\wedge y&#x3D;0$</td>
+<td align="left">only accept the form $x&#x3D;0$ or $x&#x3D;S(y)$</td>
+</tr>
+<tr>
+<td align="left">$t&#x3D;S(0)$</td>
+<td align="left">$\exists x.x&#x3D;0\wedge t&#x3D;S(x)$</td>
+<td align="left">only accept the form $x&#x3D;S(y)$</td>
+</tr>
+<tr>
+<td align="left">$t&#x3D;S(S(t’)$</td>
+<td align="left">$\exists y.y&#x3D;S(t’)\wedge t&#x3D;S(y)$</td>
+<td align="left">only allow one successor operation</td>
+</tr>
+</tbody></table>
 <h2 id="From-S1S-definable-to-Buchi-recognizable"><a href="#From-S1S-definable-to-Buchi-recognizable" class="headerlink" title="From S1S-definable to Büchi-recognizable"></a>From S1S-definable to Büchi-recognizable</h2><blockquote>
 <p>$\textbf{Theorem 6.4. } \textit{Every S1S-definable language is Büchi-recognizable.}$</p>
 </blockquote>
@@ -1121,10 +1168,14 @@
 </li>
 <li><p>$x&#x3D;S(y)$: This statement holds $\textbf{true}$ iff. the word exist some propositions that only holds $\textbf{true}$ in $x$-th and $y$-th position, where $x$ and $y$ are different and $x$ is the next position after $y$.<br><img src="/images/notes/uds/agv/6_7_x=S(y).png"></p>
 </li>
-<li><p>$\varphi\wedge\psi$: Let $\mathcal{A_\varphi}$ and $\mathcal{A_\psi}$ be the automata constructed for $\varphi$ and $\psi$, respectively. We obtain the automaton $\mathcal{A}_{\varphi\wedge\psi}$ by constructing the automaton that recognizes the <a href="../agv3-3/">Intersection (chapter 3.3)</a> of $\mathcal{L(A_\varphi)}$ and $\mathcal{L(A_\psi)}$.</p>
+<li><p>$\varphi\wedge\psi$: Let $\mathcal{A_\varphi}$ and $\mathcal{A_\psi}$ be the automata constructed for $\varphi$ and $\psi$, respectively. We obtain the automaton $\mathcal{A}_{\varphi\wedge\psi}$ by constructing the automaton that recognizes the intersection of $\mathcal{L(A_\varphi)}$ and $\mathcal{L(A_\psi)}$.<br>Below is the example of $0\in X \wedge x \in Y$:<br><img src="/images/notes/uds/agv/6_7_and.png"></p>
 </li>
-<li><p>$\neg\varphi$: let $\mathcal{A_{\varphi}}$ be the automaton constructed for $\varphi$. We obtain the automaton $\mathcal{A_{\neg\varphi}}$ by first constructing the automaton that recognizes the complement of $\mathcal{L(A_{\varphi})}$ and then intersecting it with $A_x$ for each <strong>free</strong> <code>first-order variable</code> $x$, which ensures that $x$ appears exactly once:<br><img src="/images/notes/uds/agv/6_7_notphi.png"></p>
+<li><p>$\neg\varphi$: let $\mathcal{A_{\varphi}}$ be the automaton constructed for $\varphi$. We obtain the automaton $\mathcal{A_{\neg\varphi}}$ by first constructing the automaton that recognizes the complement of $\mathcal{L(A_{\varphi})}$ and then intersecting it with $A_x$ for each <strong>free</strong> <code>first-order variable</code> $x$, which ensures that $x$ appears exactly once. Below we use $\neg(x\in Y)$ as an example:<br><img src="/images/notes/uds/agv/6_7_neg.png"></p>
 </li>
+</ol>
+<p>Notice that $(\lbrace x,Y\rbrace\subseteq A)\wedge(x\in A)&#x3D;\lbrace x,Y\rbrace\subseteq A$:</p>
+<p><img src="/images/notes/uds/agv/6_7_notphi.png"></p>
+<ol start="8">
 <li><p>$\exists X.\varphi$: Let $\mathcal{A_{\varphi}}$ be the automaton constructed for $\varphi$. We obtain the automaton $\mathcal{A}_{\exists X. \varphi}$ for by eliminating $X$ from the input alphabet, i.e., we replace each transition $(q,A,q’)$ by $(q,A\setminus\lbrace X\rbrace,q’)$.<br>(Because the Büchi-recognizable Language only contains the set of <strong>free</strong> atomic propositions)</p>
 </li>
 <li><p>$\exists x. \varphi$: Similarly, we replace each transition $(q,A,q’)$ by $(q,A\setminus\lbrace x\rbrace,q’)$.</p>

@@ -321,7 +321,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="58">
-<input type="hidden" id="yelog_site_word_count" value="30.9k">
+<input type="hidden" id="yelog_site_word_count" value="31k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1020,12 +1020,12 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-11-15 17:36:58'>2024-11-10 04:24</time>
+            Created At : <time class="date" title='Updated At: 2024-12-15 02:58:42'>2024-11-10 04:24</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:224</span>
+        <span>Count:239</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1055,7 +1055,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-Preliminaries"><span class="toc-text">2.1 Preliminaries</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Basic-math-notations"><span class="toc-text">Basic math notations</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Alphabet-and-Letter"><span class="toc-text">Alphabet and Letter</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Finite-and-Infinite-Word"><span class="toc-text">Finite and Infinite Word</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Language"><span class="toc-text">Language</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-Preliminaries"><span class="toc-text">2.1 Preliminaries</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -1075,29 +1075,105 @@
 <blockquote>
 <p>This is a learning note of a course in <a target="_blank" rel="noopener" href="https://cispa.de/de">CISPA</a>, UdS. Taught by Bernd Finkbeiner</p>
 </blockquote>
-<h2 id="2-1-Preliminaries"><a href="#2-1-Preliminaries" class="headerlink" title="2.1 Preliminaries"></a>2.1 Preliminaries</h2><h3 id="Basic-math-notations"><a href="#Basic-math-notations" class="headerlink" title="Basic math notations"></a>Basic math notations</h3><ul>
-<li>Natural numbers: $\mathbb{N} &#x3D; \lbrace 0,1,2,3\dots\rbrace$</li>
-<li>Positive Natural numbers: $\mathbb{N}^+ &#x3D; \lbrace 1,2,3\dots\rbrace$</li>
-<li>Numbers from $n$ to $m$: $[n,m] &#x3D; \lbrace n,n+1,\dots,m\rbrace$ For $n,m\in \mathbb{N}$ with $n\leq m$</li>
-<li>Numbers from $0$ to $m$: $[m] &#x3D; \lbrace 0,1,\dots,m\rbrace$</li>
-</ul>
-<h3 id="Alphabet-and-Letter"><a href="#Alphabet-and-Letter" class="headerlink" title="Alphabet and Letter"></a>Alphabet and Letter</h3><ul>
-<li><strong>Alphabet</strong> a nonempty, finite set of symbols, usually denoted by $\Sigma$</li>
-<li><strong>Letter</strong>: elements of an <em>alphabets</em>, denoted by $\sigma$</li>
-</ul>
-<h3 id="Finite-and-Infinite-Word"><a href="#Finite-and-Infinite-Word" class="headerlink" title="Finite and Infinite Word"></a>Finite and Infinite Word</h3><ul>
-<li><strong>Finite Words</strong>: concatenation $w&#x3D;w(0)w(1)\dots w(n-1)$ of <em>finitely many letters</em> of $\Sigma$</li>
-<li><strong>Infinite Words</strong>: $\alpha$ (will be explained in <a href="../agv2-3/#inf">chapter 2.3</a></li>
-<li><strong>$n$-th letter</strong> of word $w$ : $ w(n)$ for each $n \in [|w| - 1]$</li>
-<li><strong>Length</strong> of words $w$ : $ |w|$</li>
-<li>set of all <strong>finite words</strong>: $ \Sigma^*$</li>
-<li>set of all <strong>non-empty finite words</strong> : $ \Sigma^+ &#x3D; \Sigma^* \backslash \lbrace \epsilon \rbrace$</li>
-<li>set of all <strong>infinite words</strong> : $ \Sigma^\omega$</li>
-</ul>
-<h3 id="Language"><a href="#Language" class="headerlink" title="Language"></a>Language</h3><ul>
-<li>language over <strong>finite words</strong> ($\omega$<strong>-language</strong>) : each subset of $\Sigma^*$</li>
-<li>language over <strong>infinite words</strong> ($\omega$<strong>-language</strong>) : each subset of $\Sigma^\omega$</li>
-</ul>
+<h2 id="2-1-Preliminaries"><a href="#2-1-Preliminaries" class="headerlink" title="2.1 Preliminaries"></a>2.1 Preliminaries</h2><table>
+<thead>
+<tr>
+<th align="left">Basic math notations</th>
+<th align="left">Example</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Natural numbers</td>
+<td align="left">$\mathbb{N} &#x3D; \lbrace 0,1,2,3\dots\rbrace$</td>
+</tr>
+<tr>
+<td align="left">Positive Natural numbers</td>
+<td align="left">$\mathbb{N}^+ &#x3D; \lbrace 1,2,3\dots\rbrace$</td>
+</tr>
+<tr>
+<td align="left">Numbers from $n$ to $m$</td>
+<td align="left">$[n,m] &#x3D; \lbrace n,n+1,\dots,m\rbrace$ For $n,m\in \mathbb{N}$ with $n\leq m$</td>
+</tr>
+<tr>
+<td align="left">Numbers from $0$ to $m$</td>
+<td align="left">$[m] &#x3D; \lbrace 0,1,\dots,m\rbrace$</td>
+</tr>
+</tbody></table>
+<p>$$$$</p>
+<table>
+<thead>
+<tr>
+<th align="left">Alphabet and Letter</th>
+<th align="left">Example</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>Alphabet</strong></td>
+<td align="left">a nonempty, finite set of symbols, usually denoted by $\Sigma$</td>
+</tr>
+<tr>
+<td align="left"><strong>Letter</strong></td>
+<td align="left">elements of an <em>alphabets</em>, denoted by $\sigma$</td>
+</tr>
+</tbody></table>
+<p>$$$$</p>
+<table>
+<thead>
+<tr>
+<th align="left">Finite and Infinite Word</th>
+<th align="left">Example</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>Finite Words</strong></td>
+<td align="left">concatenation $w&#x3D;w(0)w(1)\dots w(n-1)$ of <br/> <em>finitely many letters</em> of $\Sigma$</td>
+</tr>
+<tr>
+<td align="left"><strong>Infinite Words</strong></td>
+<td align="left">$\alpha$ (will be explained in <a href="../agv2-3/#inf">chapter 2.3</a></td>
+</tr>
+<tr>
+<td align="left"><strong>$n$-th letter</strong> of word $w$</td>
+<td align="left">$w(n)$ for each $n\in [|w| - 1]$</td>
+</tr>
+<tr>
+<td align="left"><strong>Length</strong> of words $w$</td>
+<td align="left">$|w|$</td>
+</tr>
+<tr>
+<td align="left">set of all <strong>finite words</strong></td>
+<td align="left">\Sigma^*$</td>
+</tr>
+<tr>
+<td align="left"><strong>Infinite Words</strong></td>
+<td align="left">$\alpha$ (will be explained in <a href="../agv2-3/#inf">chapter 2.3</a></td>
+</tr>
+<tr>
+<td align="left">set of all <strong>non-empty finite words</strong></td>
+<td align="left">$\Sigma^+ &#x3D; \Sigma^* \backslash \lbrace \epsilon \rbrace$</td>
+</tr>
+<tr>
+<td align="left">set of all <strong>infinite words</strong></td>
+<td align="left">$\Sigma^\omega$</td>
+</tr>
+</tbody></table>
+<p>$$$$</p>
+<table>
+<thead>
+<tr>
+<th align="left">Language</th>
+<th align="left">Example</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">language over <strong>finite words</strong> ($\omega$<strong>-language</strong>)</td>
+<td align="left">each subset of $\Sigma^*$</td>
+</tr>
+<tr>
+<td align="left">language over <strong>infinite words</strong> ($\omega$<strong>-language</strong>)</td>
+<td align="left">each subset of $\Sigma^\omega$</td>
+</tr>
+</tbody></table>
 <hr>
 <p>Next chapter: <a href="../agv2-2/">Automata over Infinite Words</a></p>
 <p>Further Reading: <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/B%C3%BCchi_automaton">Büchi automaton</a>, <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Omega_language">Omega language</a></p>

@@ -321,7 +321,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="58">
-<input type="hidden" id="yelog_site_word_count" value="30.9k">
+<input type="hidden" id="yelog_site_word_count" value="31k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1020,12 +1020,12 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-12-09 01:15:36'>2024-11-13 13:36</time>
+            Created At : <time class="date" title='Updated At: 2024-12-15 03:04:12'>2024-11-13 13:36</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:719</span>
+        <span>Count:721</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1096,13 +1096,34 @@
 </blockquote>
 <h3 id="Mathematical-Definition"><a href="#Mathematical-Definition" class="headerlink" title="Mathematical Definition"></a>Mathematical Definition</h3><p>An automaton $\mathcal{A}$ accepts a finite word $w \in\Sigma^*$ if there is a finite sequence of states $q(0)q(1) . . . q(|w|)$ such that $q(0)\in I$ and $(q(i),w(i), q(i + 1))\in\Delta$ for all $i &lt; |w|$ and with $q(|w|)\in F$</p>
 <h3 id="Explained-in-Human-language"><a href="#Explained-in-Human-language" class="headerlink" title="Explained in Human language"></a>Explained in Human language</h3><p>In a nutshell, a finite word $w$ is <strong>accepted</strong> by an automaton $\mathcal{A} &#x3D; (\Sigma,Q,I,T,F)$ if:</p>
-<ul>
-<li>$\Sigma:$ w is a finite word in $\Sigma$</li>
-<li>$Q:$ There exists a finite sequence of states $q(0)q(1) . . . q(|w|)$</li>
-<li>$I:$ In such sequence, $q(0)$ is one of the initial state $I$</li>
-<li>$T:$ In such sequence, there is transition from $q(i)$ to $q(i+1)$ for each letter $w(i)$, where $i&lt;|w|$.</li>
-<li>$F:$ In such sequence, $q(|w|)$ is one of the final state $F$,<br>and it will be the last state of the run since there is no more letters.</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th align="left">Notation</th>
+<th align="left">Explaination</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">$\Sigma$</td>
+<td align="left">$w$ is a finite word in $\Sigma$</td>
+</tr>
+<tr>
+<td align="left">$Q$</td>
+<td align="left">There exists a finite sequence of states $q(0)q(1) . . . q(|w|)$</td>
+</tr>
+<tr>
+<td align="left">$I$</td>
+<td align="left">In such sequence, $q(0)$ is one of the initial state $I$</td>
+</tr>
+<tr>
+<td align="left">$T$</td>
+<td align="left">In such sequence, there is transition from $q(i)$ to $q(i+1)$ for each letter $w(i)$, where $i&lt;|w|$</td>
+</tr>
+<tr>
+<td align="left">$F$</td>
+<td align="left">In such sequence, $q(|w|)$ is one of the final state $F$, and it will be the last state of the run since there is no more letters</td>
+</tr>
+</tbody></table>
 <h3 id="From-accepted-word-to-accepted-language"><a href="#From-accepted-word-to-accepted-language" class="headerlink" title="From accepted word to accepted language"></a>From accepted word to accepted language</h3><p>The set of all words accepted by $\mathcal{A}$ is called the <strong>language</strong> of $\mathcal{A}$, denoted by $\mathcal{L}(\mathcal{A})$.</p>
 <blockquote>
 <p>$\textbf{Theorem 3.1. } \text{(Kleene’s Theorem)}\newline\textit{A language is regular iff it is recognized by some finite word automaton.}$</p>
