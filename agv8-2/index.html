@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Parameterized Verification 1.2 -- Synchronization Primitives of Processes | GreenMeeple</title>
-  <meta name="keywords" content=" PV , LTS ">
-  <meta name="description" content="Parameterized Verification 1.2 -- Synchronization Primitives of Processes | GreenMeeple">
+  <title>AGV 8.2 -- Encoding Real Numbers | GreenMeeple</title>
+  <meta name="keywords" content=" AGV ">
+  <meta name="description" content="AGV 8.2 -- Encoding Real Numbers | GreenMeeple">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="Personal Info.Chun Ngai Li (Alex), M.Sc. Cybersecurity in Saarland University,B.Eng Information Engineering in CUHK. Recent WorksA C&#x2F;C++ programmer. Also working on Backend &amp; Python developing.Cur">
 <meta property="og:type" content="website">
@@ -1036,9 +1036,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-pv1-2" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-agv8-2" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Parameterized Verification 1.2 -- Synchronization Primitives of Processes</h1>
+        <h1 class="article-title">AGV 8.2 -- Encoding Real Numbers</h1>
     
     <div class="article-meta">
         
@@ -1058,21 +1058,19 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color3">PV</a>
-            
-            <a class="color4">LTS</a>
+            <a class="color4">AGV</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-10-19 04:08:07'>2024-10-08 04:40</time>
+            Created At : <time class="date" title='Updated At: 2024-12-18 03:53:15'>2024-12-03 18:14</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:524</span>
+        <span>Count:682</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1102,7 +1100,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Processes"><span class="toc-text">Processes</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Composition-by-Synchronization"><span class="toc-text">Composition by Synchronization</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Synchronization-Primitives"><span class="toc-text">Synchronization Primitives</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Pairwise-Rendezvous"><span class="toc-text">Pairwise Rendezvous</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Broadcast"><span class="toc-text">Broadcast</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Asynchronous-Rendezvous"><span class="toc-text">Asynchronous Rendezvous</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Lossy-Broadcast"><span class="toc-text">Lossy Broadcast</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Introduction"><span class="toc-text">Introduction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Encoding-Real-Numbers"><span class="toc-text">Encoding Real Numbers</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Step-1"><span class="toc-text">Step 1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Step-2"><span class="toc-text">Step 2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Example"><span class="toc-text">Example</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Encoding-Valuations-sigma-V%E2%80%99-rightarrow-mathbb-R"><span class="toc-text">Encoding Valuations $\sigma:V’\rightarrow\mathbb{R}$</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -1118,83 +1116,52 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>This is a learning note of a course in <a target="_blank" rel="noopener" href="https://cispa.de/de">CISPA</a>, UdS. Taught by Swen Jacobs</p>
-</blockquote>
-<p>Last post: <a href="../pv1-1/">Labeled Transition Systems</a></p>
-<h2 id="Processes"><a href="#Processes" class="headerlink" title="Processes"></a>Processes</h2><p>A Process is an LTS $P &#x3D; (Q, Q_0, \Sigma, \delta, \lambda)$ with $\Sigma &#x3D; \Sigma_{int} \cup \lbrace out_a , in_a \mid a \in \Sigma_{sync} \rbrace $, where </p>
-<ul>
-<li>$\Sigma_{int}$ is a set of <code>internal</code> actions,</li>
-<li>$\Sigma_{sync}$ a set of <code>synchronizing</code> actions,</li>
-<li>$out_a$ is an <code>send</code> action (or <code>initiate</code> action),</li>
-<li>$in_a$ is an <code>receive</code> action.</li>
-</ul>
-<h3 id="Composition-by-Synchronization"><a href="#Composition-by-Synchronization" class="headerlink" title="Composition by Synchronization"></a>Composition by Synchronization</h3><p>The composition $P^n$ of $n$ (uniform) processes wrt. $card$ is the LTS $(S, S_0, \Sigma_{int} \cup \Sigma_{sync}, \Delta, \Lambda)$ with:</p>
-<ul>
-<li><p>$S &#x3D; Q \times Q$</p>
-</li>
-<li><p>$S_0 &#x3D; Q_0 \times Q_0$</p>
-</li>
-<li><p>$\Delta \subseteq S \times (\Delta_{int} \cup \Delta_{sync} \times S)$ is the set of all transitions that satisfy one of the following:</p>
-<p><strong>Internal Transition</strong>:</p>
-<ul>
-<li>For some $i \in\lbrace 1, … , n \rbrace$ , $(s, a, s’) \in S \times\Sigma_{int}\times S$ is an element such that:<br> $(s(i), a, s’(i)) \in\delta$ , and $s(j) &#x3D; s’(j)$ for $i \ne j \in\lbrace 1, …, n \rbrace$</li>
-</ul>
+        <p>Previous chapter: <a href="../agv8-1/">Linear Arithmetic (Theory)</a></p>
 <blockquote>
-<p>Process $s(i)$ take the action, other processes $s(j)$ remain their current states.</p>
+<p>This is a learning note of a course in <a target="_blank" rel="noopener" href="https://cispa.de/de">CISPA</a>, UdS. Taught by Bernd Finkbeiner</p>
 </blockquote>
-<p><strong>Synchronous Transition</strong></p>
-<ul>
-<li><p>For some $i \in \lbrace 1, … , n \rbrace$ and some $I \subseteq \lbrace 1, …, n \rbrace \setminus \lbrace i \rbrace$ with $|I| \in card$ ,<br>$(s, a, s’) \in S \times \Sigma_{int} \times S$ is an element such that:</p>
-<ul>
-<li>$s(i) \buildrel out_a \over\longrightarrow s’(i)$ is (a local transition) in $P$<blockquote>
-<p>One process $s(i)$ take the <code>send</code> action.</p>
-</blockquote>
-</li>
-<li>for every $j \in I, s(j) \buildrel in_a \over\longrightarrow s’(j)$ is (a local transition) in $P$<blockquote>
-<p>$I$ is the set of processes that can take the <code>receive</code> action. (size of $I$ must not be larger then $card$)</p>
-</blockquote>
-</li>
-<li>for every $j \in\lbrace 1, …, n \rbrace \setminus (I \cup\lbrace i \rbrace), s’(j) &#x3D; s(j)$<blockquote>
-<p>Other processes $s(j)$ that cannot take <code>receive</code> actions remain their current states.</p>
-</blockquote>
-</li>
-<li>$I$ is <strong>maximal</strong>.<blockquote>
-<p>There does not exist a larger set $I’ \supset I$ with $|I’| \in card$ that for all $j \in I’$ ,<br>there is a local transition from $s(j)$ that can take the <code>receive</code> action.</p>
-</blockquote>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>$\Lambda(s) &#x3D; \lbrace p_{i} \mid p \in \text{AP and p} \in\lambda(s(i)), i \in \lbrace 1, …, n\rbrace \rbrace$</p>
-</li>
-</ul>
-<blockquote>
-<p>In this course, send action &#x3D; $out_a$ &#x3D; $a!!$ ; receive action &#x3D; $in_a$ &#x3D; $a??$.</p>
-</blockquote>
-<p>Example of Composition by <code>Broadcast</code> synchronization. $(card &#x3D; \lbrace 1 \rbrace)$</p>
-<p><img src="/images/notes/uds/pv/1_2_composition.png"></p>
-<h2 id="Synchronization-Primitives"><a href="#Synchronization-Primitives" class="headerlink" title="Synchronization Primitives"></a>Synchronization Primitives</h2><p>In this course, there are 4 types of synchronization:<br><code>Pairwise Rendezvous</code>, <code>Broadcast</code>, <code>Asynchronous Rendezvous</code>, and <code>Lossy Broadcast</code>.</p>
-<h3 id="Pairwise-Rendezvous"><a href="#Pairwise-Rendezvous" class="headerlink" title="Pairwise Rendezvous"></a>Pairwise Rendezvous</h3><blockquote>
-<p><strong>Exactly ONE</strong> process take $out_a$ action, <strong>ONE</strong> process take $in_a$ action. $(card &#x3D; \lbrace 1 \rbrace)$</p>
-</blockquote>
-<p><img src="/images/notes/uds/pv/1_2_pairwise.png"></p>
-<h3 id="Broadcast"><a href="#Broadcast" class="headerlink" title="Broadcast"></a>Broadcast</h3><blockquote>
-<p><strong>ONE</strong> process take $out_a$ action, <strong>ALL</strong> process take $in_a$ action if they are able to $(card &#x3D; \mathbb{N}_0)$.</p>
-</blockquote>
-<p><img src="/images/notes/uds/pv/1_2_broadcast.png"></p>
-<h3 id="Asynchronous-Rendezvous"><a href="#Asynchronous-Rendezvous" class="headerlink" title="Asynchronous Rendezvous"></a>Asynchronous Rendezvous</h3><blockquote>
-<p><strong>ONE</strong> process take $out_a$ action, <strong>ZERO &#x2F; ONE</strong> process take $in_a$ action $(card &#x3D; {0, 1})$.</p>
-</blockquote>
-<p><img src="/images/notes/uds/pv/1_2_async.png"></p>
-<h3 id="Lossy-Broadcast"><a href="#Lossy-Broadcast" class="headerlink" title="Lossy Broadcast"></a>Lossy Broadcast</h3><blockquote>
-<p><strong>ONE</strong> process take $out_a$ action, <strong>ONE</strong> process take $in_a$ action $(card &#x3D; \mathbb{N}_0, I\text{ not necessarily maximal})$.</p>
-</blockquote>
-<p><img src="/images/notes/uds/pv/1_2_lossy.png"></p>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>In last section, we have seen the definiton of Linera Arithmetic, which is similar to S1S. Let see how we can apply it in math and moreover, the connection between logic and automata.</p>
+<h2 id="Encoding-Real-Numbers"><a href="#Encoding-Real-Numbers" class="headerlink" title="Encoding Real Numbers"></a>Encoding Real Numbers</h2><p>We can encode any real number $x\in\mathbb{R}$ into the form $(0+1)(0+1)^\ast{$}(0+1)^\omega$ in two steps:</p>
+<h3 id="Step-1"><a href="#Step-1" class="headerlink" title="Step 1"></a>Step 1</h3><p>For a <em>real number</em> $x\in\mathbb{R}$, represent it as a pair $(x_I,x_F)$ so that $x&#x3D;x_I+x_F$.<br><strong>integer part</strong> &#x3D; $x_I\in\mathbb{Z}$, and <strong>fractional part</strong> &#x3D; $x_F\in[0, 1]$, a <em>real number</em> between $0$ and $1$ (both inclusive)</p>
+<p>For example, the $1.5 &#x3D; (1, 0.5)$, and $-{2\over 3}&#x3D;(−1, {1\over3})$. Note that <strong>integers</strong> always have two different representations depends on setting the <strong>fractional part</strong> as $0$ or $1$, and <strong>Negative sign</strong> can only be represented using the integer part. For example $3&#x3D;(2,1)$ or $(3,0)$</p>
+<h3 id="Step-2"><a href="#Step-2" class="headerlink" title="Step 2"></a>Step 2</h3><p>Then we can further encode $(x_I,x_F)$ as an <strong>infinite word</strong> $w_I{$}\beta_F$,<br>$x_I$ is encoded as $w_I&#x3D;a_na_{n−1}\dots a_0\in\lbrace 0,1\rbrace^\ast$, a <strong>finite nonempty word</strong>, and<br>$x_F$ is encoded as $\beta_F&#x3D;b_1b_2\dots\in\lbrace 0,1\rbrace^\omega$, an <strong>infinite word</strong> such that</p>
+<p>$$x_I&#x3D;-a_n\cdot 2^n+  \sum_{i&#x3D;0}^{n-1}a_i\cdot 2^i<br>\hspace{2cm}\text{and}\hspace{2cm}<br>x_F&#x3D; \sum_{i&#x3D;1}^{\infty}b_i\cdot 2^{-i}$$</p>
+<p>Note that now every pair has (infinitely) many different encodings because <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=CHbZvyvbu8I&ab_channel=Matt_Parker_2">digits are forever</a>:<br>for example, $(0,{1\over2})$ is encoded by all words in $0^\ast0{$}10^\omega &#x3D; {1\over2}+0+0+\dots$ and $0^\ast0{$}01^\omega&#x3D;0+{1\over4}+{1\over8}+\dots$.</p>
+<p>As you may notice, we can always increase the length of the <strong>finite integer part</strong> by ‘padding’ arbitrary finitely long $0$ and $1$ on positive and negative number respectively. This is becasue of the following property of the <strong>geometric-series sum</strong>: for all $a$, $n$, $k$, we have that:</p>
+<p>$$-a_n\cdot 2^n&#x3D;-a\cdot 2^{n+k}+  \sum_{j&#x3D;0}^{k}a\cdot 2^{n+j}$$</p>
+<p>For example, $110{$}0^\omega&#x3D;-1\ast2^2+1\ast2^1&#x3D;-2$, $11110{$}0^\omega&#x3D;-1\ast2^4+1\ast2^3+1\ast2^2+1\ast2^1&#x3D;-2$,</p>
+<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><table>
+<thead>
+<tr>
+<th align="left">$x\in\mathbb{R}$</th>
+<th align="left">$(x_I,x_F)$</th>
+<th align="left">$w_I{$}\beta_F$</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">$1$</td>
+<td align="left">$(1, 0)$</td>
+<td align="left">$0^\ast01{$}0^\omega$ and $0^\ast0{$}1^\omega$</td>
+</tr>
+<tr>
+<td align="left">${4\over 3}$</td>
+<td align="left">$(1, {1\over 3})$</td>
+<td align="left">$0^\ast01{$}(01)^\omega$</td>
+</tr>
+<tr>
+<td align="left">$-{3\over 2}$</td>
+<td align="left">$(-2, {1\over 2})$</td>
+<td align="left">$1^\ast10{$}10^\omega$</td>
+</tr>
+</tbody></table>
+<p>$0^\ast&#x2F;1^\ast$ may be empty so make sure there is at least one $0$ or $1$ to ensure it is positive or negative, respectively.</p>
+<h2 id="Encoding-Valuations-sigma-V’-rightarrow-mathbb-R"><a href="#Encoding-Valuations-sigma-V’-rightarrow-mathbb-R" class="headerlink" title="Encoding Valuations $\sigma:V’\rightarrow\mathbb{R}$"></a>Encoding Valuations $\sigma:V’\rightarrow\mathbb{R}$</h2><p>Assume there’s an arbitrary ordering of the <em>free</em> variables $V’&#x3D;\lbrace x_0,x_1,\dots,x_k\rbrace$. The valuation is then encoded as a word $\alpha_\sigma$ over the alphabet $\lbrace0,1\rbrace^k\cup\lbrace{$}\rbrace^k$. Each letter of the word $\alpha_\sigma$ is a tuple, where the $i$-th position indicates the encoding of $x_i$. Also, we ensure that the encodings of all $x_i$ synchronize on the separation symbol ${$}$</p>
+<p>Continue the example, one possible encoding of the valuation $x_1\mapsto1$, $x_2\mapsto{4\over3}$, $x_3\mapsto-{3\over2}$ is the infinite word</p>
+<p>$$\begin{bmatrix}0\newline 0\newline 1\end{bmatrix}\begin{bmatrix}0\newline 0\newline 1\end{bmatrix}<br>\begin{bmatrix}1\newline 1\newline 0\end{bmatrix}\begin{bmatrix}{$}\newline {$}\newline {$}\end{bmatrix}<br>\begin{bmatrix}0\newline 0\newline 1\end{bmatrix}\left(\begin{bmatrix}0\newline 1\newline 0\end{bmatrix}<br>\begin{bmatrix}0\newline 0\newline 0\end{bmatrix}\right)^\omega$$</p>
+<p>In the next section, we will illustrate an example of translation from linear arithmetic to automata.</p>
 <hr>
-<p>Next post: <a href=""></a></p>
-<p>Further Reading: <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Synchronization_(computer_science)">Synchronization</a>, <a target="_blank" rel="noopener" href="https://www7.in.tum.de/~esparza/Talks/ParamVerif.PDF">Parameterized Verification</a> by Javier Esparza.</p>
+<p>Next chapter: <a href="../agv8-3/">An Illustrative Example of Translation from Linear Arithmetic to Automata</a></p>
+<p>Further Reading: <a href=""></a></p>
 
       
        <hr><span style="font-style: italic;color: gray;"> Please cite the source for reprints, feel free to verify the sources cited in the article, and point out any errors or lack of clarity of expression. You can comment in the comments section below or email to GreenMeeple@yahoo.com </span>
