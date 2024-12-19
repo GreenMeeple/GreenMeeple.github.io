@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Leetcode SQL 50 -- 1581. Customer Who Visited but Did Not Make Any Transactions | GreenMeeple</title>
-  <meta name="keywords" content=" SQL ">
-  <meta name="description" content="Leetcode SQL 50 -- 1581. Customer Who Visited but Did Not Make Any Transactions | GreenMeeple">
+  <title>AGV 8.3 -- An Illustrative Example of Translation from Linear Arithmetic to Automata | GreenMeeple</title>
+  <meta name="keywords" content=" AGV ">
+  <meta name="description" content="AGV 8.3 -- An Illustrative Example of Translation from Linear Arithmetic to Automata | GreenMeeple">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="GreenMeeple cannot find what you are looking for...">
@@ -1054,9 +1054,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-sql50-1581" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-agv8-3" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Leetcode SQL 50 -- 1581. Customer Who Visited but Did Not Make Any Transactions</h1>
+        <h1 class="article-title">AGV 8.3 -- An Illustrative Example of Translation from Linear Arithmetic to Automata</h1>
     
     <div class="article-meta">
         
@@ -1066,9 +1066,9 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="LeetCode">LeetCode</a> > 
+            <a  data-rel="Notes">Notes</a> > 
             
-            <a  data-rel="LeetCode&lt;---&gt;SQL_50">SQL_50</a>
+            <a  data-rel="Notes&lt;---&gt;UdS">UdS</a>
             
         </span>
         
@@ -1076,19 +1076,19 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color4">SQL</a>
+            <a class="color4">AGV</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-10-30 20:19:10'>2024-11-04 11:16</time>
+            Created At : <time class="date" title='Updated At: 2024-12-19 05:42:15'>2024-12-04 03:53</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:161</span>
+        <span>Count:1.4k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1118,7 +1118,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Question"><span class="toc-text">Question</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Table-name-Visits"><span class="toc-text">Table name: Visits</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Table-name-Transactions"><span class="toc-text">Table name: Transactions</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Explaination"><span class="toc-text">Explaination</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-text">Solution</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Homogeneity"><span class="toc-text">Homogeneity</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Shifting-the-Delimiter"><span class="toc-text">Shifting the ${$}$ Delimiter</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#key-linear-recurrence"><span class="toc-text">key linear recurrence</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Fractional-part"><span class="toc-text">Fractional part</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#From-Linear-Arithmetic-to-Automaton"><span class="toc-text">From Linear Arithmetic to Automaton</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -1134,58 +1134,57 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><h3 id="Table-name-Visits"><a href="#Table-name-Visits" class="headerlink" title="Table name: Visits"></a>Table name: <code>Visits</code></h3><table>
-<thead>
-<tr>
-<th align="left">Column Name</th>
-<th align="left">Type</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">visit_id</td>
-<td align="left">int</td>
-</tr>
-<tr>
-<td align="left">customer_id</td>
-<td align="left">int</td>
-</tr>
-</tbody></table>
-<p>This table contains information about the <code>customers</code> who visited the mall.</p>
-<h3 id="Table-name-Transactions"><a href="#Table-name-Transactions" class="headerlink" title="Table name: Transactions"></a>Table name: <code>Transactions</code></h3><table>
-<thead>
-<tr>
-<th align="left">Column Name</th>
-<th align="left">Type</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">transaction_id</td>
-<td align="left">int</td>
-</tr>
-<tr>
-<td align="left">visit_id</td>
-<td align="left">int</td>
-</tr>
-<tr>
-<td align="left">amount</td>
-<td align="left">int</td>
-</tr>
-</tbody></table>
-<p>This table contains information about the <code>transactions</code> made during the visit_id.</p>
+        <p>Previous chapter: <a href="../agv8-2/">Encoding real numbers</a></p>
 <blockquote>
-<p>Write a solution to find the <code>IDs of the users</code> who visited <strong>without making any transactions</strong>, and<br>the <strong>number of times</strong> they made these types of visits.<br>Return the result table sorted in any order.</p>
+<p>This is a learning note of a course in <a target="_blank" rel="noopener" href="https://cispa.de/de">CISPA</a>, UdS. Taught by Bernd Finkbeiner</p>
 </blockquote>
-<h2 id="Explaination"><a href="#Explaination" class="headerlink" title="Explaination"></a>Explaination</h2><p>This is another typical <code>JOIN</code> query question.<br>The tricky part is the column we join on doesn’t necessarily be selected.</p>
-<p>Moreover, we can control which rows to be joined using <code>WHERE</code>, as simple <code>SELECT</code>.</p>
-<p>Lasting to remember is to use <code>GROUP BY</code> for your <code>COUNT()</code> function,<br>to make sure they counted separately based on <code>customer_id</code>.</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><pre><code class="sql">SELECT customer_id, count(*) AS count_no_trans
-FROM Visits
-LEFT JOIN Transactions ON Visits.visit_id=Transactions.visit_id
-WHERE transaction_id IS NULL
-GROUP BY customer_id
-</code></pre>
+<p>In this section, we will illustrate the key ideas in the translation from <strong>linear arithmetic</strong> to <strong>automata</strong> through a simple example.</p>
+<p>Consider the formula $x+y&#x3D;z$ and the following encoding of the valuation $x\mapsto1$, $y\mapsto1$, $z\mapsto2$:</p>
+<p>$$\alpha_\sigma&#x3D;\begin{bmatrix}0\newline 0\newline 0\end{bmatrix}\begin{bmatrix}0\newline 0\newline 1\end{bmatrix}<br>\begin{bmatrix}0\newline 0\newline 0\end{bmatrix}\begin{bmatrix}{$}\newline {$}\newline {$}\end{bmatrix}\left(\begin{bmatrix}1\newline 1\newline 0\end{bmatrix}\right)^\omega &#x3D; \begin{bmatrix}x\newline y\newline z\end{bmatrix} &#x3D; \begin{bmatrix}1\newline 1\newline 2\end{bmatrix}$$</p>
+<h3 id="Homogeneity"><a href="#Homogeneity" class="headerlink" title="Homogeneity"></a>Homogeneity</h3><p>A equation is <em>homogenous</em> if there are <strong>no constant terms</strong>. The key property of <strong>homogeneity</strong> is that we can simply scaling without being <strong>unbounded</strong>. In other words, for a <em>homogenous</em> equation $D$, we have:</p>
+<blockquote>
+<p>$D∼0$ (where $∼$ is an arbitrary (in)equality) <strong>if and only if</strong>, for all $k\in\mathbb{Z},2^k\cdot D∼0$. (Scaling behaviour)</p>
+</blockquote>
+<p>As we can see the equation $x+y&#x3D;z$ is <em>homogenous</em>, i.e., $D: x+y−z &#x3D; 0$ and $2^k\cdot x+2^k\cdot y−2^k\cdot z∼0$</p>
+<p>We immediately observe that:</p>
+<ul>
+<li>$2^k\cdot D$ has <strong>constant sign</strong>,</li>
+<li>If $D\neq0$, it is <strong>strictly increasing</strong> in $k$, and thus</li>
+<li>For any threshold $N$, we will have that $|2^k\cdot D|&gt;N$ for all sufficiently large $k$.</li>
+</ul>
+<h3 id="Shifting-the-Delimiter"><a href="#Shifting-the-Delimiter" class="headerlink" title="Shifting the ${$}$ Delimiter"></a>Shifting the ${$}$ Delimiter</h3><p>The key observation is that multiplying by a power of $2$ &#x3D; shifting the ${$}$ delimiter in the binary representation.</p>
+<p>$$\begin{bmatrix}x\newline y\newline z\end{bmatrix} &#x3D;<br>\begin{bmatrix}0\newline 0\newline 0\end{bmatrix}\begin{bmatrix}0\newline 0\newline 1\end{bmatrix}<br>\begin{bmatrix}0\newline 0\newline 0\end{bmatrix}\begin{bmatrix}{$}\newline{$}\newline{$}\end{bmatrix}<br>\left(\begin{bmatrix}1\newline 1\newline 0\end{bmatrix}\right)^\omega&#x3D;<br>\begin{bmatrix}1\newline 1\newline 2\end{bmatrix},\newline<br>\begin{bmatrix}2^2\cdot x\newline 2^2\cdot y\newline 2^2\cdot z\end{bmatrix} &#x3D;<br>\begin{bmatrix}0\newline 0\newline 0\end{bmatrix}\begin{bmatrix}0\newline 0\newline 1\end{bmatrix}<br>\begin{bmatrix}0\newline 0\newline 0\end{bmatrix}\begin{bmatrix}1\newline 1\newline 0\end{bmatrix}<br>\begin{bmatrix}1\newline 1\newline 0\end{bmatrix}\begin{bmatrix}{$}\newline{$}\newline{$}\end{bmatrix}<br>\left(\begin{bmatrix}1\newline 1\newline 0\end{bmatrix}\right)^\omega&#x3D;<br>\begin{bmatrix}2^2\cdot 1\newline 2^2\cdot 1\newline 2^2\cdot 2\end{bmatrix}&#x3D;<br>\begin{bmatrix}4\newline 4\newline 8\end{bmatrix},<br>$$</p>
+<p>For any variable $z$, and $t\geq1$, we denote by $z_t$ the integer encoded by the leftmost $t$ digits of $z$ (the ${$}$ is ignored):</p>
+<p>$$\begin{bmatrix}x\newline y\newline z\end{bmatrix} &#x3D;<br>\begin{bmatrix}0\newline 0\newline 0\end{bmatrix}\begin{bmatrix}0\newline 0\newline 1\end{bmatrix}<br>\begin{bmatrix}0\newline 0\newline 0\end{bmatrix}\begin{bmatrix}1\newline 1\newline 0\end{bmatrix}<br>\begin{bmatrix}1\newline 1\newline 0\end{bmatrix}\begin{bmatrix}1\newline 1\newline 0\end{bmatrix}\dots$$</p>
+<p>$<br>\begin{array}{lclc}<br>\hspace{1cm}\cdot\ x_5 &#x3D;&amp; -2^4\cdot0+2^3\cdot0+2^2\cdot0+2^1\cdot1+2^0\cdot1&amp;&#x3D;&amp;3\newline<br>\hspace{1cm}\cdot\ y_3 &#x3D;&amp; -2^2\cdot0+2^1\cdot0+2^0\cdot0&amp;&#x3D;&amp;0\newline<br>\hspace{1cm}\cdot\ z_4 &#x3D;&amp; -2^3\cdot0+2^2\cdot1+2^1\cdot0+2^1\cdot0&amp;&#x3D;&amp;4\newline<br>\hspace{1cm}\cdot\ z_5 &#x3D;&amp; -2^4\cdot0+2^3\cdot1+2^1\cdot0+2^2\cdot0+2^0\cdot0&amp;&#x3D;&amp;8\newline<br>\end{array}<br>$</p>
+<h3 id="key-linear-recurrence"><a href="#key-linear-recurrence" class="headerlink" title="key linear recurrence"></a>key linear recurrence</h3><p>We can see the above definition is initialized as $z_1&#x3D;−c_{z,1}$, and <strong>key linear recurrence</strong> holds for any variable: $z_{t+1}&#x3D;2z_t+c_{z,t+1}$, where $c_{z,t+1}$ is the $(t+1)$-th digit from the left in the encoding of $z$.</p>
+<p>Now, in our example we can define $D_t&#x3D;x_t+y_t−z_t$, and by <strong>linearity</strong>, the same recurrences hold for $D_t$, too:</p>
+<p>$$D_1&#x3D;c_{z,1}-c_{x,1}-c_{y,1}\newline D_{t+1}&#x3D;2D_t+c_{z,t}-c_{x,t}-c_{y,t}$$</p>
+<p>Thus, we have $D_1&#x3D;0,D_2&#x3D;−1,D_3&#x3D;−2$, and $D_t&#x3D;−2$ for subsequent $t$.</p>
+<h3 id="Fractional-part"><a href="#Fractional-part" class="headerlink" title="Fractional part"></a>Fractional part</h3><p>To account for the digits other than the $t$ leftmost digits, we define the fractional part $\lbrack z\rbrack_t &#x3D; \sum_{i&#x3D;1}^{\infty}2^{-i}\cdot c_{z,t+i}$.</p>
+<p>$$\begin{bmatrix}x\newline y\newline z\end{bmatrix} &#x3D;<br>\begin{bmatrix}0\newline 0\newline 0\end{bmatrix}\begin{bmatrix}0\newline 0\newline 1\end{bmatrix}<br>\begin{bmatrix}0\newline 0\newline 0\end{bmatrix}\begin{bmatrix}1\newline 1\newline 0\end{bmatrix}<br>\begin{bmatrix}1\newline 1\newline 0\end{bmatrix}\begin{bmatrix}1\newline 1\newline 0\end{bmatrix}\dots$$</p>
+<p>$<br>\begin{array}{lclc}<br>\hspace{1cm}\cdot\ [x]_1 &#x3D;&amp; 2^{-1}\cdot0+2^{-2}\cdot0+2^{-3}\cdot1+2^{-4}\cdot1+\dots&amp;&#x3D;&amp;{1\over4}\newline<br>\hspace{1cm}\cdot\ [y]_2 &#x3D;&amp; 2^{-1}\cdot0+2^{-2}\cdot1+2^{-3}\cdot1+2^{-4}\cdot1+\dots&amp;&#x3D;&amp;{1\over2}\newline<br>\hspace{1cm}\cdot\ [z]_1 &#x3D;&amp; 2^{-1}\cdot1+2^{-2}\cdot0+2^{-3}\cdot0+\dots&amp;&#x3D;&amp;{1\over2}\newline<br>\hspace{1cm}\cdot\ [z]_3 &#x3D;&amp; 2^{-1}\cdot0+2^{-2}\cdot0+2^{-3}\cdot0+\dots&amp;&#x3D;&amp;0\newline<br>\end{array}<br>$</p>
+<p>Here, we can see $0\leq[z]_t\leq1$, and that $z_t+[z]_t &#x3D; 2^k\cdot z$ for some $k\in\mathbb{Z}$.</p>
+<blockquote>
+<p>If the $2^k\cdot z$ doesn’t seem intuitive to you, check this out:<br>let say we have $z&#x3D;011{$}0111\dots &#x3D; 3+{1\over2}&#x3D;3.5$, and we set $t&#x3D;7$, so $z_7&#x3D;-2^6\cdot0+2^5\cdot1+2^4\cdot1+2^3\cdot0+2^2\cdot1+2^1\cdot1+2^0\cdot1&#x3D;55$ and $[z]_7&#x3D;{1\over2}+{1\over4}+{1\over8}+\cdots&#x3D;1$. Thus we have $z_7+[z]_7 &#x3D; 56 &#x3D; 2^4\cdot 3.5$.</p>
+</blockquote>
+<p>We can then extend the definition of fractional part to $D$ in the obvious way: $[D]_t &#x3D; [x]_t+[y]_t−[z]_t$.<br>We thus have that $−1\leq [D]_t\leq 2$, and that $D_t+[D]_t&#x3D;2^k\cdot D$ for some $k$.</p>
+<ol>
+<li><p>If $D_t&lt;−2$ for some $t$. then $D_t+[D]_t&lt;0$. For the corresponding $k$, we have that $2^k \cdot D&lt;0$. Therefore $x+y-z&lt;0$ and thus we conclude $x+y&lt;z$.</p>
+</li>
+<li><p>If $D_t&gt;1$ for some $t$, then $D_t+[D]_t&gt;0$. For the corresponding $k$, we have that $2^k \cdot D&gt;0$. Therefore $x+y-z&gt;0$ and thus we conclude $x+y&gt;z$.</p>
+</li>
+<li><p>If $−2\leq D_t\leq 1$ for all $t$, then $|D_t+[D]_t|\leq 3$. For arbitrarily large $k$, $|2^k\cdot D|\leq3$. This implies that $x+y&#x3D;z$ (only option left)</p>
+</li>
+</ol>
+<h3 id="From-Linear-Arithmetic-to-Automaton"><a href="#From-Linear-Arithmetic-to-Automaton" class="headerlink" title="From Linear Arithmetic to Automaton"></a>From Linear Arithmetic to Automaton</h3><p>From the above deduction, $x+y&#x3D;z$ holds if and only if $−2\leq D_t\leq 1$. To check whether it holds with an automaton, we use the encoding to compute the sequence $D_t$ <em>term by term</em>, and <strong>accept</strong> if and only if each term is at least $−2$ and at most $1$.</p>
+<p>Indeed, in our example, the sequence of terms is $0,−1,−2,−2,\dots$, and we accept.</p>
+<p>As an example, we could also consider a different encoding of $x\mapsto1$, $y\mapsto1$, $z\mapsto2$:</p>
+<p>$$\alpha’_\sigma&#x3D;\begin{bmatrix}0\newline 0\newline 0\end{bmatrix}\begin{bmatrix}1\newline 1\newline 1\end{bmatrix}<br>\begin{bmatrix}{$}\newline {$}\newline {$}\end{bmatrix}\left(\begin{bmatrix}0\newline 0\newline 1\end{bmatrix}\right)^\omega &#x3D; \begin{bmatrix}x\newline y\newline z\end{bmatrix} &#x3D; \begin{bmatrix}1\newline 1\newline 2\end{bmatrix}$$</p>
+<p>In this example the sequence of $D+t$ is $0, 1, 1, 1,\dots$, which is again bounded, and we accept.</p>
 <hr>
-<p>More SQL 50 questions: <a href="../sql50/">here</a></p>
+<p>Next chapter: <a href="../agv8-4/">Homogenous inequality testing is automatic</a></p>
+<p>Further Reading: <a href=""></a></p>
 
       
        <hr><span style="font-style: italic;color: gray;"> Please cite the source for reprints, feel free to verify the sources cited in the article, and point out any errors or lack of clarity of expression. You can comment in the comments section below or email to GreenMeeple@yahoo.com </span>
@@ -1219,6 +1218,46 @@ GROUP BY customer_id
 
 
 
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.jsdelivr.net/npm/mathjax@2.7.8/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.jsdelivr.net/npm/mathjax@2.7.8/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
     
 
 
