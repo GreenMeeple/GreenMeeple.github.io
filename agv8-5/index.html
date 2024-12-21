@@ -6,18 +6,18 @@
   <meta name="keywords" content=" AGV ">
   <meta name="description" content="AGV 8.5 -- From Linear Arithmetic to Automata | GreenMeeple">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="Personal Info.Chun Ngai Li (Alex), M.Sc. Cybersecurity in Saarland University,B.Eng Information Engineering in CUHK. Recent WorksA C&#x2F;C++ programmer. Also working on Backend &amp; Python developing.Cur">
 <meta property="og:type" content="website">
-<meta property="og:title" content="GreenMeeple cannot find what you are looking for...">
-<meta property="og:url" content="https://greenmeeple.github.io/404.html">
+<meta property="og:title" content="About Me">
+<meta property="og:url" content="https://greenmeeple.github.io/about/index.html">
 <meta property="og:site_name" content="GreenMeeple">
+<meta property="og:description" content="Personal Info.Chun Ngai Li (Alex), M.Sc. Cybersecurity in Saarland University,B.Eng Information Engineering in CUHK. Recent WorksA C&#x2F;C++ programmer. Also working on Backend &amp; Python developing.Cur">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://greenmeeple.github.io/images/404.png">
-<meta property="article:published_time" content="2024-10-19T02:25:07.060Z">
-<meta property="article:modified_time" content="2024-10-19T02:25:07.060Z">
+<meta property="article:published_time" content="2024-10-07T02:34:03.000Z">
+<meta property="article:modified_time" content="2024-10-07T15:15:21.412Z">
 <meta property="article:author" content="Alex Li">
 <meta property="article:tag" content="Coding, Boardgames, Language learning.">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://greenmeeple.github.io/images/404.png">
 
 
 <link rel="icon" href="/img/favicon.png">
@@ -321,7 +321,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="70">
-<input type="hidden" id="yelog_site_word_count" value="38.9k">
+<input type="hidden" id="yelog_site_word_count" value="39k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -474,7 +474,7 @@
            href="/agv10-1/"
            data-tag="AGV"
            data-author="" >
-            <span class="post-title" title="AGV">AGV</span>
+            <span class="post-title" title="AGV 10.1 -- The Muller Acceptance Condition">AGV 10.1 -- The Muller Acceptance Condition</span>
             <span class="post-date" title="2024-12-20 17:04:07">2024/12/20</span>
         </a>
         
@@ -1128,12 +1128,12 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-12-20 17:54:54'>2024-12-06 01:49</time>
+            Created At : <time class="date" title='Updated At: 2024-12-21 16:25:47'>2024-12-06 01:49</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:1.1k</span>
+        <span>Count:1.2k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1163,7 +1163,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Introduction"><span class="toc-text">Introduction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Restricted-linear-arithmetic"><span class="toc-text">Restricted linear arithmetic</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#homogenous-inequalities-conversion"><span class="toc-text">homogenous inequalities conversion</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Introduction"><span class="toc-text">Introduction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Restricted-Linear-Arithmetic"><span class="toc-text">Restricted Linear Arithmetic</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#homogenous-inequalities-conversion"><span class="toc-text">homogenous inequalities conversion</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#From-Linear-Arithmetic-to-Automata"><span class="toc-text">From Linear Arithmetic to Automata</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Negation-mathcal-A-neg-varphi"><span class="toc-text">Negation $\mathcal{A_{\neg\varphi}}$</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Conjunction-mathcal-A-varphi-1-wedge-varphi-2"><span class="toc-text">Conjunction $\mathcal{A_{\varphi_1\wedge\varphi_2}}$</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Existential-Quantification"><span class="toc-text">Existential Quantification</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -1193,30 +1193,42 @@
 <li>Show that the restriction does not come at the cost of expressive power, and</li>
 <li>Use structural induction on <em>restricted-syntax formulas</em> to construct our desired automata.</li>
 </ol>
-<h2 id="Restricted-linear-arithmetic"><a href="#Restricted-linear-arithmetic" class="headerlink" title="Restricted linear arithmetic"></a>Restricted linear arithmetic</h2><p>The formulas of syntactically restricted linear arithmetic are defined by the following grammar:</p>
+<h2 id="Restricted-Linear-Arithmetic"><a href="#Restricted-Linear-Arithmetic" class="headerlink" title="Restricted Linear Arithmetic"></a>Restricted Linear Arithmetic</h2><p>The formulas of syntactically restricted linear arithmetic are defined by the following grammar:</p>
 <p>$$\varphi::&#x3D;z&#x3D;1\mid g_1x_1+\dots+g_\ell x_\ell\leq h_1 y_1+\dots+h_m y_m\mid\neg\varphi\mid\varphi\wedge\varphi\mid\exists x.\varphi$$</p>
 <p>where $z, x_1,\dots,x_\ell,y_1,\dots,y_m\in V$ are <strong>variables</strong>, and $p_1,\dots,p_\ell,q_1,\dots,q_m$ are <strong>positive constants</strong>. The restriction is that <strong>all inequalities must be homogenous</strong>, except $z&#x3D;1$ being the only <strong>non-homogenous relation</strong>.</p>
-<h3 id="homogenous-inequalities-conversion"><a href="#homogenous-inequalities-conversion" class="headerlink" title="homogenous inequalities conversion"></a>homogenous inequalities conversion</h3><p>In fact, <strong>“all inequalities must be homogenous”</strong> is not a semantic restriction: for a formula $\varphi_0$ contains non-homogenous inequalities, we replace all constants $r$ by $r\cdot z$, where $z$ is a fresh variable to obtain $\varphi’_0$, and replace $\varphi_0$ with $\varphi::&#x3D;\exists z. (z&#x3D;1\wedge\varphi’_0)$.</p>
+<h3 id="homogenous-inequalities-conversion"><a href="#homogenous-inequalities-conversion" class="headerlink" title="homogenous inequalities conversion"></a>homogenous inequalities conversion</h3><p>In fact, <strong>“all inequalities must be homogenous”</strong> is not a semantic restrictionm, since we can always convert non-homogenous inequalities into a homogenous version:</p>
+<blockquote>
+<p>For a formula $\varphi_0$ contains non-homogenous inequalities, first replace all constants $r$ by $r\cdot z$, where $z$ is a fresh variable to obtain $\varphi’_0$, then replace $\varphi_0$ with $\varphi::&#x3D;\exists z. (z&#x3D;1\wedge\varphi’_0)$.</p>
+</blockquote>
 <p>For example, $\varphi_0::&#x3D;y\leq2,\varphi_0’::&#x3D;y\leq2\cdot z,$ now we have $\varphi_0::&#x3D;\exists z. (z&#x3D;1\wedge(y\leq2\cdot z)))$</p>
-<p>The encoding of the real number $1$ must be a word of the form $00^\ast(1{$} 0^\omega + {$} 1^\omega)$. It is thus trivial to construct an automaton corresponding to $z&#x3D;1$.</p>
-<p>We use Construction 8.1 to construct automata for homogenous inequalities. Note that the construction works even when one of the sides of the inequality is equal to $0$ (i.e., the empty sum).</p>
-<p>We now move on to the inductive cases. Recall that for any $k$ we can construct an automaton $\mathcal{L(A_{\textsf{valid},k})}$ that checks whether a word $\alpha\in(\lbrace 0,1\rbrace^k\cup\lbrace{$}\rbrace)^k)^\omega$ is a well-formed encoding of some valuation $\sigma$ to $k$ free variables.</p>
+<p>To include all possible expression of the real number $1$, the encoding must be a word of the form $00^\ast(1{$} 0^\omega + {$} 1^\omega)$. It is thus trivial to construct an automaton corresponding to $z&#x3D;1$.</p>
+<h2 id="From-Linear-Arithmetic-to-Automata"><a href="#From-Linear-Arithmetic-to-Automata" class="headerlink" title="From Linear Arithmetic to Automata"></a>From Linear Arithmetic to Automata</h2><p>We use <a href="../agv8-4/">Construction 8.1</a> to construct automata for <strong>homogenous inequalities</strong>. Note that the construction works even when one of the sides of the inequality is equal to $0$ (i.e., the empty sum).</p>
+<p>Now we start with inductive cases. Recall that for any $k$ we can construct an automaton <a href="../agv8-4/">$\mathcal{L(A_{\textsf{valid},k})}$</a> that checks whether a word $\alpha\in(\lbrace 0,1\rbrace^k\cup\lbrace{$}\rbrace)^k)^\omega$ is a well-formed encoding of some valuation $\sigma$ to $k$ free variables.</p>
+<h3 id="Negation-mathcal-A-neg-varphi"><a href="#Negation-mathcal-A-neg-varphi" class="headerlink" title="Negation $\mathcal{A_{\neg\varphi}}$"></a>Negation $\mathcal{A_{\neg\varphi}}$</h3><p>The Büchi automaton $\mathcal{A_{\neg\varphi}}$ is obtained through complementation and intersection of Büchi automata.</p>
 <p>Let $\varphi$ have $k$ free variables. For negation, we have</p>
 <p>$$\mathcal{L(A_{\neg\varphi})}&#x3D;((\lbrace 0,1\rbrace^k\cup\lbrace{$}\rbrace)^k)^\omega\setminus\mathcal{L(A_\varphi)})\cap\mathcal{L(A_{\textsf{valid},k})}$$</p>
-<p>The required Büchi automaton $\mathcal{A_{\neg\varphi}}$ is thus obtained through complementation and intersection of Büchi automata.</p>
-<p>The case of conjunction is similarly straightforward. We obtain the required automaton through the intersection of two Büchi automata because</p>
+<h3 id="Conjunction-mathcal-A-varphi-1-wedge-varphi-2"><a href="#Conjunction-mathcal-A-varphi-1-wedge-varphi-2" class="headerlink" title="Conjunction $\mathcal{A_{\varphi_1\wedge\varphi_2}}$"></a>Conjunction $\mathcal{A_{\varphi_1\wedge\varphi_2}}$</h3><p>$\mathcal{A_{\varphi_1\wedge\varphi_2}}$ can be obtained similarly straightforward through the intersection of two Büchi automata because</p>
 <p>$$\mathcal{L(A_{\varphi_1\wedge\varphi_2})}&#x3D;\mathcal{L(A_{\varphi_1})}\cap\mathcal{L(A_{\varphi_2})}$$</p>
-<p>Finally, we handle projection, i.e. construct $\mathcal{A_{\exists x.\varphi}}$ from $\mathcal{A_{\varphi}}$. Note that the former runs over the alphabet $\lbrace 0, 1\rbrace^k\cup\lbrace{$}\rbrace^k$ and reads the encoding of a valuation of $\lbrace y_1,\dots, y_k\rbrace$ while the latter runs over $\lbrace 0, 1\rbrace^{k+1}\cup\lbrace{$}\rbrace^{k+1}$ and reads the encoding of a valuation of $\lbrace x,y_1,\dots, y_k\rbrace$.</p>
-<p>As usual, the main idea is to “guess” an encoding of x such that $\varphi(x,y_1,\dots, y_k)$ holds. However, a small technical hurdle arises: the given encoding of the valuation of $\lbrace y_1,\dots, y_k\rbrace$ may not be appropriately padded. For example, let $y_1 &#x3D; 1$ be given as $01{$}0^\omega$. If the guess is $x&#x3D;4$, the encoding must be “padded” so the collective encoding is synchronized as $(0, 0)(1, 0)(0, 0)(0, 1)({$}, {$})(0, 0)ω$ and may be accepted by $\mathcal{A_{\varphi}}$.</p>
-<p>In other words, while cy is usually emulates the transition of a guessed letter $(c_x, c_y)$, the first letter $a_{y,n}$ of our encoding must emulate the transition of a (non-empty) guess word</p>
+<h3 id="Existential-Quantification"><a href="#Existential-Quantification" class="headerlink" title="Existential Quantification"></a>Existential Quantification</h3><p>To handle projection, i.e. construct $\mathcal{A_{\exists x.\varphi}}$ from $\mathcal{A_{\varphi}}$, we first try to see their difference:</p>
+<ul>
+<li>$\mathcal{A_{\varphi}}$ runs over the alphabet $\lbrace 0, 1\rbrace^{k+1}\cup\lbrace{$}\rbrace^{k+1}$ and reads the encoding of a valuation of $\lbrace x,y_1,\dots, y_k\rbrace$.</li>
+<li>$\mathcal{A_{\exists x.\varphi}}$ runs over the alphabet $\lbrace 0, 1\rbrace^k\cup\lbrace{$}\rbrace^k$ and reads the encoding of a valuation of $\lbrace y_1,\dots, y_k\rbrace$,</li>
+</ul>
+<p>Same as before, the principle behind the construction is to create a automaton that simulate identical behaviour with the absence of $x$. This is simple for most of the transitions except for the initial transition.</p>
+<p>For a automaton that does not contain $x$, it has to “guess” an encoding of $x$ such that $\varphi(x,y_1,\dots, y_k)$ holds. However, the given encoding of the valuation of $\lbrace y_1,\dots, y_k\rbrace$ may not be appropriately padded.</p>
+<p>For example, let $y_1 &#x3D; 1$ and we encode it as $01{$}0^\omega$. If we guess $x&#x3D;4$, then two digits of <em>integer part</em> is not enough. The encoding must be “padded” so to synchronize “may be” accepted by $\mathcal{A_{\varphi}}$:</p>
+<p>$$\begin{bmatrix}x\newline y_1\end{bmatrix}&#x3D;\begin{bmatrix}0\newline 0\end{bmatrix}<br>\begin{bmatrix}1\newline 0\end{bmatrix}\begin{bmatrix}0\newline 0\end{bmatrix}<br>\begin{bmatrix}0\newline 1\end{bmatrix}\begin{bmatrix}{$}\newline{$}\end{bmatrix}\left(\begin{bmatrix}0\newline 0\end{bmatrix}\right)^\omega$$</p>
+<p>Therefore, when we convert from $c_y$ to $(c_x, c_y)$, We have to repeat the first letter $c_{y,n}$ as padding:</p>
 <p>$$(a_{x,n+j}, a_{y,n})(a_{x,n+j−1}, a_{y,n})\dots(a_{x,n}, a_{y,n}).$$</p>
+<p>Since $c_{y,n}$ is simply repeating, creating transition for each letter of $a_x$ unnecessarily enlarge the size of the automaton. Instead, we can make one initial transition that encapsulate the full padding of the first letter of $c_y$.</p>
+<p>$$(q,(c_{x,1},c_{y_1},\dots,c_{y_k})\dots(c_{x,n},c_{y_1},\dots,c_{y_k}),q’)\in T’$$</p>
 <blockquote>
 <p>$\textbf{Construction 8.2. } \text{Let }x,y_1,\dots, y_k\text{ be free variables in the linear arithmetic formula }\varphi,\text{ and}$</p>
 <p>$$\mathcal{A_\varphi}&#x3D;(\lbrace 0, 1\rbrace^{k+1}\cup\lbrace{$}\rbrace^{k+1},Q,I,T,\small\text{BÜCHI}\normalsize (F))$$</p>
 <p>$\text{be a Büchi Automaton such that }\mathcal{L(A)}&#x3D;\lbrace\alpha_\sigma\mid\sigma\models\varphi\rbrace.\text{ We construct a Büchi Automaton}$</p>
 <p>$$\mathcal{A_{\exists x.\varphi}}&#x3D;(\lbrace 0, 1\rbrace^{k}\cup\lbrace{$}\rbrace^{k},Q\cup\textsf{Inits},\textsf{Inits},T’,\small\text{BÜCHI}\normalsize (F))$$</p>
 <p>$\text{such that }\mathcal{L(A_{\exists x.\varphi})}&#x3D;\lbrace\alpha_\sigma\mid\sigma\models\exists x.\varphi\rbrace\text{ as follows.}$</p>
-<p>$\begin{array}{l}<br>\hspace{1cm} \cdot \ \textsf{Inits}&#x3D;\lbrace(q,\star)\mid q\in I\rbrace\newline<br>\hspace{1cm} \cdot \ (q,(c_{y_1},\dots,c_{y_k}),q’)\in T’\text{ if and only if there exists }c_x\text{ such that }(q,(c_x,c_{y_1},\dots,c_{y_k}),q’)\in T’\newline<br>\hspace{1cm} \cdot \ ((q,\star),(c_{y_1},\dots,c_{y_k}),q’)\in T’\text{ if and only if there exists a word }c_{x,1}\dots c_{x,n}\in\lbrace0,1\rbrace^{+}\newline<br>\hspace{1cm} \  \text{ such that }(q,(c_{x,1},c_{y_1},\dots,c_{y_k})\dots(c_{x,n},c_{y_1},\dots,c_{y_k}),q’)\in T’\end{array}$</p>
+<p>$\begin{array}{l}<br>\hspace{1cm} \cdot \ \textsf{Inits}&#x3D;\lbrace(q,\star)\mid q\in I\rbrace\newline<br>\hspace{1cm} \cdot \ (q,(c_{y_1},\dots,c_{y_k}),q’)\in T’\text{ if and only if there exists }c_x\text{ such that }(q,(c_x,c_{y_1},\dots,c_{y_k}),q’)\in T’\newline<br>\hspace{1cm} \cdot \ ((q,\star),(c_{y_1},\dots,c_{y_k}),q’)\in T’\text{ if and only if there exists a word }c_{x,1}\dots c_{x,n}\in\lbrace0,1\rbrace^{+}\newline<br>\hspace{1cm} \  \text{ such that }(q,(c_{x,1},c_{y_1},\dots,c_{y_k})\dots(c_{x,n},c_{y_1},\dots,c_{y_k}),q’)\in T’\end{array}$ </p>
 </blockquote>
 <p>Two remarks are in order:</p>
 <ol>
