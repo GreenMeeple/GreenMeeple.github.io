@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>AGV 3.1 -- Kleene&#39;s Theorem | GreenMeeple</title>
+  <title>AGV 10.2 -- From Büchi automata to Muller automata | GreenMeeple</title>
   <meta name="keywords" content=" AGV ">
-  <meta name="description" content="AGV 3.1 -- Kleene&#39;s Theorem | GreenMeeple">
+  <meta name="description" content="AGV 10.2 -- From Büchi automata to Muller automata | GreenMeeple">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="Personal Info.Chun Ngai Li (Alex), M.Sc. Cybersecurity in Saarland University,B.Eng Information Engineering in CUHK. Recent WorksA C&#x2F;C++ programmer. Also working on Backend &amp; Python developing.Cur">
 <meta property="og:type" content="website">
@@ -1117,9 +1117,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-agv3-1" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-agv10-2" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">AGV 3.1 -- Kleene&#39;s Theorem</h1>
+        <h1 class="article-title">AGV 10.2 -- From Büchi automata to Muller automata</h1>
     
     <div class="article-meta">
         
@@ -1146,12 +1146,12 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-12-15 03:04:12'>2024-11-13 13:36</time>
+            Created At : <time class="date" title='Updated At: 2024-12-27 23:54:11'>2024-12-11 23:37</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:721</span>
+        <span>Count:237</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1181,7 +1181,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Introduction"><span class="toc-text">Introduction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Regular-Expression"><span class="toc-text">Regular Expression</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Kleene%E2%80%99s-Theorem"><span class="toc-text">Kleene’s Theorem</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Mathematical-Definition"><span class="toc-text">Mathematical Definition</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Explained-in-Human-language"><span class="toc-text">Explained in Human language</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#From-accepted-word-to-accepted-language"><span class="toc-text">From accepted word to accepted language</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Proof"><span class="toc-text">Proof</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -1197,66 +1197,25 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Previous chapter: <a href="../agv2-3/">The Büchi Acceptance Condition</a></p>
+        <p>Previous chapter: <a href="../agv10-1/">The Muller Acceptance Condition</a></p>
 <blockquote>
 <p>This is a learning note of a course in <a target="_blank" rel="noopener" href="https://cispa.de/de">CISPA</a>, UdS. Taught by Bernd Finkbeiner</p>
 </blockquote>
-<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p><em>Kleene’s theorem</em> states that the <em>set of languages over finite words</em> that can be defined by <strong>regular expressions</strong> is exactly the set of languages that can be recognized by <strong>automata over finite words</strong>.</p>
-<p>Based on this, we define $\omega$-regular expressions, and finally prove the corresponding theorem for $\omega$-regular languages: <strong>Büchi’s characterization theorem</strong>.</p>
-<h2 id="Regular-Expression"><a href="#Regular-Expression" class="headerlink" title="Regular Expression"></a>Regular Expression</h2><p>Regular expression consist of <strong>constants</strong> that denote languages of <em>finite words</em>, and<br>consist of <strong>operator symbols</strong> that denote <em>operations over these languages</em>.</p>
-<p>The collection of regular languages over an alphabet $\Sigma$ is $\mathcal{L}(E)$, where $E$ is a regular expression.<br>Regular expression can be defined as $E :&#x3D; \varepsilon\mid\varnothing\mid a\in\Sigma\mid E+F\mid E\cdot F\mid E^* $, where:</p>
-<ul>
-<li><strong>empty language</strong>: $\varepsilon$,</li>
-<li><strong>empty string language</strong>: $\varnothing$,</li>
-<li><strong>singleton language</strong>: (single letter from alphabet) $a\in\Sigma$,</li>
-<li><strong>union</strong> of regular languages: $E+F$,</li>
-<li><strong>concatenation</strong> of regular languages: $E\cdot F$, and</li>
-<li>language with <strong>kleene star</strong>: $E^*$.</li>
-</ul>
+<p>As a first exercise, we translate Büchi automata into Muller automata:</p>
 <blockquote>
-<p>$\textbf{Definition 3.1. } \textit{Regular expressions } \text{are defined as follows:}$<br>$\begin{array}{l}\hspace{1cm} \cdot \ \text{The constants }\varepsilon\text{ and }\varnothing\text{ are regular expressions.}\newline<br>\hspace{1cm} \ \ \mathcal{L}(\varepsilon) &#x3D; \lbrace\varepsilon\rbrace ,\mathcal{L}(\varnothing)&#x3D;\varnothing.\newline<br>\hspace{1cm} \cdot \ \text{If }a\in\Sigma\text{ is a symbol, then }a\text{ is a regular expressions.}\newline<br>\hspace{1cm} \ \ \mathcal{L}(a) &#x3D; \lbrace a\rbrace .\newline<br>\hspace{1cm} \cdot \ \text{If }E\text{ and }F\text{ are regular expressions, then }E+F\text{ is a regular expression:}\newline<br>\hspace{1cm} \ \ \mathcal{L}(E+F) &#x3D; \mathcal{L}(E)\cup\mathcal{L}(F) .\newline<br>\hspace{1cm} \cdot \ \text{If }E\text{ and }F\text{ are regular expressions, then }E\cdot F\text{ is a regular expression:}\newline<br>\hspace{1cm} \ \ \mathcal{L}(E\cdot F) &#x3D; \lbrace uv\mid u\in\mathcal{L}(E),v\in\mathcal{L}(F)\rbrace.\newline<br>\hspace{1cm} \cdot \ \text{If }E\text{ is a regular expression, then }E^*\text{ is a regular expression.}\newline<br>\hspace{1cm} \ \ \mathcal{L}(E^{\ast}) &#x3D; \lbrace u_1u_2\dots u_n\mid n\in\mathbb{N},u_i\in\mathcal{L}(E)\text{ for all }0\leq i\leq n\rbrace.\end{array}$</p>
+<p>$\textbf{Construction 10.1. } \text{For a (deterministic) Büchi Automaton }\mathcal{A} &#x3D; (\Sigma,Q,I,T,\small\text{BÜCHI}\normalsize (F))\newline\text{ we define the (deterministic) Muller automaton } \mathcal{A’} &#x3D; (\Sigma,Q,I,T,\small\text{MULLER} \normalsize (\mathcal{F}))\text{ using}$</p>
+<p>$$\mathcal{F}&#x3D;\lbrace S\subseteq Q\mid S\cap F\neq\varnothing\rbrace$$</p>
 </blockquote>
-<h2 id="Kleene’s-Theorem"><a href="#Kleene’s-Theorem" class="headerlink" title="Kleene’s Theorem"></a>Kleene’s Theorem</h2><p><em>A language over finite words</em> is <strong>regular</strong> if it is definable by a <em>regular expression</em>, or<br>if it is recognized by <em>automata over finite words</em>.</p>
+<p>Since the construction does not modify the transitions, the Muller automaton is again deterministic if the Büchi automaton is deterministic. It is straightforward to see that the automata recognize the same language.</p>
 <blockquote>
-<p>$\textbf{Definition 3.2. } \text{An }\textit{automaton on finite words } \mathcal{A}\text{ is a tuple } (\Sigma,Q,I,T,F), \text{ where }\Sigma\text{ is an input} \newline \text{alphabet, }Q\text{ is a nonempty finite set of states, }I\in Q\text{ is a set of initial states, }\Delta\subseteq Q\times\Sigma\times Q\text{ is}\newline\text{a set of transitions, and }F\subseteq Q\text{ are a set of finite states.}$</p>
+<p>$\textbf{Theorem 10.1. } \textit{For every (deterministic) Büchi automaton }\mathcal{A}\textit{, there is a (deterministic)}\newline\textit{Muller automaton }\mathcal{A’}\textit{ such that }\mathcal{L(A)}&#x3D;\mathcal{L(A’)}.$</p>
 </blockquote>
-<h3 id="Mathematical-Definition"><a href="#Mathematical-Definition" class="headerlink" title="Mathematical Definition"></a>Mathematical Definition</h3><p>An automaton $\mathcal{A}$ accepts a finite word $w \in\Sigma^*$ if there is a finite sequence of states $q(0)q(1) . . . q(|w|)$ such that $q(0)\in I$ and $(q(i),w(i), q(i + 1))\in\Delta$ for all $i &lt; |w|$ and with $q(|w|)\in F$</p>
-<h3 id="Explained-in-Human-language"><a href="#Explained-in-Human-language" class="headerlink" title="Explained in Human language"></a>Explained in Human language</h3><p>In a nutshell, a finite word $w$ is <strong>accepted</strong> by an automaton $\mathcal{A} &#x3D; (\Sigma,Q,I,T,F)$ if:</p>
-<table>
-<thead>
-<tr>
-<th align="left">Notation</th>
-<th align="left">Explaination</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">$\Sigma$</td>
-<td align="left">$w$ is a finite word in $\Sigma$</td>
-</tr>
-<tr>
-<td align="left">$Q$</td>
-<td align="left">There exists a finite sequence of states $q(0)q(1) . . . q(|w|)$</td>
-</tr>
-<tr>
-<td align="left">$I$</td>
-<td align="left">In such sequence, $q(0)$ is one of the initial state $I$</td>
-</tr>
-<tr>
-<td align="left">$T$</td>
-<td align="left">In such sequence, there is transition from $q(i)$ to $q(i+1)$ for each letter $w(i)$, where $i&lt;|w|$</td>
-</tr>
-<tr>
-<td align="left">$F$</td>
-<td align="left">In such sequence, $q(|w|)$ is one of the final state $F$, and it will be the last state of the run since there is no more letters</td>
-</tr>
-</tbody></table>
-<h3 id="From-accepted-word-to-accepted-language"><a href="#From-accepted-word-to-accepted-language" class="headerlink" title="From accepted word to accepted language"></a>From accepted word to accepted language</h3><p>The set of all words accepted by $\mathcal{A}$ is called the <strong>language</strong> of $\mathcal{A}$, denoted by $\mathcal{L}(\mathcal{A})$.</p>
-<blockquote>
-<p>$\textbf{Theorem 3.1. } \text{(Kleene’s Theorem)}\newline\textit{A language is regular iff it is recognized by some finite word automaton.}$</p>
-</blockquote>
+<h3 id="Proof"><a href="#Proof" class="headerlink" title="Proof"></a>Proof</h3><p>The automaton $\mathcal{A’}$ of Construction 10.1 complies with our requirements, since</p>
+<p>$$\small\text{BÜCHI}\normalsize (F)&#x3D;\lbrace\alpha\in Q^\omega\mid\text{Inf}(\alpha)\cap F\neq\varnothing\rbrace&#x3D;\lbrace\alpha\in Q^\omega\mid\text{Inf}(\alpha)\in\mathcal{F}\rbrace&#x3D;\small\text{MULLER}\normalsize(\mathcal{F})$$</p>
+<p>A slightly more difficult construction is to translate the Muller automaton back into a Büchi automaton.</p>
 <hr>
-<p>Next post: <a href="../agv3-2/">$\omega$-regular language</a></p>
-<p>Further Reading: <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Regular_expression">Regular expression</a>,<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Regular_language">Regular language</a> <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Kleene_star#:~:text=The%20Kleene%20star%20is%20defined,x%E2%8B%85y%20%E2%88%88%20S*.">Kleene star</a></p>
+<p>Next chapter: <a href="../agv/"></a></p>
+<p>Further Reading: <a href=""></a></p>
 
       
        <hr><span style="font-style: italic;color: gray;"> Please cite the source for reprints, feel free to verify the sources cited in the article, and point out any errors or lack of clarity of expression. You can comment in the comments section below or email to GreenMeeple@yahoo.com </span>
