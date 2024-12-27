@@ -6,18 +6,18 @@
   <meta name="keywords" content=" AGV ">
   <meta name="description" content="AGV 9.3 -- The Emerson-Lei algorithm | GreenMeeple">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta property="og:type" content="website">
-<meta property="og:title" content="GreenMeeple cannot find what you are looking for...">
-<meta property="og:url" content="https://greenmeeple.github.io/404.html">
+<meta name="description" content="This is a learning note of a course in CISPA, UdS. Taught by Bernd Finkbeiner  Chapter 1. Introduction   Sections Exercise    1.1. Model Checking    1.2. Synthesis    1.3. The Logic-Automata Connecti">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Automata, Games, and Verification (Portal)">
+<meta property="og:url" content="https://greenmeeple.github.io/agv/index.html">
 <meta property="og:site_name" content="GreenMeeple">
+<meta property="og:description" content="This is a learning note of a course in CISPA, UdS. Taught by Bernd Finkbeiner  Chapter 1. Introduction   Sections Exercise    1.1. Model Checking    1.2. Synthesis    1.3. The Logic-Automata Connecti">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://greenmeeple.github.io/images/404.png">
-<meta property="article:published_time" content="2024-10-19T02:25:07.060Z">
-<meta property="article:modified_time" content="2024-10-19T02:25:07.060Z">
+<meta property="article:published_time" content="2024-12-22T15:35:16.000Z">
+<meta property="article:modified_time" content="2024-12-22T02:58:14.950Z">
 <meta property="article:author" content="Alex Li">
-<meta property="article:tag" content="Coding, Boardgames, Language learning.">
+<meta property="article:tag" content="AGV">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://greenmeeple.github.io/images/404.png">
 
 
 <link rel="icon" href="/img/favicon.png">
@@ -144,7 +144,7 @@
     <li>
         <div class="all active" data-rel="All">All
             
-                <small>(70)</small>
+                <small>(71)</small>
             
         </div>
     </li>
@@ -246,7 +246,7 @@
         <div data-rel="Notes">
             <i class="fold iconfont icon-right"></i>
             Notes
-            <small>(37) </small>
+            <small>(38) </small>
         </div>
         
             <ul class="sub hide">
@@ -256,7 +256,7 @@
         <div data-rel="Notes&lt;---&gt;UdS">
             
             UdS
-            <small>(37) </small>
+            <small>(38) </small>
         </div>
         
     </li>
@@ -320,8 +320,8 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="70">
-<input type="hidden" id="yelog_site_word_count" value="40.5k">
+<input type="hidden" id="yelog_site_posts_number" value="71">
+<input type="hidden" id="yelog_site_word_count" value="41.5k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -450,6 +450,15 @@
     </div>
     
     <nav id="title-list-nav">
+        
+        
+        <a id="top" class="All Notes UdS "
+           href="/agv/"
+           data-tag="AGV"
+           data-author="" >
+            <span class="post-title" title="Automata, Games, and Verification (Portal)">Automata, Games, and Verification (Portal)</span>
+            <span class="post-date" title="2024-12-22 16:35:16">2024/12/22</span>
+        </a>
         
         
         <a id="top" class="All Site_Note "
@@ -994,7 +1003,7 @@
         
         <a  class="All Projects "
            href="/hexo-zhruby/"
-           data-tag="Hexo,Cantonese,Node.js,HTML"
+           data-tag="Hexo,Cantonese,HTML,Node.js"
            data-author="" >
             <span class="post-title" title="hexo-zhruby -- Implementing HTML Ruby tag in Hexo">hexo-zhruby -- Implementing HTML Ruby tag in Hexo</span>
             <span class="post-date" title="2024-10-14 04:04:55">2024/10/14</span>
@@ -1128,12 +1137,12 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-12-22 04:08:59'>2024-12-09 03:56</time>
+            Created At : <time class="date" title='Updated At: 2024-12-27 17:14:26'>2024-12-09 03:56</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:331</span>
+        <span>Count:931</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1163,7 +1172,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Introduction"><span class="toc-text">Introduction</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Introduction"><span class="toc-text">Introduction</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Live-states"><span class="toc-text">Live states</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Fixpoint"><span class="toc-text">Fixpoint</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Example"><span class="toc-text">Example</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Continuing-Example"><span class="toc-text">Continuing Example</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -1185,13 +1194,31 @@
 </blockquote>
 <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>As an alternative algorithm for checking language emptiness of Büchi automata we now discuss a classic algorithm due to Emerson and Lei. Unlike the <a href="../agv9-2/">depth-first search</a> of the previous subsection, the <strong>Emerson-Lei algorithm</strong> is based on a <strong>breadth-first search</strong> implemented as a fixpoint construction over sets of states.</p>
 <p>A disadvantage of this algorithm is that its running time is <em>quadratic</em>. Nevertheless, algorithms of this type play a major role in <em>symbolic model checking</em>, because the sets of states can often be represented efficiently<br>using data structures like <em>binary decision diagrams</em>.</p>
-<p>The idea of the algorithm is to identify the set of <em>live states</em>. A state $q$ of a Büchi automaton is <code>live</code> if some infinite path starting in $q$ visits accepting states infinitely often. The language of a Büchi automaton is non-empty iff it has a <strong>live initial state</strong>.</p>
-<p>The Emerson-Lei algorithm is based on the following inductive definition:</p>
+<h3 id="Live-states"><a href="#Live-states" class="headerlink" title="Live states"></a>Live states</h3><p>A state $q$ of a Büchi automaton is <code>live</code> if some infinite path starting in $q$ visits accepting states infinitely often. This definition is the opposite of <code>safe</code> states, where it never visits accepting states. The idea of the algorithm is to identify the set of <code>live</code> states.  The language of a Büchi automaton is <strong>non-empty</strong> iff it has a <strong>live initial state</strong>.</p>
+<p>The <strong>Emerson-Lei algorithm</strong> is based on the following inductive definition:</p>
 <blockquote>
 <p>$\textbf{Definition 9.1. } \text{For a Büchi automaton and a number }n\in\mathbb{N}\text{, the set of }\textit{n-live states}\text{ is}\newline\text{defined as follows:}$</p>
 <p>$\begin{array}{l}<br>\hspace{1cm}\cdot\ \text{every state is 0-live}\newline<br>\hspace{1cm}\cdot\ \text{a state q is (n + 1)-live if some path containing at least one transition leads from }q\newline\hspace{1.3cm}\text{to an accepting n-live state}\newline<br>\end{array}$</p>
 </blockquote>
-<p>Let $\textit{live}_n$ denote the set of $n$-live states. It is easy to see that $\textit{live}<em>n\supseteq\textit{live}</em>{n+1}$ for all $n$, and that, since the set of states is finite, there exists a fixpoint $\textit{live}_k$ such that $\textit{live}<em>k&#x3D;\textit{live}</em>{k+1}$. The set $\textit{live}_k$ is the set of live states.</p>
+<h3 id="Fixpoint"><a href="#Fixpoint" class="headerlink" title="Fixpoint"></a>Fixpoint</h3><p>Let $\mathit{live}_n$ denote the set of $n$-live states. It is easy to see that $\mathit{live}_{n} \supseteq \mathit{live}_{n+1}$, because $\mathit{live}_{0}$ represents the set of all states in the automaton, and $\mathit{live}_{1}$ are only those which can reach the accepting states. Then $\mathit{live}_{2}$ are those who can only reach the accepting states through some states in $\mathit{live}_{1}$. Therefore set $\mathit{live}_{n+1}$ can never be larger than its previous set $\mathit{live}_{n}$.</p>
+<p>Since the set of states is finite, there exists a <strong>fixpoint</strong> $\mathit{live}_k$ such that $\mathit{live}_k&#x3D;\mathit{live}_{k+1}$. Then the set $\mathit{live}_k$ is the set of live states.</p>
+<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><p><img src="/images/notes/uds/agv/9_2_dfs.png"></p>
+<p>In the example from <a href="../agv9-2/">last section</a>, states $q_0$, $q_1$ and $q_2$ are live; states $q_3$, $q_4$, and $q_5$ are only $0$-$\textit{live}$ (you cannot visit other accepting states starting from $q_3$ even though it is an accepting state).</p>
+<p>To describe the algorithm, we first introduce a construction that implements a backward breadth-first search as a least fixpoint. The construction computes all states from which a given set of states is reachable.</p>
+<blockquote>
+<p>$\textbf{Construction 9.1. } \text{For a Büchi Automaton }\mathcal{A} &#x3D; (\Sigma,Q,I,T,\small\text{BÜCHI} \normalsize (F))\text{ and a set of states}\newline R\subseteq Q\text{, we compute the set of backwards reachable states from }R\text{ as follows:}$</p>
+<p>$\begin{array}{llll}<br>\hspace{1cm} \cdot &amp; \textit{Pre}(R)&amp;&#x3D;&amp;\lbrace q\in Q\mid \exists q’\in R,\sigma\in\Sigma,(q,\sigma,q’)\in T\rbrace\newline<br>\hspace{1cm} \cdot &amp; \textit{BackwardReach}_0(R)&amp;&#x3D;&amp;R\newline<br>\hspace{1cm} \cdot &amp; \textit{BackwardReach}_{n+1}(R)&amp;&#x3D;&amp;\textit{BackwardReach}_{n}(R)\cup\textit{Pre}(\textit{BackwardReach}_{n}(R))\newline<br>\hspace{1cm} \cdot &amp; \textit{BackwardReach}(R)&amp;&#x3D;&amp;\underset{n\in\mathbb{N}}{\bigcup}\textit{BackwardReach}_{n}(R)\newline<br>\end{array}$</p>
+</blockquote>
+<p>By this construction, it returns a set of states that can reach some states in $R$. For example, $\lbrace q_0,q_1,q_2\rbrace$ can reach $q_3$. Using this construction as a subroutine, we can compute the live states as a greatest fixpoint:</p>
+<blockquote>
+<p>$\textbf{Construction 9.2. } \text{For a Büchi Automaton }\mathcal{A} &#x3D; (\Sigma,Q,I,T,\small\text{BÜCHI} \normalsize (F))\text{ we compute the set}\newline\text{of live states as follows:}$</p>
+<p>$\begin{array}{llll}<br>\hspace{1cm} \cdot &amp; \textit{live}_0&amp;&#x3D;&amp;Q\newline<br>\hspace{1cm} \cdot &amp; \textit{live}_{n+1}&amp;&#x3D;&amp;\textit{BackwardReach}(\textit{Pre}(\textit{live}_n\cap F))\newline<br>\hspace{1cm} \cdot &amp; \textit{live}&amp;&#x3D;&amp;\underset{n\in\mathbb{N}}{\bigcap}\textit{live}_{n}\newline<br>\end{array}$</p>
+</blockquote>
+<p>The set of $\textit{live}$ is the smallest subset of all $\textit{live}_n$ in any $n\in\mathbb{N}$. Therefore the function will stop when $\mathit{live}_k$ such that $\mathit{live}_k&#x3D;\mathit{live}_{k+1}$, which is the greatest fixpoint of the set of <code>live</code> states.</p>
+<p>Then we can verify whether the automaton is non-empty, i.e. $q_0\in\textit{live}$.</p>
+<h3 id="Continuing-Example"><a href="#Continuing-Example" class="headerlink" title="Continuing Example"></a>Continuing Example</h3><p>We compute the live states as follows:</p>
+<p>$\begin{array}{llll}<br>\hspace{1cm} \cdot &amp; \textit{live}_0&amp;&#x3D;&amp;\lbrace q_0,q_1,q_2,q_3,q_4,q_5\rbrace\newline<br>\hspace{1cm} \cdot &amp; \textit{live}_1&amp;&#x3D;&amp;\lbrace q_0,q_1,q_2\rbrace\newline<br>\hspace{1cm} \cdot &amp; \textit{live}_2&amp;&#x3D;&amp;\lbrace q_0,q_1,q_2\rbrace\newline<br>\hspace{1cm} \cdot &amp; \textit{live}&amp;&#x3D;&amp;\lbrace q_0,q_1,q_2\rbrace\newline<br>\end{array}$</p>
+<p>Since the initial state $q_0$ is <code>live</code>, we have that the language of the automaton is <strong>non-empty</strong>.</p>
 <hr>
 <p>Next chapter: <a href="../agv10-1/">The Muller Acceptance Condition</a></p>
 <p>Further Reading: <a href=""></a></p>

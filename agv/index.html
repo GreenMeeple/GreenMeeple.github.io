@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Cantonese Ch.1-3 -- Rimes with e (Phonology) | GreenMeeple</title>
-  <meta name="keywords" content=" Language Learning , Cantonese , Phonology ">
-  <meta name="description" content="Cantonese Ch.1-3 -- Rimes with e (Phonology) | GreenMeeple">
+  <title>Automata, Games, and Verification (Portal) | GreenMeeple</title>
+  <meta name="keywords" content=" AGV ">
+  <meta name="description" content="Automata, Games, and Verification (Portal) | GreenMeeple">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="This is a learning note of a course in CISPA, UdS. Taught by Bernd Finkbeiner  Chapter 1. Introduction   Sections Exercise    1.1. Model Checking    1.2. Synthesis    1.3. The Logic-Automata Connecti">
 <meta property="og:type" content="article">
@@ -1108,11 +1108,13 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-canto1-3" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-agv" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Cantonese Ch.1-3 -- Rimes with e (Phonology)</h1>
+        <h1 class="article-title">Automata, Games, and Verification (Portal)</h1>
     
     <div class="article-meta">
+        
+        <span class="top"><a>pin to top</a></span>
         
         
         
@@ -1120,9 +1122,9 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="Cantonese">Cantonese</a> > 
+            <a  data-rel="Notes">Notes</a> > 
             
-            <a  data-rel="Cantonese&lt;---&gt;Full_Course">Full_Course</a>
+            <a  data-rel="Notes&lt;---&gt;UdS">UdS</a>
             
         </span>
         
@@ -1130,23 +1132,19 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color3">Language Learning</a>
-            
-            <a class="color5">Cantonese</a>
-            
-            <a class="color5">Phonology</a>
+            <a class="color4">AGV</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-10-24 19:11:19'>2024-10-18 02:06</time>
+            Created At : <time class="date" title='Updated At: 2024-12-22 03:58:14'>2024-12-22 16:35</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:388</span>
+        <span>Count:344</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1176,7 +1174,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#All-Rimes-with-e"><span class="toc-text">All Rimes with e</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Rimes-with-e"><span class="toc-text">Rimes with e</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Rimes-with-oe-and-eo"><span class="toc-text">Rimes with oe and eo</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Learn-a-new-word-before-you-move-on"><span class="toc-text">Learn a new word before you move on</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Chapter-1-Introduction"><span class="toc-text">Chapter 1. Introduction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Chapter-2-Buchi-Automata"><span class="toc-text">Chapter 2. Büchi Automata</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Chapter-3-Buchi%E2%80%99s-Characterization-Theorem"><span class="toc-text">Chapter 3. Büchi’s Characterization Theorem</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Chapter-4-Deterministic-Buchi-Automata"><span class="toc-text">Chapter 4. Deterministic Büchi Automata</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Chapter-5-Complementation-of-Buchi-automata"><span class="toc-text">Chapter 5. Complementation of Büchi automata</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Chapter-6-Logics-over-Infinite-Sequences"><span class="toc-text">Chapter 6. Logics over Infinite Sequences</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Chapter-7-Alternating-Buchi-Automata"><span class="toc-text">Chapter 7. Alternating Büchi Automata</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Chapter-8-Linear-Arithmetic"><span class="toc-text">Chapter 8. Linear Arithmetic</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Chapter-9-LTL-Model-Checking"><span class="toc-text">Chapter 9. LTL Model Checking</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Chapter-10-McNaughton%E2%80%99s-Theorem"><span class="toc-text">Chapter 10. McNaughton’s Theorem</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -1193,103 +1191,231 @@
     <div class="article-entry" itemprop="articleBody">
       
         <blockquote>
-<p>Golden Rule of becoming a native Cantonese speaker: <strong>Tones</strong> &gt; Everything!</p>
+<p>This is a learning note of a course in <a target="_blank" rel="noopener" href="https://cispa.de/de">CISPA</a>, UdS. Taught by Bernd Finkbeiner</p>
 </blockquote>
-<p>In this blog, we use <a target="_blank" rel="noopener" href="https://jyutping.org/en/docs/english/">Jyutping</a> to indicate the pronunciation of Cantonese characters.</p>
-<p>Previous lesson: <a href="../canto1-2/">Rimes with a &amp; aa</a></p>
-<h2 id="All-Rimes-with-e"><a href="#All-Rimes-with-e" class="headerlink" title="All Rimes with e"></a>All Rimes with <code>e</code></h2><p>In this lesson, we talk about Rimes with <code>e</code>. e is a very naughty sound because it has multiple sounds based on how you spell it.</p>
-<p>Also, e can combine with o to create <code>oe</code> and <code>eo</code> sounds.</p>
-<h3 id="Rimes-with-e"><a href="#Rimes-with-e" class="headerlink" title="Rimes with e"></a>Rimes with <code>e</code></h3><table>
+<h2 id="Chapter-1-Introduction"><a href="#Chapter-1-Introduction" class="headerlink" title="Chapter 1. Introduction"></a>Chapter 1. Introduction</h2><table>
 <thead>
 <tr>
-<th align="left">Jyutping</th>
-<th align="left">Sounds in English</th>
-<th align="left">Cantonese Example</th>
-<th align="left">Jyutping</th>
-<th align="left">Sounds in English</th>
-<th align="left">Cantonese Example</th>
+<th align="left">Sections</th>
+<th align="left">Exercise</th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="left">e</td>
-<td align="left">ai in pair</td>
-<td align="left"><ruby>些<rp>(</rp><rt>se1</rt><rp>)</rp></ruby></td>
-<td align="left">eng</td>
-<td align="left">eng in leng<sup>2</sup></td>
-<td align="left"><ruby>鄭<rp>(</rp><rt>zeng6</rt><rp>)</rp></ruby></td>
+<td align="left"><a href="../agv1-1/">1.1. Model Checking</a></td>
+<td align="left"></td>
 </tr>
 <tr>
-<td align="left">ei</td>
-<td align="left">ey in prey</td>
-<td align="left"><ruby>四<rp>(</rp><rt>sei3</rt><rp>)</rp></ruby></td>
-<td align="left">ep</td>
-<td align="left">ep in bicep</td>
-<td align="left"><ruby>夾<rp>(</rp><rt>gaap3</rt><rp>)</rp></ruby></td>
+<td align="left"><a href="../agv1-2/">1.2. Synthesis</a></td>
+<td align="left"></td>
 </tr>
 <tr>
-<td align="left">eu</td>
-<td align="left">eil in veil</td>
-<td align="left"><ruby>掉<rp>(</rp><rt>diu6</rt><rp>)</rp></ruby></td>
-<td align="left">et</td>
-<td align="left">et in pet</td>
-<td align="left"><ruby>坺<rp>(</rp><rt>paat6</rt><rp>)</rp></ruby></td>
-</tr>
-<tr>
-<td align="left">em</td>
-<td align="left">em in gem</td>
-<td align="left"><ruby>舔<rp>(</rp><rt>tim2</rt><rp>)</rp></ruby></td>
-<td align="left">ek</td>
-<td align="left">ek in trek</td>
-<td align="left"><ruby>石<rp>(</rp><rt>sek6</rt><rp>)</rp></ruby></td>
+<td align="left"><a href="../agv1-3/">1.3. The Logic-Automata Connection</a></td>
+<td align="left"></td>
 </tr>
 </tbody></table>
-<p>We can see most of them are the same as e pronounced in English.</p>
-<h3 id="Rimes-with-oe-and-eo"><a href="#Rimes-with-oe-and-eo" class="headerlink" title="Rimes with oe and eo"></a>Rimes with <code>oe</code> and <code>eo</code></h3><p><code>oe</code> and <code>eo</code> sound very similar. They were considered the same sound before, but soon linguists found that this sound behaved differently and had different consonances.<br>Therefore, they are split for specific use cases. For example, if there’s an <code>eoi</code> sound, there won’t be a <code>oei</code> sound.</p>
-<table>
+<h2 id="Chapter-2-Buchi-Automata"><a href="#Chapter-2-Buchi-Automata" class="headerlink" title="Chapter 2. Büchi Automata"></a>Chapter 2. Büchi Automata</h2><table>
 <thead>
 <tr>
-<th align="left">Jyutping</th>
-<th align="left">Sounds in English</th>
-<th align="left">Cantonese Example</th>
-<th align="left">Jyutping</th>
-<th align="left">Sounds in English</th>
-<th align="left">Cantonese Example</th>
+<th align="left">Sections</th>
+<th align="left">Exercise</th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="left">oe</td>
-<td align="left">ur in fur</td>
-<td align="left"><ruby>鋸<rp>(</rp><rt>goe3</rt><rp>)</rp></ruby></td>
-<td align="left">eoi</td>
-<td align="left">an in France but ends with ng not n</td>
-<td align="left"><ruby>衰<rp>(</rp><rt>seoi1</rt><rp>)</rp></ruby></td>
+<td align="left"><a href="../agv2-1/">2.1. Preliminaries</a></td>
+<td align="left"></td>
 </tr>
 <tr>
-<td align="left">oeng</td>
-<td align="left">ern in cern<sup>2</sup></td>
-<td align="left"><ruby>薑<rp>(</rp><rt>goeng1</rt><rp>)</rp></ruby></td>
-<td align="left">eon</td>
-<td align="left">alm in calm with p instead</td>
-<td align="left"><ruby>詢<rp>(</rp><rt>seon1</rt><rp>)</rp></ruby></td>
+<td align="left"><a href="../agv2-2/">2.2. Automata over Infinite Words</a></td>
+<td align="left"></td>
 </tr>
 <tr>
-<td align="left">oek</td>
-<td align="left">erk in berserk</td>
-<td align="left"><ruby>腳<rp>(</rp><rt>goek3</rt><rp>)</rp></ruby></td>
-<td align="left">eot</td>
-<td align="left">alm in calm with t instead</td>
-<td align="left"><ruby>摔<rp>(</rp><rt>seot1</rt><rp>)</rp></ruby></td>
+<td align="left"><a href="../agv2-3/">2.3. The Büchi Acceptance Condition</a></td>
+<td align="left"></td>
 </tr>
 </tbody></table>
-<p><sup>1</sup><a target="_blank" rel="noopener" href="https://www.google.com/search?q=leng+meaning">meaning of “leng”</a></p>
-<p><sup>2</sup> Obviously, the <code>oeng</code> sound should have a “g” sound, so precisely, it should sound like “caring.” Here, the “ng” is similar to the “ng” in “sing.”</p>
-<h2 id="Learn-a-new-word-before-you-move-on"><a href="#Learn-a-new-word-before-you-move-on" class="headerlink" title="Learn a new word before you move on"></a>Learn a new word before you move on</h2><p>Let’s continue with greetings, how to impress your Hong Kong friend that you haven’t seen for so long, by showing your Cantonese skills?</p>
-<p>You may say <ruby>好耐無見<rp>(</rp><rt>hou2 noi6 mou4 gin3</rt><rp>)</rp></ruby>, which means <strong>Long time no see</strong>!</p>
-<p>Fun fact is, long time no see may acutally come from Cantonese users, who try to do direct translate from cantonese to english.</p>
-<p>So again… <ruby>下次見<rp>(</rp><rt>haa6 ci3 gin3</rt><rp>)</rp></ruby>!</p>
-<p>Next lesson: <a href="../canto1-4/">Rimes with i &amp; o</a></p>
+<h2 id="Chapter-3-Buchi’s-Characterization-Theorem"><a href="#Chapter-3-Buchi’s-Characterization-Theorem" class="headerlink" title="Chapter 3. Büchi’s Characterization Theorem"></a>Chapter 3. Büchi’s Characterization Theorem</h2><table>
+<thead>
+<tr>
+<th align="left">Sections</th>
+<th align="left">Exercise</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><a href="../agv3-1/">3.1. Kleene’s Theorem</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><a href="../agv3-2/">3.2. $\omega$-regular language</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><a href="../agv3-3/">3.3 Closure Properties of the Büchi-recognizable languages (Intersection and Union)</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><a href="../agv3-4/">3.4 Closure Properties of the Büchi-recognizable languages (Concatenations)</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><a href="../agv3-5/">3.5 Büchi’s Characterization Theorem</a></td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<h2 id="Chapter-4-Deterministic-Buchi-Automata"><a href="#Chapter-4-Deterministic-Buchi-Automata" class="headerlink" title="Chapter 4. Deterministic Büchi Automata"></a>Chapter 4. Deterministic Büchi Automata</h2><table>
+<thead>
+<tr>
+<th align="left">Sections</th>
+<th align="left">Exercise</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><a href="../agv4-1/">4.1. Deterministic vs. Nondeterministic Büchi Automata</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><a href="../agv4-2/">4.2. Complementation of deterministic Büchi Automata</a></td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<h2 id="Chapter-5-Complementation-of-Buchi-automata"><a href="#Chapter-5-Complementation-of-Buchi-automata" class="headerlink" title="Chapter 5. Complementation of Büchi automata"></a>Chapter 5. Complementation of Büchi automata</h2><table>
+<thead>
+<tr>
+<th align="left">Sections</th>
+<th align="left">Exercise</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><a href="../agv5-1/">5.1. Infinite Directed Acyclic Graph (DAG)</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><a href="../agv5-2/">5.2. Ranking of DAG</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><a href="../agv5-3/">5.3. Complement Büchi Automaton with Odd Ranking</a></td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<h2 id="Chapter-6-Logics-over-Infinite-Sequences"><a href="#Chapter-6-Logics-over-Infinite-Sequences" class="headerlink" title="Chapter 6. Logics over Infinite Sequences"></a>Chapter 6. Logics over Infinite Sequences</h2><table>
+<thead>
+<tr>
+<th align="left">Sections</th>
+<th align="left">Exercise</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><a href="../agv6-1/">6.1. Linear-Time Temporal Logic (LTL)</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><a href="../agv6-2/">6.2. Expressing Program Properties using LTL</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><a href="../agv6-3/">6.3. LTL and Counting Languages</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><a href="../agv6-4/">6.4. Quantified Propositional Temporal Logic (QPTL)</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><a href="../agv6-5/">6.5. Monadic Second-Order Logic of One Successor (S1S)</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><a href="../agv6-6/">6.6. Express QPTL using S1S</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><a href="../agv6-7/">6.7. S1S$_0$ and Büchi-recognizable LanguageBüchi-recognizable</a></td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<h2 id="Chapter-7-Alternating-Buchi-Automata"><a href="#Chapter-7-Alternating-Buchi-Automata" class="headerlink" title="Chapter 7. Alternating Büchi Automata"></a>Chapter 7. Alternating Büchi Automata</h2><table>
+<thead>
+<tr>
+<th align="left">Sections</th>
+<th align="left">Exercise</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><a href="../agv7-1/">7.1. Alternating Büchi Automata</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><a href="../agv7-2/">7.2. From LTL to Alternating Büchi Automata</a></td>
+<td align="left"><a href="../agv7-2/">$\varphi&#x3D;(\Diamond p)\ \mathcal{U}\ (\square q)$</a></td>
+</tr>
+<tr>
+<td align="left"><a href="../agv7-3/">7.3. Translating alternating to nondeterministic automata</a></td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<h2 id="Chapter-8-Linear-Arithmetic"><a href="#Chapter-8-Linear-Arithmetic" class="headerlink" title="Chapter 8. Linear Arithmetic"></a>Chapter 8. Linear Arithmetic</h2><table>
+<thead>
+<tr>
+<th align="left">Sections</th>
+<th align="left">Exercise</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><a href="../agv8-1/">8.1. Linear Arithmetic (Theory)</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><a href="../agv8-2/">8.2 Encoding real numbers</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><a href="../agv8-3/">8.3 Translation from Linear Arithmetic to Automata</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><a href="../agv8-4/">8.4 Homogenous Inequality Testing is Automatic</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><a href="../agv8-5/">8.5 From Linear Arithmetic to Automata</a></td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<h2 id="Chapter-9-LTL-Model-Checking"><a href="#Chapter-9-LTL-Model-Checking" class="headerlink" title="Chapter 9. LTL Model Checking"></a>Chapter 9. LTL Model Checking</h2><table>
+<thead>
+<tr>
+<th align="left">Sections</th>
+<th align="left">Exercise</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><a href="../agv9-1/">9.1 Automata-based LTL Model Checking with Sequential Circuits</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><a href="../agv9-2/">9.2 Nested depth-first search</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><a href="../agv9-3/">9.3 The Emerson-Lei algorithm</a></td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<h2 id="Chapter-10-McNaughton’s-Theorem"><a href="#Chapter-10-McNaughton’s-Theorem" class="headerlink" title="Chapter 10. McNaughton’s Theorem"></a>Chapter 10. McNaughton’s Theorem</h2><table>
+<thead>
+<tr>
+<th align="left">Sections</th>
+<th align="left">Exercise</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><a href="../agv10-1/">10.1 The Muller Acceptance Condition</a></td>
+<td align="left"></td>
+</tr>
+</tbody></table>
 <hr>
-<p>Further reading: <a target="_blank" rel="noopener" href="https://jyutping.org/en/">Jyutping</a>, <a target="_blank" rel="noopener" href="https://lshk.org/">The linguistic Society of Hong Kong</a></p>
+<p>Next chapter: <a href="../agv/"></a></p>
+<p>Further Reading: <a href=""></a></p>
 
       
        <hr><span style="font-style: italic;color: gray;"> Please cite the source for reprints, feel free to verify the sources cited in the article, and point out any errors or lack of clarity of expression. You can comment in the comments section below or email to GreenMeeple@yahoo.com </span>
@@ -1323,6 +1449,46 @@
 
 
 
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.jsdelivr.net/npm/mathjax@2.7.8/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.jsdelivr.net/npm/mathjax@2.7.8/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
     
 
 
