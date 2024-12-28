@@ -6,18 +6,18 @@
   <meta name="keywords" content=" AGV ">
   <meta name="description" content="AGV 10.2 -- From Büchi automata to Muller automata | GreenMeeple">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="Personal Info.Chun Ngai Li (Alex), M.Sc. Cybersecurity in Saarland University,B.Eng Information Engineering in CUHK. Recent WorksA C&#x2F;C++ programmer. Also working on Backend &amp; Python developing.Cur">
 <meta property="og:type" content="website">
-<meta property="og:title" content="About Me">
-<meta property="og:url" content="https://greenmeeple.github.io/about/index.html">
+<meta property="og:title" content="GreenMeeple cannot find what you are looking for...">
+<meta property="og:url" content="https://greenmeeple.github.io/404.html">
 <meta property="og:site_name" content="GreenMeeple">
-<meta property="og:description" content="Personal Info.Chun Ngai Li (Alex), M.Sc. Cybersecurity in Saarland University,B.Eng Information Engineering in CUHK. Recent WorksA C&#x2F;C++ programmer. Also working on Backend &amp; Python developing.Cur">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-10-07T02:34:03.000Z">
-<meta property="article:modified_time" content="2024-10-07T15:15:21.412Z">
+<meta property="og:image" content="https://greenmeeple.github.io/images/404.png">
+<meta property="article:published_time" content="2024-10-19T02:25:07.060Z">
+<meta property="article:modified_time" content="2024-10-19T02:25:07.060Z">
 <meta property="article:author" content="Alex Li">
 <meta property="article:tag" content="Coding, Boardgames, Language learning.">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://greenmeeple.github.io/images/404.png">
 
 
 <link rel="icon" href="/img/favicon.png">
@@ -321,7 +321,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="72">
-<input type="hidden" id="yelog_site_word_count" value="42.2k">
+<input type="hidden" id="yelog_site_word_count" value="43.1k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1146,12 +1146,12 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-12-27 23:54:11'>2024-12-11 23:37</time>
+            Created At : <time class="date" title='Updated At: 2024-12-28 05:18:59'>2024-12-11 23:37</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:237</span>
+        <span>Count:1.2k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1181,7 +1181,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Proof"><span class="toc-text">Proof</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Translate-Buchi-Automata-into-Muller-Automata"><span class="toc-text">Translate Büchi Automata into Muller Automata</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Proof"><span class="toc-text">Proof</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Translate-Muller-Automata-into-Buchi-Automata"><span class="toc-text">Translate Muller Automata into Büchi Automata</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Explained-in-Human-language"><span class="toc-text">Explained in Human language</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Proof-1"><span class="toc-text">Proof</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Summary"><span class="toc-text">Summary</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -1201,8 +1201,8 @@
 <blockquote>
 <p>This is a learning note of a course in <a target="_blank" rel="noopener" href="https://cispa.de/de">CISPA</a>, UdS. Taught by Bernd Finkbeiner</p>
 </blockquote>
-<p>As a first exercise, we translate Büchi automata into Muller automata:</p>
-<blockquote>
+<p>In this section, we want to prove that Muller automata is equivalent to Büchi Automata.</p>
+<h2 id="Translate-Buchi-Automata-into-Muller-Automata"><a href="#Translate-Buchi-Automata-into-Muller-Automata" class="headerlink" title="Translate Büchi Automata into Muller Automata"></a>Translate Büchi Automata into Muller Automata</h2><blockquote>
 <p>$\textbf{Construction 10.1. } \text{For a (deterministic) Büchi Automaton }\mathcal{A} &#x3D; (\Sigma,Q,I,T,\small\text{BÜCHI}\normalsize (F))\newline\text{ we define the (deterministic) Muller automaton } \mathcal{A’} &#x3D; (\Sigma,Q,I,T,\small\text{MULLER} \normalsize (\mathcal{F}))\text{ using}$</p>
 <p>$$\mathcal{F}&#x3D;\lbrace S\subseteq Q\mid S\cap F\neq\varnothing\rbrace$$</p>
 </blockquote>
@@ -1210,11 +1210,45 @@
 <blockquote>
 <p>$\textbf{Theorem 10.1. } \textit{For every (deterministic) Büchi automaton }\mathcal{A}\textit{, there is a (deterministic)}\newline\textit{Muller automaton }\mathcal{A’}\textit{ such that }\mathcal{L(A)}&#x3D;\mathcal{L(A’)}.$</p>
 </blockquote>
-<h3 id="Proof"><a href="#Proof" class="headerlink" title="Proof"></a>Proof</h3><p>The automaton $\mathcal{A’}$ of Construction 10.1 complies with our requirements, since</p>
+<h3 id="Proof"><a href="#Proof" class="headerlink" title="Proof"></a>Proof</h3><p>The automaton $\mathcal{A’}$ of Construction 10.1 complies with our requirements, according to previous section:</p>
 <p>$$\small\text{BÜCHI}\normalsize (F)&#x3D;\lbrace\alpha\in Q^\omega\mid\text{Inf}(\alpha)\cap F\neq\varnothing\rbrace&#x3D;\lbrace\alpha\in Q^\omega\mid\text{Inf}(\alpha)\in\mathcal{F}\rbrace&#x3D;\small\text{MULLER}\normalsize(\mathcal{F})$$</p>
-<p>A slightly more difficult construction is to translate the Muller automaton back into a Büchi automaton.</p>
+<h2 id="Translate-Muller-Automata-into-Buchi-Automata"><a href="#Translate-Muller-Automata-into-Buchi-Automata" class="headerlink" title="Translate Muller Automata into Büchi Automata"></a>Translate Muller Automata into Büchi Automata</h2><p>A slightly more difficult construction is to translate the Muller automaton back into a Büchi automaton.</p>
+<blockquote>
+<p>$\textbf{Construction 10.2. } \text{Let }\mathcal{A} &#x3D; (\Sigma,Q,I,T,\small\text{MULLER} \normalsize (\lbrace\mathcal{F_1,\dots,F_n}\rbrace))\text{ be a Muller automaton}\newline\text{and }&lt;\text{ some arbitrary total order on }Q.\text{ We construct the Büchi automaton }\mathcal{A’} &#x3D; (\Sigma,Q’,\newline I’,T’,\small\text{BÜCHI} \normalsize(F’))\text{ with }\mathcal{A’}\textit{ such that }\mathcal{L(A)}&#x3D;\mathcal{L(A’)}\text{ as follows:}$</p>
+<p>$\begin{array}{llll}<br>\hspace{1cm} \cdot \ Q’&amp;&#x3D;Q\cup\overset{n}{\underset{i&#x3D;1}{\bigcup}}(\lbrace i\rbrace\times F_i\times F_i)\newline<br>\hspace{1cm} \cdot \ I’&amp;&#x3D;I\newline<br>\hspace{1cm} \cdot \ T’&amp;&#x3D;T\cup\lbrace(q,\sigma,(i,q’,q’))\mid 1\leq i\leq n,(q,\sigma,q’)\in T, q’\in F_i\rbrace\newline<br>&amp;\hspace{0.9cm}{}\cup\lbrace((i,q,p),\sigma,(i,q’,p’))\mid 1\leq i\leq n,(q,\sigma,q’)\in T,\newline<br>&amp;\hspace{1.5cm}p’&#x3D;\left\lbrace\begin{array}{ll} p &amp;\text{if } q\neq p\newline<br>\text{min}(F_i)&amp;\text{if } q&#x3D;p&#x3D;\text{max}(F_i)\newline<br>\text{min}(F_i\setminus\lbrace r\mid r\leq p\rbrace)&amp;\text{if } q&#x3D;p&lt;\text{max}(F_i),\end{array}\right.\newline&amp;\hspace{1.5cm}q,p,q’ \in F_i\rbrace\newline<br>\hspace{1cm} \cdot \ F’&amp;&#x3D;\overset{n}{\underset{i&#x3D;1}{\bigcup}}(\lbrace i\rbrace\times \lbrace\text{min}(F_i)\rbrace\times \lbrace\text{min}(F_i)\rbrace)\newline<br>\end{array}$</p>
+</blockquote>
+<h3 id="Explained-in-Human-language"><a href="#Explained-in-Human-language" class="headerlink" title="Explained in Human language"></a>Explained in Human language</h3><p>A run of the Büchi automaton first simply simulates (while in states $Q$) the Muller automaton and then “guesses” the accepting subset of the Muller automaton. The accepting subset is express by the states $(\lbrace i\rbrace\times F_i\times F_i)$, where</p>
+<ul>
+<li>The first component &#x3D; the <strong>index</strong> $i$ of the accepting subset,</li>
+<li>The second component &#x3D; the <strong>currently visited state</strong> of the Muller automaton, and</li>
+<li>The third component &#x3D; the <strong>“next” state</strong> (according to the order on the states) we need to see in order to make progress towards accepting the input word.</li>
+</ul>
+<p>The purpose of the order $&lt;$ on the states is that we can “step” through the states of the accepting subset in order to make sure that all states in the accepting subset actually occur infinitely often. In transitions $T’$, we have the transitions</p>
+<ul>
+<li>$T$ that simulate transition for all states $Q$ in Muller Automaton,</li>
+<li>For some states in $Q$ contain transitions to the accepting subset $(\lbrace i\rbrace\times F_i\times F_i)$, it stays in the subset,</li>
+<li>For transitions inside the subset,<ul>
+<li>the <strong>“next” state</strong> remain unchanged until the <strong>currently visited state</strong> visits it $(p&#x3D;q)$,</li>
+<li>if the <strong>currently visited state</strong> visits <strong>“next” state</strong> and it is the last “step” of the subset, it means we visited the entire subset and we should start from the beginning again ($\text{min}(F_i)$)</li>
+<li>otherwise, move one step larger ($\text{min}(F_i)$ where $F_i &gt; p$)</li>
+</ul>
+</li>
+</ul>
+<p><strong>The Büchi automaton accepts if we step through the states of the accepting subset infinitely often</strong>.<br>Recall that we used a similar trick in the construction of the Büchi automaton for the <code>intersection</code> of two Büchi-recognizable languages in <a href="../agv3-3/">Construction 3.2.</a></p>
+<blockquote>
+<p>$\textbf{Theorem 10.2. } \newline\textit{For every Muller automaton }\mathcal{A}\textit{ there is a Büchi automaton }\mathcal{A’}\textit{ such that }\mathcal{L(A)}&#x3D;\mathcal{L(A’)}.$</p>
+</blockquote>
+<h3 id="Proof-1"><a href="#Proof-1" class="headerlink" title="Proof"></a>Proof</h3><p>$\mathcal{L(A)}\subseteq\mathcal{L(A’)}:$</p>
+<p>Let $\alpha\in\mathcal{L(A)}$ and $r&#x3D;q_0q_1q_2\dots$ be an accepting run of $\mathcal{A}$ on $\alpha$. As $r$ is accepting, we have that $\text{Inf}(r)\in\mathcal{F}$, i.e., there is some $1\leq i\leq n$ such that $\text{Inf}(r)&#x3D;\mathcal{F}_i$. Let $m$ the first position such that $q_j\in\text{Inf}(r)$ for all $j\geq m$ and consider some run</p>
+<p>$$r’ &#x3D; q_0q_1\dots q_{m−1}(i, q_m, p_0)(i, q_{m+1}, p_1)(i, q_{m+2}, p_2)\dots$$</p>
+<p>of $\mathcal{A’}$ on $\alpha$, which nondeterministically switches to $(i, q_m, p_0)$ at position $m$. For the sake of contradiction assume that $r$ is not accepting. Then there is a position $k\geq 0$ such that $p_j&#x3D;p_k$ for all $j\geq k$. Then also $q_{m+j}\neq p_j$ for all $j\geq k$. However, this contradicts that $p_k\in\mathcal{F}_i$.</p>
+<p>$\mathcal{L(A)}\supseteq\mathcal{L(A’)}:$</p>
+<p>Let $\alpha\in\mathcal{L(A’)}$ and</p>
+<p>$$r’ &#x3D; q_0q_1\dots q_{m−1}(i, q_m, p_0)(i, q_{m+1}, p_1)(i, q_{m+2}, p_2)\dots$$</p>
+<p>be some accepting run of $\mathcal{A’}$ on $\alpha$, which has to switch to some $(i, q_m, p_0)$ at some position $m$, as otherwise it would not be accepting. By construction $q_j\in\text{Inf}(r)$ for all $j\geq m$ and for each $p\in\mathcal{F}_i$ there are infinitely many positions $k$ such that $q_k&#x3D;p_k&#x3D;p$. Thus, $\text{Inf}(pr_2(r’))&#x3D;\mathcal{F}_i$, yielding an accepting run $r&#x3D;q_0q_1q_2\dots$ of $\mathcal{A}$ on $\alpha$.</p>
+<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>Now we have proved that we can construct an Muller automaton from Büchi automaton and an Büchi automaton from Muller automaton. Therefore they are interchangably equivalent. In the next section, we will prove that deterministic Muller automata are actually closed.</p>
 <hr>
-<p>Next chapter: <a href="../agv/"></a></p>
+<p>Next chapter: <a href="../agv10-3/">Closure Properties of Muller automata</a></p>
 <p>Further Reading: <a href=""></a></p>
 
       
