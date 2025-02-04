@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Cantonese Ch.1-0 -- Introduction to Phonology &amp; Tones | GreenMeeple</title>
-  <meta name="keywords" content=" Language Learning , Cantonese , Phonology ">
-  <meta name="description" content="Cantonese Ch.1-0 -- Introduction to Phonology &amp; Tones | GreenMeeple">
+  <title>AGV 10.4 -- Semi-Deterministic Büchi Automata | GreenMeeple</title>
+  <meta name="keywords" content=" AGV ">
+  <meta name="description" content="AGV 10.4 -- Semi-Deterministic Büchi Automata | GreenMeeple">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="GreenMeeple cannot find what you are looking for...">
@@ -1169,9 +1169,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-canto1-0" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-agv10-4" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Cantonese Ch.1-0 -- Introduction to Phonology &amp; Tones</h1>
+        <h1 class="article-title">AGV 10.4 -- Semi-Deterministic Büchi Automata</h1>
     
     <div class="article-meta">
         
@@ -1181,9 +1181,9 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="Cantonese">Cantonese</a> > 
+            <a  data-rel="Notes">Notes</a> > 
             
-            <a  data-rel="Cantonese&lt;---&gt;Full_Course">Full_Course</a>
+            <a  data-rel="Notes&lt;---&gt;UdS">UdS</a>
             
         </span>
         
@@ -1191,23 +1191,19 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color3">Language Learning</a>
-            
-            <a class="color5">Cantonese</a>
-            
-            <a class="color5">Phonology</a>
+            <a class="color4">AGV</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-10-24 19:11:20'>2024-10-15 01:06</time>
+            Created At : <time class="date" title='Updated At: 2025-01-30 04:35:25'>2025-01-29 15:23</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:311</span>
+        <span>Count:629</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1237,7 +1233,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Overview-of-Cantonese-Phonology"><span class="toc-text">Overview of Cantonese Phonology</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Phonology-Structure"><span class="toc-text">Phonology Structure</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tones"><span class="toc-text">Tones</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Summary"><span class="toc-text">Summary</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Introduction"><span class="toc-text">Introduction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Semi-deterministic-Buchi-Automata"><span class="toc-text">Semi-deterministic Büchi Automata</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Explanation"><span class="toc-text">Explanation</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#From-Nondeterministic-to-Semi-deterministic-Buchi-Automata"><span class="toc-text">From Nondeterministic to Semi-deterministic Büchi Automata</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Example"><span class="toc-text">Example</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -1253,37 +1249,39 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>Golden Rule of becoming a native Cantonese speaker: <strong>Tones</strong> &gt; Everything!</p>
+        <p>Previous chapter: <a href="../agv10-3/">Closure Properties of Muller automata Under Boolean Operations</a></p>
+<blockquote>
+<p>This is a learning note of a course in <a target="_blank" rel="noopener" href="https://cispa.de/de">CISPA</a>, UdS. Taught by Bernd Finkbeiner</p>
 </blockquote>
-<p>In this blog, we use <a target="_blank" rel="noopener" href="https://jyutping.org/en/docs/english/">Jyutping</a> to indicate the pronunciation of Cantonese characters.</p>
-<h2 id="Overview-of-Cantonese-Phonology"><a href="#Overview-of-Cantonese-Phonology" class="headerlink" title="Overview of Cantonese Phonology"></a>Overview of Cantonese Phonology</h2><p>Maybe you already know that we use one syllable for each character in Cantonese,<br>just like all other Chinese languages. It contains 3 crucial parts in order to pronounce the word.<br>That is the <code>consonances</code>, <code>vowels</code>, and <code>tones</code>.</p>
-<p>In Cantonese, there are <strong>19</strong> consonances, <strong>9</strong> vowels and <strong>6</strong> tones.<br>That creates <strong>1,760</strong> different sounds to cover over 10,000 Chinese Characters.</p>
-<p>Every Cantonese consonance and vowel pair can always be described as an <code>Onset-Rime</code>.</p>
-<h3 id="Phonology-Structure"><a href="#Phonology-Structure" class="headerlink" title="Phonology Structure"></a>Phonology Structure</h3><p>So what is actually an <code>Onset-Rimes</code>?<br>An <code>Onset-Rimes</code> is either a <code>consonant-vowel</code> or a <code>consonant-vowel-consonant</code> structure, For example:</p>
-<ul>
-<li><p><code>consonant-vowel</code>: the word “rich” &#x3D; <ruby>富<rp>(</rp><rt>fu3</rt><rp>)</rp></ruby> (sounds like “foo” in English).</p>
-</li>
-<li><p><code>consonant-vowel-consonant</code>: the word “bamboo” &#x3D; <ruby>竹<rp>(</rp><rt>zuk1</rt><rp>)</rp></ruby> (sounds like “joke” in English).</p>
-</li>
-</ul>
-<h3 id="Tones"><a href="#Tones" class="headerlink" title="Tones"></a>Tones</h3><p>Tones are a unique feature of the Chinese language; in Cantonese, it is slightly more fancy than in Mandarin.<br>But don’t worry, in this Chapter, we will break it down and make it easy for you!</p>
-<p><img src="/images/canto/canto-tone.png"></p>
-<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>So today, we’ve learned the structure of Cantonese, and know that it contains Onsets, Rimes, and Tones.<br>It’s time to learn your first Cantonese phrase!</p>
-<p>In Cantonese, the most common greeting we use is <strong>Good Morning</strong>, that is <ruby>早晨<rp>(</rp><rt>zou2 san4</rt><rp>)</rp></ruby>!</p>
-<p>zou2 san4… How do we pronounce the “z” sound? Now, let’s move on to the next lesson for <code>Onset</code>!</p>
-<p>Portal:</p>
-<ul>
-<li><a href="../canto1-1/">Chapter 0-1: Onset</a></li>
-<li><a href="../canto1-2/">Chapter 0-2: Rimes with a &amp; aa</a></li>
-<li><a href="../canto1-3/">Chapter 0-3: Rimes with e</a></li>
-<li><a href="../canto1-4/">Chapter 0-4: Rimes with i &amp; o</a></li>
-<li><a href="../canto1-5/">Chapter 0-5: Rimes with u &amp; yu</a></li>
-<li><a href="../canto1-6/">Chapter 0-6: Tones</a></li>
-<li><a href="../canto1-7/">Chapter 0-7: Onset, Rimes and Tones (Summary)</a></li>
-</ul>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>To prove McNaughton’s theorem, in this subsection, we will introdue the <strong>semi-deterministic Büchi automata</strong>.</p>
+<ol>
+<li>translate nondeterministic Büchi automata into semi-deterministic Büchi automata.</li>
+<li>translate from semi-deterministic Büchi automata to deterministic Muller automata.</li>
+</ol>
+<h2 id="Semi-deterministic-Buchi-Automata"><a href="#Semi-deterministic-Buchi-Automata" class="headerlink" title="Semi-deterministic Büchi Automata"></a>Semi-deterministic Büchi Automata</h2><p>A <em>semi-deterministic automaton</em> is a (possibly nondeterministic) automaton where all accepting runs ultimately end up in a <strong>subset of the states</strong> from which all transitions are deterministic.</p>
+<blockquote>
+<p>$\textbf{Definition 10.2. } \text{A Büchi automata }\mathcal{A} &#x3D; (\Sigma,Q,I,T,\small\text{BÜCHI} \normalsize(F))\text{ is }\textit{semi-deterministic}\text{ if}\newline Q &#x3D; N \uplus D\text{ is a partition of }Q\text{ such that }F\subseteq D, pr_2(T\cap(D\times\Sigma\times Q))\subseteq D\text{, and }\newline(\Sigma,D,\lbrace d\rbrace,T\cap(D\times\Sigma\times D),\small\text{BÜCHI}\normalsize(F)) \text{ is deterministic for every }d\in D.$</p>
+</blockquote>
+<h3 id="Explanation"><a href="#Explanation" class="headerlink" title="Explanation"></a>Explanation</h3><p>$Q &#x3D; N \uplus D:$ a <em>disjoint union symbol</em> $\uplus$ indicates that $N$ and $D$ are two seperated subset.</p>
+<p>$D:$ firstly, set of accepting states in part of $D$ ($F\subseteq D$). Then for all transistion starts from $D$ ($T\cap(D\times\Sigma\times Q)$), their successors are also in $D$ ($pr_2(T\cap(D\times\Sigma\times Q))\subseteq D$).</p>
+<p>Therefore, we can split such automaton into nondeterministic part $N$ and determinstic part $D$, and the accepting run will end up stays in $D$.</p>
+<h2 id="From-Nondeterministic-to-Semi-deterministic-Buchi-Automata"><a href="#From-Nondeterministic-to-Semi-deterministic-Buchi-Automata" class="headerlink" title="From Nondeterministic to Semi-deterministic Büchi Automata"></a>From Nondeterministic to Semi-deterministic Büchi Automata</h2><p>The translation is based on a <strong>subset construction</strong>, where we collect two sets of states:</p>
+<ol>
+<li>the states that are reachable on the given input word, and</li>
+<li>the states that are reachable on some path through an accepting state.</li>
+</ol>
+<p>A state of the semi-deterministic automaton is accepting if the <strong>two sets become equal</strong>; when this happens, the second set is reinitialized with the subset of accepting states that appear in the first component.</p>
+<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><p><img src="/images/notes/uds/agv/10_4_nonde.png"></p>
+<p><img src="/images/notes/uds/agv/10_4_subset.png"></p>
+<p>The subset construction produces a <em>deterministic</em> automaton that accepts a subset of the words accepted by the original automaton. If the two sets are equal infinitely often, we can construct a run of the original automaton that goes through accepting states infinitely often: intuitively, we can go ”backwards” from each position where the two sets have become equal and select a path segment for the original automaton where an accepting state is visited (in the proof below we give a more precise argument using König’s lemma).</p>
+<p>There is no general guarantee that the set of reachable states from some position of an accepting run and the set of states reachable on a path through some accepting state are the same. This is illustrated by the following example.</p>
+<p><img src="/images/notes/uds/agv/10_4_counter.png"></p>
+<p>Let the input word be $\alpha^\omega$. From the initial position of some run, which starts in the initial state $p$, all states are reachable, but only $r$ and $s$ are reachable on paths from $s$.</p>
+<p>Ultimately, however, every accepting run must reach (and remain in) positions where the set of reachable states and the set of states reachable on a path through some accepting state are the same. This is because the set of reachable states can only become smaller finitely often; hence, at some point, the set of reachable states will remain the same from all subsequent positions, including those (future) positions of the accepting run where the run visits an accepting state.</p>
+<p>In our semi-deterministic automaton, we therefore start by simulating the given nondeterministic automaton. At any point we allow a nondeterministic transition into the (from then on) deterministic subset construction.</p>
 <hr>
-<p>Further reading: <a target="_blank" rel="noopener" href="https://jyutping.org/en/">Jyutping</a>, <a target="_blank" rel="noopener" href="https://lshk.org/">The linguistic Society of Hong Kong</a></p>
+<p>Next chapter: <a href="../agv/"></a></p>
+<p>Further Reading: <a href=""></a></p>
 
       
        <hr><span style="font-style: italic;color: gray;"> Please cite the source for reprints, feel free to verify the sources cited in the article, and point out any errors or lack of clarity of expression. You can comment in the comments section below or email to GreenMeeple@yahoo.com </span>
@@ -1317,6 +1315,46 @@
 
 
 
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.jsdelivr.net/npm/mathjax@2.7.8/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.jsdelivr.net/npm/mathjax@2.7.8/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
     
 
 
