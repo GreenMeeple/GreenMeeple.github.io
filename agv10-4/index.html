@@ -144,7 +144,7 @@
     <li>
         <div class="all active" data-rel="All">All
             
-                <small>(76)</small>
+                <small>(79)</small>
             
         </div>
     </li>
@@ -246,7 +246,7 @@
         <div data-rel="Notes">
             <i class="fold iconfont icon-right"></i>
             Notes
-            <small>(42) </small>
+            <small>(45) </small>
         </div>
         
             <ul class="sub hide">
@@ -256,7 +256,7 @@
         <div data-rel="Notes&lt;---&gt;UdS">
             
             UdS
-            <small>(42) </small>
+            <small>(45) </small>
         </div>
         
     </li>
@@ -320,8 +320,8 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="76">
-<input type="hidden" id="yelog_site_word_count" value="47.6k">
+<input type="hidden" id="yelog_site_posts_number" value="79">
+<input type="hidden" id="yelog_site_word_count" value="49.9k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -483,6 +483,33 @@
            data-author="" >
             <span class="post-title" title="3-hexo Shortcut">3-hexo Shortcut</span>
             <span class="post-date" title="2024-10-01 11:11:11">2024/10/01</span>
+        </a>
+        
+        
+        <a  class="All Notes UdS "
+           href="/agv11-2/"
+           data-tag="AGV"
+           data-author="" >
+            <span class="post-title" title="AGV 11.2 -- Reachability Games">AGV 11.2 -- Reachability Games</span>
+            <span class="post-date" title="2025-02-11 20:48:34">2025/02/11</span>
+        </a>
+        
+        
+        <a  class="All Notes UdS "
+           href="/agv11-1/"
+           data-tag="AGV"
+           data-author="" >
+            <span class="post-title" title="AGV 11.1 -- Infinite Games (Basic Definitions)">AGV 11.1 -- Infinite Games (Basic Definitions)</span>
+            <span class="post-date" title="2025-02-11 17:11:48">2025/02/11</span>
+        </a>
+        
+        
+        <a  class="All Notes UdS "
+           href="/agv10-5/"
+           data-tag="AGV"
+           data-author="" >
+            <span class="post-title" title="AGV 10.5 -- From semi-deterministic Büchi to deterministic Muller">AGV 10.5 -- From semi-deterministic Büchi to deterministic Muller</span>
+            <span class="post-date" title="2025-02-11 08:41:39">2025/02/11</span>
         </a>
         
         
@@ -1198,12 +1225,12 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2025-01-30 04:35:25'>2025-01-29 15:23</time>
+            Created At : <time class="date" title='Updated At: 2025-02-11 08:21:14'>2025-01-29 15:23</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:629</span>
+        <span>Count:1.4k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1233,7 +1260,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Introduction"><span class="toc-text">Introduction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Semi-deterministic-Buchi-Automata"><span class="toc-text">Semi-deterministic Büchi Automata</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Explanation"><span class="toc-text">Explanation</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#From-Nondeterministic-to-Semi-deterministic-Buchi-Automata"><span class="toc-text">From Nondeterministic to Semi-deterministic Büchi Automata</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Example"><span class="toc-text">Example</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Introduction"><span class="toc-text">Introduction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Semi-deterministic-Buchi-Automata"><span class="toc-text">Semi-deterministic Büchi Automata</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Explaination"><span class="toc-text">Explaination</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#From-Nondeterministic-to-Semi-deterministic-Buchi-Automata"><span class="toc-text">From Nondeterministic to Semi-deterministic Büchi Automata</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Example"><span class="toc-text">Example</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Proof"><span class="toc-text">Proof</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -1262,7 +1289,7 @@
 <blockquote>
 <p>$\textbf{Definition 10.2. } \text{A Büchi automata }\mathcal{A} &#x3D; (\Sigma,Q,I,T,\small\text{BÜCHI} \normalsize(F))\text{ is }\textit{semi-deterministic}\text{ if}\newline Q &#x3D; N \uplus D\text{ is a partition of }Q\text{ such that }F\subseteq D, pr_2(T\cap(D\times\Sigma\times Q))\subseteq D\text{, and }\newline(\Sigma,D,\lbrace d\rbrace,T\cap(D\times\Sigma\times D),\small\text{BÜCHI}\normalsize(F)) \text{ is deterministic for every }d\in D.$</p>
 </blockquote>
-<h3 id="Explanation"><a href="#Explanation" class="headerlink" title="Explanation"></a>Explanation</h3><p>$Q &#x3D; N \uplus D:$ a <em>disjoint union symbol</em> $\uplus$ indicates that $N$ and $D$ are two seperated subset.</p>
+<h3 id="Explaination"><a href="#Explaination" class="headerlink" title="Explaination"></a>Explaination</h3><p>$Q &#x3D; N \uplus D:$ a <em>disjoint union symbol</em> $\uplus$ indicates that $N$ and $D$ are two seperated subset.</p>
 <p>$D:$ firstly, set of accepting states in part of $D$ ($F\subseteq D$). Then for all transistion starts from $D$ ($T\cap(D\times\Sigma\times Q)$), their successors are also in $D$ ($pr_2(T\cap(D\times\Sigma\times Q))\subseteq D$).</p>
 <p>Therefore, we can split such automaton into nondeterministic part $N$ and determinstic part $D$, and the accepting run will end up stays in $D$.</p>
 <h2 id="From-Nondeterministic-to-Semi-deterministic-Buchi-Automata"><a href="#From-Nondeterministic-to-Semi-deterministic-Buchi-Automata" class="headerlink" title="From Nondeterministic to Semi-deterministic Büchi Automata"></a>From Nondeterministic to Semi-deterministic Büchi Automata</h2><p>The translation is based on a <strong>subset construction</strong>, where we collect two sets of states:</p>
@@ -1273,14 +1300,25 @@
 <p>A state of the semi-deterministic automaton is accepting if the <strong>two sets become equal</strong>; when this happens, the second set is reinitialized with the subset of accepting states that appear in the first component.</p>
 <h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><p><img src="/images/notes/uds/agv/10_4_nonde.png"></p>
 <p><img src="/images/notes/uds/agv/10_4_subset.png"></p>
-<p>The subset construction produces a <em>deterministic</em> automaton that accepts a subset of the words accepted by the original automaton. If the two sets are equal infinitely often, we can construct a run of the original automaton that goes through accepting states infinitely often: intuitively, we can go ”backwards” from each position where the two sets have become equal and select a path segment for the original automaton where an accepting state is visited (in the proof below we give a more precise argument using König’s lemma).</p>
+<p>The subset construction produces a <em>deterministic</em> automaton that accepts a subset of the words accepted by the original automaton. If the two sets are equal infinitely often, we can construct a run of the original automaton that goes through accepting states infinitely often:</p>
+<p>intuitively, we can go “backwards” from each position where the two sets have become equal and select a path segment for the original automaton where an accepting state is visited (in the proof below we give a more precise argument using König’s lemma).</p>
 <p>There is no general guarantee that the set of reachable states from some position of an accepting run and the set of states reachable on a path through some accepting state are the same. This is illustrated by the following example.</p>
 <p><img src="/images/notes/uds/agv/10_4_counter.png"></p>
 <p>Let the input word be $\alpha^\omega$. From the initial position of some run, which starts in the initial state $p$, all states are reachable, but only $r$ and $s$ are reachable on paths from $s$.</p>
-<p>Ultimately, however, every accepting run must reach (and remain in) positions where the set of reachable states and the set of states reachable on a path through some accepting state are the same. This is because the set of reachable states can only become smaller finitely often; hence, at some point, the set of reachable states will remain the same from all subsequent positions, including those (future) positions of the accepting run where the run visits an accepting state.</p>
+<p>Ultimately, however, every accepting run must reach (and remain in) positions where the <strong>set of reachable states</strong> and the <strong>set of states reachable on a path through some accepting state</strong> are the same. This is because the set of reachable states can only become smaller finitely often; hence, at some point, the set of reachable states will remain the same from all subsequent positions, including those (future) positions of the accepting run where the run visits an accepting state.</p>
 <p>In our semi-deterministic automaton, we therefore start by simulating the given nondeterministic automaton. At any point we allow a nondeterministic transition into the (from then on) deterministic subset construction.</p>
+<blockquote>
+<p>$\textbf{Construction 10.5. } \text{For a Büchi automaton }\mathcal{A}&#x3D;(\Sigma,Q,I,T,\small\text{BÜCHI}\normalsize (F))\text{, we construct the semi-}\newline\text{deterministic Büchi automaton }\mathcal{A’} &#x3D; (\Sigma,Q’,I’,T’,\small\text{BÜCHI}\normalsize (F’))\text{ with }\mathcal{L}(\mathcal{A’})&#x3D;\mathcal{L}(\mathcal{A})\text{ as follows:}$<br>$\begin{array}{l}<br>\hspace{1cm} \cdot \ Q’&#x3D;Q\uplus (2^Q\times2^Q)\newline<br>\hspace{1cm} \cdot \ I’&#x3D;I’ \newline<br>\hspace{1cm} \cdot \ T’&#x3D;T\cup\lbrace(q,\sigma,(\lbrace q’\rbrace,\varnothing))\mid(q,\sigma,q’)\in T\rbrace \newline<br>\hspace{2.85cm}\cup \ \lbrace((L_1,L_2),\sigma,(L’_1,L’_2))\mid L_1\neq L_2\newline<br>\hspace{3.8cm}L’_1&#x3D;pr_2(T\cap L_1\times\lbrace\sigma\rbrace\times Q)\newline<br>\hspace{3.8cm}L’_2&#x3D;pr_2(T\cap L_1\times\lbrace\sigma\rbrace\times F)\cup pr_2(T\cap L_2\times\lbrace\sigma\rbrace\times Q)\rbrace\newline<br>\hspace{2.85cm}\cup \ \lbrace((L_1,L_2),\sigma,(L’_1,L’_2))\mid L_1&#x3D; L_2\newline<br>\hspace{3.8cm}L’_1&#x3D;pr_2(T\cap L_1\times\lbrace\sigma\rbrace\times Q)\newline<br>\hspace{3.8cm}L’_2&#x3D;pr_2(T\cap L_1\times\lbrace\sigma\rbrace\times F)\newline<br>\hspace{1cm} \cdot \ F’&#x3D;\lbrace(L,L)\in(2^Q\times2^Q)\mid L\neq\varnothing\rbrace\newline<br>\end{array}$</p>
+</blockquote>
+<blockquote>
+<p>$\textbf{Lemma 10.1. } \textit{For every Büchi automaton }\mathcal{A}\textit{ there exists a semi-deterministic Büchi}\newline\textit{automaton }\mathcal{A’}\textit{ with }\mathcal{L}(\mathcal{A})&#x3D;\mathcal{L}(\mathcal{A’}).$</p>
+</blockquote>
+<h2 id="Proof"><a href="#Proof" class="headerlink" title="Proof"></a>Proof</h2><p>$\mathcal{L}(\mathcal{A’})\subseteq\mathcal{L}(\mathcal{A})$</p>
+<p>Let $\alpha\in\mathcal{L}(\mathcal{A’})$ and let $r’&#x3D;q_0q_1\dots q_{n-1}(L_n,L’<em>n)(L</em>{n+1},L’<em>{n+1})\dots$ be an accepting run of $\mathcal{A’}$ on $\alpha$. Since $r’$ is accepting, there is an infinite sequence $i_0i_1\dots$ of indices such that $i_0&#x3D;n$, and, for all $j\geq1$, $L</em>{i_j} &#x3D; L’<em>{i_j}$ and $L’</em>{i_j}\neq\varnothing$. For every $j\geq1$, and every $q’\in L_{i_j}$ there exists a state $q\in L_{i_{j−1}}$ and a sequence $q &#x3D; q_{i_{j−1}} , q_{i_{j−1}+1},\dots, q_{i_j} &#x3D; q’$ such that $(q_k, \alpha(k), q_{k+1})\in T$ for all $k\in \lbrace i_{j−1},\dots,i_j − 1\rbrace$ and $q_k\in F$ for some $k\in\lbrace i_{j−1}+1,\dots,i_j\rbrace$. We use the following notation: $\textit{predecessor}(q’,i_j) :&#x3D; q, \textit{run}(q’,i_0) &#x3D; q_0q_1\dots q_{n−1}q’$ for $L_{i_0} &#x3D; \lbrace q’\rbrace$, and $\textit{run}(q’,i_j)&#x3D;(q_{i_{j−1}+1})(q_{i_{j−1}+2})\dots q_{i_j}$, for $j\geq1$. </p>
+<p>Now consider the  j∈N Lij × {j} -labeled tree where the root is labeled with (q ′ , 0) for Li0 &#x3D; {q ′}, and the parent of each node with a label (q ′ , j) is labeled with (predecessor(q ′ , ij ), j − 1). The tree is infinite and finite-branching, and, hence, by K¨onig’s Lemma, has an infinite branch (qi0 , i0),(qi1 , i1), . . ., corresponding to an accepting run of A: run(qi0 , i0) · run(qi1 , i1) · run(qi2 , i2) · . . . </p>
+<p>L(A) ⊆ L(A′ ): Let α ∈ L(A) and let r &#x3D; q0, q1, . . . be an accepting run of A on α. Let i ∈ N be an index s.t. qi ∈ F and for all j ≥ i there exists a k &gt; j, such that {q ∈ Q | qi α[i,k] −−−→ q} &#x3D; {q ∈ Q | qj α[j,k] −−−→ q}. The index i exists: ”⊇” holds for all i, because there is a path through qj . Assume, by way of contradiction, that for all i ∈ N, there is a j ≥ i s.t for all k &gt; j ”⊋” holds. Then there exists an i ′ s.t. {q ∈ Q | qi ′ α[i ′ ,k] −−−−→ q} &#x3D; ∅ for all k &gt; i′ . Contradiction. We define a run r ′ of A′ : r ′ &#x3D; q0 . . . qi−1({qi}, ∅)(L1, L′ 1 )(L2, L′ 2 ). . . where Lj and L ′ j are determined by the definition of A′ . To prove that r ′ is accepting, assume otherwise, and let m ∈ N be an index such that Ln ̸&#x3D; L ′ n for all n ≥ m. Then, let j &gt; m be some index with qj ∈ F; hence qj ∈ L ′ j . There exists a k &gt; j such that L ′ k+1 &#x3D; {q ∈ Q | qj α[j,k] −−−→ q} &#x3D; {q ∈ Q | qi α[i,k] −−−→ q} &#x3D; Lk+1. Contradiction.</p>
 <hr>
-<p>Next chapter: <a href="../agv/"></a></p>
+<p>Next chapter: <a href="../agv10-5/">From semi-deterministic Büchi to deterministic Muller</a></p>
 <p>Further Reading: <a href=""></a></p>
 
       
