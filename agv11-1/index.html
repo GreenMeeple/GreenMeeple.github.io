@@ -321,7 +321,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="79">
-<input type="hidden" id="yelog_site_word_count" value="49.9k">
+<input type="hidden" id="yelog_site_word_count" value="50.9k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1225,12 +1225,12 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2025-02-11 20:48:22'>2025-02-11 17:11</time>
+            Created At : <time class="date" title='Updated At: 2025-02-12 11:49:09'>2025-02-11 17:11</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:1.1k</span>
+        <span>Count:1.4k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1260,7 +1260,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Introduction"><span class="toc-text">Introduction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Basic-Definitions"><span class="toc-text">Basic Definitions</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Introduction"><span class="toc-text">Introduction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Basic-Definitions"><span class="toc-text">Basic Definitions</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Conclusion"><span class="toc-text">Conclusion</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -1330,6 +1330,53 @@
 <blockquote>
 <p>$\textbf{Definition 11.10. }\text{A game is }\textit{memoryless determined }\text{if for every position }v\in V\text{, there exists}\newline\text{a memoryless stratey that is winning for some player from position }v.$</p>
 </blockquote>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>In this section, we have learned:</p>
+<ul>
+<li><p><strong>Arena</strong>: the graph of the game, expressed as a tuple $\mathcal{A}&#x3D;(V,V_0,V_1,E)$</p>
+<ul>
+<li><strong>Position</strong>: vertex of Arena $v\in V$</li>
+<li><strong>Positions of Player $i$</strong>: a disjoint set of position $V_i$</li>
+</ul>
+</li>
+<li><p><strong>Play</strong>: an infinite sequence of $\rho\in V^\omega$</p>
+<ul>
+<li><strong>set of all Plays</strong>: $\text{Plays}(\mathcal{A})$</li>
+<li><strong>set of all Plays in position $v$</strong>: $\text{Plays}(\mathcal{A},v)$</li>
+<li><strong>starting position</strong>: $v &#x3D; \rho(0)$</li>
+<li>the player who <strong>owns the position chooses the edge</strong> on which the play is continued ($\rho\in V_i$)</li>
+</ul>
+</li>
+<li><p><strong>Game</strong>: consist of an arena and a winning condition $\mathcal{G}&#x3D;(\mathcal{A},\text{Win})$</p>
+<ul>
+<li><strong>winning condition</strong>: $\text{Win}\subseteq V^\omega$</li>
+<li><strong>winning play for Player 0</strong>: $\rho\in\text{Win}$</li>
+<li><strong>winning play for Player 1</strong>: $\rho\notin\text{Win}$</li>
+</ul>
+</li>
+<li><p><strong>history</strong>: all previous positions $V^\ast$</p>
+</li>
+<li><p><strong>Strategy</strong>: decisions of a player based on history of the play</p>
+<ul>
+<li><strong>Strategy of Player $i$</strong>: $\sigma:V^\ast V_i\rightarrow V$</li>
+<li><strong>Strategy of Player 0</strong>: $\sigma$</li>
+<li><strong>Strategy of Player 1</strong>: $\tau$</li>
+</ul>
+</li>
+<li><p><strong>Memoryless (positional) Strategy</strong>: $\sigma(wv)&#x3D;\sigma(v)\text{ for all }w\in V^\ast,v\in V_i$</p>
+</li>
+<li><p><strong>Winning Region</strong>: set of all positions that Player $i$ has a winning strategy $W_i(\mathcal{G})\in V$  </p>
+<ul>
+<li><strong>Uniform Winning Strategy</strong>: one strategy that can apply to any position in a winning region.</li>
+</ul>
+</li>
+<li><p><strong>Determinacy</strong>: $\mathcal{G}$ is determined if every position is in some player’s winning region $V&#x3D;W_0(\mathcal{G})\cup W_1(\mathcal{G})$</p>
+<ul>
+<li>A determined game have winning strategy in every positions.</li>
+</ul>
+</li>
+<li><p><strong>Memoryless Game</strong>: all strategies are memoryless in every position of a determined game</p>
+</li>
+</ul>
 <hr>
 <p>Next chapter: <a href="../agv11-2/">Reachability Games</a></p>
 <p>Further Reading: <a href=""></a></p>

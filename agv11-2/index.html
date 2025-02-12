@@ -321,7 +321,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="79">
-<input type="hidden" id="yelog_site_word_count" value="49.9k">
+<input type="hidden" id="yelog_site_word_count" value="50.9k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1225,12 +1225,12 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2025-02-11 20:51:50'>2025-02-11 20:48</time>
+            Created At : <time class="date" title='Updated At: 2025-02-12 19:32:17'>2025-02-11 20:48</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:111</span>
+        <span>Count:900</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1260,7 +1260,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Introdution"><span class="toc-text">Introdution</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Reachability-Condition"><span class="toc-text">Reachability Condition</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Example"><span class="toc-text">Example</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Attractor-Construction"><span class="toc-text">Attractor Construction</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Example-1"><span class="toc-text">Example</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Proof"><span class="toc-text">Proof</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -1280,10 +1280,60 @@
 <blockquote>
 <p>This is a learning note of a course in <a target="_blank" rel="noopener" href="https://cispa.de/de">CISPA</a>, UdS. Taught by Bernd Finkbeiner</p>
 </blockquote>
-<h2 id="Introdution"><a href="#Introdution" class="headerlink" title="Introdution"></a>Introdution</h2><p>We will now analyze infinite games for various types of winning conditions. We start with the simple <strong>reachability</strong> condition. </p>
+<h2 id="Reachability-Condition"><a href="#Reachability-Condition" class="headerlink" title="Reachability Condition"></a>Reachability Condition</h2><p>We will now analyze infinite games for various types of winning conditions. We start with the simple <strong>reachability</strong> condition. </p>
 <p>The reachability condition is given as a set $R$ of positions called the reachability set. The reachability condition is satisfied if the play reaches some position in $R$. Formally, for an infinite word $\alpha$ over $\Sigma$, we use $\text{Occ}(\alpha) :&#x3D; \lbrace\sigma\in\Sigma\mid\exists n\in\mathbb{N}.\ \alpha(n)&#x3D;\sigma\rbrace$ to denote the set of all letters occurring in $\alpha$.</p>
+<blockquote>
+<p>$\textbf{Definition 11.11. } \text{The }\textit{reachability condition }\small\text{REACH} \normalsize(R)\text{ on a set of positions }R\subseteq V\text{ is the set}$<br>$$\small\text{REACH} \normalsize(R) &#x3D; \lbrace\rho\in V^\omega\mid\text{Occ}(\rho)\cap R\neq\varnothing\rbrace\newline\newline\text{A game }\mathcal{G}&#x3D;(\mathcal{A},\text{Win})\text{ with Win}&#x3D;\small\text{REACH} \normalsize(R)\text{ is called a }\textit{reachability game}\text{ with reachability set }R$$</p>
+</blockquote>
+<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><p>$$\text{Position of Player 0: Circles;}\ \ \text{Positions of Player 1: rectangles.}$$ </p>
+<p><img src="/images/notes/uds/agv/11_2_reachability.png"></p>
+<p>$$\mathcal{G}&#x3D;(\mathcal{A},\small\text{REACH} \normalsize(R)),\ R&#x3D;\lbrace v_4,v_5\rbrace$$</p>
+<ul>
+<li>The winning region for Player 0: $W_0(\mathcal{G})&#x3D;\lbrace v_3,v_4,v_5,v_6,v_7,v_8\rbrace$<ul>
+<li>Strategy: $\sigma(v_1) &#x3D; v_2, \sigma(v_3) &#x3D; v_4, \sigma(v_7) &#x3D; v_8, \sigma(v_8) &#x3D; v_5$</li>
+</ul>
+</li>
+</ul>
+<h2 id="Attractor-Construction"><a href="#Attractor-Construction" class="headerlink" title="Attractor Construction"></a>Attractor Construction</h2><p>Reachability games can be solved with a simple fixed point construction called the <strong>attractor construction</strong>. </p>
+<p>The attractor construction computes the winning region for Player 0 iteratively by the <strong>reachability set</strong>:</p>
+<ol>
+<li><p>adds all positions owned by Player 0 that <strong>have an edge</strong> into the winning region, </p>
+</li>
+<li><p>then adds all positions owned by Player 1 where <strong>all edges</strong> lead into the winning region. (no choices) </p>
+</li>
+<li><p>Repeats until no more positions can be added.</p>
+</li>
+</ol>
+<p>In the following, we give a slightly more general definition of the attractor construction that can be applied also to Player 1. We do this in preparation for the constructions for other winning conditions, which will use the attractor construction as a subroutine.</p>
+<blockquote>
+<p>$\textbf{Construction 10.1. } \text{Let an arena }\mathcal{A} &#x3D; (V,V_0,V_1,E)\text{ be given. The }\textit{attractor construction}\text{ on}\newline\mathcal{A}\text{ is defined for each Player }i\text{, for all }n\in\mathbb{N}\text{ and }R\subseteq V\text{ as follows.}$<br>$\begin{array}{lll}<br>\hspace{1cm} \cdot \ CPre^{i}(R) &amp;&#x3D;&amp; \lbrace v\in V_i\mid\exists v’\in V.(v, v’)\in E\wedge v’\in R\rbrace\cup\ \newline<br>&amp;&amp;\lbrace v\in V_{1-i}\mid\forall v’\in V.(v, v’)\in E\rightarrow v’\in R\rbrace\newline<br>\hspace{1cm} \cdot \ Attr_{0}^{i}(R)&amp;&#x3D;&amp;R \newline<br>\hspace{1cm} \cdot \ Attr_{n+1}^{i}(R)&amp;&#x3D;&amp;Attr_{n}^{i}(R)\cup CPre^{i}(Attr_{n}^{i}(R)) \newline<br>\hspace{1cm} \cdot \ Attr^{i}(R)&amp;&#x3D;&amp;\underset{n\in\mathbb{N}}{\bigcup} Attr_{n}^{i}(R)\newline<br>\end{array}$</p>
+</blockquote>
+<h3 id="Example-1"><a href="#Example-1" class="headerlink" title="Example"></a>Example</h3><p><img src="/images/notes/uds/agv/11_2_attractor.png"></p>
+<p>In general, the attractor construction solves a game with winning condition $\small\text{REACH} \normalsize(R)$ as follows: $W_0(\mathcal{G})&#x3D;Attr^0(R), W_1(\mathcal{G})&#x3D;V\setminus W_0(\mathcal{G})$. We can furthermore give a uniform memoryless winning strategy. These results are summarized in the following theorem.</p>
+<blockquote>
+<p>$\textbf{Theorem 11.1. } \textit{Reachability games are memoryless determined. It holds that}\newline W_0(\mathcal{G})&#x3D;Attr^0(R), W_1(\mathcal{G})&#x3D;V\setminus W_0(\mathcal{G})\textit{. Both players have a uniform winning strategy.}$</p>
+</blockquote>
+<h3 id="Proof"><a href="#Proof" class="headerlink" title="Proof"></a>Proof</h3><p>We show for all positions v ∈ V that</p>
+<p>If $v\in Attr^0(R)$, then $v\in W_0(\mathcal{G})$, with the following uniform memoryless strategy $\sigma$:</p>
+<ul>
+<li><p>We fix an arbitrary total ordering on $V$ . For $v\in (Attr^0(R)\setminus R)\cap V_0$, let $n &#x3D; min\lbrace n\in\mathbb{N}\mid v\in Attr_{n}^0(R)\rbrace$. Then, let $\sigma(v)$ be the smallest $v’\in Attr_{n-1}^0(R)$ with $(v, v′)\in E$</p>
+</li>
+<li><p>For every other position $v\in V_0\setminus(Attr^0(R)\setminus R)$, let $\sigma(v)$ be the smallest $v’\in V$ with $(v, v′)\in E$</p>
+</li>
+<li><p>We show, by induction on n ∈ N, that any play that starts in $v\in Attr_{n}^0(R)$<br>and is consistent with $\sigma$ reaches $R$ within at most $n$ steps.</p>
+</li>
+</ul>
+<p>If $v\in V\setminus Attr^0(R)$, then $v\in W_1(\mathcal{G})$, with the following uniform memoryless strategy $\tau$:</p>
+<ul>
+<li><p>We again fix an arbitrary total ordering on $V$ . For $v\in V_1\setminus Attr^0(R)$ let $\tau(v)$ be the smallest $v’\in V\setminus Attr^0(R)$ such that $(v, v′)\in E$ Such a successor $v’$ always exists, because otherwise $v\in Attr^0(R)$.</p>
+</li>
+<li><p>For every other position $v\in V_1\cap Attr^0(R)$ let $\tau(v)$ be the smallest $v’\in V\setminus Attr^0(R)$ with $(v, v′)\in E$. Now let $\rho$ be an arbitrary play that is consistent with $\tau$.</p>
+</li>
+<li><p>We show, by induction on $n$, that $\rho(n)\notin Attr^0(R)$ and, hence, $\rho(n)\notin R$, for all $n\in\mathbb{N}$.</p>
+</li>
+</ul>
 <hr>
-<p>Next chapter: <a href="../agv/"></a></p>
+<p>Next chapter: <a href="../agv11-3/">Büchi Games</a></p>
 <p>Further Reading: <a href=""></a></p>
 
       
