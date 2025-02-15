@@ -144,7 +144,7 @@
     <li>
         <div class="all active" data-rel="All">All
             
-                <small>(79)</small>
+                <small>(82)</small>
             
         </div>
     </li>
@@ -246,7 +246,7 @@
         <div data-rel="Notes">
             <i class="fold iconfont icon-right"></i>
             Notes
-            <small>(45) </small>
+            <small>(48) </small>
         </div>
         
             <ul class="sub hide">
@@ -256,7 +256,7 @@
         <div data-rel="Notes&lt;---&gt;UdS">
             
             UdS
-            <small>(45) </small>
+            <small>(48) </small>
         </div>
         
     </li>
@@ -320,8 +320,8 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="79">
-<input type="hidden" id="yelog_site_word_count" value="50.9k">
+<input type="hidden" id="yelog_site_posts_number" value="82">
+<input type="hidden" id="yelog_site_word_count" value="54.9k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -483,6 +483,33 @@
            data-author="" >
             <span class="post-title" title="3-hexo Shortcut">3-hexo Shortcut</span>
             <span class="post-date" title="2024-10-01 11:11:11">2024/10/01</span>
+        </a>
+        
+        
+        <a  class="All Notes UdS "
+           href="/agv11-5/"
+           data-tag="AGV"
+           data-author="" >
+            <span class="post-title" title="AGV 11.5 -- Muller Games">AGV 11.5 -- Muller Games</span>
+            <span class="post-date" title="2025-02-13 18:01:42">2025/02/13</span>
+        </a>
+        
+        
+        <a  class="All Notes UdS "
+           href="/agv11-4/"
+           data-tag="AGV"
+           data-author="" >
+            <span class="post-title" title="AGV 11.4 -- Parity Games">AGV 11.4 -- Parity Games</span>
+            <span class="post-date" title="2025-02-13 10:24:29">2025/02/13</span>
+        </a>
+        
+        
+        <a  class="All Notes UdS "
+           href="/agv11-3/"
+           data-tag="AGV"
+           data-author="" >
+            <span class="post-title" title="AGV 11.3 -- Büchi Games">AGV 11.3 -- Büchi Games</span>
+            <span class="post-date" title="2025-02-13 00:27:50">2025/02/13</span>
         </a>
         
         
@@ -1225,7 +1252,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-12-17 05:32:38'>2024-12-17 04:02</time>
+            Created At : <time class="date" title='Updated At: 2025-02-13 00:53:16'>2024-12-17 04:02</time>
         
     </div>
     <div class="article-meta">
@@ -1282,7 +1309,7 @@
 </blockquote>
 <p>This is an example exercise to express LTL formula into Alternating Büchi Automata. For further definitions, you may check <a href="../agv7-2/">Section 7.2</a>.</p>
 <h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>Use the <a href="../agv7-2/">construction from the lecture</a> to construct an alternating Büchi automaton $\mathcal{A}$ such that $$\mathcal{L(A)&#x3D;L}((\Diamond p)\ \mathcal{U}\ (\square q))$$</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>we build the following alternating Büchi automaton  $\mathcal{A} &#x3D; (2^{p,q},Q,\varphi,\delta,\small\text{BÜCHI} \normalsize (F))$ which recognizes the models of $\varphi&#x3D;(\Diamond p)\ \mathcal{U}\ (\square q)$. First we consider the transition function $\delta$ for an arbitrary symbol $a\in2^{p,q}:$</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>we build the following alternating Büchi automaton  $\mathcal{A} &#x3D; (2^{p,q},Q,\varphi,\delta,\small\text{BÜCHI} \normalsize(F))$ which recognizes the models of $\varphi&#x3D;(\Diamond p)\ \mathcal{U}\ (\square q)$. First we consider the transition function $\delta$ for an arbitrary symbol $a\in2^{p,q}:$</p>
 <p>$\begin{array}{lll}<br>\hspace{1cm}\bullet &amp;&amp;\delta(\square q,a)\newline<br>&amp;&#x3D;&amp;\delta(\neg(\textit{true}\ \mathcal{U}\ \neg q) ,a)\newline<br>&amp;&#x3D;&amp;\overline{\delta(\textit{true}\ \mathcal{U}\ \neg q ,a)}\newline<br>&amp;&#x3D;&amp;\overline{\delta(\neg q,a)\vee(\delta(\textit{true},a)\wedge(\textit{true}\ \mathcal{U}\ \neg q))}\newline<br>&amp;&#x3D;&amp;\overline{\delta(\neg q,a)}\wedge\overline{(\delta(\textit{true},a)\wedge (\textit{true}\ \mathcal{U}\ \neg q))}&amp;(\textit{true}\wedge \psi&#x3D;\psi)\newline<br>&amp;&#x3D;&amp;\overline{\delta(\neg q,a)}\wedge\overline{(\textit{true}\ \mathcal{U}\ \neg q)}&amp;(\text{Using line 1})\newline<br>&amp;&#x3D;&amp;\overline{\delta(\neg q,a)}\wedge\square q\newline<br>&amp;&#x3D;&amp;\left\lbrace \begin{array}{lll}<br>\square q&amp;\text{if }q\in a\newline<br>\textit{false}&amp;\text{if }q\notin a\newline<br>\end{array}\right.<br>\end{array}<br>\ \newline \ \newline<br>\begin{array}{lll}<br>\hspace{1cm}\bullet &amp;&amp;\delta(\Diamond p,a)\newline<br>&amp;&#x3D;&amp;\delta(\textit{true}\ \mathcal{U}\ p ,a)\newline<br>&amp;&#x3D;&amp;\delta(p,a)\vee(\delta(\textit{true},a)\wedge\Diamond p)&amp;(\textit{true}\wedge \psi&#x3D;\psi)\newline<br>&amp;&#x3D;&amp;\delta(p,a)\vee\Diamond p\newline<br>&amp;&#x3D;&amp;\left\lbrace \begin{array}{lll}<br>\Diamond p&amp;\text{if }p\notin a\newline<br>\textit{true}&amp;\text{if }p\in a\newline<br>\end{array}\right.<br>\end{array}<br>$</p>
 <p>By Substitution above result into $\delta((\Diamond p)\ \mathcal{U}\ (\square q),a)&#x3D;\delta(\square q,a)\vee(\delta(\Diamond p,a)\wedge(\Diamond p)\ \mathcal{U}\ (\square q))$, we have:</p>
 <p>$$\delta((\Diamond p)\ \mathcal{U}\ (\square q),a)&#x3D;\left\lbrace<br>\begin{array}{lll}<br>\Diamond p\wedge((\Diamond p)\ \mathcal{U}\ (\square q))&amp;\text{if }a &#x3D;\varnothing &amp;(\vee\ \textit{false}\text{ is omitted.})\newline<br>(\Diamond p)\ \mathcal{U}\ (\square q)&amp;\text{if }a &#x3D;\lbrace p\rbrace&amp;(\wedge\ \textit{true}\text{ is omitted.})\newline<br>\square q\vee(\Diamond p\wedge((\Diamond p)\ \mathcal{U}\ (\square q)))&amp;\text{if }a &#x3D;\lbrace q\rbrace\newline<br>\square q\vee((\Diamond p)\ \mathcal{U}\ (\square q))&amp;\text{if }a &#x3D;\lbrace p,q\rbrace&amp;(\wedge\ \textit{true}\text{ is omitted.})\newline<br>\end{array}\right.$$</p>

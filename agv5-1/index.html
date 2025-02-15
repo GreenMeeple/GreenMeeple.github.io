@@ -144,7 +144,7 @@
     <li>
         <div class="all active" data-rel="All">All
             
-                <small>(79)</small>
+                <small>(82)</small>
             
         </div>
     </li>
@@ -246,7 +246,7 @@
         <div data-rel="Notes">
             <i class="fold iconfont icon-right"></i>
             Notes
-            <small>(45) </small>
+            <small>(48) </small>
         </div>
         
             <ul class="sub hide">
@@ -256,7 +256,7 @@
         <div data-rel="Notes&lt;---&gt;UdS">
             
             UdS
-            <small>(45) </small>
+            <small>(48) </small>
         </div>
         
     </li>
@@ -320,8 +320,8 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="79">
-<input type="hidden" id="yelog_site_word_count" value="50.9k">
+<input type="hidden" id="yelog_site_posts_number" value="82">
+<input type="hidden" id="yelog_site_word_count" value="54.9k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -483,6 +483,33 @@
            data-author="" >
             <span class="post-title" title="3-hexo Shortcut">3-hexo Shortcut</span>
             <span class="post-date" title="2024-10-01 11:11:11">2024/10/01</span>
+        </a>
+        
+        
+        <a  class="All Notes UdS "
+           href="/agv11-5/"
+           data-tag="AGV"
+           data-author="" >
+            <span class="post-title" title="AGV 11.5 -- Muller Games">AGV 11.5 -- Muller Games</span>
+            <span class="post-date" title="2025-02-13 18:01:42">2025/02/13</span>
+        </a>
+        
+        
+        <a  class="All Notes UdS "
+           href="/agv11-4/"
+           data-tag="AGV"
+           data-author="" >
+            <span class="post-title" title="AGV 11.4 -- Parity Games">AGV 11.4 -- Parity Games</span>
+            <span class="post-date" title="2025-02-13 10:24:29">2025/02/13</span>
+        </a>
+        
+        
+        <a  class="All Notes UdS "
+           href="/agv11-3/"
+           data-tag="AGV"
+           data-author="" >
+            <span class="post-title" title="AGV 11.3 -- Büchi Games">AGV 11.3 -- Büchi Games</span>
+            <span class="post-date" title="2025-02-13 00:27:50">2025/02/13</span>
         </a>
         
         
@@ -1225,7 +1252,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-12-28 00:48:19'>2024-11-20 16:44</time>
+            Created At : <time class="date" title='Updated At: 2025-02-13 00:53:16'>2024-11-20 16:44</time>
         
     </div>
     <div class="article-meta">
@@ -1284,7 +1311,7 @@
 <h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><p>Consider the following nondeterministic Büchi automaton $\mathcal{A}$. Its language consists of all infinite words over $\lbrace a,b\rbrace$ with infinitely many <em>b</em>s, i.e., $(a^*b)^\omega$:</p>
 <p><img src="/../images/notes/uds/agv/5_1_eg.png"></p>
 <blockquote>
-<p>$\textbf{Definition 5.1. }\text{Let }\mathcal{A}&#x3D;(\Sigma,Q,I,T,\small\text{BÜCHI} \normalsize (F))\text{ be a Büchi automaton. The run DAG of }\mathcal{A}\newline\text{on a word }\alpha\in\Sigma^\omega\text{ is the directed acylic graph }G&#x3D;(V,E)\text{, where}$<br>$\begin{array}{lll}<br>\hspace{1cm} \cdot \ V&amp;&#x3D;&amp;\cup_{i\geq0}(Q_i\times\lbrace i\rbrace)\text{ with }Q_0&#x3D;I\text{ and}\newline<br>\hspace{1.1cm} \ Q_{i+1}&amp;&#x3D;&amp;\lbrace q’\mid(q,\alpha(i),q’)\in T\text{ for some }q\in Q\rbrace\newline<br>\hspace{1cm} \cdot \ E&amp;&#x3D;&amp;\lbrace((q,i),(q’,i+1))\mid i\geq 0,(q,\alpha(i),q’)\in T\rbrace.\end{array}$<br>$\text{For a natural number }i\text{, we refer to the set }Q_i\text{ as the }\textit{level }i\text{ of the DAG.}$</p>
+<p>$\textbf{Definition 5.1. }\text{Let }\mathcal{A}&#x3D;(\Sigma,Q,I,T,\small\text{BÜCHI} \normalsize(F))\text{ be a Büchi automaton. The run DAG of }\mathcal{A}\newline\text{on a word }\alpha\in\Sigma^\omega\text{ is the directed acylic graph }G&#x3D;(V,E)\text{, where}$<br>$\begin{array}{lll}<br>\hspace{1cm} \cdot \ V&amp;&#x3D;&amp;\cup_{i\geq0}(Q_i\times\lbrace i\rbrace)\text{ with }Q_0&#x3D;I\text{ and}\newline<br>\hspace{1.1cm} \ Q_{i+1}&amp;&#x3D;&amp;\lbrace q’\mid(q,\alpha(i),q’)\in T\text{ for some }q\in Q\rbrace\newline<br>\hspace{1cm} \cdot \ E&amp;&#x3D;&amp;\lbrace((q,i),(q’,i+1))\mid i\geq 0,(q,\alpha(i),q’)\in T\rbrace.\end{array}$<br>$\text{For a natural number }i\text{, we refer to the set }Q_i\text{ as the }\textit{level }i\text{ of the DAG.}$</p>
 </blockquote>
 <p>Using <strong>infinite directed acyclic graph (DAG)</strong> to represent the set of all runs on a particular word, e.g., $ababa^\omega$.</p>
 <p><img src="/../images/notes/uds/agv/5_1_g1.png"></p>

@@ -144,7 +144,7 @@
     <li>
         <div class="all active" data-rel="All">All
             
-                <small>(79)</small>
+                <small>(82)</small>
             
         </div>
     </li>
@@ -246,7 +246,7 @@
         <div data-rel="Notes">
             <i class="fold iconfont icon-right"></i>
             Notes
-            <small>(45) </small>
+            <small>(48) </small>
         </div>
         
             <ul class="sub hide">
@@ -256,7 +256,7 @@
         <div data-rel="Notes&lt;---&gt;UdS">
             
             UdS
-            <small>(45) </small>
+            <small>(48) </small>
         </div>
         
     </li>
@@ -320,8 +320,8 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="79">
-<input type="hidden" id="yelog_site_word_count" value="50.9k">
+<input type="hidden" id="yelog_site_posts_number" value="82">
+<input type="hidden" id="yelog_site_word_count" value="54.9k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -483,6 +483,33 @@
            data-author="" >
             <span class="post-title" title="3-hexo Shortcut">3-hexo Shortcut</span>
             <span class="post-date" title="2024-10-01 11:11:11">2024/10/01</span>
+        </a>
+        
+        
+        <a  class="All Notes UdS "
+           href="/agv11-5/"
+           data-tag="AGV"
+           data-author="" >
+            <span class="post-title" title="AGV 11.5 -- Muller Games">AGV 11.5 -- Muller Games</span>
+            <span class="post-date" title="2025-02-13 18:01:42">2025/02/13</span>
+        </a>
+        
+        
+        <a  class="All Notes UdS "
+           href="/agv11-4/"
+           data-tag="AGV"
+           data-author="" >
+            <span class="post-title" title="AGV 11.4 -- Parity Games">AGV 11.4 -- Parity Games</span>
+            <span class="post-date" title="2025-02-13 10:24:29">2025/02/13</span>
+        </a>
+        
+        
+        <a  class="All Notes UdS "
+           href="/agv11-3/"
+           data-tag="AGV"
+           data-author="" >
+            <span class="post-title" title="AGV 11.3 -- Büchi Games">AGV 11.3 -- Büchi Games</span>
+            <span class="post-date" title="2025-02-13 00:27:50">2025/02/13</span>
         </a>
         
         
@@ -1225,7 +1252,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-12-30 19:02:33'>2024-12-10 03:56</time>
+            Created At : <time class="date" title='Updated At: 2025-02-13 00:53:16'>2024-12-10 03:56</time>
         
     </div>
     <div class="article-meta">
@@ -1294,12 +1321,12 @@
 <p>In the example from <a href="../agv9-2/">last section</a>, states $q_0$, $q_1$ and $q_2$ are live; states $q_3$, $q_4$, and $q_5$ are only $0$-$\textit{live}$ (you cannot visit other accepting states starting from $q_3$ even though it is an accepting state).</p>
 <p>To describe the algorithm, we first introduce a construction that implements a backward breadth-first search as a least fixpoint. The construction computes all states from which a given set of states is reachable.</p>
 <blockquote>
-<p>$\textbf{Construction 9.1. } \text{For a Büchi Automaton }\mathcal{A} &#x3D; (\Sigma,Q,I,T,\small\text{BÜCHI} \normalsize (F))\text{ and a set of states}\newline R\subseteq Q\text{, we compute the set of backwards reachable states from }R\text{ as follows:}$</p>
+<p>$\textbf{Construction 9.1. } \text{For a Büchi Automaton }\mathcal{A} &#x3D; (\Sigma,Q,I,T,\small\text{BÜCHI} \normalsize(F))\text{ and a set of states}\newline R\subseteq Q\text{, we compute the set of backwards reachable states from }R\text{ as follows:}$</p>
 <p>$\begin{array}{llll}<br>\hspace{1cm} \cdot &amp; \textit{Pre}(R)&amp;&#x3D;&amp;\lbrace q\in Q\mid \exists q’\in R,\sigma\in\Sigma,(q,\sigma,q’)\in T\rbrace\newline<br>\hspace{1cm} \cdot &amp; \textit{BackwardReach}_0(R)&amp;&#x3D;&amp;R\newline<br>\hspace{1cm} \cdot &amp; \textit{BackwardReach}_{n+1}(R)&amp;&#x3D;&amp;\textit{BackwardReach}_{n}(R)\cup\textit{Pre}(\textit{BackwardReach}_{n}(R))\newline<br>\hspace{1cm} \cdot &amp; \textit{BackwardReach}(R)&amp;&#x3D;&amp;\underset{n\in\mathbb{N}}{\bigcup}\textit{BackwardReach}_{n}(R)\newline<br>\end{array}$</p>
 </blockquote>
 <p>By this construction, it returns a set of states that can reach some states in $R$. For example, $\lbrace q_0,q_1,q_2\rbrace$ can reach $q_3$. Using this construction as a subroutine, we can compute the live states as a greatest fixpoint:</p>
 <blockquote>
-<p>$\textbf{Construction 9.2. } \text{For a Büchi Automaton }\mathcal{A} &#x3D; (\Sigma,Q,I,T,\small\text{BÜCHI} \normalsize (F))\text{ we compute the set}\newline\text{of live states as follows:}$</p>
+<p>$\textbf{Construction 9.2. } \text{For a Büchi Automaton }\mathcal{A} &#x3D; (\Sigma,Q,I,T,\small\text{BÜCHI} \normalsize(F))\text{ we compute the set}\newline\text{of live states as follows:}$</p>
 <p>$\begin{array}{llll}<br>\hspace{1cm} \cdot &amp; \textit{live}_0&amp;&#x3D;&amp;Q\newline<br>\hspace{1cm} \cdot &amp; \textit{live}_{n+1}&amp;&#x3D;&amp;\textit{BackwardReach}(\textit{Pre}(\textit{live}_n\cap F))\newline<br>\hspace{1cm} \cdot &amp; \textit{live}&amp;&#x3D;&amp;\underset{n\in\mathbb{N}}{\bigcap}\textit{live}_{n}\newline<br>\end{array}$</p>
 </blockquote>
 <p>The set of $\textit{live}$ is the smallest subset of all $\textit{live}_n$ in any $n\in\mathbb{N}$. Therefore the function will stop when $\mathit{live}_k$ such that $\mathit{live}_k&#x3D;\mathit{live}_{k+1}$, which is the greatest fixpoint of the set of <code>live</code> states.</p>

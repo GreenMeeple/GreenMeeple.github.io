@@ -144,7 +144,7 @@
     <li>
         <div class="all active" data-rel="All">All
             
-                <small>(79)</small>
+                <small>(82)</small>
             
         </div>
     </li>
@@ -246,7 +246,7 @@
         <div data-rel="Notes">
             <i class="fold iconfont icon-right"></i>
             Notes
-            <small>(45) </small>
+            <small>(48) </small>
         </div>
         
             <ul class="sub hide">
@@ -256,7 +256,7 @@
         <div data-rel="Notes&lt;---&gt;UdS">
             
             UdS
-            <small>(45) </small>
+            <small>(48) </small>
         </div>
         
     </li>
@@ -320,8 +320,8 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="79">
-<input type="hidden" id="yelog_site_word_count" value="50.9k">
+<input type="hidden" id="yelog_site_posts_number" value="82">
+<input type="hidden" id="yelog_site_word_count" value="54.9k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -483,6 +483,33 @@
            data-author="" >
             <span class="post-title" title="3-hexo Shortcut">3-hexo Shortcut</span>
             <span class="post-date" title="2024-10-01 11:11:11">2024/10/01</span>
+        </a>
+        
+        
+        <a  class="All Notes UdS "
+           href="/agv11-5/"
+           data-tag="AGV"
+           data-author="" >
+            <span class="post-title" title="AGV 11.5 -- Muller Games">AGV 11.5 -- Muller Games</span>
+            <span class="post-date" title="2025-02-13 18:01:42">2025/02/13</span>
+        </a>
+        
+        
+        <a  class="All Notes UdS "
+           href="/agv11-4/"
+           data-tag="AGV"
+           data-author="" >
+            <span class="post-title" title="AGV 11.4 -- Parity Games">AGV 11.4 -- Parity Games</span>
+            <span class="post-date" title="2025-02-13 10:24:29">2025/02/13</span>
+        </a>
+        
+        
+        <a  class="All Notes UdS "
+           href="/agv11-3/"
+           data-tag="AGV"
+           data-author="" >
+            <span class="post-title" title="AGV 11.3 -- Büchi Games">AGV 11.3 -- Büchi Games</span>
+            <span class="post-date" title="2025-02-13 00:27:50">2025/02/13</span>
         </a>
         
         
@@ -1225,7 +1252,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-12-28 00:48:16'>2024-11-12 05:56</time>
+            Created At : <time class="date" title='Updated At: 2025-02-13 00:53:16'>2024-11-12 05:56</time>
         
     </div>
     <div class="article-meta">
@@ -1285,17 +1312,17 @@
 <h3 id="Infinite-word"><a href="#Infinite-word" class="headerlink" title="Infinite word"></a>Infinite word</h3><p>For an infinite word $\alpha$ over $\Sigma$, an <strong>Infinity Set</strong> of $\alpha$ is denoted as:<br>$$\text{Inf}(\alpha) &#x3D; \lbrace\sigma\in\Sigma\mid\forall m\in\mathbb{N}.\exists n\in\mathbb{N}.n\geq m \text{ and } \alpha(n)&#x3D;\sigma\rbrace$$</p>
 <p>Meaning that $\text{Inf}(\alpha)$ is a set of all letters $\sigma$ from the alphabet $\Sigma$, so that<br>for all $m$, you can always find $\sigma$ as the n-th letter of $\alpha$ when there exists an $n$ where $n\geq m$.</p>
 <p>This denotes the set of all letters of $\Sigma$ that occur <strong>infinitely often</strong> in $\alpha$.</p>
-<h3 id="Buchi-Condition"><a href="#Buchi-Condition" class="headerlink" title="Büchi Condition"></a>Büchi Condition</h3><p>To express the meaning of “some state from the set of <em>accepting states</em> is reached <strong>infinitely often</strong>“, we can rewrite our accpeing condition $Acc$ into Büchi Condition $\small\text{BÜCHI} \normalsize (F)$. Here, $\small\text{BÜCHI} \normalsize (F)$ is a set of <em>infinite word</em>:</p>
+<h3 id="Buchi-Condition"><a href="#Buchi-Condition" class="headerlink" title="Büchi Condition"></a>Büchi Condition</h3><p>To express the meaning of “some state from the set of <em>accepting states</em> is reached <strong>infinitely often</strong>“, we can rewrite our accpeing condition $Acc$ into Büchi Condition $\small\text{BÜCHI} \normalsize(F)$. Here, $\small\text{BÜCHI} \normalsize(F)$ is a set of <em>infinite word</em>:</p>
 <blockquote>
-<p>$\textbf{Definition 2.4. } \text{ The } \textit{Büchi Condition } \small\text{BÜCHI} \normalsize (F)\text{ on a set of states }F\subseteq Q\text{ is the set}$</p>
-<p>$$\small\text{BÜCHI} \normalsize (F) &#x3D; \lbrace\alpha\in Q^\omega \mid \text{Inf}(\alpha) \cap F \neq \varnothing\rbrace$$</p>
-<p>$\text{An automaton }\mathcal{A}&#x3D;(\Sigma,Q,I,T,Acc)\text{ with }Acc&#x3D;\small\text{BÜCHI} \normalsize (F)\text{ is called a }\textit{Büchi automaton.}\newline \text{The set }F\text{ is called the }\textit{set of accepting states.}$</p>
+<p>$\textbf{Definition 2.4. } \text{ The } \textit{Büchi Condition } \small\text{BÜCHI} \normalsize(F)\text{ on a set of states }F\subseteq Q\text{ is the set}$</p>
+<p>$$\small\text{BÜCHI} \normalsize(F) &#x3D; \lbrace\alpha\in Q^\omega \mid \text{Inf}(\alpha) \cap F \neq \varnothing\rbrace$$</p>
+<p>$\text{An automaton }\mathcal{A}&#x3D;(\Sigma,Q,I,T,Acc)\text{ with }Acc&#x3D;\small\text{BÜCHI} \normalsize(F)\text{ is called a }\textit{Büchi automaton.}\newline \text{The set }F\text{ is called the }\textit{set of accepting states.}$</p>
 </blockquote>
 <h2 id="Constrcution-of-Complete-Buchi-Automaton"><a href="#Constrcution-of-Complete-Buchi-Automaton" class="headerlink" title="Constrcution of Complete Büchi Automaton"></a>Constrcution of Complete Büchi Automaton</h2><blockquote>
 <p>$\textbf{Theorem 2.1. } \textit{For every Büchi Automaton }\mathcal{A},\text{ there is a complete Büchi Automaton }\mathcal{A}’ \newline \textit{such that }\mathcal{L}(\mathcal{A}) &#x3D; \mathcal{L}(\mathcal{A}’)$</p>
 </blockquote>
 <h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><p>Let $\mathcal{A}$ be the automaton from <a href="../agv2-2/#eg1">Example 2.1</a> with Büchi acceptance condition $\small\text{BÜCHI}\normalsize (\lbrace D\rbrace)$. The language of the automaton consists of a single word:<br>$$\mathcal{L}(\mathcal{A})&#x3D;\lbrace aabbaabbaabb\dots\rbrace$$</p>
-<p>For a Büchi Automaton $\mathcal{A} &#x3D; (\Sigma,Q,I,T,\small\text{BÜCHI} \normalsize (F))$,<br>we define the <strong>complete</strong> Büchi Automaton $\mathcal{A’} &#x3D; (\Sigma,Q’,I’,T’,\small\text{BÜCHI} \normalsize (F’))$ using:</p>
+<p>For a Büchi Automaton $\mathcal{A} &#x3D; (\Sigma,Q,I,T,\small\text{BÜCHI} \normalsize(F))$,<br>we define the <strong>complete</strong> Büchi Automaton $\mathcal{A’} &#x3D; (\Sigma,Q’,I’,T’,\small\text{BÜCHI} \normalsize (F’))$ using:</p>
 <ul>
 <li>$Q’$ &#x3D; $Q \cup \lbrace q_f\rbrace$ where $q_f$ is a fresh state</li>
 <li>$I’$ &#x3D; $I$</li>
