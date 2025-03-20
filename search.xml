@@ -1848,11 +1848,36 @@
     
     
     <entry>
+      <title>Leetcode Walkthrough (Portal 🚪)</title>
+      <link href="/LeetCode/index/"/>
+      <url>/LeetCode/index/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>This is a portal for my walkthroughs of Leetcode Questions</p></blockquote><h2 id="SQL-50"><a href="#SQL-50" class="headerlink" title="SQL 50"></a><a href="../sql50/">SQL 50</a></h2><p><a href="https://leetcode.com/studyplan/top-sql-50/">Question List on Leetcode</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SQL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Leetcode SQL 50 (Portal 🚪)</title>
       <link href="/LeetCode/sql50/"/>
       <url>/LeetCode/sql50/</url>
       
-        <content type="html"><![CDATA[<blockquote><p>This is a portal for my walkthroughs of SQL 50 on Leetcode</p></blockquote><p><a href="https://leetcode.com/studyplan/top-sql-50/">Link of Leetcode SQL 50</a></p><h2 id="Select"><a href="#Select" class="headerlink" title="Select"></a>Select</h2><ul><li><a href="../sql50-1757/">1757. Recyclable and Low Fat Products</a></li><li><a href="../sql50-584/">584. Find Customer Referee</a></li><li><a href="../sql50-595/">595. Big Countries</a></li><li><a href="../sql50-1148/">1148. Article Views I</a></li><li><a href="../sql50-1683/">1683. Invalid Tweets</a></li></ul><h2 id="Basic-Joins"><a href="#Basic-Joins" class="headerlink" title="Basic Joins"></a>Basic Joins</h2><ul><li><a href="../sql50-1378/">1378. Replace Employee ID With The Unique Identifier</a></li><li><a href="../sql50-1068/">1068. Product Sales Analysis I</a></li><li><a href="../sql50-1581/">1581. Customer Who Visited but Did Not Make Any Transactions</a></li><li><a href="../sql50-197/">197. Rising Temperature</a></li><li><a href="../sql50-1683/"></a></li></ul><h2 id="Basic-Aggregate-Functions"><a href="#Basic-Aggregate-Functions" class="headerlink" title="Basic Aggregate Functions"></a>Basic Aggregate Functions</h2><ul><li><a href="../sql50-1683/"></a></li></ul><h2 id="Sorting-and-Grouping"><a href="#Sorting-and-Grouping" class="headerlink" title="Sorting and Grouping"></a>Sorting and Grouping</h2><ul><li><a href="../sql50-1683/"></a></li></ul><h2 id="Advanced-Select-and-Joins"><a href="#Advanced-Select-and-Joins" class="headerlink" title="Advanced Select and Joins"></a>Advanced Select and Joins</h2><ul><li><a href="../sql50-1683/"></a></li></ul><h2 id="Subqueries"><a href="#Subqueries" class="headerlink" title="Subqueries"></a>Subqueries</h2><ul><li><a href="../sql50-1683/"></a></li></ul><h2 id="Advanced-String-Functions-Regex-Clause"><a href="#Advanced-String-Functions-Regex-Clause" class="headerlink" title="Advanced String Functions &#x2F; Regex &#x2F; Clause"></a>Advanced String Functions &#x2F; Regex &#x2F; Clause</h2><ul><li><a href="../sql50-1667/">1667. Fix Names in a Table</a></li><li><a href="../sql50-1683/">1527. Patients With a Condition</a></li><li><a href="../sql50-196/">196. Delete Duplicate Emails</a></li><li><a href="../sql50-176/">176. Second Highest Salary</a></li><li><a href="../sql50-1484/">1484. Group Sold Products By The Date</a></li><li><a href="../sql50-1327/">1327. List the Products Ordered in a Period</a></li><li><a href="../sql50-1517/">1517. Find Users With Valid E-Mails</a></li></ul>]]></content>
+        <content type="html"><![CDATA[<blockquote><p>This is a portal for my walkthroughs of SQL 50 on Leetcode</p></blockquote><p><a href="https://leetcode.com/studyplan/top-sql-50/">Link of Leetcode SQL 50</a></p><table><thead><tr><th align="left">Select</th></tr></thead><tbody><tr><td align="left"><a href="../sql50-1757/">1757. Recyclable and Low Fat Products</a></td></tr><tr><td align="left"><a href="../sql50-584/">584. Find Customer Referee</a></td></tr><tr><td align="left"><a href="../sql50-595/">595. Big Countries</a></td></tr><tr><td align="left"><a href="../sql50-1148/">1148. Article Views I</a></td></tr><tr><td align="left"><a href="../sql50-1683/">1683. Invalid Tweets</a></td></tr></tbody></table><table><thead><tr><th align="left">Basic Joins</th></tr></thead><tbody><tr><td align="left"><a href="../sql50-1378/">1378. Replace Employee ID With The Unique Identifier</a></td></tr><tr><td align="left"><a href="../sql50-1068/">1068. Product Sales Analysis I</a></td></tr><tr><td align="left"><a href="../sql50-1581/">1581. Customer Who Visited but Did Not Make Any Transactions</a></td></tr><tr><td align="left"><a href="../sql50-197/">197. Rising Temperature</a></td></tr></tbody></table><table><thead><tr><th align="left">Advanced String Functions &#x2F; Regex &#x2F; Clause</th></tr></thead><tbody><tr><td align="left"><a href="../sql50-1667/">1667. Fix Names in a Table</a></td></tr><tr><td align="left"><a href="../sql50-1683/">1527. Patients With a Condition</a></td></tr><tr><td align="left"><a href="../sql50-196/">196. Delete Duplicate Emails</a></td></tr><tr><td align="left"><a href="../sql50-176/">176. Second Highest Salary</a></td></tr><tr><td align="left"><a href="../sql50-1484/">1484. Group Sold Products By The Date</a></td></tr><tr><td align="left"><a href="../sql50-1327/">1327. List the Products Ordered in a Period</a></td></tr><tr><td align="left"><a href="../sql50-1517/">1517. Find Users With Valid E-Mails</a></td></tr></tbody></table>]]></content>
       
       
       <categories>
