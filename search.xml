@@ -4,6 +4,64 @@
   
     
     <entry>
+      <title>MensaarLecker Development Walkthrough</title>
+      <link href="/mensaar-walkthrough/"/>
+      <url>/mensaar-walkthrough/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>Repository: <a href="https://github.com/greenmeeple/MensaarLecker">MensaarLecker</a></p></blockquote><h2 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h2><p>Me and my friends <del>hate</del><strong>love</strong> the UdS Mensa so much! The infinite frozen food and french fries menus give us so much energy and motivation for the 5-hour afternoon coding marathon. However, no one actually knows how many potatoes they have exterminated throughout the week. We have a genius webpage created by some <a href="https://gibtesheuteschnitzel.de/">Schnitzel lover</a>. Personally, I like its minimalistic layout and determination on Schnitzel searching. </p><blockquote><p>However, we want more.</p></blockquote><p>It’s not just Schnitzel; we want to know everything about their menu. We want to know what’s inside the mensa ladies’ brains when they design next week’s menu.</p><blockquote><p>The desire never ends. We need more data, more details, more, More, <strong>MORE!</strong></p></blockquote><h2 id="Developing-Process"><a href="#Developing-Process" class="headerlink" title="Developing Process"></a>Developing Process</h2><h3 id="Beautiful-Soup"><a href="#Beautiful-Soup" class="headerlink" title="Beautiful Soup"></a><a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">Beautiful Soup</a></h3><p>I started my journey with Beautiful Soup, one of the most popular Python web scraper packages. However, as a Uni that is well-known for its computer science program, all the menus are rendered using JavaScript. And beautiful can only scrape HTML and XML tags. So the scraper can only see an empty skeleton page:</p><p><img src="/images/projects/mensaar_empty.png"></p><h3 id="Selenium"><a href="#Selenium" class="headerlink" title="Selenium"></a><a href="https://selenium-python.readthedocs.io/">Selenium</a></h3><p>Basically, Selenium is a <a href="https://www.selenium.dev/documentation/webdriver/">Webdriver</a> that opens a browser naturally, like a human user. Then from there we can scrape the rendered information. Things get simpler once we can see the website as we see it on the browser. We just need to find the tag that contains the information we need and save it for storage.</p><h3 id="Scraping"><a href="#Scraping" class="headerlink" title="Scraping"></a>Scraping</h3><table><thead><tr><th align="left">data we need</th><th align="left">tag</th></tr></thead><tbody><tr><td align="left">menus</td><td align="left"><code>&lt;div class=&quot;counter&quot;&gt;</code></td></tr><tr><td align="left">date</td><td align="left"><code>&lt;div class=&quot;cursor-pointer active list-group-item&quot;&gt;</code></td></tr><tr><td align="left">main dish</td><td align="left"><code>&lt;span class=&quot;meal-title&quot;&gt;</code></td></tr><tr><td align="left">side dish</td><td align="left"><code>&lt;div class=&quot;component&quot;&gt;</code></td></tr></tbody></table><p>The first part of the task is to get the daily menu. We also get the date on the website to make the following work easier.</p><p>By the <code>find_element</code> and <code>find_elements</code> functions in Selenium, we can create a simple scraper like this:</p><pre><code class="python">from selenium import webdriverfrom selenium.webdriver.common.keys import Keysfrom selenium.webdriver.common.by import Bydriver = webdriver.Firefox()driver.get(&quot;https://mensaar.de/#/menu/sb&quot;)counters = driver.find_elements(By.CLASS_NAME, &quot;counter&quot;)for counter in counters:    meal_title = meal.find_element(By.CLASS_NAME, &quot;meal-title&quot;).text.strip()</code></pre><p>However, on the webpage there is also a counter called <code>Wahlessen.</code> Which refers to a more pricy and unpredictable menu, and we want to exclude its data:</p><pre><code class="python">counter_title = counter.find_element(By.CLASS_NAME, &quot;counter-title&quot;).text.strip()# Filter for specified counter titlesif counter_title in [&quot;Menü 1&quot;, &quot;Menü 2&quot;, &quot;Mensacafé&quot;]:    meal_title = meal.find_element(By.CLASS_NAME, &quot;meal-title&quot;).text.strip()</code></pre><!-- ### StorageIt is kinda pointless to make a full database for these small piece of data *(I may take my word back in the future)*, so we just store the collected data in Json files.Therefore, everyday we will have a separate Json file. We create a separate Json file for statistics, it is calculated simply by adding current date's data into the file, so it will accumlate each data entry.```pythonwith open(output_file, "w", encoding="utf-8") as f:    json.dump(result, f, ensure_ascii=False, indent=2)print(f"Results saved to {output_file}")# Save the updated occurrence counts to the JSON filecount_result = {    "meal_counts": dict(meal_count),    "component_counts": dict(component_count)}with open(count_file, "w", encoding="utf-8") as f:    json.dump(count_result, f, ensure_ascii=False, indent=2)print(f"Counts saved to {count_file}")```### Automation with [GitHub Workflow](https://docs.github.com/en/actions/writing-workflows) -->]]></content>
+      
+      
+      <categories>
+          
+          <category> Projects </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+            <tag> Scraper </tag>
+            
+            <tag> Selenium </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>🍽 🥨 MensaarLecker -- A beloved tool to find out Mensa Ladies&#39; favourite menu using Selenium🥨 🍽</title>
+      <link href="/mensaar/"/>
+      <url>/mensaar/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>Repository: <a href="https://github.com/greenmeeple/MensaarLecker">MensaarLecker</a></p></blockquote><p>As an <a href="https://www.uni-saarland.de/start.html">UdS</a> Student,<br>Are you tired of seeing french fries🍟 3 times a week, or wondering when I can have the best pizza 🍕 in the Mensacafe?<br>MensaarLecker aims to collect all the data from Menu 1, 2, and Mensacafe to trace your favourite, or Mensa Ladies’, favourite menu!</p><hr><h2 id="🥗-Description"><a href="#🥗-Description" class="headerlink" title="🥗 Description"></a>🥗 Description</h2><p>A fully automated scraper and static website for the Saarbrücken Mensa, powered by Python, Selenium, Google Sheets, and GitHub Actions.</p><blockquote><p>Get a clean and daily-updated overview of meals from <a href="https://mensaar.de/">mensaar.de</a>, with searchable history, meal components, and frequency stats.</p></blockquote><hr><h2 id="🌐-Live-Demo"><a href="#🌐-Live-Demo" class="headerlink" title="🌐 Live Demo"></a>🌐 Live Demo</h2><p>👉 <a href="https://your-username.github.io/MensaarLecker">View Website</a><br>👉 <a href="https://docs.google.com/spreadsheets/d/your-sheet-id-here">View Data in Google Sheets</a></p><hr><h2 id="📅-Features"><a href="#📅-Features" class="headerlink" title="📅 Features"></a>📅 Features</h2><ul><li>✅ Scrapes the Saarbrücken Mensa daily menu</li><li>✅ Publishes structured data to a connected Google Sheet</li><li>✅ Generates static HTML pages:<ul><li><strong><code>index.html</code></strong> – Today’s menu with meal frequency counts</li><li><strong><code>menu.html</code></strong> – Full searchable menu with DataTables</li></ul></li><li>✅ Automatically updates via GitHub Actions at <strong>10:00 AM UTC on weekdays</strong></li><li>✅ Beautiful card-style layout &amp; component display</li><li>✅ No server required — 100% static</li></ul><hr><h2 id="🧠-Meal-Frequency-Display-Example"><a href="#🧠-Meal-Frequency-Display-Example" class="headerlink" title="🧠 Meal Frequency Display Example"></a>🧠 Meal Frequency Display Example</h2><p>The homepage shows how often each meal has been served based on historical data since 2025.03.20:</p><p><strong>🍽️ Pasta mit Tomatensoße</strong><br><em>📊 Seen since 2025.03.20</em><br>✅ Geriebener Käse<br>✅ Rucola</p><hr><h2 id="📁-Project-Structure"><a href="#📁-Project-Structure" class="headerlink" title="📁 Project Structure"></a>📁 Project Structure</h2><pre><code class="bash">.├── Mensaar_scraper.py         # Scrapes from mensaar.de and writes to Google Sheet├── generate_menu.py           # Reads the sheet and generates index.html and menu.html├── credentials.json           # Google service account key (excluded from repo)├── index.html                 # Main website page with today&#39;s menu├── menu.html                  # Full searchable table of meals├── .github/workflows/│   └── update_menu.yml        # GitHub Actions automation├── src/│   └── uds_spirit.jpg         # Soul of this project└── README.md</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Projects </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+            <tag> Scraper </tag>
+            
+            <tag> Selenium </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>AGV 12.3 -- Complementation of Parity Tree Automata</title>
       <link href="/AGV/agv12-3/"/>
       <url>/AGV/agv12-3/</url>
@@ -2331,35 +2389,6 @@
             <tag> PV </tag>
             
             <tag> LTS </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>MensaarLecker -- A statistics for UdS Mensa using Selenium</title>
-      <link href="/mensaar/"/>
-      <url>/mensaar/</url>
-      
-        <content type="html"><![CDATA[<blockquote><p>I Dedicate this project to my favourite <a href="https://www.stw-saarland.de/de/Verpflegung/Mensa-Saarbrucken/Unser-Angebot">Mensa</a> in Germany. I love you deeply with all my heart. Thank you for all the budget menu and frozen food recommendations. The food price is so low, just like my body weight.</p></blockquote><p>This post is to share the walkthrough of this project’s development. For project details, please visit the repository <a href="https://github.com/greenmeeple/MensaarLecker">MensaarLecker</a></p><h1 id="🍽-🥨-MensaarLecker-–-A-beloved-tool-to-find-out-Mensa-Ladies’-favourite-menu-🥨-🍽"><a href="#🍽-🥨-MensaarLecker-–-A-beloved-tool-to-find-out-Mensa-Ladies’-favourite-menu-🥨-🍽" class="headerlink" title="🍽 🥨 MensaarLecker – A beloved tool to find out Mensa Ladies’ favourite menu 🥨 🍽"></a>🍽 🥨 MensaarLecker – A beloved tool to find out Mensa Ladies’ favourite menu 🥨 🍽</h1><h2 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h2><p>Me and my friends <del>hate</del><strong>love</strong> the UdS Mensa so much! The infinite frozen food and french fries menus give us so much energy and motivation for the 5-hour afternoon coding marathon. However, no one actually knows how many potatoes they have exterminated throughout the week. We have a genius webpage created by some <a href="https://gibtesheuteschnitzel.de/">Schnitzel lover</a>. Personally, I like its minimalistic layout and determination on Schnitzel searching. </p><blockquote><p>However, we want more.</p></blockquote><p>It’s not just Schnitzel; we want to know everything about their menu. We want to know what’s inside the mensa ladies’ brains when they design next week’s menu.</p><blockquote><p>The desire never ends. We need more data, more details, more, More, <strong>MORE!</strong></p></blockquote><h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>MensaarLecker is a statistic that collects all the menus’ occurrences and provides daily menu information. It contains:</p><ul><li>A web scraper that collects the <a href="https://mensaar.de/#/menu/sb">daily menu</a> of the Mensa in Saarland University. </li><li>A statistic that calculates each item’s (main dish &amp; side dish) occurrence and percentage.</li></ul><h2 id="Developing-Process"><a href="#Developing-Process" class="headerlink" title="Developing Process"></a>Developing Process</h2><h3 id="Beautiful-Soup"><a href="#Beautiful-Soup" class="headerlink" title="Beautiful Soup"></a><a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">Beautiful Soup</a></h3><p>I started my journey with Beautiful Soup, one of the most popular Python web scraper packages. However, as a Uni that is well-known for its computer science program, all the menus are rendered using JavaScript. And beautiful can only scrape HTML and XML tags. So the scraper can only see an empty skeleton page:</p><p><img src="/images/projects/mensaar_empty.png"></p><h3 id="Selenium"><a href="#Selenium" class="headerlink" title="Selenium"></a><a href="https://selenium-python.readthedocs.io/">Selenium</a></h3><p>Basically, Selenium is a <a href="https://www.selenium.dev/documentation/webdriver/">Webdriver</a> that opens a browser naturally, like a human user. Then from there we can scrape the rendered information. Things get simpler once we can see the website as we see it on the browser. We just need to find the tag that contains the information we need and save it for storage.</p><h3 id="Scraping"><a href="#Scraping" class="headerlink" title="Scraping"></a>Scraping</h3><table><thead><tr><th align="left">data we need</th><th align="left">tag</th></tr></thead><tbody><tr><td align="left">menus</td><td align="left"><code>&lt;div class=&quot;counter&quot;&gt;</code></td></tr><tr><td align="left">date</td><td align="left"><code>&lt;div class=&quot;cursor-pointer active list-group-item&quot;&gt;</code></td></tr><tr><td align="left">main dish</td><td align="left"><code>&lt;span class=&quot;meal-title&quot;&gt;</code></td></tr><tr><td align="left">side dish</td><td align="left"><code>&lt;div class=&quot;component&quot;&gt;</code></td></tr></tbody></table><p>The first part of the task is to get the daily menu. We also get the date on the website to make the following work easier.</p><p>By the <code>find_element</code> and <code>find_elements</code> functions in Selenium, we can create a simple scraper like this:</p><pre><code class="python">from selenium import webdriverfrom selenium.webdriver.common.keys import Keysfrom selenium.webdriver.common.by import Bydriver = webdriver.Firefox()driver.get(&quot;https://mensaar.de/#/menu/sb&quot;)counters = driver.find_elements(By.CLASS_NAME, &quot;counter&quot;)for counter in counters:    meal_title = meal.find_element(By.CLASS_NAME, &quot;meal-title&quot;).text.strip()</code></pre><p>However, on the webpage there is also a counter called <code>Wahlessen.</code> Which refers to a more pricy and unpredictable menu, and we want to exclude its data:</p><pre><code class="python">counter_title = counter.find_element(By.CLASS_NAME, &quot;counter-title&quot;).text.strip()# Filter for specified counter titlesif counter_title in [&quot;Menü 1&quot;, &quot;Menü 2&quot;, &quot;Mensacafé&quot;]:    meal_title = meal.find_element(By.CLASS_NAME, &quot;meal-title&quot;).text.strip()</code></pre><h3 id="Storage"><a href="#Storage" class="headerlink" title="Storage"></a>Storage</h3><p>It is kinda pointless to make a full database for these small piece of data <em>(I may take my word back in the future)</em>, so we just store the collected data in Json files.<br>Therefore, everyday we will have a separate Json file. We create a separate Json file for statistics, it is calculated simply by adding current date’s data into the file, so it will accumlate each data entry.</p><pre><code class="python">with open(output_file, &quot;w&quot;, encoding=&quot;utf-8&quot;) as f:    json.dump(result, f, ensure_ascii=False, indent=2)print(f&quot;Results saved to &#123;output_file&#125;&quot;)# Save the updated occurrence counts to the JSON filecount_result = &#123;    &quot;meal_counts&quot;: dict(meal_count),    &quot;component_counts&quot;: dict(component_count)&#125;with open(count_file, &quot;w&quot;, encoding=&quot;utf-8&quot;) as f:    json.dump(count_result, f, ensure_ascii=False, indent=2)print(f&quot;Counts saved to &#123;count_file&#125;&quot;)</code></pre><pre><code class="json">&#123;  &quot;meal_counts&quot;: &#123;    &quot;KlimaTeller: Broccoli und Cheese Nuggets mit Chili-Kräuterdip&quot;: 1,    &quot;Hähnchenschnitzel „Wiener Art“ mit Paprikarahmsoße&quot;: 1,    &quot;Flammkuchen mit Tomaten und Rucola&quot;: 1,    &quot;Köttbullar und Rahmsoße mit Champignons&quot;: 1,    &quot;KlimaTeller: Türkische Pizza Lahmacun&quot;: 1,    &quot;KlimaTeller: Hausgemachte vegetarische Kartoffelsuppe&quot;: 1,    &quot;Pasta mit Argentinischer Hackfleischsoße&quot;: 1,  &#125;,  &quot;component_counts&quot;: &#123;    &quot;Pommes Frites&quot;: 1,    &quot;Karottensalat&quot;: 2,    &quot;Reis (aus biologischem Anbau)&quot;: 2,    &quot;Weiße Salatsoße Dressing&quot;: 6,    &quot;Obst (Apfel aus biologischem Anbau)&quot;: 6,    &quot;Brötchen&quot;: 4,    &quot;Wiener Würstchen&quot;: 1  &#125;&#125;</code></pre><h3 id="Automation"><a href="#Automation" class="headerlink" title="Automation"></a>Automation</h3><blockquote><p>The part that gives me headache…</p></blockquote><p>I tried to use <a href="https://docs.github.com/en/actions/writing-workflows">GitHub Workflow</a> to run the Python script daily, but it didn’t work out… So for my next step, I may create automation locally and connect the folder to the repository through GitHub Desktop.</p><p>Another solution maybe transfer the Json storage into standard database like <a href="https://www.mongodb.com/">MongoDB</a>.</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> Projects </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Python </tag>
-            
-            <tag> Scraper </tag>
-            
-            <tag> Selenium </tag>
             
         </tags>
       

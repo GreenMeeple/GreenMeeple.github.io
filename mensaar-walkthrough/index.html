@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>AGV 3.5 -- Büchi&#39;s Characterization Theorem | GreenMeeple</title>
-  <meta name="keywords" content=" AGV ">
-  <meta name="description" content="AGV 3.5 -- Büchi&#39;s Characterization Theorem | GreenMeeple">
+  <title>MensaarLecker Development Walkthrough | GreenMeeple</title>
+  <meta name="keywords" content=" Python , Scraper , Selenium ">
+  <meta name="description" content="MensaarLecker Development Walkthrough | GreenMeeple">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="GreenMeeple cannot find what you are looking for...">
@@ -1277,9 +1277,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-AGV/agv3-5" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-mensaar-walkthrough" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">AGV 3.5 -- Büchi&#39;s Characterization Theorem</h1>
+        <h1 class="article-title">MensaarLecker Development Walkthrough</h1>
     
     <div class="article-meta">
         
@@ -1289,9 +1289,7 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="Notes">Notes</a> > 
-            
-            <a  data-rel="Notes&lt;---&gt;UdS">UdS</a>
+            <a  data-rel="Projects">Projects</a>
             
         </span>
         
@@ -1299,19 +1297,23 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color4">AGV</a>
+            <a class="color2">Python</a>
+            
+            <a class="color3">Scraper</a>
+            
+            <a class="color4">Selenium</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-12-13 16:48:28'>2024-11-17 17:33</time>
+            Created At : <time class="date" title='Updated At: 2025-03-21 04:48:43'>2025-03-20 05:03</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:861</span>
+        <span>Count:439</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1341,7 +1343,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Explained-in-Human-language"><span class="toc-text">Explained in Human language</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Formal-Proof"><span class="toc-text">Formal Proof</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Motivation"><span class="toc-text">Motivation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Developing-Process"><span class="toc-text">Developing Process</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Beautiful-Soup"><span class="toc-text">Beautiful Soup</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Selenium"><span class="toc-text">Selenium</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Scraping"><span class="toc-text">Scraping</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -1357,43 +1359,90 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Previous chapter: <a href="../agv3-4/">Closure Properties of the Büchi-recognizable languages (Concatenations)</a></p>
+        <blockquote>
+<p>Repository: <a target="_blank" rel="noopener" href="https://github.com/greenmeeple/MensaarLecker">MensaarLecker</a></p>
+</blockquote>
+<h2 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h2><p>Me and my friends <del>hate</del><strong>love</strong> the UdS Mensa so much! The infinite frozen food and french fries menus give us so much energy and motivation for the 5-hour afternoon coding marathon. However, no one actually knows how many potatoes they have exterminated throughout the week. We have a genius webpage created by some <a target="_blank" rel="noopener" href="https://gibtesheuteschnitzel.de/">Schnitzel lover</a>. Personally, I like its minimalistic layout and determination on Schnitzel searching. </p>
 <blockquote>
-<p>This is a learning note of a course in <a target="_blank" rel="noopener" href="https://cispa.de/de">CISPA</a>, UdS. Taught by Bernd Finkbeiner</p>
+<p>However, we want more.</p>
 </blockquote>
-<p>We are now ready to prove Büchi’s Characterization Theorem, a result from 1962.</p>
+<p>It’s not just Schnitzel; we want to know everything about their menu. We want to know what’s inside the mensa ladies’ brains when they design next week’s menu.</p>
 <blockquote>
-<p>$\textbf{Theorem 3.6. }\text{(Büchi’s Characterization Theorem) }\newline\textit{An $\omega$-language is Büchi-recognizable iff it is $\omega$-regular.}$</p>
+<p>The desire never ends. We need more data, more details, more, More, <strong>MORE!</strong></p>
 </blockquote>
-<h3 id="Explained-in-Human-language"><a href="#Explained-in-Human-language" class="headerlink" title="Explained in Human language"></a>Explained in Human language</h3><blockquote>
-<p>p.s. Büchi-recognizable means the language can be described by a Büchi automata.</p>
-</blockquote>
-<p>$”\Leftarrow”$<br>We have to prove if the language is <strong>$\omega$-regular</strong>, then it is <strong>Büchi-recognizable</strong>.<br>In <a href="../agv3-2/">section 3.2</a>, we learn that an $\omega$-regular language contains 3 operators:</p>
-<ul>
-<li><strong>union</strong> of $\omega$-regular languages, $W_1+W_2$ (proved by Theorem <a href="../agv3-3/">3.2</a>),</li>
-<li><strong>infinite concatenation</strong> of a <strong>non-empty</strong> regular language $E^\omega$ (proved by Theorem <a href="../agv3-4/">3.4</a>), and</li>
-<li><strong>concatenation</strong> of regular languages and $\omega$-regular language $E\cdot W$ (proved by Theorem <a href="../agv3-4/">3.5</a>)</li>
-</ul>
-<p>$”\Rightarrow”$<br>We have to prove if the language is <strong>Büchi-recognizable</strong>, then it is <strong>$\omega$-regular</strong>.<br>Here, we try to construct a Büchi-recognizable using all <strong>$\omega$-regular</strong> operators.</p>
-<p>We begin by constructing a <strong>regular language</strong> $W_{q,q’}$. <strong>Words</strong> of the language $w$ is accepted by some finite-word automata, with a pair of state $q,q’\in Q$ being the <strong>initial and accepting states</strong> respectively.</p>
-<p>Then we try to prove that a <strong>Büchi-recognizable language</strong> $\mathcal{L}(\mathcal{A})$ equals to the regular language <strong>concatenates</strong> (<a href="../agv3-4/">3.5</a>) with the <strong>infinite concatenated</strong>, <strong>non-empty</strong> (<a href="../agv3-4/">3.4</a>) starting from the previous accepting state. That is $W_{q,q’}\cdot(W_{q’,q’}\setminus\lbrace\varepsilon\rbrace)^\omega$.</p>
-<p>On top of that, we do a set union (<a href="../agv3-3/">3.2</a>) for each pair of <strong>initial and accepting states</strong> $q,q’\in Q$, that is $\bigcup_{q\in I,q’\in F}$</p>
-<blockquote>
-<p>Therefore, now we only need to prove that $\mathcal{L}(\mathcal{A})&#x3D;\bigcup_{q\in I,q’\in F}W_{q,q’}\cdot(W_{q,q’}\setminus\lbrace\varepsilon\rbrace)^\omega$.</p>
-</blockquote>
-<p>For the word $\alpha$ from L.H.S, it reaches $q’\in F$ infinitely often. We can thus seperate into $r:q\xrightarrow{w_0}q’\xrightarrow{w_1}q’\xrightarrow{w_2}\dots$<br>The $w$ here refers the word to reach $q’$. We know that Büchi automata is non-empty so $|w_i|&gt;0$ when $i&gt;0$.<br>Therefore, $w_0$ will be a word from $W_{q,q’}$ and the rest will be words for $(W_{q’,q’}\setminus\lbrace\varepsilon\rbrace)^\omega$ because they reach the accepting state $q’\in F$.</p>
-<p>For the word $w_0w_1w_2\dots$ from R.H.S, where $w_0$ refers to $W_{q,q’}$ and the rest refers to $(W_{q’,q’}\setminus\lbrace\varepsilon\rbrace)^\omega$.<br>This is accepted by $\mathcal{L}(\mathcal{A})$ because it reaches the accepting state $q’\in F$ infinitely often.</p>
-<h3 id="Formal-Proof"><a href="#Formal-Proof" class="headerlink" title="Formal Proof"></a>Formal Proof</h3><p>$”\Leftarrow”$<br>Follows from the closure properties of the Büchi-recognizable languages established by Theorems <a href="../agv3-3/">3.2</a>, <a href="../agv3-4/">3.4</a>, <a href="../agv3-4/">3.5</a>.</p>
-<p>$”\Rightarrow”$<br>Given a Büchi automaton $\mathcal{A}$, we consider for each pair $q,q’\in Q$ the regular language<br>$$<br>W_{q,q’} &#x3D; \lbrace w\in\Sigma^*\mid \text{finite-word automaton } (\Sigma,Q,\lbrace q\rbrace,T,{q’}) \text{ accepts }w\rbrace.<br>$$<br>We claim that $\mathcal{L}(\mathcal{A})&#x3D;\bigcup_{q\in I,q’\in F}W_{q,q’}\cdot(W_{q,q’}\setminus\lbrace\varepsilon\rbrace)^\omega$. The claim is proven as follows.</p>
-<p>$\mathcal{L}(\mathcal{A})\subseteq\bigcup_{q\in I,q’\in F}W_{q,q’}\cdot(W_{q,q’}\setminus\lbrace\varepsilon\rbrace)^\omega$: Let $\alpha\in\mathcal{L}(\mathcal{A})$. Then there is an accpeting run $r$ of $\mathcal{A}$ on $\alpha$, which begins at some $q&#x3D;r(0)\in I$ and visits some $q’\in F$ infinitely often:</p>
-<p>$$<br>r:q\xrightarrow{w_0}q’\xrightarrow{w_1}q’\xrightarrow{w_2}\dots<br>$$</p>
-<p>where $w_i\in\Sigma^*$ for all $i\ge 0$, $|w_i|&gt;0$ for all $i&gt;0$ and $\alpha&#x3D;w_0w_1w_2\dots$ The notation $q_0\xrightarrow{w}q_{k+1}$ for some finite word $w&#x3D;w(0)w(1)\dots w(k)$ means that there exist states $q_1,\dots,q_k\in Q$ s.t. $(q_i,w(i),q_{i+1})\in T$ for all $0\leq i \leq k$. Since $w_0\in W_{q,q’}$ and $w_k\in W_{q’,q’}$ for $k&gt;0$, we have that $\alpha \in W_{q,q’}\cdot W_{q’,q’}^\omega$ for some $q\in I,q’\in F$.</p>
-<p>$\mathcal{L}(\mathcal{A})\supseteq\bigcup_{q\in I,q’\in F}W_{q,q’}\cdot(W_{q,q’}\setminus\lbrace\varepsilon\rbrace)^\omega$: Let $\alpha&#x3D;w_0w_1w_2\dots$ with $w_0\in W_{q,q’}$ and $w_k\in W_{q’,q’}$ for some $q\in I,q’\in F$ and for all $k&gt;0$. Then the run:</p>
-<p>$$<br>r:q\xrightarrow{w_0}q’\xrightarrow{w_1}q’\xrightarrow{w_2}\dots<br>$$</p>
-<p>exists and is aceepting because $q’\in F$. It follows that $\alpha\in\mathcal{L}(\mathcal{A})$.</p>
-<hr>
-<p>Next chapter: <a href="../agv4-1/">Deterministic vs. Nondeterministic Büchi Automata</a></p>
-<p>Further Reading: <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/B%C3%BCchi_automaton">Büchi automaton</a></p>
+<h2 id="Developing-Process"><a href="#Developing-Process" class="headerlink" title="Developing Process"></a>Developing Process</h2><h3 id="Beautiful-Soup"><a href="#Beautiful-Soup" class="headerlink" title="Beautiful Soup"></a><a target="_blank" rel="noopener" href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">Beautiful Soup</a></h3><p>I started my journey with Beautiful Soup, one of the most popular Python web scraper packages. However, as a Uni that is well-known for its computer science program, all the menus are rendered using JavaScript. And beautiful can only scrape HTML and XML tags. So the scraper can only see an empty skeleton page:</p>
+<p><img src="/images/projects/mensaar_empty.png"></p>
+<h3 id="Selenium"><a href="#Selenium" class="headerlink" title="Selenium"></a><a target="_blank" rel="noopener" href="https://selenium-python.readthedocs.io/">Selenium</a></h3><p>Basically, Selenium is a <a target="_blank" rel="noopener" href="https://www.selenium.dev/documentation/webdriver/">Webdriver</a> that opens a browser naturally, like a human user. Then from there we can scrape the rendered information. Things get simpler once we can see the website as we see it on the browser. We just need to find the tag that contains the information we need and save it for storage.</p>
+<h3 id="Scraping"><a href="#Scraping" class="headerlink" title="Scraping"></a>Scraping</h3><table>
+<thead>
+<tr>
+<th align="left">data we need</th>
+<th align="left">tag</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">menus</td>
+<td align="left"><code>&lt;div class=&quot;counter&quot;&gt;</code></td>
+</tr>
+<tr>
+<td align="left">date</td>
+<td align="left"><code>&lt;div class=&quot;cursor-pointer active list-group-item&quot;&gt;</code></td>
+</tr>
+<tr>
+<td align="left">main dish</td>
+<td align="left"><code>&lt;span class=&quot;meal-title&quot;&gt;</code></td>
+</tr>
+<tr>
+<td align="left">side dish</td>
+<td align="left"><code>&lt;div class=&quot;component&quot;&gt;</code></td>
+</tr>
+</tbody></table>
+<p>The first part of the task is to get the daily menu. We also get the date on the website to make the following work easier.</p>
+<p>By the <code>find_element</code> and <code>find_elements</code> functions in Selenium, we can create a simple scraper like this:</p>
+<pre><code class="python">from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
+
+driver = webdriver.Firefox()
+driver.get(&quot;https://mensaar.de/#/menu/sb&quot;)
+counters = driver.find_elements(By.CLASS_NAME, &quot;counter&quot;)
+
+for counter in counters:
+    meal_title = meal.find_element(By.CLASS_NAME, &quot;meal-title&quot;).text.strip()
+</code></pre>
+<p>However, on the webpage there is also a counter called <code>Wahlessen.</code> Which refers to a more pricy and unpredictable menu, and we want to exclude its data:</p>
+<pre><code class="python">counter_title = counter.find_element(By.CLASS_NAME, &quot;counter-title&quot;).text.strip()
+
+# Filter for specified counter titles
+if counter_title in [&quot;Menü 1&quot;, &quot;Menü 2&quot;, &quot;Mensacafé&quot;]:
+    meal_title = meal.find_element(By.CLASS_NAME, &quot;meal-title&quot;).text.strip()
+</code></pre>
+<!-- ### Storage
+
+It is kinda pointless to make a full database for these small piece of data *(I may take my word back in the future)*, so we just store the collected data in Json files.
+Therefore, everyday we will have a separate Json file. We create a separate Json file for statistics, it is calculated simply by adding current date's data into the file, so it will accumlate each data entry.
+
+```python
+with open(output_file, "w", encoding="utf-8") as f:
+    json.dump(result, f, ensure_ascii=False, indent=2)
+
+print(f"Results saved to {output_file}")
+
+# Save the updated occurrence counts to the JSON file
+count_result = {
+    "meal_counts": dict(meal_count),
+    "component_counts": dict(component_count)
+}
+
+with open(count_file, "w", encoding="utf-8") as f:
+    json.dump(count_result, f, ensure_ascii=False, indent=2)
+
+print(f"Counts saved to {count_file}")
+```
+
+
+### Automation with [GitHub Workflow](https://docs.github.com/en/actions/writing-workflows) -->
+
 
       
        <hr><span style="font-style: italic;color: gray;"> Please cite the source for reprints, feel free to verify the sources cited in the article, and point out any errors or lack of clarity of expression. You can comment in the comments section below or email to GreenMeeple@yahoo.com </span>
@@ -1427,46 +1476,6 @@
 
 
 
-    
-        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-    "HTML-CSS": {
-        preferredFont: "TeX",
-        availableFonts: ["STIX","TeX"],
-        linebreaks: { automatic:true },
-        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
-    },
-    tex2jax: {
-        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
-        processEscapes: true,
-        ignoreClass: "tex2jax_ignore|dno",
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    },
-    TeX: {
-        equationNumbers: { autoNumber: "AMS" },
-        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
-        Macros: { href: "{}" }
-    },
-    messageStyle: "none"
-    });
-</script>
-<!-- 给MathJax元素添加has-jax class -->
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for(i=0; i < all.length; i += 1) {
-            all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-    });
-</script>
-<!-- 通过连接CDN加载MathJax的js代码 -->
-<script type="text/javascript" async
-        src="//cdn.jsdelivr.net/npm/mathjax@2.7.8/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
-<input type="hidden" id="MathJax-js"
-        value="//cdn.jsdelivr.net/npm/mathjax@2.7.8/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
-</input>
     
 
 
