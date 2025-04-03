@@ -33,237 +33,166 @@
       switchTab();
       window.addEventListener('hashchange', switchTab, false);
   })();
-  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.png" alt="GreenMeeple" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Personal Note" href="https://greenmeeple.github.io/studynotes"><i class="fa-solid fa-book"></i></a><a class="navbar-item" target="_blank" rel="noopener" title="Personal Blog" href="https://greenmeeple.github.io/SharkDeer"><i class="fa-solid fa-solid fa-blog"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-02-12T23:27:50.000Z" title="13/02/2025, 00:27:50">2025-02-13</time></span><span class="level-item"><a class="link-muted" href="/categories/Notes/">Notes</a><span> / </span><a class="link-muted" href="/categories/Notes/UdS/">UdS</a></span><span class="level-item">6 minutes to read (About 865 words)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/AGV/agv11-3/">AGV 11.3 -- Büchi Games</a></p><div class="content"><p>Previous chapter: <a href="../agv11-2/">Reachability Games</a></p>
-<blockquote>
-<p>This is a learning note of a course in <a target="_blank" rel="noopener" href="https://cispa.de/de">CISPA</a>, UdS. Taught by Bernd Finkbeiner</p>
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.png" alt="GreenMeeple" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Personal Note" href="https://greenmeeple.github.io/studynotes"><i class="fa-solid fa-book"></i></a><a class="navbar-item" target="_blank" rel="noopener" title="Personal Blog" href="https://greenmeeple.github.io/SharkDeer"><i class="fa-solid fa-solid fa-blog"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2024-10-11T00:19:03.000Z" title="11/10/2024, 02:19:03">2024-10-11</time></span><span class="level-item"><a class="link-muted" href="/categories/JavaScript/">JavaScript</a></span><span class="level-item">2 minutes to read (About 312 words)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/js/json-dependencies-diagram/">Railroad Diagram of version range operators</a></p><div class="content"><blockquote>
+<p>This is a image version of the post <a href="../json-dependencies/">here</a></p>
 </blockquote>
-<h2 id="Recurrence-Construction"><a href="#Recurrence-Construction" class="headerlink" title="Recurrence Construction"></a>Recurrence Construction</h2><p>In a Büchi game, the goal of Player 0 is to visit some accepting position <strong>infinitely often</strong>. The attractor construction checks whether there is a strategy which enforces at least one visit to an accepting position. Reaching an accepting state at least once is indeed a necessary precondition, but we also have to ensure that from this position we can enforce a second visit to some accepting state, then a third, and so forth.</p>
-<p>The <strong>recurrence construction</strong> computes the largest subset of the accepting states from which Player 0 can enforce infinitely many subsequent visits to the subset.</p>
-<blockquote>
-<p>$\textbf{Construction 11.2. } \text{Let an arena }\mathcal{A} &#x3D; (V_0,V_1,E)\text{ with }V&#x3D;V_0\cup V_1\text{ be given. The }\newline\textit{recurrence construction}\text{ on }\mathcal{A}\text{ is defined for all }n\in\mathbb{N}\text{ and }F\subseteq V\text{ as:}$<br>$\begin{array}{lll}<br>\hspace{1cm} \cdot \ W_n^1(F) &amp;&#x3D;&amp; V\setminus Attr^0(Recur_n(F))\newline<br>\hspace{1cm} \cdot \ Recur_{0}(F)&amp;&#x3D;&amp;F \newline<br>\hspace{1cm} \cdot \ Recur_{n+1}(F)&amp;&#x3D;&amp;Recur_{n}(F)\setminus CPre^{1}(W_n^1(F)) \newline<br>\hspace{1cm} \cdot \ Recur(F)&amp;&#x3D;&amp;\underset{n\in\mathbb{N}}{\bigcap} Recur_{n}(R)\newline<br>\end{array}$</p>
+<p><a name="range-set"></a></p>
+<p><strong>range-set:</strong><br><img src="/images/coding/json_dep_diagram/range-set.png" alt="range-set"></p>
+<pre><code class="EBNF">range-set   ::= range ( logical-or range )*
+</code></pre>
+<p><strong>logical-or:</strong></p>
+<p><img src="/images/coding/json_dep_diagram/logical-or.png" alt="logical-or"></p>
+<pre><code class="EBNF">logical-or  ::= &#39; &#39;* &#39;||&#39; &#39; &#39;*
+</code></pre>
+<p>referenced by: <a href="#range-set">range-set</a></p>
+<p><a name="range"></a></p>
+<p><strong>range:</strong></p></div><a class="article-more button is-small is-size-7" href="/js/json-dependencies-diagram/#more">Read more</a></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2024-10-10T17:04:37.000Z" title="10/10/2024, 19:04:37">2024-10-10</time></span><span class="level-item"><a class="link-muted" href="/categories/JavaScript/">JavaScript</a></span><span class="level-item">3 minutes to read (About 411 words)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/js/json-dependencies/">Explaination of version range operators in package.json for package dependencies</a></p><div class="content"><blockquote>
+<p>To see the syntax and Railroad diagram version, goto <a href="../json-dependencies-diagram/">here</a></p>
 </blockquote>
-<p>The set $W_n^1(F)$ contains those positions in $V$ from which Player 1 can enforce that at most $n$ visits to $F$.</p>
-<p>The set $CPre^{1}(W_n^1(F))$ adds those positions in $V$ from which move to positions in $W_n^1(F)$, meaning that there are at most $n+1$ visits to $F$ in newly added positions.</p>
-<p>The set $Recur_{n}(F)$ contains the subset of $F$ from which Player 0 can enforce at least $n$ <em>further</em> (i.e., a total of at least $n+1$) visits to $F$.</p>
-<p>The set $Recur(F)$ contains the subset of $F$ from which Player 0 can enforce infinitely many visits to $F$. The recurrence construction solves a game with winning condition $\small\text{BÜCHI} \normalsize (F)$ as follows:</p></div><a class="article-more button is-small is-size-7" href="/AGV/agv11-3/#more">Read more</a></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-02-11T19:48:34.000Z" title="11/02/2025, 20:48:34">2025-02-11</time></span><span class="level-item"><a class="link-muted" href="/categories/Notes/">Notes</a><span> / </span><a class="link-muted" href="/categories/Notes/UdS/">UdS</a></span><span class="level-item">6 minutes to read (About 974 words)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/AGV/agv11-2/">AGV 11.2 -- Reachability Games</a></p><div class="content"><p>Previous chapter: <a href="../agv11-1/">Infinite Games (Basic Definitions)</a></p>
-<blockquote>
-<p>This is a learning note of a course in <a target="_blank" rel="noopener" href="https://cispa.de/de">CISPA</a>, UdS. Taught by Bernd Finkbeiner</p>
-</blockquote>
-<h2 id="Reachability-Condition"><a href="#Reachability-Condition" class="headerlink" title="Reachability Condition"></a>Reachability Condition</h2><p>We will now analyze infinite games for various types of winning conditions. We start with the simple <strong>reachability</strong> condition.</p>
-<p>The reachability condition is given as a set $R$ of positions called the reachability set. The reachability condition is satisfied if the play reaches some position in $R$. Formally, for an infinite word $\alpha$ over $\Sigma$, we use $\text{Occ}(\alpha) :&#x3D; \lbrace\sigma\in\Sigma\mid\exists n\in\mathbb{N}.\ \alpha(n)&#x3D;\sigma\rbrace$ to denote the set of all letters occurring in $\alpha$.</p>
-<blockquote>
-<p>$\textbf{Definition 11.11. } \text{The }\textit{reachability condition }\small\text{REACH} \normalsize(R)\text{ on a set of positions }R\subseteq V\text{ is the set}$</p>
-<p>$$<br>\small\text{REACH} \normalsize(R) &#x3D; \lbrace\rho\in V^\omega\mid\text{Occ}(\rho)\cap R\neq\varnothing\rbrace\newline\newline\text{A game }\mathcal{G}&#x3D;(\mathcal{A},\text{Win})\text{ with Win}&#x3D;\small\text{REACH} \normalsize(R)\text{ is called a }\textit{reachability game}\text{ with reachability set }R<br>$$</p>
-</blockquote>
-<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><p>$$<br>\text{Position of Player 0: Circles;}\ \ \text{Positions of Player 1: rectangles.}$$ </p>
-<p><img src="/images/notes/uds/agv/11_2_reachability.png"></p>
-<p>$$\mathcal{G}&#x3D;(\mathcal{A},\small\text{REACH} \normalsize(R)),\ R&#x3D;\lbrace v_4,v_5\rbrace<br>$$</p></div><a class="article-more button is-small is-size-7" href="/AGV/agv11-2/#more">Read more</a></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-02-11T16:11:48.000Z" title="11/02/2025, 17:11:48">2025-02-11</time></span><span class="level-item"><a class="link-muted" href="/categories/Notes/">Notes</a><span> / </span><a class="link-muted" href="/categories/Notes/UdS/">UdS</a></span><span class="level-item">9 minutes to read (About 1375 words)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/AGV/agv11-1/">AGV 11.1 -- Infinite Games (Basic Definitions)</a></p><div class="content"><p>Previous chapter: <a href="../agv10-5/">From semi-deterministic Büchi to deterministic Muller</a></p>
-<blockquote>
-<p>This is a learning note of a course in <a target="_blank" rel="noopener" href="https://cispa.de/de">CISPA</a>, UdS. Taught by Bernd Finkbeiner</p>
-</blockquote>
-<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>We now introduce <em>infinite two-player games on finite graphs</em>. Infinite games are useful to solve the synthesis problem, where we are interested in finding a strategy that guarantees that a given specification is satisfied (cf. <a href="../agv1.2/">Section 1.2</a>). As we will see, games also play a fundamental role in automata theory, in particular for automata over infinite trees.</p>
-<h2 id="Basic-Definitions"><a href="#Basic-Definitions" class="headerlink" title="Basic Definitions"></a>Basic Definitions</h2><p>The game is played on a graph, called the <strong>arena</strong>. The vertices of the graph are called <strong>positions</strong> and are partitioned into the positions of Player 0 and the positions of Player 1. </p>
-<ul>
-<li>A play of the game starts in some initial position</li>
-<li>In any positions, the player who <strong>owns the position chooses the edge</strong> on which the play is continued.</li>
-<li>Player 0 wins if the play is an element of the <strong>winning condition</strong>.</li>
-</ul>
-<p>The winner is determined by a winning condition, which, like the acceptance condition of an automaton on infinite words is a subset of the infinite words over the positions. </p>
-<blockquote>
-<p>$\textbf{Definition 11.1. } \text{A }\textit{game arena}\text{ is a tuple }\mathcal{A} &#x3D; (V,V_0,V_1,E)\text{, where}\newline\begin{array}{l}<br>\hspace{0.5cm} \cdot \ V_0\text{ and }V_1&#x3D;V\setminus V_0\text{ are disjoint sets of positions,}\newline<br>\hspace{1cm} \text{called the positions of Player 0 and Player 1.}\newline<br>\hspace{0.5cm} \cdot \ E\subseteq V\times V\text{ is a set of edges such that every position }v\in V\newline<br>\hspace{1cm} \text{has at least one outgoing edge }(v,v’)\in E.\newline<br>\end{array}$</p>
-</blockquote>
-<blockquote>
-<p>$\textbf{Definition 11.2. } \text{A }\textit{play}\text{ is an infinite sequence }  \rho\in V^\omega\text{ such that}$<br>$$\forall n\in\mathbb{N}.(\rho(n),\rho(n+1))\in E$$</p>
-</blockquote></div><a class="article-more button is-small is-size-7" href="/AGV/agv11-1/#more">Read more</a></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-02-11T07:41:39.000Z" title="11/02/2025, 08:41:39">2025-02-11</time></span><span class="level-item"><a class="link-muted" href="/categories/Notes/">Notes</a><span> / </span><a class="link-muted" href="/categories/Notes/UdS/">UdS</a></span><span class="level-item">2 minutes to read (About 259 words)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/AGV/agv10-5/">AGV 10.5 -- From semi-deterministic Büchi to deterministic Muller</a></p><div class="content"><p>Previous chapter: <a href="../agv10-4/">Semi-Deterministic Büchi Automata</a></p>
-<blockquote>
-<p>This is a learning note of a course in <a target="_blank" rel="noopener" href="https://cispa.de/de">CISPA</a>, UdS. Taught by Bernd Finkbeiner</p>
-</blockquote>
-<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>From the semi-deterministic Büchi automaton we now build a deterministic Muller automaton. The idea of the construction is to continuously simulate, in the deterministic automaton, the nondeterministic part of the semi-deterministic automaton and to ”attempt” a transition into the deterministic part whenever possible.</p>
-<p>In the state of the deterministic automaton we maintain an “array” of states that correspond to these attempts. Along each run of the automaton, there may of course be infinitely many such attempts; we only need a finite array, however, because we do not need to keep track of two different attempts to enter the deterministic part, if they both reach the same state (in this case, we simply track the attempt that entered the deterministic part earlier). </p>
-<p>We use an array of size $2m$, where m is the number of states of the deterministic part. The factor two allows us to leave a position of the array empty (“␣”) if an attempt is not continued. This is necessary to distinguish a situation where a previously started attempt failed and, at the same time, a new attempt enters the deterministic part, from the situation where the same attempt ran continuously. The deterministic automaton accepts if there is at least one attempt that runs forever after some point and reaches an accepting state infinitely often.</p>
-<hr>
-<p>Next chapter: <a href="../agv11-1/">Infinite Games (Basic Definitions)</a></p>
-<p>Further Reading: <a href=""></a></p>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-01-29T14:23:24.000Z" title="29/01/2025, 15:23:24">2025-01-29</time></span><span class="level-item"><a class="link-muted" href="/categories/Notes/">Notes</a><span> / </span><a class="link-muted" href="/categories/Notes/UdS/">UdS</a></span><span class="level-item">10 minutes to read (About 1455 words)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/AGV/agv10-4/">AGV 10.4 -- Semi-Deterministic Büchi Automata</a></p><div class="content"><p>Previous chapter: <a href="../agv10-3/">Closure Properties of Muller automata Under Boolean Operations</a></p>
-<blockquote>
-<p>This is a learning note of a course in <a target="_blank" rel="noopener" href="https://cispa.de/de">CISPA</a>, UdS. Taught by Bernd Finkbeiner</p>
-</blockquote>
-<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>To prove McNaughton’s theorem, in this subsection, we will introdue the <strong>semi-deterministic Büchi automata</strong>.</p>
-<ol>
-<li>translate nondeterministic Büchi automata into semi-deterministic Büchi automata.</li>
-<li>translate from semi-deterministic Büchi automata to deterministic Muller automata.</li>
-</ol>
-<h2 id="Semi-deterministic-Buchi-Automata"><a href="#Semi-deterministic-Buchi-Automata" class="headerlink" title="Semi-deterministic Büchi Automata"></a>Semi-deterministic Büchi Automata</h2><p>A <em>semi-deterministic automaton</em> is a (possibly nondeterministic) automaton where all accepting runs ultimately end up in a <strong>subset of the states</strong> from which all transitions are deterministic.</p>
-<blockquote>
-<p>$\textbf{Definition 10.2. } \text{A Büchi automata }\mathcal{A} &#x3D; (\Sigma,Q,I,T,\small\text{BÜCHI} \normalsize(F))\text{ is }\textit{semi-deterministic}\text{ if}\newline Q &#x3D; N \uplus D\text{ is a partition of }Q\text{ such that }F\subseteq D, pr_2(T\cap(D\times\Sigma\times Q))\subseteq D\text{, and }\newline(\Sigma,D,\lbrace d\rbrace,T\cap(D\times\Sigma\times D),\small\text{BÜCHI}\normalsize(F)) \text{ is deterministic for every }d\in D.$</p>
-</blockquote>
-<h3 id="Explaination"><a href="#Explaination" class="headerlink" title="Explaination"></a>Explaination</h3><p>$Q &#x3D; N \uplus D:$ a <em>disjoint union symbol</em> $\uplus$ indicates that $N$ and $D$ are two seperated subset.</p></div><a class="article-more button is-small is-size-7" href="/AGV/agv10-4/#more">Read more</a></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-01-01T18:36:48.000Z" title="01/01/2025, 19:36:48">2025-01-01</time></span><span class="level-item"><a class="link-muted" href="/categories/Appium/">Appium</a></span><span class="level-item">2 minutes to read (About 294 words)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/appium/">Appium commands that are commonly used on Mac</a></p><div class="content"><p>In this example, we will use <a target="_blank" rel="noopener" href="https://github.com/appium/appium-inspector">Appium Inspector</a> to start a seesion on your emulator on <a target="_blank" rel="noopener" href="https://developer.android.com/studio">Android Studio</a>.</p>
-<h2 id="Start-appium"><a href="#Start-appium" class="headerlink" title="Start appium"></a>Start appium</h2><p><img src="/images/coding/appium/start.png"></p>
-<p>First, start the connection with Appium by <code>cmd appium --allow-cors</code>. It also gives you the <code>remote url</code> and the <code>automationName</code> that can be used in the <a target="_blank" rel="noopener" href="https://github.com/appium/appium-inspector">Appium Inspector</a></p>
-<p><img src="/images/coding/appium/inspector.png"></p>
-<h2 id="Start-Session"><a href="#Start-Session" class="headerlink" title="Start Session"></a>Start Session</h2><ul>
-<li><strong>deviceName</strong>:  <code>adb devices</code></li>
-<li><strong>platformName</strong> - <code>appium driver list</code></li>
-<li><strong>platformVersion</strong> -  <code>adb shell getprop ro.build.version.release</code></li>
-</ul>
-<p><img src="/images/coding/appium/session.png"></p>
-<p><img src="/images/coding/appium/inspector2.png"></p>
-<p>Now you can start a session in your emulator, but it always begins from the home page. To directly start a session on certain App, you also need to provide the  <code>appPackage</code> and the <code>appActivity</code>.</p></div><a class="article-more button is-small is-size-7" href="/appium/#more">Read more</a></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 level is-mobile"><div class="level-left"><i class="fas fa-thumbtack level-item" title="Pinned"></i><span class="level-item">Posted&nbsp;<time dateTime="2024-12-22T15:35:16.000Z" title="22/12/2024, 16:35:16">2024-12-22</time></span><span class="level-item"><a class="link-muted" href="/categories/Notes/">Notes</a><span> / </span><a class="link-muted" href="/categories/Notes/UdS/">UdS</a></span><span class="level-item">2 minutes to read (About 325 words)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/AGV/agv/">Automata, Games, and Verification (Portal)</a></p><div class="content"><blockquote>
-<p>This is a learning note of a course in <a target="_blank" rel="noopener" href="https://cispa.de/de">CISPA</a>, UdS. Taught by Bernd Finkbeiner</p>
-</blockquote>
-<h2 id="Chapter-1-Introduction"><a href="#Chapter-1-Introduction" class="headerlink" title="Chapter 1. Introduction"></a>Chapter 1. Introduction</h2><table>
-<thead>
-<tr>
-<th align="left">Sections</th>
-<th align="left">Exercise</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><a href="../agv1-1/">1.1. Model Checking</a></td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left"><a href="../agv1-2/">1.2. Synthesis</a></td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left"><a href="../agv1-3/">1.3. The Logic-Automata Connection</a></td>
-<td align="left"></td>
-</tr>
-</tbody></table>
-<h2 id="Chapter-2-Buchi-Automata"><a href="#Chapter-2-Buchi-Automata" class="headerlink" title="Chapter 2. Büchi Automata"></a>Chapter 2. Büchi Automata</h2><table>
-<thead>
-<tr>
-<th align="left">Sections</th>
-<th align="left">Exercise</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><a href="../agv2-1/">2.1. Preliminaries</a></td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left"><a href="../agv2-2/">2.2. Automata over Infinite Words</a></td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left"><a href="../agv2-3/">2.3. The Büchi Acceptance Condition</a></td>
-<td align="left"></td>
-</tr>
-</tbody></table>
-<h2 id="Chapter-3-Buchi’s-Characterization-Theorem"><a href="#Chapter-3-Buchi’s-Characterization-Theorem" class="headerlink" title="Chapter 3. Büchi’s Characterization Theorem"></a>Chapter 3. Büchi’s Characterization Theorem</h2><table>
-<thead>
-<tr>
-<th align="left">Sections</th>
-<th align="left">Exercise</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><a href="../agv3-1/">3.1. Kleene’s Theorem</a></td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left"><a href="../agv3-2/">3.2. $\omega$-regular language</a></td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left"><a href="../agv3-3/">3.3 Closure Properties of the Büchi-recognizable languages (Intersection and Union)</a></td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left"><a href="../agv3-4/">3.4 Closure Properties of the Büchi-recognizable languages (Concatenations)</a></td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left"><a href="../agv3-5/">3.5 Büchi’s Characterization Theorem</a></td>
-<td align="left"></td>
-</tr>
-</tbody></table>
-<h2 id="Chapter-4-Deterministic-Buchi-Automata"><a href="#Chapter-4-Deterministic-Buchi-Automata" class="headerlink" title="Chapter 4. Deterministic Büchi Automata"></a>Chapter 4. Deterministic Büchi Automata</h2><table>
-<thead>
-<tr>
-<th align="left">Sections</th>
-<th align="left">Exercise</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><a href="../agv4-1/">4.1. Deterministic vs. Nondeterministic Büchi Automata</a></td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left"><a href="../agv4-2/">4.2. Complementation of deterministic Büchi Automata</a></td>
-<td align="left"></td>
-</tr>
-</tbody></table>
-<h2 id="Chapter-5-Complementation-of-Buchi-automata"><a href="#Chapter-5-Complementation-of-Buchi-automata" class="headerlink" title="Chapter 5. Complementation of Büchi automata"></a>Chapter 5. Complementation of Büchi automata</h2></div><a class="article-more button is-small is-size-7" href="/AGV/agv/#more">Read more</a></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2024-12-19T02:06:12.000Z" title="19/12/2024, 03:06:12">2024-12-19</time></span><span class="level-item"><a class="link-muted" href="/categories/Cantonese/">Cantonese</a><span> / </span><a class="link-muted" href="/categories/Cantonese/Full-Course/">Full_Course</a></span><span class="level-item">2 minutes to read (About 301 words)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/Canto/canto1-6/">Cantonese Ch.1-6 -- Tones</a></p><div class="content"><blockquote>
-<p>Golden Rule of becoming a native Cantonese speaker: <strong>Tones</strong> &gt; Everything!</p>
-</blockquote>
-<p>In this blog, we use <a target="_blank" rel="noopener" href="https://jyutping.org/en/docs/english/">Jyutping</a> to indicate the pronunciation of Cantonese characters.</p>
-<p>Previous lesson: <a href="../canto1-3/">Rimes with e</a></p>
-<hr>
-<p>In this lesson, we talk about Rimes with <code>u</code>, <code>yu</code>. Here we use <code>u</code> similar to languages like German or Italian.</p>
-<p>And <code>yu</code> is equivalent to “ü” in German. Let’s take a look.</p>
-<h2 id="Rimes-with-u"><a href="#Rimes-with-u" class="headerlink" title="Rimes with u"></a>Rimes with <code>u</code></h2><p>For <code>u</code>, <code>ui</code>, <code>un</code>, <code>ut</code>, u sounds like “oo” in “foo”.</p>
-<p>For <code>ung</code> and <code>uk</code>, u sound like “one” in “tone”.</p>
+<h2 id="Basic-Structure"><a href="#Basic-Structure" class="headerlink" title="Basic Structure"></a>Basic Structure</h2><p>Package dependecies are a tuple of <code>[major, minor, patch]</code> with numeric values.</p>
+<pre><code class="json">&#123;
+    &quot;name&quot;: &quot;project name&quot;,
+    &quot;version&quot;: &quot;0.0.1&quot;,
+    &quot;description&quot;: &quot;description of the project&quot;,
+    &quot;keywords&quot;: [
+        &quot;keyword 1&quot;,
+        &quot;keyword 2&quot;
+    ],
+    &quot;author&quot;: &quot;John Doe&quot;,
+    &quot;dependencies&quot;: &#123;
+      &quot;package-1&quot;: &quot;~0.6.2&quot;,
+      &quot;package-2&quot;: &quot;&gt;=2.6.2&quot;
+    &#125;
+&#125;
+</code></pre>
+<h2 id="Version-Range-operator"><a href="#Version-Range-operator" class="headerlink" title="Version Range operator"></a>Version Range operator</h2><h3 id="Basic-Range"><a href="#Basic-Range" class="headerlink" title="Basic Range"></a>Basic Range</h3><p>For <code>x</code> in exmaple, see <strong>Advanced Range</strong> below.</p>
 <table>
 <thead>
 <tr>
-<th align="left">Jyutping</th>
-<th align="left">Sounds in English</th>
-<th align="left">Cantonese Example</th>
-<th align="left">Jyutping</th>
-<th align="left">Sounds in English</th>
-<th align="left">Cantonese Example</th>
+<th align="left">Operator</th>
+<th align="left">Explaination</th>
+<th align="left">Example</th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="left">u</td>
-<td align="left">oo in foo</td>
-<td align="left"><ruby>夫<rp>(</rp><rt>fu1</rt><rp>)</rp></ruby></td>
-<td align="left">ut</td>
-<td align="left">oot in boot</td>
-<td align="left"><ruby>闊<rp>(</rp><rt>fut3</rt><rp>)</rp></ruby></td>
+<td align="left"><code>=</code></td>
+<td align="left">package version must be exactly matched</td>
+<td align="left"><code>1.0.0</code> :&#x3D; <code>=1.0.0</code><br>(They are equivalent)</td>
 </tr>
 <tr>
-<td align="left">ui</td>
-<td align="left">ewy in chewy<sup>1</sup></td>
-<td align="left"><ruby>灰<rp>(</rp><rt>fui1</rt><rp>)</rp></ruby></td>
-<td align="left">ung</td>
-<td align="left">one in tone</td>
-<td align="left"><ruby>風<rp>(</rp><rt>fung1</rt><rp>)</rp></ruby></td>
+<td align="left"><code>&lt;</code></td>
+<td align="left">package version must be less than indicated</td>
+<td align="left"><code>&lt;2.0.0</code> <br>:&#x3D;version from <code>0.0.1</code> to <code>1.x.x</code></td>
 </tr>
 <tr>
-<td align="left">un</td>
-<td align="left">oon in cartoon</td>
-<td align="left"><ruby>歡<rp>(</rp><rt>fun1</rt><rp>)</rp></ruby></td>
-<td align="left">uk</td>
-<td align="left">ook in cook</td>
-<td align="left"><ruby>福<rp>(</rp><rt>fuk1</rt><rp>)</rp></ruby></td>
+<td align="left"><code>&lt;=</code></td>
+<td align="left">package version must be less than or euqal to indicated</td>
+<td align="left"><code>&lt;=2.0.0</code> <br>:&#x3D;version from <code>0.0.1</code> to <code>2.0.0</code></td>
 </tr>
-</tbody></table></div><a class="article-more button is-small is-size-7" href="/Canto/canto1-6/#more">Read more</a></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2024-12-17T03:02:09.000Z" title="17/12/2024, 04:02:09">2024-12-17</time></span><span class="level-item"><a class="link-muted" href="/categories/Notes/">Notes</a><span> / </span><a class="link-muted" href="/categories/Notes/UdS/">UdS</a></span><span class="level-item">3 minutes to read (About 513 words)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/AGV/agv7-2-eg/">AGV -- (Exercise 7.2) LTL to Alternating Büchi Automata</a></p><div class="content"><p>Previous Exercise: <a href></a></p>
+<tr>
+<td align="left"><code>&gt;</code></td>
+<td align="left">package version must be greater than indicated</td>
+<td align="left"><code>&gt;2.0.0</code>:&#x3D; <br>version from <code>2.0.1</code> to <code>x</code> (x &gt;&#x3D; 2)</td>
+</tr>
+<tr>
+<td align="left"><code>&gt;=</code></td>
+<td align="left">package version must be greater than or euqal to indicated</td>
+<td align="left"><code>&gt;=2.0.0</code> <br>:&#x3D;version from <code>2.0.0</code> to <code>x</code> (x &gt;&#x3D; 2)</td>
+</tr>
+<tr>
+<td align="left"><code>||</code></td>
+<td align="left">joined one or more operator</td>
+<td align="left"><code>&gt;2.0.1 || &lt;1.7.3</code> <br>:&#x3D;version greater than <code>2.0.1</code> or less than <code>1.7.3</code></td>
+</tr>
+<tr>
+<td align="left"><code>space</code></td>
+<td align="left">Intersected one or more operator</td>
+<td align="left"><code>&gt;=2.0.1  &lt;=1.7.3</code> <br>:&#x3D;version from <code>2.0.1</code> to <code>1.7.3</code> (inclusive)</td>
+</tr>
+</tbody></table>
+<h3 id="Advanced-Range"><a href="#Advanced-Range" class="headerlink" title="Advanced Range"></a>Advanced Range</h3><p>Advanced ranges may be combined in the same way as primitive comparators using <code>space</code> or <code>||</code>.</p></div><a class="article-more button is-small is-size-7" href="/js/json-dependencies/#more">Read more</a></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2024-10-10T00:34:07.000Z" title="10/10/2024, 02:34:07">2024-10-10</time></span><span class="level-item"><a class="link-muted" href="/categories/Git/">Git</a></span><span class="level-item">5 minutes to read (About 797 words)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/github-desktop/">Why you shouldn&#039;t deploy your Hexo webpage using GitHub Desktop?</a></p><div class="content"><h2 id="Methods-to-Deploy-Hexo-to-GitHub-io"><a href="#Methods-to-Deploy-Hexo-to-GitHub-io" class="headerlink" title="Methods to Deploy Hexo to GitHub.io"></a>Methods to Deploy Hexo to GitHub.io</h2><p>Assume you’ve created a repository on GitHub called <code>&lt;username&gt;.github.io</code>. Here are two common method you can deploy you Hexo Blog:</p>
+<h3 id="Hexo-Command"><a href="#Hexo-Command" class="headerlink" title="Hexo Command"></a>Hexo Command</h3><p>Hexo’s documentations and Tutorial has provided sufficient instructions on deploying your personal website on your GitHub repository.</p>
+<p>According to the <a target="_blank" rel="noopener" href="https://hexo.io/docs/github-pages">Hexo Tutorial</a>, we can deploy the repository by using <a target="_blank" rel="noopener" href="https://docs.github.com/en/actions">GitHub Actions</a>.</p>
+<ol>
+<li><p>Create and Add the following contents to <code>.github/workflows/pages.yml</code>:</p>
+<pre><code class="yml">name: Pages
+
+on:
+push:
+    branches:
+    - main # default branch
+
+jobs:
+build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+        with:
+        token: $&#123;&#123; secrets.GITHUB_TOKEN &#125;&#125;
+        submodules: recursive
+    - name: Use Node.js 20
+        uses: actions/setup-node@v4
+        with:
+        # Examples: 20, 18.19, &gt;=16.20.2, lts/Iron, lts/Hydrogen, *, latest, current, node
+        # Ref: https://github.com/actions/setup-node#supported-version-syntax
+        node-version: &quot;&gt;=20&quot; 
+
+    - name: Cache NPM dependencies
+        uses: actions/cache@v4
+        with:
+        path: node_modules
+        key: $&#123;&#123; runner.OS &#125;&#125;-npm-cache
+        restore-keys: |
+            $&#123;&#123; runner.OS &#125;&#125;-npm-cache
+    - name: Install Dependencies
+        run: npm install
+    - name: Build
+        run: npm run build
+    - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+        path: ./public
+deploy:
+    needs: build
+    permissions:
+    pages: write
+    id-token: write
+    environment:
+    name: github-pages
+    url: $&#123;&#123; steps.deployment.outputs.page_url &#125;&#125;
+    runs-on: ubuntu-latest
+    steps:
+    - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+</code></pre>
+</li>
+<li><p>Install <code>hexo-deployer-git</code>.</p>
+</li>
+<li><p>Add&#x2F;Change the following configurations to <code>_config.yml</code>:</p>
+<pre><code class="yml">deploy:
+type: git
+repo: https://github.com/&lt;username&gt;/&lt;project&gt;
+# for example, this blog is https://github.com/greenmeeple/greenmeeple.github.io
+branch: gh-pages
+</code></pre>
+</li>
+<li><p>After finishing your bog posts, Run <code>hexo clean &amp;&amp; hexo deploy</code>.</p>
+</li>
+</ol>
+<h3 id="GitHub-Desktop"><a href="#GitHub-Desktop" class="headerlink" title="GitHub Desktop"></a>GitHub Desktop</h3><p>Many Users installed <a target="_blank" rel="noopener" href="https://desktop.github.com/download/">GitHub Desktop</a> for better visualization on changes, so do I. It provides more intuitive push and commit procedure and instruction compared to terminal. Most of the time I use it to make sure no unexpected line changes or modification.</p>
+<p><img src="/images/site_notes/github_desktop.png"></p>
+<p>But soon I noticed that, every time after running <code>hexo clean &amp;&amp; hexo deploy</code>, GitHub Desktop will warn me that there’s something need to be pulled. When I pull it for merging it return <code>Unable to merge unrelated histories in repository</code>. Even in the image above, it shows that I should pull something. However, how would I need to pull if I’ve just push it?</p></div><a class="article-more button is-small is-size-7" href="/github-desktop/#more">Read more</a></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2024-10-09T02:09:35.000Z" title="09/10/2024, 04:09:35">2024-10-09</time></span><span class="level-item"><a class="link-muted" href="/categories/SiteNote/">SiteNote</a></span><span class="level-item">2 minutes to read (About 266 words)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/site/hexo-mathjax/">Mathjax prime superscript problem in Hexo theme</a></p><div class="content"><h2 id="Prime-superscript-problem-e-g-x’-i-in-Mathjax"><a href="#Prime-superscript-problem-e-g-x’-i-in-Mathjax" class="headerlink" title="Prime superscript problem (e.g. x’_i) in Mathjax"></a>Prime superscript problem (e.g. x’_i) in Mathjax</h2><p>When I was using <a target="_blank" rel="noopener" href="https://www.mathjax.org/">Mathjax</a> to create math formula in my blog post, I typed<br><code>((q_1, q_2), a, (q&#39;_1, q&#39;_2)) \in S \times \Sigma_&#123;int&#125; \times S</code> and it rendered as</p>
+<p><em><strong>$((q_1, q_2), a, (q’_1, q’<em>2)) \in S \times \Sigma</em>{int} \times S$</strong></em></p>
+<p>However, when <code>((q_1, q_2), a, (q&#39;_1, q&#39;_2))</code> &amp; <code>\in S \times \Sigma_&#123;int&#125; \times S</code> are seperated, they rendered properly.</p>
+<p>$$((q_1, q_2), a, (q’_1, q’_2))$$</p>
+<p>$$\in S \times \Sigma_{int} \times S$$</p>
 <blockquote>
-<p>This is a learning note of a course in <a target="_blank" rel="noopener" href="https://cispa.de/de">CISPA</a>, UdS. Taught by Bernd Finkbeiner</p>
+<p>Maybe I should use <code>\left</code> and <code>\right</code> for (), just like <code>\lbrace</code> and <code>\rbrace</code> for {}?</p>
 </blockquote>
-<p>This is an example exercise to express LTL formula into Alternating Büchi Automata. For further definitions, you may check <a href="../agv7-2/">Section 7.2</a>.</p>
-<h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>Use the <a href="../agv7-2/">construction from the lecture</a> to construct an alternating Büchi automaton $\mathcal{A}$ such that $$\mathcal{L(A)&#x3D;L}((\Diamond p)\ \mathcal{U}\ (\square q))$$</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>we build the following alternating Büchi automaton  $\mathcal{A} &#x3D; (2^{p,q},Q,\varphi,\delta,\small\text{BÜCHI} \normalsize(F))$ which recognizes the models of $\varphi&#x3D;(\Diamond p)\ \mathcal{U}\ (\square q)$. First we consider the transition function $\delta$ for an arbitrary symbol $a\in2^{p,q}:$</p>
-<p>$\begin{array}{lll}<br>\hspace{1cm}\bullet &amp;&amp;\delta(\square q,a)\newline<br>&amp;&#x3D;&amp;\delta(\neg(\textit{true}\ \mathcal{U}\ \neg q) ,a)\newline<br>&amp;&#x3D;&amp;\overline{\delta(\textit{true}\ \mathcal{U}\ \neg q ,a)}\newline<br>&amp;&#x3D;&amp;\overline{\delta(\neg q,a)\vee(\delta(\textit{true},a)\wedge(\textit{true}\ \mathcal{U}\ \neg q))}\newline<br>&amp;&#x3D;&amp;\overline{\delta(\neg q,a)}\wedge\overline{(\delta(\textit{true},a)\wedge (\textit{true}\ \mathcal{U}\ \neg q))}&amp;(\textit{true}\wedge \psi&#x3D;\psi)\newline<br>&amp;&#x3D;&amp;\overline{\delta(\neg q,a)}\wedge\overline{(\textit{true}\ \mathcal{U}\ \neg q)}&amp;(\text{Using line 1})\newline<br>&amp;&#x3D;&amp;\overline{\delta(\neg q,a)}\wedge\square q\newline<br>&amp;&#x3D;&amp;\left\lbrace \begin{array}{lll}<br>\square q&amp;\text{if }q\in a\newline<br>\textit{false}&amp;\text{if }q\notin a\newline<br>\end{array}\right.<br>\end{array}<br>\ \newline \ \newline<br>\begin{array}{lll}<br>\hspace{1cm}\bullet &amp;&amp;\delta(\Diamond p,a)\newline<br>&amp;&#x3D;&amp;\delta(\textit{true}\ \mathcal{U}\ p ,a)\newline<br>&amp;&#x3D;&amp;\delta(p,a)\vee(\delta(\textit{true},a)\wedge\Diamond p)&amp;(\textit{true}\wedge \psi&#x3D;\psi)\newline<br>&amp;&#x3D;&amp;\delta(p,a)\vee\Diamond p\newline<br>&amp;&#x3D;&amp;\left\lbrace \begin{array}{lll}<br>\Diamond p&amp;\text{if }p\notin a\newline<br>\textit{true}&amp;\text{if }p\in a\newline<br>\end{array}\right.<br>\end{array}<br>$</p>
-<p>By Substitution above result into $\delta((\Diamond p)\ \mathcal{U}\ (\square q),a)&#x3D;\delta(\square q,a)\vee(\delta(\Diamond p,a)\wedge(\Diamond p)\ \mathcal{U}\ (\square q))$, we have:</p>
-<p>$$\delta((\Diamond p)\ \mathcal{U}\ (\square q),a)&#x3D;\left\lbrace<br>\begin{array}{lll}<br>\Diamond p\wedge((\Diamond p)\ \mathcal{U}\ (\square q))&amp;\text{if }a &#x3D;\varnothing &amp;(\vee\ \textit{false}\text{ is omitted.})\newline<br>(\Diamond p)\ \mathcal{U}\ (\square q)&amp;\text{if }a &#x3D;\lbrace p\rbrace&amp;(\wedge\ \textit{true}\text{ is omitted.})\newline<br>\square q\vee(\Diamond p\wedge((\Diamond p)\ \mathcal{U}\ (\square q)))&amp;\text{if }a &#x3D;\lbrace q\rbrace\newline<br>\square q\vee((\Diamond p)\ \mathcal{U}\ (\square q))&amp;\text{if }a &#x3D;\lbrace p,q\rbrace&amp;(\wedge\ \textit{true}\text{ is omitted.})\newline<br>\end{array}\right.$$</p></div><a class="article-more button is-small is-size-7" href="/AGV/agv7-2-eg/#more">Read more</a></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2024-12-13T04:02:57.000Z" title="13/12/2024, 05:02:57">2024-12-13</time></span><span class="level-item"><a class="link-muted" href="/categories/Notes/">Notes</a><span> / </span><a class="link-muted" href="/categories/Notes/UdS/">UdS</a></span><span class="level-item">6 minutes to read (About 828 words)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/AGV/agv10-3/">AGV 10.3 -- Closure Properties of Muller automata Under Boolean Operations</a></p><div class="content"><p>Previous chapter: <a href="../agv10-2/">From Büchi automata to Muller automata</a></p>
-<blockquote>
-<p>This is a learning note of a course in <a target="_blank" rel="noopener" href="https://cispa.de/de">CISPA</a>, UdS. Taught by Bernd Finkbeiner</p>
-</blockquote>
-<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>We now show that deterministic Muller automata are closed, like nondeterministic Büchi automata, under the Boolean operations (<code>complementation</code>, <code>union</code>, and <code>intersection</code>).</p>
-<p>First we introduce the construction of these automaton with operations, then we will prove they are close by the runs under those constructions.</p>
-<h2 id="Automata-construction-of-Complementation"><a href="#Automata-construction-of-Complementation" class="headerlink" title="Automata construction of Complementation"></a>Automata construction of Complementation</h2><blockquote>
-<p>$\textbf{Construction 10.3. } \text{Let }\mathcal{A} &#x3D; (\Sigma,Q,I,T,\small\text{MULLER} \normalsize (\mathcal{F}))\text{ be a complete and deterministic Muller}\newline\text{automaton, where we assume w.l.o.g that }Q\neq\varnothing.\text{ We construct the deterministic Muller}\newline\text{automaton }\mathcal{A}^C &#x3D; (\Sigma,Q,I,T,\small\text{MULLER} \normalsize(2^Q\setminus\mathcal{F}))\text{ with }\mathcal{L(A^C)}&#x3D;\Sigma\setminus\mathcal{L(A)}.$</p>
-</blockquote>
-<h2 id="Automata-construction-of-Intersection"><a href="#Automata-construction-of-Intersection" class="headerlink" title="Automata construction of Intersection"></a>Automata construction of Intersection</h2><p>We use the function $pr_n$ for $n\in\mathbb{N}$ to project to the (n+1)th component of a arbitrary length tuple, for example:</p>
-<ul>
-<li>$pr_0(x, y)&#x3D;x$</li>
-<li>$pr_1(x, y)&#x3D;y$</li>
-<li>$pr_2(x, y),pr_3(x, y),\dots pr_n(x, y) &#x3D;\text{Undefined}$</li>
-</ul></div><a class="article-more button is-small is-size-7" href="/AGV/agv10-3/#more">Read more</a></article></div><nav class="pagination" role="navigation" aria-label="pagination"><div class="pagination-previous"><a href="/">Previous</a></div><div class="pagination-next"><a href="/page/3/">Next</a></div><ul class="pagination-list is-hidden-mobile"><li><a class="pagination-link" href="/">1</a></li><li><a class="pagination-link is-current" href="/page/2/">2</a></li><li><a class="pagination-link" href="/page/3/">3</a></li><li><span class="pagination-ellipsis">&hellip;</span></li><li><a class="pagination-link" href="/page/9/">9</a></li></ul></nav></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1 is-sticky"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/img/avatar.png" alt="GreenMeeple"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">GreenMeeple</p><p class="is-size-6 is-block">M.Sc Cybersecurity at Saarland University</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Saarbrücken, Germany</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives/"><p class="title">89</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/categories/"><p class="title">11</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags/"><p class="title">20</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/GreenMeeple" target="_blank" rel="me noopener">Follow</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Github" href="https://github.com/GreenMeeple"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Linkedin" href="https://www.linkedin.com/in/alexcnli/"><i class="fab fa-linkedin"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="LeetCode" href="https://leetcode.com/u/Alexli0/"><i class="fa-solid fa-laptop-code"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Email" href="mailto:alexcnli@yahoo.com"><i class="fa-solid fa-at"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="RSS" href="/atom.xml"><i class="fas fa-rss"></i></a></div></div></div><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">Links</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://greenmeeple.github.io/MensaarLecker/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">MensaarLecker</span></span><span class="level-right"><span class="level-item tag">greenmeeple.github.io</span></span></a></li><li><a class="level is-mobile" href="https://mensaar.de/#/menu/sb" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Best Food Ever</span></span><span class="level-right"><span class="level-item tag">mensaar.de</span></span></a></li><li><a class="level is-mobile" href="https://cheesedseal.github.io/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Cheesedseal</span></span><span class="level-right"><span class="level-item tag">cheesedseal.github.io</span></span></a></li><li><a class="level is-mobile" href="https://www.youtube.com/@meeplematch2582" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">米寶麻吉Meeple Match</span></span><span class="level-right"><span class="level-item tag">www.youtube.com</span></span></a></li></ul></div></div></div><div class="card widget" data-type="adsense"><div class="card-content"><div class="menu"><h3 class="menu-label">Advertisement</h3><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5112876356744847" data-ad-slot="f08c47fec0942fa0" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div></div></div><div class="column-right-shadow is-hidden-widescreen"></div></div><div class="column column-right is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only order-3"><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">Recents</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2025-04-03T15:02:08.000Z">2025-04-03</time></p><p class="title"><a href="/personalize/">Hexo Plugins and Personalization of this site</a></p><p class="categories"><a href="/categories/SiteNote/">SiteNote</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2025-03-21T04:03:35.000Z">2025-03-21</time></p><p class="title"><a href="/projects/mensaarlog2/">MensaarLecker Development Log 2 -- Web Developing and GitHub Workflow</a></p><p class="categories"><a href="/categories/Projects/">Projects</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2025-03-20T04:03:35.000Z">2025-03-20</time></p><p class="title"><a href="/projects/mensaar/">🍽 🥨 MensaarLecker -- A beloved tool to find out Mensa Ladies&#039; favourite menu using Selenium🥨 🍽</a></p><p class="categories"><a href="/categories/Projects/">Projects</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2025-03-20T04:03:35.000Z">2025-03-20</time></p><p class="title"><a href="/projects/mensaarlog1/">MensaarLecker Development Log 1 -- Web Crawling</a></p><p class="categories"><a href="/categories/Projects/">Projects</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2025-02-16T19:12:54.000Z">2025-02-16</time></p><p class="title"><a href="/AGV/agv12-3/">AGV 12.3 -- Complementation of Parity Tree Automata</a></p><p class="categories"><a href="/categories/Notes/">Notes</a> / <a href="/categories/Notes/UdS/">UdS</a></p></div></article></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/Appium/"><span class="level-start"><span class="level-item">Appium</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/Cantonese/"><span class="level-start"><span class="level-item">Cantonese</span></span><span class="level-end"><span class="level-item tag">7</span></span></a><ul><li><a class="level is-mobile" href="/categories/Cantonese/Full-Course/"><span class="level-start"><span class="level-item">Full_Course</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/Git/"><span class="level-start"><span class="level-item">Git</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/JavaScript/"><span class="level-start"><span class="level-item">JavaScript</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/categories/LeetCode/"><span class="level-start"><span class="level-item">LeetCode</span></span><span class="level-end"><span class="level-item tag">18</span></span></a><ul><li><a class="level is-mobile" href="/categories/LeetCode/SQL-50/"><span class="level-start"><span class="level-item">SQL_50</span></span><span class="level-end"><span class="level-item tag">17</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/Notes/"><span class="level-start"><span class="level-item">Notes</span></span><span class="level-end"><span class="level-item tag">52</span></span></a><ul><li><a class="level is-mobile" href="/categories/Notes/UdS/"><span class="level-start"><span class="level-item">UdS</span></span><span class="level-end"><span class="level-item tag">52</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/Projects/"><span class="level-start"><span class="level-item">Projects</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/categories/SiteNote/"><span class="level-start"><span class="level-item">SiteNote</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></div></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">Archives</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2025/04/"><span class="level-start"><span class="level-item">April 2025</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2025/03/"><span class="level-start"><span class="level-item">March 2025</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/archives/2025/02/"><span class="level-start"><span class="level-item">February 2025</span></span><span class="level-end"><span class="level-item tag">10</span></span></a></li><li><a class="level is-mobile" href="/archives/2025/01/"><span class="level-start"><span class="level-item">January 2025</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2024/12/"><span class="level-start"><span class="level-item">December 2024</span></span><span class="level-end"><span class="level-item tag">16</span></span></a></li><li><a class="level is-mobile" href="/archives/2024/11/"><span class="level-start"><span class="level-item">November 2024</span></span><span class="level-end"><span class="level-item tag">29</span></span></a></li><li><a class="level is-mobile" href="/archives/2024/10/"><span class="level-start"><span class="level-item">October 2024</span></span><span class="level-end"><span class="level-item tag">28</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">Tags</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/AGV/"><span class="tag">AGV</span><span class="tag">50</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Android/"><span class="tag">Android</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/App-Testing/"><span class="tag">App Testing</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Appium/"><span class="tag">Appium</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Cantonese/"><span class="tag">Cantonese</span><span class="tag">8</span></a></div><div class="control"><a class="tags has-addons" href="/tags/GitHub/"><span class="tag">GitHub</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/HTML/"><span class="tag">HTML</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Hexo/"><span class="tag">Hexo</span><span class="tag">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/LTS/"><span class="tag">LTS</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Language-Learning/"><span class="tag">Language Learning</span><span class="tag">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Latex/"><span class="tag">Latex</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Mathjax/"><span class="tag">Mathjax</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Node-js/"><span class="tag">Node.js</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/PV/"><span class="tag">PV</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Phonology/"><span class="tag">Phonology</span><span class="tag">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Python/"><span class="tag">Python</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/SQL/"><span class="tag">SQL</span><span class="tag">18</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Scraper/"><span class="tag">Scraper</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Selenium/"><span class="tag">Selenium</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/json/"><span class="tag">json</span><span class="tag">2</span></a></div></div></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.png" alt="GreenMeeple" height="28"></a><p class="is-size-7"><span>&copy; 2025 Alex Li</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><span id="busuanzi_container_site_uv">Visited by <span id="busuanzi_value_site_uv">0</span> users</span></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Personal Note" href="https://greenmeeple.github.io/studynotes"><i class="fa-solid fa-book"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Personal Blog" href="https://greenmeeple.github.io/SharkDeer"><i class="fa-solid fa-solid fa-blog"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+<p>So I typed <code>\left( \left( q_1, q_2 \right), a, \left( q&#39;_1, q&#39;_2 \right) \right) \in S \times \Sigma_&#123;int&#125; \times S</code>, didn’t work out:</p>
+<p><em><strong>$\left( \left( q_1, q_2 \right), a, \left( q’_1, q’<em>2 \right) \right) \in S \times \Sigma</em>{int} \times S$</strong></em></p>
+<h2 id="Source-of-error"><a href="#Source-of-error" class="headerlink" title="Source of error"></a>Source of error</h2></div><a class="article-more button is-small is-size-7" href="/site/hexo-mathjax/#more">Read more</a></article></div><nav class="pagination" role="navigation" aria-label="pagination"><div class="pagination-previous"><a href="/">Previous</a></div><div class="pagination-next is-invisible is-hidden-mobile"><a href="/page/3/">Next</a></div><ul class="pagination-list is-hidden-mobile"><li><a class="pagination-link" href="/">1</a></li><li><a class="pagination-link is-current" href="/page/2/">2</a></li></ul></nav></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1 is-sticky"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/img/avatar.png" alt="GreenMeeple"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">GreenMeeple</p><p class="is-size-6 is-block">M.Sc Cybersecurity at Saarland University</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Saarbrücken, Germany</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives/"><p class="title">14</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/categories/"><p class="title">6</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags/"><p class="title">17</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/GreenMeeple" target="_blank" rel="me noopener">Follow</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Github" href="https://github.com/GreenMeeple"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Linkedin" href="https://www.linkedin.com/in/alexcnli/"><i class="fab fa-linkedin"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="LeetCode" href="https://leetcode.com/u/Alexli0/"><i class="fa-solid fa-laptop-code"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Email" href="mailto:alexcnli@yahoo.com"><i class="fa-solid fa-at"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="RSS" href="/atom.xml"><i class="fas fa-rss"></i></a></div></div></div><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">Links</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://greenmeeple.github.io/MensaarLecker/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">MensaarLecker</span></span><span class="level-right"><span class="level-item tag">greenmeeple.github.io</span></span></a></li><li><a class="level is-mobile" href="https://mensaar.de/#/menu/sb" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Best Food Ever</span></span><span class="level-right"><span class="level-item tag">mensaar.de</span></span></a></li><li><a class="level is-mobile" href="https://cheesedseal.github.io/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Cheesedseal</span></span><span class="level-right"><span class="level-item tag">cheesedseal.github.io</span></span></a></li><li><a class="level is-mobile" href="https://www.youtube.com/@meeplematch2582" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">米寶麻吉Meeple Match</span></span><span class="level-right"><span class="level-item tag">www.youtube.com</span></span></a></li></ul></div></div></div><div class="card widget" data-type="adsense"><div class="card-content"><div class="menu"><h3 class="menu-label">Advertisement</h3><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5112876356744847" data-ad-slot="f08c47fec0942fa0" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div></div></div><div class="column-right-shadow is-hidden-widescreen"></div></div><div class="column column-right is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only order-3"><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">Recents</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2025-04-03T15:02:08.000Z">2025-04-03</time></p><p class="title"><a href="/site/personalize/">Hexo Plugins and Personalization of this site</a></p><p class="categories"><a href="/categories/SiteNote/">SiteNote</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2025-03-21T04:03:35.000Z">2025-03-21</time></p><p class="title"><a href="/projects/mensaarlog2/">MensaarLecker Development Log 2 -- Web Developing and GitHub Workflow</a></p><p class="categories"><a href="/categories/Projects/">Projects</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2025-03-20T04:03:35.000Z">2025-03-20</time></p><p class="title"><a href="/projects/mensaar/">🍽 🥨 MensaarLecker -- A beloved tool to find out Mensa Ladies&#039; favourite menu using Selenium🥨 🍽</a></p><p class="categories"><a href="/categories/Projects/">Projects</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2025-03-20T04:03:35.000Z">2025-03-20</time></p><p class="title"><a href="/projects/mensaarlog1/">MensaarLecker Development Log 1 -- Web Crawling</a></p><p class="categories"><a href="/categories/Projects/">Projects</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2025-01-01T18:36:48.000Z">2025-01-01</time></p><p class="title"><a href="/appium/">Appium commands that are commonly used on Mac</a></p><p class="categories"><a href="/categories/Appium/">Appium</a></p></div></article></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/Appium/"><span class="level-start"><span class="level-item">Appium</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/Git/"><span class="level-start"><span class="level-item">Git</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/JavaScript/"><span class="level-start"><span class="level-item">JavaScript</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/categories/Notes/"><span class="level-start"><span class="level-item">Notes</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/Projects/"><span class="level-start"><span class="level-item">Projects</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/categories/SiteNote/"><span class="level-start"><span class="level-item">SiteNote</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></div></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">Archives</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2025/04/"><span class="level-start"><span class="level-item">April 2025</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2025/03/"><span class="level-start"><span class="level-item">March 2025</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/archives/2025/01/"><span class="level-start"><span class="level-item">January 2025</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2024/12/"><span class="level-start"><span class="level-item">December 2024</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2024/10/"><span class="level-start"><span class="level-item">October 2024</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">Tags</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/Android/"><span class="tag">Android</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/App-Testing/"><span class="tag">App Testing</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Appium/"><span class="tag">Appium</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Cantonese/"><span class="tag">Cantonese</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/GitHub/"><span class="tag">GitHub</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/HTML/"><span class="tag">HTML</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Hexo/"><span class="tag">Hexo</span><span class="tag">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Latex/"><span class="tag">Latex</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/LeetCode/"><span class="tag">LeetCode</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Mathjax/"><span class="tag">Mathjax</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Node-js/"><span class="tag">Node.js</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Python/"><span class="tag">Python</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/SQL/"><span class="tag">SQL</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Scraper/"><span class="tag">Scraper</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Selenium/"><span class="tag">Selenium</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/UdS/"><span class="tag">UdS</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/json/"><span class="tag">json</span><span class="tag">2</span></a></div></div></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.png" alt="GreenMeeple" height="28"></a><p class="is-size-7"><span>&copy; 2025 Alex Li</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><span id="busuanzi_container_site_uv">Visited by <span id="busuanzi_value_site_uv">0</span> users</span></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Personal Note" href="https://greenmeeple.github.io/studynotes"><i class="fa-solid fa-book"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Personal Blog" href="https://greenmeeple.github.io/SharkDeer"><i class="fa-solid fa-solid fa-blog"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
             article: {
                 highlight: {
                     clipboard: true,

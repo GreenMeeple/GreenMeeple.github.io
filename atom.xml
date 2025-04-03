@@ -18,8 +18,8 @@
   
   <entry>
     <title>Hexo Plugins and Personalization of this site</title>
-    <link href="https://greenmeeple.github.io/personalize/"/>
-    <id>https://greenmeeple.github.io/personalize/</id>
+    <link href="https://greenmeeple.github.io/site/personalize/"/>
+    <id>https://greenmeeple.github.io/site/personalize/</id>
     <published>2025-04-03T15:02:08.000Z</published>
     <updated>2025-04-03T16:19:07.372Z</updated>
     
@@ -182,372 +182,6 @@ If an opaque response serves your needs, set the request&amp;#39;s mode to &amp;
   </entry>
   
   <entry>
-    <title>AGV 12.3 -- Complementation of Parity Tree Automata</title>
-    <link href="https://greenmeeple.github.io/AGV/agv12-3/"/>
-    <id>https://greenmeeple.github.io/AGV/agv12-3/</id>
-    <published>2025-02-16T19:12:54.000Z</published>
-    <updated>2025-04-03T07:41:15.411Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;Previous chapter: &lt;a href=&quot;../agv12-2/&quot;&gt;Emptiness Game&lt;/a&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;This is a learning note of a course in &lt;a href=&quot;https://cispa.de/de&quot;&gt;CISPA&lt;/a&gt;, UdS. Taught by Bernd Finkbeiner&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;p&gt;We now prove that parity tree automata are closed under complementation. As discussed at the beginning of the section, our proof makes heavy use of the determinacy of parity games (with infinite game arenas) established in &lt;a href=&quot;../agv11-4&quot;&gt;Theorem 11.3&lt;/a&gt;.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;$&#92;textbf{Theorem 12.3. } &#92;textit{For every parity tree automaton }&#92;mathcal{A}&#92;textit{ over }&#92;Sigma&#92;textit{ there is a parity tree automaton }&#92;mathcal{A}’&#92;newline&#92;textit{ with }&#92;mathcal{L(A’)}&amp;#x3D;&#92;mathcal{T}_&#92;Sigma&#92;setminus&#92;mathcal{L(A)}.$&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;Proof&quot;&gt;&lt;a href=&quot;#Proof&quot; class=&quot;headerlink&quot; title=&quot;Proof&quot;&gt;&lt;/a&gt;Proof&lt;/h3&gt;&lt;p&gt;Let $&#92;mathcal{A}&amp;#x3D;(&#92;Sigma,Q,q_0,T,&#92;small&#92;text{PARITY} &#92;normalsize(C))$. By Theorem 12.1, a tree $(&#92;mathcal{T},t)$ is accepted by $&#92;mathcal{A}$ iff Player 0 has a winning strategy from position $(&#92;varepsilon,q_0)$ of the acceptance game $&#92;mathcal{G}_{&#92;mathcal{A},t}$. &lt;/p&gt;
-&lt;p&gt;Since $&#92;mathcal{A}$ is a parity tree automaton, $&#92;mathcal{G}&lt;em&gt;{&#92;mathcal{A},t}$ is a parity game and therefore, by Theorem 11.3, memoryless determined. Hence, $&#92;mathcal{A}$ does not accept some tree $t$ iff Player 1 has a winning memoryless strategy $&#92;sigma$ in $&#92;mathcal{G}&lt;/em&gt;{&#92;mathcal{A},t}$ from $(&#92;varepsilon,q_0)$. &lt;/p&gt;
-&lt;p&gt;The strategy $&#92;sigma:&#92;lbrace 0,1&#92;rbrace^&#92;ast&#92;times T&#92;rightarrow&#92;lbrace 0,1&#92;rbrace^&#92;ast&#92;times Q$ can be represented as a function $&#92;sigma’:&#92;lbrace 0,1&#92;rbrace^&#92;ast&#92;times T&#92;rightarrow&#92;lbrace 0,1&#92;rbrace$&lt;/p&gt;
-&lt;p&gt;where $&#92;sigma(w,(q,&#92;sigma,q^0,q^1))&amp;#x3D;(wi,q^i)$ iff $&#92;sigma’(w,(q,&#92;sigma,q^0,q^1))&amp;#x3D;i$. Yet another representation of the same strategy is $&#92;sigma’:&#92;lbrace 0,1&#92;rbrace^&#92;ast&#92;rightarrow&#92;lbrace T&#92;rightarrow&#92;lbrace 0,1&#92;rbrace&#92;rbrace$,&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Notes" scheme="https://greenmeeple.github.io/categories/Notes/"/>
-    
-    <category term="UdS" scheme="https://greenmeeple.github.io/categories/Notes/UdS/"/>
-    
-    
-    <category term="AGV" scheme="https://greenmeeple.github.io/tags/AGV/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>AGV 12.2 -- Emptiness Game</title>
-    <link href="https://greenmeeple.github.io/AGV/agv12-2/"/>
-    <id>https://greenmeeple.github.io/AGV/agv12-2/</id>
-    <published>2025-02-16T18:11:08.000Z</published>
-    <updated>2025-04-03T07:41:15.436Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;Previous chapter: &lt;a href=&quot;../agv12-1/&quot;&gt;Tree Automata and Acceptance Game&lt;/a&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;This is a learning note of a course in &lt;a href=&quot;https://cispa.de/de&quot;&gt;CISPA&lt;/a&gt;, UdS. Taught by Bernd Finkbeiner&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;Emptiness-Game&quot;&gt;&lt;a href=&quot;#Emptiness-Game&quot; class=&quot;headerlink&quot; title=&quot;Emptiness Game&quot;&gt;&lt;/a&gt;Emptiness Game&lt;/h2&gt;&lt;p&gt;The acceptance game can also be used to test if the language of a given tree automaton is non-empty. For this purpose, we first translate the given automaton into an automaton with singleton alphabet.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;$&#92;textbf{Construction 12.1. } &#92;text{For a given tree automaton }&#92;mathcal{A}&#92;text{ over }&#92;Sigma&#92;text{-labeled trees, we consider the}&#92;newline&#92;text{following tree automaton }&#92;mathcal{A}’&#92;text{ over }&#92;lbrace1&#92;rbrace&#92;text{-labeled trees, such that }&#92;mathcal{L(A)}&amp;#x3D;&#92;varnothing&#92;text{ iff }&#92;mathcal{L(A’)}&amp;#x3D;&#92;varnothing:&#92;newline&lt;br&gt;&#92;begin{array}{l}&lt;br&gt;&#92;hspace{1cm} &#92;cdot &#92; Q’&amp;#x3D;Q &#92;newline&lt;br&gt;&#92;hspace{1cm} &#92;cdot &#92; q_0’&amp;#x3D;q_0&#92;newline&lt;br&gt;&#92;hspace{1cm} &#92;cdot &#92; T’&amp;#x3D;&#92;lbrace(q,1,q’,q’’)&#92;mid(q,&#92;sigma,q’,q’’)&#92;in T,&#92;sigma&#92;in&#92;Sigma&#92;rbrace&#92;newline&lt;br&gt;&#92;hspace{1cm} &#92;cdot &#92; Acc’ &amp;#x3D; Acc&lt;br&gt;&#92;end{array}$&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Because the subtrees of a $&#92;lbrace 1&#92;rbrace$-labeled binary tree are the same from all nodes, we can simplify its acceptance game such that only finitely many positions are needed. We call this game the &lt;strong&gt;emptiness game&lt;/strong&gt;.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;$&#92;textbf{Definition 12.5. } &#92;text{Let }&#92;mathcal{A}&amp;#x3D;(&#92;Sigma,Q,q_0,T,Acc)&#92;text{ be a tree automaton. The }&#92;textit{emptiness game}&#92;text{ of }&#92;mathcal{A}&#92;newline &#92;text{ is the game }&#92;mathcal{G}_{&#92;mathcal{A}}&amp;#x3D;(&#92;mathcal{A}’,&#92;text{Win}’)&#92;text{ with the finite game arena }&#92;mathcal{A}’&amp;#x3D;(Q&#92;cup T, Q,T,E)&#92;text{, where}&#92;newline E&amp;#x3D;&#92;lbrace(q,&#92;tau)&#92;mid&#92;tau&amp;#x3D;(q,&#92;sigma,q^0,q^1),&#92;tau&#92;in T&#92;rbrace&#92;cup&#92;lbrace(&#92;tau,q’)&#92;mid&#92;tau&amp;#x3D;(&#92;rule{0.5em}{0.4pt},&#92;sigma,q^0,q^1)&#92;text{ and }(q’&amp;#x3D;q^0&#92;text{ or }q’&amp;#x3D;q^1)&#92;rbrace&#92;newline&#92;text{and Win’}&amp;#x3D;&#92;lbrace q(0)&#92;tau(0)q(1)&#92;tau(1)&#92;dots&#92;mid q(0)q(1)&#92;dots&#92;in Acc,&#92;tau(0)&#92;tau(1)&#92;dots&#92;in T^&#92;omega&#92;rbrace$&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;$&#92;textbf{Theorem 12.2. } &#92;textit{The language of a tree automaton }&#92;mathcal{A}&#92;textit{ is non-empty iff Player 0 wins the}&#92;newline&#92;textit{emptiness game }&#92;mathcal{G}_{&#92;mathcal{A}}&#92;textit{ from position }q_0.$&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;Proof&quot;&gt;&lt;a href=&quot;#Proof&quot; class=&quot;headerlink&quot; title=&quot;Proof&quot;&gt;&lt;/a&gt;Proof&lt;/h3&gt;&lt;p&gt;The emptiness game corresponds to the acceptance game of the automaton from Construction 12.1 on the $&#92;lbrace 1&#92;rbrace$-labeled binary tree.&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Notes" scheme="https://greenmeeple.github.io/categories/Notes/"/>
-    
-    <category term="UdS" scheme="https://greenmeeple.github.io/categories/Notes/UdS/"/>
-    
-    
-    <category term="AGV" scheme="https://greenmeeple.github.io/tags/AGV/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>AGV 12.1 -- Tree Automata and Acceptance Game</title>
-    <link href="https://greenmeeple.github.io/AGV/agv12-1/"/>
-    <id>https://greenmeeple.github.io/AGV/agv12-1/</id>
-    <published>2025-02-15T23:21:11.000Z</published>
-    <updated>2025-04-03T07:41:15.408Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;Previous chapter: &lt;a href=&quot;../agv11-6/&quot;&gt;A Remark on Undetermined Games&lt;/a&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;This is a learning note of a course in &lt;a href=&quot;https://cispa.de/de&quot;&gt;CISPA&lt;/a&gt;, UdS. Taught by Bernd Finkbeiner&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;p&gt;Infinite games allow us to reason elegantly about infinite trees. A famous example of an argument that became significantly simpler with the introduction of game-theoretic ideas is the proof of &lt;strong&gt;Rabin’s theorem&lt;/strong&gt;. &lt;/p&gt;
-&lt;p&gt;Rabin’s theorem states that the satisfiability of &lt;strong&gt;monadic second-order logic with two successors (S2S)&lt;/strong&gt; is decidable. Like in &lt;a href=&quot;../agv6-5/&quot;&gt;Section 6&lt;/a&gt;, where we showed that S1S formulas can be translated to automata, we will show that S2S formulas can be translated to automata, this time, in order to accommodate more than one successor function, to automata over infinite trees. &lt;/p&gt;
-&lt;p&gt;The most difficult part of the proof of Rabin’s theorem is to show that tree automata are &lt;em&gt;closed under complement&lt;/em&gt;. The original proof was purely combinatorial (and very difficult to understand), but the game-theoretic argument is simply based on &lt;strong&gt;the determinacy of the acceptance game of the tree automaton&lt;/strong&gt;:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;the acceptance of a tree by a tree automaton &amp;#x3D; the existence of a winning strategy for Player 0,&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;the non-acceptance &amp;#x3D; the absence of such a strategy &amp;#x3D; the existence of a winning strategy for Player 1.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;We can therefore complement the language of a given tree automaton by constructing a new automaton that verifies the existence of a winning strategy for Player 1. We begin this section with a discussion of tree automata. The logic S2S and the translation to tree automata will be introduced later in the section.&lt;/p&gt;
-&lt;h2 id=&quot;Tree-Automata&quot;&gt;&lt;a href=&quot;#Tree-Automata&quot; class=&quot;headerlink&quot; title=&quot;Tree Automata&quot;&gt;&lt;/a&gt;Tree Automata&lt;/h2&gt;&lt;p&gt;We consider tree automata over infinite binary trees. We use the notation for trees introduced in &lt;a href=&quot;../agv7-1/&quot;&gt;Section 7.1&lt;/a&gt;. The (full) binary tree is the language $&#92;mathcal{T} &amp;#x3D;&#92;lbrace 0, 1&#92;rbrace^&#92;ast$. For an alphabet $&#92;Sigma, &#92;mathcal{T}_&#92;Sigma &amp;#x3D; &#92;lbrace(&#92;mathcal{T}, t)&#92;mid t:&#92;mathcal{T}&#92;rightarrow&#92;Sigma&#92;rbrace$ is the set of all binary $&#92;Sigma$-labeled trees.&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Notes" scheme="https://greenmeeple.github.io/categories/Notes/"/>
-    
-    <category term="UdS" scheme="https://greenmeeple.github.io/categories/Notes/UdS/"/>
-    
-    
-    <category term="AGV" scheme="https://greenmeeple.github.io/tags/AGV/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>AGV 11.6 -- A Remark on Undetermined Games</title>
-    <link href="https://greenmeeple.github.io/AGV/agv11-6/"/>
-    <id>https://greenmeeple.github.io/AGV/agv11-6/</id>
-    <published>2025-02-15T12:55:54.000Z</published>
-    <updated>2025-04-03T07:41:15.437Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;Previous chapter: &lt;a href=&quot;../agv11-5/&quot;&gt;Muller Games&lt;/a&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;This is a learning note of a course in &lt;a href=&quot;https://cispa.de/de&quot;&gt;CISPA&lt;/a&gt;, UdS. Taught by Bernd Finkbeiner&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Since we have shown that &lt;a href=&quot;../agv11-2/&quot;&gt;reachability&lt;/a&gt;, &lt;a href=&quot;../agv11-3/&quot;&gt;Büchi&lt;/a&gt;, &lt;a href=&quot;../agv11-4/&quot;&gt;parity&lt;/a&gt;, and &lt;a href=&quot;../agv11-5/&quot;&gt;Muller&lt;/a&gt; games are all &lt;strong&gt;determined&lt;/strong&gt;, it might seem as if all games were determined. The purpose of this last subsection is to remark that this is not the case. By definition, every play is either won by Player 0 or by Player 1; however, it is entirely possible that neither Player 0 nor Player 1 has a winning strategy.&lt;/p&gt;
-&lt;p&gt;We will construct a game with a winning condition that allows the players to &lt;em&gt;steal&lt;/em&gt; strategies in the sense that if Player i has a winning strategy σ, then Player 1−$i$ has a strategy $&#92;tau$ that mimicks $&#92;sigma$ so that the play resulting from strategies σ and τ is won by Player 1-$i$: hence, strategy $&#92;sigma$ is not winning after all! &lt;/p&gt;
-&lt;p&gt;We fix the alphabet $&#92;mathbb{B}&amp;#x3D;&#92;lbrace 0,1&#92;rbrace$. To define the winning condition, we introduce an &lt;em&gt;infinite&lt;/em&gt; $&#92;text{XOR}$ &lt;em&gt;function&lt;/em&gt; $f$. An infinite $&#92;text{XOR}$ function is a function $f:&#92;mathbb{B}^&#92;omega&#92;rightarrow&#92;mathbb{B}$ such that $f(&#92;alpha)&#92;neq f(&#92;beta)$ for all α, β ∈ B ω that have the exact same letter in every position except for exactly one position where they have different letters. &lt;/p&gt;
-&lt;p&gt;To see that such a function exists, define an equivalence relation $&#92;sim$ such that $&#92;alpha&#92;sim&#92;beta$ iff there exists a position $n&#92;in&#92;mathbb{N}$ such that $&#92;alpha(i)&amp;#x3D;&#92;beta(i)$ for all $i&#92;geq n$. Let $S&#92;subseteq&#92;mathbb{B}^&#92;omega$ be a set that contains exactly one element from each $&#92;sim$-equivalence class, and let $r(&#92;alpha)$ be the unique $&#92;beta&#92;in S$ such that $&#92;alpha&#92;sim&#92;beta$. For every $&#92;alpha&#92;in&#92;mathbb{B}^&#92;omega$, the two sequences $&#92;alpha$ and $r(&#92;alpha)$ differ only in a finite number of positions. We define $f(&#92;alpha)&amp;#x3D;0$ if this number is even and $f(&#92;alpha)&amp;#x3D;1$ if it is odd. Hence, $f$ is indeed an infinite $&#92;text{XOR}$ function: if two sequences $&#92;alpha,&#92;beta&#92;in&#92;mathbb{B}^&#92;omega$ differ in exactly one position, then $f(&#92;alpha)&#92;neq f(&#92;beta)$. &lt;/p&gt;
-&lt;p&gt;We now use the infinite $&#92;text{XOR}$ function $f$ to define the game. We’ll describe the game somewhat informally in terms of rounds executed by the players; it is straightforward to translate this into an explicit arena and winning condition. Our game is played in rounds $n &amp;#x3D; 0, 1, 2,&#92;dots,$ where in round $n$, first Player 0 picks a finite word $w_{2n}&#92;in&#92;mathbb{B}^+$, then Player 1 picks $w_{2n+1}&#92;in&#92;mathbb{B}^+$. The resulting play $&#92;alpha&amp;#x3D;w_0,w_1,w_2,&#92;dots$ is winning for Player $f(&#92;alpha)$.&lt;/p&gt;
-&lt;p&gt;We now use the “strategy stealing” argument to show that no player has a winnig strategy in this game. A strategy for Player $i$ is a mapping $&#92;sigma:&#92;cup_{n&#92;in&#92;mathbb{N}}(&#92;mathbb{B}^+)^{2n+i}$, where we denote $(&#92;mathbb{B}^+)^0&amp;#x3D;&#92;varepsilon$.&lt;/p&gt;
-&lt;p&gt;As usual, $&#92;sigma$ is a winning strategy for Player $i$ if Player $i$ wins every play that is consistent with $&#92;sigma_i$ . Now fix an arbitrary strategy $&#92;tau$ for Player 1. From $&#92;tau$, we construct two different strategies $&#92;sigma$ and $&#92;sigma’$ for Player 0. &lt;/p&gt;
-&lt;p&gt;For the first round:&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Notes" scheme="https://greenmeeple.github.io/categories/Notes/"/>
-    
-    <category term="UdS" scheme="https://greenmeeple.github.io/categories/Notes/UdS/"/>
-    
-    
-    <category term="AGV" scheme="https://greenmeeple.github.io/tags/AGV/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>AGV 11.5 -- Muller Games</title>
-    <link href="https://greenmeeple.github.io/AGV/agv11-5/"/>
-    <id>https://greenmeeple.github.io/AGV/agv11-5/</id>
-    <published>2025-02-13T17:01:42.000Z</published>
-    <updated>2025-04-03T07:41:15.408Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;Previous chapter: &lt;a href=&quot;../agv11-4/&quot;&gt;Parity Games&lt;/a&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;This is a learning note of a course in &lt;a href=&quot;https://cispa.de/de&quot;&gt;CISPA&lt;/a&gt;, UdS. Taught by Bernd Finkbeiner&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Muller games differ from the games we have studied so far in that they are not memoryless determined. Consider, for example, a game arena consisting of three positions $v_0,v_1,v_2$, such that there are edges from $v_0$ and $v_2$ to $v_1$ and from $v_1$ to $v_0$ and $v_2$. Hence, the only choice in the game is in $v_1$, where Player 0 gets to choose between moving to $v_0$ or $v_2$:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/notes/uds/agv/11_5_muller.png&quot;&gt;&lt;/p&gt;
-&lt;p&gt;The Muller condition $&#92;mathcal{F}&amp;#x3D;&#92;lbrace&#92;lbrace v_0,v_1,v_2&#92;rbrace&#92;rbrace$ is only satisfied if all three positions are visited infinitely often. Player 0 can therefore not win the game with a memoryless strategy, because such a strategy would either visit $v_0$ and $v_1$ infinitely often, or $v_1$ and $v_2$, but not all three positions.  &lt;/p&gt;
-&lt;p&gt;There is, however, a memoryful winning strategy: simply alternate between moving from $v_1$ to $v_0$ and to $v_2$.&lt;/p&gt;
-&lt;p&gt;In the following, we solve Muller games via a reduction to parity games, i.e., we define a parity game such that we can translate the winning strategy in the parity game into a winning strategy in the Muller game.&lt;/p&gt;
-&lt;p&gt;The fact that parity games are memoryless determined and Muller games are not, is not a contradiction: our reduction introduces additional state into the parity game, such that, on the extended state space, there exists a memoryless winning strategy. This augmentation of the state space is known as the &lt;strong&gt;latest appearence record&lt;/strong&gt;:&lt;/p&gt;
-&lt;h2 id=&quot;Latest-Appearence-Record&quot;&gt;&lt;a href=&quot;#Latest-Appearence-Record&quot; class=&quot;headerlink&quot; title=&quot;Latest Appearence Record&quot;&gt;&lt;/a&gt;Latest Appearence Record&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;$&#92;textbf{Definition 11.11. } &#92;text{Let }V&#92;text{ be the set of positions of the game arena and let }{$}&#92;text{ be some fresh}&#92;newline&#92;text{symbol. A }&#92;textit{latest appearence record}&#92;text{ over }V&#92;text{ is a finite word over the alphabet }V&#92;cup&#92;lbrace{$}&#92;rbrace&#92;text{ where every}&#92;newline&#92;text{letter from }V&#92;cup&#92;lbrace{$}&#92;rbrace&#92;text{ appears exactly once and whose first letter is from }V&#92;text{ . The }&#92;textit{hit set}&#92;text{ of a latest}&#92;newline&#92;text{appearence record }&#92;ell&amp;#x3D;v_0v_1&#92;dots v_m{$}v_m+1&#92;dots v_n&#92;text{ is defined as }hit(&#92;ell)&amp;#x3D;&#92;lbrace v_0,&#92;dots v_m&#92;rbrace.$&lt;/p&gt;
-&lt;/blockquote&gt;</summary>
-    
-    
-    
-    <category term="Notes" scheme="https://greenmeeple.github.io/categories/Notes/"/>
-    
-    <category term="UdS" scheme="https://greenmeeple.github.io/categories/Notes/UdS/"/>
-    
-    
-    <category term="AGV" scheme="https://greenmeeple.github.io/tags/AGV/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>AGV 11.4 -- Parity Games</title>
-    <link href="https://greenmeeple.github.io/AGV/agv11-4/"/>
-    <id>https://greenmeeple.github.io/AGV/agv11-4/</id>
-    <published>2025-02-13T09:24:29.000Z</published>
-    <updated>2025-04-03T07:41:15.438Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;Previous chapter: &lt;a href=&quot;../agv11-3/&quot;&gt;Büchi Games&lt;/a&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;This is a learning note of a course in &lt;a href=&quot;https://cispa.de/de&quot;&gt;CISPA&lt;/a&gt;, UdS. Taught by Bernd Finkbeiner&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;p&gt;Perhaps the most intriguing type of infinite games are &lt;strong&gt;parity games&lt;/strong&gt;. &lt;strong&gt;Parity games&lt;/strong&gt; play a key role in verification (in particular for $&#92;mu$-calculus model checking) and synthesis, and finding fast algorithms for parity games is an active research topic. &lt;/p&gt;
-&lt;p&gt;The algorithm discussed in the following takes exponential time. There are also several quasi-polynomial-time algorithms for solving parity games (starting with a breakthrough result by Calude, Jain, Khoussainov, Li, and Stephan in 2017). In practice, however, these algorithms do not perform well (yet).&lt;/p&gt;
-&lt;h2 id=&quot;Parity-Condition&quot;&gt;&lt;a href=&quot;#Parity-Condition&quot; class=&quot;headerlink&quot; title=&quot;Parity Condition&quot;&gt;&lt;/a&gt;Parity Condition&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;$&#92;textbf{Definition 11.10. }&#92;text{The }&#92;textit{parity condition }&#92;small&#92;text{PARITY} &#92;normalsize(C)&#92;text{ for a coloring function }c:V&#92;rightarrow&#92;mathbb{N}&#92;text{ is the set}$&lt;br&gt;$$&#92;small&#92;text{PARITY} &#92;normalsize(C)&amp;#x3D;&#92;lbrace&#92;alpha&#92;in V^&#92;omega&#92;mid&#92;text{max}&#92;lbrace c(q)&#92;mid q&#92;in&#92;text{Inf}(&#92;alpha)&#92;rbrace&#92;text{is even}&#92;rbrace.$$&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;The parity condition is satisfied if the biggest number $q$ of the coloring function is even, among all positions that are visited infinitely often.&lt;/p&gt;
-&lt;h3 id=&quot;Example&quot;&gt;&lt;a href=&quot;#Example&quot; class=&quot;headerlink&quot; title=&quot;Example&quot;&gt;&lt;/a&gt;Example&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;/images/notes/uds/agv/11_4_parity.png&quot;&gt;&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Notes" scheme="https://greenmeeple.github.io/categories/Notes/"/>
-    
-    <category term="UdS" scheme="https://greenmeeple.github.io/categories/Notes/UdS/"/>
-    
-    
-    <category term="AGV" scheme="https://greenmeeple.github.io/tags/AGV/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>AGV 11.3 -- Büchi Games</title>
-    <link href="https://greenmeeple.github.io/AGV/agv11-3/"/>
-    <id>https://greenmeeple.github.io/AGV/agv11-3/</id>
-    <published>2025-02-12T23:27:50.000Z</published>
-    <updated>2025-04-03T07:41:15.408Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;Previous chapter: &lt;a href=&quot;../agv11-2/&quot;&gt;Reachability Games&lt;/a&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;This is a learning note of a course in &lt;a href=&quot;https://cispa.de/de&quot;&gt;CISPA&lt;/a&gt;, UdS. Taught by Bernd Finkbeiner&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;Recurrence-Construction&quot;&gt;&lt;a href=&quot;#Recurrence-Construction&quot; class=&quot;headerlink&quot; title=&quot;Recurrence Construction&quot;&gt;&lt;/a&gt;Recurrence Construction&lt;/h2&gt;&lt;p&gt;In a Büchi game, the goal of Player 0 is to visit some accepting position &lt;strong&gt;infinitely often&lt;/strong&gt;. The attractor construction checks whether there is a strategy which enforces at least one visit to an accepting position. Reaching an accepting state at least once is indeed a necessary precondition, but we also have to ensure that from this position we can enforce a second visit to some accepting state, then a third, and so forth.&lt;/p&gt;
-&lt;p&gt;The &lt;strong&gt;recurrence construction&lt;/strong&gt; computes the largest subset of the accepting states from which Player 0 can enforce infinitely many subsequent visits to the subset.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;$&#92;textbf{Construction 11.2. } &#92;text{Let an arena }&#92;mathcal{A} &amp;#x3D; (V_0,V_1,E)&#92;text{ with }V&amp;#x3D;V_0&#92;cup V_1&#92;text{ be given. The }&#92;newline&#92;textit{recurrence construction}&#92;text{ on }&#92;mathcal{A}&#92;text{ is defined for all }n&#92;in&#92;mathbb{N}&#92;text{ and }F&#92;subseteq V&#92;text{ as:}$&lt;br&gt;$&#92;begin{array}{lll}&lt;br&gt;&#92;hspace{1cm} &#92;cdot &#92; W_n^1(F) &amp;amp;&amp;#x3D;&amp;amp; V&#92;setminus Attr^0(Recur_n(F))&#92;newline&lt;br&gt;&#92;hspace{1cm} &#92;cdot &#92; Recur_{0}(F)&amp;amp;&amp;#x3D;&amp;amp;F &#92;newline&lt;br&gt;&#92;hspace{1cm} &#92;cdot &#92; Recur_{n+1}(F)&amp;amp;&amp;#x3D;&amp;amp;Recur_{n}(F)&#92;setminus CPre^{1}(W_n^1(F)) &#92;newline&lt;br&gt;&#92;hspace{1cm} &#92;cdot &#92; Recur(F)&amp;amp;&amp;#x3D;&amp;amp;&#92;underset{n&#92;in&#92;mathbb{N}}{&#92;bigcap} Recur_{n}(R)&#92;newline&lt;br&gt;&#92;end{array}$&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;The set $W_n^1(F)$ contains those positions in $V$ from which Player 1 can enforce that at most $n$ visits to $F$.&lt;/p&gt;
-&lt;p&gt;The set $CPre^{1}(W_n^1(F))$ adds those positions in $V$ from which move to positions in $W_n^1(F)$, meaning that there are at most $n+1$ visits to $F$ in newly added positions.&lt;/p&gt;
-&lt;p&gt;The set $Recur_{n}(F)$ contains the subset of $F$ from which Player 0 can enforce at least $n$ &lt;em&gt;further&lt;/em&gt; (i.e., a total of at least $n+1$) visits to $F$.&lt;/p&gt;
-&lt;p&gt;The set $Recur(F)$ contains the subset of $F$ from which Player 0 can enforce infinitely many visits to $F$. The recurrence construction solves a game with winning condition $&#92;small&#92;text{BÜCHI} &#92;normalsize (F)$ as follows:&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Notes" scheme="https://greenmeeple.github.io/categories/Notes/"/>
-    
-    <category term="UdS" scheme="https://greenmeeple.github.io/categories/Notes/UdS/"/>
-    
-    
-    <category term="AGV" scheme="https://greenmeeple.github.io/tags/AGV/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>AGV 11.2 -- Reachability Games</title>
-    <link href="https://greenmeeple.github.io/AGV/agv11-2/"/>
-    <id>https://greenmeeple.github.io/AGV/agv11-2/</id>
-    <published>2025-02-11T19:48:34.000Z</published>
-    <updated>2025-04-03T07:41:15.439Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;Previous chapter: &lt;a href=&quot;../agv11-1/&quot;&gt;Infinite Games (Basic Definitions)&lt;/a&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;This is a learning note of a course in &lt;a href=&quot;https://cispa.de/de&quot;&gt;CISPA&lt;/a&gt;, UdS. Taught by Bernd Finkbeiner&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;Reachability-Condition&quot;&gt;&lt;a href=&quot;#Reachability-Condition&quot; class=&quot;headerlink&quot; title=&quot;Reachability Condition&quot;&gt;&lt;/a&gt;Reachability Condition&lt;/h2&gt;&lt;p&gt;We will now analyze infinite games for various types of winning conditions. We start with the simple &lt;strong&gt;reachability&lt;/strong&gt; condition.&lt;/p&gt;
-&lt;p&gt;The reachability condition is given as a set $R$ of positions called the reachability set. The reachability condition is satisfied if the play reaches some position in $R$. Formally, for an infinite word $&#92;alpha$ over $&#92;Sigma$, we use $&#92;text{Occ}(&#92;alpha) :&amp;#x3D; &#92;lbrace&#92;sigma&#92;in&#92;Sigma&#92;mid&#92;exists n&#92;in&#92;mathbb{N}.&#92; &#92;alpha(n)&amp;#x3D;&#92;sigma&#92;rbrace$ to denote the set of all letters occurring in $&#92;alpha$.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;$&#92;textbf{Definition 11.11. } &#92;text{The }&#92;textit{reachability condition }&#92;small&#92;text{REACH} &#92;normalsize(R)&#92;text{ on a set of positions }R&#92;subseteq V&#92;text{ is the set}$&lt;/p&gt;
-&lt;p&gt;$$&lt;br&gt;&#92;small&#92;text{REACH} &#92;normalsize(R) &amp;#x3D; &#92;lbrace&#92;rho&#92;in V^&#92;omega&#92;mid&#92;text{Occ}(&#92;rho)&#92;cap R&#92;neq&#92;varnothing&#92;rbrace&#92;newline&#92;newline&#92;text{A game }&#92;mathcal{G}&amp;#x3D;(&#92;mathcal{A},&#92;text{Win})&#92;text{ with Win}&amp;#x3D;&#92;small&#92;text{REACH} &#92;normalsize(R)&#92;text{ is called a }&#92;textit{reachability game}&#92;text{ with reachability set }R&lt;br&gt;$$&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;Example&quot;&gt;&lt;a href=&quot;#Example&quot; class=&quot;headerlink&quot; title=&quot;Example&quot;&gt;&lt;/a&gt;Example&lt;/h3&gt;&lt;p&gt;$$&lt;br&gt;&#92;text{Position of Player 0: Circles;}&#92; &#92; &#92;text{Positions of Player 1: rectangles.}$$ &lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/notes/uds/agv/11_2_reachability.png&quot;&gt;&lt;/p&gt;
-&lt;p&gt;$$&#92;mathcal{G}&amp;#x3D;(&#92;mathcal{A},&#92;small&#92;text{REACH} &#92;normalsize(R)),&#92; R&amp;#x3D;&#92;lbrace v_4,v_5&#92;rbrace&lt;br&gt;$$&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Notes" scheme="https://greenmeeple.github.io/categories/Notes/"/>
-    
-    <category term="UdS" scheme="https://greenmeeple.github.io/categories/Notes/UdS/"/>
-    
-    
-    <category term="AGV" scheme="https://greenmeeple.github.io/tags/AGV/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>AGV 11.1 -- Infinite Games (Basic Definitions)</title>
-    <link href="https://greenmeeple.github.io/AGV/agv11-1/"/>
-    <id>https://greenmeeple.github.io/AGV/agv11-1/</id>
-    <published>2025-02-11T16:11:48.000Z</published>
-    <updated>2025-04-03T07:41:15.408Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;Previous chapter: &lt;a href=&quot;../agv10-5/&quot;&gt;From semi-deterministic Büchi to deterministic Muller&lt;/a&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;This is a learning note of a course in &lt;a href=&quot;https://cispa.de/de&quot;&gt;CISPA&lt;/a&gt;, UdS. Taught by Bernd Finkbeiner&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;p&gt;We now introduce &lt;em&gt;infinite two-player games on finite graphs&lt;/em&gt;. Infinite games are useful to solve the synthesis problem, where we are interested in finding a strategy that guarantees that a given specification is satisfied (cf. &lt;a href=&quot;../agv1.2/&quot;&gt;Section 1.2&lt;/a&gt;). As we will see, games also play a fundamental role in automata theory, in particular for automata over infinite trees.&lt;/p&gt;
-&lt;h2 id=&quot;Basic-Definitions&quot;&gt;&lt;a href=&quot;#Basic-Definitions&quot; class=&quot;headerlink&quot; title=&quot;Basic Definitions&quot;&gt;&lt;/a&gt;Basic Definitions&lt;/h2&gt;&lt;p&gt;The game is played on a graph, called the &lt;strong&gt;arena&lt;/strong&gt;. The vertices of the graph are called &lt;strong&gt;positions&lt;/strong&gt; and are partitioned into the positions of Player 0 and the positions of Player 1. &lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;A play of the game starts in some initial position&lt;/li&gt;
-&lt;li&gt;In any positions, the player who &lt;strong&gt;owns the position chooses the edge&lt;/strong&gt; on which the play is continued.&lt;/li&gt;
-&lt;li&gt;Player 0 wins if the play is an element of the &lt;strong&gt;winning condition&lt;/strong&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The winner is determined by a winning condition, which, like the acceptance condition of an automaton on infinite words is a subset of the infinite words over the positions. &lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;$&#92;textbf{Definition 11.1. } &#92;text{A }&#92;textit{game arena}&#92;text{ is a tuple }&#92;mathcal{A} &amp;#x3D; (V,V_0,V_1,E)&#92;text{, where}&#92;newline&#92;begin{array}{l}&lt;br&gt;&#92;hspace{0.5cm} &#92;cdot &#92; V_0&#92;text{ and }V_1&amp;#x3D;V&#92;setminus V_0&#92;text{ are disjoint sets of positions,}&#92;newline&lt;br&gt;&#92;hspace{1cm} &#92;text{called the positions of Player 0 and Player 1.}&#92;newline&lt;br&gt;&#92;hspace{0.5cm} &#92;cdot &#92; E&#92;subseteq V&#92;times V&#92;text{ is a set of edges such that every position }v&#92;in V&#92;newline&lt;br&gt;&#92;hspace{1cm} &#92;text{has at least one outgoing edge }(v,v’)&#92;in E.&#92;newline&lt;br&gt;&#92;end{array}$&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;$&#92;textbf{Definition 11.2. } &#92;text{A }&#92;textit{play}&#92;text{ is an infinite sequence }  &#92;rho&#92;in V^&#92;omega&#92;text{ such that}$&lt;br&gt;$$&#92;forall n&#92;in&#92;mathbb{N}.(&#92;rho(n),&#92;rho(n+1))&#92;in E$$&lt;/p&gt;
-&lt;/blockquote&gt;</summary>
-    
-    
-    
-    <category term="Notes" scheme="https://greenmeeple.github.io/categories/Notes/"/>
-    
-    <category term="UdS" scheme="https://greenmeeple.github.io/categories/Notes/UdS/"/>
-    
-    
-    <category term="AGV" scheme="https://greenmeeple.github.io/tags/AGV/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>AGV 10.5 -- From semi-deterministic Büchi to deterministic Muller</title>
-    <link href="https://greenmeeple.github.io/AGV/agv10-5/"/>
-    <id>https://greenmeeple.github.io/AGV/agv10-5/</id>
-    <published>2025-02-11T07:41:39.000Z</published>
-    <updated>2025-04-03T07:41:15.439Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;Previous chapter: &lt;a href=&quot;../agv10-4/&quot;&gt;Semi-Deterministic Büchi Automata&lt;/a&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;This is a learning note of a course in</summary>
-        
-      
-    
-    
-    
-    <category term="Notes" scheme="https://greenmeeple.github.io/categories/Notes/"/>
-    
-    <category term="UdS" scheme="https://greenmeeple.github.io/categories/Notes/UdS/"/>
-    
-    
-    <category term="AGV" scheme="https://greenmeeple.github.io/tags/AGV/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>AGV 10.4 -- Semi-Deterministic Büchi Automata</title>
-    <link href="https://greenmeeple.github.io/AGV/agv10-4/"/>
-    <id>https://greenmeeple.github.io/AGV/agv10-4/</id>
-    <published>2025-01-29T14:23:24.000Z</published>
-    <updated>2025-04-03T07:41:15.407Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;Previous chapter: &lt;a href=&quot;../agv10-3/&quot;&gt;Closure Properties of Muller automata Under Boolean Operations&lt;/a&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;This is a learning note of a course in &lt;a href=&quot;https://cispa.de/de&quot;&gt;CISPA&lt;/a&gt;, UdS. Taught by Bernd Finkbeiner&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;p&gt;To prove McNaughton’s theorem, in this subsection, we will introdue the &lt;strong&gt;semi-deterministic Büchi automata&lt;/strong&gt;.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;translate nondeterministic Büchi automata into semi-deterministic Büchi automata.&lt;/li&gt;
-&lt;li&gt;translate from semi-deterministic Büchi automata to deterministic Muller automata.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&quot;Semi-deterministic-Buchi-Automata&quot;&gt;&lt;a href=&quot;#Semi-deterministic-Buchi-Automata&quot; class=&quot;headerlink&quot; title=&quot;Semi-deterministic Büchi Automata&quot;&gt;&lt;/a&gt;Semi-deterministic Büchi Automata&lt;/h2&gt;&lt;p&gt;A &lt;em&gt;semi-deterministic automaton&lt;/em&gt; is a (possibly nondeterministic) automaton where all accepting runs ultimately end up in a &lt;strong&gt;subset of the states&lt;/strong&gt; from which all transitions are deterministic.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;$&#92;textbf{Definition 10.2. } &#92;text{A Büchi automata }&#92;mathcal{A} &amp;#x3D; (&#92;Sigma,Q,I,T,&#92;small&#92;text{BÜCHI} &#92;normalsize(F))&#92;text{ is }&#92;textit{semi-deterministic}&#92;text{ if}&#92;newline Q &amp;#x3D; N &#92;uplus D&#92;text{ is a partition of }Q&#92;text{ such that }F&#92;subseteq D, pr_2(T&#92;cap(D&#92;times&#92;Sigma&#92;times Q))&#92;subseteq D&#92;text{, and }&#92;newline(&#92;Sigma,D,&#92;lbrace d&#92;rbrace,T&#92;cap(D&#92;times&#92;Sigma&#92;times D),&#92;small&#92;text{BÜCHI}&#92;normalsize(F)) &#92;text{ is deterministic for every }d&#92;in D.$&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;Explaination&quot;&gt;&lt;a href=&quot;#Explaination&quot; class=&quot;headerlink&quot; title=&quot;Explaination&quot;&gt;&lt;/a&gt;Explaination&lt;/h3&gt;&lt;p&gt;$Q &amp;#x3D; N &#92;uplus D:$ a &lt;em&gt;disjoint union symbol&lt;/em&gt; $&#92;uplus$ indicates that $N$ and $D$ are two seperated subset.&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Notes" scheme="https://greenmeeple.github.io/categories/Notes/"/>
-    
-    <category term="UdS" scheme="https://greenmeeple.github.io/categories/Notes/UdS/"/>
-    
-    
-    <category term="AGV" scheme="https://greenmeeple.github.io/tags/AGV/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Appium commands that are commonly used on Mac</title>
     <link href="https://greenmeeple.github.io/appium/"/>
     <id>https://greenmeeple.github.io/appium/</id>
@@ -583,10 +217,10 @@ If an opaque response serves your needs, set the request&amp;#39;s mode to &amp;
   
   <entry>
     <title>Automata, Games, and Verification (Portal)</title>
-    <link href="https://greenmeeple.github.io/AGV/agv/"/>
-    <id>https://greenmeeple.github.io/AGV/agv/</id>
+    <link href="https://greenmeeple.github.io/notes/agv/"/>
+    <id>https://greenmeeple.github.io/notes/agv/</id>
     <published>2024-12-22T15:35:16.000Z</published>
-    <updated>2025-04-03T07:41:15.405Z</updated>
+    <updated>2025-04-03T16:54:33.495Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
@@ -600,15 +234,15 @@ If an opaque response serves your needs, set the request&amp;#39;s mode to &amp;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;&lt;tr&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;a href=&quot;../agv1-1/&quot;&gt;1.1. Model Checking&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;a href=&quot;https://greenmeeple.github.io/notes/AGV/agv1-1/&quot;&gt;1.1. Model Checking&lt;/a&gt;&lt;/td&gt;
 &lt;td align=&quot;left&quot;&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;a href=&quot;../agv1-2/&quot;&gt;1.2. Synthesis&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;a href=&quot;https://greenmeeple.github.io/notes/AGV/agv1-2/&quot;&gt;1.2. Synthesis&lt;/a&gt;&lt;/td&gt;
 &lt;td align=&quot;left&quot;&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;a href=&quot;../agv1-3/&quot;&gt;1.3. The Logic-Automata Connection&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;a href=&quot;https://greenmeeple.github.io/notes/AGV/agv1-3/&quot;&gt;1.3. The Logic-Automata Connection&lt;/a&gt;&lt;/td&gt;
 &lt;td align=&quot;left&quot;&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;&lt;/table&gt;
@@ -620,15 +254,15 @@ If an opaque response serves your needs, set the request&amp;#39;s mode to &amp;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;&lt;tr&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;a href=&quot;../agv2-1/&quot;&gt;2.1. Preliminaries&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;a href=&quot;https://greenmeeple.github.io/notes/AGV/agv2-1/&quot;&gt;2.1. Preliminaries&lt;/a&gt;&lt;/td&gt;
 &lt;td align=&quot;left&quot;&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;a href=&quot;../agv2-2/&quot;&gt;2.2. Automata over Infinite Words&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;a href=&quot;https://greenmeeple.github.io/notes/AGV/agv2-2/&quot;&gt;2.2. Automata over Infinite Words&lt;/a&gt;&lt;/td&gt;
 &lt;td align=&quot;left&quot;&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;a href=&quot;../agv2-3/&quot;&gt;2.3. The Büchi Acceptance Condition&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;a href=&quot;https://greenmeeple.github.io/notes/AGV/agv2-3/&quot;&gt;2.3. The Büchi Acceptance Condition&lt;/a&gt;&lt;/td&gt;
 &lt;td align=&quot;left&quot;&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;&lt;/table&gt;
@@ -640,23 +274,23 @@ If an opaque response serves your needs, set the request&amp;#39;s mode to &amp;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;&lt;tr&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;a href=&quot;../agv3-1/&quot;&gt;3.1. Kleene’s Theorem&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;a href=&quot;https://greenmeeple.github.io/notes/AGV/agv3-1/&quot;&gt;3.1. Kleene’s Theorem&lt;/a&gt;&lt;/td&gt;
 &lt;td align=&quot;left&quot;&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;a href=&quot;../agv3-2/&quot;&gt;3.2. $&#92;omega$-regular language&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;a href=&quot;https://greenmeeple.github.io/notes/AGV/agv3-2/&quot;&gt;3.2. $&#92;omega$-regular language&lt;/a&gt;&lt;/td&gt;
 &lt;td align=&quot;left&quot;&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;a href=&quot;../agv3-3/&quot;&gt;3.3 Closure Properties of the Büchi-recognizable languages (Intersection and Union)&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;a href=&quot;https://greenmeeple.github.io/notes/AGV/agv3-3/&quot;&gt;3.3 Closure Properties of the Büchi-recognizable languages (Intersection and Union)&lt;/a&gt;&lt;/td&gt;
 &lt;td align=&quot;left&quot;&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;a href=&quot;../agv3-4/&quot;&gt;3.4 Closure Properties of the Büchi-recognizable languages (Concatenations)&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;a href=&quot;https://greenmeeple.github.io/notes/AGV/agv3-4/&quot;&gt;3.4 Closure Properties of the Büchi-recognizable languages (Concatenations)&lt;/a&gt;&lt;/td&gt;
 &lt;td align=&quot;left&quot;&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;a href=&quot;../agv3-5/&quot;&gt;3.5 Büchi’s Characterization Theorem&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;a href=&quot;https://greenmeeple.github.io/notes/AGV/agv3-5/&quot;&gt;3.5 Büchi’s Characterization Theorem&lt;/a&gt;&lt;/td&gt;
 &lt;td align=&quot;left&quot;&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;&lt;/table&gt;
@@ -668,11 +302,11 @@ If an opaque response serves your needs, set the request&amp;#39;s mode to &amp;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;&lt;tr&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;a href=&quot;../agv4-1/&quot;&gt;4.1. Deterministic vs. Nondeterministic Büchi Automata&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;a href=&quot;https://greenmeeple.github.io/notes/AGV/agv4-1/&quot;&gt;4.1. Deterministic vs. Nondeterministic Büchi Automata&lt;/a&gt;&lt;/td&gt;
 &lt;td align=&quot;left&quot;&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;a href=&quot;../agv4-2/&quot;&gt;4.2. Complementation of deterministic Büchi Automata&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;a href=&quot;https://greenmeeple.github.io/notes/AGV/agv4-2/&quot;&gt;4.2. Complementation of deterministic Büchi Automata&lt;/a&gt;&lt;/td&gt;
 &lt;td align=&quot;left&quot;&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;&lt;/table&gt;
@@ -682,145 +316,422 @@ If an opaque response serves your needs, set the request&amp;#39;s mode to &amp;
     
     <category term="Notes" scheme="https://greenmeeple.github.io/categories/Notes/"/>
     
-    <category term="UdS" scheme="https://greenmeeple.github.io/categories/Notes/UdS/"/>
     
-    
-    <category term="AGV" scheme="https://greenmeeple.github.io/tags/AGV/"/>
+    <category term="UdS" scheme="https://greenmeeple.github.io/tags/UdS/"/>
     
   </entry>
   
   <entry>
-    <title>Cantonese Ch.1-6 -- Tones</title>
-    <link href="https://greenmeeple.github.io/Canto/canto1-6/"/>
-    <id>https://greenmeeple.github.io/Canto/canto1-6/</id>
-    <published>2024-12-19T02:06:12.000Z</published>
-    <updated>2025-04-03T07:41:15.401Z</updated>
+    <title>Leetcode SQL 50 (Portal 🚪)</title>
+    <link href="https://greenmeeple.github.io/notes/sql50/"/>
+    <id>https://greenmeeple.github.io/notes/sql50/</id>
+    <published>2024-10-20T21:59:01.000Z</published>
+    <updated>2025-04-03T16:55:46.960Z</updated>
     
     
+      
+      
+        
+        
     <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;Golden Rule of becoming a native Cantonese speaker: &lt;strong&gt;Tones&lt;/strong&gt; &amp;gt; Everything!&lt;/p&gt;
+&lt;p&gt;This is a portal for my walkthroughs of SQL 50 on Leetcode&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;In this blog, we use &lt;a href=&quot;https://jyutping.org/en/docs/english/&quot;&gt;Jyutping&lt;/a&gt; to indicate the pronunciation of Cantonese characters.&lt;/p&gt;
-&lt;p&gt;Previous lesson: &lt;a href=&quot;../canto1-3/&quot;&gt;Rimes with e&lt;/a&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;In this lesson, we talk about Rimes with &lt;code&gt;u&lt;/code&gt;, &lt;code&gt;yu&lt;/code&gt;. Here we use &lt;code&gt;u&lt;/code&gt; similar to languages like German or Italian.&lt;/p&gt;
-&lt;p&gt;And &lt;code&gt;yu&lt;/code&gt; is equivalent to “ü” in German. Let’s take a look.&lt;/p&gt;
-&lt;h2 id=&quot;Rimes-with-u&quot;&gt;&lt;a href=&quot;#Rimes-with-u&quot; class=&quot;headerlink&quot; title=&quot;Rimes with u&quot;&gt;&lt;/a&gt;Rimes with &lt;code&gt;u&lt;/code&gt;&lt;/h2&gt;&lt;p&gt;For &lt;code&gt;u&lt;/code&gt;, &lt;code&gt;ui&lt;/code&gt;, &lt;code&gt;un&lt;/code&gt;, &lt;code&gt;ut&lt;/code&gt;, u sounds like “oo” in “foo”.&lt;/p&gt;
-&lt;p&gt;For &lt;code&gt;ung&lt;/code&gt; and &lt;code&gt;uk&lt;/code&gt;, u sound like “one” in “tone”.&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&quot;left&quot;&gt;Jyutping&lt;/th&gt;
-&lt;th align=&quot;left&quot;&gt;Sounds in English&lt;/th&gt;
-&lt;th align=&quot;left&quot;&gt;Cantonese Example&lt;/th&gt;
-&lt;th align=&quot;left&quot;&gt;Jyutping&lt;/th&gt;
-&lt;th align=&quot;left&quot;&gt;Sounds in English&lt;/th&gt;
-&lt;th align=&quot;left&quot;&gt;Cantonese Example&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td align=&quot;left&quot;&gt;u&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;oo in foo&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;ruby&gt;夫&lt;rp&gt;(&lt;/rp&gt;&lt;rt&gt;fu1&lt;/rt&gt;&lt;rp&gt;)&lt;/rp&gt;&lt;/ruby&gt;&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;ut&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;oot in boot&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;ruby&gt;闊&lt;rp&gt;(&lt;/rp&gt;&lt;rt&gt;fut3&lt;/rt&gt;&lt;rp&gt;)&lt;/rp&gt;&lt;/ruby&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;left&quot;&gt;ui&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;ewy in chewy&lt;sup&gt;1&lt;/sup&gt;&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;ruby&gt;灰&lt;rp&gt;(&lt;/rp&gt;&lt;rt&gt;fui1&lt;/rt&gt;&lt;rp&gt;)&lt;/rp&gt;&lt;/ruby&gt;&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;ung&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;one in tone&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;ruby&gt;風&lt;rp&gt;(&lt;/rp&gt;&lt;rt&gt;fung1&lt;/rt&gt;&lt;rp&gt;)&lt;/rp&gt;&lt;/ruby&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;left&quot;&gt;un&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;oon in cartoon&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;ruby&gt;歡&lt;rp&gt;(&lt;/rp&gt;&lt;rt&gt;fun1&lt;/rt&gt;&lt;rp&gt;)&lt;/rp&gt;&lt;/ruby&gt;&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;uk&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;ook in cook&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;ruby&gt;福&lt;rp&gt;(&lt;/rp&gt;&lt;rt&gt;fuk1&lt;/rt&gt;&lt;rp&gt;)&lt;/rp&gt;&lt;/ruby&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;</summary>
+&lt;p&gt;&lt;a</summary>
+        
+      
     
     
     
-    <category term="Cantonese" scheme="https://greenmeeple.github.io/categories/Cantonese/"/>
+    <category term="Notes" scheme="https://greenmeeple.github.io/categories/Notes/"/>
     
-    <category term="Full_Course" scheme="https://greenmeeple.github.io/categories/Cantonese/Full-Course/"/>
     
+    <category term="LeetCode" scheme="https://greenmeeple.github.io/tags/LeetCode/"/>
+    
+    <category term="SQL" scheme="https://greenmeeple.github.io/tags/SQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hexo-zhruby -- Implementing HTML Ruby tag in Hexo</title>
+    <link href="https://greenmeeple.github.io/projects/hexo-zhruby/"/>
+    <id>https://greenmeeple.github.io/projects/hexo-zhruby/</id>
+    <published>2024-10-14T02:04:55.000Z</published>
+    <updated>2025-04-03T07:41:15.387Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Implement the HTML tag &lt;code&gt;&amp;lt;ruby&amp;gt;&lt;/code&gt; for Hexo using &lt;a href=&quot;https://hexo.io/docs/tag-plugins&quot;&gt;Tag Plugin&lt;/a&gt; feature. Provide auto pronounciation indication for Jyutping (Cantonese), Zhuyin (Taiwanese Mandarin), and Pinyin (Chinese Mandarin), and the default setting for general usage. Support Traditonal and Simplified Chinese characters. &lt;/p&gt;
+&lt;p&gt;Inspired by the &lt;a href=&quot;https://github.com/jamespan/hexo-ruby-character&quot;&gt;hexo-ruby-character&lt;/a&gt; by &lt;a href=&quot;https://github.com/jamespan&quot;&gt;jamespan&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;Install&quot;&gt;&lt;a href=&quot;#Install&quot; class=&quot;headerlink&quot; title=&quot;Install&quot;&gt;&lt;/a&gt;Install&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;npm install hexo-zhruby --save
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&quot;Use-cases&quot;&gt;&lt;a href=&quot;#Use-cases&quot; class=&quot;headerlink&quot; title=&quot;Use cases&quot;&gt;&lt;/a&gt;Use cases&lt;/h2&gt;&lt;p&gt;Ruby (ルビ) is also known as &lt;a href=&quot;https://en.wikipedia.org/wiki/Furigana&quot;&gt;Furigana&lt;/a&gt; (振り仮名).  It contains two basic use cases:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;To clarify or indicate the pronunciation for readers&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Kanji#Special_readings&quot;&gt;Gikun&lt;/a&gt;, in which the characters have different pronunciations than they seem due to convention or for a specific context. For example, the pronunciation of 煙草 in Japanese is &lt;em&gt;tabako (tobacco)&lt;/em&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;Usage&quot;&gt;&lt;a href=&quot;#Usage&quot; class=&quot;headerlink&quot; title=&quot;Usage&quot;&gt;&lt;/a&gt;Usage&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;TLDR&lt;/strong&gt;: Usage: &lt;code&gt;&amp;#123;% tag rb|rt %&amp;#125;&lt;/code&gt;; Tag options: &lt;code&gt;ruby_def&lt;/code&gt;, &lt;code&gt;ruby_jy&lt;/code&gt;, &lt;code&gt;ruby_py&lt;/code&gt;, &lt;code&gt;ruby_zy&lt;/code&gt;.&lt;/p&gt;
+&lt;hr&gt;</summary>
+    
+    
+    
+    <category term="Projects" scheme="https://greenmeeple.github.io/categories/Projects/"/>
+    
+    
+    <category term="Hexo" scheme="https://greenmeeple.github.io/tags/Hexo/"/>
+    
+    <category term="Node.js" scheme="https://greenmeeple.github.io/tags/Node-js/"/>
+    
+    <category term="HTML" scheme="https://greenmeeple.github.io/tags/HTML/"/>
     
     <category term="Cantonese" scheme="https://greenmeeple.github.io/tags/Cantonese/"/>
     
-    <category term="Language Learning" scheme="https://greenmeeple.github.io/tags/Language-Learning/"/>
+  </entry>
+  
+  <entry>
+    <title>Using Hexo Plugin functions to create a custom Tag Plugin</title>
+    <link href="https://greenmeeple.github.io/js/hexo-tagplugin-2/"/>
+    <id>https://greenmeeple.github.io/js/hexo-tagplugin-2/</id>
+    <published>2024-10-13T02:03:12.000Z</published>
+    <updated>2025-04-03T15:33:25.905Z</updated>
     
-    <category term="Phonology" scheme="https://greenmeeple.github.io/tags/Phonology/"/>
+    
+    <summary type="html">&lt;p&gt;&lt;strong&gt;Disclaimer&lt;/strong&gt;: For explaination on &lt;code&gt;Tag Plugin&lt;/code&gt; and &lt;code&gt;Scripts&lt;/code&gt; in Hexo, you may take a look of &lt;a href=&quot;../hexo-tagplugin-1&quot;&gt;this post&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;Plugin&quot;&gt;&lt;a href=&quot;#Plugin&quot; class=&quot;headerlink&quot; title=&quot;Plugin&quot;&gt;&lt;/a&gt;Plugin&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;Be Careful! Don’t mix &lt;code&gt;Plugin&lt;/code&gt;, &lt;code&gt;Tag&lt;/code&gt;, and &lt;code&gt;Tag Plugin&lt;/code&gt; in Hexo, even though they look extremely similar.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Usually, &lt;code&gt;Plugin&lt;/code&gt; are for complicated functions. Yet if you want to publish your custom &lt;code&gt;Tag Plugin&lt;/code&gt; to the NPM registry or even shown on the Hexo Community Page, &lt;code&gt;Plugin&lt;/code&gt; would be a very good choice.&lt;/p&gt;
+&lt;h3 id=&quot;From-Script-to-Plugin&quot;&gt;&lt;a href=&quot;#From-Script-to-Plugin&quot; class=&quot;headerlink&quot; title=&quot;From Script to Plugin&quot;&gt;&lt;/a&gt;From Script to Plugin&lt;/h3&gt;&lt;p&gt;Assume you already have a script call &lt;code&gt;index.js&lt;/code&gt;, and you want to turn it into package, you may do the following:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Navigate &lt;code&gt;node_modules&lt;/code&gt; folder in your project folder. This is the folder where Hexo stored all the packages for your blog. Create a folder inside and the name must begin with &lt;code&gt;hexo-&lt;/code&gt; or Hexo will ignore it.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Your folder must contain at least two files: the actual JavaScript code and &lt;code&gt;package.json&lt;/code&gt; file that describes the purpose of the plugin and sets its dependencies.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;directory&quot;&gt;.
+├── index.js
+└── package.json
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;In &lt;code&gt;package.json&lt;/code&gt;, it should at least have the &lt;code&gt;name&lt;/code&gt;, &lt;code&gt;version&lt;/code&gt; and &lt;code&gt;main&lt;/code&gt; entries set.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;json&quot;&gt;&amp;#123;
+    &amp;quot;name&amp;quot;: &amp;quot;hexo-my-plugin&amp;quot;,
+    &amp;quot;version&amp;quot;: &amp;quot;0.0.1&amp;quot;,
+    &amp;quot;main&amp;quot;: &amp;quot;index&amp;quot;
+&amp;#125;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;In the root &lt;code&gt;package.json&lt;/code&gt; of your hexo project, you also need to list your &lt;code&gt;plugin&lt;/code&gt; as a &lt;code&gt;dependency&lt;/code&gt;, for Hexo to detect and load it.&lt;br&gt; Please remember that if your package contain other dependencies, also install and list them for testing and dubugging.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;json&quot;&gt;&amp;#123;
+    &amp;quot;name&amp;quot;: &amp;quot;hexo-site&amp;quot;,
+    &amp;quot;version&amp;quot;: &amp;quot;0.0.0&amp;quot;,
+    &amp;quot;private&amp;quot;: true,
+    &amp;quot;scripts&amp;quot;: &amp;#123;
+        &amp;quot;build&amp;quot;: &amp;quot;hexo generate&amp;quot;,
+        &amp;quot;clean&amp;quot;: &amp;quot;hexo clean&amp;quot;,
+        &amp;quot;deploy&amp;quot;: &amp;quot;hexo deploy&amp;quot;,
+        &amp;quot;server&amp;quot;: &amp;quot;hexo server&amp;quot;
+    &amp;#125;,
+    &amp;quot;hexo&amp;quot;: &amp;#123;
+        &amp;quot;version&amp;quot;: &amp;quot;&amp;quot;
+    &amp;#125;,
+    &amp;quot;dependencies&amp;quot;: &amp;#123;
+        &amp;quot;hexo&amp;quot;: &amp;quot;^7.3.0&amp;quot;,
+        ...
+        &amp;quot;hexo-my-plugin&amp;quot;: &amp;quot;0.0.1&amp;quot;,
+        &amp;quot;my-plugin-dependency1&amp;quot;: &amp;quot;2.0.0&amp;quot;,
+        &amp;quot;my-plugin-dependency2&amp;quot;: &amp;quot;2.0.0&amp;quot;
+    &amp;#125;
+&amp;#125;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;If you run command that check all the package after step 4, for exmaple &lt;code&gt;hexo clean&lt;/code&gt;, it will check all the packages in &lt;code&gt;node_modules&lt;/code&gt; and remove packages that are not publish on npm.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;Publish-Plugin-to-npm&quot;&gt;&lt;a href=&quot;#Publish-Plugin-to-npm&quot; class=&quot;headerlink&quot; title=&quot;Publish Plugin to npm&quot;&gt;&lt;/a&gt;Publish Plugin to npm&lt;/h2&gt;&lt;p&gt;To publish your package on the NPM registry, don’t forget you have to setup your account on &lt;a href=&quot;https://www.npmjs.com/&quot;&gt;npm&lt;/a&gt; first.&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="JavaScript" scheme="https://greenmeeple.github.io/categories/JavaScript/"/>
+    
+    
+    <category term="Hexo" scheme="https://greenmeeple.github.io/tags/Hexo/"/>
+    
+    <category term="Node.js" scheme="https://greenmeeple.github.io/tags/Node-js/"/>
     
   </entry>
   
   <entry>
-    <title>AGV -- (Exercise 7.2) LTL to Alternating Büchi Automata</title>
-    <link href="https://greenmeeple.github.io/AGV/agv7-2-eg/"/>
-    <id>https://greenmeeple.github.io/AGV/agv7-2-eg/</id>
-    <published>2024-12-17T03:02:09.000Z</published>
-    <updated>2025-04-03T07:41:15.423Z</updated>
+    <title>Using Hexo Scripts functions to create a custom Tag Plugin</title>
+    <link href="https://greenmeeple.github.io/js/hexo-tagplugin-1/"/>
+    <id>https://greenmeeple.github.io/js/hexo-tagplugin-1/</id>
+    <published>2024-10-12T02:03:12.000Z</published>
+    <updated>2025-04-03T15:33:25.262Z</updated>
     
     
-    <summary type="html">&lt;p&gt;Previous Exercise: &lt;a href&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;This is a learning note of a course in &lt;a href=&quot;https://cispa.de/de&quot;&gt;CISPA&lt;/a&gt;, UdS. Taught by Bernd Finkbeiner&lt;/p&gt;
+    <summary type="html">&lt;p&gt;To color your personal Hexo Blog with more features, scripts and plugins are your powerful tools to use. Below we are trying to create our own &lt;code&gt;tag plugin&lt;/code&gt; for the Hexo blog.&lt;/p&gt;
+&lt;h2 id=&quot;Tag-Plugin&quot;&gt;&lt;a href=&quot;#Tag-Plugin&quot; class=&quot;headerlink&quot; title=&quot;Tag Plugin&quot;&gt;&lt;/a&gt;Tag Plugin&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;Be careful! Tag plugins are different from &lt;a href=&quot;https://hexo.io/docs/front-matter&quot;&gt;post tags&lt;/a&gt;.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;This is an example exercise to express LTL formula into Alternating Büchi Automata. For further definitions, you may check &lt;a href=&quot;../agv7-2/&quot;&gt;Section 7.2&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;Question&quot;&gt;&lt;a href=&quot;#Question&quot; class=&quot;headerlink&quot; title=&quot;Question&quot;&gt;&lt;/a&gt;Question&lt;/h2&gt;&lt;p&gt;Use the &lt;a href=&quot;../agv7-2/&quot;&gt;construction from the lecture&lt;/a&gt; to construct an alternating Büchi automaton $&#92;mathcal{A}$ such that $$&#92;mathcal{L(A)&amp;#x3D;L}((&#92;Diamond p)&#92; &#92;mathcal{U}&#92; (&#92;square q))$$&lt;/p&gt;
-&lt;h2 id=&quot;Solution&quot;&gt;&lt;a href=&quot;#Solution&quot; class=&quot;headerlink&quot; title=&quot;Solution&quot;&gt;&lt;/a&gt;Solution&lt;/h2&gt;&lt;p&gt;we build the following alternating Büchi automaton  $&#92;mathcal{A} &amp;#x3D; (2^{p,q},Q,&#92;varphi,&#92;delta,&#92;small&#92;text{BÜCHI} &#92;normalsize(F))$ which recognizes the models of $&#92;varphi&amp;#x3D;(&#92;Diamond p)&#92; &#92;mathcal{U}&#92; (&#92;square q)$. First we consider the transition function $&#92;delta$ for an arbitrary symbol $a&#92;in2^{p,q}:$&lt;/p&gt;
-&lt;p&gt;$&#92;begin{array}{lll}&lt;br&gt;&#92;hspace{1cm}&#92;bullet &amp;amp;&amp;amp;&#92;delta(&#92;square q,a)&#92;newline&lt;br&gt;&amp;amp;&amp;#x3D;&amp;amp;&#92;delta(&#92;neg(&#92;textit{true}&#92; &#92;mathcal{U}&#92; &#92;neg q) ,a)&#92;newline&lt;br&gt;&amp;amp;&amp;#x3D;&amp;amp;&#92;overline{&#92;delta(&#92;textit{true}&#92; &#92;mathcal{U}&#92; &#92;neg q ,a)}&#92;newline&lt;br&gt;&amp;amp;&amp;#x3D;&amp;amp;&#92;overline{&#92;delta(&#92;neg q,a)&#92;vee(&#92;delta(&#92;textit{true},a)&#92;wedge(&#92;textit{true}&#92; &#92;mathcal{U}&#92; &#92;neg q))}&#92;newline&lt;br&gt;&amp;amp;&amp;#x3D;&amp;amp;&#92;overline{&#92;delta(&#92;neg q,a)}&#92;wedge&#92;overline{(&#92;delta(&#92;textit{true},a)&#92;wedge (&#92;textit{true}&#92; &#92;mathcal{U}&#92; &#92;neg q))}&amp;amp;(&#92;textit{true}&#92;wedge &#92;psi&amp;#x3D;&#92;psi)&#92;newline&lt;br&gt;&amp;amp;&amp;#x3D;&amp;amp;&#92;overline{&#92;delta(&#92;neg q,a)}&#92;wedge&#92;overline{(&#92;textit{true}&#92; &#92;mathcal{U}&#92; &#92;neg q)}&amp;amp;(&#92;text{Using line 1})&#92;newline&lt;br&gt;&amp;amp;&amp;#x3D;&amp;amp;&#92;overline{&#92;delta(&#92;neg q,a)}&#92;wedge&#92;square q&#92;newline&lt;br&gt;&amp;amp;&amp;#x3D;&amp;amp;&#92;left&#92;lbrace &#92;begin{array}{lll}&lt;br&gt;&#92;square q&amp;amp;&#92;text{if }q&#92;in a&#92;newline&lt;br&gt;&#92;textit{false}&amp;amp;&#92;text{if }q&#92;notin a&#92;newline&lt;br&gt;&#92;end{array}&#92;right.&lt;br&gt;&#92;end{array}&lt;br&gt;&#92; &#92;newline &#92; &#92;newline&lt;br&gt;&#92;begin{array}{lll}&lt;br&gt;&#92;hspace{1cm}&#92;bullet &amp;amp;&amp;amp;&#92;delta(&#92;Diamond p,a)&#92;newline&lt;br&gt;&amp;amp;&amp;#x3D;&amp;amp;&#92;delta(&#92;textit{true}&#92; &#92;mathcal{U}&#92; p ,a)&#92;newline&lt;br&gt;&amp;amp;&amp;#x3D;&amp;amp;&#92;delta(p,a)&#92;vee(&#92;delta(&#92;textit{true},a)&#92;wedge&#92;Diamond p)&amp;amp;(&#92;textit{true}&#92;wedge &#92;psi&amp;#x3D;&#92;psi)&#92;newline&lt;br&gt;&amp;amp;&amp;#x3D;&amp;amp;&#92;delta(p,a)&#92;vee&#92;Diamond p&#92;newline&lt;br&gt;&amp;amp;&amp;#x3D;&amp;amp;&#92;left&#92;lbrace &#92;begin{array}{lll}&lt;br&gt;&#92;Diamond p&amp;amp;&#92;text{if }p&#92;notin a&#92;newline&lt;br&gt;&#92;textit{true}&amp;amp;&#92;text{if }p&#92;in a&#92;newline&lt;br&gt;&#92;end{array}&#92;right.&lt;br&gt;&#92;end{array}&lt;br&gt;$&lt;/p&gt;
-&lt;p&gt;By Substitution above result into $&#92;delta((&#92;Diamond p)&#92; &#92;mathcal{U}&#92; (&#92;square q),a)&amp;#x3D;&#92;delta(&#92;square q,a)&#92;vee(&#92;delta(&#92;Diamond p,a)&#92;wedge(&#92;Diamond p)&#92; &#92;mathcal{U}&#92; (&#92;square q))$, we have:&lt;/p&gt;
-&lt;p&gt;$$&#92;delta((&#92;Diamond p)&#92; &#92;mathcal{U}&#92; (&#92;square q),a)&amp;#x3D;&#92;left&#92;lbrace&lt;br&gt;&#92;begin{array}{lll}&lt;br&gt;&#92;Diamond p&#92;wedge((&#92;Diamond p)&#92; &#92;mathcal{U}&#92; (&#92;square q))&amp;amp;&#92;text{if }a &amp;#x3D;&#92;varnothing &amp;amp;(&#92;vee&#92; &#92;textit{false}&#92;text{ is omitted.})&#92;newline&lt;br&gt;(&#92;Diamond p)&#92; &#92;mathcal{U}&#92; (&#92;square q)&amp;amp;&#92;text{if }a &amp;#x3D;&#92;lbrace p&#92;rbrace&amp;amp;(&#92;wedge&#92; &#92;textit{true}&#92;text{ is omitted.})&#92;newline&lt;br&gt;&#92;square q&#92;vee(&#92;Diamond p&#92;wedge((&#92;Diamond p)&#92; &#92;mathcal{U}&#92; (&#92;square q)))&amp;amp;&#92;text{if }a &amp;#x3D;&#92;lbrace q&#92;rbrace&#92;newline&lt;br&gt;&#92;square q&#92;vee((&#92;Diamond p)&#92; &#92;mathcal{U}&#92; (&#92;square q))&amp;amp;&#92;text{if }a &amp;#x3D;&#92;lbrace p,q&#92;rbrace&amp;amp;(&#92;wedge&#92; &#92;textit{true}&#92;text{ is omitted.})&#92;newline&lt;br&gt;&#92;end{array}&#92;right.$$&lt;/p&gt;</summary>
+&lt;p&gt;Tag plugins are special type of syntax that you may use in your Markdown file.&lt;/p&gt;
+&lt;p&gt;Hexo has already provided some default Tag plugins like &lt;code&gt;Block Quote&lt;/code&gt; and &lt;code&gt;iframe&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id=&quot;Usage&quot;&gt;&lt;a href=&quot;#Usage&quot; class=&quot;headerlink&quot; title=&quot;Usage&quot;&gt;&lt;/a&gt;Usage&lt;/h3&gt;&lt;p&gt;For example, the syntax of &lt;code&gt;iframe&lt;/code&gt; tag is:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;Markdown&quot;&gt;&amp;#123;% iframe url [width] [height] %&amp;#125;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Let say I want to embed a video from me and my friends’ YouTube video:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;Markdown&quot;&gt;&amp;#123;% iframe https://www.youtube.com/embed/XIOl6BU7s9I?si=yTYsHIXNM6o-Zl9Z 820 461%&amp;#125;
+&lt;/code&gt;&lt;/pre&gt;</summary>
     
     
     
-    <category term="Notes" scheme="https://greenmeeple.github.io/categories/Notes/"/>
-    
-    <category term="UdS" scheme="https://greenmeeple.github.io/categories/Notes/UdS/"/>
+    <category term="JavaScript" scheme="https://greenmeeple.github.io/categories/JavaScript/"/>
     
     
-    <category term="AGV" scheme="https://greenmeeple.github.io/tags/AGV/"/>
+    <category term="Hexo" scheme="https://greenmeeple.github.io/tags/Hexo/"/>
+    
+    <category term="Node.js" scheme="https://greenmeeple.github.io/tags/Node-js/"/>
     
   </entry>
   
   <entry>
-    <title>AGV 10.3 -- Closure Properties of Muller automata Under Boolean Operations</title>
-    <link href="https://greenmeeple.github.io/AGV/agv10-3/"/>
-    <id>https://greenmeeple.github.io/AGV/agv10-3/</id>
-    <published>2024-12-13T04:02:57.000Z</published>
-    <updated>2025-04-03T07:41:15.440Z</updated>
+    <title>Railroad Diagram of version range operators</title>
+    <link href="https://greenmeeple.github.io/js/json-dependencies-diagram/"/>
+    <id>https://greenmeeple.github.io/js/json-dependencies-diagram/</id>
+    <published>2024-10-11T00:19:03.000Z</published>
+    <updated>2025-04-03T15:33:24.660Z</updated>
     
     
-    <summary type="html">&lt;p&gt;Previous chapter: &lt;a href=&quot;../agv10-2/&quot;&gt;From Büchi automata to Muller automata&lt;/a&gt;&lt;/p&gt;
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;This is a image version of the post &lt;a href=&quot;../json-dependencies/&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a name=&quot;range-set&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;range-set:&lt;/strong&gt;&lt;br&gt;&lt;img src=&quot;/images/coding/json_dep_diagram/range-set.png&quot; alt=&quot;range-set&quot;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;EBNF&quot;&gt;range-set   ::= range ( logical-or range )*
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;logical-or:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/coding/json_dep_diagram/logical-or.png&quot; alt=&quot;logical-or&quot;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;EBNF&quot;&gt;logical-or  ::= &amp;#39; &amp;#39;* &amp;#39;||&amp;#39; &amp;#39; &amp;#39;*
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;referenced by: &lt;a href=&quot;#range-set&quot;&gt;range-set&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a name=&quot;range&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;range:&lt;/strong&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="JavaScript" scheme="https://greenmeeple.github.io/categories/JavaScript/"/>
+    
+    
+    <category term="Node.js" scheme="https://greenmeeple.github.io/tags/Node-js/"/>
+    
+    <category term="json" scheme="https://greenmeeple.github.io/tags/json/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Explaination of version range operators in package.json for package dependencies</title>
+    <link href="https://greenmeeple.github.io/js/json-dependencies/"/>
+    <id>https://greenmeeple.github.io/js/json-dependencies/</id>
+    <published>2024-10-10T17:04:37.000Z</published>
+    <updated>2025-04-03T15:33:23.903Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;To see the syntax and Railroad diagram version, goto &lt;a href=&quot;../json-dependencies-diagram/&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;Basic-Structure&quot;&gt;&lt;a href=&quot;#Basic-Structure&quot; class=&quot;headerlink&quot; title=&quot;Basic Structure&quot;&gt;&lt;/a&gt;Basic Structure&lt;/h2&gt;&lt;p&gt;Package dependecies are a tuple of &lt;code&gt;[major, minor, patch]&lt;/code&gt; with numeric values.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;json&quot;&gt;&amp;#123;
+    &amp;quot;name&amp;quot;: &amp;quot;project name&amp;quot;,
+    &amp;quot;version&amp;quot;: &amp;quot;0.0.1&amp;quot;,
+    &amp;quot;description&amp;quot;: &amp;quot;description of the project&amp;quot;,
+    &amp;quot;keywords&amp;quot;: [
+        &amp;quot;keyword 1&amp;quot;,
+        &amp;quot;keyword 2&amp;quot;
+    ],
+    &amp;quot;author&amp;quot;: &amp;quot;John Doe&amp;quot;,
+    &amp;quot;dependencies&amp;quot;: &amp;#123;
+      &amp;quot;package-1&amp;quot;: &amp;quot;~0.6.2&amp;quot;,
+      &amp;quot;package-2&amp;quot;: &amp;quot;&amp;gt;=2.6.2&amp;quot;
+    &amp;#125;
+&amp;#125;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&quot;Version-Range-operator&quot;&gt;&lt;a href=&quot;#Version-Range-operator&quot; class=&quot;headerlink&quot; title=&quot;Version Range operator&quot;&gt;&lt;/a&gt;Version Range operator&lt;/h2&gt;&lt;h3 id=&quot;Basic-Range&quot;&gt;&lt;a href=&quot;#Basic-Range&quot; class=&quot;headerlink&quot; title=&quot;Basic Range&quot;&gt;&lt;/a&gt;Basic Range&lt;/h3&gt;&lt;p&gt;For &lt;code&gt;x&lt;/code&gt; in exmaple, see &lt;strong&gt;Advanced Range&lt;/strong&gt; below.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&quot;left&quot;&gt;Operator&lt;/th&gt;
+&lt;th align=&quot;left&quot;&gt;Explaination&lt;/th&gt;
+&lt;th align=&quot;left&quot;&gt;Example&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;code&gt;=&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;package version must be exactly matched&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;code&gt;1.0.0&lt;/code&gt; :&amp;#x3D; &lt;code&gt;=1.0.0&lt;/code&gt;&lt;br&gt;(They are equivalent)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;code&gt;&amp;lt;&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;package version must be less than indicated&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;code&gt;&amp;lt;2.0.0&lt;/code&gt; &lt;br&gt;:&amp;#x3D;version from &lt;code&gt;0.0.1&lt;/code&gt; to &lt;code&gt;1.x.x&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;code&gt;&amp;lt;=&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;package version must be less than or euqal to indicated&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;code&gt;&amp;lt;=2.0.0&lt;/code&gt; &lt;br&gt;:&amp;#x3D;version from &lt;code&gt;0.0.1&lt;/code&gt; to &lt;code&gt;2.0.0&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;code&gt;&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;package version must be greater than indicated&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;code&gt;&amp;gt;2.0.0&lt;/code&gt;:&amp;#x3D; &lt;br&gt;version from &lt;code&gt;2.0.1&lt;/code&gt; to &lt;code&gt;x&lt;/code&gt; (x &amp;gt;&amp;#x3D; 2)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;code&gt;&amp;gt;=&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;package version must be greater than or euqal to indicated&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;code&gt;&amp;gt;=2.0.0&lt;/code&gt; &lt;br&gt;:&amp;#x3D;version from &lt;code&gt;2.0.0&lt;/code&gt; to &lt;code&gt;x&lt;/code&gt; (x &amp;gt;&amp;#x3D; 2)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;code&gt;||&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;joined one or more operator&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;code&gt;&amp;gt;2.0.1 || &amp;lt;1.7.3&lt;/code&gt; &lt;br&gt;:&amp;#x3D;version greater than &lt;code&gt;2.0.1&lt;/code&gt; or less than &lt;code&gt;1.7.3&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;code&gt;space&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;Intersected one or more operator&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;code&gt;&amp;gt;=2.0.1  &amp;lt;=1.7.3&lt;/code&gt; &lt;br&gt;:&amp;#x3D;version from &lt;code&gt;2.0.1&lt;/code&gt; to &lt;code&gt;1.7.3&lt;/code&gt; (inclusive)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;h3 id=&quot;Advanced-Range&quot;&gt;&lt;a href=&quot;#Advanced-Range&quot; class=&quot;headerlink&quot; title=&quot;Advanced Range&quot;&gt;&lt;/a&gt;Advanced Range&lt;/h3&gt;&lt;p&gt;Advanced ranges may be combined in the same way as primitive comparators using &lt;code&gt;space&lt;/code&gt; or &lt;code&gt;||&lt;/code&gt;.&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="JavaScript" scheme="https://greenmeeple.github.io/categories/JavaScript/"/>
+    
+    
+    <category term="Node.js" scheme="https://greenmeeple.github.io/tags/Node-js/"/>
+    
+    <category term="json" scheme="https://greenmeeple.github.io/tags/json/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Why you shouldn&#39;t deploy your Hexo webpage using GitHub Desktop?</title>
+    <link href="https://greenmeeple.github.io/github-desktop/"/>
+    <id>https://greenmeeple.github.io/github-desktop/</id>
+    <published>2024-10-10T00:34:07.000Z</published>
+    <updated>2025-04-03T15:33:37.513Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;Methods-to-Deploy-Hexo-to-GitHub-io&quot;&gt;&lt;a href=&quot;#Methods-to-Deploy-Hexo-to-GitHub-io&quot; class=&quot;headerlink&quot; title=&quot;Methods to Deploy Hexo to GitHub.io&quot;&gt;&lt;/a&gt;Methods to Deploy Hexo to GitHub.io&lt;/h2&gt;&lt;p&gt;Assume you’ve created a repository on GitHub called &lt;code&gt;&amp;lt;username&amp;gt;.github.io&lt;/code&gt;. Here are two common method you can deploy you Hexo Blog:&lt;/p&gt;
+&lt;h3 id=&quot;Hexo-Command&quot;&gt;&lt;a href=&quot;#Hexo-Command&quot; class=&quot;headerlink&quot; title=&quot;Hexo Command&quot;&gt;&lt;/a&gt;Hexo Command&lt;/h3&gt;&lt;p&gt;Hexo’s documentations and Tutorial has provided sufficient instructions on deploying your personal website on your GitHub repository.&lt;/p&gt;
+&lt;p&gt;According to the &lt;a href=&quot;https://hexo.io/docs/github-pages&quot;&gt;Hexo Tutorial&lt;/a&gt;, we can deploy the repository by using &lt;a href=&quot;https://docs.github.com/en/actions&quot;&gt;GitHub Actions&lt;/a&gt;.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Create and Add the following contents to &lt;code&gt;.github/workflows/pages.yml&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;yml&quot;&gt;name: Pages
+
+on:
+push:
+    branches:
+    - main # default branch
+
+jobs:
+build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+        with:
+        token: $&amp;#123;&amp;#123; secrets.GITHUB_TOKEN &amp;#125;&amp;#125;
+        submodules: recursive
+    - name: Use Node.js 20
+        uses: actions/setup-node@v4
+        with:
+        # Examples: 20, 18.19, &amp;gt;=16.20.2, lts/Iron, lts/Hydrogen, *, latest, current, node
+        # Ref: https://github.com/actions/setup-node#supported-version-syntax
+        node-version: &amp;quot;&amp;gt;=20&amp;quot; 
+
+    - name: Cache NPM dependencies
+        uses: actions/cache@v4
+        with:
+        path: node_modules
+        key: $&amp;#123;&amp;#123; runner.OS &amp;#125;&amp;#125;-npm-cache
+        restore-keys: |
+            $&amp;#123;&amp;#123; runner.OS &amp;#125;&amp;#125;-npm-cache
+    - name: Install Dependencies
+        run: npm install
+    - name: Build
+        run: npm run build
+    - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+        path: ./public
+deploy:
+    needs: build
+    permissions:
+    pages: write
+    id-token: write
+    environment:
+    name: github-pages
+    url: $&amp;#123;&amp;#123; steps.deployment.outputs.page_url &amp;#125;&amp;#125;
+    runs-on: ubuntu-latest
+    steps:
+    - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Install &lt;code&gt;hexo-deployer-git&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Add&amp;#x2F;Change the following configurations to &lt;code&gt;_config.yml&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;yml&quot;&gt;deploy:
+type: git
+repo: https://github.com/&amp;lt;username&amp;gt;/&amp;lt;project&amp;gt;
+# for example, this blog is https://github.com/greenmeeple/greenmeeple.github.io
+branch: gh-pages
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;After finishing your bog posts, Run &lt;code&gt;hexo clean &amp;amp;&amp;amp; hexo deploy&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;GitHub-Desktop&quot;&gt;&lt;a href=&quot;#GitHub-Desktop&quot; class=&quot;headerlink&quot; title=&quot;GitHub Desktop&quot;&gt;&lt;/a&gt;GitHub Desktop&lt;/h3&gt;&lt;p&gt;Many Users installed &lt;a href=&quot;https://desktop.github.com/download/&quot;&gt;GitHub Desktop&lt;/a&gt; for better visualization on changes, so do I. It provides more intuitive push and commit procedure and instruction compared to terminal. Most of the time I use it to make sure no unexpected line changes or modification.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/site_notes/github_desktop.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;But soon I noticed that, every time after running &lt;code&gt;hexo clean &amp;amp;&amp;amp; hexo deploy&lt;/code&gt;, GitHub Desktop will warn me that there’s something need to be pulled. When I pull it for merging it return &lt;code&gt;Unable to merge unrelated histories in repository&lt;/code&gt;. Even in the image above, it shows that I should pull something. However, how would I need to pull if I’ve just push it?&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Git" scheme="https://greenmeeple.github.io/categories/Git/"/>
+    
+    
+    <category term="GitHub" scheme="https://greenmeeple.github.io/tags/GitHub/"/>
+    
+    <category term="Hexo" scheme="https://greenmeeple.github.io/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Mathjax prime superscript problem in Hexo theme</title>
+    <link href="https://greenmeeple.github.io/site/hexo-mathjax/"/>
+    <id>https://greenmeeple.github.io/site/hexo-mathjax/</id>
+    <published>2024-10-09T02:09:35.000Z</published>
+    <updated>2025-04-03T15:33:36.298Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;Prime-superscript-problem-e-g-x’-i-in-Mathjax&quot;&gt;&lt;a href=&quot;#Prime-superscript-problem-e-g-x’-i-in-Mathjax&quot; class=&quot;headerlink&quot; title=&quot;Prime superscript problem (e.g. x’_i) in Mathjax&quot;&gt;&lt;/a&gt;Prime superscript problem (e.g. x’_i) in Mathjax&lt;/h2&gt;&lt;p&gt;When I was using &lt;a href=&quot;https://www.mathjax.org/&quot;&gt;Mathjax&lt;/a&gt; to create math formula in my blog post, I typed&lt;br&gt;&lt;code&gt;((q_1, q_2), a, (q&amp;#39;_1, q&amp;#39;_2)) &#92;in S &#92;times &#92;Sigma_&amp;#123;int&amp;#125; &#92;times S&lt;/code&gt; and it rendered as&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;$((q_1, q_2), a, (q’_1, q’&lt;em&gt;2)) &#92;in S &#92;times &#92;Sigma&lt;/em&gt;{int} &#92;times S$&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;However, when &lt;code&gt;((q_1, q_2), a, (q&amp;#39;_1, q&amp;#39;_2))&lt;/code&gt; &amp;amp; &lt;code&gt;&#92;in S &#92;times &#92;Sigma_&amp;#123;int&amp;#125; &#92;times S&lt;/code&gt; are seperated, they rendered properly.&lt;/p&gt;
+&lt;p&gt;$$((q_1, q_2), a, (q’_1, q’_2))$$&lt;/p&gt;
+&lt;p&gt;$$&#92;in S &#92;times &#92;Sigma_{int} &#92;times S$$&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;This is a learning note of a course in &lt;a href=&quot;https://cispa.de/de&quot;&gt;CISPA&lt;/a&gt;, UdS. Taught by Bernd Finkbeiner&lt;/p&gt;
+&lt;p&gt;Maybe I should use &lt;code&gt;&#92;left&lt;/code&gt; and &lt;code&gt;&#92;right&lt;/code&gt; for (), just like &lt;code&gt;&#92;lbrace&lt;/code&gt; and &lt;code&gt;&#92;rbrace&lt;/code&gt; for {}?&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;p&gt;We now show that deterministic Muller automata are closed, like nondeterministic Büchi automata, under the Boolean operations (&lt;code&gt;complementation&lt;/code&gt;, &lt;code&gt;union&lt;/code&gt;, and &lt;code&gt;intersection&lt;/code&gt;).&lt;/p&gt;
-&lt;p&gt;First we introduce the construction of these automaton with operations, then we will prove they are close by the runs under those constructions.&lt;/p&gt;
-&lt;h2 id=&quot;Automata-construction-of-Complementation&quot;&gt;&lt;a href=&quot;#Automata-construction-of-Complementation&quot; class=&quot;headerlink&quot; title=&quot;Automata construction of Complementation&quot;&gt;&lt;/a&gt;Automata construction of Complementation&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;$&#92;textbf{Construction 10.3. } &#92;text{Let }&#92;mathcal{A} &amp;#x3D; (&#92;Sigma,Q,I,T,&#92;small&#92;text{MULLER} &#92;normalsize (&#92;mathcal{F}))&#92;text{ be a complete and deterministic Muller}&#92;newline&#92;text{automaton, where we assume w.l.o.g that }Q&#92;neq&#92;varnothing.&#92;text{ We construct the deterministic Muller}&#92;newline&#92;text{automaton }&#92;mathcal{A}^C &amp;#x3D; (&#92;Sigma,Q,I,T,&#92;small&#92;text{MULLER} &#92;normalsize(2^Q&#92;setminus&#92;mathcal{F}))&#92;text{ with }&#92;mathcal{L(A^C)}&amp;#x3D;&#92;Sigma&#92;setminus&#92;mathcal{L(A)}.$&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;Automata-construction-of-Intersection&quot;&gt;&lt;a href=&quot;#Automata-construction-of-Intersection&quot; class=&quot;headerlink&quot; title=&quot;Automata construction of Intersection&quot;&gt;&lt;/a&gt;Automata construction of Intersection&lt;/h2&gt;&lt;p&gt;We use the function $pr_n$ for $n&#92;in&#92;mathbb{N}$ to project to the (n+1)th component of a arbitrary length tuple, for example:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;$pr_0(x, y)&amp;#x3D;x$&lt;/li&gt;
-&lt;li&gt;$pr_1(x, y)&amp;#x3D;y$&lt;/li&gt;
-&lt;li&gt;$pr_2(x, y),pr_3(x, y),&#92;dots pr_n(x, y) &amp;#x3D;&#92;text{Undefined}$&lt;/li&gt;
-&lt;/ul&gt;</summary>
+&lt;p&gt;So I typed &lt;code&gt;&#92;left( &#92;left( q_1, q_2 &#92;right), a, &#92;left( q&amp;#39;_1, q&amp;#39;_2 &#92;right) &#92;right) &#92;in S &#92;times &#92;Sigma_&amp;#123;int&amp;#125; &#92;times S&lt;/code&gt;, didn’t work out:&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;$&#92;left( &#92;left( q_1, q_2 &#92;right), a, &#92;left( q’_1, q’&lt;em&gt;2 &#92;right) &#92;right) &#92;in S &#92;times &#92;Sigma&lt;/em&gt;{int} &#92;times S$&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&quot;Source-of-error&quot;&gt;&lt;a href=&quot;#Source-of-error&quot; class=&quot;headerlink&quot; title=&quot;Source of error&quot;&gt;&lt;/a&gt;Source of error&lt;/h2&gt;</summary>
     
     
     
-    <category term="Notes" scheme="https://greenmeeple.github.io/categories/Notes/"/>
-    
-    <category term="UdS" scheme="https://greenmeeple.github.io/categories/Notes/UdS/"/>
+    <category term="SiteNote" scheme="https://greenmeeple.github.io/categories/SiteNote/"/>
     
     
-    <category term="AGV" scheme="https://greenmeeple.github.io/tags/AGV/"/>
+    <category term="Hexo" scheme="https://greenmeeple.github.io/tags/Hexo/"/>
+    
+    <category term="Latex" scheme="https://greenmeeple.github.io/tags/Latex/"/>
+    
+    <category term="Mathjax" scheme="https://greenmeeple.github.io/tags/Mathjax/"/>
     
   </entry>
   
