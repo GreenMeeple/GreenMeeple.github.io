@@ -107,40 +107,6 @@ If an opaque response serves your needs, set the request&amp;#39;s mode to &amp;
   </entry>
   
   <entry>
-    <title>🍽 🥨 MensaarLecker -- A beloved tool to find out Mensa Ladies&#39; favourite menu using Selenium🥨 🍽</title>
-    <link href="https://greenmeeple.github.io/projects/mensaar/"/>
-    <id>https://greenmeeple.github.io/projects/mensaar/</id>
-    <published>2025-03-20T04:03:35.000Z</published>
-    <updated>2025-04-03T15:34:42.286Z</updated>
-    
-    
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;Repository: &lt;a href=&quot;https://github.com/greenmeeple/MensaarLecker&quot;&gt;MensaarLecker&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;As an &lt;a href=&quot;https://www.uni-saarland.de/start.html&quot;&gt;UdS&lt;/a&gt; Student,&lt;br&gt;Are you tired of seeing french fries🍟 3 times a week, or wondering when I can have the best pizza 🍕 in the Mensacafe?&lt;br&gt;MensaarLecker aims to collect all the data from Menu 1, 2, and Mensacafe to trace your favourite, or Mensa Ladies’, favourite menu!&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;🥗-Description&quot;&gt;&lt;a href=&quot;#🥗-Description&quot; class=&quot;headerlink&quot; title=&quot;🥗 Description&quot;&gt;&lt;/a&gt;🥗 Description&lt;/h2&gt;&lt;p&gt;A fully automated scraper and static website for the Saarbrücken Mensa, powered by Python, Selenium, Google Sheets, and GitHub Actions.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Get a clean and daily-updated overview of meals from &lt;a href=&quot;https://mensaar.de/&quot;&gt;mensaar.de&lt;/a&gt;, with searchable history, meal components, and frequency stats.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;🌐-Live-Demo&quot;&gt;&lt;a href=&quot;#🌐-Live-Demo&quot; class=&quot;headerlink&quot; title=&quot;🌐 Live Demo&quot;&gt;&lt;/a&gt;🌐 Live Demo&lt;/h2&gt;&lt;p&gt;👉 &lt;a href=&quot;https://your-username.github.io/MensaarLecker&quot;&gt;View Website&lt;/a&gt;&lt;br&gt;👉 &lt;a href=&quot;https://docs.google.com/spreadsheets/d/your-sheet-id-here&quot;&gt;View Data in Google Sheets&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/projects/menu.png&quot;&gt;&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Projects" scheme="https://greenmeeple.github.io/categories/Projects/"/>
-    
-    
-    <category term="Python" scheme="https://greenmeeple.github.io/tags/Python/"/>
-    
-    <category term="Scraper" scheme="https://greenmeeple.github.io/tags/Scraper/"/>
-    
-    <category term="Selenium" scheme="https://greenmeeple.github.io/tags/Selenium/"/>
-    
-  </entry>
-  
-  <entry>
     <title>MensaarLecker Development Log 1 -- Web Crawling</title>
     <link href="https://greenmeeple.github.io/projects/mensaarlog1/"/>
     <id>https://greenmeeple.github.io/projects/mensaarlog1/</id>
@@ -167,6 +133,40 @@ If an opaque response serves your needs, set the request&amp;#39;s mode to &amp;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&quot;Web-Scraping&quot;&gt;&lt;a href=&quot;#Web-Scraping&quot; class=&quot;headerlink&quot; title=&quot;Web Scraping&quot;&gt;&lt;/a&gt;Web Scraping&lt;/h2&gt;</summary>
+    
+    
+    
+    <category term="Projects" scheme="https://greenmeeple.github.io/categories/Projects/"/>
+    
+    
+    <category term="Python" scheme="https://greenmeeple.github.io/tags/Python/"/>
+    
+    <category term="Scraper" scheme="https://greenmeeple.github.io/tags/Scraper/"/>
+    
+    <category term="Selenium" scheme="https://greenmeeple.github.io/tags/Selenium/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>🍽 🥨 MensaarLecker -- A beloved tool to find out Mensa Ladies&#39; favourite menu using Selenium🥨 🍽</title>
+    <link href="https://greenmeeple.github.io/projects/mensaar/"/>
+    <id>https://greenmeeple.github.io/projects/mensaar/</id>
+    <published>2025-03-20T04:03:35.000Z</published>
+    <updated>2025-04-03T15:34:42.286Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;Repository: &lt;a href=&quot;https://github.com/greenmeeple/MensaarLecker&quot;&gt;MensaarLecker&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;As an &lt;a href=&quot;https://www.uni-saarland.de/start.html&quot;&gt;UdS&lt;/a&gt; Student,&lt;br&gt;Are you tired of seeing french fries🍟 3 times a week, or wondering when I can have the best pizza 🍕 in the Mensacafe?&lt;br&gt;MensaarLecker aims to collect all the data from Menu 1, 2, and Mensacafe to trace your favourite, or Mensa Ladies’, favourite menu!&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;🥗-Description&quot;&gt;&lt;a href=&quot;#🥗-Description&quot; class=&quot;headerlink&quot; title=&quot;🥗 Description&quot;&gt;&lt;/a&gt;🥗 Description&lt;/h2&gt;&lt;p&gt;A fully automated scraper and static website for the Saarbrücken Mensa, powered by Python, Selenium, Google Sheets, and GitHub Actions.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Get a clean and daily-updated overview of meals from &lt;a href=&quot;https://mensaar.de/&quot;&gt;mensaar.de&lt;/a&gt;, with searchable history, meal components, and frequency stats.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;🌐-Live-Demo&quot;&gt;&lt;a href=&quot;#🌐-Live-Demo&quot; class=&quot;headerlink&quot; title=&quot;🌐 Live Demo&quot;&gt;&lt;/a&gt;🌐 Live Demo&lt;/h2&gt;&lt;p&gt;👉 &lt;a href=&quot;https://your-username.github.io/MensaarLecker&quot;&gt;View Website&lt;/a&gt;&lt;br&gt;👉 &lt;a href=&quot;https://docs.google.com/spreadsheets/d/your-sheet-id-here&quot;&gt;View Data in Google Sheets&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/projects/menu.png&quot;&gt;&lt;/p&gt;</summary>
     
     
     
