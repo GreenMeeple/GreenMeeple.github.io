@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>MensaarLecker Development Log 3 -- Telegram Bot Deployment and Integration - GreenMeeple</title><link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#3273dc"><meta name="application-name" content="GreenMeeple"><meta name="msapplication-TileImage" content="/img/avatar.png"><meta name="msapplication-TileColor" content="#3273dc"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="GreenMeeple"><meta name="apple-mobile-web-app-status-bar-style" content="default"><link rel="apple-touch-icon" sizes="72x72" href="/img/avatar.png"><link rel="apple-touch-icon" sizes="96x96" href="/img/avatar.png"><link rel="apple-touch-icon" sizes="128x128" href="/img/avatar.png"><link rel="apple-touch-icon" sizes="256x256" href="/img/avatar.png"><meta name="description" content="This blog post is trying to tell you:  My personal experience when developing a web crawler using Selenium Explained with examples from my Repository: MensaarLecker For further details, feel free to"><meta property="og:type" content="blog"><meta property="og:title" content="MensaarLecker Development Log 3 -- Telegram Bot Deployment and Integration"><meta property="og:url" content="https://greenmeeple.github.io/projects/mensaarlog3/"><meta property="og:site_name" content="GreenMeeple"><meta property="og:description" content="This blog post is trying to tell you:  My personal experience when developing a web crawler using Selenium Explained with examples from my Repository: MensaarLecker For further details, feel free to"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://greenmeeple.github.io/images/mensaar/mensaar_cover.png"><meta property="article:published_time" content="2025-05-07T13:03:35.000Z"><meta property="article:modified_time" content="2025-05-08T23:03:24.011Z"><meta property="article:author" content="Alex Li"><meta property="article:tag" content="Python"><meta property="article:tag" content="Telegram"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://greenmeeple.github.io/images/mensaar/mensaar_cover.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://greenmeeple.github.io/projects/mensaarlog3/"},"headline":"MensaarLecker Development Log 3 -- Telegram Bot Deployment and Integration","image":["https://greenmeeple.github.io/images/mensaar/mensaar_cover.png"],"datePublished":"2025-05-07T13:03:35.000Z","dateModified":"2025-05-08T23:03:24.011Z","author":{"@type":"Person","name":"Alex Li"},"publisher":{"@type":"Organization","name":"GreenMeeple","logo":{"@type":"ImageObject","url":"https://greenmeeple.github.io/img/logo.png"}},"description":"This blog post is trying to tell you:  My personal experience when developing a web crawler using Selenium Explained with examples from my Repository: MensaarLecker For further details, feel free to"}</script><link rel="canonical" href="https://greenmeeple.github.io/projects/mensaarlog3/"><link rel="alternate" href="/atom.xml" title="GreenMeeple" type="application/atom+xml"><link rel="icon" href="/img/favicon.png"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@100..900&amp;display=swap"><link data-pjax rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css"><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><script data-ad-client="ca-pub-5112876356744847" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" async></script><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.png" alt="GreenMeeple" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Personal Note" href="https://greenmeeple.github.io/notes"><i class="fa-solid fa-book"></i></a><a class="navbar-item" target="_blank" rel="noopener" title="Personal Blog" href="https://greenmeeple.github.io/SharkDeer"><i class="fa-solid fa-solid fa-blog"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-image"><span class="image is-7by3"><img class="fill" src="/images/mensaar/mensaar_cover.png" alt="MensaarLecker Development Log 3 -- Telegram Bot Deployment and Integration"></span></div><article class="card-content article" role="article"><div class="article-meta is-size-7 level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-05-07T13:03:35.000Z" title="07/05/2025, 15:03:35">2025-05-07</time></span><span class="level-item"><a class="link-muted" href="/categories/Projects/">Projects</a></span><span class="level-item">6 minutes to read (About 896 words)</span><span class="level-item" id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span>&nbsp;visits</span></div></div><h1 class="title is-3 is-size-4-mobile">MensaarLecker Development Log 3 -- Telegram Bot Deployment and Integration</h1><div class="content"><blockquote>
+<p><strong>This blog post is trying to tell you:</strong></p>
+<ul>
+<li>My personal experience when developing a web crawler using <a target="_blank" rel="noopener" href="https://selenium-python.readthedocs.io/">Selenium</a></li>
+<li>Explained with examples from my Repository: <a target="_blank" rel="noopener" href="https://github.com/greenmeeple/MensaarLecker">MensaarLecker</a></li>
+<li>For further details, feel free to **Try the bot: <a target="_blank" rel="noopener" href="https://t.me/Mensaar_Bot">@Mensaar_Bot</a></li>
+</ul>
+</blockquote>
+<h2 id="New-Features"><a href="#New-Features" class="headerlink" title="New Features"></a>New Features</h2><h3 id="HTW-menu"><a href="#HTW-menu" class="headerlink" title="HTW menu"></a>HTW menu</h3><p>After the website is published, we noticed that people now prefer to have lunch in <a target="_blank" rel="noopener" href="https://www.htwsaar.de/hochschule/standorte-und-kontakt/campus-rotenbuehl">HTW Campus Rotenbühl</a>. Since their menu come from the same site, it is very easy to introduce new menu to our project.</p>
+<h3 id="New-website-layout"><a href="#New-website-layout" class="headerlink" title="New website layout"></a>New website layout</h3><p>Before we used two pages to store today’s menu and the menu history. And we think in general, all menu are simple texts, so we can put all contents into the index page without any problem. We can switch the visibility using JavaScript, then for the whole HTML code again we stuffed in the python script to for our daily Github workflow to run.</p>
+<pre><code class="JavaScript">&lt;script&gt;
+    function show(id) &#123;&#123;
+    document.querySelectorAll('.section').forEach(el => el.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    &#125;&#125;
+&lt;/script&gt;
+</code></pre>
+<pre><code class="HTML">&lt;h1&gt;Mensaar Menu - &#123;today&#125;&lt;/h1&gt;
+&lt;div class=&quot;buttons&quot;&gt;
+    &lt;button class=&quot;button&quot; onclick=&quot;show(&#39;today-uds&#39;)&quot;&gt;📅 UDS Today&lt;/button&gt;
+    &lt;button class=&quot;button&quot; onclick=&quot;show(&#39;today-htw&#39;)&quot;&gt;📅 HTW Today&lt;/button&gt;
+    &lt;button class=&quot;button&quot; onclick=&quot;show(&#39;full-uds&#39;)&quot;&gt;📋 Full UDS&lt;/button&gt;
+    &lt;button class=&quot;button&quot; onclick=&quot;show(&#39;full-htw&#39;)&quot;&gt;📋 Full HTW&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;today-uds&quot; class=&quot;section active&quot;&gt;
+&lt;h2&gt;UDS – Today&#39;s Menu&lt;/h2&gt;
+&#123;meal_cards(uds_data)&#125;
+&lt;/div&gt;
+
+&lt;div id=&quot;today-htw&quot; class=&quot;section&quot;&gt;
+&lt;h2&gt;HTW – Today&#39;s Menu&lt;/h2&gt;
+&#123;meal_cards(htw_data)&#125;
+&lt;/div&gt;
+
+&lt;div id=&quot;full-uds&quot; class=&quot;section&quot;&gt;
+&lt;h2&gt;📋 Full UDS Menu&lt;/h2&gt;
+&lt;table id=&quot;uds-table&quot;&gt;
+    &lt;thead&gt;&lt;tr&gt;&lt;th&gt;Date&lt;/th&gt;&lt;th&gt;Counter&lt;/th&gt;&lt;th&gt;Meal&lt;/th&gt;&lt;th&gt;Component 1&lt;/th&gt;&lt;th&gt;Component 2&lt;/th&gt;&lt;th&gt;Component 3&lt;/th&gt;&lt;th&gt;Component 4&lt;/th&gt;&lt;th&gt;Component 5&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+    &lt;tbody&gt;&#123;table_rows(uds_data)&#125;&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;full-htw&quot; class=&quot;section&quot;&gt;
+&lt;h2&gt;📋 Full HTW Menu&lt;/h2&gt;
+&lt;table id=&quot;htw-table&quot;&gt;
+    &lt;thead&gt;&lt;tr&gt;&lt;th&gt;Date&lt;/th&gt;&lt;th&gt;Counter&lt;/th&gt;&lt;th&gt;Meal&lt;/th&gt;&lt;th&gt;Component 1&lt;/th&gt;&lt;th&gt;Component 2&lt;/th&gt;&lt;th&gt;Component 3&lt;/th&gt;&lt;th&gt;Component 4&lt;/th&gt;&lt;th&gt;Component 5&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+    &lt;tbody&gt;&#123;table_rows(htw_data)&#125;&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+</code></pre>
+<h3 id="Telegram-Bot-–-Mensaar-Bot"><a href="#Telegram-Bot-–-Mensaar-Bot" class="headerlink" title="Telegram Bot – @Mensaar_Bot"></a>Telegram Bot – <code>@Mensaar_Bot</code></h3><p>On top of the webiste, we can reuse the scraping code to create a telegram bot. First, we need to create a bot and get its API key using <a target="_blank" rel="noopener" href="https://telegram.me/BotFather">botfather</a>.</p>
+<p><img src="/images/mensaar/mensaar_botfather.png"></p>
+<p>Onve you get the key, you bot is created and alive! However, it doesn’t do anything because we haven’t tell it what to do. So, we need to implement its functionalities. <strong><a target="_blank" rel="noopener" href="https://python-telegram-bot.org/">python-telegram-bot</a></strong> is a very good package that contains everything we need to control the bot.</p>
+<h3 id="RapidFuzz-–-Fuzzy-Text-detection-for-bot-reply"><a href="#RapidFuzz-–-Fuzzy-Text-detection-for-bot-reply" class="headerlink" title="RapidFuzz – Fuzzy Text detection for bot reply"></a><a target="_blank" rel="noopener" href="https://rapidfuzz.github.io/RapidFuzz/">RapidFuzz</a> – Fuzzy Text detection for bot reply</h3><p>Other than commands and buttons, we also want to make the bot to reply to text message for better interactions. When the bot is added to a group chat, users can interact to the bot by tagging the bot and sending messages. Any texts related to food, mensa and menu will be accpeted and perform the action.</p>
+<p>This is done under <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Approximate_string_matching">fuzzy matching</a>. Using <code>fuzz.partial_ratio()</code> we can compare the similarity of users’ messages with our keyword list.</p>
+<h2 id="Brief-Walkthrough-on-Telegram-Bot"><a href="#Brief-Walkthrough-on-Telegram-Bot" class="headerlink" title="Brief Walkthrough on Telegram Bot"></a>Brief Walkthrough on Telegram Bot</h2><p>We also have another study notes for all of the telegram bot projects in <a href="">here</a></p>
+<h3 id="CommandHandler-–-start"><a href="#CommandHandler-–-start" class="headerlink" title="CommandHandler – /start"></a>CommandHandler – <code>/start</code></h3><p><img src="/images/mensaar/mensaar_bot.png"></p>
+<p>The basic way to call a bot is to send a command. Commands are defined by <code>CommandHandler</code>, which we can implement each commands’ functionalites respectively. To make our bot send message to users, we can use <code>update.message.reply_text</code>.</p>
+<pre><code class="python">from telegram import Update
+from telegram.ext import ApplicationBuilder, CommandHandler
+
+async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text(
+&quot;&quot;&quot;🦉 Hoot Hoot❗ Guess we have another mortal here❗
+If you have NO soul        --&gt; /owl
+If you have NO food &amp; soul --&gt; /menu
+If you HAVE a soul --&gt; @Mensaar_Bot And start talking&quot;&quot;&quot;)
+
+def main():
+    app = ApplicationBuilder().token(os.getenv(&quot;TOKEN&quot;)).build()
+    app.add_handler(CommandHandler(&quot;start&quot;, start))
+    app.run_polling()
+</code></pre>
+<h3 id="InlineKeyboardMarkup-–-Buttons-for-actions"><a href="#InlineKeyboardMarkup-–-Buttons-for-actions" class="headerlink" title="InlineKeyboardMarkup – Buttons for actions"></a>InlineKeyboardMarkup – Buttons for actions</h3><p><img src="/images/mensaar/mensaar_inlinekeyboard.png"></p>
+<p>Sometimes, users may need further options to finish the command, here we used <code>InlineKeyboardMarkup</code> to create possible options. There is another option <code>ReplyKeyboardMarkup</code> that can create buttons by replacing your phone keyboard, but from user feedbacks we noticed that it may be annoying for group usage.</p>
+<pre><code class="python">from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
+from telegram.ext import ApplicationBuilder, CommandHandler
+
+async def panel(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    # clean keyboard just in case
+    # await update.message.reply_text(&quot;Remove unwanted reply keyboard hoot hoot...&quot;, reply_markup=ReplyKeyboardRemove())  # zero-width space
+
+    keyboard = [
+        [InlineKeyboardButton(&quot;Button A&quot;, callback_data=&quot;Text A&quot;)],
+        [InlineKeyboardButton(&quot;Button B&quot;, callback_data=&quot;Text B&quot;)],
+    ]
+    reply_markup = InlineKeyboardMarkup(keyboard)
+    await update.message.reply_text(
+        &quot;This is a panel&quot;,
+        reply_markup=reply_markup
+    )
+def main():
+    app = ApplicationBuilder().token(os.getenv(&quot;TOKEN&quot;)).build()
+    app.add_handler(CommandHandler(&quot;panel&quot;, panel))
+    app.run_polling()
+</code></pre>
+<h3 id="CallbackQueryHandler-–-Handle-your-buttons-and-actions"><a href="#CallbackQueryHandler-–-Handle-your-buttons-and-actions" class="headerlink" title="CallbackQueryHandler – Handle your buttons and actions"></a>CallbackQueryHandler – Handle your buttons and actions</h3><p>When a button from <code>InlineKeyboardMarkup</code> is pressed, the data from <code>callback_data</code> attribute is then passed. We can capture it by using <code>CallbackQueryHandler</code>. Since we are using Query here, we need to use <code>query.edit_message_text</code>.</p>
+<pre><code class="python">from telegram import Update
+from telegram.ext import ApplicationBuilder, CommandHandler, CallbackQueryHandler
+
+async def handle_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    await query.answer()
+    user_input = query.data
+    print(f&quot;📥 Callback query received: &#123;base64.b64decode(user_input)&#125;&quot;)
+
+    match user_input:
+        case &quot;Text A&quot;:  # 📜 All Menu
+            msg = &quot;This is option A&quot;
+        case &quot;Text B&quot;:  # 🍽️ UdS Menu
+            msg = &quot;This is option B&quot;
+        case _:
+            msg = &quot;Error&quot;
+
+    await query.edit_message_text(text=msg)
+
+def main():
+    app = ApplicationBuilder().token(os.getenv(&quot;TOKEN&quot;)).build()
+    app.add_handler(CallbackQueryHandler(handle_callback))  # Now handling inline button clicks
+    app.run_polling()
+</code></pre>
+</div><div class="article-licensing box"><div class="licensing-title"><p>MensaarLecker Development Log 3 -- Telegram Bot Deployment and Integration</p><p><a href="https://greenmeeple.github.io/projects/mensaarlog3/">https://greenmeeple.github.io/projects/mensaarlog3/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>Alex Li</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2025-05-07</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2025-05-09</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/Python/">Python</a><a class="link-muted mr-2" rel="tag" href="/tags/Telegram/">Telegram</a></div><div class="sharethis-inline-share-buttons"></div><script src="https://platform-api.sharethis.com/js/sharethis.js#property=67edf3b1bc16930012085bcb&amp;product=sop" defer></script></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">If you hate me, try to keep me alive for longer torment.</h3><div class="buttons is-centered"><a class="button donate" href="https://buymeacoffee.com/greenmeeple" target="_blank" rel="noopener" data-type="buymeacoffee"><span class="icon is-small"><i class="fas fa-coffee"></i></span><span>Prolong my pain</span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/projects/mensaar/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">🍽 🥨 MensaarLecker -- A beloved tool to find out Mensa Ladies&#039; favourite menu using Selenium🥨 🍽</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/site/personalize/"><span class="level-item">Hexo Plugins and Personalization of this site</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card" id="comments"><div class="card-content"><h3 class="title is-5">Comments</h3><div id="comment-container"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css"><script src="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js"></script><script>var gitalk = new Gitalk({
+            id: "cff64aa7bbb69f3b34a1349f8f3f7b25",
+            repo: "GreenMeeple.github.io",
+            owner: "GreenMeeple",
+            clientID: "Ov23ctDlN8NQWlBnA3I9",
+            clientSecret: "3fd5f43f975857c90bf68212b56bd6a2aaeff520",
+            admin: ["GreenMeeple"],
+            createIssueManually: false,
+            distractionFreeMode: false,
+            perPage: 10,
+            pagerDirection: "last",
+            
+            
+            enableHotKey: true,
+            language: "en",
+        })
+        gitalk.render('comment-container')</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1 is-sticky"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">Catalogue</h3><ul class="menu-list"><li><a class="level is-mobile" href="#New-Features"><span class="level-left"><span class="level-item">1</span><span class="level-item">New Features</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#HTW-menu"><span class="level-left"><span class="level-item">1.1</span><span class="level-item">HTW menu</span></span></a></li><li><a class="level is-mobile" href="#New-website-layout"><span class="level-left"><span class="level-item">1.2</span><span class="level-item">New website layout</span></span></a></li><li><a class="level is-mobile" href="#Telegram-Bot-–-Mensaar-Bot"><span class="level-left"><span class="level-item">1.3</span><span class="level-item">Telegram Bot – @Mensaar_Bot</span></span></a></li><li><a class="level is-mobile" href="#RapidFuzz-–-Fuzzy-Text-detection-for-bot-reply"><span class="level-left"><span class="level-item">1.4</span><span class="level-item">RapidFuzz – Fuzzy Text detection for bot reply</span></span></a></li></ul></li><li><a class="level is-mobile" href="#Brief-Walkthrough-on-Telegram-Bot"><span class="level-left"><span class="level-item">2</span><span class="level-item">Brief Walkthrough on Telegram Bot</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#CommandHandler-–-start"><span class="level-left"><span class="level-item">2.1</span><span class="level-item">CommandHandler – /start</span></span></a></li><li><a class="level is-mobile" href="#InlineKeyboardMarkup-–-Buttons-for-actions"><span class="level-left"><span class="level-item">2.2</span><span class="level-item">InlineKeyboardMarkup – Buttons for actions</span></span></a></li><li><a class="level is-mobile" href="#CallbackQueryHandler-–-Handle-your-buttons-and-actions"><span class="level-left"><span class="level-item">2.3</span><span class="level-item">CallbackQueryHandler – Handle your buttons and actions</span></span></a></li></ul></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">Recents</h3><article class="media"><figure class="media-left"><a class="image" href="/projects/mensaar/"><img src="/images/mensaar/mensaar_thumbnail.png" alt="🍽 🥨 MensaarLecker -- A beloved tool to find out Mensa Ladies&#039; favourite menu using Selenium🥨 🍽"></a></figure><div class="media-content"><p class="date"><time dateTime="2025-05-08T03:03:35.000Z">2025-05-08</time></p><p class="title"><a href="/projects/mensaar/">🍽 🥨 MensaarLecker -- A beloved tool to find out Mensa Ladies&#039; favourite menu using Selenium🥨 🍽</a></p><p class="categories"><a href="/categories/Projects/">Projects</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/projects/mensaarlog3/"><img src="/images/mensaar/mensaar_thumbnail.png" alt="MensaarLecker Development Log 3 -- Telegram Bot Deployment and Integration"></a></figure><div class="media-content"><p class="date"><time dateTime="2025-05-07T13:03:35.000Z">2025-05-07</time></p><p class="title"><a href="/projects/mensaarlog3/">MensaarLecker Development Log 3 -- Telegram Bot Deployment and Integration</a></p><p class="categories"><a href="/categories/Projects/">Projects</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/site/personalize/"><img src="/images/site_notes/avatar.png" alt="Hexo Plugins and Personalization of this site"></a></figure><div class="media-content"><p class="date"><time dateTime="2025-04-03T15:02:08.000Z">2025-04-03</time></p><p class="title"><a href="/site/personalize/">Hexo Plugins and Personalization of this site</a></p><p class="categories"><a href="/categories/SiteNote/">SiteNote</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/projects/mensaarlog2/"><img src="/images/mensaar/mensaar_thumbnail.png" alt="MensaarLecker Development Log 2 -- Web Developing and GitHub Workflow"></a></figure><div class="media-content"><p class="date"><time dateTime="2025-03-21T04:03:35.000Z">2025-03-21</time></p><p class="title"><a href="/projects/mensaarlog2/">MensaarLecker Development Log 2 -- Web Developing and GitHub Workflow</a></p><p class="categories"><a href="/categories/Projects/">Projects</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/projects/mensaarlog1/"><img src="/images/mensaar/mensaar_thumbnail.png" alt="MensaarLecker Development Log 1 -- Web Crawling"></a></figure><div class="media-content"><p class="date"><time dateTime="2025-03-20T04:03:35.000Z">2025-03-20</time></p><p class="title"><a href="/projects/mensaarlog1/">MensaarLecker Development Log 1 -- Web Crawling</a></p><p class="categories"><a href="/categories/Projects/">Projects</a></p></div></article></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/Appium/"><span class="level-start"><span class="level-item">Appium</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/Git/"><span class="level-start"><span class="level-item">Git</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/JavaScript/"><span class="level-start"><span class="level-item">JavaScript</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/categories/Notes/"><span class="level-start"><span class="level-item">Notes</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/Projects/"><span class="level-start"><span class="level-item">Projects</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/categories/SiteNote/"><span class="level-start"><span class="level-item">SiteNote</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></div></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">Archives</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2025/05/"><span class="level-start"><span class="level-item">May 2025</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2025/04/"><span class="level-start"><span class="level-item">April 2025</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2025/03/"><span class="level-start"><span class="level-item">March 2025</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2025/01/"><span class="level-start"><span class="level-item">January 2025</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2024/12/"><span class="level-start"><span class="level-item">December 2024</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2024/10/"><span class="level-start"><span class="level-item">October 2024</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">Tags</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/Android/"><span class="tag">Android</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/App-Testing/"><span class="tag">App Testing</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Appium/"><span class="tag">Appium</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Cantonese/"><span class="tag">Cantonese</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/GitHub/"><span class="tag">GitHub</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/HTML/"><span class="tag">HTML</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Hexo/"><span class="tag">Hexo</span><span class="tag">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Latex/"><span class="tag">Latex</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/LeetCode/"><span class="tag">LeetCode</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Mathjax/"><span class="tag">Mathjax</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Node-js/"><span class="tag">Node.js</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Python/"><span class="tag">Python</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/SQL/"><span class="tag">SQL</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Scraper/"><span class="tag">Scraper</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Selenium/"><span class="tag">Selenium</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Telegram/"><span class="tag">Telegram</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/UdS/"><span class="tag">UdS</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/json/"><span class="tag">json</span><span class="tag">2</span></a></div></div></div></div></div><div class="card widget" data-type="adsense"><div class="card-content"><div class="menu"><h3 class="menu-label">Advertisement</h3><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5112876356744847" data-ad-slot="f08c47fec0942fa0" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.png" alt="GreenMeeple" height="28"></a><p class="is-size-7"><span>&copy; 2025 Alex Li</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><span id="busuanzi_container_site_uv">Visited by <span id="busuanzi_value_site_uv">0</span> users</span></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Personal Note" href="https://greenmeeple.github.io/notes"><i class="fa-solid fa-book"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Personal Blog" href="https://greenmeeple.github.io/SharkDeer"><i class="fa-solid fa-solid fa-blog"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script data-pjax src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script data-pjax src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "This website uses cookies to improve your experience.",
+          dismiss: "Got it!",
+          allow: "Allow cookies",
+          deny: "Decline",
+          link: "Learn more",
+          policy: "Cookie Policy",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><script type="text/javascript" id="MathJax-script" async>MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      },
+      chtml: {
+        matchFontHeight: false
+      }
+    };</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"></script><div id="outdated"><h6>Your browser is out-of-date!</h6><p>Update your browser to view this website correctly.&amp;npsb;<a id="btnUpdateBrowser" target="_blank" rel="noopener" href="http://outdatedbrowser.com/">Update my browser now </a></p><p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">×</a></p></div><script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script><script>window.addEventListener("load", function () {
+            outdatedBrowser({
+                bgColor: '#f25648',
+                color: '#ffffff',
+                lowerThan: 'object-fit' // display on IE11 or below
+            });
+        });</script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script src="/js/pjax.js"></script><!--!--><!--!--><!--!--><script data-pjax src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script data-pjax src="/js/insight.js" defer></script><script data-pjax>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script></body></html>

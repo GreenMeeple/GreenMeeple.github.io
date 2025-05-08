@@ -6,7 +6,7 @@
   <link href="https://greenmeeple.github.io/atom.xml" rel="self"/>
   
   <link href="https://greenmeeple.github.io/"/>
-  <updated>2025-04-03T16:19:07.372Z</updated>
+  <updated>2025-05-08T20:24:33.527Z</updated>
   <id>https://greenmeeple.github.io/</id>
   
   <author>
@@ -17,11 +17,115 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>🍽 🥨 MensaarLecker -- A beloved tool to find out Mensa Ladies&#39; favourite menu using Selenium🥨 🍽</title>
+    <link href="https://greenmeeple.github.io/projects/mensaar/"/>
+    <id>https://greenmeeple.github.io/projects/mensaar/</id>
+    <published>2025-05-08T03:03:35.000Z</published>
+    <updated>2025-05-08T20:24:33.527Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Repository: &lt;a href=&quot;https://github.com/greenmeeple/MensaarLecker&quot;&gt;MensaarLecker&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;As an &lt;a href=&quot;https://www.uni-saarland.de/start.html&quot;&gt;UdS&lt;/a&gt; Student,&lt;br&gt;Are you tired of seeing french fries🍟 3 times a week, or wondering when I can have the best pizza 🍕 in the Mensacafe?&lt;br&gt;MensaarLecker aims to collect all the data from Menu 1, 2, and Mensacafe to trace your favourite, or Mensa Ladies’, favourite menu!&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;🆕-Updates&quot;&gt;&lt;a href=&quot;#🆕-Updates&quot; class=&quot;headerlink&quot; title=&quot;🆕 Updates&quot;&gt;&lt;/a&gt;🆕 Updates&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;05.08 – Telegram Bot &lt;a href=&quot;https://t.me/Mensaar_Bot&quot;&gt;@Mensaar_Bot&lt;/a&gt; are published.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;(See my development blog in here! &lt;a href=&quot;../mensaarlog3&quot;&gt;MensaarLecker Development Log 3 – Telegram Bot Deployment and Integration&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;04.21 – &lt;a href=&quot;HTW&quot;&gt;https://mensaar.de/#/menu/htwcrb&lt;/a&gt; menus are now added to the statistics.&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;🥗-Description&quot;&gt;&lt;a href=&quot;#🥗-Description&quot; class=&quot;headerlink&quot; title=&quot;🥗 Description&quot;&gt;&lt;/a&gt;🥗 Description&lt;/h2&gt;&lt;p&gt;A fully automated scraper and static website for the Saarbrücken Mensa, powered by Python, Selenium, Google Sheets, and GitHub Actions.&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Projects" scheme="https://greenmeeple.github.io/categories/Projects/"/>
+    
+    
+    <category term="Python" scheme="https://greenmeeple.github.io/tags/Python/"/>
+    
+    <category term="Scraper" scheme="https://greenmeeple.github.io/tags/Scraper/"/>
+    
+    <category term="Selenium" scheme="https://greenmeeple.github.io/tags/Selenium/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MensaarLecker Development Log 3 -- Telegram Bot Deployment and Integration</title>
+    <link href="https://greenmeeple.github.io/projects/mensaarlog3/"/>
+    <id>https://greenmeeple.github.io/projects/mensaarlog3/</id>
+    <published>2025-05-07T13:03:35.000Z</published>
+    <updated>2025-05-08T23:03:24.011Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;This blog post is trying to tell you:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;My personal experience when developing a web crawler using &lt;a href=&quot;https://selenium-python.readthedocs.io/&quot;&gt;Selenium&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Explained with examples from my Repository: &lt;a href=&quot;https://github.com/greenmeeple/MensaarLecker&quot;&gt;MensaarLecker&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;For further details, feel free to **Try the bot: &lt;a href=&quot;https://t.me/Mensaar_Bot&quot;&gt;@Mensaar_Bot&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;New-Features&quot;&gt;&lt;a href=&quot;#New-Features&quot; class=&quot;headerlink&quot; title=&quot;New Features&quot;&gt;&lt;/a&gt;New Features&lt;/h2&gt;&lt;h3 id=&quot;HTW-menu&quot;&gt;&lt;a href=&quot;#HTW-menu&quot; class=&quot;headerlink&quot; title=&quot;HTW menu&quot;&gt;&lt;/a&gt;HTW menu&lt;/h3&gt;&lt;p&gt;After the website is published, we noticed that people now prefer to have lunch in &lt;a href=&quot;https://www.htwsaar.de/hochschule/standorte-und-kontakt/campus-rotenbuehl&quot;&gt;HTW Campus Rotenbühl&lt;/a&gt;. Since their menu come from the same site, it is very easy to introduce new menu to our project.&lt;/p&gt;
+&lt;h3 id=&quot;New-website-layout&quot;&gt;&lt;a href=&quot;#New-website-layout&quot; class=&quot;headerlink&quot; title=&quot;New website layout&quot;&gt;&lt;/a&gt;New website layout&lt;/h3&gt;&lt;p&gt;Before we used two pages to store today’s menu and the menu history. And we think in general, all menu are simple texts, so we can put all contents into the index page without any problem. We can switch the visibility using JavaScript, then for the whole HTML code again we stuffed in the python script to for our daily Github workflow to run.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;JavaScript&quot;&gt;&amp;lt;script&amp;gt;
+    function show(id) &amp;#123;&amp;#123;
+    document.querySelectorAll(&#39;.section&#39;).forEach(el =&gt; el.classList.remove(&#39;active&#39;));
+    document.getElementById(id).classList.add(&#39;active&#39;);
+    &amp;#125;&amp;#125;
+&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&quot;HTML&quot;&gt;&amp;lt;h1&amp;gt;Mensaar Menu - &amp;#123;today&amp;#125;&amp;lt;/h1&amp;gt;
+&amp;lt;div class=&amp;quot;buttons&amp;quot;&amp;gt;
+    &amp;lt;button class=&amp;quot;button&amp;quot; onclick=&amp;quot;show(&amp;#39;today-uds&amp;#39;)&amp;quot;&amp;gt;📅 UDS Today&amp;lt;/button&amp;gt;
+    &amp;lt;button class=&amp;quot;button&amp;quot; onclick=&amp;quot;show(&amp;#39;today-htw&amp;#39;)&amp;quot;&amp;gt;📅 HTW Today&amp;lt;/button&amp;gt;
+    &amp;lt;button class=&amp;quot;button&amp;quot; onclick=&amp;quot;show(&amp;#39;full-uds&amp;#39;)&amp;quot;&amp;gt;📋 Full UDS&amp;lt;/button&amp;gt;
+    &amp;lt;button class=&amp;quot;button&amp;quot; onclick=&amp;quot;show(&amp;#39;full-htw&amp;#39;)&amp;quot;&amp;gt;📋 Full HTW&amp;lt;/button&amp;gt;
+&amp;lt;/div&amp;gt;
+
+&amp;lt;div id=&amp;quot;today-uds&amp;quot; class=&amp;quot;section active&amp;quot;&amp;gt;
+&amp;lt;h2&amp;gt;UDS – Today&amp;#39;s Menu&amp;lt;/h2&amp;gt;
+&amp;#123;meal_cards(uds_data)&amp;#125;
+&amp;lt;/div&amp;gt;
+
+&amp;lt;div id=&amp;quot;today-htw&amp;quot; class=&amp;quot;section&amp;quot;&amp;gt;
+&amp;lt;h2&amp;gt;HTW – Today&amp;#39;s Menu&amp;lt;/h2&amp;gt;
+&amp;#123;meal_cards(htw_data)&amp;#125;
+&amp;lt;/div&amp;gt;
+
+&amp;lt;div id=&amp;quot;full-uds&amp;quot; class=&amp;quot;section&amp;quot;&amp;gt;
+&amp;lt;h2&amp;gt;📋 Full UDS Menu&amp;lt;/h2&amp;gt;
+&amp;lt;table id=&amp;quot;uds-table&amp;quot;&amp;gt;
+    &amp;lt;thead&amp;gt;&amp;lt;tr&amp;gt;&amp;lt;th&amp;gt;Date&amp;lt;/th&amp;gt;&amp;lt;th&amp;gt;Counter&amp;lt;/th&amp;gt;&amp;lt;th&amp;gt;Meal&amp;lt;/th&amp;gt;&amp;lt;th&amp;gt;Component 1&amp;lt;/th&amp;gt;&amp;lt;th&amp;gt;Component 2&amp;lt;/th&amp;gt;&amp;lt;th&amp;gt;Component 3&amp;lt;/th&amp;gt;&amp;lt;th&amp;gt;Component 4&amp;lt;/th&amp;gt;&amp;lt;th&amp;gt;Component 5&amp;lt;/th&amp;gt;&amp;lt;/tr&amp;gt;&amp;lt;/thead&amp;gt;
+    &amp;lt;tbody&amp;gt;&amp;#123;table_rows(uds_data)&amp;#125;&amp;lt;/tbody&amp;gt;
+&amp;lt;/table&amp;gt;
+&amp;lt;/div&amp;gt;
+
+&amp;lt;div id=&amp;quot;full-htw&amp;quot; class=&amp;quot;section&amp;quot;&amp;gt;
+&amp;lt;h2&amp;gt;📋 Full HTW Menu&amp;lt;/h2&amp;gt;
+&amp;lt;table id=&amp;quot;htw-table&amp;quot;&amp;gt;
+    &amp;lt;thead&amp;gt;&amp;lt;tr&amp;gt;&amp;lt;th&amp;gt;Date&amp;lt;/th&amp;gt;&amp;lt;th&amp;gt;Counter&amp;lt;/th&amp;gt;&amp;lt;th&amp;gt;Meal&amp;lt;/th&amp;gt;&amp;lt;th&amp;gt;Component 1&amp;lt;/th&amp;gt;&amp;lt;th&amp;gt;Component 2&amp;lt;/th&amp;gt;&amp;lt;th&amp;gt;Component 3&amp;lt;/th&amp;gt;&amp;lt;th&amp;gt;Component 4&amp;lt;/th&amp;gt;&amp;lt;th&amp;gt;Component 5&amp;lt;/th&amp;gt;&amp;lt;/tr&amp;gt;&amp;lt;/thead&amp;gt;
+    &amp;lt;tbody&amp;gt;&amp;#123;table_rows(htw_data)&amp;#125;&amp;lt;/tbody&amp;gt;
+&amp;lt;/table&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;Telegram-Bot-–-Mensaar-Bot&quot;&gt;&lt;a href=&quot;#Telegram-Bot-–-Mensaar-Bot&quot; class=&quot;headerlink&quot; title=&quot;Telegram Bot – @Mensaar_Bot&quot;&gt;&lt;/a&gt;Telegram Bot – &lt;code&gt;@Mensaar_Bot&lt;/code&gt;&lt;/h3&gt;&lt;p&gt;On top of the webiste, we can reuse the scraping code to create a telegram bot. First, we need to create a bot and get its API key using &lt;a href=&quot;https://telegram.me/BotFather&quot;&gt;botfather&lt;/a&gt;.&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Projects" scheme="https://greenmeeple.github.io/categories/Projects/"/>
+    
+    
+    <category term="Python" scheme="https://greenmeeple.github.io/tags/Python/"/>
+    
+    <category term="Telegram" scheme="https://greenmeeple.github.io/tags/Telegram/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Hexo Plugins and Personalization of this site</title>
     <link href="https://greenmeeple.github.io/site/personalize/"/>
     <id>https://greenmeeple.github.io/site/personalize/</id>
     <published>2025-04-03T15:02:08.000Z</published>
-    <updated>2025-04-03T16:19:07.372Z</updated>
+    <updated>2025-05-07T14:21:57.745Z</updated>
     
     
     <summary type="html">&lt;p&gt;Here are all the plugins and niche settings that personalize this blog and the &lt;a href=&quot;https://github.com/ppoffice/hexo-theme-icarus&quot;&gt;Icarus&lt;/a&gt; theme.&lt;/p&gt;
@@ -55,17 +159,22 @@
     <link href="https://greenmeeple.github.io/projects/mensaarlog2/"/>
     <id>https://greenmeeple.github.io/projects/mensaarlog2/</id>
     <published>2025-03-21T04:03:35.000Z</published>
-    <updated>2025-04-03T15:34:38.982Z</updated>
+    <updated>2025-05-08T23:03:07.631Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;Repository: &lt;a href=&quot;https://github.com/greenmeeple/MensaarLecker&quot;&gt;MensaarLecker&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;This blog post is trying to tell you:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;My personal experience when developing a web crawler using &lt;a href=&quot;https://selenium-python.readthedocs.io/&quot;&gt;Selenium&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Explained with examples from my Repository: &lt;a href=&quot;https://github.com/greenmeeple/MensaarLecker&quot;&gt;MensaarLecker&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&quot;Fetching-Data-from-Web-Development&quot;&gt;&lt;a href=&quot;#Fetching-Data-from-Web-Development&quot; class=&quot;headerlink&quot; title=&quot;Fetching Data from Web Development&quot;&gt;&lt;/a&gt;Fetching Data from Web Development&lt;/h2&gt;&lt;p&gt;Continuing from last post, we have already implemented a script that collect the Mensa menu and stored it on Google Sheets. It is time to build our web interface to connect the database.&lt;/p&gt;
+&lt;h2 id=&quot;Fetching-Data-from-Web-Development&quot;&gt;&lt;a href=&quot;#Fetching-Data-from-Web-Development&quot; class=&quot;headerlink&quot; title=&quot;Fetching Data from Web Development&quot;&gt;&lt;/a&gt;Fetching Data from Web Development&lt;/h2&gt;&lt;p&gt;Previous post: &lt;a href=&quot;../mensaarlog1&quot;&gt;MensaarLecker Development Log 1 – Web Crawling&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Continuing from last post, we have already implemented a script that collect the Mensa menu and stored it on Google Sheets. It is time to build our web interface to connect the database.&lt;/p&gt;
 &lt;h3 id=&quot;Fetch-Data-from-Google-Sheets-using-Publish&quot;&gt;&lt;a href=&quot;#Fetch-Data-from-Google-Sheets-using-Publish&quot; class=&quot;headerlink&quot; title=&quot;Fetch Data from Google Sheets using Publish&quot;&gt;&lt;/a&gt;Fetch Data from Google Sheets using Publish&lt;/h3&gt;&lt;p&gt;First, we need to publish our spreadsheet so that it is public to fetch the data.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;In the Spreadsheet, click &lt;strong&gt;Share&lt;/strong&gt; → Change access to Anyone with the link.&lt;/p&gt;
-&lt;p&gt; &lt;img src=&quot;/images/projects/sheetshare.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt; &lt;img src=&quot;/images/mensaar/sheetshare.png&quot;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Click &lt;strong&gt;File&lt;/strong&gt; → &lt;strong&gt;Share&lt;/strong&gt; → &lt;strong&gt;Publish&lt;/strong&gt; to the web.&lt;/p&gt;
 &lt;/li&gt;
@@ -90,8 +199,7 @@ def fetch_menu():
 &lt;pre&gt;&lt;code class=&quot;error&quot;&gt;Access to fetch at &amp;#39;https://docs.google.com/spreadsheets/...&amp;#39; from origin &amp;#39;null&amp;#39; has been blocked 
 by CORS policy: No &amp;#39;Access-Control-Allow-Origin&amp;#39; header is present on the requested resource. 
 If an opaque response serves your needs, set the request&amp;#39;s mode to &amp;#39;no-cors&amp;#39; to fetch the resource with CORS disabled.
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&quot;CORS-Policy-and-XSS&quot;&gt;&lt;a href=&quot;#CORS-Policy-and-XSS&quot; class=&quot;headerlink&quot; title=&quot;CORS Policy and XSS&quot;&gt;&lt;/a&gt;CORS Policy and XSS&lt;/h3&gt;</summary>
+&lt;/code&gt;&lt;/pre&gt;</summary>
     
     
     
@@ -111,11 +219,15 @@ If an opaque response serves your needs, set the request&amp;#39;s mode to &amp;
     <link href="https://greenmeeple.github.io/projects/mensaarlog1/"/>
     <id>https://greenmeeple.github.io/projects/mensaarlog1/</id>
     <published>2025-03-20T04:03:35.000Z</published>
-    <updated>2025-04-03T15:34:41.363Z</updated>
+    <updated>2025-05-08T18:48:14.676Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;Repository: &lt;a href=&quot;https://github.com/greenmeeple/MensaarLecker&quot;&gt;MensaarLecker&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;This blog post is trying to tell you:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;My personal experience when developing a web crawler using &lt;a href=&quot;https://selenium-python.readthedocs.io/&quot;&gt;Selenium&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Explained with examples from my Repository: &lt;a href=&quot;https://github.com/greenmeeple/MensaarLecker&quot;&gt;MensaarLecker&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&quot;Motivation&quot;&gt;&lt;a href=&quot;#Motivation&quot; class=&quot;headerlink&quot; title=&quot;Motivation&quot;&gt;&lt;/a&gt;Motivation&lt;/h2&gt;&lt;p&gt;Me and my friends &lt;del&gt;hate&lt;/del&gt;&lt;strong&gt;love&lt;/strong&gt; the UdS Mensa so much! The infinite frozen food and french fries menus give us so much energy and motivation for the 5-hour afternoon coding marathon. However, no one actually knows how many potatoes they have exterminated throughout the week. We have a genius webpage created by some &lt;a href=&quot;https://gibtesheuteschnitzel.de/&quot;&gt;Schnitzel lover&lt;/a&gt;. Personally, I like its minimalistic layout and determination on Schnitzel searching. &lt;/p&gt;
 &lt;blockquote&gt;
@@ -133,40 +245,6 @@ If an opaque response serves your needs, set the request&amp;#39;s mode to &amp;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&quot;Web-Scraping&quot;&gt;&lt;a href=&quot;#Web-Scraping&quot; class=&quot;headerlink&quot; title=&quot;Web Scraping&quot;&gt;&lt;/a&gt;Web Scraping&lt;/h2&gt;</summary>
-    
-    
-    
-    <category term="Projects" scheme="https://greenmeeple.github.io/categories/Projects/"/>
-    
-    
-    <category term="Python" scheme="https://greenmeeple.github.io/tags/Python/"/>
-    
-    <category term="Scraper" scheme="https://greenmeeple.github.io/tags/Scraper/"/>
-    
-    <category term="Selenium" scheme="https://greenmeeple.github.io/tags/Selenium/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>🍽 🥨 MensaarLecker -- A beloved tool to find out Mensa Ladies&#39; favourite menu using Selenium🥨 🍽</title>
-    <link href="https://greenmeeple.github.io/projects/mensaar/"/>
-    <id>https://greenmeeple.github.io/projects/mensaar/</id>
-    <published>2025-03-20T04:03:35.000Z</published>
-    <updated>2025-04-03T15:34:42.286Z</updated>
-    
-    
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;Repository: &lt;a href=&quot;https://github.com/greenmeeple/MensaarLecker&quot;&gt;MensaarLecker&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;As an &lt;a href=&quot;https://www.uni-saarland.de/start.html&quot;&gt;UdS&lt;/a&gt; Student,&lt;br&gt;Are you tired of seeing french fries🍟 3 times a week, or wondering when I can have the best pizza 🍕 in the Mensacafe?&lt;br&gt;MensaarLecker aims to collect all the data from Menu 1, 2, and Mensacafe to trace your favourite, or Mensa Ladies’, favourite menu!&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;🥗-Description&quot;&gt;&lt;a href=&quot;#🥗-Description&quot; class=&quot;headerlink&quot; title=&quot;🥗 Description&quot;&gt;&lt;/a&gt;🥗 Description&lt;/h2&gt;&lt;p&gt;A fully automated scraper and static website for the Saarbrücken Mensa, powered by Python, Selenium, Google Sheets, and GitHub Actions.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Get a clean and daily-updated overview of meals from &lt;a href=&quot;https://mensaar.de/&quot;&gt;mensaar.de&lt;/a&gt;, with searchable history, meal components, and frequency stats.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;🌐-Live-Demo&quot;&gt;&lt;a href=&quot;#🌐-Live-Demo&quot; class=&quot;headerlink&quot; title=&quot;🌐 Live Demo&quot;&gt;&lt;/a&gt;🌐 Live Demo&lt;/h2&gt;&lt;p&gt;👉 &lt;a href=&quot;https://your-username.github.io/MensaarLecker&quot;&gt;View Website&lt;/a&gt;&lt;br&gt;👉 &lt;a href=&quot;https://docs.google.com/spreadsheets/d/your-sheet-id-here&quot;&gt;View Data in Google Sheets&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/projects/menu.png&quot;&gt;&lt;/p&gt;</summary>
     
     
     
