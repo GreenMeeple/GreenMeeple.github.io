@@ -6,7 +6,7 @@
   <link href="https://greenmeeple.github.io/atom.xml" rel="self"/>
   
   <link href="https://greenmeeple.github.io/"/>
-  <updated>2025-05-08T20:24:33.527Z</updated>
+  <updated>2025-05-09T01:49:38.524Z</updated>
   <id>https://greenmeeple.github.io/</id>
   
   <author>
@@ -15,6 +15,77 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python-telegram-bot development experience and notes</title>
+    <link href="https://greenmeeple.github.io/python/tgbot/"/>
+    <id>https://greenmeeple.github.io/python/tgbot/</id>
+    <published>2025-05-08T13:03:35.000Z</published>
+    <updated>2025-05-09T01:49:38.524Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;This blog post is trying to tell you:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;My personal experience and notes when using &lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="Python" scheme="https://greenmeeple.github.io/categories/Python/"/>
+    
+    
+    <category term="Python" scheme="https://greenmeeple.github.io/tags/Python/"/>
+    
+    <category term="Telegram" scheme="https://greenmeeple.github.io/tags/Telegram/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>UdS Fahrplan Bot</title>
+    <link href="https://greenmeeple.github.io/projects/udsfahrplan-bot/"/>
+    <id>https://greenmeeple.github.io/projects/udsfahrplan-bot/</id>
+    <published>2025-05-08T12:04:55.000Z</published>
+    <updated>2025-05-09T02:49:49.954Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;A lightweight Telegram bot designed for Saarland University students — offering fast, clear, and focused public transport information using SaarVV and HAFAS APIs. — &lt;strong&gt;&lt;a href=&quot;https://t.me/udsfahrbot&quot;&gt;Try Now&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;🔍-What-it-is&quot;&gt;&lt;a href=&quot;#🔍-What-it-is&quot; class=&quot;headerlink&quot; title=&quot;🔍 What it is&quot;&gt;&lt;/a&gt;🔍 What it is&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;UdS Fahrplan&lt;/strong&gt; is a minimal alternative to the full Saarfahrplan app. No clutter. No overwhelming options. Just a clean Telegram interface for:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;🔄 Trip planning with &lt;code&gt;/trip&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;🕒 Live departure boards with &lt;code&gt;/depart&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;🏠 One-tap departures from your home station with &lt;code&gt;/home&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Built with students and locals in mind.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;✨-Features&quot;&gt;&lt;a href=&quot;#✨-Features&quot; class=&quot;headerlink&quot; title=&quot;✨ Features&quot;&gt;&lt;/a&gt;✨ Features&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&amp;#x2F;trip&lt;/strong&gt; – Search from A to B in Saarland &amp;amp; Luxembourg&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&amp;#x2F;depart&lt;/strong&gt; – View all upcoming buses from any station&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&amp;#x2F;home&lt;/strong&gt; – Configure your home station and check buses in both directions (e.g., City ↔ Dudweiler)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&amp;#x2F;sethome&lt;/strong&gt; – Set or update your personal home station&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Intelligent Filtering&lt;/strong&gt; – Excludes school buses, allows regional&amp;#x2F;suburban focus&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Persistent Storage&lt;/strong&gt; – Remembers user settings across bot restarts&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;Related-Projects&quot;&gt;&lt;a href=&quot;#Related-Projects&quot; class=&quot;headerlink&quot; title=&quot;Related Projects&quot;&gt;&lt;/a&gt;Related Projects&lt;/h2&gt;</summary>
+    
+    
+    
+    <category term="Projects" scheme="https://greenmeeple.github.io/categories/Projects/"/>
+    
+    
+    <category term="hafas" scheme="https://greenmeeple.github.io/tags/hafas/"/>
+    
+    <category term="Python" scheme="https://greenmeeple.github.io/tags/Python/"/>
+    
+    <category term="Telegram" scheme="https://greenmeeple.github.io/tags/Telegram/"/>
+    
+  </entry>
   
   <entry>
     <title>🍽 🥨 MensaarLecker -- A beloved tool to find out Mensa Ladies&#39; favourite menu using Selenium🥨 🍽</title>
@@ -53,7 +124,7 @@
     <link href="https://greenmeeple.github.io/projects/mensaarlog3/"/>
     <id>https://greenmeeple.github.io/projects/mensaarlog3/</id>
     <published>2025-05-07T13:03:35.000Z</published>
-    <updated>2025-05-08T23:03:24.011Z</updated>
+    <updated>2025-05-08T23:04:58.870Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
@@ -117,6 +188,45 @@
     <category term="Python" scheme="https://greenmeeple.github.io/tags/Python/"/>
     
     <category term="Telegram" scheme="https://greenmeeple.github.io/tags/Telegram/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>HAFAS Bitmask Calculator</title>
+    <link href="https://greenmeeple.github.io/projects/hafas-bitmask-calculator%20copy/"/>
+    <id>https://greenmeeple.github.io/projects/hafas-bitmask-calculator%20copy/</id>
+    <published>2025-04-30T12:04:55.000Z</published>
+    <updated>2025-05-09T02:38:22.330Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://greenmeeple.github.io/hafas-bitmask-calculator/&quot;&gt;Web Demo&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;This is a simple web-based tool to help you &lt;strong&gt;decode&lt;/strong&gt; and &lt;strong&gt;encode&lt;/strong&gt; bitmasks used by the &lt;a href=&quot;https://de.wikipedia.org/wiki/HAFAS&quot;&gt;HAFAS&lt;/a&gt; (HaCon Fahrplan-Auskunfts-System) API.&lt;br&gt;It visually maps a decimal bitmask to the transport modes it represents and vice versa.&lt;/p&gt;
+&lt;h2 id=&quot;🔍-What-is-HAFAS&quot;&gt;&lt;a href=&quot;#🔍-What-is-HAFAS&quot; class=&quot;headerlink&quot; title=&quot;🔍 What is HAFAS?&quot;&gt;&lt;/a&gt;🔍 What is HAFAS?&lt;/h2&gt;&lt;p&gt;HAFAS is a timetable and journey planning system widely used across European transport networks, including:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.bahn.com/en&quot;&gt;Deutsche Bahn (DB)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://saarvv.de/&quot;&gt;SaarVV&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.mobiliteit.lu/&quot;&gt;Luxembourg Mobilitéit&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Many other regional operators&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In HAFAS APIs, transport modes (ICE trains, buses, trams, ferries, etc.) are often encoded in a &lt;strong&gt;bitmask&lt;/strong&gt; —&lt;br&gt;a single number where each bit (1, 2, 4, 8, …) represents a specific type of transport.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;✨-Features&quot;&gt;&lt;a href=&quot;#✨-Features&quot; class=&quot;headerlink&quot; title=&quot;✨ Features&quot;&gt;&lt;/a&gt;✨ Features&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;🔢 Enter a number to &lt;strong&gt;decode&lt;/strong&gt; it into selected transport modes&lt;/li&gt;
+&lt;li&gt;✅ Click transport icons to &lt;strong&gt;encode&lt;/strong&gt; a bitmask value&lt;/li&gt;
+&lt;li&gt;🔄 Switch between different &lt;strong&gt;mode sets&lt;/strong&gt; (DB, SaarVV, Luxembourg, HAFAS client spec)&lt;/li&gt;
+&lt;li&gt;⚠️ Input capped to valid 11-bit range (0–2047)&lt;/li&gt;
+&lt;li&gt;💡 Uses the official &lt;a href=&quot;https://github.com/public-transport/hafas-client/blob/main/docs/writing-a-profile.md&quot;&gt;hafas-client mode bitmask&lt;/a&gt; as one profile&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;</summary>
+    
+    
+    
+    <category term="Projects" scheme="https://greenmeeple.github.io/categories/Projects/"/>
+    
+    
+    <category term="React" scheme="https://greenmeeple.github.io/tags/React/"/>
+    
+    <category term="hafas" scheme="https://greenmeeple.github.io/tags/hafas/"/>
     
   </entry>
   
@@ -219,7 +329,7 @@ If an opaque response serves your needs, set the request&amp;#39;s mode to &amp;
     <link href="https://greenmeeple.github.io/projects/mensaarlog1/"/>
     <id>https://greenmeeple.github.io/projects/mensaarlog1/</id>
     <published>2025-03-20T04:03:35.000Z</published>
-    <updated>2025-05-08T18:48:14.676Z</updated>
+    <updated>2025-05-09T01:43:49.190Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
@@ -264,21 +374,23 @@ If an opaque response serves your needs, set the request&amp;#39;s mode to &amp;
     <link href="https://greenmeeple.github.io/appium/"/>
     <id>https://greenmeeple.github.io/appium/</id>
     <published>2025-01-01T18:36:48.000Z</published>
-    <updated>2025-04-03T15:32:42.915Z</updated>
+    <updated>2025-05-09T01:42:16.465Z</updated>
     
     
-    <summary type="html">&lt;p&gt;In this example, we will use &lt;a href=&quot;https://github.com/appium/appium-inspector&quot;&gt;Appium Inspector&lt;/a&gt; to start a seesion on your emulator on &lt;a href=&quot;https://developer.android.com/studio&quot;&gt;Android Studio&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;Start-appium&quot;&gt;&lt;a href=&quot;#Start-appium&quot; class=&quot;headerlink&quot; title=&quot;Start appium&quot;&gt;&lt;/a&gt;Start appium&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;/images/coding/appium/start.png&quot;&gt;&lt;/p&gt;
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;This blog post is trying to tell you:&lt;/strong&gt;&lt;br&gt;Every details and attributes you may need for your first appium automation.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;In this example, we will use &lt;a href=&quot;https://github.com/appium/appium-inspector&quot;&gt;Appium Inspector&lt;/a&gt; to start a seesion on your emulator on &lt;a href=&quot;https://developer.android.com/studio&quot;&gt;Android Studio&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;Start-appium&quot;&gt;&lt;a href=&quot;#Start-appium&quot; class=&quot;headerlink&quot; title=&quot;Start appium&quot;&gt;&lt;/a&gt;Start appium&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;/images/appium/start.png&quot;&gt;&lt;/p&gt;
 &lt;p&gt;First, start the connection with Appium by &lt;code&gt;cmd appium --allow-cors&lt;/code&gt;. It also gives you the &lt;code&gt;remote url&lt;/code&gt; and the &lt;code&gt;automationName&lt;/code&gt; that can be used in the &lt;a href=&quot;https://github.com/appium/appium-inspector&quot;&gt;Appium Inspector&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/coding/appium/inspector.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/appium/inspector.png&quot;&gt;&lt;/p&gt;
 &lt;h2 id=&quot;Start-Session&quot;&gt;&lt;a href=&quot;#Start-Session&quot; class=&quot;headerlink&quot; title=&quot;Start Session&quot;&gt;&lt;/a&gt;Start Session&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;deviceName&lt;/strong&gt;:  &lt;code&gt;adb devices&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;platformName&lt;/strong&gt; - &lt;code&gt;appium driver list&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;platformVersion&lt;/strong&gt; -  &lt;code&gt;adb shell getprop ro.build.version.release&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&quot;/images/coding/appium/session.png&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/coding/appium/inspector2.png&quot;&gt;&lt;/p&gt;
-&lt;p&gt;Now you can start a session in your emulator, but it always begins from the home page. To directly start a session on certain App, you also need to provide the  &lt;code&gt;appPackage&lt;/code&gt; and the &lt;code&gt;appActivity&lt;/code&gt;.&lt;/p&gt;</summary>
+&lt;p&gt;&lt;img src=&quot;/images/appium/session.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/appium/inspector2.png&quot;&gt;&lt;/p&gt;</summary>
     
     
     
@@ -298,7 +410,7 @@ If an opaque response serves your needs, set the request&amp;#39;s mode to &amp;
     <link href="https://greenmeeple.github.io/notes/agv/"/>
     <id>https://greenmeeple.github.io/notes/agv/</id>
     <published>2024-12-22T15:35:16.000Z</published>
-    <updated>2025-04-03T16:54:33.495Z</updated>
+    <updated>2025-05-09T01:52:22.724Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
@@ -404,7 +516,7 @@ If an opaque response serves your needs, set the request&amp;#39;s mode to &amp;
     <link href="https://greenmeeple.github.io/notes/sql50/"/>
     <id>https://greenmeeple.github.io/notes/sql50/</id>
     <published>2024-10-20T21:59:01.000Z</published>
-    <updated>2025-04-03T16:55:46.960Z</updated>
+    <updated>2025-05-09T01:50:01.421Z</updated>
     
     
       
@@ -434,12 +546,12 @@ If an opaque response serves your needs, set the request&amp;#39;s mode to &amp;
     <link href="https://greenmeeple.github.io/projects/hexo-zhruby/"/>
     <id>https://greenmeeple.github.io/projects/hexo-zhruby/</id>
     <published>2024-10-14T02:04:55.000Z</published>
-    <updated>2025-04-03T07:41:15.387Z</updated>
+    <updated>2025-05-09T02:11:08.017Z</updated>
     
     
     <summary type="html">&lt;p&gt;Implement the HTML tag &lt;code&gt;&amp;lt;ruby&amp;gt;&lt;/code&gt; for Hexo using &lt;a href=&quot;https://hexo.io/docs/tag-plugins&quot;&gt;Tag Plugin&lt;/a&gt; feature. Provide auto pronounciation indication for Jyutping (Cantonese), Zhuyin (Taiwanese Mandarin), and Pinyin (Chinese Mandarin), and the default setting for general usage. Support Traditonal and Simplified Chinese characters. &lt;/p&gt;
 &lt;p&gt;Inspired by the &lt;a href=&quot;https://github.com/jamespan/hexo-ruby-character&quot;&gt;hexo-ruby-character&lt;/a&gt; by &lt;a href=&quot;https://github.com/jamespan&quot;&gt;jamespan&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;Install&quot;&gt;&lt;a href=&quot;#Install&quot; class=&quot;headerlink&quot; title=&quot;Install&quot;&gt;&lt;/a&gt;Install&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;npm install hexo-zhruby --save
+&lt;h2 id=&quot;Install&quot;&gt;&lt;a href=&quot;#Install&quot; class=&quot;headerlink&quot; title=&quot;Install&quot;&gt;&lt;/a&gt;Install&lt;/h2&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;npm install hexo-zhruby --save
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&quot;Use-cases&quot;&gt;&lt;a href=&quot;#Use-cases&quot; class=&quot;headerlink&quot; title=&quot;Use cases&quot;&gt;&lt;/a&gt;Use cases&lt;/h2&gt;&lt;p&gt;Ruby (ルビ) is also known as &lt;a href=&quot;https://en.wikipedia.org/wiki/Furigana&quot;&gt;Furigana&lt;/a&gt; (振り仮名).  It contains two basic use cases:&lt;/p&gt;
 &lt;ol&gt;
@@ -465,14 +577,21 @@ If an opaque response serves your needs, set the request&amp;#39;s mode to &amp;
   </entry>
   
   <entry>
-    <title>Using Hexo Plugin functions to create a custom Tag Plugin</title>
+    <title>Hexo Tag Plugin (2) -- Create and publish your own Hexo Tag Plugin</title>
     <link href="https://greenmeeple.github.io/js/hexo-tagplugin-2/"/>
     <id>https://greenmeeple.github.io/js/hexo-tagplugin-2/</id>
     <published>2024-10-13T02:03:12.000Z</published>
-    <updated>2025-04-03T15:33:25.905Z</updated>
+    <updated>2025-05-09T02:00:44.234Z</updated>
     
     
-    <summary type="html">&lt;p&gt;&lt;strong&gt;Disclaimer&lt;/strong&gt;: For explaination on &lt;code&gt;Tag Plugin&lt;/code&gt; and &lt;code&gt;Scripts&lt;/code&gt; in Hexo, you may take a look of &lt;a href=&quot;../hexo-tagplugin-1&quot;&gt;this post&lt;/a&gt;.&lt;/p&gt;
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;This blog post is trying to tell you:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;How to use your own Tag Plugin in local environment?&lt;/li&gt;
+&lt;li&gt;How to publish your Tag Plugin to npm and hexo?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;For explaination on &lt;code&gt;Tag Plugin&lt;/code&gt; and &lt;code&gt;Scripts&lt;/code&gt; in Hexo, see the previous post &lt;a href=&quot;../hexo-tagplugin-1&quot;&gt;Hexo Tag Plugin (1) – Use ‘Hexo Scripts’ to create your own Tag Plugin&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&quot;Plugin&quot;&gt;&lt;a href=&quot;#Plugin&quot; class=&quot;headerlink&quot; title=&quot;Plugin&quot;&gt;&lt;/a&gt;Plugin&lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;Be Careful! Don’t mix &lt;code&gt;Plugin&lt;/code&gt;, &lt;code&gt;Tag&lt;/code&gt;, and &lt;code&gt;Tag Plugin&lt;/code&gt; in Hexo, even though they look extremely similar.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -523,7 +642,7 @@ If an opaque response serves your needs, set the request&amp;#39;s mode to &amp;
 &lt;blockquote&gt;
 &lt;p&gt;If you run command that check all the package after step 4, for exmaple &lt;code&gt;hexo clean&lt;/code&gt;, it will check all the packages in &lt;code&gt;node_modules&lt;/code&gt; and remove packages that are not publish on npm.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&quot;Publish-Plugin-to-npm&quot;&gt;&lt;a href=&quot;#Publish-Plugin-to-npm&quot; class=&quot;headerlink&quot; title=&quot;Publish Plugin to npm&quot;&gt;&lt;/a&gt;Publish Plugin to npm&lt;/h2&gt;&lt;p&gt;To publish your package on the NPM registry, don’t forget you have to setup your account on &lt;a href=&quot;https://www.npmjs.com/&quot;&gt;npm&lt;/a&gt; first.&lt;/p&gt;</summary>
+&lt;h2 id=&quot;Publish-Plugin-to-npm&quot;&gt;&lt;a href=&quot;#Publish-Plugin-to-npm&quot; class=&quot;headerlink&quot; title=&quot;Publish Plugin to npm&quot;&gt;&lt;/a&gt;Publish Plugin to npm&lt;/h2&gt;</summary>
     
     
     
@@ -537,14 +656,21 @@ If an opaque response serves your needs, set the request&amp;#39;s mode to &amp;
   </entry>
   
   <entry>
-    <title>Using Hexo Scripts functions to create a custom Tag Plugin</title>
+    <title>Hexo Tag Plugin (1) -- Use &#39;Hexo Scripts&#39; to create your own Tag Plugin</title>
     <link href="https://greenmeeple.github.io/js/hexo-tagplugin-1/"/>
     <id>https://greenmeeple.github.io/js/hexo-tagplugin-1/</id>
     <published>2024-10-12T02:03:12.000Z</published>
-    <updated>2025-04-03T15:33:25.262Z</updated>
+    <updated>2025-05-09T02:00:53.163Z</updated>
     
     
-    <summary type="html">&lt;p&gt;To color your personal Hexo Blog with more features, scripts and plugins are your powerful tools to use. Below we are trying to create our own &lt;code&gt;tag plugin&lt;/code&gt; for the Hexo blog.&lt;/p&gt;
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;This blog post is trying to tell you:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;What is Hexo Tag and Hexo script?&lt;/li&gt;
+&lt;li&gt;How to implement your own Hexo Tag Plugin using Hexo Script?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;To color your personal Hexo Blog with more features, scripts and plugins are your powerful tools to use. Below we are trying to create our own &lt;code&gt;tag plugin&lt;/code&gt; for the Hexo blog.&lt;/p&gt;
 &lt;h2 id=&quot;Tag-Plugin&quot;&gt;&lt;a href=&quot;#Tag-Plugin&quot; class=&quot;headerlink&quot; title=&quot;Tag Plugin&quot;&gt;&lt;/a&gt;Tag Plugin&lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;Be careful! Tag plugins are different from &lt;a href=&quot;https://hexo.io/docs/front-matter&quot;&gt;post tags&lt;/a&gt;.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -553,9 +679,7 @@ If an opaque response serves your needs, set the request&amp;#39;s mode to &amp;
 &lt;h3 id=&quot;Usage&quot;&gt;&lt;a href=&quot;#Usage&quot; class=&quot;headerlink&quot; title=&quot;Usage&quot;&gt;&lt;/a&gt;Usage&lt;/h3&gt;&lt;p&gt;For example, the syntax of &lt;code&gt;iframe&lt;/code&gt; tag is:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;Markdown&quot;&gt;&amp;#123;% iframe url [width] [height] %&amp;#125;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Let say I want to embed a video from me and my friends’ YouTube video:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;Markdown&quot;&gt;&amp;#123;% iframe https://www.youtube.com/embed/XIOl6BU7s9I?si=yTYsHIXNM6o-Zl9Z 820 461%&amp;#125;
-&lt;/code&gt;&lt;/pre&gt;</summary>
+&lt;p&gt;Let say I want to embed a video from me and my friends’ YouTube video:&lt;/p&gt;</summary>
     
     
     
@@ -573,18 +697,18 @@ If an opaque response serves your needs, set the request&amp;#39;s mode to &amp;
     <link href="https://greenmeeple.github.io/js/json-dependencies-diagram/"/>
     <id>https://greenmeeple.github.io/js/json-dependencies-diagram/</id>
     <published>2024-10-11T00:19:03.000Z</published>
-    <updated>2025-04-03T15:33:24.660Z</updated>
+    <updated>2025-05-09T02:08:40.212Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
 &lt;p&gt;This is a image version of the post &lt;a href=&quot;../json-dependencies/&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;a name=&quot;range-set&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;range-set:&lt;/strong&gt;&lt;br&gt;&lt;img src=&quot;/images/coding/json_dep_diagram/range-set.png&quot; alt=&quot;range-set&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;range-set:&lt;/strong&gt;&lt;br&gt;&lt;img src=&quot;/images/json_dep_diagram/range-set.png&quot; alt=&quot;range-set&quot;&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;EBNF&quot;&gt;range-set   ::= range ( logical-or range )*
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;strong&gt;logical-or:&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/coding/json_dep_diagram/logical-or.png&quot; alt=&quot;logical-or&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/json_dep_diagram/logical-or.png&quot; alt=&quot;logical-or&quot;&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;EBNF&quot;&gt;logical-or  ::= &amp;#39; &amp;#39;* &amp;#39;||&amp;#39; &amp;#39; &amp;#39;*
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;referenced by: &lt;a href=&quot;#range-set&quot;&gt;range-set&lt;/a&gt;&lt;/p&gt;
@@ -607,7 +731,7 @@ If an opaque response serves your needs, set the request&amp;#39;s mode to &amp;
     <link href="https://greenmeeple.github.io/js/json-dependencies/"/>
     <id>https://greenmeeple.github.io/js/json-dependencies/</id>
     <published>2024-10-10T17:04:37.000Z</published>
-    <updated>2025-04-03T15:33:23.903Z</updated>
+    <updated>2025-05-09T02:08:27.303Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
@@ -692,7 +816,7 @@ If an opaque response serves your needs, set the request&amp;#39;s mode to &amp;
     <link href="https://greenmeeple.github.io/github-desktop/"/>
     <id>https://greenmeeple.github.io/github-desktop/</id>
     <published>2024-10-10T00:34:07.000Z</published>
-    <updated>2025-04-03T15:33:37.513Z</updated>
+    <updated>2025-05-09T02:28:50.404Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;Methods-to-Deploy-Hexo-to-GitHub-io&quot;&gt;&lt;a href=&quot;#Methods-to-Deploy-Hexo-to-GitHub-io&quot; class=&quot;headerlink&quot; title=&quot;Methods to Deploy Hexo to GitHub.io&quot;&gt;&lt;/a&gt;Methods to Deploy Hexo to GitHub.io&lt;/h2&gt;&lt;p&gt;Assume you’ve created a repository on GitHub called &lt;code&gt;&amp;lt;username&amp;gt;.github.io&lt;/code&gt;. Here are two common method you can deploy you Hexo Blog:&lt;/p&gt;
@@ -785,7 +909,7 @@ branch: gh-pages
     <link href="https://greenmeeple.github.io/site/hexo-mathjax/"/>
     <id>https://greenmeeple.github.io/site/hexo-mathjax/</id>
     <published>2024-10-09T02:09:35.000Z</published>
-    <updated>2025-04-03T15:33:36.298Z</updated>
+    <updated>2025-05-09T02:26:43.600Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;Prime-superscript-problem-e-g-x’-i-in-Mathjax&quot;&gt;&lt;a href=&quot;#Prime-superscript-problem-e-g-x’-i-in-Mathjax&quot; class=&quot;headerlink&quot; title=&quot;Prime superscript problem (e.g. x’_i) in Mathjax&quot;&gt;&lt;/a&gt;Prime superscript problem (e.g. x’_i) in Mathjax&lt;/h2&gt;&lt;p&gt;When I was using &lt;a href=&quot;https://www.mathjax.org/&quot;&gt;Mathjax&lt;/a&gt; to create math formula in my blog post, I typed&lt;br&gt;&lt;code&gt;((q_1, q_2), a, (q&amp;#39;_1, q&amp;#39;_2)) &#92;in S &#92;times &#92;Sigma_&amp;#123;int&amp;#125; &#92;times S&lt;/code&gt; and it rendered as&lt;/p&gt;
