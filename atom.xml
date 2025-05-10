@@ -6,7 +6,7 @@
   <link href="https://greenmeeple.github.io/atom.xml" rel="self"/>
   
   <link href="https://greenmeeple.github.io/"/>
-  <updated>2025-05-10T01:07:44.736Z</updated>
+  <updated>2025-05-10T01:19:09.046Z</updated>
   <id>https://greenmeeple.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>UdS Fahrplan Bot Development Log (1)</title>
-    <link href="https://greenmeeple.github.io/projects/udsfahrplan-log/"/>
-    <id>https://greenmeeple.github.io/projects/udsfahrplan-log/</id>
+    <title>UdS Fahrplan Bot Development Log (1) -- Fetching data from HAFAS and its APIs through POST requests</title>
+    <link href="https://greenmeeple.github.io/projects/udsfahrplan-log1/"/>
+    <id>https://greenmeeple.github.io/projects/udsfahrplan-log1/</id>
     <published>2025-05-09T23:04:55.000Z</published>
-    <updated>2025-05-10T01:07:44.736Z</updated>
+    <updated>2025-05-10T01:19:09.046Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
@@ -34,9 +34,9 @@
 &lt;h2 id=&quot;What-is-HAFAS&quot;&gt;&lt;a href=&quot;#What-is-HAFAS&quot; class=&quot;headerlink&quot; title=&quot;What is HAFAS?&quot;&gt;&lt;/a&gt;What is HAFAS?&lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;The HaCon Timetable Information System (HAFAS) is a software for timetable information from the company HaCon (Hannover Consulting). – &lt;a href=&quot;https://de.wikipedia.org/wiki/HAFAS&quot;&gt;Wikipedia&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;Basically, the entire Germany, Luxembourg, and the surrounding countries&amp;#x2F;regions use HAFAS to obtain depatures and stations details. This centralized database can be visited using APIs. Different service providers may create their own APIs for customized usage. For example, you can send your HTTP requests to Deutsche Bahn (DB) if you have the access of their API, which can be found in &lt;a href=&quot;https://developers.deutschebahn.com/db-api-marketplace/apis/&quot;&gt;DB API Marketplace&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Basically, the entire Germany, Luxembourg, and the surrounding countries&amp;#x2F;regions use HAFAS to obtain depatures and stations details. This centralized software system can be visited using APIs. Different service providers may create their own HAFAS backend endpoint that exposes a public transport API over HTTP for customized usage. For example, you can send your HTTP requests to Deutsche Bahn (DB) if you have the access of their API, which can be found in &lt;a href=&quot;https://developers.deutschebahn.com/db-api-marketplace/apis/&quot;&gt;DB API Marketplace&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/images/udsfahrplan/db-api.png&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;What-can-we-do-with-the-database&quot;&gt;&lt;a href=&quot;#What-can-we-do-with-the-database&quot; class=&quot;headerlink&quot; title=&quot;What can we do with the database?&quot;&gt;&lt;/a&gt;What can we do with the database?&lt;/h2&gt;&lt;p&gt;There are four basic functions that the database has provided:&lt;/p&gt;
+&lt;h2 id=&quot;What-can-we-do-with-HAFAS&quot;&gt;&lt;a href=&quot;#What-can-we-do-with-HAFAS&quot; class=&quot;headerlink&quot; title=&quot;What can we do with HAFAS?&quot;&gt;&lt;/a&gt;What can we do with HAFAS?&lt;/h2&gt;&lt;p&gt;There are four basic functions that the system has provided:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;TripSearch&lt;/code&gt; – return connections from location A to location B&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;StationBoard&lt;/code&gt; – return all arrivals and departures of a certain station&lt;/li&gt;
