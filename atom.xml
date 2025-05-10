@@ -6,7 +6,7 @@
   <link href="https://greenmeeple.github.io/atom.xml" rel="self"/>
   
   <link href="https://greenmeeple.github.io/"/>
-  <updated>2025-05-09T01:49:38.524Z</updated>
+  <updated>2025-05-10T01:07:44.736Z</updated>
   <id>https://greenmeeple.github.io/</id>
   
   <author>
@@ -15,6 +15,49 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>UdS Fahrplan Bot Development Log (1)</title>
+    <link href="https://greenmeeple.github.io/projects/udsfahrplan-log/"/>
+    <id>https://greenmeeple.github.io/projects/udsfahrplan-log/</id>
+    <published>2025-05-09T23:04:55.000Z</published>
+    <updated>2025-05-10T01:07:44.736Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;This blog post is trying to tell you:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;My personal study notes on HAFAS, a public transport management system used around europe&lt;/li&gt;
+&lt;li&gt;Is &lt;strong&gt;&lt;a href=&quot;https://t.me/udsfahrbot&quot;&gt;UdSfahrplan&lt;/a&gt;&lt;/strong&gt; “Reinventing the wheel”?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;What-is-HAFAS&quot;&gt;&lt;a href=&quot;#What-is-HAFAS&quot; class=&quot;headerlink&quot; title=&quot;What is HAFAS?&quot;&gt;&lt;/a&gt;What is HAFAS?&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;The HaCon Timetable Information System (HAFAS) is a software for timetable information from the company HaCon (Hannover Consulting). – &lt;a href=&quot;https://de.wikipedia.org/wiki/HAFAS&quot;&gt;Wikipedia&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Basically, the entire Germany, Luxembourg, and the surrounding countries&amp;#x2F;regions use HAFAS to obtain depatures and stations details. This centralized database can be visited using APIs. Different service providers may create their own APIs for customized usage. For example, you can send your HTTP requests to Deutsche Bahn (DB) if you have the access of their API, which can be found in &lt;a href=&quot;https://developers.deutschebahn.com/db-api-marketplace/apis/&quot;&gt;DB API Marketplace&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/udsfahrplan/db-api.png&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;What-can-we-do-with-the-database&quot;&gt;&lt;a href=&quot;#What-can-we-do-with-the-database&quot; class=&quot;headerlink&quot; title=&quot;What can we do with the database?&quot;&gt;&lt;/a&gt;What can we do with the database?&lt;/h2&gt;&lt;p&gt;There are four basic functions that the database has provided:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;TripSearch&lt;/code&gt; – return connections from location A to location B&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;StationBoard&lt;/code&gt; – return all arrivals and departures of a certain station&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;LocGeoPos&lt;/code&gt; – return list of stations in a give range of area&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;LocMatch&lt;/code&gt; – return list of stations based on the keyword given&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;These includes most of the functionalities for users. For example, when we tried to plan our journey on DB navigator, the app uses &lt;code&gt;TripSearch&lt;/code&gt; to show you connections; when we type the stations in the search box, the app &lt;code&gt;LocMatch&lt;/code&gt; to give you related results.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/udsfahrplan/db-nav.png&quot;&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Projects" scheme="https://greenmeeple.github.io/categories/Projects/"/>
+    
+    
+    <category term="Python" scheme="https://greenmeeple.github.io/tags/Python/"/>
+    
+    <category term="Telegram" scheme="https://greenmeeple.github.io/tags/Telegram/"/>
+    
+    <category term="HAFAS" scheme="https://greenmeeple.github.io/tags/HAFAS/"/>
+    
+  </entry>
   
   <entry>
     <title>python-telegram-bot development experience and notes</title>
@@ -51,7 +94,7 @@
     <link href="https://greenmeeple.github.io/projects/udsfahrplan-bot/"/>
     <id>https://greenmeeple.github.io/projects/udsfahrplan-bot/</id>
     <published>2025-05-08T12:04:55.000Z</published>
-    <updated>2025-05-09T02:49:49.954Z</updated>
+    <updated>2025-05-09T20:01:07.280Z</updated>
     
     
     <summary type="html">&lt;p&gt;A lightweight Telegram bot designed for Saarland University students — offering fast, clear, and focused public transport information using SaarVV and HAFAS APIs. — &lt;strong&gt;&lt;a href=&quot;https://t.me/udsfahrbot&quot;&gt;Try Now&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
@@ -79,11 +122,11 @@
     <category term="Projects" scheme="https://greenmeeple.github.io/categories/Projects/"/>
     
     
-    <category term="hafas" scheme="https://greenmeeple.github.io/tags/hafas/"/>
-    
     <category term="Python" scheme="https://greenmeeple.github.io/tags/Python/"/>
     
     <category term="Telegram" scheme="https://greenmeeple.github.io/tags/Telegram/"/>
+    
+    <category term="HAFAS" scheme="https://greenmeeple.github.io/tags/HAFAS/"/>
     
   </entry>
   
@@ -120,11 +163,11 @@
   </entry>
   
   <entry>
-    <title>MensaarLecker Development Log 3 -- Telegram Bot Deployment and Integration</title>
-    <link href="https://greenmeeple.github.io/projects/mensaarlog3/"/>
-    <id>https://greenmeeple.github.io/projects/mensaarlog3/</id>
+    <title>MensaarLecker Development Log (3) -- Telegram Bot Deployment and Integration</title>
+    <link href="https://greenmeeple.github.io/projects/mensaar-log3/"/>
+    <id>https://greenmeeple.github.io/projects/mensaar-log3/</id>
     <published>2025-05-07T13:03:35.000Z</published>
-    <updated>2025-05-08T23:04:58.870Z</updated>
+    <updated>2025-05-09T19:53:36.576Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
@@ -193,10 +236,10 @@
   
   <entry>
     <title>HAFAS Bitmask Calculator</title>
-    <link href="https://greenmeeple.github.io/projects/hafas-bitmask-calculator%20copy/"/>
-    <id>https://greenmeeple.github.io/projects/hafas-bitmask-calculator%20copy/</id>
+    <link href="https://greenmeeple.github.io/projects/hafas-bitmask-calculator/"/>
+    <id>https://greenmeeple.github.io/projects/hafas-bitmask-calculator/</id>
     <published>2025-04-30T12:04:55.000Z</published>
-    <updated>2025-05-09T02:38:22.330Z</updated>
+    <updated>2025-05-09T20:00:20.604Z</updated>
     
     
     <summary type="html">&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://greenmeeple.github.io/hafas-bitmask-calculator/&quot;&gt;Web Demo&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
@@ -265,11 +308,11 @@
   </entry>
   
   <entry>
-    <title>MensaarLecker Development Log 2 -- Web Developing and GitHub Workflow</title>
-    <link href="https://greenmeeple.github.io/projects/mensaarlog2/"/>
-    <id>https://greenmeeple.github.io/projects/mensaarlog2/</id>
+    <title>MensaarLecker Development Log (2) -- Web Developing and GitHub Workflow</title>
+    <link href="https://greenmeeple.github.io/projects/mensaar-log2/"/>
+    <id>https://greenmeeple.github.io/projects/mensaar-log2/</id>
     <published>2025-03-21T04:03:35.000Z</published>
-    <updated>2025-05-08T23:03:07.631Z</updated>
+    <updated>2025-05-09T19:53:32.528Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
@@ -325,11 +368,11 @@ If an opaque response serves your needs, set the request&amp;#39;s mode to &amp;
   </entry>
   
   <entry>
-    <title>MensaarLecker Development Log 1 -- Web Crawling</title>
-    <link href="https://greenmeeple.github.io/projects/mensaarlog1/"/>
-    <id>https://greenmeeple.github.io/projects/mensaarlog1/</id>
+    <title>MensaarLecker Development Log (1) -- Web Crawling</title>
+    <link href="https://greenmeeple.github.io/projects/mensaar-log1/"/>
+    <id>https://greenmeeple.github.io/projects/mensaar-log1/</id>
     <published>2025-03-20T04:03:35.000Z</published>
-    <updated>2025-05-09T01:43:49.190Z</updated>
+    <updated>2025-05-09T19:53:28.952Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
