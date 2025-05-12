@@ -4,35 +4,6 @@
   
     
     <entry>
-      <title>UdS Fahrplan Bot Development Log (1) -- Fetching data from HAFAS and its APIs through POST requests</title>
-      <link href="/projects/udsfahrplan-log1/"/>
-      <url>/projects/udsfahrplan-log1/</url>
-      
-        <content type="html"><![CDATA[<blockquote><p><strong>This blog post is trying to tell you:</strong></p><ul><li>My personal study notes on HAFAS, a public transport management system used around europe</li><li>Is <strong><a href="https://t.me/udsfahrbot">UdSfahrplan</a></strong> “Reinventing the wheel”?</li></ul></blockquote><h2 id="What-is-HAFAS"><a href="#What-is-HAFAS" class="headerlink" title="What is HAFAS?"></a>What is HAFAS?</h2><blockquote><p>The HaCon Timetable Information System (HAFAS) is a software for timetable information from the company HaCon (Hannover Consulting). – <a href="https://de.wikipedia.org/wiki/HAFAS">Wikipedia</a></p></blockquote><p>Basically, the entire Germany, Luxembourg, and the surrounding countries&#x2F;regions use HAFAS to obtain depatures and stations details. This centralized software system can be visited using APIs. Different service providers may create their own HAFAS backend endpoint that exposes a public transport API over HTTP for customized usage. For example, you can send your HTTP requests to Deutsche Bahn (DB) if you have the access of their API, which can be found in <a href="https://developers.deutschebahn.com/db-api-marketplace/apis/">DB API Marketplace</a>.</p><p><img src="/images/udsfahrplan/db-api.png"></p><h2 id="What-can-we-do-with-HAFAS"><a href="#What-can-we-do-with-HAFAS" class="headerlink" title="What can we do with HAFAS?"></a>What can we do with HAFAS?</h2><p>There are four basic functions that the system has provided:</p><ul><li><code>TripSearch</code> – return connections from location A to location B</li><li><code>StationBoard</code> – return all arrivals and departures of a certain station</li><li><code>LocGeoPos</code> – return list of stations in a give range of area</li><li><code>LocMatch</code> – return list of stations based on the keyword given</li></ul><p>These includes most of the functionalities for users. For example, when we tried to plan our journey on DB navigator, the app uses <code>TripSearch</code> to show you connections; when we type the stations in the search box, the app <code>LocMatch</code> to give you related results.</p><p><img src="/images/udsfahrplan/db-nav.png"></p><h3 id="Methods-in-detail"><a href="#Methods-in-detail" class="headerlink" title="Methods in detail"></a>Methods in detail</h3><p>Since HAFAS is a enormous software system , there are a lot of attributes and setting provided to create a precise request. Here are some examples:</p><ul><li>departure time</li><li>arrival time</li><li>no. of trips&#x2F;stations returned</li><li>modes of transportations</li><li>transfer time</li><li>max. no. of transfer</li></ul><h2 id="How-to-perform-a-HTTP-request"><a href="#How-to-perform-a-HTTP-request" class="headerlink" title="How to perform a HTTP request"></a>How to perform a HTTP request</h2><p>A HTTP request can be done by <code>POST</code> or <code>GET</code> as usual. For different regions or transportation providers, they set up their own server (API endpoint) that restrict what data and their format to return. Therefore users will not be overwhelmed with unrelated results. For example, when you are searching for stations in Luxembourg using <a href="https://www.mobiliteit.lu/en/">Mobiliteit.lu</a>, you may not want to see stations that share the same name, but are located in Berlin.</p><p>For each providers we need the corresponding profiles complete our request. Here is a python example to create a <code>LocMatch</code> request to SaarVV, the transportation provider in Saarland.</p><pre><code class="python">import requestsimport jsondef LocMatch():    url = &quot;https://www.saarfahrplan.de/bin/mgate.exe&quot;    headers = &#123;        &quot;Content-Type&quot;: &quot;application/json&quot;,        &quot;Accept-Encoding&quot;: &quot;gzip&quot;,        &quot;User-Agent&quot;: &quot;HAFAS&quot;    &#125;    body = &#123;        &quot;ver&quot;: &quot;1.63&quot;,        &quot;lang&quot;: &quot;en&quot;,        &quot;auth&quot;: &#123;&quot;type&quot;: &quot;AID&quot;, &quot;aid&quot;: &quot;yCW9qZFSye1wIv3gCzm5r7d2kJ3LIF&quot;&#125;,        &quot;client&quot;: &#123;            &quot;id&quot;: &quot;ZPS-SAAR&quot;,            &quot;type&quot;: &quot;WEB&quot;,            &quot;name&quot;: &quot;webapp&quot;,            &quot;l&quot;: &quot;vs_webapp&quot;,            &quot;v&quot;: 10004        &#125;,        &quot;formatted&quot;: False,        &quot;svcReqL&quot;: [&#123;            &quot;meth&quot;: &quot;LocMatch&quot;,            &quot;req&quot;: &#123;                &quot;input&quot;: &#123;                    &quot;field&quot;: &quot;S&quot;,                    &quot;loc&quot;: &#123;                        &quot;type&quot;: &quot;ALL&quot;,                        &quot;name&quot;: keyword,                    &#125;,                    &quot;maxLoc&quot;: 5                &#125;            &#125;,            &quot;id&quot;: &quot;1|3|&quot;        &#125;]    &#125;    try:        res = requests.post(url, headers=headers, data=json.dumps(body))        data = res.json()        return data    except Exception as e:        print(f&quot;❌ Error fetching location matches: &#123;e&#125;&quot;)        return None</code></pre><p>The whole request used a JSON format (<code>&quot;Content-Type&quot;: &quot;application/json&quot;</code>), and the most important fields we need to connect to the API gateway&#x2F;server-side application (<code>URL</code>) is a correct <code>header</code>, <code>auth</code> and <code>client</code>. With these we may establish the connection with the server and fetch the desired data.</p><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://github.com/public-transport/hafas-client">hafas-client</a><br><a href="https://int.bahn.de/en">Deutsche Bahn</a><br><a href="https://www.saarfahrplan.de/">SaarFahrplan</a><br><a href="https://www.mobiliteit.lu/en/">Mobiliteit.lu</a><br><a href="https://github.com/Felix3qH4/Mobiliteit.lu">Mobiliteit.lu (Github Repo)</a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> Projects </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Python </tag>
-            
-            <tag> Telegram </tag>
-            
-            <tag> HAFAS </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>python-telegram-bot development experience and notes</title>
       <link href="/python/tgbot/"/>
       <url>/python/tgbot/</url>
@@ -164,6 +135,64 @@
             <tag> React </tag>
             
             <tag> hafas </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>UdS Fahrplan Bot Development Log (2) -- Planning for telegram bot</title>
+      <link href="/projects/udsfahrplan-log2/"/>
+      <url>/projects/udsfahrplan-log2/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p><strong>This blog post is trying to tell you:</strong></p><ul><li>The motivation of making my own telegram bot</li><li>Is <strong><a href="https://t.me/udsfahrbot">UdSfahrplan</a></strong> “Reinventing the wheel”?</li></ul></blockquote><h2 id="Saarfahrplan-v-s-Uni-Students"><a href="#Saarfahrplan-v-s-Uni-Students" class="headerlink" title="Saarfahrplan v.s. Uni Students"></a>Saarfahrplan v.s. Uni Students</h2><p>Previous post: <a href="../udsfahrplan-log1">UdS Fahrplan Bot Development Log (1) – Fetching data from HAFAS and its APIs through POST requests</a></p><p><a href="https://www.saarfahrplan.de/">SaarFahrplan</a> is a public transport app to provide real-time information and services related to public transportation in Saarland. Its target users are the people who live and travel in Saarland for general purpose. When it comes to a smaller group of users, for example Uni students, some functionalities might be redundant and we may optimized some common use case for better user experience.</p><h3 id="Common-use-cases-for-students"><a href="#Common-use-cases-for-students" class="headerlink" title="Common use cases for students"></a>Common use cases for students</h3><p>Instead of searching different connections, Uni students’ timetable are usually consistent and repetitive. There are a few places where they always go, for example:</p><ul><li>Go to the Uni</li><li>Go to the Mensa</li><li>Go to the Dormintory</li><li>Go to the City</li><li>Go to the Supermarket</li></ul><p>Another scenario will be when we are in somewhere new, we would like to know how to go back home (dormitory).</p><h2 id="Key-functions-on-our-telegram-bot"><a href="#Key-functions-on-our-telegram-bot" class="headerlink" title="Key functions on our telegram bot"></a>Key functions on our telegram bot</h2><p>Based on the above use case, So we create our own app&#x2F;bot that only accommodate them.</p><h3 id="Specified-set-of-stations"><a href="#Specified-set-of-stations" class="headerlink" title="Specified set of stations"></a>Specified set of stations</h3><p>We first made a set of stations that are commonly used by Uni students, that can be used without further search. On the other hand, we also provided a search function for other stations if needed.</p><p><img src="/images/udsfahrplan/stations.png"></p><h3 id="home-–-A-function-that-saves-your-time"><a href="#home-–-A-function-that-saves-your-time" class="headerlink" title="/home – A function that saves your time"></a><code>/home</code> – A function that saves your time</h3><p>Originally, if you want to search for a trip in Saarfahrplan, you need to:</p><ol><li>Go to the “Trip Planner” page</li><li>Type the starting location</li><li>Select the correct station in the pop up fragment</li><li>Back to the “Trip Planner” page</li><li>Type the destination</li><li>Select the correct station in the pop up fragment</li><li>Back to the “Trip Planner” page</li><li>Select Departure time in the pop up (optional)</li><li>Press “Search Button”</li></ol><p>This is somehow annoying if you already know which station you are planning to go. Therefore, we create the following flow:</p><ol><li>Use the <code>/home</code> command</li><li>Select the destination</li><li>Select Departure time</li></ol><p><img src="/images/udsfahrplan/home.png"></p><p>Since we’ve already made a set of stations, we can save lots of time from searching. Of course, if we are in a new place where the set is not included, we can:</p><ol><li>Use the <code>/home</code> command</li><li>Select the <code>More Stations</code></li><li>Type the station name</li><li>Select the correct station</li><li>Select Departure time</li></ol><p>All actions can be done in the same interface.</p><h3 id="sethome-–-One-time-setup-use-forever"><a href="#sethome-–-One-time-setup-use-forever" class="headerlink" title="&#x2F;sethome – One time setup, use forever"></a>&#x2F;sethome – One time setup, use forever</h3><p>As we can see, the major difference between our design and the app is that we don’t have to search or select our destination when using the command <code>/home</code>. This is because we already stored users’ home station beforehand.</p><p><img src="/images/udsfahrplan/sethome.png"></p><h2 id="Short-Summary"><a href="#Short-Summary" class="headerlink" title="Short Summary"></a>Short Summary</h2><p>Instead of repeating the whole workflow, we can first save the progress of some subtasks, and retrieve them in our daily workflow to save our time.</p><blockquote><p>$$\text{(Task A + Task B)}\times\text{repetitons}\Rightarrow\text{Task A + (Task B}\times\text{repetitons)}$$</p></blockquote><p>Continue Reading: <a href="../udsfahrplan-log3">UdS Fahrplan Bot Development Log (3) –</a></p><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://github.com/public-transport/hafas-client">hafas-client</a><br><a href="https://int.bahn.de/en">Deutsche Bahn</a><br><a href="https://www.saarfahrplan.de/">SaarFahrplan</a><br><a href="https://www.mobiliteit.lu/en/">Mobiliteit.lu</a><br><a href="https://github.com/Felix3qH4/Mobiliteit.lu">Mobiliteit.lu (Github Repo)</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Projects </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+            <tag> Telegram </tag>
+            
+            <tag> HAFAS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>UdS Fahrplan Bot Development Log (1) -- Fetching data from HAFAS and its APIs through POST requests</title>
+      <link href="/projects/udsfahrplan-log1/"/>
+      <url>/projects/udsfahrplan-log1/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p><strong>This blog post is trying to tell you:</strong></p><ul><li>My personal study notes on HAFAS, a public transport management system used around europe</li></ul></blockquote><h2 id="What-is-HAFAS"><a href="#What-is-HAFAS" class="headerlink" title="What is HAFAS?"></a>What is HAFAS?</h2><blockquote><p>The HaCon Timetable Information System (HAFAS) is a software for timetable information from the company HaCon (Hannover Consulting). – <a href="https://de.wikipedia.org/wiki/HAFAS">Wikipedia</a></p></blockquote><p>Basically, the entire Germany, Luxembourg, and the surrounding countries&#x2F;regions use HAFAS to obtain depatures and stations details. This centralized software system can be visited using APIs. Different service providers may create their own HAFAS backend endpoint that exposes a public transport API over HTTP for customized usage. For example, you can send your HTTP requests to Deutsche Bahn (DB) if you have the access of their API, which can be found in <a href="https://developers.deutschebahn.com/db-api-marketplace/apis/">DB API Marketplace</a>.</p><p><img src="/images/udsfahrplan/db-api.png"></p><h2 id="What-can-we-do-with-HAFAS"><a href="#What-can-we-do-with-HAFAS" class="headerlink" title="What can we do with HAFAS?"></a>What can we do with HAFAS?</h2><p>There are four basic functions that the system has provided:</p><ul><li><code>TripSearch</code> – return connections from location A to location B</li><li><code>StationBoard</code> – return all arrivals and departures of a certain station</li><li><code>LocGeoPos</code> – return list of stations in a give range of area</li><li><code>LocMatch</code> – return list of stations based on the keyword given</li></ul><p>These includes most of the functionalities for users. For example, when we tried to plan our journey on DB navigator, the app uses <code>TripSearch</code> to show you connections; when we type the stations in the search box, the app <code>LocMatch</code> to give you related results.</p><p><img src="/images/udsfahrplan/db-nav.png"></p><h3 id="Methods-in-detail"><a href="#Methods-in-detail" class="headerlink" title="Methods in detail"></a>Methods in detail</h3><p>Since HAFAS is a enormous software system , there are a lot of attributes and setting provided to create a precise request. Here are some examples:</p><ul><li>departure time</li><li>arrival time</li><li>no. of trips&#x2F;stations returned</li><li>modes of transportations</li><li>transfer time</li><li>max. no. of transfer</li></ul><h2 id="How-to-perform-a-HTTP-request"><a href="#How-to-perform-a-HTTP-request" class="headerlink" title="How to perform a HTTP request"></a>How to perform a HTTP request</h2><p>A HTTP request can be done by <code>POST</code> or <code>GET</code> as usual. For different regions or transportation providers, they set up their own server (API endpoint) that restrict what data and their format to return. Therefore users will not be overwhelmed with unrelated results. For example, when you are searching for stations in Luxembourg using <a href="https://www.mobiliteit.lu/en/">Mobiliteit.lu</a>, you may not want to see stations that share the same name, but are located in Berlin.</p><p>For each providers we need the corresponding profiles complete our request. Here is a python example to create a <code>LocMatch</code> request to SaarVV, the transportation provider in Saarland.</p><pre><code class="python">import requestsimport jsondef LocMatch():    url = &quot;https://www.saarfahrplan.de/bin/mgate.exe&quot;    headers = &#123;        &quot;Content-Type&quot;: &quot;application/json&quot;,        &quot;Accept-Encoding&quot;: &quot;gzip&quot;,        &quot;User-Agent&quot;: &quot;HAFAS&quot;    &#125;    body = &#123;        &quot;ver&quot;: &quot;1.63&quot;,        &quot;lang&quot;: &quot;en&quot;,        &quot;auth&quot;: &#123;&quot;type&quot;: &quot;AID&quot;, &quot;aid&quot;: &quot;yCW9qZFSye1wIv3gCzm5r7d2kJ3LIF&quot;&#125;,        &quot;client&quot;: &#123;            &quot;id&quot;: &quot;ZPS-SAAR&quot;,            &quot;type&quot;: &quot;WEB&quot;,            &quot;name&quot;: &quot;webapp&quot;,            &quot;l&quot;: &quot;vs_webapp&quot;,            &quot;v&quot;: 10004        &#125;,        &quot;formatted&quot;: False,        &quot;svcReqL&quot;: [&#123;            &quot;meth&quot;: &quot;LocMatch&quot;,            &quot;req&quot;: &#123;                &quot;input&quot;: &#123;                    &quot;field&quot;: &quot;S&quot;,                    &quot;loc&quot;: &#123;                        &quot;type&quot;: &quot;ALL&quot;,                        &quot;name&quot;: keyword,                    &#125;,                    &quot;maxLoc&quot;: 5                &#125;            &#125;,            &quot;id&quot;: &quot;1|3|&quot;        &#125;]    &#125;    try:        res = requests.post(url, headers=headers, data=json.dumps(body))        data = res.json()        return data    except Exception as e:        print(f&quot;❌ Error fetching location matches: &#123;e&#125;&quot;)        return None</code></pre><p>The whole request used a JSON format (<code>&quot;Content-Type&quot;: &quot;application/json&quot;</code>), and the most important fields we need to connect to the API gateway&#x2F;server-side application (<code>URL</code>) is a correct <code>header</code>, <code>auth</code> and <code>client</code>. With these we may establish the connection with the server and fetch the desired data.</p><p>Continue Reading: <a href="../udsfahrplan-log2">UdS Fahrplan Bot Development Log (2) – Planning for telegram bot</a></p><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://github.com/public-transport/hafas-client">hafas-client</a><br><a href="https://int.bahn.de/en">Deutsche Bahn</a><br><a href="https://www.saarfahrplan.de/">SaarFahrplan</a><br><a href="https://www.mobiliteit.lu/en/">Mobiliteit.lu</a><br><a href="https://github.com/Felix3qH4/Mobiliteit.lu">Mobiliteit.lu (Github Repo)</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Projects </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+            <tag> Telegram </tag>
+            
+            <tag> HAFAS </tag>
             
         </tags>
       

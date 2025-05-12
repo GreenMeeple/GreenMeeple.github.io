@@ -6,7 +6,7 @@
   <link href="https://greenmeeple.github.io/atom.xml" rel="self"/>
   
   <link href="https://greenmeeple.github.io/"/>
-  <updated>2025-05-10T01:19:09.046Z</updated>
+  <updated>2025-05-09T01:49:38.524Z</updated>
   <id>https://greenmeeple.github.io/</id>
   
   <author>
@@ -15,49 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>UdS Fahrplan Bot Development Log (1) -- Fetching data from HAFAS and its APIs through POST requests</title>
-    <link href="https://greenmeeple.github.io/projects/udsfahrplan-log1/"/>
-    <id>https://greenmeeple.github.io/projects/udsfahrplan-log1/</id>
-    <published>2025-05-09T23:04:55.000Z</published>
-    <updated>2025-05-10T01:19:09.046Z</updated>
-    
-    
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;This blog post is trying to tell you:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;My personal study notes on HAFAS, a public transport management system used around europe&lt;/li&gt;
-&lt;li&gt;Is &lt;strong&gt;&lt;a href=&quot;https://t.me/udsfahrbot&quot;&gt;UdSfahrplan&lt;/a&gt;&lt;/strong&gt; “Reinventing the wheel”?&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;What-is-HAFAS&quot;&gt;&lt;a href=&quot;#What-is-HAFAS&quot; class=&quot;headerlink&quot; title=&quot;What is HAFAS?&quot;&gt;&lt;/a&gt;What is HAFAS?&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;The HaCon Timetable Information System (HAFAS) is a software for timetable information from the company HaCon (Hannover Consulting). – &lt;a href=&quot;https://de.wikipedia.org/wiki/HAFAS&quot;&gt;Wikipedia&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Basically, the entire Germany, Luxembourg, and the surrounding countries&amp;#x2F;regions use HAFAS to obtain depatures and stations details. This centralized software system can be visited using APIs. Different service providers may create their own HAFAS backend endpoint that exposes a public transport API over HTTP for customized usage. For example, you can send your HTTP requests to Deutsche Bahn (DB) if you have the access of their API, which can be found in &lt;a href=&quot;https://developers.deutschebahn.com/db-api-marketplace/apis/&quot;&gt;DB API Marketplace&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/udsfahrplan/db-api.png&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;What-can-we-do-with-HAFAS&quot;&gt;&lt;a href=&quot;#What-can-we-do-with-HAFAS&quot; class=&quot;headerlink&quot; title=&quot;What can we do with HAFAS?&quot;&gt;&lt;/a&gt;What can we do with HAFAS?&lt;/h2&gt;&lt;p&gt;There are four basic functions that the system has provided:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;TripSearch&lt;/code&gt; – return connections from location A to location B&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;StationBoard&lt;/code&gt; – return all arrivals and departures of a certain station&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;LocGeoPos&lt;/code&gt; – return list of stations in a give range of area&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;LocMatch&lt;/code&gt; – return list of stations based on the keyword given&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;These includes most of the functionalities for users. For example, when we tried to plan our journey on DB navigator, the app uses &lt;code&gt;TripSearch&lt;/code&gt; to show you connections; when we type the stations in the search box, the app &lt;code&gt;LocMatch&lt;/code&gt; to give you related results.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/udsfahrplan/db-nav.png&quot;&gt;&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Projects" scheme="https://greenmeeple.github.io/categories/Projects/"/>
-    
-    
-    <category term="Python" scheme="https://greenmeeple.github.io/tags/Python/"/>
-    
-    <category term="Telegram" scheme="https://greenmeeple.github.io/tags/Telegram/"/>
-    
-    <category term="HAFAS" scheme="https://greenmeeple.github.io/tags/HAFAS/"/>
-    
-  </entry>
   
   <entry>
     <title>python-telegram-bot development experience and notes</title>
@@ -270,6 +227,89 @@
     <category term="React" scheme="https://greenmeeple.github.io/tags/React/"/>
     
     <category term="hafas" scheme="https://greenmeeple.github.io/tags/hafas/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>UdS Fahrplan Bot Development Log (2) -- Planning for telegram bot</title>
+    <link href="https://greenmeeple.github.io/projects/udsfahrplan-log2/"/>
+    <id>https://greenmeeple.github.io/projects/udsfahrplan-log2/</id>
+    <published>2025-04-27T23:04:55.000Z</published>
+    <updated>2025-05-12T15:40:13.139Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;This blog post is trying to tell you:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The motivation of making my own telegram bot&lt;/li&gt;
+&lt;li&gt;Is &lt;strong&gt;&lt;a href=&quot;https://t.me/udsfahrbot&quot;&gt;UdSfahrplan&lt;/a&gt;&lt;/strong&gt; “Reinventing the wheel”?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;Saarfahrplan-v-s-Uni-Students&quot;&gt;&lt;a href=&quot;#Saarfahrplan-v-s-Uni-Students&quot; class=&quot;headerlink&quot; title=&quot;Saarfahrplan v.s. Uni Students&quot;&gt;&lt;/a&gt;Saarfahrplan v.s. Uni Students&lt;/h2&gt;&lt;p&gt;Previous post: &lt;a href=&quot;../udsfahrplan-log1&quot;&gt;UdS Fahrplan Bot Development Log (1) – Fetching data from HAFAS and its APIs through POST requests&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.saarfahrplan.de/&quot;&gt;SaarFahrplan&lt;/a&gt; is a public transport app to provide real-time information and services related to public transportation in Saarland. Its target users are the people who live and travel in Saarland for general purpose. When it comes to a smaller group of users, for example Uni students, some functionalities might be redundant and we may optimized some common use case for better user experience.&lt;/p&gt;
+&lt;h3 id=&quot;Common-use-cases-for-students&quot;&gt;&lt;a href=&quot;#Common-use-cases-for-students&quot; class=&quot;headerlink&quot; title=&quot;Common use cases for students&quot;&gt;&lt;/a&gt;Common use cases for students&lt;/h3&gt;&lt;p&gt;Instead of searching different connections, Uni students’ timetable are usually consistent and repetitive. There are a few places where they always go, for example:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Go to the Uni&lt;/li&gt;
+&lt;li&gt;Go to the Mensa&lt;/li&gt;
+&lt;li&gt;Go to the Dormintory&lt;/li&gt;
+&lt;li&gt;Go to the City&lt;/li&gt;
+&lt;li&gt;Go to the Supermarket&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Another scenario will be when we are in somewhere new, we would like to know how to go back home (dormitory).&lt;/p&gt;
+&lt;h2 id=&quot;Key-functions-on-our-telegram-bot&quot;&gt;&lt;a href=&quot;#Key-functions-on-our-telegram-bot&quot; class=&quot;headerlink&quot; title=&quot;Key functions on our telegram bot&quot;&gt;&lt;/a&gt;Key functions on our telegram bot&lt;/h2&gt;&lt;p&gt;Based on the above use case, So we create our own app&amp;#x2F;bot that only accommodate them.&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Projects" scheme="https://greenmeeple.github.io/categories/Projects/"/>
+    
+    
+    <category term="Python" scheme="https://greenmeeple.github.io/tags/Python/"/>
+    
+    <category term="Telegram" scheme="https://greenmeeple.github.io/tags/Telegram/"/>
+    
+    <category term="HAFAS" scheme="https://greenmeeple.github.io/tags/HAFAS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>UdS Fahrplan Bot Development Log (1) -- Fetching data from HAFAS and its APIs through POST requests</title>
+    <link href="https://greenmeeple.github.io/projects/udsfahrplan-log1/"/>
+    <id>https://greenmeeple.github.io/projects/udsfahrplan-log1/</id>
+    <published>2025-04-26T23:04:55.000Z</published>
+    <updated>2025-05-12T15:34:20.482Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;This blog post is trying to tell you:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;My personal study notes on HAFAS, a public transport management system used around europe&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;What-is-HAFAS&quot;&gt;&lt;a href=&quot;#What-is-HAFAS&quot; class=&quot;headerlink&quot; title=&quot;What is HAFAS?&quot;&gt;&lt;/a&gt;What is HAFAS?&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;The HaCon Timetable Information System (HAFAS) is a software for timetable information from the company HaCon (Hannover Consulting). – &lt;a href=&quot;https://de.wikipedia.org/wiki/HAFAS&quot;&gt;Wikipedia&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Basically, the entire Germany, Luxembourg, and the surrounding countries&amp;#x2F;regions use HAFAS to obtain depatures and stations details. This centralized software system can be visited using APIs. Different service providers may create their own HAFAS backend endpoint that exposes a public transport API over HTTP for customized usage. For example, you can send your HTTP requests to Deutsche Bahn (DB) if you have the access of their API, which can be found in &lt;a href=&quot;https://developers.deutschebahn.com/db-api-marketplace/apis/&quot;&gt;DB API Marketplace&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/udsfahrplan/db-api.png&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;What-can-we-do-with-HAFAS&quot;&gt;&lt;a href=&quot;#What-can-we-do-with-HAFAS&quot; class=&quot;headerlink&quot; title=&quot;What can we do with HAFAS?&quot;&gt;&lt;/a&gt;What can we do with HAFAS?&lt;/h2&gt;&lt;p&gt;There are four basic functions that the system has provided:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;TripSearch&lt;/code&gt; – return connections from location A to location B&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;StationBoard&lt;/code&gt; – return all arrivals and departures of a certain station&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;LocGeoPos&lt;/code&gt; – return list of stations in a give range of area&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;LocMatch&lt;/code&gt; – return list of stations based on the keyword given&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;These includes most of the functionalities for users. For example, when we tried to plan our journey on DB navigator, the app uses &lt;code&gt;TripSearch&lt;/code&gt; to show you connections; when we type the stations in the search box, the app &lt;code&gt;LocMatch&lt;/code&gt; to give you related results.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/udsfahrplan/db-nav.png&quot;&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Projects" scheme="https://greenmeeple.github.io/categories/Projects/"/>
+    
+    
+    <category term="Python" scheme="https://greenmeeple.github.io/tags/Python/"/>
+    
+    <category term="Telegram" scheme="https://greenmeeple.github.io/tags/Telegram/"/>
+    
+    <category term="HAFAS" scheme="https://greenmeeple.github.io/tags/HAFAS/"/>
     
   </entry>
   
