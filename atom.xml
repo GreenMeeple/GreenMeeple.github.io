@@ -51,7 +51,7 @@
     <link href="https://greenmeeple.github.io/projects/udsfahrplan-bot/"/>
     <id>https://greenmeeple.github.io/projects/udsfahrplan-bot/</id>
     <published>2025-05-08T12:04:55.000Z</published>
-    <updated>2025-05-09T20:01:07.280Z</updated>
+    <updated>2025-05-12T15:50:51.554Z</updated>
     
     
     <summary type="html">&lt;p&gt;A lightweight Telegram bot designed for Saarland University students — offering fast, clear, and focused public transport information using SaarVV and HAFAS APIs. — &lt;strong&gt;&lt;a href=&quot;https://t.me/udsfahrbot&quot;&gt;Try Now&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
@@ -92,7 +92,7 @@
     <link href="https://greenmeeple.github.io/projects/mensaar/"/>
     <id>https://greenmeeple.github.io/projects/mensaar/</id>
     <published>2025-05-08T03:03:35.000Z</published>
-    <updated>2025-05-08T20:24:33.527Z</updated>
+    <updated>2025-05-12T23:28:43.638Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
@@ -124,7 +124,7 @@
     <link href="https://greenmeeple.github.io/projects/mensaar-log3/"/>
     <id>https://greenmeeple.github.io/projects/mensaar-log3/</id>
     <published>2025-05-07T13:03:35.000Z</published>
-    <updated>2025-05-09T19:53:36.576Z</updated>
+    <updated>2025-05-12T22:58:38.907Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
@@ -135,50 +135,13 @@
 &lt;li&gt;For further details, feel free to **Try the bot: &lt;a href=&quot;https://t.me/Mensaar_Bot&quot;&gt;@Mensaar_Bot&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&quot;New-Features&quot;&gt;&lt;a href=&quot;#New-Features&quot; class=&quot;headerlink&quot; title=&quot;New Features&quot;&gt;&lt;/a&gt;New Features&lt;/h2&gt;&lt;h3 id=&quot;HTW-menu&quot;&gt;&lt;a href=&quot;#HTW-menu&quot; class=&quot;headerlink&quot; title=&quot;HTW menu&quot;&gt;&lt;/a&gt;HTW menu&lt;/h3&gt;&lt;p&gt;After the website is published, we noticed that people now prefer to have lunch in &lt;a href=&quot;https://www.htwsaar.de/hochschule/standorte-und-kontakt/campus-rotenbuehl&quot;&gt;HTW Campus Rotenbühl&lt;/a&gt;. Since their menu come from the same site, it is very easy to introduce new menu to our project.&lt;/p&gt;
-&lt;h3 id=&quot;New-website-layout&quot;&gt;&lt;a href=&quot;#New-website-layout&quot; class=&quot;headerlink&quot; title=&quot;New website layout&quot;&gt;&lt;/a&gt;New website layout&lt;/h3&gt;&lt;p&gt;Before we used two pages to store today’s menu and the menu history. And we think in general, all menu are simple texts, so we can put all contents into the index page without any problem. We can switch the visibility using JavaScript, then for the whole HTML code again we stuffed in the python script to for our daily Github workflow to run.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;JavaScript&quot;&gt;&amp;lt;script&amp;gt;
-    function show(id) &amp;#123;&amp;#123;
-    document.querySelectorAll(&#39;.section&#39;).forEach(el =&gt; el.classList.remove(&#39;active&#39;));
-    document.getElementById(id).classList.add(&#39;active&#39;);
-    &amp;#125;&amp;#125;
-&amp;lt;/script&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code class=&quot;HTML&quot;&gt;&amp;lt;h1&amp;gt;Mensaar Menu - &amp;#123;today&amp;#125;&amp;lt;/h1&amp;gt;
-&amp;lt;div class=&amp;quot;buttons&amp;quot;&amp;gt;
-    &amp;lt;button class=&amp;quot;button&amp;quot; onclick=&amp;quot;show(&amp;#39;today-uds&amp;#39;)&amp;quot;&amp;gt;📅 UDS Today&amp;lt;/button&amp;gt;
-    &amp;lt;button class=&amp;quot;button&amp;quot; onclick=&amp;quot;show(&amp;#39;today-htw&amp;#39;)&amp;quot;&amp;gt;📅 HTW Today&amp;lt;/button&amp;gt;
-    &amp;lt;button class=&amp;quot;button&amp;quot; onclick=&amp;quot;show(&amp;#39;full-uds&amp;#39;)&amp;quot;&amp;gt;📋 Full UDS&amp;lt;/button&amp;gt;
-    &amp;lt;button class=&amp;quot;button&amp;quot; onclick=&amp;quot;show(&amp;#39;full-htw&amp;#39;)&amp;quot;&amp;gt;📋 Full HTW&amp;lt;/button&amp;gt;
-&amp;lt;/div&amp;gt;
+&lt;h2 id=&quot;New-Features&quot;&gt;&lt;a href=&quot;#New-Features&quot; class=&quot;headerlink&quot; title=&quot;New Features&quot;&gt;&lt;/a&gt;New Features&lt;/h2&gt;&lt;p&gt;Previous post: &lt;a href=&quot;../mensaarlog2&quot;&gt;MensaarLecker Development Log (2) – Web Developing and GitHub Workflow&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;HTW-menu&quot;&gt;&lt;a href=&quot;#HTW-menu&quot; class=&quot;headerlink&quot; title=&quot;HTW menu&quot;&gt;&lt;/a&gt;HTW menu&lt;/h3&gt;&lt;p&gt;After the website is published, we noticed that people now prefer to have lunch in &lt;a href=&quot;https://www.htwsaar.de/hochschule/standorte-und-kontakt/campus-rotenbuehl&quot;&gt;HTW Campus Rotenbühl&lt;/a&gt;. Since their menu come from the same site, it is very easy to introduce new menu to our project.&lt;/p&gt;
+&lt;h3 id=&quot;New-website-layout&quot;&gt;&lt;a href=&quot;#New-website-layout&quot; class=&quot;headerlink&quot; title=&quot;New website layout&quot;&gt;&lt;/a&gt;New website layout&lt;/h3&gt;&lt;p&gt;Before we used two pages to store today’s menu and the menu history. And we think in general, all menu are simple texts, so we can put all contents into the index page without any problem. We can switch the visibility using JavaScript:&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;figcaption&gt;&lt;span&gt;switch.js&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;code class=&quot;hljs javascript&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;hljs-title function_&quot;&gt;show&lt;/span&gt;(&lt;span class=&quot;hljs-params&quot;&gt;id&lt;/span&gt;) &amp;#123;&lt;br&gt;&lt;span class=&quot;hljs-variable language_&quot;&gt;document&lt;/span&gt;.&lt;span class=&quot;hljs-title function_&quot;&gt;querySelectorAll&lt;/span&gt;(&lt;span class=&quot;hljs-string&quot;&gt;&amp;#x27;.section&amp;#x27;&lt;/span&gt;).&lt;span class=&quot;hljs-title function_&quot;&gt;forEach&lt;/span&gt;(&lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-params&quot;&gt;el&lt;/span&gt; =&amp;gt;&lt;/span&gt; el.&lt;span class=&quot;hljs-property&quot;&gt;classList&lt;/span&gt;.&lt;span class=&quot;hljs-title function_&quot;&gt;remove&lt;/span&gt;(&lt;span class=&quot;hljs-string&quot;&gt;&amp;#x27;active&amp;#x27;&lt;/span&gt;));&lt;br&gt;&lt;span class=&quot;hljs-variable language_&quot;&gt;document&lt;/span&gt;.&lt;span class=&quot;hljs-title function_&quot;&gt;getElementById&lt;/span&gt;(id).&lt;span class=&quot;hljs-property&quot;&gt;classList&lt;/span&gt;.&lt;span class=&quot;hljs-title function_&quot;&gt;add&lt;/span&gt;(&lt;span class=&quot;hljs-string&quot;&gt;&amp;#x27;active&amp;#x27;&lt;/span&gt;);&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
-&amp;lt;div id=&amp;quot;today-uds&amp;quot; class=&amp;quot;section active&amp;quot;&amp;gt;
-&amp;lt;h2&amp;gt;UDS – Today&amp;#39;s Menu&amp;lt;/h2&amp;gt;
-&amp;#123;meal_cards(uds_data)&amp;#125;
-&amp;lt;/div&amp;gt;
-
-&amp;lt;div id=&amp;quot;today-htw&amp;quot; class=&amp;quot;section&amp;quot;&amp;gt;
-&amp;lt;h2&amp;gt;HTW – Today&amp;#39;s Menu&amp;lt;/h2&amp;gt;
-&amp;#123;meal_cards(htw_data)&amp;#125;
-&amp;lt;/div&amp;gt;
-
-&amp;lt;div id=&amp;quot;full-uds&amp;quot; class=&amp;quot;section&amp;quot;&amp;gt;
-&amp;lt;h2&amp;gt;📋 Full UDS Menu&amp;lt;/h2&amp;gt;
-&amp;lt;table id=&amp;quot;uds-table&amp;quot;&amp;gt;
-    &amp;lt;thead&amp;gt;&amp;lt;tr&amp;gt;&amp;lt;th&amp;gt;Date&amp;lt;/th&amp;gt;&amp;lt;th&amp;gt;Counter&amp;lt;/th&amp;gt;&amp;lt;th&amp;gt;Meal&amp;lt;/th&amp;gt;&amp;lt;th&amp;gt;Component 1&amp;lt;/th&amp;gt;&amp;lt;th&amp;gt;Component 2&amp;lt;/th&amp;gt;&amp;lt;th&amp;gt;Component 3&amp;lt;/th&amp;gt;&amp;lt;th&amp;gt;Component 4&amp;lt;/th&amp;gt;&amp;lt;th&amp;gt;Component 5&amp;lt;/th&amp;gt;&amp;lt;/tr&amp;gt;&amp;lt;/thead&amp;gt;
-    &amp;lt;tbody&amp;gt;&amp;#123;table_rows(uds_data)&amp;#125;&amp;lt;/tbody&amp;gt;
-&amp;lt;/table&amp;gt;
-&amp;lt;/div&amp;gt;
-
-&amp;lt;div id=&amp;quot;full-htw&amp;quot; class=&amp;quot;section&amp;quot;&amp;gt;
-&amp;lt;h2&amp;gt;📋 Full HTW Menu&amp;lt;/h2&amp;gt;
-&amp;lt;table id=&amp;quot;htw-table&amp;quot;&amp;gt;
-    &amp;lt;thead&amp;gt;&amp;lt;tr&amp;gt;&amp;lt;th&amp;gt;Date&amp;lt;/th&amp;gt;&amp;lt;th&amp;gt;Counter&amp;lt;/th&amp;gt;&amp;lt;th&amp;gt;Meal&amp;lt;/th&amp;gt;&amp;lt;th&amp;gt;Component 1&amp;lt;/th&amp;gt;&amp;lt;th&amp;gt;Component 2&amp;lt;/th&amp;gt;&amp;lt;th&amp;gt;Component 3&amp;lt;/th&amp;gt;&amp;lt;th&amp;gt;Component 4&amp;lt;/th&amp;gt;&amp;lt;th&amp;gt;Component 5&amp;lt;/th&amp;gt;&amp;lt;/tr&amp;gt;&amp;lt;/thead&amp;gt;
-    &amp;lt;tbody&amp;gt;&amp;#123;table_rows(htw_data)&amp;#125;&amp;lt;/tbody&amp;gt;
-&amp;lt;/table&amp;gt;
-&amp;lt;/div&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&quot;Telegram-Bot-–-Mensaar-Bot&quot;&gt;&lt;a href=&quot;#Telegram-Bot-–-Mensaar-Bot&quot; class=&quot;headerlink&quot; title=&quot;Telegram Bot – @Mensaar_Bot&quot;&gt;&lt;/a&gt;Telegram Bot – &lt;code&gt;@Mensaar_Bot&lt;/code&gt;&lt;/h3&gt;&lt;p&gt;On top of the webiste, we can reuse the scraping code to create a telegram bot. First, we need to create a bot and get its API key using &lt;a href=&quot;https://telegram.me/BotFather&quot;&gt;botfather&lt;/a&gt;.&lt;/p&gt;</summary>
+&lt;p&gt;And for the whole HTML code again we stuffed in the python script to for our daily Github workflow to run.&lt;/p&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;figcaption&gt;&lt;span&gt;index.html&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;45&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;46&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;47&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;48&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;49&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;50&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;51&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;code class=&quot;hljs html&quot;&gt;&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;h1&lt;/span&gt;&amp;gt;&lt;/span&gt;Mensaar Menu - &amp;#123;today&amp;#125;&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;h1&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;hljs-attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;buttons&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;    &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;button&lt;/span&gt; &lt;span class=&quot;hljs-attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;button&amp;quot;&lt;/span&gt; &lt;span class=&quot;hljs-attr&quot;&gt;onclick&lt;/span&gt;=&lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;show(&amp;#x27;today-uds&amp;#x27;)&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;📅 UDS Today&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;button&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;    &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;button&lt;/span&gt; &lt;span class=&quot;hljs-attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;button&amp;quot;&lt;/span&gt; &lt;span class=&quot;hljs-attr&quot;&gt;onclick&lt;/span&gt;=&lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;show(&amp;#x27;today-htw&amp;#x27;)&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;📅 HTW Today&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;button&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;    &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;button&lt;/span&gt; &lt;span class=&quot;hljs-attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;button&amp;quot;&lt;/span&gt; &lt;span class=&quot;hljs-attr&quot;&gt;onclick&lt;/span&gt;=&lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;show(&amp;#x27;full-uds&amp;#x27;)&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;📋 Full UDS&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;button&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;    &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;button&lt;/span&gt; &lt;span class=&quot;hljs-attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;button&amp;quot;&lt;/span&gt; &lt;span class=&quot;hljs-attr&quot;&gt;onclick&lt;/span&gt;=&lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;show(&amp;#x27;full-htw&amp;#x27;)&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;📋 Full HTW&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;button&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;hljs-attr&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;today-uds&amp;quot;&lt;/span&gt; &lt;span class=&quot;hljs-attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;section active&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;h2&lt;/span&gt;&amp;gt;&lt;/span&gt;UDS – Today&amp;#x27;s Menu&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;h2&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;&amp;#123;meal_cards(uds_data)&amp;#125;&lt;br&gt;&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;hljs-attr&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;today-htw&amp;quot;&lt;/span&gt; &lt;span class=&quot;hljs-attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;section&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;h2&lt;/span&gt;&amp;gt;&lt;/span&gt;HTW – Today&amp;#x27;s Menu&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;h2&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;&amp;#123;meal_cards(htw_data)&amp;#125;&lt;br&gt;&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;hljs-attr&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;full-uds&amp;quot;&lt;/span&gt; &lt;span class=&quot;hljs-attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;section&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;h2&lt;/span&gt;&amp;gt;&lt;/span&gt;📋 Full UDS Menu&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;h2&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;table&lt;/span&gt; &lt;span class=&quot;hljs-attr&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;uds-table&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;    &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;thead&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;tr&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;        &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;th&lt;/span&gt;&amp;gt;&lt;/span&gt;Date&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;th&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;        &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;th&lt;/span&gt;&amp;gt;&lt;/span&gt;Counter&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;th&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;        &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;th&lt;/span&gt;&amp;gt;&lt;/span&gt;Meal&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;th&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;        &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;th&lt;/span&gt;&amp;gt;&lt;/span&gt;Component 1&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;th&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;        &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;th&lt;/span&gt;&amp;gt;&lt;/span&gt;Component 2&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;th&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;        &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;th&lt;/span&gt;&amp;gt;&lt;/span&gt;Component 3&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;th&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;        &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;th&lt;/span&gt;&amp;gt;&lt;/span&gt;Component 4&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;th&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;        &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;th&lt;/span&gt;&amp;gt;&lt;/span&gt;Component 5&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;th&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;    &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;tr&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;thead&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;    &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;tbody&lt;/span&gt;&amp;gt;&lt;/span&gt;&amp;#123;table_rows(uds_data)&amp;#125;&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;tbody&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;table&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;hljs-attr&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;full-htw&amp;quot;&lt;/span&gt; &lt;span class=&quot;hljs-attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;section&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;h2&lt;/span&gt;&amp;gt;&lt;/span&gt;📋 Full HTW Menu&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;h2&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;table&lt;/span&gt; &lt;span class=&quot;hljs-attr&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;htw-table&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;    &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;thead&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;tr&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;        &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;th&lt;/span&gt;&amp;gt;&lt;/span&gt;Date&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;th&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;        &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;th&lt;/span&gt;&amp;gt;&lt;/span&gt;Counter&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;th&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;        &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;th&lt;/span&gt;&amp;gt;&lt;/span&gt;Meal&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;th&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;        &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;th&lt;/span&gt;&amp;gt;&lt;/span&gt;Component 1&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;th&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;        &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;th&lt;/span&gt;&amp;gt;&lt;/span&gt;Component 2&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;th&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;        &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;th&lt;/span&gt;&amp;gt;&lt;/span&gt;Component 3&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;th&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;        &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;th&lt;/span&gt;&amp;gt;&lt;/span&gt;Component 4&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;th&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;        &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;th&lt;/span&gt;&amp;gt;&lt;/span&gt;Component 5&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;th&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;    &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;tr&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;thead&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;    &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;tbody&lt;/span&gt;&amp;gt;&lt;/span&gt;&amp;#123;table_rows(htw_data)&amp;#125;&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;tbody&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;table&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
     
     
     
@@ -196,7 +159,7 @@
     <link href="https://greenmeeple.github.io/projects/hafas-bitmask-calculator/"/>
     <id>https://greenmeeple.github.io/projects/hafas-bitmask-calculator/</id>
     <published>2025-04-30T12:04:55.000Z</published>
-    <updated>2025-05-09T20:00:20.604Z</updated>
+    <updated>2025-05-12T23:20:30.083Z</updated>
     
     
     <summary type="html">&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://greenmeeple.github.io/hafas-bitmask-calculator/&quot;&gt;Web Demo&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
@@ -231,11 +194,83 @@
   </entry>
   
   <entry>
+    <title>UdS Fahrplan Bot Development Log (4) -- Implementation on /sethome and /home function</title>
+    <link href="https://greenmeeple.github.io/projects/udsfahrplan-log4/"/>
+    <id>https://greenmeeple.github.io/projects/udsfahrplan-log4/</id>
+    <published>2025-04-29T23:04:55.000Z</published>
+    <updated>2025-05-13T01:48:24.227Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;This blog post is trying to tell you:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;How to build your own telegram bot&lt;/li&gt;
+&lt;li&gt;Detailed explanations on the implementation of &lt;strong&gt;&lt;a href=&quot;https://t.me/udsfahrbot&quot;&gt;udsfahrbot&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Previous post: &lt;a href=&quot;../udsfahrplan-log3&quot;&gt;UdS Fahrplan Bot Development Log (3) – Implementation on &amp;#x2F;trip and &amp;#x2F;depart function&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;Brief-Walkthrough-on-Telegram-Bot-Cont&quot;&gt;&lt;a href=&quot;#Brief-Walkthrough-on-Telegram-Bot-Cont&quot; class=&quot;headerlink&quot; title=&quot;Brief Walkthrough on Telegram Bot (Cont.)&quot;&gt;&lt;/a&gt;Brief Walkthrough on Telegram Bot (Cont.)&lt;/h2&gt;&lt;p&gt;In the previous notes, we’ve already implemented &lt;code&gt;/trip&lt;/code&gt; and &lt;code&gt;/depart&lt;/code&gt; based on &lt;a href=&quot;../udsfahrplan-log1&quot;&gt;this&lt;/a&gt;. Now, let’s start explaining them one by one.&lt;/p&gt;
+&lt;p&gt;We also have another study notes for all of the telegram bot projects in &lt;a href=&quot;../../python/tgbot&quot;&gt;here&lt;/a&gt;, it gives you the basics on how to create your own bot and further descriptions on different functions and attributes on the package  &lt;strong&gt;&lt;a href=&quot;https://python-telegram-bot.org/&quot;&gt;python-telegram-bot&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;sethome-–-Storing-users’-starting-station&quot;&gt;&lt;a href=&quot;#sethome-–-Storing-users’-starting-station&quot; class=&quot;headerlink&quot; title=&quot;&amp;#x2F;sethome – Storing users’ starting station&quot;&gt;&lt;/a&gt;&amp;#x2F;sethome – Storing users’ starting station&lt;/h2&gt;&lt;p&gt;Similarly, our main function should have &lt;code&gt;app.add_handler(CommandHandler(&amp;quot;sethome&amp;quot;, spawn))&lt;/code&gt; and &lt;code&gt;InlineKeyboardMarkup[]&lt;/code&gt; ready, these components are defined in previous notes and they are reusable.&lt;/p&gt;
+&lt;p&gt;Next, our function has to be able to distinguish different users. Users who interact with the bot using &lt;strong&gt;command&lt;/strong&gt; or &lt;strong&gt;tagged message&lt;/strong&gt; will have their id stored in &lt;code&gt;message.from_user.id&lt;/code&gt;; and &lt;code&gt;query.from_user.id&lt;/code&gt; if users are interacting using &lt;strong&gt;buttons&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Then, we also need to create a database or storage file to read and write users’ stations. We decide the tool to use based on our use case and needs. Here, the data we need to store are &lt;code&gt;user_id&lt;/code&gt;, &lt;code&gt;station_name&lt;/code&gt;, and &lt;code&gt;station_id&lt;/code&gt;. Which the columns are stable and small size. Therefore, it can be handled by a simple JSON file. Before we store the station, remember to check if the user already stored any station before to avoid creating duplicates.&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;figcaption&gt;&lt;span&gt;bot_spawn.py&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;code class=&quot;hljs python&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;hljs-title function_&quot;&gt;handle_spawn_start&lt;/span&gt;(&lt;span class=&quot;hljs-params&quot;&gt;query, context, data&lt;/span&gt;):&lt;br&gt;    station = locations[data] &lt;span class=&quot;hljs-keyword&quot;&gt;if&lt;/span&gt; data &lt;span class=&quot;hljs-keyword&quot;&gt;in&lt;/span&gt; locations &lt;span class=&quot;hljs-keyword&quot;&gt;else&lt;/span&gt; data&lt;br&gt;    name = context.user_data.get(&lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;spawn_session&amp;quot;&lt;/span&gt;, &amp;#123;&amp;#125;).get(&lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;search_s&amp;quot;&lt;/span&gt;, &amp;#123;&amp;#125;).get(data, data)&lt;br&gt;    user_id = query.from_user.&lt;span class=&quot;hljs-built_in&quot;&gt;id&lt;/span&gt;&lt;br&gt;&lt;br&gt;    &lt;span class=&quot;hljs-keyword&quot;&gt;if&lt;/span&gt; os.path.exists(SPAWN_DATA):&lt;br&gt;        &lt;span class=&quot;hljs-keyword&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;hljs-built_in&quot;&gt;open&lt;/span&gt;(SPAWN_DATA, &lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;r&amp;quot;&lt;/span&gt;) &lt;span class=&quot;hljs-keyword&quot;&gt;as&lt;/span&gt; file:&lt;br&gt;            &lt;span class=&quot;hljs-keyword&quot;&gt;try&lt;/span&gt;:&lt;br&gt;                data_list = json.load(file)&lt;br&gt;            &lt;span class=&quot;hljs-keyword&quot;&gt;except&lt;/span&gt; json.JSONDecodeError:&lt;br&gt;                data_list = []&lt;br&gt;    &lt;span class=&quot;hljs-keyword&quot;&gt;else&lt;/span&gt;:&lt;br&gt;        data_list = []&lt;br&gt;&lt;br&gt;    &lt;span class=&quot;hljs-comment&quot;&gt;# Check if user already exists&lt;/span&gt;&lt;br&gt;    user_found = &lt;span class=&quot;hljs-literal&quot;&gt;False&lt;/span&gt;&lt;br&gt;    &lt;span class=&quot;hljs-keyword&quot;&gt;for&lt;/span&gt; entry &lt;span class=&quot;hljs-keyword&quot;&gt;in&lt;/span&gt; data_list:&lt;br&gt;        &lt;span class=&quot;hljs-keyword&quot;&gt;if&lt;/span&gt; entry[&lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;user_id&amp;quot;&lt;/span&gt;] == user_id:&lt;br&gt;            entry[&lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;home_id&amp;quot;&lt;/span&gt;] = station&lt;br&gt;            entry[&lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;home_name&amp;quot;&lt;/span&gt;] = name&lt;br&gt;            user_found = &lt;span class=&quot;hljs-literal&quot;&gt;True&lt;/span&gt;&lt;br&gt;            &lt;span class=&quot;hljs-keyword&quot;&gt;break&lt;/span&gt;&lt;br&gt;&lt;br&gt;    &lt;span class=&quot;hljs-keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;not&lt;/span&gt; user_found:&lt;br&gt;        &lt;span class=&quot;hljs-comment&quot;&gt;# Add new user entry&lt;/span&gt;&lt;br&gt;        data_list.append(&amp;#123;&lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;user_id&amp;quot;&lt;/span&gt;: user_id, &lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;home_id&amp;quot;&lt;/span&gt;: station, &lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;home_name&amp;quot;&lt;/span&gt;: name&amp;#125;)&lt;br&gt;&lt;br&gt;    &lt;span class=&quot;hljs-comment&quot;&gt;# Save updated data&lt;/span&gt;&lt;br&gt;    &lt;span class=&quot;hljs-keyword&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;hljs-built_in&quot;&gt;open&lt;/span&gt;(SPAWN_DATA, &lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;w&amp;quot;&lt;/span&gt;) &lt;span class=&quot;hljs-keyword&quot;&gt;as&lt;/span&gt; file:&lt;br&gt;        json.dump(data_list, file, indent=&lt;span class=&quot;hljs-number&quot;&gt;2&lt;/span&gt;)&lt;br&gt;&lt;br&gt;    &lt;span class=&quot;hljs-keyword&quot;&gt;await&lt;/span&gt; query.edit_message_text(&lt;br&gt;        &lt;span class=&quot;hljs-string&quot;&gt;f&amp;quot;✅ User &lt;span class=&quot;hljs-subst&quot;&gt;&amp;#123;user_id&amp;#125;&lt;/span&gt;, your home is set to &lt;span class=&quot;hljs-subst&quot;&gt;&amp;#123;name:&amp;lt;&lt;span class=&quot;hljs-number&quot;&gt;20&lt;/span&gt;&amp;#125;&lt;/span&gt;&amp;quot;&lt;/span&gt;)&lt;br&gt;&lt;br&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;hljs-title function_&quot;&gt;spawn&lt;/span&gt;(&lt;span class=&quot;hljs-params&quot;&gt;update: Update, context: ContextTypes.DEFAULT_TYPE&lt;/span&gt;):&lt;br&gt;    context.user_data[&lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;spawn_session&amp;quot;&lt;/span&gt;] = &amp;#123;&amp;#125;&lt;br&gt;    &lt;span class=&quot;hljs-keyword&quot;&gt;await&lt;/span&gt; update.message.reply_text(&lt;span class=&quot;hljs-string&quot;&gt;f&amp;quot;Hello User &lt;span class=&quot;hljs-subst&quot;&gt;&amp;#123;update.message.from_user.&lt;span class=&quot;hljs-built_in&quot;&gt;id&lt;/span&gt;&amp;#125;&lt;/span&gt;, Set your spawn point&amp;quot;&lt;/span&gt;,&lt;br&gt;        reply_markup=build_location_keyboard(&lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;spawn&amp;quot;&lt;/span&gt;,&lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;start&amp;quot;&lt;/span&gt;)&lt;br&gt;    )&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    <category term="Projects" scheme="https://greenmeeple.github.io/categories/Projects/"/>
+    
+    
+    <category term="Python" scheme="https://greenmeeple.github.io/tags/Python/"/>
+    
+    <category term="Telegram" scheme="https://greenmeeple.github.io/tags/Telegram/"/>
+    
+    <category term="HAFAS" scheme="https://greenmeeple.github.io/tags/HAFAS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>UdS Fahrplan Bot Development Log (3) -- Implementation on /trip and /Depart function</title>
+    <link href="https://greenmeeple.github.io/projects/udsfahrplan-log3/"/>
+    <id>https://greenmeeple.github.io/projects/udsfahrplan-log3/</id>
+    <published>2025-04-28T23:04:55.000Z</published>
+    <updated>2025-05-13T00:37:02.240Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;This blog post is trying to tell you:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;How to build your own telegram bot&lt;/li&gt;
+&lt;li&gt;Detailed explanations on the implementation of &lt;strong&gt;&lt;a href=&quot;https://t.me/udsfahrbot&quot;&gt;udsfahrbot&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Previous post: &lt;a href=&quot;../udsfahrplan-log2&quot;&gt;UdS Fahrplan Bot Development Log (2) – Planning for telegram bot&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;Brief-Walkthrough-on-Telegram-Bot&quot;&gt;&lt;a href=&quot;#Brief-Walkthrough-on-Telegram-Bot&quot; class=&quot;headerlink&quot; title=&quot;Brief Walkthrough on Telegram Bot&quot;&gt;&lt;/a&gt;Brief Walkthrough on Telegram Bot&lt;/h2&gt;&lt;p&gt;In the previous notes, we’ve talked about our motivation and planned functions we wanted to implement. Now, let’s start explaining them one by one.&lt;/p&gt;
+&lt;p&gt;We also have another study notes for all of the telegram bot projects in &lt;a href=&quot;../../python/tgbot&quot;&gt;here&lt;/a&gt;, it gives you the basics on how to create your own bot and further descriptions on different functions and attributes on the package  &lt;strong&gt;&lt;a href=&quot;https://python-telegram-bot.org/&quot;&gt;python-telegram-bot&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;trip-–-A-basic-Station-A-to-Station-B-search&quot;&gt;&lt;a href=&quot;#trip-–-A-basic-Station-A-to-Station-B-search&quot; class=&quot;headerlink&quot; title=&quot;&amp;#x2F;trip – A basic Station A to Station B search&quot;&gt;&lt;/a&gt;&amp;#x2F;trip – A basic Station A to Station B search&lt;/h2&gt;&lt;p&gt;We start with the basic trip searching function just like the original app. We used &lt;code&gt;CommandHandler&lt;/code&gt; to create the command, &lt;code&gt;InlineKeyboardMarkup&lt;/code&gt; to create buttons for stations, &lt;code&gt;CallbackQueryHandler&lt;/code&gt; to handle the button actions, and &lt;code&gt;update.message.reply_text&lt;/code&gt; to send message back to the users.&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;figcaption&gt;&lt;span&gt;bot_trip.py&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;code class=&quot;hljs python&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;hljs-title function_&quot;&gt;build_location_keyboard&lt;/span&gt;(&lt;span class=&quot;hljs-params&quot;&gt;session, step, exclude=&lt;span class=&quot;hljs-literal&quot;&gt;None&lt;/span&gt;&lt;/span&gt;):&lt;br&gt;    buttons = [&lt;br&gt;        [InlineKeyboardButton(text=loc, callback_data=&lt;span class=&quot;hljs-string&quot;&gt;f&amp;quot;&lt;span class=&quot;hljs-subst&quot;&gt;&amp;#123;session&amp;#125;&lt;/span&gt;:&lt;span class=&quot;hljs-subst&quot;&gt;&amp;#123;step&amp;#125;&lt;/span&gt;:&lt;span class=&quot;hljs-subst&quot;&gt;&amp;#123;loc&amp;#125;&lt;/span&gt;&amp;quot;&lt;/span&gt;)]&lt;br&gt;        &lt;span class=&quot;hljs-keyword&quot;&gt;for&lt;/span&gt; loc &lt;span class=&quot;hljs-keyword&quot;&gt;in&lt;/span&gt; keyboard_flat &lt;span class=&quot;hljs-keyword&quot;&gt;if&lt;/span&gt; loc != exclude&lt;br&gt;    ]&lt;br&gt;    buttons += [[&lt;br&gt;        InlineKeyboardButton(text=&lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;More Stations&amp;quot;&lt;/span&gt;, &lt;br&gt;        callback_data=&lt;span class=&quot;hljs-string&quot;&gt;f&amp;quot;&lt;span class=&quot;hljs-subst&quot;&gt;&amp;#123;session&amp;#125;&lt;/span&gt;:more:&lt;span class=&quot;hljs-subst&quot;&gt;&amp;#123;step&amp;#125;&lt;/span&gt;&amp;quot;&lt;/span&gt;)&lt;br&gt;    ]]&lt;br&gt;    &lt;span class=&quot;hljs-keyword&quot;&gt;if&lt;/span&gt; exclude &lt;span class=&quot;hljs-keyword&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;hljs-literal&quot;&gt;None&lt;/span&gt;:&lt;br&gt;        buttons += [[&lt;br&gt;            InlineKeyboardButton(text=&lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;Back&amp;quot;&lt;/span&gt;, &lt;br&gt;            callback_data=&lt;span class=&quot;hljs-string&quot;&gt;f&amp;quot;&lt;span class=&quot;hljs-subst&quot;&gt;&amp;#123;session&amp;#125;&lt;/span&gt;:&lt;span class=&quot;hljs-subst&quot;&gt;&amp;#123;step&amp;#125;&lt;/span&gt;:back&amp;quot;&lt;/span&gt;)&lt;br&gt;        ]]&lt;br&gt;    &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; InlineKeyboardMarkup(buttons)&lt;br&gt;&lt;br&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;hljs-title function_&quot;&gt;trips&lt;/span&gt;(&lt;span class=&quot;hljs-params&quot;&gt;update: Update, context: ContextTypes.DEFAULT_TYPE&lt;/span&gt;):&lt;br&gt;    context.user_data[&lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;trip_session&amp;quot;&lt;/span&gt;] = &amp;#123;&amp;#125;&lt;br&gt;    &lt;br&gt;    &lt;span class=&quot;hljs-keyword&quot;&gt;await&lt;/span&gt; update.message.reply_text(&lt;br&gt;        &lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;🚌 Choose Your Starting Station.&amp;quot;&lt;/span&gt;,&lt;br&gt;        reply_markup=build_location_keyboard(&lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;trip&amp;quot;&lt;/span&gt;,&lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;start&amp;quot;&lt;/span&gt;)&lt;br&gt;    )&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h3 id=&quot;Buttons-for-stations-and-departure-time&quot;&gt;&lt;a href=&quot;#Buttons-for-stations-and-departure-time&quot; class=&quot;headerlink&quot; title=&quot;Buttons for stations and departure time&quot;&gt;&lt;/a&gt;Buttons for stations and departure time&lt;/h3&gt;&lt;p&gt;When the user called the command &lt;code&gt;/trip&lt;/code&gt;, the bot will update the message into a list of buttons thanks to the &lt;code&gt;InlineKeyboardMarkup&lt;/code&gt;, it passes a string of message with three components, seperated with colon. &lt;strong&gt;f”{session}:{step}:{loc}”&lt;/strong&gt;, it will then pass into &lt;code&gt;handle_callback()&lt;/code&gt; and used to indentify different command using &lt;code&gt;session&lt;/code&gt;, then it identifies the current state using &lt;code&gt;steps&lt;/code&gt; (since stations can be either start or destination), and eventually the station details in &lt;code&gt;loc&lt;/code&gt; will be passed to next step.&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Projects" scheme="https://greenmeeple.github.io/categories/Projects/"/>
+    
+    
+    <category term="Python" scheme="https://greenmeeple.github.io/tags/Python/"/>
+    
+    <category term="Telegram" scheme="https://greenmeeple.github.io/tags/Telegram/"/>
+    
+    <category term="HAFAS" scheme="https://greenmeeple.github.io/tags/HAFAS/"/>
+    
+  </entry>
+  
+  <entry>
     <title>UdS Fahrplan Bot Development Log (2) -- Planning for telegram bot</title>
     <link href="https://greenmeeple.github.io/projects/udsfahrplan-log2/"/>
     <id>https://greenmeeple.github.io/projects/udsfahrplan-log2/</id>
     <published>2025-04-27T23:04:55.000Z</published>
-    <updated>2025-05-12T15:40:13.139Z</updated>
+    <updated>2025-05-13T00:30:18.661Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
@@ -276,7 +311,7 @@
     <link href="https://greenmeeple.github.io/projects/udsfahrplan-log1/"/>
     <id>https://greenmeeple.github.io/projects/udsfahrplan-log1/</id>
     <published>2025-04-26T23:04:55.000Z</published>
-    <updated>2025-05-12T15:34:20.482Z</updated>
+    <updated>2025-05-12T23:26:29.394Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
@@ -289,7 +324,7 @@
 &lt;p&gt;The HaCon Timetable Information System (HAFAS) is a software for timetable information from the company HaCon (Hannover Consulting). – &lt;a href=&quot;https://de.wikipedia.org/wiki/HAFAS&quot;&gt;Wikipedia&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Basically, the entire Germany, Luxembourg, and the surrounding countries&amp;#x2F;regions use HAFAS to obtain depatures and stations details. This centralized software system can be visited using APIs. Different service providers may create their own HAFAS backend endpoint that exposes a public transport API over HTTP for customized usage. For example, you can send your HTTP requests to Deutsche Bahn (DB) if you have the access of their API, which can be found in &lt;a href=&quot;https://developers.deutschebahn.com/db-api-marketplace/apis/&quot;&gt;DB API Marketplace&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/udsfahrplan/db-api.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/udsfahrplan/db-api.png&quot; alt=&quot;img&quot;&gt;&lt;/p&gt;
 &lt;h2 id=&quot;What-can-we-do-with-HAFAS&quot;&gt;&lt;a href=&quot;#What-can-we-do-with-HAFAS&quot; class=&quot;headerlink&quot; title=&quot;What can we do with HAFAS?&quot;&gt;&lt;/a&gt;What can we do with HAFAS?&lt;/h2&gt;&lt;p&gt;There are four basic functions that the system has provided:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;TripSearch&lt;/code&gt; – return connections from location A to location B&lt;/li&gt;
@@ -298,7 +333,7 @@
 &lt;li&gt;&lt;code&gt;LocMatch&lt;/code&gt; – return list of stations based on the keyword given&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;These includes most of the functionalities for users. For example, when we tried to plan our journey on DB navigator, the app uses &lt;code&gt;TripSearch&lt;/code&gt; to show you connections; when we type the stations in the search box, the app &lt;code&gt;LocMatch&lt;/code&gt; to give you related results.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/udsfahrplan/db-nav.png&quot;&gt;&lt;/p&gt;</summary>
+&lt;p&gt;&lt;img src=&quot;/images/udsfahrplan/db-nav.png&quot; alt=&quot;img&quot;&gt;&lt;/p&gt;</summary>
     
     
     
@@ -318,24 +353,18 @@
     <link href="https://greenmeeple.github.io/site/personalize/"/>
     <id>https://greenmeeple.github.io/site/personalize/</id>
     <published>2025-04-03T15:02:08.000Z</published>
-    <updated>2025-05-07T14:21:57.745Z</updated>
+    <updated>2025-05-12T23:30:44.261Z</updated>
     
     
     <summary type="html">&lt;p&gt;Here are all the plugins and niche settings that personalize this blog and the &lt;a href=&quot;https://github.com/ppoffice/hexo-theme-icarus&quot;&gt;Icarus&lt;/a&gt; theme.&lt;/p&gt;
 &lt;h2 id=&quot;Remove-Uppercase-Details&quot;&gt;&lt;a href=&quot;#Remove-Uppercase-Details&quot; class=&quot;headerlink&quot; title=&quot;Remove Uppercase Details&quot;&gt;&lt;/a&gt;Remove Uppercase Details&lt;/h2&gt;&lt;p&gt;The Uppercase characters overflowed the page and affects the aesthetic.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/site_notes/uppercase.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/site_notes/uppercase.png&quot; alt=&quot;img&quot;&gt;&lt;/p&gt;
 &lt;p&gt;Find the css tag that contains the keyword &lt;strong&gt;Uppercase&lt;/strong&gt; and remove it.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;jsx&quot;&gt;&amp;#123;page.layout !== &amp;#39;page&amp;#39; ? &amp;lt;div class=&amp;quot;article-meta is-size-7 is-uppercase level is-mobile&amp;quot;&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;figcaption&gt;&lt;span&gt;article.jsx&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;code class=&quot;hljs javascript&quot;&gt;&amp;#123;page.&lt;span class=&quot;hljs-property&quot;&gt;layout&lt;/span&gt; !== &lt;span class=&quot;hljs-string&quot;&gt;&amp;#x27;page&amp;#x27;&lt;/span&gt; ? &lt;span class=&quot;language-xml&quot;&gt;&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;hljs-attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;article-meta is-size-7 is-uppercase level is-mobile&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
 &lt;h2 id=&quot;Better-Sans-Font&quot;&gt;&lt;a href=&quot;#Better-Sans-Font&quot; class=&quot;headerlink&quot; title=&quot;Better Sans Font&quot;&gt;&lt;/a&gt;Better Sans Font&lt;/h2&gt;&lt;p&gt;In &lt;code&gt;_config.icarus.yml&lt;/code&gt;, find the following section &lt;code&gt;providers&lt;/code&gt;:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;yml&quot;&gt;providers:
-    # Name or URL template of the JavaScript and/or stylesheet CDN provider
-    cdn: jsdelivr
-    # Name or URL template of the webfont CDN provider
-    fontcdn: https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@100..900&amp;amp;display=swap
-    # Name or URL of the fontawesome icon font CDN provider
-    iconcdn: fontawesome
-&lt;/code&gt;&lt;/pre&gt;
+&lt;figure class=&quot;highlight yml&quot;&gt;&lt;figcaption&gt;&lt;span&gt;_config.icarus.yml&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;code class=&quot;hljs yml&quot;&gt;&lt;span class=&quot;hljs-attr&quot;&gt;providers:&lt;/span&gt;&lt;br&gt;    &lt;span class=&quot;hljs-comment&quot;&gt;# Name or URL template of the JavaScript and/or stylesheet CDN provider&lt;/span&gt;&lt;br&gt;    &lt;span class=&quot;hljs-attr&quot;&gt;cdn:&lt;/span&gt; &lt;span class=&quot;hljs-string&quot;&gt;jsdelivr&lt;/span&gt;&lt;br&gt;    &lt;span class=&quot;hljs-comment&quot;&gt;# Name or URL template of the webfont CDN provider&lt;/span&gt;&lt;br&gt;    &lt;span class=&quot;hljs-attr&quot;&gt;fontcdn:&lt;/span&gt; &lt;span class=&quot;hljs-string&quot;&gt;https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@100..900&amp;amp;display=swap&lt;/span&gt;&lt;br&gt;    &lt;span class=&quot;hljs-comment&quot;&gt;# Name or URL of the fontawesome icon font CDN provider&lt;/span&gt;&lt;br&gt;    &lt;span class=&quot;hljs-attr&quot;&gt;iconcdn:&lt;/span&gt; &lt;span class=&quot;hljs-string&quot;&gt;fontawesome&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
 &lt;p&gt;Choose your favorite font in &lt;a href=&quot;https://fonts.google.com/&quot;&gt;Google Fonts&lt;/a&gt;, and paste the url of the font to &lt;code&gt;fontcdn&lt;/code&gt;&lt;/p&gt;</summary>
     
     
@@ -352,7 +381,7 @@
     <link href="https://greenmeeple.github.io/projects/mensaar-log2/"/>
     <id>https://greenmeeple.github.io/projects/mensaar-log2/</id>
     <published>2025-03-21T04:03:35.000Z</published>
-    <updated>2025-05-09T19:53:32.528Z</updated>
+    <updated>2025-05-12T23:37:50.465Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
@@ -362,12 +391,12 @@
 &lt;li&gt;Explained with examples from my Repository: &lt;a href=&quot;https://github.com/greenmeeple/MensaarLecker&quot;&gt;MensaarLecker&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&quot;Fetching-Data-from-Web-Development&quot;&gt;&lt;a href=&quot;#Fetching-Data-from-Web-Development&quot; class=&quot;headerlink&quot; title=&quot;Fetching Data from Web Development&quot;&gt;&lt;/a&gt;Fetching Data from Web Development&lt;/h2&gt;&lt;p&gt;Previous post: &lt;a href=&quot;../mensaarlog1&quot;&gt;MensaarLecker Development Log 1 – Web Crawling&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;Fetching-Data-from-Web-Development&quot;&gt;&lt;a href=&quot;#Fetching-Data-from-Web-Development&quot; class=&quot;headerlink&quot; title=&quot;Fetching Data from Web Development&quot;&gt;&lt;/a&gt;Fetching Data from Web Development&lt;/h2&gt;&lt;p&gt;Previous post: &lt;a href=&quot;../mensaarlog1&quot;&gt;MensaarLecker Development Log (1) – Web Crawling&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Continuing from last post, we have already implemented a script that collect the Mensa menu and stored it on Google Sheets. It is time to build our web interface to connect the database.&lt;/p&gt;
 &lt;h3 id=&quot;Fetch-Data-from-Google-Sheets-using-Publish&quot;&gt;&lt;a href=&quot;#Fetch-Data-from-Google-Sheets-using-Publish&quot; class=&quot;headerlink&quot; title=&quot;Fetch Data from Google Sheets using Publish&quot;&gt;&lt;/a&gt;Fetch Data from Google Sheets using Publish&lt;/h3&gt;&lt;p&gt;First, we need to publish our spreadsheet so that it is public to fetch the data.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;In the Spreadsheet, click &lt;strong&gt;Share&lt;/strong&gt; → Change access to Anyone with the link.&lt;/p&gt;
-&lt;p&gt; &lt;img src=&quot;/images/mensaar/sheetshare.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt; &lt;img src=&quot;/images/mensaar/sheetshare.png&quot; alt=&quot;img&quot;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Click &lt;strong&gt;File&lt;/strong&gt; → &lt;strong&gt;Share&lt;/strong&gt; → &lt;strong&gt;Publish&lt;/strong&gt; to the web.&lt;/p&gt;
 &lt;/li&gt;
@@ -376,23 +405,10 @@
 &lt;li&gt;&lt;p&gt;Copy the public CSV link.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;SCRIPT_URL = &amp;#123;PUBLISH_LINK&amp;#125;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;figcaption&gt;&lt;span&gt;menu.py&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;code class=&quot;hljs python&quot;&gt;SCRIPT_URL = &amp;#123;PUBLISH_LINK&amp;#125;&lt;br&gt;&lt;br&gt;&lt;span class=&quot;hljs-comment&quot;&gt;# Fetch JSON data&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;hljs-title function_&quot;&gt;fetch_menu&lt;/span&gt;():&lt;br&gt;    &lt;span class=&quot;hljs-keyword&quot;&gt;try&lt;/span&gt;:&lt;br&gt;        response = requests.get(SCRIPT_URL)&lt;br&gt;        response.raise_for_status()  &lt;span class=&quot;hljs-comment&quot;&gt;# Raise error if bad response&lt;/span&gt;&lt;br&gt;        &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; response.json()&lt;br&gt;    &lt;span class=&quot;hljs-keyword&quot;&gt;except&lt;/span&gt; requests.exceptions.RequestException &lt;span class=&quot;hljs-keyword&quot;&gt;as&lt;/span&gt; e:&lt;br&gt;        &lt;span class=&quot;hljs-built_in&quot;&gt;print&lt;/span&gt;(&lt;span class=&quot;hljs-string&quot;&gt;f&amp;quot;❌ Error fetching menu: &lt;span class=&quot;hljs-subst&quot;&gt;&amp;#123;e&amp;#125;&lt;/span&gt;&amp;quot;&lt;/span&gt;)&lt;br&gt;        &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; []&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
-# Fetch JSON data
-def fetch_menu():
-    try:
-        response = requests.get(SCRIPT_URL)
-        response.raise_for_status()  # Raise error if bad response
-        return response.json()
-    except requests.exceptions.RequestException as e:
-        print(f&amp;quot;❌ Error fetching menu: &amp;#123;e&amp;#125;&amp;quot;)
-        return []
-&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;However, the script return no data, why?&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;error&quot;&gt;Access to fetch at &amp;#39;https://docs.google.com/spreadsheets/...&amp;#39; from origin &amp;#39;null&amp;#39; has been blocked 
-by CORS policy: No &amp;#39;Access-Control-Allow-Origin&amp;#39; header is present on the requested resource. 
-If an opaque response serves your needs, set the request&amp;#39;s mode to &amp;#39;no-cors&amp;#39; to fetch the resource with CORS disabled.
-&lt;/code&gt;&lt;/pre&gt;</summary>
+&lt;figure class=&quot;highlight go&quot;&gt;&lt;figcaption&gt;&lt;span&gt;caret.ebnf&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;code class=&quot;hljs go&quot;&gt;Access to fetch at &lt;span class=&quot;hljs-string&quot;&gt;&amp;#x27;https://docs.google.com/spreadsheets/...&amp;#x27;&lt;/span&gt; from origin &lt;span class=&quot;hljs-string&quot;&gt;&amp;#x27;null&amp;#x27;&lt;/span&gt; has been blocked &lt;br&gt;by CORS policy: No &lt;span class=&quot;hljs-string&quot;&gt;&amp;#x27;Access-Control-Allow-Origin&amp;#x27;&lt;/span&gt; header is present on the requested resource. &lt;br&gt;If an opaque response serves your needs, set the request&lt;span class=&quot;hljs-string&quot;&gt;&amp;#x27;s mode to &amp;#x27;&lt;/span&gt;no-cors&lt;span class=&quot;hljs-string&quot;&gt;&amp;#x27; to fetch the resource with CORS disabled.&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
     
     
     
@@ -412,7 +428,7 @@ If an opaque response serves your needs, set the request&amp;#39;s mode to &amp;
     <link href="https://greenmeeple.github.io/projects/mensaar-log1/"/>
     <id>https://greenmeeple.github.io/projects/mensaar-log1/</id>
     <published>2025-03-20T04:03:35.000Z</published>
-    <updated>2025-05-09T19:53:28.952Z</updated>
+    <updated>2025-05-12T23:23:17.106Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
@@ -422,7 +438,7 @@ If an opaque response serves your needs, set the request&amp;#39;s mode to &amp;
 &lt;li&gt;Explained with examples from my Repository: &lt;a href=&quot;https://github.com/greenmeeple/MensaarLecker&quot;&gt;MensaarLecker&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&quot;Motivation&quot;&gt;&lt;a href=&quot;#Motivation&quot; class=&quot;headerlink&quot; title=&quot;Motivation&quot;&gt;&lt;/a&gt;Motivation&lt;/h2&gt;&lt;p&gt;Me and my friends &lt;del&gt;hate&lt;/del&gt;&lt;strong&gt;love&lt;/strong&gt; the UdS Mensa so much! The infinite frozen food and french fries menus give us so much energy and motivation for the 5-hour afternoon coding marathon. However, no one actually knows how many potatoes they have exterminated throughout the week. We have a genius webpage created by some &lt;a href=&quot;https://gibtesheuteschnitzel.de/&quot;&gt;Schnitzel lover&lt;/a&gt;. Personally, I like its minimalistic layout and determination on Schnitzel searching. &lt;/p&gt;
+&lt;h2 id=&quot;Motivation&quot;&gt;&lt;a href=&quot;#Motivation&quot; class=&quot;headerlink&quot; title=&quot;Motivation&quot;&gt;&lt;/a&gt;Motivation&lt;/h2&gt;&lt;p&gt;Me and my friends &lt;del&gt;hate&lt;/del&gt;&lt;strong&gt;love&lt;/strong&gt; the UdS Mensa so much! The infinite frozen food and french fries menus give us so much energy and motivation for the 5-hour afternoon coding marathon. However, no one actually knows how many potatoes they have exterminated throughout the week. We have a genius webpage created by some &lt;a href=&quot;https://gibtesheuteschnitzel.de/&quot;&gt;Schnitzel lover&lt;/a&gt;. Personally, I like its minimalistic layout and determination on Schnitzel searching.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;However, we want more.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -457,23 +473,23 @@ If an opaque response serves your needs, set the request&amp;#39;s mode to &amp;
     <link href="https://greenmeeple.github.io/appium/"/>
     <id>https://greenmeeple.github.io/appium/</id>
     <published>2025-01-01T18:36:48.000Z</published>
-    <updated>2025-05-09T01:42:16.465Z</updated>
+    <updated>2025-05-12T15:54:59.002Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;This blog post is trying to tell you:&lt;/strong&gt;&lt;br&gt;Every details and attributes you may need for your first appium automation.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;In this example, we will use &lt;a href=&quot;https://github.com/appium/appium-inspector&quot;&gt;Appium Inspector&lt;/a&gt; to start a seesion on your emulator on &lt;a href=&quot;https://developer.android.com/studio&quot;&gt;Android Studio&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;Start-appium&quot;&gt;&lt;a href=&quot;#Start-appium&quot; class=&quot;headerlink&quot; title=&quot;Start appium&quot;&gt;&lt;/a&gt;Start appium&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;/images/appium/start.png&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;Start-appium&quot;&gt;&lt;a href=&quot;#Start-appium&quot; class=&quot;headerlink&quot; title=&quot;Start appium&quot;&gt;&lt;/a&gt;Start appium&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;/images/appium/start.png&quot; alt=&quot;img&quot;&gt;&lt;/p&gt;
 &lt;p&gt;First, start the connection with Appium by &lt;code&gt;cmd appium --allow-cors&lt;/code&gt;. It also gives you the &lt;code&gt;remote url&lt;/code&gt; and the &lt;code&gt;automationName&lt;/code&gt; that can be used in the &lt;a href=&quot;https://github.com/appium/appium-inspector&quot;&gt;Appium Inspector&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/appium/inspector.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/appium/inspector.png&quot; alt=&quot;img&quot;&gt;&lt;/p&gt;
 &lt;h2 id=&quot;Start-Session&quot;&gt;&lt;a href=&quot;#Start-Session&quot; class=&quot;headerlink&quot; title=&quot;Start Session&quot;&gt;&lt;/a&gt;Start Session&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;deviceName&lt;/strong&gt;:  &lt;code&gt;adb devices&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;platformName&lt;/strong&gt; - &lt;code&gt;appium driver list&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;platformVersion&lt;/strong&gt; -  &lt;code&gt;adb shell getprop ro.build.version.release&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&quot;/images/appium/session.png&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/appium/inspector2.png&quot;&gt;&lt;/p&gt;</summary>
+&lt;p&gt;&lt;img src=&quot;/images/appium/session.png&quot; alt=&quot;img&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/appium/inspector2.png&quot; alt=&quot;img&quot;&gt;&lt;/p&gt;</summary>
     
     
     
@@ -629,13 +645,13 @@ If an opaque response serves your needs, set the request&amp;#39;s mode to &amp;
     <link href="https://greenmeeple.github.io/projects/hexo-zhruby/"/>
     <id>https://greenmeeple.github.io/projects/hexo-zhruby/</id>
     <published>2024-10-14T02:04:55.000Z</published>
-    <updated>2025-05-09T02:11:08.017Z</updated>
+    <updated>2025-05-12T23:20:14.706Z</updated>
     
     
     <summary type="html">&lt;p&gt;Implement the HTML tag &lt;code&gt;&amp;lt;ruby&amp;gt;&lt;/code&gt; for Hexo using &lt;a href=&quot;https://hexo.io/docs/tag-plugins&quot;&gt;Tag Plugin&lt;/a&gt; feature. Provide auto pronounciation indication for Jyutping (Cantonese), Zhuyin (Taiwanese Mandarin), and Pinyin (Chinese Mandarin), and the default setting for general usage. Support Traditonal and Simplified Chinese characters. &lt;/p&gt;
 &lt;p&gt;Inspired by the &lt;a href=&quot;https://github.com/jamespan/hexo-ruby-character&quot;&gt;hexo-ruby-character&lt;/a&gt; by &lt;a href=&quot;https://github.com/jamespan&quot;&gt;jamespan&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;Install&quot;&gt;&lt;a href=&quot;#Install&quot; class=&quot;headerlink&quot; title=&quot;Install&quot;&gt;&lt;/a&gt;Install&lt;/h2&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;npm install hexo-zhruby --save
-&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&quot;Install&quot;&gt;&lt;a href=&quot;#Install&quot; class=&quot;headerlink&quot; title=&quot;Install&quot;&gt;&lt;/a&gt;Install&lt;/h2&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;figcaption&gt;&lt;span&gt;terminal&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;code class=&quot;hljs shell&quot;&gt;npm install hexo-zhruby --save&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
 &lt;h2 id=&quot;Use-cases&quot;&gt;&lt;a href=&quot;#Use-cases&quot; class=&quot;headerlink&quot; title=&quot;Use cases&quot;&gt;&lt;/a&gt;Use cases&lt;/h2&gt;&lt;p&gt;Ruby (ルビ) is also known as &lt;a href=&quot;https://en.wikipedia.org/wiki/Furigana&quot;&gt;Furigana&lt;/a&gt; (振り仮名).  It contains two basic use cases:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;To clarify or indicate the pronunciation for readers&lt;/li&gt;
@@ -664,7 +680,7 @@ If an opaque response serves your needs, set the request&amp;#39;s mode to &amp;
     <link href="https://greenmeeple.github.io/js/hexo-tagplugin-2/"/>
     <id>https://greenmeeple.github.io/js/hexo-tagplugin-2/</id>
     <published>2024-10-13T02:03:12.000Z</published>
-    <updated>2025-05-09T02:00:44.234Z</updated>
+    <updated>2025-05-12T23:28:44.490Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
@@ -674,7 +690,7 @@ If an opaque response serves your needs, set the request&amp;#39;s mode to &amp;
 &lt;li&gt;How to publish your Tag Plugin to npm and hexo?&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;For explaination on &lt;code&gt;Tag Plugin&lt;/code&gt; and &lt;code&gt;Scripts&lt;/code&gt; in Hexo, see the previous post &lt;a href=&quot;../hexo-tagplugin-1&quot;&gt;Hexo Tag Plugin (1) – Use ‘Hexo Scripts’ to create your own Tag Plugin&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;For explaination on &lt;code&gt;Tag Plugin&lt;/code&gt; and &lt;code&gt;Scripts&lt;/code&gt; in Hexo, see the previous post&lt;br&gt;&lt;a href=&quot;../hexo-tagplugin-1&quot;&gt;Hexo Tag Plugin (1) – Use ‘Hexo Scripts’ to create your own Tag Plugin&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&quot;Plugin&quot;&gt;&lt;a href=&quot;#Plugin&quot; class=&quot;headerlink&quot; title=&quot;Plugin&quot;&gt;&lt;/a&gt;Plugin&lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;Be Careful! Don’t mix &lt;code&gt;Plugin&lt;/code&gt;, &lt;code&gt;Tag&lt;/code&gt;, and &lt;code&gt;Tag Plugin&lt;/code&gt; in Hexo, even though they look extremely similar.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -684,48 +700,13 @@ If an opaque response serves your needs, set the request&amp;#39;s mode to &amp;
 &lt;li&gt;&lt;p&gt;Navigate &lt;code&gt;node_modules&lt;/code&gt; folder in your project folder. This is the folder where Hexo stored all the packages for your blog. Create a folder inside and the name must begin with &lt;code&gt;hexo-&lt;/code&gt; or Hexo will ignore it.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Your folder must contain at least two files: the actual JavaScript code and &lt;code&gt;package.json&lt;/code&gt; file that describes the purpose of the plugin and sets its dependencies.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;directory&quot;&gt;.
-├── index.js
-└── package.json
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;In &lt;code&gt;package.json&lt;/code&gt;, it should at least have the &lt;code&gt;name&lt;/code&gt;, &lt;code&gt;version&lt;/code&gt; and &lt;code&gt;main&lt;/code&gt; entries set.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;json&quot;&gt;&amp;#123;
-    &amp;quot;name&amp;quot;: &amp;quot;hexo-my-plugin&amp;quot;,
-    &amp;quot;version&amp;quot;: &amp;quot;0.0.1&amp;quot;,
-    &amp;quot;main&amp;quot;: &amp;quot;index&amp;quot;
-&amp;#125;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;In the root &lt;code&gt;package.json&lt;/code&gt; of your hexo project, you also need to list your &lt;code&gt;plugin&lt;/code&gt; as a &lt;code&gt;dependency&lt;/code&gt;, for Hexo to detect and load it.&lt;br&gt; Please remember that if your package contain other dependencies, also install and list them for testing and dubugging.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;json&quot;&gt;&amp;#123;
-    &amp;quot;name&amp;quot;: &amp;quot;hexo-site&amp;quot;,
-    &amp;quot;version&amp;quot;: &amp;quot;0.0.0&amp;quot;,
-    &amp;quot;private&amp;quot;: true,
-    &amp;quot;scripts&amp;quot;: &amp;#123;
-        &amp;quot;build&amp;quot;: &amp;quot;hexo generate&amp;quot;,
-        &amp;quot;clean&amp;quot;: &amp;quot;hexo clean&amp;quot;,
-        &amp;quot;deploy&amp;quot;: &amp;quot;hexo deploy&amp;quot;,
-        &amp;quot;server&amp;quot;: &amp;quot;hexo server&amp;quot;
-    &amp;#125;,
-    &amp;quot;hexo&amp;quot;: &amp;#123;
-        &amp;quot;version&amp;quot;: &amp;quot;&amp;quot;
-    &amp;#125;,
-    &amp;quot;dependencies&amp;quot;: &amp;#123;
-        &amp;quot;hexo&amp;quot;: &amp;quot;^7.3.0&amp;quot;,
-        ...
-        &amp;quot;hexo-my-plugin&amp;quot;: &amp;quot;0.0.1&amp;quot;,
-        &amp;quot;my-plugin-dependency1&amp;quot;: &amp;quot;2.0.0&amp;quot;,
-        &amp;quot;my-plugin-dependency2&amp;quot;: &amp;quot;2.0.0&amp;quot;
-    &amp;#125;
-&amp;#125;
-&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;blockquote&gt;
-&lt;p&gt;If you run command that check all the package after step 4, for exmaple &lt;code&gt;hexo clean&lt;/code&gt;, it will check all the packages in &lt;code&gt;node_modules&lt;/code&gt; and remove packages that are not publish on npm.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;Publish-Plugin-to-npm&quot;&gt;&lt;a href=&quot;#Publish-Plugin-to-npm&quot; class=&quot;headerlink&quot; title=&quot;Publish Plugin to npm&quot;&gt;&lt;/a&gt;Publish Plugin to npm&lt;/h2&gt;</summary>
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;figcaption&gt;&lt;span&gt;directory&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;code class=&quot;hljs bash&quot;&gt;.&lt;br&gt;├── index.js&lt;br&gt;└── package.json&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;ol start=&quot;3&quot;&gt;
+&lt;li&gt;In &lt;code&gt;package.json&lt;/code&gt;, it should at least have the &lt;code&gt;name&lt;/code&gt;, &lt;code&gt;version&lt;/code&gt; and &lt;code&gt;main&lt;/code&gt; entries set.&lt;/li&gt;
+&lt;/ol&gt;</summary>
     
     
     
@@ -743,7 +724,7 @@ If an opaque response serves your needs, set the request&amp;#39;s mode to &amp;
     <link href="https://greenmeeple.github.io/js/hexo-tagplugin-1/"/>
     <id>https://greenmeeple.github.io/js/hexo-tagplugin-1/</id>
     <published>2024-10-12T02:03:12.000Z</published>
-    <updated>2025-05-09T02:00:53.163Z</updated>
+    <updated>2025-05-12T23:03:01.087Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
@@ -760,8 +741,8 @@ If an opaque response serves your needs, set the request&amp;#39;s mode to &amp;
 &lt;p&gt;Tag plugins are special type of syntax that you may use in your Markdown file.&lt;/p&gt;
 &lt;p&gt;Hexo has already provided some default Tag plugins like &lt;code&gt;Block Quote&lt;/code&gt; and &lt;code&gt;iframe&lt;/code&gt;.&lt;/p&gt;
 &lt;h3 id=&quot;Usage&quot;&gt;&lt;a href=&quot;#Usage&quot; class=&quot;headerlink&quot; title=&quot;Usage&quot;&gt;&lt;/a&gt;Usage&lt;/h3&gt;&lt;p&gt;For example, the syntax of &lt;code&gt;iframe&lt;/code&gt; tag is:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;Markdown&quot;&gt;&amp;#123;% iframe url [width] [height] %&amp;#125;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;figure class=&quot;highlight markdown&quot;&gt;&lt;figcaption&gt;&lt;span&gt;video.md&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;code class=&quot;hljs markdown&quot;&gt;&lt;span class=&quot;language-xml&quot;&gt;&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;iframe&lt;/span&gt; &lt;span class=&quot;hljs-attr&quot;&gt;src&lt;/span&gt;=&lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;url&amp;quot;&lt;/span&gt; &lt;span class=&quot;hljs-attr&quot;&gt;width&lt;/span&gt;=&lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;[width]&amp;quot;&lt;/span&gt; &lt;span class=&quot;hljs-attr&quot;&gt;height&lt;/span&gt;=&lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;[height]&amp;quot;&lt;/span&gt; &lt;span class=&quot;hljs-attr&quot;&gt;frameborder&lt;/span&gt;=&lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;0&amp;quot;&lt;/span&gt; &lt;span class=&quot;hljs-attr&quot;&gt;loading&lt;/span&gt;=&lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;lazy&amp;quot;&lt;/span&gt; &lt;span class=&quot;hljs-attr&quot;&gt;allowfullscreen&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;language-xml&quot;&gt;&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;iframe&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
 &lt;p&gt;Let say I want to embed a video from me and my friends’ YouTube video:&lt;/p&gt;</summary>
     
     
@@ -780,7 +761,7 @@ If an opaque response serves your needs, set the request&amp;#39;s mode to &amp;
     <link href="https://greenmeeple.github.io/js/json-dependencies-diagram/"/>
     <id>https://greenmeeple.github.io/js/json-dependencies-diagram/</id>
     <published>2024-10-11T00:19:03.000Z</published>
-    <updated>2025-05-09T02:08:40.212Z</updated>
+    <updated>2025-05-12T23:15:55.674Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
@@ -788,12 +769,12 @@ If an opaque response serves your needs, set the request&amp;#39;s mode to &amp;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;a name=&quot;range-set&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;range-set:&lt;/strong&gt;&lt;br&gt;&lt;img src=&quot;/images/json_dep_diagram/range-set.png&quot; alt=&quot;range-set&quot;&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;EBNF&quot;&gt;range-set   ::= range ( logical-or range )*
-&lt;/code&gt;&lt;/pre&gt;
+&lt;figure class=&quot;highlight go&quot;&gt;&lt;figcaption&gt;&lt;span&gt;range-set.ebnf&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;code class=&quot;hljs go&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;range&lt;/span&gt;-set   ::= &lt;span class=&quot;hljs-keyword&quot;&gt;range&lt;/span&gt; ( logical-or &lt;span class=&quot;hljs-keyword&quot;&gt;range&lt;/span&gt; )*&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
 &lt;p&gt;&lt;strong&gt;logical-or:&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/images/json_dep_diagram/logical-or.png&quot; alt=&quot;logical-or&quot;&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;EBNF&quot;&gt;logical-or  ::= &amp;#39; &amp;#39;* &amp;#39;||&amp;#39; &amp;#39; &amp;#39;*
-&lt;/code&gt;&lt;/pre&gt;
+&lt;figure class=&quot;highlight go&quot;&gt;&lt;figcaption&gt;&lt;span&gt;logical-or.ebnf&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;code class=&quot;hljs go&quot;&gt;logical-or  ::= &lt;span class=&quot;hljs-string&quot;&gt;&amp;#x27; &amp;#x27;&lt;/span&gt;* &lt;span class=&quot;hljs-string&quot;&gt;&amp;#x27;||&amp;#x27;&lt;/span&gt; &lt;span class=&quot;hljs-string&quot;&gt;&amp;#x27; &amp;#x27;&lt;/span&gt;*&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
 &lt;p&gt;referenced by: &lt;a href=&quot;#range-set&quot;&gt;range-set&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a name=&quot;range&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;range:&lt;/strong&gt;&lt;/p&gt;</summary>
@@ -814,28 +795,15 @@ If an opaque response serves your needs, set the request&amp;#39;s mode to &amp;
     <link href="https://greenmeeple.github.io/js/json-dependencies/"/>
     <id>https://greenmeeple.github.io/js/json-dependencies/</id>
     <published>2024-10-10T17:04:37.000Z</published>
-    <updated>2025-05-09T02:08:27.303Z</updated>
+    <updated>2025-05-12T23:10:07.412Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
 &lt;p&gt;To see the syntax and Railroad diagram version, goto &lt;a href=&quot;../json-dependencies-diagram/&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&quot;Basic-Structure&quot;&gt;&lt;a href=&quot;#Basic-Structure&quot; class=&quot;headerlink&quot; title=&quot;Basic Structure&quot;&gt;&lt;/a&gt;Basic Structure&lt;/h2&gt;&lt;p&gt;Package dependecies are a tuple of &lt;code&gt;[major, minor, patch]&lt;/code&gt; with numeric values.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;json&quot;&gt;&amp;#123;
-    &amp;quot;name&amp;quot;: &amp;quot;project name&amp;quot;,
-    &amp;quot;version&amp;quot;: &amp;quot;0.0.1&amp;quot;,
-    &amp;quot;description&amp;quot;: &amp;quot;description of the project&amp;quot;,
-    &amp;quot;keywords&amp;quot;: [
-        &amp;quot;keyword 1&amp;quot;,
-        &amp;quot;keyword 2&amp;quot;
-    ],
-    &amp;quot;author&amp;quot;: &amp;quot;John Doe&amp;quot;,
-    &amp;quot;dependencies&amp;quot;: &amp;#123;
-      &amp;quot;package-1&amp;quot;: &amp;quot;~0.6.2&amp;quot;,
-      &amp;quot;package-2&amp;quot;: &amp;quot;&amp;gt;=2.6.2&amp;quot;
-    &amp;#125;
-&amp;#125;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;figure class=&quot;highlight json&quot;&gt;&lt;figcaption&gt;&lt;span&gt;package.json&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;code class=&quot;hljs json&quot;&gt;&lt;span class=&quot;hljs-punctuation&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;    &lt;span class=&quot;hljs-attr&quot;&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span class=&quot;hljs-punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;project name&amp;quot;&lt;/span&gt;&lt;span class=&quot;hljs-punctuation&quot;&gt;,&lt;/span&gt;&lt;br&gt;    &lt;span class=&quot;hljs-attr&quot;&gt;&amp;quot;version&amp;quot;&lt;/span&gt;&lt;span class=&quot;hljs-punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;0.0.1&amp;quot;&lt;/span&gt;&lt;span class=&quot;hljs-punctuation&quot;&gt;,&lt;/span&gt;&lt;br&gt;    &lt;span class=&quot;hljs-attr&quot;&gt;&amp;quot;description&amp;quot;&lt;/span&gt;&lt;span class=&quot;hljs-punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;description of the project&amp;quot;&lt;/span&gt;&lt;span class=&quot;hljs-punctuation&quot;&gt;,&lt;/span&gt;&lt;br&gt;    &lt;span class=&quot;hljs-attr&quot;&gt;&amp;quot;keywords&amp;quot;&lt;/span&gt;&lt;span class=&quot;hljs-punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;hljs-punctuation&quot;&gt;[&lt;/span&gt;&lt;br&gt;        &lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;keyword 1&amp;quot;&lt;/span&gt;&lt;span class=&quot;hljs-punctuation&quot;&gt;,&lt;/span&gt;&lt;br&gt;        &lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;keyword 2&amp;quot;&lt;/span&gt;&lt;br&gt;    &lt;span class=&quot;hljs-punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;hljs-punctuation&quot;&gt;,&lt;/span&gt;&lt;br&gt;    &lt;span class=&quot;hljs-attr&quot;&gt;&amp;quot;author&amp;quot;&lt;/span&gt;&lt;span class=&quot;hljs-punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;John Doe&amp;quot;&lt;/span&gt;&lt;span class=&quot;hljs-punctuation&quot;&gt;,&lt;/span&gt;&lt;br&gt;    &lt;span class=&quot;hljs-attr&quot;&gt;&amp;quot;dependencies&amp;quot;&lt;/span&gt;&lt;span class=&quot;hljs-punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;hljs-punctuation&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;      &lt;span class=&quot;hljs-attr&quot;&gt;&amp;quot;package-1&amp;quot;&lt;/span&gt;&lt;span class=&quot;hljs-punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;~0.6.2&amp;quot;&lt;/span&gt;&lt;span class=&quot;hljs-punctuation&quot;&gt;,&lt;/span&gt;&lt;br&gt;      &lt;span class=&quot;hljs-attr&quot;&gt;&amp;quot;package-2&amp;quot;&lt;/span&gt;&lt;span class=&quot;hljs-punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;&amp;gt;=2.6.2&amp;quot;&lt;/span&gt;&lt;br&gt;    &lt;span class=&quot;hljs-punctuation&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-punctuation&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
 &lt;h2 id=&quot;Version-Range-operator&quot;&gt;&lt;a href=&quot;#Version-Range-operator&quot; class=&quot;headerlink&quot; title=&quot;Version Range operator&quot;&gt;&lt;/a&gt;Version Range operator&lt;/h2&gt;&lt;h3 id=&quot;Basic-Range&quot;&gt;&lt;a href=&quot;#Basic-Range&quot; class=&quot;headerlink&quot; title=&quot;Basic Range&quot;&gt;&lt;/a&gt;Basic Range&lt;/h3&gt;&lt;p&gt;For &lt;code&gt;x&lt;/code&gt; in exmaple, see &lt;strong&gt;Advanced Range&lt;/strong&gt; below.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -891,132 +859,6 @@ If an opaque response serves your needs, set the request&amp;#39;s mode to &amp;
     <category term="Node.js" scheme="https://greenmeeple.github.io/tags/Node-js/"/>
     
     <category term="json" scheme="https://greenmeeple.github.io/tags/json/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Why you shouldn&#39;t deploy your Hexo webpage using GitHub Desktop?</title>
-    <link href="https://greenmeeple.github.io/github-desktop/"/>
-    <id>https://greenmeeple.github.io/github-desktop/</id>
-    <published>2024-10-10T00:34:07.000Z</published>
-    <updated>2025-05-09T02:28:50.404Z</updated>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;Methods-to-Deploy-Hexo-to-GitHub-io&quot;&gt;&lt;a href=&quot;#Methods-to-Deploy-Hexo-to-GitHub-io&quot; class=&quot;headerlink&quot; title=&quot;Methods to Deploy Hexo to GitHub.io&quot;&gt;&lt;/a&gt;Methods to Deploy Hexo to GitHub.io&lt;/h2&gt;&lt;p&gt;Assume you’ve created a repository on GitHub called &lt;code&gt;&amp;lt;username&amp;gt;.github.io&lt;/code&gt;. Here are two common method you can deploy you Hexo Blog:&lt;/p&gt;
-&lt;h3 id=&quot;Hexo-Command&quot;&gt;&lt;a href=&quot;#Hexo-Command&quot; class=&quot;headerlink&quot; title=&quot;Hexo Command&quot;&gt;&lt;/a&gt;Hexo Command&lt;/h3&gt;&lt;p&gt;Hexo’s documentations and Tutorial has provided sufficient instructions on deploying your personal website on your GitHub repository.&lt;/p&gt;
-&lt;p&gt;According to the &lt;a href=&quot;https://hexo.io/docs/github-pages&quot;&gt;Hexo Tutorial&lt;/a&gt;, we can deploy the repository by using &lt;a href=&quot;https://docs.github.com/en/actions&quot;&gt;GitHub Actions&lt;/a&gt;.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;Create and Add the following contents to &lt;code&gt;.github/workflows/pages.yml&lt;/code&gt;:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;yml&quot;&gt;name: Pages
-
-on:
-push:
-    branches:
-    - main # default branch
-
-jobs:
-build:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v4
-        with:
-        token: $&amp;#123;&amp;#123; secrets.GITHUB_TOKEN &amp;#125;&amp;#125;
-        submodules: recursive
-    - name: Use Node.js 20
-        uses: actions/setup-node@v4
-        with:
-        # Examples: 20, 18.19, &amp;gt;=16.20.2, lts/Iron, lts/Hydrogen, *, latest, current, node
-        # Ref: https://github.com/actions/setup-node#supported-version-syntax
-        node-version: &amp;quot;&amp;gt;=20&amp;quot; 
-
-    - name: Cache NPM dependencies
-        uses: actions/cache@v4
-        with:
-        path: node_modules
-        key: $&amp;#123;&amp;#123; runner.OS &amp;#125;&amp;#125;-npm-cache
-        restore-keys: |
-            $&amp;#123;&amp;#123; runner.OS &amp;#125;&amp;#125;-npm-cache
-    - name: Install Dependencies
-        run: npm install
-    - name: Build
-        run: npm run build
-    - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-        path: ./public
-deploy:
-    needs: build
-    permissions:
-    pages: write
-    id-token: write
-    environment:
-    name: github-pages
-    url: $&amp;#123;&amp;#123; steps.deployment.outputs.page_url &amp;#125;&amp;#125;
-    runs-on: ubuntu-latest
-    steps:
-    - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Install &lt;code&gt;hexo-deployer-git&lt;/code&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Add&amp;#x2F;Change the following configurations to &lt;code&gt;_config.yml&lt;/code&gt;:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;yml&quot;&gt;deploy:
-type: git
-repo: https://github.com/&amp;lt;username&amp;gt;/&amp;lt;project&amp;gt;
-# for example, this blog is https://github.com/greenmeeple/greenmeeple.github.io
-branch: gh-pages
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;After finishing your bog posts, Run &lt;code&gt;hexo clean &amp;amp;&amp;amp; hexo deploy&lt;/code&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&quot;GitHub-Desktop&quot;&gt;&lt;a href=&quot;#GitHub-Desktop&quot; class=&quot;headerlink&quot; title=&quot;GitHub Desktop&quot;&gt;&lt;/a&gt;GitHub Desktop&lt;/h3&gt;&lt;p&gt;Many Users installed &lt;a href=&quot;https://desktop.github.com/download/&quot;&gt;GitHub Desktop&lt;/a&gt; for better visualization on changes, so do I. It provides more intuitive push and commit procedure and instruction compared to terminal. Most of the time I use it to make sure no unexpected line changes or modification.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/site_notes/github_desktop.png&quot;&gt;&lt;/p&gt;
-&lt;p&gt;But soon I noticed that, every time after running &lt;code&gt;hexo clean &amp;amp;&amp;amp; hexo deploy&lt;/code&gt;, GitHub Desktop will warn me that there’s something need to be pulled. When I pull it for merging it return &lt;code&gt;Unable to merge unrelated histories in repository&lt;/code&gt;. Even in the image above, it shows that I should pull something. However, how would I need to pull if I’ve just push it?&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Git" scheme="https://greenmeeple.github.io/categories/Git/"/>
-    
-    
-    <category term="GitHub" scheme="https://greenmeeple.github.io/tags/GitHub/"/>
-    
-    <category term="Hexo" scheme="https://greenmeeple.github.io/tags/Hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Mathjax prime superscript problem in Hexo theme</title>
-    <link href="https://greenmeeple.github.io/site/hexo-mathjax/"/>
-    <id>https://greenmeeple.github.io/site/hexo-mathjax/</id>
-    <published>2024-10-09T02:09:35.000Z</published>
-    <updated>2025-05-09T02:26:43.600Z</updated>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;Prime-superscript-problem-e-g-x’-i-in-Mathjax&quot;&gt;&lt;a href=&quot;#Prime-superscript-problem-e-g-x’-i-in-Mathjax&quot; class=&quot;headerlink&quot; title=&quot;Prime superscript problem (e.g. x’_i) in Mathjax&quot;&gt;&lt;/a&gt;Prime superscript problem (e.g. x’_i) in Mathjax&lt;/h2&gt;&lt;p&gt;When I was using &lt;a href=&quot;https://www.mathjax.org/&quot;&gt;Mathjax&lt;/a&gt; to create math formula in my blog post, I typed&lt;br&gt;&lt;code&gt;((q_1, q_2), a, (q&amp;#39;_1, q&amp;#39;_2)) &#92;in S &#92;times &#92;Sigma_&amp;#123;int&amp;#125; &#92;times S&lt;/code&gt; and it rendered as&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;&lt;strong&gt;$((q_1, q_2), a, (q’_1, q’&lt;em&gt;2)) &#92;in S &#92;times &#92;Sigma&lt;/em&gt;{int} &#92;times S$&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;However, when &lt;code&gt;((q_1, q_2), a, (q&amp;#39;_1, q&amp;#39;_2))&lt;/code&gt; &amp;amp; &lt;code&gt;&#92;in S &#92;times &#92;Sigma_&amp;#123;int&amp;#125; &#92;times S&lt;/code&gt; are seperated, they rendered properly.&lt;/p&gt;
-&lt;p&gt;$$((q_1, q_2), a, (q’_1, q’_2))$$&lt;/p&gt;
-&lt;p&gt;$$&#92;in S &#92;times &#92;Sigma_{int} &#92;times S$$&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Maybe I should use &lt;code&gt;&#92;left&lt;/code&gt; and &lt;code&gt;&#92;right&lt;/code&gt; for (), just like &lt;code&gt;&#92;lbrace&lt;/code&gt; and &lt;code&gt;&#92;rbrace&lt;/code&gt; for {}?&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;So I typed &lt;code&gt;&#92;left( &#92;left( q_1, q_2 &#92;right), a, &#92;left( q&amp;#39;_1, q&amp;#39;_2 &#92;right) &#92;right) &#92;in S &#92;times &#92;Sigma_&amp;#123;int&amp;#125; &#92;times S&lt;/code&gt;, didn’t work out:&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;&lt;strong&gt;$&#92;left( &#92;left( q_1, q_2 &#92;right), a, &#92;left( q’_1, q’&lt;em&gt;2 &#92;right) &#92;right) &#92;in S &#92;times &#92;Sigma&lt;/em&gt;{int} &#92;times S$&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;h2 id=&quot;Source-of-error&quot;&gt;&lt;a href=&quot;#Source-of-error&quot; class=&quot;headerlink&quot; title=&quot;Source of error&quot;&gt;&lt;/a&gt;Source of error&lt;/h2&gt;</summary>
-    
-    
-    
-    <category term="SiteNote" scheme="https://greenmeeple.github.io/categories/SiteNote/"/>
-    
-    
-    <category term="Hexo" scheme="https://greenmeeple.github.io/tags/Hexo/"/>
-    
-    <category term="Latex" scheme="https://greenmeeple.github.io/tags/Latex/"/>
-    
-    <category term="Mathjax" scheme="https://greenmeeple.github.io/tags/Mathjax/"/>
     
   </entry>
   
