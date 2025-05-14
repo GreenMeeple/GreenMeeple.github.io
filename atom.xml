@@ -51,7 +51,7 @@
     <link href="https://greenmeeple.github.io/projects/udsfahrplan-bot/"/>
     <id>https://greenmeeple.github.io/projects/udsfahrplan-bot/</id>
     <published>2025-05-08T12:04:55.000Z</published>
-    <updated>2025-05-12T15:50:51.554Z</updated>
+    <updated>2025-05-14T16:50:42.718Z</updated>
     
     
     <summary type="html">&lt;p&gt;A lightweight Telegram bot designed for Saarland University students — offering fast, clear, and focused public transport information using SaarVV and HAFAS APIs. — &lt;strong&gt;&lt;a href=&quot;https://t.me/udsfahrbot&quot;&gt;Try Now&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
@@ -92,7 +92,7 @@
     <link href="https://greenmeeple.github.io/projects/mensaar/"/>
     <id>https://greenmeeple.github.io/projects/mensaar/</id>
     <published>2025-05-08T03:03:35.000Z</published>
-    <updated>2025-05-12T23:28:43.638Z</updated>
+    <updated>2025-05-14T16:28:49.971Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
@@ -124,7 +124,7 @@
     <link href="https://greenmeeple.github.io/projects/mensaar-log3/"/>
     <id>https://greenmeeple.github.io/projects/mensaar-log3/</id>
     <published>2025-05-07T13:03:35.000Z</published>
-    <updated>2025-05-12T22:58:38.907Z</updated>
+    <updated>2025-05-14T16:28:49.971Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
@@ -151,6 +151,44 @@
     <category term="Python" scheme="https://greenmeeple.github.io/tags/Python/"/>
     
     <category term="Telegram" scheme="https://greenmeeple.github.io/tags/Telegram/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>UdS Fahrplan Bot Development Log (5) -- Explanations on bot sessions and requests</title>
+    <link href="https://greenmeeple.github.io/projects/udsfahrplan-log5/"/>
+    <id>https://greenmeeple.github.io/projects/udsfahrplan-log5/</id>
+    <published>2025-05-02T23:04:55.000Z</published>
+    <updated>2025-05-14T16:50:32.031Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;This blog post is trying to tell you:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Why session is needed when multiple command using similar workflow?&lt;/li&gt;
+&lt;li&gt;The details of HTTP request&lt;/li&gt;
+&lt;li&gt;Detailed explanations on the implementation of &lt;strong&gt;&lt;a href=&quot;https://t.me/udsfahrbot&quot;&gt;udsfahrbot&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Previous post: &lt;a href=&quot;../udsfahrplan-log4&quot;&gt;UdS Fahrplan Bot Development Log (4) – Implementation on &amp;#x2F;sethome and &amp;#x2F;home function&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;Brief-Walkthrough-on-Telegram-Bot-Cont&quot;&gt;&lt;a href=&quot;#Brief-Walkthrough-on-Telegram-Bot-Cont&quot; class=&quot;headerlink&quot; title=&quot;Brief Walkthrough on Telegram Bot (Cont.)&quot;&gt;&lt;/a&gt;Brief Walkthrough on Telegram Bot (Cont.)&lt;/h2&gt;&lt;p&gt;In the previous notes, we’ve already implemented all the commands we need! But there’s a question, why we need to format out query in &lt;strong&gt;f”{session}:{step}:{loc}”&lt;/strong&gt;? Also, we haven’t talked about the function that connects to the SaarVV api.&lt;/p&gt;
+&lt;p&gt;We also have another study notes for all of the telegram bot projects in &lt;a href=&quot;../../python/tgbot&quot;&gt;here&lt;/a&gt;, it gives you the basics on how to create your own bot and further descriptions on different functions and attributes on the package  &lt;strong&gt;&lt;a href=&quot;https://python-telegram-bot.org/&quot;&gt;python-telegram-bot&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;HTTP-request-on-SaarVV&quot;&gt;&lt;a href=&quot;#HTTP-request-on-SaarVV&quot; class=&quot;headerlink&quot; title=&quot;HTTP request on SaarVV&quot;&gt;&lt;/a&gt;HTTP request on SaarVV&lt;/h2&gt;&lt;p&gt;In Application layer, if we send a GET request to the URL, it returns the HTML of the URL. For example:&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;figcaption&gt;&lt;span&gt;request.py&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;code class=&quot;hljs python&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;import&lt;/span&gt; requests&lt;br&gt;&lt;br&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;try&lt;/span&gt;:&lt;br&gt;    res = requests.get(&lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;https://greenmeeple.github.io/&amp;quot;&lt;/span&gt;)&lt;br&gt;    &lt;span class=&quot;hljs-built_in&quot;&gt;print&lt;/span&gt;(res.text)&lt;br&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;except&lt;/span&gt; Exception &lt;span class=&quot;hljs-keyword&quot;&gt;as&lt;/span&gt; e:&lt;br&gt;    &lt;span class=&quot;hljs-built_in&quot;&gt;print&lt;/span&gt;(&lt;span class=&quot;hljs-string&quot;&gt;f&amp;quot;❌ Error fetching location matches: &lt;span class=&quot;hljs-subst&quot;&gt;&amp;#123;e&amp;#125;&lt;/span&gt;&amp;quot;&lt;/span&gt;)&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;Then we are basically retriving the source code the website.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/udsfahrplan/get.png&quot;&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Projects" scheme="https://greenmeeple.github.io/categories/Projects/"/>
+    
+    
+    <category term="Python" scheme="https://greenmeeple.github.io/tags/Python/"/>
+    
+    <category term="Telegram" scheme="https://greenmeeple.github.io/tags/Telegram/"/>
+    
+    <category term="HAFAS" scheme="https://greenmeeple.github.io/tags/HAFAS/"/>
     
   </entry>
   
@@ -270,7 +308,7 @@
     <link href="https://greenmeeple.github.io/projects/udsfahrplan-log2/"/>
     <id>https://greenmeeple.github.io/projects/udsfahrplan-log2/</id>
     <published>2025-04-27T23:04:55.000Z</published>
-    <updated>2025-05-13T00:30:18.661Z</updated>
+    <updated>2025-05-14T16:28:49.970Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
@@ -311,7 +349,7 @@
     <link href="https://greenmeeple.github.io/projects/udsfahrplan-log1/"/>
     <id>https://greenmeeple.github.io/projects/udsfahrplan-log1/</id>
     <published>2025-04-26T23:04:55.000Z</published>
-    <updated>2025-05-12T23:26:29.394Z</updated>
+    <updated>2025-05-14T16:28:49.969Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
@@ -324,7 +362,7 @@
 &lt;p&gt;The HaCon Timetable Information System (HAFAS) is a software for timetable information from the company HaCon (Hannover Consulting). – &lt;a href=&quot;https://de.wikipedia.org/wiki/HAFAS&quot;&gt;Wikipedia&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Basically, the entire Germany, Luxembourg, and the surrounding countries&amp;#x2F;regions use HAFAS to obtain depatures and stations details. This centralized software system can be visited using APIs. Different service providers may create their own HAFAS backend endpoint that exposes a public transport API over HTTP for customized usage. For example, you can send your HTTP requests to Deutsche Bahn (DB) if you have the access of their API, which can be found in &lt;a href=&quot;https://developers.deutschebahn.com/db-api-marketplace/apis/&quot;&gt;DB API Marketplace&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/udsfahrplan/db-api.png&quot; alt=&quot;img&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/udsfahrplan/db-api.png&quot;&gt;&lt;/p&gt;
 &lt;h2 id=&quot;What-can-we-do-with-HAFAS&quot;&gt;&lt;a href=&quot;#What-can-we-do-with-HAFAS&quot; class=&quot;headerlink&quot; title=&quot;What can we do with HAFAS?&quot;&gt;&lt;/a&gt;What can we do with HAFAS?&lt;/h2&gt;&lt;p&gt;There are four basic functions that the system has provided:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;TripSearch&lt;/code&gt; – return connections from location A to location B&lt;/li&gt;
@@ -333,7 +371,7 @@
 &lt;li&gt;&lt;code&gt;LocMatch&lt;/code&gt; – return list of stations based on the keyword given&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;These includes most of the functionalities for users. For example, when we tried to plan our journey on DB navigator, the app uses &lt;code&gt;TripSearch&lt;/code&gt; to show you connections; when we type the stations in the search box, the app &lt;code&gt;LocMatch&lt;/code&gt; to give you related results.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/udsfahrplan/db-nav.png&quot; alt=&quot;img&quot;&gt;&lt;/p&gt;</summary>
+&lt;p&gt;&lt;img src=&quot;/images/udsfahrplan/db-nav.png&quot;&gt;&lt;/p&gt;</summary>
     
     
     
@@ -353,12 +391,12 @@
     <link href="https://greenmeeple.github.io/site/personalize/"/>
     <id>https://greenmeeple.github.io/site/personalize/</id>
     <published>2025-04-03T15:02:08.000Z</published>
-    <updated>2025-05-12T23:30:44.261Z</updated>
+    <updated>2025-05-14T16:28:49.969Z</updated>
     
     
     <summary type="html">&lt;p&gt;Here are all the plugins and niche settings that personalize this blog and the &lt;a href=&quot;https://github.com/ppoffice/hexo-theme-icarus&quot;&gt;Icarus&lt;/a&gt; theme.&lt;/p&gt;
 &lt;h2 id=&quot;Remove-Uppercase-Details&quot;&gt;&lt;a href=&quot;#Remove-Uppercase-Details&quot; class=&quot;headerlink&quot; title=&quot;Remove Uppercase Details&quot;&gt;&lt;/a&gt;Remove Uppercase Details&lt;/h2&gt;&lt;p&gt;The Uppercase characters overflowed the page and affects the aesthetic.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/site_notes/uppercase.png&quot; alt=&quot;img&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/site_notes/uppercase.png&quot;&gt;&lt;/p&gt;
 &lt;p&gt;Find the css tag that contains the keyword &lt;strong&gt;Uppercase&lt;/strong&gt; and remove it.&lt;/p&gt;
 &lt;figure class=&quot;highlight javascript&quot;&gt;&lt;figcaption&gt;&lt;span&gt;article.jsx&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;code class=&quot;hljs javascript&quot;&gt;&amp;#123;page.&lt;span class=&quot;hljs-property&quot;&gt;layout&lt;/span&gt; !== &lt;span class=&quot;hljs-string&quot;&gt;&amp;#x27;page&amp;#x27;&lt;/span&gt; ? &lt;span class=&quot;language-xml&quot;&gt;&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;hljs-attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;article-meta is-size-7 is-uppercase level is-mobile&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
@@ -381,7 +419,7 @@
     <link href="https://greenmeeple.github.io/projects/mensaar-log2/"/>
     <id>https://greenmeeple.github.io/projects/mensaar-log2/</id>
     <published>2025-03-21T04:03:35.000Z</published>
-    <updated>2025-05-12T23:37:50.465Z</updated>
+    <updated>2025-05-14T16:28:49.971Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
@@ -396,7 +434,7 @@
 &lt;h3 id=&quot;Fetch-Data-from-Google-Sheets-using-Publish&quot;&gt;&lt;a href=&quot;#Fetch-Data-from-Google-Sheets-using-Publish&quot; class=&quot;headerlink&quot; title=&quot;Fetch Data from Google Sheets using Publish&quot;&gt;&lt;/a&gt;Fetch Data from Google Sheets using Publish&lt;/h3&gt;&lt;p&gt;First, we need to publish our spreadsheet so that it is public to fetch the data.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;In the Spreadsheet, click &lt;strong&gt;Share&lt;/strong&gt; → Change access to Anyone with the link.&lt;/p&gt;
-&lt;p&gt; &lt;img src=&quot;/images/mensaar/sheetshare.png&quot; alt=&quot;img&quot;&gt;&lt;/p&gt;
+&lt;p&gt; &lt;img src=&quot;/images/mensaar/sheetshare.png&quot;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Click &lt;strong&gt;File&lt;/strong&gt; → &lt;strong&gt;Share&lt;/strong&gt; → &lt;strong&gt;Publish&lt;/strong&gt; to the web.&lt;/p&gt;
 &lt;/li&gt;
@@ -428,7 +466,7 @@
     <link href="https://greenmeeple.github.io/projects/mensaar-log1/"/>
     <id>https://greenmeeple.github.io/projects/mensaar-log1/</id>
     <published>2025-03-20T04:03:35.000Z</published>
-    <updated>2025-05-12T23:23:17.106Z</updated>
+    <updated>2025-05-14T16:28:49.972Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
@@ -473,23 +511,23 @@
     <link href="https://greenmeeple.github.io/appium/"/>
     <id>https://greenmeeple.github.io/appium/</id>
     <published>2025-01-01T18:36:48.000Z</published>
-    <updated>2025-05-12T15:54:59.002Z</updated>
+    <updated>2025-05-14T16:28:49.968Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;This blog post is trying to tell you:&lt;/strong&gt;&lt;br&gt;Every details and attributes you may need for your first appium automation.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;In this example, we will use &lt;a href=&quot;https://github.com/appium/appium-inspector&quot;&gt;Appium Inspector&lt;/a&gt; to start a seesion on your emulator on &lt;a href=&quot;https://developer.android.com/studio&quot;&gt;Android Studio&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;Start-appium&quot;&gt;&lt;a href=&quot;#Start-appium&quot; class=&quot;headerlink&quot; title=&quot;Start appium&quot;&gt;&lt;/a&gt;Start appium&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;/images/appium/start.png&quot; alt=&quot;img&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;Start-appium&quot;&gt;&lt;a href=&quot;#Start-appium&quot; class=&quot;headerlink&quot; title=&quot;Start appium&quot;&gt;&lt;/a&gt;Start appium&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;/images/appium/start.png&quot;&gt;&lt;/p&gt;
 &lt;p&gt;First, start the connection with Appium by &lt;code&gt;cmd appium --allow-cors&lt;/code&gt;. It also gives you the &lt;code&gt;remote url&lt;/code&gt; and the &lt;code&gt;automationName&lt;/code&gt; that can be used in the &lt;a href=&quot;https://github.com/appium/appium-inspector&quot;&gt;Appium Inspector&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/appium/inspector.png&quot; alt=&quot;img&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/appium/inspector.png&quot;&gt;&lt;/p&gt;
 &lt;h2 id=&quot;Start-Session&quot;&gt;&lt;a href=&quot;#Start-Session&quot; class=&quot;headerlink&quot; title=&quot;Start Session&quot;&gt;&lt;/a&gt;Start Session&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;deviceName&lt;/strong&gt;:  &lt;code&gt;adb devices&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;platformName&lt;/strong&gt; - &lt;code&gt;appium driver list&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;platformVersion&lt;/strong&gt; -  &lt;code&gt;adb shell getprop ro.build.version.release&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&quot;/images/appium/session.png&quot; alt=&quot;img&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/appium/inspector2.png&quot; alt=&quot;img&quot;&gt;&lt;/p&gt;</summary>
+&lt;p&gt;&lt;img src=&quot;/images/appium/session.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/appium/inspector2.png&quot;&gt;&lt;/p&gt;</summary>
     
     
     
@@ -680,7 +718,7 @@
     <link href="https://greenmeeple.github.io/js/hexo-tagplugin-2/"/>
     <id>https://greenmeeple.github.io/js/hexo-tagplugin-2/</id>
     <published>2024-10-13T02:03:12.000Z</published>
-    <updated>2025-05-12T23:28:44.490Z</updated>
+    <updated>2025-05-14T16:28:49.973Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
@@ -761,95 +799,23 @@
     <link href="https://greenmeeple.github.io/js/json-dependencies-diagram/"/>
     <id>https://greenmeeple.github.io/js/json-dependencies-diagram/</id>
     <published>2024-10-11T00:19:03.000Z</published>
-    <updated>2025-05-12T23:15:55.674Z</updated>
+    <updated>2025-05-14T16:30:58.909Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
 &lt;p&gt;This is a image version of the post &lt;a href=&quot;../json-dependencies/&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;a name=&quot;range-set&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;range-set:&lt;/strong&gt;&lt;br&gt;&lt;img src=&quot;/images/json_dep_diagram/range-set.png&quot; alt=&quot;range-set&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;range-set:&lt;/strong&gt;&lt;br&gt;&lt;img src=&quot;/images/json_dep_diagram/range-set.png&quot;&gt;&lt;/p&gt;
 &lt;figure class=&quot;highlight go&quot;&gt;&lt;figcaption&gt;&lt;span&gt;range-set.ebnf&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;code class=&quot;hljs go&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;range&lt;/span&gt;-set   ::= &lt;span class=&quot;hljs-keyword&quot;&gt;range&lt;/span&gt; ( logical-or &lt;span class=&quot;hljs-keyword&quot;&gt;range&lt;/span&gt; )*&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;p&gt;&lt;strong&gt;logical-or:&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/json_dep_diagram/logical-or.png&quot; alt=&quot;logical-or&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/json_dep_diagram/logical-or.png&quot;&gt;&lt;/p&gt;
 &lt;figure class=&quot;highlight go&quot;&gt;&lt;figcaption&gt;&lt;span&gt;logical-or.ebnf&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;code class=&quot;hljs go&quot;&gt;logical-or  ::= &lt;span class=&quot;hljs-string&quot;&gt;&amp;#x27; &amp;#x27;&lt;/span&gt;* &lt;span class=&quot;hljs-string&quot;&gt;&amp;#x27;||&amp;#x27;&lt;/span&gt; &lt;span class=&quot;hljs-string&quot;&gt;&amp;#x27; &amp;#x27;&lt;/span&gt;*&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;p&gt;referenced by: &lt;a href=&quot;#range-set&quot;&gt;range-set&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a name=&quot;range&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;range:&lt;/strong&gt;&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="JavaScript" scheme="https://greenmeeple.github.io/categories/JavaScript/"/>
-    
-    
-    <category term="Node.js" scheme="https://greenmeeple.github.io/tags/Node-js/"/>
-    
-    <category term="json" scheme="https://greenmeeple.github.io/tags/json/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Explaination of version range operators in package.json for package dependencies</title>
-    <link href="https://greenmeeple.github.io/js/json-dependencies/"/>
-    <id>https://greenmeeple.github.io/js/json-dependencies/</id>
-    <published>2024-10-10T17:04:37.000Z</published>
-    <updated>2025-05-12T23:10:07.412Z</updated>
-    
-    
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;To see the syntax and Railroad diagram version, goto &lt;a href=&quot;../json-dependencies-diagram/&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;Basic-Structure&quot;&gt;&lt;a href=&quot;#Basic-Structure&quot; class=&quot;headerlink&quot; title=&quot;Basic Structure&quot;&gt;&lt;/a&gt;Basic Structure&lt;/h2&gt;&lt;p&gt;Package dependecies are a tuple of &lt;code&gt;[major, minor, patch]&lt;/code&gt; with numeric values.&lt;/p&gt;
-&lt;figure class=&quot;highlight json&quot;&gt;&lt;figcaption&gt;&lt;span&gt;package.json&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;code class=&quot;hljs json&quot;&gt;&lt;span class=&quot;hljs-punctuation&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;    &lt;span class=&quot;hljs-attr&quot;&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span class=&quot;hljs-punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;project name&amp;quot;&lt;/span&gt;&lt;span class=&quot;hljs-punctuation&quot;&gt;,&lt;/span&gt;&lt;br&gt;    &lt;span class=&quot;hljs-attr&quot;&gt;&amp;quot;version&amp;quot;&lt;/span&gt;&lt;span class=&quot;hljs-punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;0.0.1&amp;quot;&lt;/span&gt;&lt;span class=&quot;hljs-punctuation&quot;&gt;,&lt;/span&gt;&lt;br&gt;    &lt;span class=&quot;hljs-attr&quot;&gt;&amp;quot;description&amp;quot;&lt;/span&gt;&lt;span class=&quot;hljs-punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;description of the project&amp;quot;&lt;/span&gt;&lt;span class=&quot;hljs-punctuation&quot;&gt;,&lt;/span&gt;&lt;br&gt;    &lt;span class=&quot;hljs-attr&quot;&gt;&amp;quot;keywords&amp;quot;&lt;/span&gt;&lt;span class=&quot;hljs-punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;hljs-punctuation&quot;&gt;[&lt;/span&gt;&lt;br&gt;        &lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;keyword 1&amp;quot;&lt;/span&gt;&lt;span class=&quot;hljs-punctuation&quot;&gt;,&lt;/span&gt;&lt;br&gt;        &lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;keyword 2&amp;quot;&lt;/span&gt;&lt;br&gt;    &lt;span class=&quot;hljs-punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;hljs-punctuation&quot;&gt;,&lt;/span&gt;&lt;br&gt;    &lt;span class=&quot;hljs-attr&quot;&gt;&amp;quot;author&amp;quot;&lt;/span&gt;&lt;span class=&quot;hljs-punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;John Doe&amp;quot;&lt;/span&gt;&lt;span class=&quot;hljs-punctuation&quot;&gt;,&lt;/span&gt;&lt;br&gt;    &lt;span class=&quot;hljs-attr&quot;&gt;&amp;quot;dependencies&amp;quot;&lt;/span&gt;&lt;span class=&quot;hljs-punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;hljs-punctuation&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;      &lt;span class=&quot;hljs-attr&quot;&gt;&amp;quot;package-1&amp;quot;&lt;/span&gt;&lt;span class=&quot;hljs-punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;~0.6.2&amp;quot;&lt;/span&gt;&lt;span class=&quot;hljs-punctuation&quot;&gt;,&lt;/span&gt;&lt;br&gt;      &lt;span class=&quot;hljs-attr&quot;&gt;&amp;quot;package-2&amp;quot;&lt;/span&gt;&lt;span class=&quot;hljs-punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;&amp;gt;=2.6.2&amp;quot;&lt;/span&gt;&lt;br&gt;    &lt;span class=&quot;hljs-punctuation&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-punctuation&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h2 id=&quot;Version-Range-operator&quot;&gt;&lt;a href=&quot;#Version-Range-operator&quot; class=&quot;headerlink&quot; title=&quot;Version Range operator&quot;&gt;&lt;/a&gt;Version Range operator&lt;/h2&gt;&lt;h3 id=&quot;Basic-Range&quot;&gt;&lt;a href=&quot;#Basic-Range&quot; class=&quot;headerlink&quot; title=&quot;Basic Range&quot;&gt;&lt;/a&gt;Basic Range&lt;/h3&gt;&lt;p&gt;For &lt;code&gt;x&lt;/code&gt; in exmaple, see &lt;strong&gt;Advanced Range&lt;/strong&gt; below.&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&quot;left&quot;&gt;Operator&lt;/th&gt;
-&lt;th align=&quot;left&quot;&gt;Explaination&lt;/th&gt;
-&lt;th align=&quot;left&quot;&gt;Example&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;code&gt;=&lt;/code&gt;&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;package version must be exactly matched&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;code&gt;1.0.0&lt;/code&gt; :&amp;#x3D; &lt;code&gt;=1.0.0&lt;/code&gt;&lt;br&gt;(They are equivalent)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;code&gt;&amp;lt;&lt;/code&gt;&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;package version must be less than indicated&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;code&gt;&amp;lt;2.0.0&lt;/code&gt; &lt;br&gt;:&amp;#x3D;version from &lt;code&gt;0.0.1&lt;/code&gt; to &lt;code&gt;1.x.x&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;code&gt;&amp;lt;=&lt;/code&gt;&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;package version must be less than or euqal to indicated&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;code&gt;&amp;lt;=2.0.0&lt;/code&gt; &lt;br&gt;:&amp;#x3D;version from &lt;code&gt;0.0.1&lt;/code&gt; to &lt;code&gt;2.0.0&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;code&gt;&amp;gt;&lt;/code&gt;&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;package version must be greater than indicated&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;code&gt;&amp;gt;2.0.0&lt;/code&gt;:&amp;#x3D; &lt;br&gt;version from &lt;code&gt;2.0.1&lt;/code&gt; to &lt;code&gt;x&lt;/code&gt; (x &amp;gt;&amp;#x3D; 2)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;code&gt;&amp;gt;=&lt;/code&gt;&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;package version must be greater than or euqal to indicated&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;code&gt;&amp;gt;=2.0.0&lt;/code&gt; &lt;br&gt;:&amp;#x3D;version from &lt;code&gt;2.0.0&lt;/code&gt; to &lt;code&gt;x&lt;/code&gt; (x &amp;gt;&amp;#x3D; 2)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;code&gt;||&lt;/code&gt;&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;joined one or more operator&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;code&gt;&amp;gt;2.0.1 || &amp;lt;1.7.3&lt;/code&gt; &lt;br&gt;:&amp;#x3D;version greater than &lt;code&gt;2.0.1&lt;/code&gt; or less than &lt;code&gt;1.7.3&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;code&gt;space&lt;/code&gt;&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;Intersected one or more operator&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;code&gt;&amp;gt;=2.0.1  &amp;lt;=1.7.3&lt;/code&gt; &lt;br&gt;:&amp;#x3D;version from &lt;code&gt;2.0.1&lt;/code&gt; to &lt;code&gt;1.7.3&lt;/code&gt; (inclusive)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;h3 id=&quot;Advanced-Range&quot;&gt;&lt;a href=&quot;#Advanced-Range&quot; class=&quot;headerlink&quot; title=&quot;Advanced Range&quot;&gt;&lt;/a&gt;Advanced Range&lt;/h3&gt;&lt;p&gt;Advanced ranges may be combined in the same way as primitive comparators using &lt;code&gt;space&lt;/code&gt; or &lt;code&gt;||&lt;/code&gt;.&lt;/p&gt;</summary>
     
     
     
