@@ -92,7 +92,7 @@
     <link href="https://greenmeeple.github.io/projects/mensaar/"/>
     <id>https://greenmeeple.github.io/projects/mensaar/</id>
     <published>2025-05-08T03:03:35.000Z</published>
-    <updated>2025-05-14T19:26:37.448Z</updated>
+    <updated>2025-05-14T19:30:22.846Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
@@ -102,7 +102,7 @@
 &lt;hr&gt;
 &lt;h2 id=&quot;🆕-Updates&quot;&gt;&lt;a href=&quot;#🆕-Updates&quot; class=&quot;headerlink&quot; title=&quot;🆕 Updates&quot;&gt;&lt;/a&gt;🆕 Updates&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;05.08 – Telegram Bot &lt;a href=&quot;https://t.me/Mensaar_Bot&quot;&gt;@Mensaar_Bot&lt;/a&gt; are published.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;(See my development blog in here! &lt;a href=&quot;../mensaarlog3&quot;&gt;MensaarLecker Development Log 3 – Telegram Bot Deployment and Integration&lt;/a&gt;)&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;04.21 – &lt;a href=&quot;HTW&quot;&gt;https://mensaar.de/#/menu/htwcrb&lt;/a&gt; menus are now added to the statistics.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;04.21 – &lt;a href=&quot;https://mensaar.de/#/menu/htwcrb&quot;&gt;HTW&lt;/a&gt; menus are now added to the statistics.&lt;/strong&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&quot;🥗-Description&quot;&gt;&lt;a href=&quot;#🥗-Description&quot; class=&quot;headerlink&quot; title=&quot;🥗 Description&quot;&gt;&lt;/a&gt;🥗 Description&lt;/h2&gt;&lt;p&gt;A fully automated scraper and static website for the Saarbrücken Mensa, powered by Python, Selenium, Google Sheets, and GitHub Actions.&lt;/p&gt;</summary>
     
